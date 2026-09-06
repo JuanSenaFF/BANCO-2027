@@ -1,12 +1,12 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-06T16:22:24+00:00",
+    "catalogBuiltAt": "2026-09-06T17:40:30+00:00",
     "total": 56,
-    "added": 3,
+    "added": 2,
     "verificationAttempted": 49,
-    "lastCheckAttemptAt": "2026-09-06T16:22:24+00:00",
-    "verificationConfirmed": 11,
-    "updatedAt": "2026-09-06T16:18:50Z"
+    "lastCheckAttemptAt": "2026-09-06T17:40:30+00:00",
+    "verificationConfirmed": 0,
+    "updatedAt": "2026-09-06T17:36:51Z"
   },
   "jobs": [
     {
@@ -436,7 +436,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -716,7 +716,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -805,7 +805,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -1754,7 +1754,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -2553,7 +2553,7 @@
       "company": "Bradesco",
       "role": "Analista de Dados — Planejamento Comercial JR",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -2579,10 +2579,10 @@
       "source": "https://br.linkedin.com/jobs/view/analista-dados-planejamento-comercial-jr-at-banco-bradesco-4478186739/",
       "key": "linkedin:4478186739",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T17:40:31+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -2617,8 +2617,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 29,
@@ -2874,8 +2874,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 32,
@@ -3144,8 +3144,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 35,
@@ -3273,8 +3273,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:31+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 36,
@@ -3595,8 +3595,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 39,
@@ -3680,7 +3680,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3776,8 +3776,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 41,
@@ -3897,8 +3897,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 42,
@@ -4051,8 +4051,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 43,
@@ -4136,8 +4136,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 44,
@@ -4214,7 +4214,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:32+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4312,7 +4312,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4368,7 +4368,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4573,8 +4573,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 49,
@@ -4691,8 +4691,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 50,
@@ -4782,7 +4782,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4876,7 +4876,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4957,7 +4957,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4965,7 +4965,7 @@
       "company": "Sicoob",
       "role": "Desenvolvedor Java Júnior",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Backend",
       "stack": "Java",
@@ -4998,10 +4998,10 @@
       "auto": true,
       "key": "linkedin:4460399673",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T17:40:33+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 100,
       "requirementsStructured": [
         {
           "text": "Graduação em curso ou concluída em Tecnologia da Informação ou áreas correlatas",
@@ -5044,8 +5044,12 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
+      "location": "Brasília, BR",
+      "modality": "Remoto",
+      "publishedAt": "2026-08-28T20:01:19.000Z",
+      "validThrough": "2026-09-27T20:01:19.000Z"
     },
     {
       "id": 54,
@@ -5106,7 +5110,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -5176,8 +5180,8 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 56,
@@ -5233,8 +5237,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-06T17:40:33+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
         {
