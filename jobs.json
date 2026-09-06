@@ -1,9 +1,12 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-06T16:14:29+00:00",
-    "total": 55,
-    "added": 0,
-    "verificationAttempted": 48
+    "catalogBuiltAt": "2026-09-06T16:22:24+00:00",
+    "total": 56,
+    "added": 3,
+    "verificationAttempted": 49,
+    "lastCheckAttemptAt": "2026-09-06T16:22:24+00:00",
+    "verificationConfirmed": 11,
+    "updatedAt": "2026-09-06T16:18:50Z"
   },
   "jobs": [
     {
@@ -11,7 +14,7 @@
       "company": "B3",
       "role": "Analista de Automação Júnior (Python)",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Publicada em 02/09/2026; recente na consulta",
       "area": "Automação & IA",
       "stack": "Python",
@@ -50,10 +53,10 @@
       "source": "https://br.linkedin.com/jobs/view/8129-analista-de-automa%C3%A7%C3%A3o-j%C3%BAnior-python-at-b3-4482282810/",
       "key": "linkedin:4482282810",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -116,15 +119,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 2,
       "company": "B3",
       "role": "Analista Engenharia de Software Jr Java / Analista Sistemas Nível I",
       "level": "Júnior / Nível I",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Publicada em 12/08/2026",
       "area": "Backend",
       "stack": "Java",
@@ -171,10 +174,10 @@
       "source": "https://br.linkedin.com/jobs/view/8085-analista-engenharia-software-jr-java-at-b3-4474777160/",
       "key": "linkedin:4474777160",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Java 8+",
@@ -257,15 +260,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 3,
       "company": "B3",
       "role": "Analista Engenharia Software Jr — vaga afirmativa PCD",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Publicada em 05/08/2026; status atual não confirmado",
       "area": "Engenharia de Software",
       "stack": "Java",
@@ -294,10 +297,10 @@
       "source": "https://br.linkedin.com/jobs/view/8038-analista-engenharia-software-jr-at-b3-4470704439/",
       "key": "linkedin:4470704439",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Java básico",
@@ -340,8 +343,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 4,
@@ -433,15 +436,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 5,
       "company": "Cielo",
       "role": "Desenvolvedor(a) de Software Jr — foco IA / PCD",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Backend",
       "stack": "Python",
@@ -472,10 +475,10 @@
       "source": "https://br.linkedin.com/jobs/view/desenvolvedor-a-de-software-jr-foco-em-ia-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-cielo-4473806428/",
       "key": "linkedin:4473806428",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -518,15 +521,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 6,
       "company": "Cielo",
       "role": "Engenheiro(a) de Software Jr — Backend Java / Full Stack PCD",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Backend",
       "stack": "Java",
@@ -557,10 +560,10 @@
       "source": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-jr-backend-java-full-stack-vaga-afirmativa-para-pcd-at-cielo-4481831631/",
       "key": "linkedin:4481831631",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -599,8 +602,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 7,
@@ -713,8 +716,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 8,
@@ -802,15 +805,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 9,
       "company": "Pismo",
       "role": "Software Engineer — Depositary",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Backend",
       "stack": "Java",
@@ -850,10 +853,10 @@
       "source": "https://jobs.lever.co/pismo/3b2c04cf-44c3-4e74-b6fd-38f45099d192",
       "key": "jobs.lever.co/pismo/3b2c04cf-44c3-4e74-b6fd-38f45099d192",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Java ou Go",
@@ -916,15 +919,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 10,
       "company": "PicPay",
       "role": "Desenvolvedor(a) PHP Jr — PCD",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Backend",
       "stack": "PHP",
@@ -965,10 +968,10 @@
       "source": "https://br.linkedin.com/jobs/view/desenvolvedor-a-php-jr-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-picpay-4480708943/",
       "key": "linkedin:4480708943",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "PHP 8+",
@@ -1043,15 +1046,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 11,
       "company": "Banco BV",
       "role": "Analista Jr — Risco de Crédito",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -1081,10 +1084,10 @@
       "source": "https://br.linkedin.com/jobs/view/analista-jr-risco-de-cr%C3%A9dito-at-banco-bv-4479798809/",
       "key": "linkedin:4479798809",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "SQL intermediário",
@@ -1127,8 +1130,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 12,
@@ -1306,7 +1309,7 @@
       "company": "Banco Daycoval",
       "role": "Analista de Jornada Digital Jr",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Automação & IA",
       "stack": "Multistack",
@@ -1337,10 +1340,10 @@
       "source": "https://br.linkedin.com/jobs/view/analista-de-jornada-digital-jr-at-banco-daycoval-4481580823/",
       "key": "linkedin:4481580823",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -1391,15 +1394,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 15,
       "company": "Dock",
       "role": "DBA Junior — SQL Server",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Atualizada em 03/07/2026; status atual não confirmado",
       "area": "Dados & Analytics",
       "stack": "Dados / BI",
@@ -1431,10 +1434,10 @@
       "source": "https://remotar.com.br/job/124228/dock/dba-junior-sqlserver",
       "key": "remotar.com.br/job/124228/dock/dba-junior-sqlserver",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "SQL Server",
@@ -1481,8 +1484,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 16,
@@ -1751,15 +1754,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 19,
       "company": "FitBank",
       "role": "Desenvolvedor de Sistemas Jr — PHP/Laravel",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa na fonte consultada",
       "area": "Backend",
       "stack": "PHP",
@@ -1802,10 +1805,10 @@
       "source": "https://fitbank.vagas.solides.com.br/vaga/760567",
       "key": "fitbank.vagas.solides.com.br/vaga/760567",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "PHP",
@@ -1880,15 +1883,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:24+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 20,
       "company": "Banco Inter",
       "role": "Conversational Designer Junior / AI Analyst",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Automação & IA",
       "stack": "Multistack",
@@ -1920,10 +1923,10 @@
       "source": "https://br.linkedin.com/jobs/view/conversational-designer-junior-ai-analyst-at-inter-4477967162/",
       "key": "linkedin:4477967162",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -1982,15 +1985,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 21,
       "company": "Banco Inter",
       "role": "Tech Product Analyst Junior — CRM Strategy",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Produto / Negócio",
       "stack": "Multistack",
@@ -2016,10 +2019,10 @@
       "source": "https://br.linkedin.com/jobs/view/tech-product-analyst-junior-crm-strategy-at-inter-4478053800/",
       "key": "linkedin:4478053800",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Figma",
@@ -2062,15 +2065,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 22,
       "company": "Bradesco",
       "role": "Analista de Dados JR — Jurídico",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -2098,10 +2101,10 @@
       "source": "https://br.linkedin.com/jobs/view/analista-dados-jr-at-banco-bradesco-4477779029/",
       "key": "linkedin:4477779029",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -2140,15 +2143,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 23,
       "company": "Bradesco",
       "role": "Analista de Projetos TI JR",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Dados / BI",
@@ -2181,10 +2184,10 @@
       "source": "https://br.linkedin.com/jobs/view/analista-projetos-ti-jr-at-banco-bradesco-4479168144/",
       "key": "linkedin:4479168144",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "SQL intermediário/avançado",
@@ -2231,15 +2234,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 24,
       "company": "Bradesco",
       "role": "Analista de Canais Digitais JR — PCD",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Dados / BI",
@@ -2265,10 +2268,10 @@
       "source": "https://br.linkedin.com/jobs/view/analista-canais-digitais-jr-pcd-at-banco-bradesco-4475358984/",
       "key": "linkedin:4475358984",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Análise de dados",
@@ -2303,15 +2306,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 25,
       "company": "Bradesco",
       "role": "Data Scientist I — Crédito (entrada)",
       "level": "Nível I / Entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -2338,10 +2341,10 @@
       "source": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4479113150/",
       "key": "linkedin:4479113150",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Python básico",
@@ -2376,15 +2379,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 26,
       "company": "Bradesco",
       "role": "Data Scientist I — Pricing / Crédito",
       "level": "Nível I",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -2412,10 +2415,10 @@
       "source": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4478868061/",
       "key": "linkedin:4478868061",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Python avançado",
@@ -2454,15 +2457,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 27,
       "company": "Bradesco",
       "role": "Analista de Inteligência de Negócios JR — PCD",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Dados / BI",
@@ -2492,10 +2495,10 @@
       "source": "https://br.linkedin.com/jobs/view/analista-intelig%C3%AAncia-neg%C3%B3cios-jr-pcd-at-banco-bradesco-4479573987/",
       "key": "linkedin:4479573987",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Excel avançado",
@@ -2542,8 +2545,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 28,
@@ -2614,15 +2617,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 29,
       "company": "Bradesco",
       "role": "Data Scientist I — Prevenção a Fraudes",
       "level": "Nível I",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -2649,10 +2652,10 @@
       "source": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4479731821/",
       "key": "linkedin:4479731821",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -2687,15 +2690,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 30,
       "company": "Bradesco",
       "role": "Business Analyst JR",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Dados & Analytics",
       "stack": "Dados / BI",
@@ -2721,10 +2724,10 @@
       "source": "https://br.linkedin.com/jobs/view/business-analyst-jr-at-banco-bradesco-4479998555/",
       "key": "linkedin:4479998555",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -2763,8 +2766,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 31,
@@ -2871,15 +2874,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 32,
       "company": "Stone",
       "role": "Software Engineer II — Automação RPA (nível júnior)",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Ativa/recente na consulta",
       "area": "Engenharia de Software",
       "stack": "Python",
@@ -2908,10 +2911,10 @@
       "source": "https://br.linkedin.com/jobs/view/software-engineer-ii-automa%C3%A7%C3%A3o-rpa-at-stone-4476757291/",
       "key": "linkedin:4476757291",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "UiPath",
@@ -2954,8 +2957,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 33,
@@ -3141,8 +3144,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 35,
@@ -3270,8 +3273,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 36,
@@ -3592,8 +3595,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 39,
@@ -3677,8 +3680,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 40,
@@ -3773,8 +3776,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 41,
@@ -3894,8 +3897,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 42,
@@ -4048,8 +4051,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 43,
@@ -4133,8 +4136,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 44,
@@ -4211,8 +4214,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 45,
@@ -4309,8 +4312,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 46,
@@ -4365,15 +4368,15 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 47,
       "company": "Santander Brasil",
       "role": "Analista de TI II — perfil de sustentação/desenvolvimento",
       "level": "Júnior/entrada conforme indexação",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Fonte histórica de 2026; página original não estava mais disponível na última checagem",
       "area": "Sistemas / Sustentação",
       "stack": "Java",
@@ -4409,10 +4412,10 @@
       "source": "https://santander-brasil.interviewhr.com/offer/analista-de-ti-ii",
       "key": "santander-brasil.interviewhr.com/offer/analista-de-ti-ii",
       "firstSeenAt": null,
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-09-06T16:22:26+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -4471,8 +4474,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "Anúncio removido (404/410)"
     },
     {
       "id": 48,
@@ -4570,8 +4573,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 49,
@@ -4688,8 +4691,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 50,
@@ -4779,8 +4782,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 51,
@@ -4873,8 +4876,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 52,
@@ -4954,8 +4957,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 53,
@@ -5041,8 +5044,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 54,
@@ -5103,8 +5106,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 55,
@@ -5173,8 +5176,124 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
-      "verificationReason": "Não foi possível confirmar"
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
+    },
+    {
+      "id": 56,
+      "company": "Itaú Unibanco",
+      "role": "Engenharia de Software .Net Júnior | Tesouraria para Clientes (Exclusiva para Pessoas com Deficiência)",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-06 — LinkedIn",
+      "area": "Engenharia de Software",
+      "stack": ".NET / C#",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Java",
+        ".NET/C#",
+        "JavaScript/Node",
+        "REST/APIs",
+        "AWS",
+        "Microsserviços",
+        "Mensageria",
+        "Cloud",
+        "Dados/BI",
+        "IA/ML",
+        "Segurança"
+      ],
+      "requirements": [
+        "Curiosidade e vontade constante de aprender.",
+        "Capacidade de questionar, investigar e propor melhorias.",
+        "Proatividade para assumir desafios e buscar conhecimento de forma autônoma.",
+        "Interesse em atuar em um ambiente colaborativo e em constante evolução.",
+        "Alinhamento com os valores de inclusão, diversidade e desenvolvimento contínuo.",
+        "Vale-Transporte",
+        "Vale-Refeição (Restaurantes) / Vale-Alimentação (Supermercados)",
+        "Plano médico (Fundação Saúde Itaú ou Central Nacional Unimed)",
+        "Plano odontológico (Odontoprev ou Interodonto)",
+        "Seguro de Vida",
+        "PLR – Participação nos Lucros e Resultados (Mediante resultados do banco)",
+        "Previdência privada",
+        "Descontos exclusivos em nossos produtos financeiros",
+        "Licença maternidade e paternidade estendida"
+      ],
+      "differentials": [],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4449243003",
+      "collectedAt": "2026-09-06T16:18:50Z",
+      "auto": true,
+      "key": "linkedin:4449243003",
+      "firstSeenAt": "2026-09-06T16:18:50Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-06T16:22:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 60,
+      "requirementsStructured": [
+        {
+          "text": "Curiosidade e vontade constante de aprender.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de questionar, investigar e propor melhorias.",
+          "mandatory": true
+        },
+        {
+          "text": "Proatividade para assumir desafios e buscar conhecimento de forma autônoma.",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse em atuar em um ambiente colaborativo e em constante evolução.",
+          "mandatory": true
+        },
+        {
+          "text": "Alinhamento com os valores de inclusão, diversidade e desenvolvimento contínuo.",
+          "mandatory": true
+        },
+        {
+          "text": "Vale-Transporte",
+          "mandatory": true
+        },
+        {
+          "text": "Vale-Refeição (Restaurantes) / Vale-Alimentação (Supermercados)",
+          "mandatory": true
+        },
+        {
+          "text": "Plano médico (Fundação Saúde Itaú ou Central Nacional Unimed)",
+          "mandatory": true
+        },
+        {
+          "text": "Plano odontológico (Odontoprev ou Interodonto)",
+          "mandatory": true
+        },
+        {
+          "text": "Seguro de Vida",
+          "mandatory": true
+        },
+        {
+          "text": "PLR – Participação nos Lucros e Resultados (Mediante resultados do banco)",
+          "mandatory": true
+        },
+        {
+          "text": "Previdência privada",
+          "mandatory": true
+        },
+        {
+          "text": "Descontos exclusivos em nossos produtos financeiros",
+          "mandatory": true
+        },
+        {
+          "text": "Licença maternidade e paternidade estendida",
+          "mandatory": true
+        }
+      ]
     }
   ]
 }
