@@ -9,6 +9,7 @@ on:
     paths:
       - '.github/workflows/update-vagas.yml'
       - 'scripts/update_vagas.py'
+      - 'scripts/validate_auto.py'
 
 permissions:
   contents: write
@@ -34,13 +35,16 @@ jobs:
       - name: Instalar dependências
         run: pip install requests beautifulsoup4
 
-      - name: Buscar e consolidar vagas
+      - name: Buscar novas vagas
         run: python scripts/update_vagas.py
+
+      - name: Validar setor, senioridade e duplicidade
+        run: python scripts/validate_auto.py
 
       - name: Publicar alterações
         run: |
           if git diff --quiet -- data-auto.js; then
-            echo "Nenhuma vaga nova distinta por exigências."
+            echo "Nenhuma vaga nova válida e distinta por exigências."
             exit 0
           fi
           git config user.name "banco-2027-bot"
