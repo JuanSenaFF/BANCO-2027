@@ -17,37 +17,71 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
 BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 7)]
-UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36 Banco2027JobRadar/1.1"
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36 Banco2027JobRadar/1.2"
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8"})
 TIMEOUT = 20
-MAX_NEW = 12
+MAX_NEW = 10
 
 TARGET_COMPANIES = [
-    "Itaú", "Bradesco", "Santander", "BTG Pactual", "Nubank", "Banco Inter", "Inter", "C6 Bank",
-    "XP", "Safra", "Mercado Pago", "Stone", "PagBank", "B3", "Núclea", "CERC", "Cielo",
-    "Rede", "Getnet", "Dock", "Pismo", "Banco BV", "Daycoval", "Banco ABC Brasil", "Banco PAN",
-    "Banco BMG", "Neon", "PicPay", "Creditas", "Will Bank", "Genial Investimentos", "EQI",
-    "Rico", "Clear", "Avenue", "Sicoob", "Sicredi", "Sinqia", "Matera", "FitBank",
-    "ANBIMA", "BMP", "Bancorbrás", "Nava", "FCamara", "Serasa Experian",
+    "Itaú", "Itaú Unibanco", "Bradesco", "Santander", "Santander Brasil", "BTG Pactual", "Nubank",
+    "Banco Inter", "Inter", "C6 Bank", "XP", "XP Inc.", "Safra", "Mercado Pago", "Stone", "PagBank",
+    "B3", "Núclea", "CERC", "Cielo", "Rede", "Getnet", "Dock", "Pismo", "Banco BV", "Daycoval",
+    "Banco Daycoval", "Banco ABC Brasil", "Banco PAN", "Banco BMG", "Neon", "PicPay", "Creditas",
+    "Will Bank", "Genial Investimentos", "EQI", "EQI Investimentos", "Rico", "Clear", "Avenue",
+    "Sicoob", "Sicredi", "Sinqia", "Matera", "FitBank",
+    # empresas do ecossistema já validadas pela pesquisa
+    "ANBIMA", "BMP", "Grupo Bancorbrás", "Via Certa Promotora", "Nava | Tech for Business", "Nava",
 ]
 
-FINANCE_TERMS = [
-    "banco", "bancário", "bancaria", "fintech", "pagamentos", "payment", "financeiro", "financial",
-    "crédito", "credito", "investimentos", "investimento", "trading", "cobrança", "cobranca", "baas",
-    "mercado de capitais", "seguros", "seguradora", "adquirência", "adquirencia", "pix", "cartões", "cartoes",
-    "open finance", "risco", "fraude",
+# Consultorias/techs só entram quando o anúncio deixa explícito que o projeto é bancário/financeiro.
+CONTEXT_ALLOWED_COMPANIES = ["Tata Consultancy Services", "FCamara", "Qaracter", "Stefanini", "Capgemini", "Accenture"]
+
+STRONG_FINANCE_PHRASES = [
+    "segmento bancário", "segmento bancario", "setor bancário", "setor bancario", "mercado financeiro",
+    "instituição financeira", "instituicao financeira", "instituições financeiras", "instituicoes financeiras",
+    "banco de investimento", "bancos de investimento", "serviços financeiros", "servicos financeiros",
+    "meios de pagamento", "infraestrutura financeira", "banking as a service", "banking-as-a-service",
+    "produtos bancários", "produtos bancarios", "risco de crédito", "risco de credito", "políticas de crédito",
+    "politicas de credito", "prevenção a fraudes", "prevencao a fraudes", "open finance", "mercado de capitais",
+    "renda fixa", "investment banking", "financial services", "banking industry", "credit risk", "payments industry",
 ]
+
 JUNIOR_TERMS = ["júnior", "junior", " jr", "jr ", "assistente", "associate", "nível i", "nivel i", "trainee"]
+SENIOR_TITLE_TERMS = ["sênior", "senior", "pleno", "specialist", "especialista", "lead", "principal", "staff"]
 TECH_TERMS = [
     "software", "backend", "back-end", "desenvolvedor", "developer", "engenharia", "dados", "data",
     "sistemas", "cloud", "sre", "devops", "automação", "automacao", "python", "java", ".net", "c#",
     "sql", "api", "qa", "qualidade", "segurança", "security", "infraestrutura",
 ]
 
+# As 8 vagas originalmente fornecidas pelo usuário não podem voltar como “novas”.
+EXCLUDED_TITLE_FRAGMENTS = [
+    "analista de projetos de tecnologia júnior",
+    "backend jr recovery credit",
+    "software engineer junior it sustentação",
+    "analista suporte ti jr",
+    "desenvolvedor backend júnior pleno it bsm",
+    "desenvolvedor backend junior pleno it bsm",
+    "desenvolvedor backend junior pleno renda fixa",
+    "desenvolvedor backend júnior pleno renda fixa",
+    "engenheiro a de dados júnior",
+    "engenheiro de dados júnior",
+    "analista de negócios júnior sistemas",
+    "analista de negocios junior sistemas",
+]
+
 LINKEDIN_KEYWORDS = [
-    "backend junior", "software engineer junior", "desenvolvedor junior", "analista sistemas junior",
-    "dados junior", "data engineer junior", "automacao python junior", "cloud sre junior",
+    "backend junior banco", "software engineer junior fintech", "desenvolvedor junior mercado financeiro",
+    "analista sistemas junior banco", "dados junior banco", "data engineer junior fintech",
+    "automacao python junior banco", "cloud sre junior fintech", "java junior banco", ".net junior banco",
+    "payments software junior", "credit risk junior python sql",
+]
+
+# Buscas adicionais em empresas prioritárias. Uma consulta por empresa mantém o custo do workflow controlado.
+LINKEDIN_PRIORITY_COMPANIES = [
+    "Itaú", "Bradesco", "Santander", "BTG Pactual", "Nubank", "Banco Inter", "C6 Bank", "XP",
+    "Mercado Pago", "Stone", "PagBank", "B3", "Cielo", "Pismo", "PicPay", "Sicredi",
 ]
 
 GUPY_CAREERS = [
@@ -62,14 +96,8 @@ GUPY_CAREERS = [
     "https://picpay.gupy.io/",
 ]
 
-LEVER_BOARDS = [
-    "https://jobs.lever.co/pismo",
-]
-
-SITEMAPS = [
-    "https://remotar.com.br/sitemap.xml",
-    "https://querovagastech.com.br/sitemap.xml",
-]
+LEVER_BOARDS = ["https://jobs.lever.co/pismo"]
+SITEMAPS = ["https://remotar.com.br/sitemap.xml", "https://querovagastech.com.br/sitemap.xml"]
 
 TAG_PATTERNS = {
     "Python": r"\bpython\b|\bpyspark\b",
@@ -102,13 +130,15 @@ TAG_PATTERNS = {
 }
 
 SOURCE_NAME = {
-    "linkedin.com": "LinkedIn",
-    "gupy.io": "Gupy",
-    "jobs.lever.co": "Lever",
-    "boards.greenhouse.io": "Greenhouse",
-    "remotar.com.br": "Remotar",
+    "linkedin.com": "LinkedIn", "gupy.io": "Gupy", "jobs.lever.co": "Lever",
+    "boards.greenhouse.io": "Greenhouse", "remotar.com.br": "Remotar",
     "querovagastech.com.br": "Quero Vagas Tech",
 }
+
+METADATA_PREFIXES = [
+    "nível de experiência", "nivel de experiencia", "função ", "funcao ", "setores ", "tipo de emprego",
+    "competências ", "competencias ", "indicações", "indicacoes",
+]
 
 
 def norm(s: str) -> str:
@@ -116,19 +146,57 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip().lower()
 
 
+def canon_company(s: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", norm(s))
+
+
+def approved_company(company: str) -> bool:
+    c = canon_company(company)
+    return any(c == canon_company(t) or (len(c) >= 5 and c in canon_company(t)) or (len(canon_company(t)) >= 5 and canon_company(t) in c) for t in TARGET_COMPANIES)
+
+
+def contextual_company(company: str) -> bool:
+    c = canon_company(company)
+    return any(c == canon_company(t) or canon_company(t) in c for t in CONTEXT_ALLOWED_COMPANIES)
+
+
+def strong_finance_context(text: str) -> bool:
+    x = norm(text)
+    return any(p in x for p in STRONG_FINANCE_PHRASES)
+
+
 def domain_of(url: str) -> str:
-    host = urlparse(url).netloc.lower().replace("www.", "")
+    host = urlparse(url).netloc.lower().replace("www.", "").replace("br.", "", 1)
     for d in SOURCE_NAME:
         if host.endswith(d):
             return d
     return host
 
 
+def canonical_source(url: str) -> str:
+    if "linkedin.com/jobs/view" in url:
+        ids = re.findall(r"(\d{7,})", url)
+        if ids:
+            return "linkedin:" + ids[-1]
+    if ".gupy.io/" in url:
+        m = re.search(r"/jobs?/(\d+)", url)
+        if m:
+            return urlparse(url).netloc.lower() + ":" + m.group(1)
+    p = urlparse(url)
+    return (p.netloc.lower().replace("www.", "") + p.path.rstrip("/")).lower()
+
+
+def excluded_title(title: str) -> bool:
+    t = norm(title).replace("/", " ").replace("–", " ").replace("—", " ").replace("-", " ")
+    t = re.sub(r"\s+", " ", t)
+    return any(re.sub(r"\s+", " ", f.replace("/", " ").replace("-", " ")) in t for f in EXCLUDED_TITLE_FRAGMENTS)
+
+
 def safe_get(url: str, **kwargs):
     try:
         r = SESSION.get(url, timeout=TIMEOUT, allow_redirects=True, **kwargs)
         if r.status_code in (429, 500, 502, 503, 504):
-            time.sleep(1.5)
+            time.sleep(1.2)
             r = SESSION.get(url, timeout=TIMEOUT, allow_redirects=True, **kwargs)
         return r
     except Exception as exc:
@@ -136,36 +204,45 @@ def safe_get(url: str, **kwargs):
         return None
 
 
-def linkedin_urls() -> list[str]:
+def linkedin_query_urls(keyword: str, starts=(0,)) -> list[str]:
     out = []
     endpoint = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
+    for start in starts:
+        params = {
+            "keywords": keyword, "geoId": "106057199", "f_TPR": "r2592000",
+            "f_E": "2", "sortBy": "DD", "start": str(start),
+        }
+        r = safe_get(endpoint, params=params)
+        if not r or r.status_code != 200:
+            continue
+        soup = BeautifulSoup(r.text, "html.parser")
+        for card in soup.select("li") or [soup]:
+            urn = card.get("data-entity-urn", "") if hasattr(card, "get") else ""
+            m = re.search(r"jobPosting:(\d+)", urn)
+            if not m:
+                a = card.select_one("a[href*='/jobs/view/']") if hasattr(card, "select_one") else None
+                href = a.get("href", "") if a else ""
+                ids = re.findall(r"(\d{7,})", href)
+                m = re.match(r"(.*)", ids[-1]) if ids else None
+            if m:
+                jid = m.group(1)
+                u = f"https://www.linkedin.com/jobs/view/{jid}"
+                if u not in out:
+                    out.append(u)
+        time.sleep(0.15)
+    return out
+
+
+def linkedin_urls() -> list[str]:
+    out = []
     for kw in LINKEDIN_KEYWORDS:
-        for start in (0, 10):
-            params = {
-                "keywords": kw,
-                "geoId": "106057199",  # Brasil
-                "f_TPR": "r2592000",   # últimos 30 dias
-                "f_E": "2",            # entry level
-                "sortBy": "DD",
-                "start": str(start),
-            }
-            r = safe_get(endpoint, params=params)
-            if not r or r.status_code != 200:
-                continue
-            soup = BeautifulSoup(r.text, "html.parser")
-            cards = soup.select("li") or [soup]
-            for card in cards:
-                urn = card.get("data-entity-urn", "") if hasattr(card, "get") else ""
-                m = re.search(r"jobPosting:(\d+)", urn)
-                if not m:
-                    a = card.select_one("a[href*='/jobs/view/']") if hasattr(card, "select_one") else None
-                    href = a.get("href", "") if a else ""
-                    m = re.search(r"(?:-|/)(\d+)(?:\?|$)", href)
-                if m:
-                    url = f"https://www.linkedin.com/jobs/view/{m.group(1)}"
-                    if url not in out:
-                        out.append(url)
-            time.sleep(0.25)
+        for u in linkedin_query_urls(kw, (0, 10)):
+            if u not in out:
+                out.append(u)
+    for company in LINKEDIN_PRIORITY_COMPANIES:
+        for u in linkedin_query_urls(f'"{company}" junior tecnologia', (0,)):
+            if u not in out:
+                out.append(u)
     print(f"[source] LinkedIn: {len(out)} URLs")
     return out
 
@@ -182,15 +259,13 @@ def page_links(base: str, patterns: list[str], limit: int = 60) -> list[str]:
             out.append(u)
         if len(out) >= limit:
             break
-    # fallback for links serialized in scripts
     if len(out) < 5:
-        for p in patterns:
-            for m in re.finditer(r"https?://[^\"'<> ]+", r.text):
-                u = htmllib.unescape(m.group(0))
-                if re.search(p, u, re.I) and u not in out:
-                    out.append(u)
-                    if len(out) >= limit:
-                        break
+        for m in re.finditer(r"https?://[^\"'<> ]+", r.text):
+            u = htmllib.unescape(m.group(0))
+            if any(re.search(p, u, re.I) for p in patterns) and u not in out:
+                out.append(u)
+                if len(out) >= limit:
+                    break
     return out
 
 
@@ -198,7 +273,6 @@ def gupy_urls() -> list[str]:
     out = []
     for base in GUPY_CAREERS:
         urls = page_links(base, [r"\.gupy\.io/(?:job|jobs)/"])
-        # many career pages use relative /jobs/<id> links hidden in page data
         if not urls:
             r = safe_get(base)
             if r and r.status_code < 400:
@@ -207,10 +281,10 @@ def gupy_urls() -> list[str]:
                     u = f"https://{host}/jobs/{m.group(1)}?jobBoardSource=gupy_public_page"
                     if u not in urls:
                         urls.append(u)
-        for u in urls[:40]:
+        for u in urls[:50]:
             if u not in out:
                 out.append(u)
-        time.sleep(0.2)
+        time.sleep(0.1)
     print(f"[source] Gupy: {len(out)} URLs")
     return out
 
@@ -218,14 +292,14 @@ def gupy_urls() -> list[str]:
 def lever_urls() -> list[str]:
     out = []
     for board in LEVER_BOARDS:
-        for u in page_links(board, [r"jobs\.lever\.co/[^/]+/[a-z0-9-]+$"], 80):
+        for u in page_links(board, [r"jobs\.lever\.co/[^/]+/[a-z0-9-]+$"], 100):
             if u not in out:
                 out.append(u)
     print(f"[source] Lever: {len(out)} URLs")
     return out
 
 
-def sitemap_job_urls(url: str, max_urls: int = 50) -> list[str]:
+def sitemap_job_urls(url: str, max_urls: int = 60) -> list[str]:
     r = safe_get(url)
     if not r or r.status_code >= 400:
         return []
@@ -234,22 +308,20 @@ def sitemap_job_urls(url: str, max_urls: int = 50) -> list[str]:
     except Exception:
         return []
     locs = [el.text.strip() for el in root.iter() if el.tag.endswith("loc") and el.text]
-    # sitemap index: inspect a small number of child maps
     if locs and all(x.endswith(".xml") or "sitemap" in x for x in locs[: min(5, len(locs))]):
         nested = []
-        for child in locs[-3:]:
+        for child in locs[-4:]:
             nested.extend(sitemap_job_urls(child, max_urls=max_urls))
             if len(nested) >= max_urls:
                 break
         return nested[:max_urls]
-    jobs = [u for u in locs if re.search(r"/(?:job|vagas?)/", u, re.I)]
-    return jobs[-max_urls:]
+    return [u for u in locs if re.search(r"/(?:job|vagas?)/", u, re.I)][-max_urls:]
 
 
 def other_source_urls() -> list[str]:
     out = []
     for sm in SITEMAPS:
-        for u in sitemap_job_urls(sm, 40):
+        for u in sitemap_job_urls(sm, 50):
             if u not in out:
                 out.append(u)
     print(f"[source] Remotar/Quero Vagas Tech: {len(out)} URLs")
@@ -273,8 +345,8 @@ def find_jobposting(obj):
 
 
 def linkedin_job_id(url: str) -> str | None:
-    m = re.search(r"(?:-|/)(\d+)(?:\?|$)", url)
-    return m.group(1) if m else None
+    ids = re.findall(r"(\d{7,})", url)
+    return ids[-1] if ids else None
 
 
 def fetch_page(url: str) -> tuple[BeautifulSoup | None, dict | None]:
@@ -290,8 +362,7 @@ def fetch_page(url: str) -> tuple[BeautifulSoup | None, dict | None]:
     posting = None
     for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
         try:
-            data = json.loads(script.string or script.get_text())
-            posting = find_jobposting(data)
+            posting = find_jobposting(json.loads(script.string or script.get_text()))
             if posting:
                 break
         except Exception:
@@ -304,9 +375,7 @@ def text_from_posting(posting: dict | None, soup: BeautifulSoup | None) -> str:
         return norm(str(posting.get("description")))
     if soup:
         desc = soup.select_one(".show-more-less-html__markup, .description__text, [class*='description']")
-        if desc:
-            return norm(desc.get_text(" ", strip=True))
-        return norm(soup.get_text(" ", strip=True))
+        return norm((desc or soup).get_text(" ", strip=True))
     return ""
 
 
@@ -316,10 +385,10 @@ def company_from(posting: dict | None, soup: BeautifulSoup | None) -> str:
         if isinstance(org, dict) and org.get("name"):
             return str(org["name"]).strip()
     if soup:
-        for sel in [".topcard__org-name-link", ".topcard__flavor", "[class*='company-name']", "meta[property='og:site_name']"]:
+        for sel in [".topcard__org-name-link", ".topcard__flavor", "[class*='company-name']"]:
             node = soup.select_one(sel)
             if node:
-                val = (node.get("content") or node.get_text(" ", strip=True)).strip()
+                val = node.get_text(" ", strip=True).strip()
                 if val:
                     return val
     return ""
@@ -331,12 +400,8 @@ def title_from(posting: dict | None, soup: BeautifulSoup | None) -> str:
     if soup:
         for sel in ["h1", ".top-card-layout__title", "[class*='job-title']"]:
             node = soup.select_one(sel)
-            if node:
-                val = node.get_text(" ", strip=True)
-                if val:
-                    return val
-        if soup.title:
-            return soup.title.get_text(" ", strip=True)
+            if node and node.get_text(" ", strip=True):
+                return node.get_text(" ", strip=True)
     return ""
 
 
@@ -350,19 +415,21 @@ def extract_bullets(soup: BeautifulSoup | None, posting: dict | None) -> list[st
     if not raw and posting and posting.get("description"):
         ds = BeautifulSoup(str(posting["description"]), "html.parser")
         raw = [re.sub(r"\s+", " ", li.get_text(" ", strip=True)).strip() for li in ds.find_all("li")]
+
     benefit_words = ["vale ", "assistência", "assistencia", "seguro de vida", "gympass", "wellhub", "plr", "benefício", "beneficio", "day off", "licença", "licenca"]
-    techish = []
+    out, seen = [], set()
     for t in raw:
-        lt = t.lower()
-        if any(b in lt for b in benefit_words):
+        lt = norm(t)
+        if any(lt.startswith(p) for p in METADATA_PREFIXES) or any(b in lt for b in benefit_words):
             continue
-        if any(re.search(p, lt, re.I) for p in TAG_PATTERNS.values()) or any(k in lt for k in ["conhecimento", "experiência", "experiencia", "vivência", "vivencia", "familiaridade", "formação", "formacao"]):
-            techish.append(t)
-    seen, out = set(), []
-    for t in techish:
-        key = norm(t)
-        if key not in seen:
-            seen.add(key)
+        tech_or_req = any(re.search(p, lt, re.I) for p in TAG_PATTERNS.values()) or any(k in lt for k in [
+            "conhecimento", "experiência", "experiencia", "vivência", "vivencia", "familiaridade", "formação", "formacao",
+            "desenvolver", "atuar", "manutenção", "manutencao", "implementar", "construir", "criar", "integrar",
+        ])
+        if not tech_or_req:
+            continue
+        if lt not in seen:
+            seen.add(lt)
             out.append(t)
         if len(out) >= 18:
             break
@@ -374,7 +441,7 @@ def classify_tags(text: str) -> list[str]:
 
 
 def classify_area(title: str, text: str) -> str:
-    x = norm(title + " " + text[:1500])
+    x = norm(title + " " + text[:1600])
     if "backend" in x or "back-end" in x:
         return "Backend"
     if any(k in x for k in ["dados", "data scientist", "cientista de dados", "analytics", "data engineer"]):
@@ -383,7 +450,7 @@ def classify_area(title: str, text: str) -> str:
         return "Cloud / SRE"
     if any(k in x for k in ["automação", "automacao", "rpa"]):
         return "Automação & IA"
-    if any(k in x for k in ["qualidade", "qa", "testador"]):
+    if any(k in x for k in ["qualidade", " qa", "testador"]):
         return "QA"
     if any(k in x for k in ["sistemas", "sustentação", "sustentacao"]):
         return "Sistemas / Sustentação"
@@ -392,20 +459,13 @@ def classify_area(title: str, text: str) -> str:
 
 def classify_stack(tags: list[str], title: str) -> str:
     x = norm(title)
-    for stack, tag, words in [
-        ("Python", "Python", ["python"]),
-        ("Java", "Java", ["java", "spring"]),
-        (".NET / C#", ".NET/C#", [".net", "c#"]),
-        ("JavaScript / Node", "JavaScript/Node", ["node", "javascript", "typescript"]),
-    ]:
+    mapping = [("Python", "Python", ["python"]), ("Java", "Java", ["java", "spring"]), (".NET / C#", ".NET/C#", [".net", "c#"]), ("JavaScript / Node", "JavaScript/Node", ["node", "javascript", "typescript"])]
+    for stack, tag, words in mapping:
         if tag in tags and any(w in x for w in words):
             return stack
-    if "Python" in tags and "Java" not in tags and ".NET/C#" not in tags:
-        return "Python"
-    if "Java" in tags and ".NET/C#" not in tags:
-        return "Java"
-    if ".NET/C#" in tags:
-        return ".NET / C#"
+    for stack, tag in [("Python", "Python"), ("Java", "Java"), (".NET / C#", ".NET/C#")]:
+        if tag in tags:
+            return stack
     if "Dados/BI" in tags:
         return "Dados / BI"
     if "Cloud" in tags:
@@ -414,19 +474,27 @@ def classify_stack(tags: list[str], title: str) -> str:
 
 
 def is_relevant(title: str, company: str, text: str) -> bool:
-    merged = norm(" ".join([title, company, text[:5000]]))
     title_n = norm(title)
+    merged = norm(" ".join([title, company, text[:6000]]))
+    if excluded_title(title):
+        return False
+    if any(t in title_n for t in SENIOR_TITLE_TERMS):
+        return False
+    # Algumas páginas do LinkedIn exibem senioridade contraditória ao título.
+    if any(x in merged for x in ["nível de experiência pleno-sênior", "nivel de experiencia pleno-senior", "nível de experiência sênior", "nivel de experiencia senior"]):
+        return False
     junior = any(t in title_n for t in JUNIOR_TERMS) or any(t in merged[:1200] for t in JUNIOR_TERMS)
     tech = any(t in merged for t in TECH_TERMS)
-    finance = any(norm(t) in merged for t in TARGET_COMPANIES) or any(t in merged for t in FINANCE_TERMS)
-    # reject explicitly senior-only / pleno-only titles
-    if any(t in title_n for t in ["sênior", "senior", "pleno", "specialist", "especialista", "lead"]):
+    if not (junior and tech):
         return False
-    return junior and tech and finance
+    if approved_company(company):
+        return True
+    # Consultorias e novas empresas só entram com contexto financeiro forte explícito no anúncio.
+    return strong_finance_context(merged) and (contextual_company(company) or len([p for p in STRONG_FINANCE_PHRASES if p in merged]) >= 2)
 
 
 def req_tokens(reqs: Iterable[str]) -> set[str]:
-    stop = {"conhecimento", "experiência", "experiencia", "vivência", "vivencia", "básico", "basico", "intermediário", "intermediario", "avançado", "avancado", "com", "em", "de", "do", "da", "e", "ou", "para"}
+    stop = {"conhecimento", "experiência", "experiencia", "vivência", "vivencia", "básico", "basico", "intermediário", "intermediario", "avançado", "avancado", "com", "em", "de", "do", "da", "e", "ou", "para", "atuar", "desenvolver"}
     toks = set()
     for r in reqs:
         toks.update(w for w in re.findall(r"[a-z0-9+#.]+", norm(r)) if len(w) > 2 and w not in stop)
@@ -435,9 +503,7 @@ def req_tokens(reqs: Iterable[str]) -> set[str]:
 
 def similarity(a: list[str], b: list[str]) -> float:
     A, B = req_tokens(a), req_tokens(b)
-    if not A or not B:
-        return 0.0
-    return len(A & B) / len(A | B)
+    return len(A & B) / len(A | B) if A and B else 0.0
 
 
 def parse_js_array(path: Path) -> list[dict]:
@@ -456,8 +522,7 @@ def parse_js_array(path: Path) -> list[dict]:
 def existing_auto_domains() -> dict[str, str]:
     if not AUTO_FILE.exists():
         return {}
-    text = AUTO_FILE.read_text(encoding="utf-8")
-    m = re.search(r"Object\.assign\(window\.BANCO2027\.domains,(\{.*?\})\);", text, re.S)
+    m = re.search(r"Object\.assign\(window\.BANCO2027\.domains,(\{.*?\})\);", AUTO_FILE.read_text(encoding="utf-8"), re.S)
     if not m:
         return {}
     try:
@@ -487,9 +552,8 @@ def infer_domain(posting: dict | None) -> str | None:
 
 
 def discover_urls() -> list[str]:
-    buckets = [linkedin_urls(), gupy_urls(), lever_urls(), other_source_urls()]
     out = []
-    for bucket in buckets:
+    for bucket in [linkedin_urls(), gupy_urls(), lever_urls(), other_source_urls()]:
         for u in bucket:
             if u not in out:
                 out.append(u)
@@ -504,7 +568,7 @@ def main() -> int:
     auto_existing = parse_js_array(AUTO_FILE)
     existing.extend(auto_existing)
     max_id = max([int(j.get("id", 0)) for j in existing] + [0])
-    known_urls = {j.get("source", "") for j in existing if j.get("source")}
+    known_sources = {canonical_source(j.get("source", "")) for j in existing if j.get("source")}
 
     candidate_urls = discover_urls()
     new_jobs = []
@@ -514,7 +578,8 @@ def main() -> int:
     for url in candidate_urls:
         if len(new_jobs) >= MAX_NEW:
             break
-        if url in known_urls:
+        csource = canonical_source(url)
+        if csource in known_sources:
             continue
         src_domain = domain_of(url)
         if not any(src_domain.endswith(d) for d in SOURCE_NAME):
@@ -528,16 +593,15 @@ def main() -> int:
         if not title or not is_relevant(title, company, text):
             continue
         requirements = extract_bullets(soup, posting)
-        if len(requirements) < 2:
+        if len(requirements) < 3:
             continue
-
-        # Regra principal de duplicidade: exigências essencialmente idênticas.
+        # Deduplicação principal solicitada pelo usuário: exigências essencialmente idênticas.
         if any(similarity(requirements, j.get("requirements", [])) >= 0.90 for j in existing + new_jobs):
             continue
-
         tags = classify_tags(" ".join([title, text, " ".join(requirements)]))
         if len(tags) < 2:
             continue
+
         max_id += 1
         source_label = SOURCE_NAME.get(src_domain, src_domain)
         job = {
@@ -553,20 +617,21 @@ def main() -> int:
             "tags": tags,
             "requirements": requirements[:14],
             "differentials": [],
-            "reason": f"Coletada automaticamente em {source_label}. Revise o anúncio original antes de se candidatar; a compatibilidade é calculada pelas exigências extraídas.",
+            "reason": f"Coletada automaticamente em {source_label}. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
             "source": url,
             "collectedAt": collected_at,
             "auto": True,
         }
         new_jobs.append(job)
+        known_sources.add(csource)
         dom = infer_domain(posting)
         if company and dom:
             domains[company] = dom
         print(f"[novo] {company} — {title}")
-        time.sleep(0.18)
+        time.sleep(0.12)
 
     if not new_jobs:
-        print("[info] Nenhuma vaga nova distinta por exigências nesta execução.")
+        print("[info] Nenhuma vaga nova e relevante, distinta por exigências, nesta execução.")
         return 0
 
     all_auto = auto_existing + new_jobs
