@@ -1,0 +1,15 @@
+const test=require('node:test'),assert=require('node:assert/strict'),E=require('../engine');
+const S=[{id:'python',label:'Python',re:/python/},{id:'aws',label:'AWS',re:/aws/},{id:'azure',label:'Azure',re:/azure/}];
+const p={python:{l:2,e:3},aws:{l:1,e:2},azure:{l:0,e:0}};
+const j={key:'test',role:'Backend Júnior',requirements:['Python','Python básico','Python prático'],differentials:[],tags:['Python'],status:'Ativa',eligible:true,location:'São Paulo',modality:'Remoto'};
+test('mandatory unknown blocks applying despite known technology',()=>{const a=E.evaluate({...j,requirements:['Python','Python prático','Experiência com COBOL']},p,S);assert.equal(a.unknown,1);assert.equal(a.canApply,false);assert.ok(a.score<80);});
+test('missing mandatory is not hidden by optional matches',()=>{const a=E.evaluate({...j,requirements:['Python','AWS','Azure'],differentials:['Python']},p,S);assert.equal(a.critical,1);assert.equal(a.canApply,false);});
+test('no evidence gives no claimed competence',()=>{const a=E.evaluate(j,{python:{l:4,e:0}},S);assert.equal(a.score,0);assert.equal(a.canApply,false);});
+test('cloud alternatives allow one provider, conjunction requires both',()=>{assert.equal(E.evaluate({...j,requirements:['AWS ou Azure']},{aws:{l:2,e:3}},S).score,100);assert.equal(E.evaluate({...j,requirements:['AWS e Azure']},{aws:{l:2,e:3}},S).score,0);});
+test('affirmative eligibility is never inferred',()=>{const x={...j,role:'Backend Júnior PCD'};assert.equal(E.evaluate(x,p,S).canApply,false);assert.equal(E.evaluate(x,p,S,{}, {test:{eligibility:'yes'}}).canApply,true);});
+test('missing dates are not invented or treated as active',()=>{const n=E.normalize({...j,id:1});assert.equal(n.status,'Possivelmente encerrada');assert.equal(n.firstSeenAt,null);});
+test('confirmed mandatory and live status can recommend applying',()=>{const a=E.evaluate(j,p,S);assert.equal(a.score,100);assert.equal(a.canApply,true);assert.equal(E.evaluate({...j,status:'Encerrada'},p,S).canApply,false);});
+test('stale verification excludes active rankings',()=>{assert.equal(E.normalize({...j,lastVerifiedAt:'2020-01-01'}).status,'Possivelmente encerrada');});
+test('seniority in requirements overrides junior title',()=>{assert.equal(E.normalize({...j,requirements:['Python','SQL','Experiência como sênior']}).eligible,false);});
+test('location and modality gates block incompatible targets',()=>{const a=E.evaluate({...j,modality:'Presencial'},p,S,{location:'Recife'});assert.equal(a.canApply,false);assert.equal(a.label,'Inviável no recorte');});
+test('study priority simulates actual unlocked jobs',()=>{const a=E.priorities([{...j,requirements:['Python','AWS']}],p,S,{},{});assert.ok(a.length);assert.equal(a[0].skill.id,'aws');assert.equal(a[0].unlocked,1);});

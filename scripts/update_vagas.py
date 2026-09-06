@@ -13,6 +13,7 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
+from quality import split_requirements, senior_conflict, location_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
@@ -592,7 +593,9 @@ def main() -> int:
         text = text_from_posting(posting, soup)
         if not title or not is_relevant(title, company, text):
             continue
-        requirements = extract_bullets(soup, posting)
+        if senior_conflict(title, text):
+            continue
+        requirements, differentials = split_requirements(soup, posting)
         if len(requirements) < 3:
             continue
         # Deduplicação principal solicitada pelo usuário: exigências essencialmente idênticas.
@@ -609,14 +612,16 @@ def main() -> int:
             "company": company or "Empresa não identificada",
             "role": title,
             "level": "Júnior / entrada",
-            "status": "Ativa",
+            "status": "Possivelmente encerrada",
             "statusRaw": f"Coleta automática em {collected_at[:10]} — {source_label}",
             "area": classify_area(title, text),
             "stack": classify_stack(tags, title),
             "fit": "AUTO — NOVA",
             "tags": tags,
             "requirements": requirements[:14],
-            "differentials": [],
+            "differentials": differentials,
+            **location_fields(posting, text),
+            "sourceName": source_label,
             "reason": f"Coletada automaticamente em {source_label}. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
             "source": url,
             "collectedAt": collected_at,
@@ -630,6 +635,7 @@ def main() -> int:
         print(f"[novo] {company} — {title}")
         time.sleep(0.12)
 
+    (ROOT / "collection-report.json").write_text(json.dumps({"updatedAt": collected_at, "added": len(new_jobs), "candidateUrls": len(candidate_urls)}), encoding="utf-8")
     if not new_jobs:
         print("[info] Nenhuma vaga nova e relevante, distinta por exigências, nesta execução.")
         return 0

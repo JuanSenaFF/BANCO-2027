@@ -1,0 +1,5180 @@
+{
+  "meta": {
+    "catalogBuiltAt": "2026-09-06T16:14:29+00:00",
+    "total": 55,
+    "added": 0,
+    "verificationAttempted": 48
+  },
+  "jobs": [
+    {
+      "id": 1,
+      "company": "B3",
+      "role": "Analista de Automação Júnior (Python)",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Publicada em 02/09/2026; recente na consulta",
+      "area": "Automação & IA",
+      "stack": "Python",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Python",
+        "SQL",
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "Docker",
+        "Dados/BI",
+        "Automação",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Python",
+        "Selenium",
+        "APIs REST",
+        "SQL",
+        "Git",
+        "JavaScript",
+        "Lógica de programação",
+        "Manipulação de dados",
+        "Automação de processos",
+        "Investigação / troubleshooting"
+      ],
+      "differentials": [
+        "Databricks",
+        "Node-RED",
+        "n8n",
+        "Docker/Podman",
+        "Integrações entre sistemas"
+      ],
+      "reason": "Aproveita diretamente Python, automação, APIs e dados e aproxima o perfil de engenharia em infraestrutura financeira.",
+      "source": "https://br.linkedin.com/jobs/view/8129-analista-de-automa%C3%A7%C3%A3o-j%C3%BAnior-python-at-b3-4482282810/",
+      "key": "linkedin:4482282810",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "Selenium",
+          "mandatory": true
+        },
+        {
+          "text": "APIs REST",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "JavaScript",
+          "mandatory": true
+        },
+        {
+          "text": "Lógica de programação",
+          "mandatory": true
+        },
+        {
+          "text": "Manipulação de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Automação de processos",
+          "mandatory": true
+        },
+        {
+          "text": "Investigação / troubleshooting",
+          "mandatory": true
+        },
+        {
+          "text": "Databricks",
+          "mandatory": false
+        },
+        {
+          "text": "Node-RED",
+          "mandatory": false
+        },
+        {
+          "text": "n8n",
+          "mandatory": false
+        },
+        {
+          "text": "Docker/Podman",
+          "mandatory": false
+        },
+        {
+          "text": "Integrações entre sistemas",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 2,
+      "company": "B3",
+      "role": "Analista Engenharia de Software Jr Java / Analista Sistemas Nível I",
+      "level": "Júnior / Nível I",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Publicada em 12/08/2026",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "SQL",
+        "Java",
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Azure",
+        "Docker",
+        "Mensageria",
+        "Cloud",
+        "Dados/BI",
+        "POO/Design"
+      ],
+      "requirements": [
+        "Java 8+",
+        "Spring Boot",
+        "Spring MVC",
+        "Spring Data",
+        "Spring Test",
+        "SQL/PLSQL",
+        "JUnit",
+        "REST APIs",
+        "Swagger/OpenAPI",
+        "Git/GitHub",
+        "JavaServer Faces (JSF)"
+      ],
+      "differentials": [
+        "DevSecOps",
+        "CI",
+        "Cloud/Azure",
+        "Kafka",
+        "Docker",
+        "Angular/React/JavaScript",
+        "JMeter",
+        "Design Patterns",
+        "Inglês técnico"
+      ],
+      "reason": "Excelente fotografia de backend Java júnior em infraestrutura de mercado financeiro.",
+      "source": "https://br.linkedin.com/jobs/view/8085-analista-engenharia-software-jr-java-at-b3-4474777160/",
+      "key": "linkedin:4474777160",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java 8+",
+          "mandatory": true
+        },
+        {
+          "text": "Spring Boot",
+          "mandatory": true
+        },
+        {
+          "text": "Spring MVC",
+          "mandatory": true
+        },
+        {
+          "text": "Spring Data",
+          "mandatory": true
+        },
+        {
+          "text": "Spring Test",
+          "mandatory": true
+        },
+        {
+          "text": "SQL/PLSQL",
+          "mandatory": true
+        },
+        {
+          "text": "JUnit",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Swagger/OpenAPI",
+          "mandatory": true
+        },
+        {
+          "text": "Git/GitHub",
+          "mandatory": true
+        },
+        {
+          "text": "JavaServer Faces (JSF)",
+          "mandatory": true
+        },
+        {
+          "text": "DevSecOps",
+          "mandatory": false
+        },
+        {
+          "text": "CI",
+          "mandatory": false
+        },
+        {
+          "text": "Cloud/Azure",
+          "mandatory": false
+        },
+        {
+          "text": "Kafka",
+          "mandatory": false
+        },
+        {
+          "text": "Docker",
+          "mandatory": false
+        },
+        {
+          "text": "Angular/React/JavaScript",
+          "mandatory": false
+        },
+        {
+          "text": "JMeter",
+          "mandatory": false
+        },
+        {
+          "text": "Design Patterns",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês técnico",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 3,
+      "company": "B3",
+      "role": "Analista Engenharia Software Jr — vaga afirmativa PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Publicada em 05/08/2026; status atual não confirmado",
+      "area": "Engenharia de Software",
+      "stack": "Java",
+      "fit": "ALTA",
+      "tags": [
+        "Java",
+        "Testes",
+        "POO/Design",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Java básico",
+        "Orientação a objetos",
+        "Lógica de programação",
+        "Testes e validações",
+        "Documentação",
+        "Sustentação de aplicações",
+        "Análise de incidentes",
+        "Análise de causa raiz"
+      ],
+      "differentials": [
+        "Experiência com sistemas críticos",
+        "Conhecimento do mercado financeiro"
+      ],
+      "reason": "Mostra uma porta de entrada Java com exigência inicial menor do que outras vagas enterprise.",
+      "source": "https://br.linkedin.com/jobs/view/8038-analista-engenharia-software-jr-at-b3-4470704439/",
+      "key": "linkedin:4470704439",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java básico",
+          "mandatory": true
+        },
+        {
+          "text": "Orientação a objetos",
+          "mandatory": true
+        },
+        {
+          "text": "Lógica de programação",
+          "mandatory": true
+        },
+        {
+          "text": "Testes e validações",
+          "mandatory": true
+        },
+        {
+          "text": "Documentação",
+          "mandatory": true
+        },
+        {
+          "text": "Sustentação de aplicações",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de incidentes",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de causa raiz",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com sistemas críticos",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento do mercado financeiro",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 4,
+      "company": "B3",
+      "role": "Analista Engenharia Software Jr — IAM / Segurança",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Publicada em 09/03/2026; histórica",
+      "area": "Engenharia de Software",
+      "stack": "Java",
+      "fit": "ALTA",
+      "tags": [
+        "Java",
+        "REST/APIs",
+        "Linux",
+        "Segurança"
+      ],
+      "requirements": [
+        "Java",
+        "Linux",
+        "Oracle",
+        "APIs",
+        "Segurança de APIs",
+        "IAM",
+        "Ping Identity",
+        "Apache/JBoss",
+        "Jira",
+        "Auditoria e controles"
+      ],
+      "differentials": [
+        "Experiência com middleware",
+        "Conhecimentos de identidade e acesso"
+      ],
+      "reason": "Boa porta de entrada para tecnologia financeira e reforça segurança como competência transversal.",
+      "source": "https://br.linkedin.com/jobs/view/analista-engenharia-de-qualidade-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-b3-4391212887/",
+      "key": "linkedin:4391212887",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "Linux",
+          "mandatory": true
+        },
+        {
+          "text": "Oracle",
+          "mandatory": true
+        },
+        {
+          "text": "APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Segurança de APIs",
+          "mandatory": true
+        },
+        {
+          "text": "IAM",
+          "mandatory": true
+        },
+        {
+          "text": "Ping Identity",
+          "mandatory": true
+        },
+        {
+          "text": "Apache/JBoss",
+          "mandatory": true
+        },
+        {
+          "text": "Jira",
+          "mandatory": true
+        },
+        {
+          "text": "Auditoria e controles",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com middleware",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimentos de identidade e acesso",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 5,
+      "company": "Cielo",
+      "role": "Desenvolvedor(a) de Software Jr — foco IA / PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": "Python",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Python",
+        "SQL",
+        "REST/APIs",
+        "GCP",
+        "Cloud",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Python",
+        "Backend",
+        "APIs e integrações",
+        "SQL/NoSQL",
+        "Cloud/GCP",
+        "IA generativa",
+        "Prompt Engineering",
+        "Desenvolvimento de software"
+      ],
+      "differentials": [
+        "Vertex AI",
+        "Escalabilidade de APIs"
+      ],
+      "reason": "Combina Python, APIs, banco de dados e cloud dentro de pagamentos.",
+      "source": "https://br.linkedin.com/jobs/view/desenvolvedor-a-de-software-jr-foco-em-ia-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-cielo-4473806428/",
+      "key": "linkedin:4473806428",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "Backend",
+          "mandatory": true
+        },
+        {
+          "text": "APIs e integrações",
+          "mandatory": true
+        },
+        {
+          "text": "SQL/NoSQL",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud/GCP",
+          "mandatory": true
+        },
+        {
+          "text": "IA generativa",
+          "mandatory": true
+        },
+        {
+          "text": "Prompt Engineering",
+          "mandatory": true
+        },
+        {
+          "text": "Desenvolvimento de software",
+          "mandatory": true
+        },
+        {
+          "text": "Vertex AI",
+          "mandatory": false
+        },
+        {
+          "text": "Escalabilidade de APIs",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 6,
+      "company": "Cielo",
+      "role": "Engenheiro(a) de Software Jr — Backend Java / Full Stack PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Java",
+        "REST/APIs",
+        "AWS",
+        "Azure",
+        "GCP",
+        "Cloud",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Java",
+        "Spring Boot",
+        "Hibernate/JPA",
+        "REST APIs",
+        "Modelagem de dados",
+        "React básico",
+        "Cloud AWS/Azure/GCP",
+        "Metodologias ágeis"
+      ],
+      "differentials": [
+        "Experiência em meios de pagamento"
+      ],
+      "reason": "Reforça Java/Spring como stack de backend em pagamentos e cloud como competência importante.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-jr-backend-java-full-stack-vaga-afirmativa-para-pcd-at-cielo-4481831631/",
+      "key": "linkedin:4481831631",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "Spring Boot",
+          "mandatory": true
+        },
+        {
+          "text": "Hibernate/JPA",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem de dados",
+          "mandatory": true
+        },
+        {
+          "text": "React básico",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud AWS/Azure/GCP",
+          "mandatory": true
+        },
+        {
+          "text": "Metodologias ágeis",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em meios de pagamento",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 7,
+      "company": "Getnet",
+      "role": "Júnior Backend Developer — PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Indexada em 2026; status atual pode ter mudado",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "SQL",
+        "Java",
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "CI/CD",
+        "Microsserviços",
+        "Cloud",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Node.js",
+        "Java",
+        "REST APIs",
+        "Testes unitários",
+        "Code Review",
+        "Git",
+        "Metodologias ágeis",
+        "Banco de dados PostgreSQL/MongoDB",
+        "Microsserviços",
+        "Cloud",
+        "CI/CD"
+      ],
+      "differentials": [
+        "JavaScript/TypeScript",
+        "Testes de performance",
+        "DevOps",
+        "Salesforce"
+      ],
+      "reason": "Perfil backend bastante alinhado ao núcleo do Banco 2027, apesar de linguagem principal diferente de Python.",
+      "source": "https://br.linkedin.com/jobs/view/junior-backend-developer-pcd-at-getnet-brasil-4442931588/",
+      "key": "linkedin:4442931588",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Node.js",
+          "mandatory": true
+        },
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Testes unitários",
+          "mandatory": true
+        },
+        {
+          "text": "Code Review",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Metodologias ágeis",
+          "mandatory": true
+        },
+        {
+          "text": "Banco de dados PostgreSQL/MongoDB",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud",
+          "mandatory": true
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": true
+        },
+        {
+          "text": "JavaScript/TypeScript",
+          "mandatory": false
+        },
+        {
+          "text": "Testes de performance",
+          "mandatory": false
+        },
+        {
+          "text": "DevOps",
+          "mandatory": false
+        },
+        {
+          "text": "Salesforce",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 8,
+      "company": "Getnet",
+      "role": "Junior Full Stack Developer — Node/React",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Indexada em 2026",
+      "area": "Produto / Negócio",
+      "stack": "JavaScript / Node",
+      "fit": "ALTA",
+      "tags": [
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Node.js",
+        "React",
+        "JavaScript",
+        "REST APIs",
+        "SOAP APIs",
+        "Banco de dados",
+        "Testes",
+        "Debugging",
+        "Documentação",
+        "Git"
+      ],
+      "differentials": [
+        "Manutenção evolutiva de aplicações"
+      ],
+      "reason": "Boa referência de entrada em desenvolvimento na adquirência, com forte base em APIs e ciclo de software.",
+      "source": "https://br.linkedin.com/jobs/view/junior-full-stack-developer-at-getnet-brasil-4444244513/",
+      "key": "linkedin:4444244513",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Node.js",
+          "mandatory": true
+        },
+        {
+          "text": "React",
+          "mandatory": true
+        },
+        {
+          "text": "JavaScript",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "SOAP APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Banco de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Testes",
+          "mandatory": true
+        },
+        {
+          "text": "Debugging",
+          "mandatory": true
+        },
+        {
+          "text": "Documentação",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Manutenção evolutiva de aplicações",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 9,
+      "company": "Pismo",
+      "role": "Software Engineer — Depositary",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Java",
+        "Git",
+        "Testes",
+        "AWS",
+        "Mensageria",
+        "Observabilidade",
+        "Cloud",
+        "POO/Design"
+      ],
+      "requirements": [
+        "Java ou Go",
+        "Orientação a objetos",
+        "Git",
+        "SQL",
+        "Testes automatizados",
+        "Inglês B1"
+      ],
+      "differentials": [
+        "AWS S3",
+        "AWS Lambda",
+        "AWS SQS",
+        "CloudWatch",
+        "PostgreSQL/MySQL",
+        "Python/Shell",
+        "Observabilidade",
+        "Projetos acadêmicos/pessoais",
+        "Mercado financeiro"
+      ],
+      "reason": "Uma das vagas mais acessíveis e objetivas de backend júnior da amostra.",
+      "source": "https://jobs.lever.co/pismo/3b2c04cf-44c3-4e74-b6fd-38f45099d192",
+      "key": "jobs.lever.co/pismo/3b2c04cf-44c3-4e74-b6fd-38f45099d192",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java ou Go",
+          "mandatory": true
+        },
+        {
+          "text": "Orientação a objetos",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Testes automatizados",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês B1",
+          "mandatory": true
+        },
+        {
+          "text": "AWS S3",
+          "mandatory": false
+        },
+        {
+          "text": "AWS Lambda",
+          "mandatory": false
+        },
+        {
+          "text": "AWS SQS",
+          "mandatory": false
+        },
+        {
+          "text": "CloudWatch",
+          "mandatory": false
+        },
+        {
+          "text": "PostgreSQL/MySQL",
+          "mandatory": false
+        },
+        {
+          "text": "Python/Shell",
+          "mandatory": false
+        },
+        {
+          "text": "Observabilidade",
+          "mandatory": false
+        },
+        {
+          "text": "Projetos acadêmicos/pessoais",
+          "mandatory": false
+        },
+        {
+          "text": "Mercado financeiro",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 10,
+      "company": "PicPay",
+      "role": "Desenvolvedor(a) PHP Jr — PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": "PHP",
+      "fit": "ALTA",
+      "tags": [
+        "SQL",
+        "Git",
+        "Testes",
+        "Docker",
+        "Microsserviços",
+        "Mensageria",
+        "Segurança",
+        "POO/Design"
+      ],
+      "requirements": [
+        "PHP 8+",
+        "Laravel/Lumen/Swoole/HyperF",
+        "MySQL",
+        "MongoDB",
+        "Docker",
+        "Git",
+        "TDD",
+        "Design Patterns",
+        "Qualidade de código",
+        "Segurança",
+        "Testes"
+      ],
+      "differentials": [
+        "Microsserviços",
+        "RabbitMQ/Kafka",
+        "OWASP",
+        "Clean Code",
+        "SOLID",
+        "DRY",
+        "Metodologias ágeis"
+      ],
+      "reason": "Mesmo fora da stack Python, cobra fundamentos diretamente transferíveis para backend profissional.",
+      "source": "https://br.linkedin.com/jobs/view/desenvolvedor-a-php-jr-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-picpay-4480708943/",
+      "key": "linkedin:4480708943",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "PHP 8+",
+          "mandatory": true
+        },
+        {
+          "text": "Laravel/Lumen/Swoole/HyperF",
+          "mandatory": true
+        },
+        {
+          "text": "MySQL",
+          "mandatory": true
+        },
+        {
+          "text": "MongoDB",
+          "mandatory": true
+        },
+        {
+          "text": "Docker",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "TDD",
+          "mandatory": true
+        },
+        {
+          "text": "Design Patterns",
+          "mandatory": true
+        },
+        {
+          "text": "Qualidade de código",
+          "mandatory": true
+        },
+        {
+          "text": "Segurança",
+          "mandatory": true
+        },
+        {
+          "text": "Testes",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": false
+        },
+        {
+          "text": "RabbitMQ/Kafka",
+          "mandatory": false
+        },
+        {
+          "text": "OWASP",
+          "mandatory": false
+        },
+        {
+          "text": "Clean Code",
+          "mandatory": false
+        },
+        {
+          "text": "SOLID",
+          "mandatory": false
+        },
+        {
+          "text": "DRY",
+          "mandatory": false
+        },
+        {
+          "text": "Metodologias ágeis",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 11,
+      "company": "Banco BV",
+      "role": "Analista Jr — Risco de Crédito",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "IA/ML",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "SQL intermediário",
+        "Python para análise de dados",
+        "Estatística básica",
+        "Excel",
+        "Visualização de dados",
+        "Risco de crédito",
+        "Análise quantitativa"
+      ],
+      "differentials": [
+        "Modelagem estatística",
+        "Machine Learning",
+        "Conhecimento de produtos de crédito"
+      ],
+      "reason": "Casa Python + SQL com domínio de crédito, exatamente uma combinação útil para entrar em banco.",
+      "source": "https://br.linkedin.com/jobs/view/analista-jr-risco-de-cr%C3%A9dito-at-banco-bv-4479798809/",
+      "key": "linkedin:4479798809",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL intermediário",
+          "mandatory": true
+        },
+        {
+          "text": "Python para análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Estatística básica",
+          "mandatory": true
+        },
+        {
+          "text": "Excel",
+          "mandatory": true
+        },
+        {
+          "text": "Visualização de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Risco de crédito",
+          "mandatory": true
+        },
+        {
+          "text": "Análise quantitativa",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem estatística",
+          "mandatory": false
+        },
+        {
+          "text": "Machine Learning",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de produtos de crédito",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 12,
+      "company": "Banco BMG",
+      "role": "Analista de Sistemas Jr — PCD",
+      "level": "Júnior",
+      "status": "Encerrada",
+      "statusRaw": "Encerrada na fonte consultada",
+      "area": "Sistemas / Sustentação",
+      "stack": "JavaScript / Node",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git"
+      ],
+      "requirements": [
+        "React",
+        "JavaScript ES6+",
+        "HTML",
+        "CSS",
+        "REST APIs",
+        "Git",
+        "Webpack/Vite",
+        "Scrum/Kanban",
+        "Documentação",
+        "Code Review"
+      ],
+      "differentials": [
+        "Componentes funcionais e hooks",
+        "Layouts responsivos"
+      ],
+      "reason": "Não é backend, mas comprova uma porta real para Sistemas Jr dentro de banco.",
+      "source": "https://bancobmg.gupy.io/jobs/9708140",
+      "key": "bancobmg.gupy.io:9708140",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "React",
+          "mandatory": true
+        },
+        {
+          "text": "JavaScript ES6+",
+          "mandatory": true
+        },
+        {
+          "text": "HTML",
+          "mandatory": true
+        },
+        {
+          "text": "CSS",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Webpack/Vite",
+          "mandatory": true
+        },
+        {
+          "text": "Scrum/Kanban",
+          "mandatory": true
+        },
+        {
+          "text": "Documentação",
+          "mandatory": true
+        },
+        {
+          "text": "Code Review",
+          "mandatory": true
+        },
+        {
+          "text": "Componentes funcionais e hooks",
+          "mandatory": false
+        },
+        {
+          "text": "Layouts responsivos",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "company": "Banco Daycoval",
+      "role": "Analista de Sistemas Jr — FIDC",
+      "level": "Júnior",
+      "status": "Encerrada",
+      "statusRaw": "Encerrada na fonte consultada",
+      "area": "Sistemas / Sustentação",
+      "stack": "Multistack",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "SQL",
+        "Dados/BI",
+        "Crédito/Risco",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "SQL",
+        "Homologação",
+        "Deploy",
+        "GMUD",
+        "Troubleshooting",
+        "Suporte a sistemas",
+        "Banco de dados",
+        "FIDC",
+        "Documentação"
+      ],
+      "differentials": [
+        "Conhecimento de fundos de direitos creditórios"
+      ],
+      "reason": "SQL, produção e contexto financeiro tornam a vaga bastante útil como entrada, mesmo sem foco em desenvolvimento puro.",
+      "source": "https://br.linkedin.com/jobs/view/analista-de-sistemas-jr-fidc-at-banco-daycoval-4413223614/",
+      "key": "linkedin:4413223614",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Homologação",
+          "mandatory": true
+        },
+        {
+          "text": "Deploy",
+          "mandatory": true
+        },
+        {
+          "text": "GMUD",
+          "mandatory": true
+        },
+        {
+          "text": "Troubleshooting",
+          "mandatory": true
+        },
+        {
+          "text": "Suporte a sistemas",
+          "mandatory": true
+        },
+        {
+          "text": "Banco de dados",
+          "mandatory": true
+        },
+        {
+          "text": "FIDC",
+          "mandatory": true
+        },
+        {
+          "text": "Documentação",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de fundos de direitos creditórios",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "company": "Banco Daycoval",
+      "role": "Analista de Jornada Digital Jr",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Automação & IA",
+      "stack": "Multistack",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "SQL",
+        "Dados/BI",
+        "Automação",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Chatbots",
+        "Automação de processos",
+        "IA",
+        "WhatsApp",
+        "SQL",
+        "Power BI",
+        "Análise de dados",
+        "Fluxos e jornadas digitais",
+        "Estruturas de dados"
+      ],
+      "differentials": [
+        "n8n",
+        "Zendesk",
+        "Salesforce"
+      ],
+      "reason": "Muito aderente à experiência em automação e ao interesse em sistemas de atendimento com IA.",
+      "source": "https://br.linkedin.com/jobs/view/analista-de-jornada-digital-jr-at-banco-daycoval-4481580823/",
+      "key": "linkedin:4481580823",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Chatbots",
+          "mandatory": true
+        },
+        {
+          "text": "Automação de processos",
+          "mandatory": true
+        },
+        {
+          "text": "IA",
+          "mandatory": true
+        },
+        {
+          "text": "WhatsApp",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Power BI",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Fluxos e jornadas digitais",
+          "mandatory": true
+        },
+        {
+          "text": "Estruturas de dados",
+          "mandatory": true
+        },
+        {
+          "text": "n8n",
+          "mandatory": false
+        },
+        {
+          "text": "Zendesk",
+          "mandatory": false
+        },
+        {
+          "text": "Salesforce",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 15,
+      "company": "Dock",
+      "role": "DBA Junior — SQL Server",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Atualizada em 03/07/2026; status atual não confirmado",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "SQL",
+        "AWS",
+        "Azure",
+        "Cloud",
+        "Dados/BI",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "SQL Server",
+        "Administração de banco de dados",
+        "Backup/Restore",
+        "Troubleshooting",
+        "Replicação",
+        "Cloud",
+        "AWS RDS/Azure/OCI",
+        "Incidentes",
+        "ITIL"
+      ],
+      "differentials": [
+        "Operação 12x36",
+        "Experiência com ambientes críticos"
+      ],
+      "reason": "Aproveita a base SQL Server e adiciona operação/cloud em uma empresa de infraestrutura de pagamentos.",
+      "source": "https://remotar.com.br/job/124228/dock/dba-junior-sqlserver",
+      "key": "remotar.com.br/job/124228/dock/dba-junior-sqlserver",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL Server",
+          "mandatory": true
+        },
+        {
+          "text": "Administração de banco de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Backup/Restore",
+          "mandatory": true
+        },
+        {
+          "text": "Troubleshooting",
+          "mandatory": true
+        },
+        {
+          "text": "Replicação",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud",
+          "mandatory": true
+        },
+        {
+          "text": "AWS RDS/Azure/OCI",
+          "mandatory": true
+        },
+        {
+          "text": "Incidentes",
+          "mandatory": true
+        },
+        {
+          "text": "ITIL",
+          "mandatory": true
+        },
+        {
+          "text": "Operação 12x36",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com ambientes críticos",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 16,
+      "company": "Núclea",
+      "role": "Analista de Dados Estratégicos Júnior — afirmativa",
+      "level": "Júnior",
+      "status": "Encerrada",
+      "statusRaw": "Encerrada na fonte consultada",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Excel",
+        "Power BI",
+        "KPIs",
+        "Análise descritiva",
+        "Análise preditiva",
+        "Consistência de dados",
+        "Relatórios",
+        "Indicadores",
+        "Regras de negócio"
+      ],
+      "differentials": [
+        "Inglês",
+        "Projeções e correlações"
+      ],
+      "reason": "Boa porta para o setor financeiro, embora menos próxima de backend.",
+      "source": "https://nuclea.gupy.io/jobs/9398041",
+      "key": "nuclea.gupy.io:9398041",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Excel",
+          "mandatory": true
+        },
+        {
+          "text": "Power BI",
+          "mandatory": true
+        },
+        {
+          "text": "KPIs",
+          "mandatory": true
+        },
+        {
+          "text": "Análise descritiva",
+          "mandatory": true
+        },
+        {
+          "text": "Análise preditiva",
+          "mandatory": true
+        },
+        {
+          "text": "Consistência de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Relatórios",
+          "mandatory": true
+        },
+        {
+          "text": "Indicadores",
+          "mandatory": true
+        },
+        {
+          "text": "Regras de negócio",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês",
+          "mandatory": false
+        },
+        {
+          "text": "Projeções e correlações",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "company": "Sicoob",
+      "role": "Analista de TI Junior",
+      "level": "Júnior",
+      "status": "Encerrada",
+      "statusRaw": "Encerrada; anúncio do início de 2026",
+      "area": "Cloud / SRE",
+      "stack": "Cloud / SRE",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Segurança"
+      ],
+      "requirements": [
+        "Redes",
+        "Servidores",
+        "Segurança da informação",
+        "Suporte técnico",
+        "Monitoramento",
+        "Backups",
+        "Infraestrutura",
+        "LGPD"
+      ],
+      "differentials": [
+        "Conhecimento do ambiente Sicoob",
+        "Experiência corporativa"
+      ],
+      "reason": "Porta válida para instituição financeira, mas menos aderente ao foco de backend.",
+      "source": "https://br.linkedin.com/jobs/view/analista-de-ti-junior-at-sicoob-cooperaso-4356766510/",
+      "key": "linkedin:4356766510",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Redes",
+          "mandatory": true
+        },
+        {
+          "text": "Servidores",
+          "mandatory": true
+        },
+        {
+          "text": "Segurança da informação",
+          "mandatory": true
+        },
+        {
+          "text": "Suporte técnico",
+          "mandatory": true
+        },
+        {
+          "text": "Monitoramento",
+          "mandatory": true
+        },
+        {
+          "text": "Backups",
+          "mandatory": true
+        },
+        {
+          "text": "Infraestrutura",
+          "mandatory": true
+        },
+        {
+          "text": "LGPD",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento do ambiente Sicoob",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência corporativa",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "company": "Sicredi",
+      "role": "Analista de Governança de Dados Jr",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "SQL",
+        "Git",
+        "Cloud",
+        "Dados/BI",
+        "Segurança"
+      ],
+      "requirements": [
+        "SQL",
+        "Bancos relacionais",
+        "NoSQL",
+        "Git/Versionamento",
+        "Lógica de programação",
+        "Data Warehouse",
+        "Data Lake",
+        "Lakehouse",
+        "Governança de dados",
+        "Segurança de dados",
+        "Qualidade de dados",
+        "LGPD/GDPR",
+        "FinOps"
+      ],
+      "differentials": [
+        "Cloud e on-premise",
+        "Métricas e dashboards"
+      ],
+      "reason": "Boa combinação de SQL, dados, governança e segurança dentro de instituição financeira.",
+      "source": "https://br.linkedin.com/jobs/view/cas-analista-de-governan%C3%A7%C3%A3o-de-dados-jr-at-sicredi-4451811952/",
+      "key": "linkedin:4451811952",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Bancos relacionais",
+          "mandatory": true
+        },
+        {
+          "text": "NoSQL",
+          "mandatory": true
+        },
+        {
+          "text": "Git/Versionamento",
+          "mandatory": true
+        },
+        {
+          "text": "Lógica de programação",
+          "mandatory": true
+        },
+        {
+          "text": "Data Warehouse",
+          "mandatory": true
+        },
+        {
+          "text": "Data Lake",
+          "mandatory": true
+        },
+        {
+          "text": "Lakehouse",
+          "mandatory": true
+        },
+        {
+          "text": "Governança de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Segurança de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Qualidade de dados",
+          "mandatory": true
+        },
+        {
+          "text": "LGPD/GDPR",
+          "mandatory": true
+        },
+        {
+          "text": "FinOps",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud e on-premise",
+          "mandatory": false
+        },
+        {
+          "text": "Métricas e dashboards",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 19,
+      "company": "FitBank",
+      "role": "Desenvolvedor de Sistemas Jr — PHP/Laravel",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa na fonte consultada",
+      "area": "Backend",
+      "stack": "PHP",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "SQL",
+        ".NET/C#",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Docker",
+        "CI/CD",
+        "Microsserviços",
+        "Mensageria",
+        "POO/Design"
+      ],
+      "requirements": [
+        "PHP",
+        "Laravel",
+        "REST APIs",
+        "MySQL",
+        "Docker",
+        "Git",
+        "SOLID",
+        "Design Patterns",
+        "Testes automatizados",
+        "PHPUnit/Pest",
+        "Elasticsearch"
+      ],
+      "differentials": [
+        ".NET",
+        "MongoDB",
+        "RabbitMQ",
+        "CI/CD",
+        "GitLab/GitHub Actions",
+        "Microsserviços",
+        "Vue/React"
+      ],
+      "reason": "Vaga backend real de fintech com requisitos muito próximos do núcleo de engenharia que estamos construindo.",
+      "source": "https://fitbank.vagas.solides.com.br/vaga/760567",
+      "key": "fitbank.vagas.solides.com.br/vaga/760567",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "PHP",
+          "mandatory": true
+        },
+        {
+          "text": "Laravel",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "MySQL",
+          "mandatory": true
+        },
+        {
+          "text": "Docker",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "SOLID",
+          "mandatory": true
+        },
+        {
+          "text": "Design Patterns",
+          "mandatory": true
+        },
+        {
+          "text": "Testes automatizados",
+          "mandatory": true
+        },
+        {
+          "text": "PHPUnit/Pest",
+          "mandatory": true
+        },
+        {
+          "text": "Elasticsearch",
+          "mandatory": true
+        },
+        {
+          "text": ".NET",
+          "mandatory": false
+        },
+        {
+          "text": "MongoDB",
+          "mandatory": false
+        },
+        {
+          "text": "RabbitMQ",
+          "mandatory": false
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": false
+        },
+        {
+          "text": "GitLab/GitHub Actions",
+          "mandatory": false
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": false
+        },
+        {
+          "text": "Vue/React",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 20,
+      "company": "Banco Inter",
+      "role": "Conversational Designer Junior / AI Analyst",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Automação & IA",
+      "stack": "Multistack",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "SQL",
+        "Dados/BI",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Chatbots",
+        "Assistentes virtuais",
+        "UX Writing",
+        "IA",
+        "Métricas digitais",
+        "Análise de dados",
+        "Inglês intermediário"
+      ],
+      "differentials": [
+        "IA generativa",
+        "LLMs",
+        "Prompt Engineering",
+        "SQL",
+        "IBM Watson",
+        "Salesforce",
+        "Intercom"
+      ],
+      "reason": "É uma função adjacente, mas conecta IA, dados e atendimento digital dentro de banco.",
+      "source": "https://br.linkedin.com/jobs/view/conversational-designer-junior-ai-analyst-at-inter-4477967162/",
+      "key": "linkedin:4477967162",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Chatbots",
+          "mandatory": true
+        },
+        {
+          "text": "Assistentes virtuais",
+          "mandatory": true
+        },
+        {
+          "text": "UX Writing",
+          "mandatory": true
+        },
+        {
+          "text": "IA",
+          "mandatory": true
+        },
+        {
+          "text": "Métricas digitais",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês intermediário",
+          "mandatory": true
+        },
+        {
+          "text": "IA generativa",
+          "mandatory": false
+        },
+        {
+          "text": "LLMs",
+          "mandatory": false
+        },
+        {
+          "text": "Prompt Engineering",
+          "mandatory": false
+        },
+        {
+          "text": "SQL",
+          "mandatory": false
+        },
+        {
+          "text": "IBM Watson",
+          "mandatory": false
+        },
+        {
+          "text": "Salesforce",
+          "mandatory": false
+        },
+        {
+          "text": "Intercom",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 21,
+      "company": "Banco Inter",
+      "role": "Tech Product Analyst Junior — CRM Strategy",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Produto / Negócio",
+      "stack": "Multistack",
+      "fit": "MÉDIA/ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Figma",
+        "Tableau",
+        "Office 365",
+        "Análise de dados",
+        "Documentação",
+        "Gestão de processos",
+        "Metodologias ágeis"
+      ],
+      "differentials": [
+        "WhatsApp",
+        "Inglês",
+        "Gestão de projetos"
+      ],
+      "reason": "Menos técnica, mas válida para entrada em tecnologia de instituição financeira.",
+      "source": "https://br.linkedin.com/jobs/view/tech-product-analyst-junior-crm-strategy-at-inter-4478053800/",
+      "key": "linkedin:4478053800",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Figma",
+          "mandatory": true
+        },
+        {
+          "text": "Tableau",
+          "mandatory": true
+        },
+        {
+          "text": "Office 365",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Documentação",
+          "mandatory": true
+        },
+        {
+          "text": "Gestão de processos",
+          "mandatory": true
+        },
+        {
+          "text": "Metodologias ágeis",
+          "mandatory": true
+        },
+        {
+          "text": "WhatsApp",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês",
+          "mandatory": false
+        },
+        {
+          "text": "Gestão de projetos",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 22,
+      "company": "Bradesco",
+      "role": "Analista de Dados JR — Jurídico",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "Automação"
+      ],
+      "requirements": [
+        "Python",
+        "SQL",
+        "Databricks",
+        "Manipulação de dados",
+        "Lógica analítica",
+        "Automação de processos",
+        "Power Apps"
+      ],
+      "differentials": [
+        "Conhecimento jurídico",
+        "Comunicação com negócio"
+      ],
+      "reason": "Python + SQL + automação são muito próximos do perfil atual.",
+      "source": "https://br.linkedin.com/jobs/view/analista-dados-jr-at-banco-bradesco-4477779029/",
+      "key": "linkedin:4477779029",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Databricks",
+          "mandatory": true
+        },
+        {
+          "text": "Manipulação de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Lógica analítica",
+          "mandatory": true
+        },
+        {
+          "text": "Automação de processos",
+          "mandatory": true
+        },
+        {
+          "text": "Power Apps",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento jurídico",
+          "mandatory": false
+        },
+        {
+          "text": "Comunicação com negócio",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 23,
+      "company": "Bradesco",
+      "role": "Analista de Projetos TI JR",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Git",
+        "Azure",
+        "CI/CD",
+        "Cloud",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "SQL intermediário/avançado",
+        "Lógica de programação",
+        "Modelagem de dados",
+        "Power BI/Tableau/Looker",
+        "Power Platform/VBA",
+        "Excel/Power Query"
+      ],
+      "differentials": [
+        "Python",
+        "Jira",
+        "GitHub",
+        "Azure DevOps",
+        "Metodologias ágeis"
+      ],
+      "reason": "Boa função híbrida para entrar em tecnologia usando SQL e automação.",
+      "source": "https://br.linkedin.com/jobs/view/analista-projetos-ti-jr-at-banco-bradesco-4479168144/",
+      "key": "linkedin:4479168144",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL intermediário/avançado",
+          "mandatory": true
+        },
+        {
+          "text": "Lógica de programação",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Power BI/Tableau/Looker",
+          "mandatory": true
+        },
+        {
+          "text": "Power Platform/VBA",
+          "mandatory": true
+        },
+        {
+          "text": "Excel/Power Query",
+          "mandatory": true
+        },
+        {
+          "text": "Python",
+          "mandatory": false
+        },
+        {
+          "text": "Jira",
+          "mandatory": false
+        },
+        {
+          "text": "GitHub",
+          "mandatory": false
+        },
+        {
+          "text": "Azure DevOps",
+          "mandatory": false
+        },
+        {
+          "text": "Metodologias ágeis",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 24,
+      "company": "Bradesco",
+      "role": "Analista de Canais Digitais JR — PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Análise de dados",
+        "Produtos digitais",
+        "Métricas",
+        "Monitoramento",
+        "Metodologias ágeis"
+      ],
+      "differentials": [
+        "SQL básico",
+        "Python básico",
+        "Lógica de programação"
+      ],
+      "reason": "Exigência técnica moderada, útil como porta de entrada sem desviar do foco de engenharia.",
+      "source": "https://br.linkedin.com/jobs/view/analista-canais-digitais-jr-pcd-at-banco-bradesco-4475358984/",
+      "key": "linkedin:4475358984",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Produtos digitais",
+          "mandatory": true
+        },
+        {
+          "text": "Métricas",
+          "mandatory": true
+        },
+        {
+          "text": "Monitoramento",
+          "mandatory": true
+        },
+        {
+          "text": "Metodologias ágeis",
+          "mandatory": true
+        },
+        {
+          "text": "SQL básico",
+          "mandatory": false
+        },
+        {
+          "text": "Python básico",
+          "mandatory": false
+        },
+        {
+          "text": "Lógica de programação",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 25,
+      "company": "Bradesco",
+      "role": "Data Scientist I — Crédito (entrada)",
+      "level": "Nível I / Entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Python básico",
+        "SQL",
+        "Manipulação de dados",
+        "Estatística básica",
+        "Modelagem matemática",
+        "Raciocínio lógico",
+        "Crédito"
+      ],
+      "differentials": [
+        "Interesse em mercado financeiro"
+      ],
+      "reason": "Uma das exigências mais acessíveis de Python + SQL + crédito na amostra.",
+      "source": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4479113150/",
+      "key": "linkedin:4479113150",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python básico",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Manipulação de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Estatística básica",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem matemática",
+          "mandatory": true
+        },
+        {
+          "text": "Raciocínio lógico",
+          "mandatory": true
+        },
+        {
+          "text": "Crédito",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse em mercado financeiro",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 26,
+      "company": "Bradesco",
+      "role": "Data Scientist I — Pricing / Crédito",
+      "level": "Nível I",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "ALTA / MAIS EXIGENTE",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Python avançado",
+        "SQL",
+        "Databricks",
+        "Estatística aplicada",
+        "Modelagem analítica",
+        "Pricing",
+        "Rentabilidade",
+        "Produtos financeiros"
+      ],
+      "differentials": [
+        "Experiência em mercado financeiro"
+      ],
+      "reason": "Mostra como o mesmo nível formal pode exigir profundidade significativamente maior em Python e negócio.",
+      "source": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4478868061/",
+      "key": "linkedin:4478868061",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python avançado",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Databricks",
+          "mandatory": true
+        },
+        {
+          "text": "Estatística aplicada",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem analítica",
+          "mandatory": true
+        },
+        {
+          "text": "Pricing",
+          "mandatory": true
+        },
+        {
+          "text": "Rentabilidade",
+          "mandatory": true
+        },
+        {
+          "text": "Produtos financeiros",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em mercado financeiro",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 27,
+      "company": "Bradesco",
+      "role": "Analista de Inteligência de Negócios JR — PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "Cloud",
+        "Dados/BI",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Excel avançado",
+        "Power BI",
+        "Linguagem de programação",
+        "IA",
+        "Análise de dados",
+        "Indicadores"
+      ],
+      "differentials": [
+        "Big Data",
+        "Databricks",
+        "PySpark",
+        "Cloud",
+        "Inglês"
+      ],
+      "reason": "Não é backend, mas fortalece o uso de programação e dados em contexto bancário.",
+      "source": "https://br.linkedin.com/jobs/view/analista-intelig%C3%AAncia-neg%C3%B3cios-jr-pcd-at-banco-bradesco-4479573987/",
+      "key": "linkedin:4479573987",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Excel avançado",
+          "mandatory": true
+        },
+        {
+          "text": "Power BI",
+          "mandatory": true
+        },
+        {
+          "text": "Linguagem de programação",
+          "mandatory": true
+        },
+        {
+          "text": "IA",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Indicadores",
+          "mandatory": true
+        },
+        {
+          "text": "Big Data",
+          "mandatory": false
+        },
+        {
+          "text": "Databricks",
+          "mandatory": false
+        },
+        {
+          "text": "PySpark",
+          "mandatory": false
+        },
+        {
+          "text": "Cloud",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 28,
+      "company": "Bradesco",
+      "role": "Analista de Dados — Planejamento Comercial JR",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "SQL",
+        "Python",
+        "Databricks",
+        "PySpark",
+        "SAS",
+        "Manipulação de dados",
+        "Análise de dados"
+      ],
+      "differentials": [
+        "Conhecimento comercial/bancário"
+      ],
+      "reason": "Reforça Python + SQL como combinação transversal em banco.",
+      "source": "https://br.linkedin.com/jobs/view/analista-dados-planejamento-comercial-jr-at-banco-bradesco-4478186739/",
+      "key": "linkedin:4478186739",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "Databricks",
+          "mandatory": true
+        },
+        {
+          "text": "PySpark",
+          "mandatory": true
+        },
+        {
+          "text": "SAS",
+          "mandatory": true
+        },
+        {
+          "text": "Manipulação de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento comercial/bancário",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 29,
+      "company": "Bradesco",
+      "role": "Data Scientist I — Prevenção a Fraudes",
+      "level": "Nível I",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Python",
+        "SQL",
+        "Programação",
+        "Motores de decisão",
+        "Prevenção a fraudes",
+        "Regras de negócio",
+        "Análise de dados"
+      ],
+      "differentials": [
+        "Configuração de regras em decision engine"
+      ],
+      "reason": "Une programação, SQL e um domínio bancário muito valioso: fraude.",
+      "source": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4479731821/",
+      "key": "linkedin:4479731821",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Programação",
+          "mandatory": true
+        },
+        {
+          "text": "Motores de decisão",
+          "mandatory": true
+        },
+        {
+          "text": "Prevenção a fraudes",
+          "mandatory": true
+        },
+        {
+          "text": "Regras de negócio",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Configuração de regras em decision engine",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 30,
+      "company": "Bradesco",
+      "role": "Business Analyst JR",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "SQL",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "SQL",
+        "Databricks",
+        "Excel",
+        "KPIs",
+        "Análise de dados",
+        "BPMN",
+        "Documentação de processos",
+        "Discovery de produto"
+      ],
+      "differentials": [
+        "Conhecimento de produto financeiro"
+      ],
+      "reason": "Boa função híbrida negócio-tecnologia, usando SQL e dados.",
+      "source": "https://br.linkedin.com/jobs/view/business-analyst-jr-at-banco-bradesco-4479998555/",
+      "key": "linkedin:4479998555",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Databricks",
+          "mandatory": true
+        },
+        {
+          "text": "Excel",
+          "mandatory": true
+        },
+        {
+          "text": "KPIs",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "BPMN",
+          "mandatory": true
+        },
+        {
+          "text": "Documentação de processos",
+          "mandatory": true
+        },
+        {
+          "text": "Discovery de produto",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de produto financeiro",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 31,
+      "company": "Stone",
+      "role": "Software Engineer II — C# (nível descrito como júnior)",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": ".NET / C#",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "SQL",
+        ".NET/C#",
+        "Git",
+        "Testes",
+        "Docker",
+        "Mensageria",
+        "Observabilidade",
+        "IA/ML",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "C#",
+        "ASP.NET Core",
+        "SQL Server",
+        "Git",
+        "Code Review",
+        "Testes",
+        "Deploy",
+        "Releases/Rollback",
+        "Documentação",
+        "Docker"
+      ],
+      "differentials": [
+        "RabbitMQ/Kafka",
+        "MongoDB",
+        "Datadog/Splunk",
+        "IA para desenvolvimento"
+      ],
+      "reason": "Forte evidência de .NET/C# em fintech e ótima referência de ciclo de produção.",
+      "source": "https://br.linkedin.com/jobs/view/engenharia-software-engineer-ii-c%23-at-stone-4404512245/",
+      "key": "linkedin:4404512245",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "C#",
+          "mandatory": true
+        },
+        {
+          "text": "ASP.NET Core",
+          "mandatory": true
+        },
+        {
+          "text": "SQL Server",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Code Review",
+          "mandatory": true
+        },
+        {
+          "text": "Testes",
+          "mandatory": true
+        },
+        {
+          "text": "Deploy",
+          "mandatory": true
+        },
+        {
+          "text": "Releases/Rollback",
+          "mandatory": true
+        },
+        {
+          "text": "Documentação",
+          "mandatory": true
+        },
+        {
+          "text": "Docker",
+          "mandatory": true
+        },
+        {
+          "text": "RabbitMQ/Kafka",
+          "mandatory": false
+        },
+        {
+          "text": "MongoDB",
+          "mandatory": false
+        },
+        {
+          "text": "Datadog/Splunk",
+          "mandatory": false
+        },
+        {
+          "text": "IA para desenvolvimento",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 32,
+      "company": "Stone",
+      "role": "Software Engineer II — Automação RPA (nível júnior)",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Engenharia de Software",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "Git",
+        "Automação",
+        "IA/ML"
+      ],
+      "requirements": [
+        "UiPath",
+        "UiPath Orchestrator",
+        "Python",
+        "BotCity",
+        "Git",
+        "Automação de processos",
+        "LLMs/assistentes de código"
+      ],
+      "differentials": [
+        "Certificação UiPath",
+        "REFramework",
+        "BPMN"
+      ],
+      "reason": "É uma das vagas mais aderentes à experiência prática atual com automação e Python.",
+      "source": "https://br.linkedin.com/jobs/view/software-engineer-ii-automa%C3%A7%C3%A3o-rpa-at-stone-4476757291/",
+      "key": "linkedin:4476757291",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "UiPath",
+          "mandatory": true
+        },
+        {
+          "text": "UiPath Orchestrator",
+          "mandatory": true
+        },
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "BotCity",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Automação de processos",
+          "mandatory": true
+        },
+        {
+          "text": "LLMs/assistentes de código",
+          "mandatory": true
+        },
+        {
+          "text": "Certificação UiPath",
+          "mandatory": false
+        },
+        {
+          "text": "REFramework",
+          "mandatory": false
+        },
+        {
+          "text": "BPMN",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 33,
+      "company": "Stone",
+      "role": "Analista Júnior de Políticas de Crédito / Credit Business Analyst",
+      "level": "Júnior",
+      "status": "Encerrada",
+      "statusRaw": "Encerrada em uma das fontes; anúncio de 07/08/2026",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "SQL",
+        "Crédito",
+        "Risco",
+        "Políticas de crédito",
+        "Modelagem financeira",
+        "Análise de performance",
+        "Experimentos/A-B tests"
+      ],
+      "differentials": [
+        "Databricks",
+        "Scala/Spark",
+        "Python/R",
+        "Cartões",
+        "Precificação"
+      ],
+      "reason": "SQL + crédito e Python como diferencial criam uma entrada muito coerente para o objetivo.",
+      "source": "https://br.linkedin.com/jobs/view/analista-j%C3%BAnior-de-pol%C3%ADticas-de-cr%C3%A9dito-cr%C3%A9dit-business-analyst-at-lato-jobs-4450385570/",
+      "key": "linkedin:4450385570",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Crédito",
+          "mandatory": true
+        },
+        {
+          "text": "Risco",
+          "mandatory": true
+        },
+        {
+          "text": "Políticas de crédito",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem financeira",
+          "mandatory": true
+        },
+        {
+          "text": "Análise de performance",
+          "mandatory": true
+        },
+        {
+          "text": "Experimentos/A-B tests",
+          "mandatory": true
+        },
+        {
+          "text": "Databricks",
+          "mandatory": false
+        },
+        {
+          "text": "Scala/Spark",
+          "mandatory": false
+        },
+        {
+          "text": "Python/R",
+          "mandatory": false
+        },
+        {
+          "text": "Cartões",
+          "mandatory": false
+        },
+        {
+          "text": "Precificação",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "company": "Mercado Livre / Mercado Pago",
+      "role": "Software Engineer — Platform Services",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Java",
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "Observabilidade",
+        "Cloud",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Java",
+        "Go",
+        "Node.js",
+        "Rust",
+        "REST APIs",
+        "Git",
+        "Cloud",
+        "Programação concorrente",
+        "Alto throughput",
+        "New Relic",
+        "Elastic"
+      ],
+      "differentials": [
+        "Suporte/implantação em produção"
+      ],
+      "reason": "Excelente referência de backend distribuído e performance no ecossistema do Mercado Pago.",
+      "source": "https://br.linkedin.com/jobs/view/software-engineer-platform-services-at-mercado-livre-brasil-4450132519/",
+      "key": "linkedin:4450132519",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "Go",
+          "mandatory": true
+        },
+        {
+          "text": "Node.js",
+          "mandatory": true
+        },
+        {
+          "text": "Rust",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud",
+          "mandatory": true
+        },
+        {
+          "text": "Programação concorrente",
+          "mandatory": true
+        },
+        {
+          "text": "Alto throughput",
+          "mandatory": true
+        },
+        {
+          "text": "New Relic",
+          "mandatory": true
+        },
+        {
+          "text": "Elastic",
+          "mandatory": true
+        },
+        {
+          "text": "Suporte/implantação em produção",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 35,
+      "company": "Mercado Livre / Mercado Pago",
+      "role": "Software Engineer — Platform Services / Object Storage",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Java",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "AWS",
+        "GCP",
+        "Observabilidade",
+        "Cloud",
+        "IA/ML",
+        "POO/Design"
+      ],
+      "requirements": [
+        "Java ou Go",
+        "REST APIs",
+        "Git",
+        "AWS S3",
+        "GCP Cloud Storage",
+        "TDD",
+        "Design Patterns",
+        "Clean Code",
+        "Programação concorrente",
+        "Kibana",
+        "Grafana",
+        "Datadog",
+        "Cloud"
+      ],
+      "differentials": [
+        "IA para desenvolvimento",
+        "Alta disponibilidade",
+        "Escalabilidade",
+        "Resiliência",
+        "Performance"
+      ],
+      "reason": "Mais infraestrutura/cloud que a vaga anterior; requisitos são distintos e não foram deduplicados.",
+      "source": "https://br.linkedin.com/jobs/view/software-engineer-platform-services-at-mercado-livre-4458415021/",
+      "key": "linkedin:4458415021",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java ou Go",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "AWS S3",
+          "mandatory": true
+        },
+        {
+          "text": "GCP Cloud Storage",
+          "mandatory": true
+        },
+        {
+          "text": "TDD",
+          "mandatory": true
+        },
+        {
+          "text": "Design Patterns",
+          "mandatory": true
+        },
+        {
+          "text": "Clean Code",
+          "mandatory": true
+        },
+        {
+          "text": "Programação concorrente",
+          "mandatory": true
+        },
+        {
+          "text": "Kibana",
+          "mandatory": true
+        },
+        {
+          "text": "Grafana",
+          "mandatory": true
+        },
+        {
+          "text": "Datadog",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud",
+          "mandatory": true
+        },
+        {
+          "text": "IA para desenvolvimento",
+          "mandatory": false
+        },
+        {
+          "text": "Alta disponibilidade",
+          "mandatory": false
+        },
+        {
+          "text": "Escalabilidade",
+          "mandatory": false
+        },
+        {
+          "text": "Resiliência",
+          "mandatory": false
+        },
+        {
+          "text": "Performance",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 36,
+      "company": "BTG Pactual",
+      "role": "Engenheiro de Software Junior ou Pleno (Java) — Investment Products",
+      "level": "Júnior/Pleno",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/recente na consulta",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "SQL",
+        "Java",
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Microsserviços",
+        "Mensageria",
+        "Cloud",
+        "POO/Design",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Java",
+        "Spring Boot",
+        "REST APIs",
+        "SOAP",
+        "RabbitMQ",
+        "AWS SNS/SQS",
+        "Kubernetes",
+        "AWS",
+        "Docker",
+        "Microsserviços",
+        "Oracle/PostgreSQL/DynamoDB",
+        "Git",
+        "CI/CD",
+        "Troubleshooting",
+        "Logs"
+      ],
+      "differentials": [
+        "Jenkins",
+        "GitHub Actions",
+        "Node.js",
+        "Design Patterns"
+      ],
+      "reason": "Uma das vagas mais completas de backend enterprise da amostra.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-de-software-junior-ou-pleno-java-investment-products-at-btg-pactual-4455558143/",
+      "key": "linkedin:4455558143",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": true,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "Spring Boot",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "SOAP",
+          "mandatory": true
+        },
+        {
+          "text": "RabbitMQ",
+          "mandatory": true
+        },
+        {
+          "text": "AWS SNS/SQS",
+          "mandatory": true
+        },
+        {
+          "text": "Kubernetes",
+          "mandatory": true
+        },
+        {
+          "text": "AWS",
+          "mandatory": true
+        },
+        {
+          "text": "Docker",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": true
+        },
+        {
+          "text": "Oracle/PostgreSQL/DynamoDB",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": true
+        },
+        {
+          "text": "Troubleshooting",
+          "mandatory": true
+        },
+        {
+          "text": "Logs",
+          "mandatory": true
+        },
+        {
+          "text": "Jenkins",
+          "mandatory": false
+        },
+        {
+          "text": "GitHub Actions",
+          "mandatory": false
+        },
+        {
+          "text": "Node.js",
+          "mandatory": false
+        },
+        {
+          "text": "Design Patterns",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "company": "BTG Pactual",
+      "role": "Desenvolvedor(a) Backend Júnior/Pleno — IT Trading",
+      "level": "Júnior/Pleno",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/indexada em 2026",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Java",
+        "Git",
+        "AWS",
+        "Azure",
+        "Microsserviços",
+        "Mensageria",
+        "Cloud",
+        "POO/Design"
+      ],
+      "requirements": [
+        "Java/C#/Python",
+        "Orientação a objetos",
+        "SQL",
+        "Microsserviços",
+        "Mensageria",
+        "Git",
+        "Escalabilidade",
+        "Robustez"
+      ],
+      "differentials": [
+        "FIX Protocol",
+        "AWS/Azure",
+        "Mercado financeiro"
+      ],
+      "reason": "Mantém Python como linguagem possível e reforça fundamentos backend/distribuídos.",
+      "source": "https://br.linkedin.com/jobs/view/desenvolvedor-a-backend-j%C3%BAnior-pleno-%E2%80%93-it-trading-at-btg-pactual-4404018383/",
+      "key": "linkedin:4404018383",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": true,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java/C#/Python",
+          "mandatory": true
+        },
+        {
+          "text": "Orientação a objetos",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": true
+        },
+        {
+          "text": "Mensageria",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Escalabilidade",
+          "mandatory": true
+        },
+        {
+          "text": "Robustez",
+          "mandatory": true
+        },
+        {
+          "text": "FIX Protocol",
+          "mandatory": false
+        },
+        {
+          "text": "AWS/Azure",
+          "mandatory": false
+        },
+        {
+          "text": "Mercado financeiro",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "company": "BTG Pactual",
+      "role": "Engenheiro(a) de Software Junior — Full Stack / Accounting",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/indexada em 2026",
+      "area": "Produto / Negócio",
+      "stack": ".NET / C#",
+      "fit": "MUITO ALTA",
+      "tags": [
+        ".NET/C#",
+        "AWS",
+        "Cloud",
+        "Dados/BI",
+        "POO/Design"
+      ],
+      "requirements": [
+        "C#",
+        "ASP.NET/.NET Core",
+        "AWS",
+        "Banco relacional",
+        "Modelagem de dados",
+        "Arquitetura de sistemas",
+        "Orientação a objetos",
+        "Design Patterns",
+        "Code Review",
+        "Refactoring",
+        "Metodologias ágeis"
+      ],
+      "differentials": [
+        "Frontend"
+      ],
+      "reason": "Outra evidência forte para .NET/C# dentro de banco de investimento.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-junior-full-stack-it-accounting-clients-finance-report-at-btg-pactual-4462892770/",
+      "key": "linkedin:4462892770",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "C#",
+          "mandatory": true
+        },
+        {
+          "text": "ASP.NET/.NET Core",
+          "mandatory": true
+        },
+        {
+          "text": "AWS",
+          "mandatory": true
+        },
+        {
+          "text": "Banco relacional",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Arquitetura de sistemas",
+          "mandatory": true
+        },
+        {
+          "text": "Orientação a objetos",
+          "mandatory": true
+        },
+        {
+          "text": "Design Patterns",
+          "mandatory": true
+        },
+        {
+          "text": "Code Review",
+          "mandatory": true
+        },
+        {
+          "text": "Refactoring",
+          "mandatory": true
+        },
+        {
+          "text": "Metodologias ágeis",
+          "mandatory": true
+        },
+        {
+          "text": "Frontend",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 39,
+      "company": "XP Inc.",
+      "role": "Engenharia de Software Back-end — Assistente e Júnior / PCD",
+      "level": "Assistente/Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/indexada em 2026",
+      "area": "Backend",
+      "stack": ".NET / C#",
+      "fit": "MUITO ALTA",
+      "tags": [
+        ".NET/C#",
+        "Azure",
+        "Microsserviços",
+        "Mensageria",
+        "Cloud",
+        "POO/Design"
+      ],
+      "requirements": [
+        "C#/.NET",
+        "Cloud",
+        "Mensageria",
+        "Microsserviços",
+        "Code Review",
+        "Clean Code",
+        "Qualidade de software"
+      ],
+      "differentials": [
+        "Azure",
+        "Arquiteturas escaláveis",
+        "React"
+      ],
+      "reason": "Forte evidência de .NET como stack de backend no mercado financeiro.",
+      "source": "https://br.linkedin.com/jobs/view/engenharia-de-software-back-end-assistente-e-j%C3%BAnior-vaga-exclusiva-para-pcd-at-xp-inc-4310494599/",
+      "key": "linkedin:4310494599",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "C#/.NET",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud",
+          "mandatory": true
+        },
+        {
+          "text": "Mensageria",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": true
+        },
+        {
+          "text": "Code Review",
+          "mandatory": true
+        },
+        {
+          "text": "Clean Code",
+          "mandatory": true
+        },
+        {
+          "text": "Qualidade de software",
+          "mandatory": true
+        },
+        {
+          "text": "Azure",
+          "mandatory": false
+        },
+        {
+          "text": "Arquiteturas escaláveis",
+          "mandatory": false
+        },
+        {
+          "text": "React",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 40,
+      "company": "C6 Bank",
+      "role": "Analista de Automação e IA — Analytics Júnior",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/indexada em 2026",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "REST/APIs",
+        "GCP",
+        "Dados/BI",
+        "Automação",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Python",
+        "SQL",
+        "Power Platform",
+        "APIs",
+        "BigQuery",
+        "Dashboards",
+        "Automação de processos",
+        "IA",
+        "Lógica de programação"
+      ],
+      "differentials": [
+        "IA generativa",
+        "Controles e riscos operacionais",
+        "Projetos de dados"
+      ],
+      "reason": "Muito aderente ao histórico de automação, Python e integrações.",
+      "source": "https://br.linkedin.com/jobs/view/analista-de-automa%C3%A7%C3%A3o-e-ia-j%C3%BAnior-%E2%80%93-analytics-processos-controles-at-c6-bank-4414036029/",
+      "key": "linkedin:4414036029",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Power Platform",
+          "mandatory": true
+        },
+        {
+          "text": "APIs",
+          "mandatory": true
+        },
+        {
+          "text": "BigQuery",
+          "mandatory": true
+        },
+        {
+          "text": "Dashboards",
+          "mandatory": true
+        },
+        {
+          "text": "Automação de processos",
+          "mandatory": true
+        },
+        {
+          "text": "IA",
+          "mandatory": true
+        },
+        {
+          "text": "Lógica de programação",
+          "mandatory": true
+        },
+        {
+          "text": "IA generativa",
+          "mandatory": false
+        },
+        {
+          "text": "Controles e riscos operacionais",
+          "mandatory": false
+        },
+        {
+          "text": "Projetos de dados",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 41,
+      "company": "PagBank",
+      "role": "Engenheiro de Software Jr — Java",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/indexada em 2026",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "SQL",
+        "Java",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "AWS",
+        "CI/CD",
+        "Microsserviços",
+        "Mensageria",
+        "Cloud",
+        "Dados/BI",
+        "POO/Design"
+      ],
+      "requirements": [
+        "Java",
+        "Orientação a objetos",
+        "Estruturas de dados",
+        "Algoritmos",
+        "SQL",
+        "Banco relacional",
+        "REST APIs",
+        "Git",
+        "CI/CD",
+        "Mensageria",
+        "Testes automatizados",
+        "Sistemas distribuídos"
+      ],
+      "differentials": [
+        "Microsserviços",
+        "AWS",
+        "DevOps",
+        "Spark/Hadoop"
+      ],
+      "reason": "Excelente referência do núcleo esperado de um backend júnior.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-java-at-pagbank-4436036193/",
+      "key": "linkedin:4436036193",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "Orientação a objetos",
+          "mandatory": true
+        },
+        {
+          "text": "Estruturas de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Algoritmos",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Banco relacional",
+          "mandatory": true
+        },
+        {
+          "text": "REST APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": true
+        },
+        {
+          "text": "Mensageria",
+          "mandatory": true
+        },
+        {
+          "text": "Testes automatizados",
+          "mandatory": true
+        },
+        {
+          "text": "Sistemas distribuídos",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": false
+        },
+        {
+          "text": "AWS",
+          "mandatory": false
+        },
+        {
+          "text": "DevOps",
+          "mandatory": false
+        },
+        {
+          "text": "Spark/Hadoop",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 42,
+      "company": "PagBank",
+      "role": "Engenheiro de Software Jr — Dados",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/indexada em 2026",
+      "area": "Engenharia de Software",
+      "stack": "Java",
+      "fit": "MUITO ALTA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Java",
+        "Git",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Microsserviços",
+        "Mensageria",
+        "Observabilidade",
+        "Cloud",
+        "Linux",
+        "Terraform/IaC",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Java",
+        "Python",
+        "AWS S3",
+        "AWS Glue",
+        "Redshift",
+        "Git",
+        "Docker",
+        "Kubernetes",
+        "New Relic/Grafana/Splunk",
+        "Linux",
+        "Shell",
+        "Terraform",
+        "Microsserviços",
+        "MongoDB/MySQL",
+        "Kafka",
+        "Jenkins",
+        "Spark",
+        "Data Lake"
+      ],
+      "differentials": [
+        "OCI",
+        "YAML",
+        "Governança de dados",
+        "Big Data"
+      ],
+      "reason": "Mostra uma função híbrida que une software, dados, cloud e produção.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-dados-at-pagbank-4460025351/",
+      "key": "linkedin:4460025351",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "AWS S3",
+          "mandatory": true
+        },
+        {
+          "text": "AWS Glue",
+          "mandatory": true
+        },
+        {
+          "text": "Redshift",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Docker",
+          "mandatory": true
+        },
+        {
+          "text": "Kubernetes",
+          "mandatory": true
+        },
+        {
+          "text": "New Relic/Grafana/Splunk",
+          "mandatory": true
+        },
+        {
+          "text": "Linux",
+          "mandatory": true
+        },
+        {
+          "text": "Shell",
+          "mandatory": true
+        },
+        {
+          "text": "Terraform",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": true
+        },
+        {
+          "text": "MongoDB/MySQL",
+          "mandatory": true
+        },
+        {
+          "text": "Kafka",
+          "mandatory": true
+        },
+        {
+          "text": "Jenkins",
+          "mandatory": true
+        },
+        {
+          "text": "Spark",
+          "mandatory": true
+        },
+        {
+          "text": "Data Lake",
+          "mandatory": true
+        },
+        {
+          "text": "OCI",
+          "mandatory": false
+        },
+        {
+          "text": "YAML",
+          "mandatory": false
+        },
+        {
+          "text": "Governança de dados",
+          "mandatory": false
+        },
+        {
+          "text": "Big Data",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 43,
+      "company": "PagBank",
+      "role": "Engenheiro de Sistemas Jr — SRE",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Indexada em 2026",
+      "area": "Cloud / SRE",
+      "stack": "Cloud / SRE",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "AWS",
+        "CI/CD",
+        "Microsserviços",
+        "Cloud",
+        "Terraform/IaC",
+        "Automação"
+      ],
+      "requirements": [
+        "AWS",
+        "Microsserviços",
+        "CI/CD",
+        "Automação",
+        "Terraform",
+        "Ansible",
+        "Chef/Puppet/Salt",
+        "Service Discovery",
+        "SDN"
+      ],
+      "differentials": [
+        "Operação de ambientes distribuídos"
+      ],
+      "reason": "Boa porta de entrada caso apareça oportunidade em SRE, sem mudar o foco principal de backend.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-sistemas-jr-sre-at-pagbank-4428707419/",
+      "key": "linkedin:4428707419",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "AWS",
+          "mandatory": true
+        },
+        {
+          "text": "Microsserviços",
+          "mandatory": true
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": true
+        },
+        {
+          "text": "Automação",
+          "mandatory": true
+        },
+        {
+          "text": "Terraform",
+          "mandatory": true
+        },
+        {
+          "text": "Ansible",
+          "mandatory": true
+        },
+        {
+          "text": "Chef/Puppet/Salt",
+          "mandatory": true
+        },
+        {
+          "text": "Service Discovery",
+          "mandatory": true
+        },
+        {
+          "text": "SDN",
+          "mandatory": true
+        },
+        {
+          "text": "Operação de ambientes distribuídos",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 44,
+      "company": "PagBank",
+      "role": "Engenheiro de Qualidade de Software Jr",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Indexada em 2026",
+      "area": "QA",
+      "stack": "Multistack",
+      "fit": "ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "REST/APIs",
+        "Testes",
+        "Observabilidade",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Testes manuais",
+        "Testes automatizados",
+        "Testes de API",
+        "Testes E2E",
+        "Pirâmide de testes",
+        "Performance",
+        "Observabilidade",
+        "Qualidade baseada em risco"
+      ],
+      "differentials": [
+        "Estratégia de qualidade"
+      ],
+      "reason": "Testes e qualidade são competências diretamente transferíveis para engenharia backend.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-de-qualidade-de-software-jr-at-pagbank-4425839238/",
+      "key": "linkedin:4425839238",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Testes manuais",
+          "mandatory": true
+        },
+        {
+          "text": "Testes automatizados",
+          "mandatory": true
+        },
+        {
+          "text": "Testes de API",
+          "mandatory": true
+        },
+        {
+          "text": "Testes E2E",
+          "mandatory": true
+        },
+        {
+          "text": "Pirâmide de testes",
+          "mandatory": true
+        },
+        {
+          "text": "Performance",
+          "mandatory": true
+        },
+        {
+          "text": "Observabilidade",
+          "mandatory": true
+        },
+        {
+          "text": "Qualidade baseada em risco",
+          "mandatory": true
+        },
+        {
+          "text": "Estratégia de qualidade",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 45,
+      "company": "PagBank",
+      "role": "Cientista de Dados Jr",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa/indexada em 2026",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "SQL",
+        "AWS",
+        "Azure",
+        "GCP",
+        "Cloud",
+        "Dados/BI",
+        "IA/ML",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Python",
+        "SQL",
+        "Estatística",
+        "Machine Learning",
+        "Crédito",
+        "Fraude",
+        "PLD",
+        "Cobrança",
+        "Modelos preditivos"
+      ],
+      "differentials": [
+        "Spark",
+        "AWS/Azure/GCP",
+        "Projetos acadêmicos/estágio"
+      ],
+      "reason": "Python + SQL + domínios financeiros estratégicos.",
+      "source": "https://br.linkedin.com/jobs/view/cientista-de-dados-jr-at-pagbank-4418200168/",
+      "key": "linkedin:4418200168",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Python",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Estatística",
+          "mandatory": true
+        },
+        {
+          "text": "Machine Learning",
+          "mandatory": true
+        },
+        {
+          "text": "Crédito",
+          "mandatory": true
+        },
+        {
+          "text": "Fraude",
+          "mandatory": true
+        },
+        {
+          "text": "PLD",
+          "mandatory": true
+        },
+        {
+          "text": "Cobrança",
+          "mandatory": true
+        },
+        {
+          "text": "Modelos preditivos",
+          "mandatory": true
+        },
+        {
+          "text": "Spark",
+          "mandatory": false
+        },
+        {
+          "text": "AWS/Azure/GCP",
+          "mandatory": false
+        },
+        {
+          "text": "Projetos acadêmicos/estágio",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 46,
+      "company": "Itaú Unibanco",
+      "role": "Engenharia de Software .NET JR — Jurídico e Assuntos Corporativos / PCD",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Ativa no portal do Itaú na consulta",
+      "area": "Engenharia de Software",
+      "stack": ".NET / C#",
+      "fit": "ALTA",
+      "tags": [
+        ".NET/C#",
+        "REST/APIs"
+      ],
+      "requirements": [
+        ".NET",
+        "APIs",
+        "Desenvolvimento de software",
+        "Boas práticas de engenharia"
+      ],
+      "differentials": [
+        "Contexto corporativo do Itaú"
+      ],
+      "reason": "Evidência direta de .NET em vaga júnior no maior banco privado do país.",
+      "source": "https://carreiras.itau.com.br/busca-de-vagas/precisa/35299/1/1",
+      "key": "carreiras.itau.com.br/busca-de-vagas/precisa/35299/1/1",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": ".NET",
+          "mandatory": true
+        },
+        {
+          "text": "APIs",
+          "mandatory": true
+        },
+        {
+          "text": "Desenvolvimento de software",
+          "mandatory": true
+        },
+        {
+          "text": "Boas práticas de engenharia",
+          "mandatory": true
+        },
+        {
+          "text": "Contexto corporativo do Itaú",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 47,
+      "company": "Santander Brasil",
+      "role": "Analista de TI II — perfil de sustentação/desenvolvimento",
+      "level": "Júnior/entrada conforme indexação",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Fonte histórica de 2026; página original não estava mais disponível na última checagem",
+      "area": "Sistemas / Sustentação",
+      "stack": "Java",
+      "fit": "ALTA",
+      "tags": [
+        "SQL",
+        "Java",
+        "REST/APIs",
+        "CI/CD",
+        "Observabilidade",
+        "Automação",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Java",
+        "Angular",
+        "SQL/PLSQL",
+        "APIs e integrações",
+        "Dynatrace",
+        "Splunk",
+        "Control-M",
+        "Jira/Confluence",
+        "DevOps",
+        "CI/CD",
+        "Troubleshooting",
+        "Tibco/Camel"
+      ],
+      "differentials": [
+        "Automação de rotinas",
+        "Suporte a produção"
+      ],
+      "reason": "Útil como evidência histórica, mas com confiança menor de status por a página original já ter saído do ar.",
+      "source": "https://santander-brasil.interviewhr.com/offer/analista-de-ti-ii",
+      "key": "santander-brasil.interviewhr.com/offer/analista-de-ti-ii",
+      "firstSeenAt": null,
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java",
+          "mandatory": true
+        },
+        {
+          "text": "Angular",
+          "mandatory": true
+        },
+        {
+          "text": "SQL/PLSQL",
+          "mandatory": true
+        },
+        {
+          "text": "APIs e integrações",
+          "mandatory": true
+        },
+        {
+          "text": "Dynatrace",
+          "mandatory": true
+        },
+        {
+          "text": "Splunk",
+          "mandatory": true
+        },
+        {
+          "text": "Control-M",
+          "mandatory": true
+        },
+        {
+          "text": "Jira/Confluence",
+          "mandatory": true
+        },
+        {
+          "text": "DevOps",
+          "mandatory": true
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": true
+        },
+        {
+          "text": "Troubleshooting",
+          "mandatory": true
+        },
+        {
+          "text": "Tibco/Camel",
+          "mandatory": true
+        },
+        {
+          "text": "Automação de rotinas",
+          "mandatory": false
+        },
+        {
+          "text": "Suporte a produção",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 48,
+      "company": "BMP",
+      "role": "Desenvolvedor(a) Júnior – Engenharia / Projetos Técnicos",
+      "level": "Júnior / Assistente",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta web em 06/09/2026 — LinkedIn",
+      "area": "Engenharia de Software",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "AWS",
+        ".NET/C#",
+        "Automação",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Conhecimento básico de lógica de programação",
+        "Conhecimento básico em alguma linguagem de programação",
+        "Conhecimento básico de SQL e banco de dados",
+        "Noções de APIs e integrações",
+        "Conhecimento básico de Git",
+        "Interesse em desenvolvimento de software e tecnologia"
+      ],
+      "differentials": [
+        ".NET / C#",
+        "AWS",
+        "Experiência com APIs",
+        "Jira",
+        "Automações ou scripts",
+        "Ferramentas de integração"
+      ],
+      "reason": "Porta de entrada em infraestrutura financeira, com base técnica em programação, SQL, APIs e Git.",
+      "source": "https://br.linkedin.com/jobs/view/desenvolvedor-a-j%C3%BAnior-%E2%80%93-engenharia-projetos-t%C3%A9cnicos-at-bmp-4461307880",
+      "collectedAt": "2026-09-06T03:00:00Z",
+      "auto": true,
+      "key": "linkedin:4461307880",
+      "firstSeenAt": "2026-09-06T03:00:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Conhecimento básico de lógica de programação",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico em alguma linguagem de programação",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico de SQL e banco de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Noções de APIs e integrações",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico de Git",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse em desenvolvimento de software e tecnologia",
+          "mandatory": true
+        },
+        {
+          "text": ".NET / C#",
+          "mandatory": false
+        },
+        {
+          "text": "AWS",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com APIs",
+          "mandatory": false
+        },
+        {
+          "text": "Jira",
+          "mandatory": false
+        },
+        {
+          "text": "Automações ou scripts",
+          "mandatory": false
+        },
+        {
+          "text": "Ferramentas de integração",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 49,
+      "company": "Nava | Tech for Business",
+      "role": "Desenvolvedor(a) Backend Java Júnior",
+      "level": "Júnior / Assistente",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta web em 06/09/2026 — LinkedIn",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Java",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Microsserviços",
+        "Mensageria",
+        "Observabilidade",
+        "Cloud"
+      ],
+      "requirements": [
+        "Java 8 ou superior",
+        "Spring Boot",
+        "APIs REST e microsserviços",
+        "SQL",
+        "Git",
+        "Testes unitários",
+        "Jira",
+        "Datadog",
+        "Cloud",
+        "Vivência no segmento bancário/financeiro"
+      ],
+      "differentials": [
+        "Docker",
+        "Kubernetes",
+        "Kafka e/ou RabbitMQ",
+        "CI/CD",
+        "Ambientes de alta disponibilidade e sistemas críticos"
+      ],
+      "reason": "Backend Java júnior em contexto bancário, com APIs, SQL, testes e competências de produção.",
+      "source": "https://br.linkedin.com/jobs/view/desenvolvedor-a-backend-java-j%C3%BAnior-at-nava-tech-for-business-4461787817",
+      "collectedAt": "2026-09-06T03:00:00Z",
+      "auto": true,
+      "key": "linkedin:4461787817",
+      "firstSeenAt": "2026-09-06T03:00:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Java 8 ou superior",
+          "mandatory": true
+        },
+        {
+          "text": "Spring Boot",
+          "mandatory": true
+        },
+        {
+          "text": "APIs REST e microsserviços",
+          "mandatory": true
+        },
+        {
+          "text": "SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Testes unitários",
+          "mandatory": true
+        },
+        {
+          "text": "Jira",
+          "mandatory": true
+        },
+        {
+          "text": "Datadog",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência no segmento bancário/financeiro",
+          "mandatory": true
+        },
+        {
+          "text": "Docker",
+          "mandatory": false
+        },
+        {
+          "text": "Kubernetes",
+          "mandatory": false
+        },
+        {
+          "text": "Kafka e/ou RabbitMQ",
+          "mandatory": false
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": false
+        },
+        {
+          "text": "Ambientes de alta disponibilidade e sistemas críticos",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 50,
+      "company": "ANBIMA",
+      "role": "Analista Desenvolvedor Java Júnior",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta web em 06/09/2026 — Gupy",
+      "area": "Engenharia de Software",
+      "stack": "Java",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Java",
+        "JavaScript/Node",
+        "Dados/BI",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Pelo menos 1 ano de desenvolvimento em Java/Java EE",
+        "Desenvolvimento web com AngularJS",
+        "Banco de dados relacional e SQL",
+        "Maven",
+        "JBoss",
+        "IntelliJ",
+        "Metodologias ágeis / Scrum",
+        "Especificação de requisitos",
+        "Oracle",
+        "Vivência em ambiente transacional de missão crítica"
+      ],
+      "differentials": [
+        "Modelagem de dados"
+      ],
+      "reason": "Vaga técnica no ecossistema do mercado financeiro, com Java, SQL e ambiente transacional crítico.",
+      "source": "https://anbima.gupy.io/jobs/12378629?jobBoardSource=gupy_public_page",
+      "collectedAt": "2026-09-06T03:00:00Z",
+      "auto": true,
+      "key": "anbima.gupy.io:12378629",
+      "firstSeenAt": "2026-09-06T03:00:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Pelo menos 1 ano de desenvolvimento em Java/Java EE",
+          "mandatory": true
+        },
+        {
+          "text": "Desenvolvimento web com AngularJS",
+          "mandatory": true
+        },
+        {
+          "text": "Banco de dados relacional e SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Maven",
+          "mandatory": true
+        },
+        {
+          "text": "JBoss",
+          "mandatory": true
+        },
+        {
+          "text": "IntelliJ",
+          "mandatory": true
+        },
+        {
+          "text": "Metodologias ágeis / Scrum",
+          "mandatory": true
+        },
+        {
+          "text": "Especificação de requisitos",
+          "mandatory": true
+        },
+        {
+          "text": "Oracle",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência em ambiente transacional de missão crítica",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem de dados",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 51,
+      "company": "Grupo Bancorbrás",
+      "role": "Cientista de Dados Júnior",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta web em 06/09/2026 — Gupy",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Git",
+        "AWS",
+        "CI/CD",
+        "Dados/BI",
+        "IA/ML",
+        "Cloud"
+      ],
+      "requirements": [
+        "Estatística descritiva e aplicada a Machine Learning",
+        "SQL e Python",
+        "Pandas, Scikit-Learn, Stats Models e PySpark",
+        "Extração, transformação e manipulação de dados com SQL",
+        "Git",
+        "Cloud Computing com AWS",
+        "Deploy de modelos",
+        "IA generativa"
+      ],
+      "differentials": [
+        "NLP",
+        "CI/CD",
+        "Cursos ou pós-graduação em Ciência de Dados"
+      ],
+      "reason": "Python + SQL + AWS + ML em uma oportunidade júnior próxima ao perfil atual.",
+      "source": "https://bancorbras.gupy.io/jobs/12424215?jobBoardSource=gupy_public_page",
+      "collectedAt": "2026-09-06T03:00:00Z",
+      "auto": true,
+      "key": "bancorbras.gupy.io:12424215",
+      "firstSeenAt": "2026-09-06T03:00:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Estatística descritiva e aplicada a Machine Learning",
+          "mandatory": true
+        },
+        {
+          "text": "SQL e Python",
+          "mandatory": true
+        },
+        {
+          "text": "Pandas, Scikit-Learn, Stats Models e PySpark",
+          "mandatory": true
+        },
+        {
+          "text": "Extração, transformação e manipulação de dados com SQL",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud Computing com AWS",
+          "mandatory": true
+        },
+        {
+          "text": "Deploy de modelos",
+          "mandatory": true
+        },
+        {
+          "text": "IA generativa",
+          "mandatory": true
+        },
+        {
+          "text": "NLP",
+          "mandatory": false
+        },
+        {
+          "text": "CI/CD",
+          "mandatory": false
+        },
+        {
+          "text": "Cursos ou pós-graduação em Ciência de Dados",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 52,
+      "company": "Via Certa Promotora",
+      "role": "Desenvolvedor Low-code Júnior",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta web em 06/09/2026 — Gupy",
+      "area": "Sistemas / Sustentação",
+      "stack": "Java",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Java",
+        "POO/Design",
+        "Crédito/Risco",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Mínimo de 1 ano com programação profissional",
+        "SQL básico",
+        "Java básico",
+        "Programação orientada a objetos",
+        "Aprendizado contínuo e atuação colaborativa"
+      ],
+      "differentials": [
+        "Outras linguagens de programação",
+        "Ferramentas ou plataformas Low-code",
+        "Regras de negócio e processos de crédito",
+        "Análise e resolução de problemas técnicos"
+      ],
+      "reason": "Oportunidade ligada a crédito, combinando Java, SQL e regras de negócio financeiras.",
+      "source": "https://acertapromotora.gupy.io/jobs/11989163?jobBoardSource=gupy_public_page",
+      "collectedAt": "2026-09-06T03:00:00Z",
+      "auto": true,
+      "key": "acertapromotora.gupy.io:11989163",
+      "firstSeenAt": "2026-09-06T03:00:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Mínimo de 1 ano com programação profissional",
+          "mandatory": true
+        },
+        {
+          "text": "SQL básico",
+          "mandatory": true
+        },
+        {
+          "text": "Java básico",
+          "mandatory": true
+        },
+        {
+          "text": "Programação orientada a objetos",
+          "mandatory": true
+        },
+        {
+          "text": "Aprendizado contínuo e atuação colaborativa",
+          "mandatory": true
+        },
+        {
+          "text": "Outras linguagens de programação",
+          "mandatory": false
+        },
+        {
+          "text": "Ferramentas ou plataformas Low-code",
+          "mandatory": false
+        },
+        {
+          "text": "Regras de negócio e processos de crédito",
+          "mandatory": false
+        },
+        {
+          "text": "Análise e resolução de problemas técnicos",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 53,
+      "company": "Sicoob",
+      "role": "Desenvolvedor Java Júnior",
+      "level": "Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Java",
+        "REST/APIs",
+        "Git",
+        "SQL",
+        "JavaScript/Node",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Graduação em curso ou concluída em Tecnologia da Informação ou áreas correlatas",
+        "Vivência no desenvolvimento de sistemas web com foco em back-end",
+        "Java 8+",
+        "Angular 15+",
+        "APIs REST",
+        "Banco de Dados",
+        "Git"
+      ],
+      "differentials": [
+        "UX",
+        "EJB",
+        "Spring Boot ou Jakarta EE"
+      ],
+      "reason": "Vaga júnior diretamente no Banco Sicoob, com foco em back-end Java, APIs REST, banco de dados e Git.",
+      "source": "https://br.linkedin.com/jobs/view/desenvolvedor-java-j%C3%BAnior-at-sicoob-4460399673",
+      "collectedAt": "2026-09-06T03:23:00Z",
+      "auto": true,
+      "key": "linkedin:4460399673",
+      "firstSeenAt": "2026-09-06T03:23:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Graduação em curso ou concluída em Tecnologia da Informação ou áreas correlatas",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência no desenvolvimento de sistemas web com foco em back-end",
+          "mandatory": true
+        },
+        {
+          "text": "Java 8+",
+          "mandatory": true
+        },
+        {
+          "text": "Angular 15+",
+          "mandatory": true
+        },
+        {
+          "text": "APIs REST",
+          "mandatory": true
+        },
+        {
+          "text": "Banco de Dados",
+          "mandatory": true
+        },
+        {
+          "text": "Git",
+          "mandatory": true
+        },
+        {
+          "text": "UX",
+          "mandatory": false
+        },
+        {
+          "text": "EJB",
+          "mandatory": false
+        },
+        {
+          "text": "Spring Boot ou Jakarta EE",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 54,
+      "company": "XP Inc.",
+      "role": "Engenheiro(a) de Software | Assistente e Júnior",
+      "level": "Assistente / Júnior",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
+      "area": "Engenharia de Software",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Java",
+        ".NET/C#",
+        "Cloud",
+        "Azure",
+        "JavaScript/Node",
+        "POO/Design"
+      ],
+      "requirements": [
+        "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens: C#, Java, Go ou Rust",
+        "Noção de boas práticas de desenvolvimento",
+        "Disponibilidade para modelo presencial flexível em São Paulo"
+      ],
+      "differentials": [
+        "Cloud pública, preferencialmente Azure",
+        "Front-end, preferencialmente React"
+      ],
+      "reason": "Vaga de entrada em Engenharia de Software na XP, útil para medir a demanda por C#/.NET e Java sem exigir experiência avançada.",
+      "source": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-assistente-e-j%C3%BAnior-at-xp-inc-4244881112",
+      "collectedAt": "2026-09-06T03:23:00Z",
+      "auto": true,
+      "key": "linkedin:4244881112",
+      "firstSeenAt": "2026-09-06T03:23:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens: C#, Java, Go ou Rust",
+          "mandatory": true
+        },
+        {
+          "text": "Noção de boas práticas de desenvolvimento",
+          "mandatory": true
+        },
+        {
+          "text": "Disponibilidade para modelo presencial flexível em São Paulo",
+          "mandatory": true
+        },
+        {
+          "text": "Cloud pública, preferencialmente Azure",
+          "mandatory": false
+        },
+        {
+          "text": "Front-end, preferencialmente React",
+          "mandatory": false
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    },
+    {
+      "id": 55,
+      "company": "ANBIMA",
+      "role": "Analista Desenvolvedor Java Júnior",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-06 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Java",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Java",
+        "JavaScript/Node",
+        "Dados/BI",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Participar das atividades de manutenção evolutiva e corretiva dos sistemas internos.",
+        "Experiência de pelo menos 1 ano em desenvolvimento em Java/Java EE ;",
+        "Desenvolvimento WEB (AngularJs);",
+        "Banco de Dados Relacional e SQL;",
+        "Experiência em Metodologias Ágeis (scrum);",
+        "Banco de Dados Oracle;",
+        "Vivência em ambiente transacional de missão crítica;"
+      ],
+      "differentials": [],
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4461939235",
+      "collectedAt": "2026-09-06T03:26:20Z",
+      "auto": true,
+      "key": "linkedin:4461939235",
+      "firstSeenAt": "2026-09-06T03:26:20Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "qualityScore": 60,
+      "requirementsStructured": [
+        {
+          "text": "Participar das atividades de manutenção evolutiva e corretiva dos sistemas internos.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência de pelo menos 1 ano em desenvolvimento em Java/Java EE ;",
+          "mandatory": true
+        },
+        {
+          "text": "Desenvolvimento WEB (AngularJs);",
+          "mandatory": true
+        },
+        {
+          "text": "Banco de Dados Relacional e SQL;",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em Metodologias Ágeis (scrum);",
+          "mandatory": true
+        },
+        {
+          "text": "Banco de Dados Oracle;",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência em ambiente transacional de missão crítica;",
+          "mandatory": true
+        }
+      ],
+      "lastCheckedAt": "2026-09-06T16:13:39+00:00",
+      "verificationReason": "Não foi possível confirmar"
+    }
+  ]
+}

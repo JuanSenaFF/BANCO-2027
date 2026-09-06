@@ -140,7 +140,8 @@ def valid(job: dict) -> tuple[bool, str]:
         return False, "empresa ausente"
     if original_excluded(job):
         return False, "vaga original do usuário"
-    if any(x in role for x in SENIOR):
+    from quality import senior_conflict
+    if senior_conflict(role, " ".join(reqs)):
         return False, "senioridade fora do recorte"
     if len(reqs) < 3:
         return False, "requisitos insuficientes"
@@ -178,11 +179,13 @@ def main() -> None:
         if cu:
             seen_urls.add(cu)
 
-    # IDs estáveis acima da base curada, sem depender de IDs inválidos removidos.
-    next_id = max([int(j.get("id", 0)) for j in base] + [47]) + 1
+    # Preserve IDs so saved favorites and applications do not point to another job.
+    used_ids = {int(j["id"]) for j in base + kept if j.get("id")}
+    next_id = max(used_ids or {47}) + 1
     for j in kept:
-        j["id"] = next_id
-        next_id += 1
+        if not j.get("id"):
+            j["id"] = next_id
+            next_id += 1
 
     used_companies = {j.get("company") for j in kept}
     domains = {k: v for k, v in domains.items() if k in used_companies or company_approved(k)}

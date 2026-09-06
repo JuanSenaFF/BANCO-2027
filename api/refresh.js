@@ -1,0 +1,2 @@
+const {wrap,auth,db,github,fail}=require('../lib/server');
+module.exports=wrap(['POST'],async(req,res)=>{const {user,token}=await auth(req,true);const claimed=await db('rpc/claim_refresh',{token,method:'POST',body:{}});if(!claimed)fail(429,'Já houve uma solicitação recente. Aguarde 5 minutos.');const startedAt=new Date().toISOString();await github('actions/workflows/update-vagas.yml/dispatches',{method:'POST',body:{ref:'main'}});res.status(202).json({status:'queued',startedAt,requestedBy:user.id});});

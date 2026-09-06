@@ -1,5 +1,4 @@
 name: Atualizar vagas
-
 on:
   workflow_dispatch:
   schedule:
@@ -8,47 +7,55 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/update-vagas.yml'
-      - 'scripts/update_vagas.py'
-      - 'scripts/validate_auto.py'
-
+      - 'scripts/**'
 permissions:
   contents: write
-
 concurrency:
   group: atualizar-vagas
   cancel-in-progress: false
-
 jobs:
   atualizar:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Configurar Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Instalar dependências
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dependências
         run: pip install requests beautifulsoup4
-
-      - name: Buscar novas vagas
-        run: python scripts/update_vagas.py
-
-      - name: Validar setor, senioridade e duplicidade
-        run: python scripts/validate_auto.py
-
-      - name: Publicar alterações
+      - name: Verificar regras de qualidade e compatibilidade
         run: |
-          if git diff --quiet -- data-auto.js; then
-            echo "Nenhuma vaga nova válida e distinta por exigências."
-            exit 0
-          fi
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.js
+      - name: Coletar e validar
+        run: |
+          python scripts/update_vagas.py
+          python scripts/validate_auto.py
+          python scripts/build_catalog.py --verify
+      - name: Sincronizar banco quando conectado
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/sync_database.py
+      - name: Preservar catálogo e histórico
+        run: |
           git config user.name "banco-2027-bot"
           git config user.email "banco-2027-bot@users.noreply.github.com"
-          git add data-auto.js
-          git commit -m "Atualiza vagas automaticamente"
-          git push
+          git add data-auto.js jobs.json market-history.json collection-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Atualiza e verifica vagas; preserva histórico"
+            git pull --rebase origin main
+            git push
+          fi
+      - name: Construir site público
+        run: python scripts/build_site.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-publico
+          path: dist

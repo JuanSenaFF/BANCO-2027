@@ -1,0 +1,4 @@
+const {wrap,auth,db,fail}=require('../lib/server');
+function valid(s){if(!s||typeof s!=='object'||!s.profile||!s.prefs||!s.applications||!s.answers||!s.alertRules||!Array.isArray(s.history)||!Array.isArray(s.skillHistory)||!Array.isArray(s.dismissed))return false;return Object.values(s.profile).every(v=>v&&Number.isInteger(v.l)&&v.l>=0&&v.l<=4&&Number.isInteger(v.e)&&v.e>=0&&v.e<=4);}
+module.exports=wrap(['GET','PUT'],async(req,res)=>{const {user,token}=await auth(req);if(req.method==='GET'){const data=await db('user_state?user_id=eq.'+encodeURIComponent(user.id)+'&select=payload',{token});return res.json({state:data[0]?.payload||null});}const state=req.body?.state;if(!valid(state)||Buffer.byteLength(JSON.stringify(state))>2e6)fail(400,'Dados inválidos ou acima do limite de 2 MB.');await db('rpc/save_career_state',{token,method:'POST',body:{p_state:state}});res.json({saved:true});});
+module.exports.valid=valid;
