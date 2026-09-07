@@ -6,5 +6,30 @@
     "technologies": {},
     "companies": {},
     "areas": {}
+  },
+  {
+    "week": "2026-09-07",
+    "at": "2026-09-07T15:33:53+00:00",
+    "total": 2,
+    "technologies": {
+      "SQL": 1,
+      "Troubleshooting/Produção": 1,
+      "Git": 1,
+      "Java": 2,
+      "JavaScript/Node": 2,
+      "REST/APIs": 1,
+      ".NET/C#": 1,
+      "POO/Design": 1,
+      "Azure": 1,
+      "Cloud": 1
+    },
+    "companies": {
+      "Sicoob": 1,
+      "XP Inc.": 1
+    },
+    "areas": {
+      "Backend": 1,
+      "Engenharia de Software": 1
+    }
   }
 ]
