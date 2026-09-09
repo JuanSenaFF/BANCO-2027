@@ -1,12 +1,12 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-09T14:42:54+00:00",
-    "total": 59,
-    "added": 1,
-    "verificationAttempted": 52,
-    "lastCheckAttemptAt": "2026-09-09T14:42:54+00:00",
+    "catalogBuiltAt": "2026-09-09T15:02:09+00:00",
+    "total": 61,
+    "added": 2,
+    "verificationAttempted": 54,
+    "lastCheckAttemptAt": "2026-09-09T15:02:09+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-09T14:39:39Z"
+    "updatedAt": "2026-09-09T14:55:31Z"
   },
   "jobs": [
     {
@@ -436,7 +436,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -716,7 +716,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -805,8 +805,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 9,
@@ -2874,8 +2874,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 32,
@@ -3144,7 +3144,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3273,8 +3273,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 36,
@@ -3595,8 +3595,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 39,
@@ -3680,7 +3680,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3776,7 +3776,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:54+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:10+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -3897,7 +3897,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:55+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4051,7 +4051,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:55+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4136,8 +4136,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:55+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T15:02:10+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 44,
@@ -4214,7 +4214,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:55+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4312,8 +4312,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:55+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T15:02:10+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 46,
@@ -4368,7 +4368,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:55+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4573,8 +4573,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 49,
@@ -4691,8 +4691,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 50,
@@ -4782,7 +4782,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4876,7 +4876,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4957,7 +4957,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4998,7 +4998,7 @@
       "auto": true,
       "key": "linkedin:4460399673",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-09T14:42:56+00:00",
+      "lastVerifiedAt": "2026-09-09T15:02:11+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 100,
@@ -5044,7 +5044,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "location": "Brasília, BR",
       "modality": "Remoto",
@@ -5056,7 +5056,7 @@
       "company": "XP Inc.",
       "role": "Engenheiro(a) de Software | Assistente e Júnior",
       "level": "Assistente / Júnior",
-      "status": "Ativa",
+      "status": "Possivelmente encerrada",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Engenharia de Software",
       "stack": "Multistack",
@@ -5110,8 +5110,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
@@ -5184,7 +5184,7 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-09T14:42:56+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -5354,8 +5354,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T14:42:57+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 65,
       "requirementsStructured": [
         {
@@ -5450,8 +5450,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T14:42:57+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 65,
       "requirementsStructured": [
         {
@@ -5565,7 +5565,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T14:42:57+00:00",
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "requirementsStructured": [
@@ -5679,6 +5679,242 @@
         },
         {
           "text": "Trabalho colaborativo;",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "company": "Inter",
+      "role": "DATA ANALYST I - INNOVATION OFFICE LCO",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Testes",
+        "Dados/BI",
+        "Automação",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Formação em áreas de dados, exatas, tecnologia, administração, economia ou afins.",
+        "SQL para extração e tratamento de dados.",
+        "Tableau (ou BI equivalente: Power BI, Metabase) e visualização de dados.",
+        "Capacidade de traduzir dados em direcionamento para liderança.",
+        "Organização, autonomia e interesse por governança de informação."
+      ],
+      "differentials": [
+        "Python para automação e análise.",
+        "Governança de dados e boas práticas de qualidade.",
+        "Jira e vivência em ambientes dinâmicos (startups, squads, células ágeis).",
+        "Interesse em Legal Ops, compliance ou inteligência operacional.",
+        "HTML/CSS básico para dashboards customizados.",
+        "Vivência em fintechs ou empresas de tecnologia."
+      ],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4460341533",
+      "collectedAt": "2026-09-09T14:55:31Z",
+      "auto": true,
+      "key": "linkedin:4460341533",
+      "firstSeenAt": "2026-09-09T14:55:31Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Formação em áreas de dados, exatas, tecnologia, administração, economia ou afins.",
+          "mandatory": true
+        },
+        {
+          "text": "SQL para extração e tratamento de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Tableau (ou BI equivalente: Power BI, Metabase) e visualização de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de traduzir dados em direcionamento para liderança.",
+          "mandatory": true
+        },
+        {
+          "text": "Organização, autonomia e interesse por governança de informação.",
+          "mandatory": true
+        },
+        {
+          "text": "Python para automação e análise.",
+          "mandatory": false
+        },
+        {
+          "text": "Governança de dados e boas práticas de qualidade.",
+          "mandatory": false
+        },
+        {
+          "text": "Jira e vivência em ambientes dinâmicos (startups, squads, células ágeis).",
+          "mandatory": false
+        },
+        {
+          "text": "Interesse em Legal Ops, compliance ou inteligência operacional.",
+          "mandatory": false
+        },
+        {
+          "text": "HTML/CSS básico para dashboards customizados.",
+          "mandatory": false
+        },
+        {
+          "text": "Vivência em fintechs ou empresas de tecnologia.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "company": "Inter",
+      "role": "DATA ANALYST I | IT SERVICES",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Testes",
+        "Observabilidade",
+        "Cloud",
+        "Dados/BI",
+        "Automação",
+        "Segurança"
+      ],
+      "requirements": [
+        "Formação concluída em Sistemas de Informação, Ciência da Computação, Engenharia, Estatística, Matemática, Economia, Administração ou áreas correlatas.",
+        "Conhecimento básico ou intermediário de SQL.",
+        "Conhecimento de pelo menos uma ferramenta de BI ou visualização de dados.",
+        "Raciocínio lógico e capacidade analítica.",
+        "Interesse em compreender problemas de negócio e trabalhar com diferentes áreas.",
+        "Organização e atenção aos detalhes.",
+        "Boa comunicação oral e escrita.",
+        "Capacidade de aprender novas ferramentas e conceitos."
+      ],
+      "differentials": [
+        "Conhecimento ou experiência com Tableau.",
+        "Experiência com construção de dashboards e indicadores.",
+        "Experiência acadêmica ou profissional em análise de dados.",
+        "Conhecimento de boas práticas de visualização e storytelling com dados.",
+        "Conhecimento básico de Python.",
+        "Noções de modelagem de dados.",
+        "Noções de Data Lake, catálogo, qualidade ou governança de dados.",
+        "Experiência com Trino, Starburst ou ferramentas semelhantes.",
+        "Conhecimento sobre produtos financeiros ou serviços digitais.",
+        "Inglês intermediário.",
+        "Participação em projetos acadêmicos, bootcamps, comunidades ou portfólio relacionado a dados."
+      ],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4462005969",
+      "collectedAt": "2026-09-09T14:55:31Z",
+      "auto": true,
+      "key": "linkedin:4462005969",
+      "firstSeenAt": "2026-09-09T14:55:31Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T15:02:11+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Formação concluída em Sistemas de Informação, Ciência da Computação, Engenharia, Estatística, Matemática, Economia, Administração ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico ou intermediário de SQL.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de pelo menos uma ferramenta de BI ou visualização de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Raciocínio lógico e capacidade analítica.",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse em compreender problemas de negócio e trabalhar com diferentes áreas.",
+          "mandatory": true
+        },
+        {
+          "text": "Organização e atenção aos detalhes.",
+          "mandatory": true
+        },
+        {
+          "text": "Boa comunicação oral e escrita.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de aprender novas ferramentas e conceitos.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento ou experiência com Tableau.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com construção de dashboards e indicadores.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência acadêmica ou profissional em análise de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de boas práticas de visualização e storytelling com dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento básico de Python.",
+          "mandatory": false
+        },
+        {
+          "text": "Noções de modelagem de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Noções de Data Lake, catálogo, qualidade ou governança de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com Trino, Starburst ou ferramentas semelhantes.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento sobre produtos financeiros ou serviços digitais.",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês intermediário.",
+          "mandatory": false
+        },
+        {
+          "text": "Participação em projetos acadêmicos, bootcamps, comunidades ou portfólio relacionado a dados.",
           "mandatory": false
         }
       ]
