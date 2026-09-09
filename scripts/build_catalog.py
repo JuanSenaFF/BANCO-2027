@@ -59,12 +59,14 @@ def run(online=False):
         if requirements_quality_conflict(j.get('role',''),j.get('requirements',[])):
             j['qualityScore']=min(j['qualityScore'],35)
         j['requirementsStructured']=[{'text':t,'mandatory':True} for t in j.get('requirements',[])]+[{'text':t,'mandatory':False} for t in j.get('differentials',[])]
-    meta={**old.get('meta',{}),'catalogBuiltAt':now,'total':len(out),'added':len(set(out)-set(prior)) if online else old.get('meta',{}).get('added',0)}
+    actual_added=len(set(out)-set(prior)) if online else old.get('meta',{}).get('added',0)
+    meta={**old.get('meta',{}),'catalogBuiltAt':now,'total':len(out),'added':actual_added}
     if online:meta.update(lastCheckAttemptAt=now,verificationAttempted=len([j for j in out.values() if j.get('lastCheckedAt')]),verificationConfirmed=sum(j.get('lastVerifiedAt','')==now for j in out.values()))
     report_path=ROOT/'collection-report.json'
     if report_path.exists():
         report=json.loads(report_path.read_text())
-        meta.update(updatedAt=report.get('updatedAt'),added=report.get('added',0))
+        # "discovered" é o que o coletor encontrou antes da validação; "added" é o que realmente entrou no catálogo.
+        meta.update(updatedAt=report.get('updatedAt'),discovered=report.get('added',0),candidateUrls=report.get('candidateUrls'))
     meta['included']=sum(not j.get('excluded') for j in out.values())
     meta['excluded']=sum(bool(j.get('excluded')) for j in out.values())
     data={'meta':meta,'jobs':list(out.values())};path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
