@@ -12,7 +12,7 @@ permissions:
   contents: write
 concurrency:
   group: atualizar-vagas
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   atualizar:
     runs-on: ubuntu-latest
