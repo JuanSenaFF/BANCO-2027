@@ -24,6 +24,14 @@ ENTRY_LEVEL_TERMS = [
     "estagiaria", "intern", "internship",
 ]
 
+NON_ENTRY_TITLE_TERMS = [
+    " spec ii", " spec iii", " spec iv", " spec v",
+    " analyst ii", " analyst iii", " analyst iv", " analyst v",
+    " analista ii", " analista iii", " analista iv", " analista v",
+    " developer ii", " developer iii", " developer iv", " developer v",
+    " desenvolvedor ii", " desenvolvedor iii", " desenvolvedor iv", " desenvolvedor v",
+]
+
 EXTRA_KEYWORDS = [
     "technology analyst i banco", "analista tecnologia nivel i banco", "software analyst i fintech",
     "data analyst i banco", "cloud analyst i fintech", "sre junior banco", "infraestrutura junior banco",
@@ -86,6 +94,7 @@ def configure() -> None:
     core.LINKEDIN_PRIORITY_COMPANIES = PRIORITY_COMPANIES[:]
     core.LINKEDIN_KEYWORDS = list(dict.fromkeys(core.LINKEDIN_KEYWORDS + EXTRA_KEYWORDS))
     core.JUNIOR_TERMS = list(dict.fromkeys(core.JUNIOR_TERMS + ENTRY_LEVEL_TERMS))
+    core.SENIOR_TITLE_TERMS = list(dict.fromkeys(core.SENIOR_TITLE_TERMS + NON_ENTRY_TITLE_TERMS))
     core.EXCLUDED_TITLE_FRAGMENTS = [
         fragment for fragment in core.EXCLUDED_TITLE_FRAGMENTS
         if core.norm(fragment) != core.norm("analista de projetos de tecnologia júnior")
