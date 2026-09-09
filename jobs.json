@@ -1,16 +1,16 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-09T18:26:23+00:00",
-    "total": 64,
-    "added": 3,
-    "verificationAttempted": 57,
-    "lastCheckAttemptAt": "2026-09-09T18:26:23+00:00",
+    "catalogBuiltAt": "2026-09-09T18:39:15+00:00",
+    "total": 65,
+    "added": 1,
+    "verificationAttempted": 58,
+    "lastCheckAttemptAt": "2026-09-09T18:39:15+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-09T18:20:25Z",
-    "included": 60,
-    "excluded": 4,
+    "updatedAt": "2026-09-09T18:31:58Z",
+    "included": 59,
+    "excluded": 6,
     "discovered": 3,
-    "candidateUrls": 350
+    "candidateUrls": 423
   },
   "jobs": [
     {
@@ -440,7 +440,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -720,8 +720,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 8,
@@ -809,8 +809,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 9,
@@ -2878,8 +2878,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 32,
@@ -3148,7 +3148,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3277,7 +3277,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3599,7 +3599,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3684,8 +3684,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 40,
@@ -3780,8 +3780,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 41,
@@ -3901,7 +3901,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4055,7 +4055,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4140,8 +4140,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 44,
@@ -4218,7 +4218,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4316,7 +4316,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4372,7 +4372,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4577,8 +4577,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 49,
@@ -4695,8 +4695,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 50,
@@ -4786,7 +4786,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4880,7 +4880,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4961,7 +4961,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4969,7 +4969,7 @@
       "company": "Sicoob",
       "role": "Desenvolvedor Java Júnior",
       "level": "Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Backend",
       "stack": "Java",
@@ -5002,7 +5002,7 @@
       "auto": true,
       "key": "linkedin:4460399673",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-09T15:02:11+00:00",
+      "lastVerifiedAt": "2026-09-09T18:39:17+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 100,
@@ -5048,8 +5048,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
       "location": "Brasília, BR",
       "modality": "Remoto",
       "publishedAt": "2026-08-28T20:01:19.000Z",
@@ -5060,7 +5060,7 @@
       "company": "XP Inc.",
       "role": "Engenheiro(a) de Software | Assistente e Júnior",
       "level": "Assistente / Júnior",
-      "status": "Ativa",
+      "status": "Possivelmente encerrada",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Engenharia de Software",
       "stack": "Multistack",
@@ -5114,8 +5114,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
@@ -5188,8 +5188,8 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 56,
@@ -5358,7 +5358,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 65,
       "requirementsStructured": [
@@ -5569,7 +5569,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 75,
       "requirementsStructured": [
@@ -5734,7 +5734,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 70,
       "requirementsStructured": [
@@ -5841,8 +5841,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 70,
       "requirementsStructured": [
         {
@@ -5979,7 +5979,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
@@ -6085,9 +6085,9 @@
       "firstSeenAt": "2026-09-09T18:20:25Z",
       "lastVerifiedAt": null,
       "duplicateOf": null,
-      "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "excluded": true,
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 70,
       "requirementsStructured": [
         {
@@ -6176,8 +6176,8 @@
       "firstSeenAt": "2026-09-09T18:20:25Z",
       "lastVerifiedAt": null,
       "duplicateOf": null,
-      "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "excluded": true,
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "requirementsStructured": [
@@ -6239,6 +6239,85 @@
         },
         {
           "text": "Certificações ou cursos relacionados à Segurança da Informação.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "company": "Agibank",
+      "role": "Analista de Operações e Dados Júnior - Campinas/SP",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Testes",
+        "Dados/BI",
+        "Automação",
+        "IA/ML",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Ensino superior em andamento ou completo;",
+        "Excel intermediário ou avançado;",
+        "Manipulação de bases de dados;",
+        "Power BI básico ou intermediário;",
+        "Noções de SQL, Python, VBA ou ferramentas de automação;",
+        "Experiência com ferramentas de IA generativa."
+      ],
+      "differentials": [
+        "Antecipação Saque aniversário do FGTS;"
+      ],
+      "location": null,
+      "modality": "Presencial",
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4416987650",
+      "collectedAt": "2026-09-09T18:31:58Z",
+      "auto": true,
+      "key": "linkedin:4416987650",
+      "firstSeenAt": "2026-09-09T18:31:58Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 75,
+      "requirementsStructured": [
+        {
+          "text": "Ensino superior em andamento ou completo;",
+          "mandatory": true
+        },
+        {
+          "text": "Excel intermediário ou avançado;",
+          "mandatory": true
+        },
+        {
+          "text": "Manipulação de bases de dados;",
+          "mandatory": true
+        },
+        {
+          "text": "Power BI básico ou intermediário;",
+          "mandatory": true
+        },
+        {
+          "text": "Noções de SQL, Python, VBA ou ferramentas de automação;",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com ferramentas de IA generativa.",
+          "mandatory": true
+        },
+        {
+          "text": "Antecipação Saque aniversário do FGTS;",
           "mandatory": false
         }
       ]
