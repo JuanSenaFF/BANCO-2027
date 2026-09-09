@@ -29,6 +29,11 @@ class QualityTests(unittest.TestCase):
     def test_seniority(self):
         self.assertTrue(senior_conflict('Dev Jr','Experiência como sênior'))
         self.assertFalse(senior_conflict('Dev Jr','Trabalhar com colegas seniores'))
+    def test_numbered_levels_above_entry_are_excluded(self):
+        self.assertTrue(senior_conflict('Anti-Fraud Spec III','SQL e Python'))
+        self.assertTrue(senior_conflict('Cyber Security Spec II (BISO)','Cloud Security'))
+        self.assertTrue(senior_conflict('Data Analyst II','SQL'))
+        self.assertFalse(senior_conflict('Data Analyst I','SQL'))
     def test_same_linkedin_id(self):
         self.assertEqual(canonical_url('https://linkedin.com/jobs/view/python-123456789'),canonical_url('https://br.linkedin.com/jobs/view/123456789?tracking=foo'))
     def test_similarity(self):
