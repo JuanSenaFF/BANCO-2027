@@ -2,7 +2,7 @@ import unittest,sys
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from quality import split_requirements,senior_conflict,verify
+from quality import split_requirements,senior_conflict,verify,requirements_quality_conflict
 from validate_auto import canonical_url,req_similarity
 from bs4 import BeautifulSoup
 class QualityTests(unittest.TestCase):
@@ -10,6 +10,20 @@ class QualityTests(unittest.TestCase):
         html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL básico</li><li>Experiência com APIs</li></ul><h2>Diferenciais</h2><ul><li>AWS</li></ul><h2>Benefícios</h2><ul><li>Plano de saúde</li></ul>'
         a,b=split_requirements(None,{'description':html})
         self.assertEqual(a,['Python','SQL básico','Experiência com APIs']);self.assertEqual(b,['AWS'])
+    def test_process_steps_do_not_leak_into_requirements(self):
+        html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL</li><li>APIs REST</li></ul><h2>Etapas do processo seletivo</h2><ul><li>Teste cognitivo</li><li>Entrevista com a liderança</li></ul>'
+        a,b=split_requirements(None,{'description':html})
+        self.assertEqual(a,['Python','SQL','APIs REST']);self.assertEqual(b,[])
+    def test_benefit_items_are_filtered_even_without_heading(self):
+        html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL</li><li>Git</li><li>Vale-Refeição</li><li>Plano médico</li></ul>'
+        a,_=split_requirements(None,{'description':html})
+        self.assertEqual(a,['Python','SQL','Git'])
+    def test_technical_role_requires_hard_skill_signal(self):
+        self.assertTrue(requirements_quality_conflict('Engenharia de Software .Net Júnior',['Curiosidade e vontade de aprender','Proatividade','Boa comunicação']))
+        self.assertFalse(requirements_quality_conflict('Engenharia de Software .Net Júnior',['C# e .NET','APIs REST','SQL']))
+    def test_polluted_requirement_set_is_rejected(self):
+        req=['Python','SQL','Vale-Refeição','Plano médico','Entrevista com a liderança','Teste cognitivo']
+        self.assertTrue(requirements_quality_conflict('Data Analyst I',req))
     def test_unknown_section_is_not_mandatory(self):
         self.assertEqual(split_requirements(BeautifulSoup('<li>Python no menu</li>','html.parser')),( [],[]))
     def test_seniority(self):
