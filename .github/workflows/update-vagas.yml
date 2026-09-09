@@ -35,7 +35,7 @@ jobs:
           node --test tests/*.test.js
       - name: Coletar e validar
         run: |
-          python scripts/update_vagas.py
+          python scripts/update_vagas_v2.py
           python scripts/validate_auto.py
           python scripts/build_catalog.py --verify
       - name: Sincronizar banco quando conectado
