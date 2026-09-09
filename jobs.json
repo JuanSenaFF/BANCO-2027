@@ -1,16 +1,16 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-09T18:39:15+00:00",
-    "total": 65,
-    "added": 1,
-    "verificationAttempted": 58,
-    "lastCheckAttemptAt": "2026-09-09T18:39:15+00:00",
+    "catalogBuiltAt": "2026-09-09T23:43:04+00:00",
+    "total": 69,
+    "added": 4,
+    "verificationAttempted": 62,
+    "lastCheckAttemptAt": "2026-09-09T23:43:04+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-09T18:31:58Z",
-    "included": 59,
+    "updatedAt": "2026-09-09T23:37:00Z",
+    "included": 63,
     "excluded": 6,
-    "discovered": 3,
-    "candidateUrls": 423
+    "discovered": 4,
+    "candidateUrls": 373
   },
   "jobs": [
     {
@@ -440,7 +440,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -720,8 +720,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 8,
@@ -809,8 +809,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 9,
@@ -2878,7 +2878,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -3148,7 +3148,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3277,7 +3277,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3599,8 +3599,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 39,
@@ -3684,8 +3684,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 40,
@@ -3780,7 +3780,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -3901,7 +3901,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4055,7 +4055,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4140,8 +4140,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 44,
@@ -4218,8 +4218,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:16+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 45,
@@ -4316,7 +4316,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4372,7 +4372,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4577,7 +4577,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4695,8 +4695,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 50,
@@ -4786,7 +4786,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4880,7 +4880,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4961,7 +4961,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4969,7 +4969,7 @@
       "company": "Sicoob",
       "role": "Desenvolvedor Java Júnior",
       "level": "Júnior",
-      "status": "Ativa",
+      "status": "Possivelmente encerrada",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Backend",
       "stack": "Java",
@@ -5048,8 +5048,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "Brasília, BR",
       "modality": "Remoto",
       "publishedAt": "2026-08-28T20:01:19.000Z",
@@ -5114,7 +5114,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
@@ -5188,7 +5188,7 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:39:17+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -5358,8 +5358,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 65,
       "requirementsStructured": [
         {
@@ -5569,7 +5569,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 75,
       "requirementsStructured": [
@@ -5734,7 +5734,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 70,
       "requirementsStructured": [
@@ -5841,7 +5841,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 70,
       "requirementsStructured": [
@@ -5979,7 +5979,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
@@ -6288,8 +6288,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:39:18+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "requirementsStructured": [
         {
@@ -6319,6 +6319,356 @@
         {
           "text": "Antecipação Saque aniversário do FGTS;",
           "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "company": "Bullla",
+      "role": "Desenvolvedor(a) Fullstack Júnior | Plataforma de Renda Fixa",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Backend",
+      "stack": "Java",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Java",
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Dados/BI",
+        "Automação",
+        "IA/ML",
+        "Crédito/Risco",
+        "POO/Design"
+      ],
+      "requirements": [
+        "Conhecimento fundamental/base na linguagem Java e familiaridade com o ecossistema Spring (Spring Boot, Spring Data JPA, REST APIs).",
+        "Conhecimentos básicos/intermediários em desenvolvimento Web: HTML5, CSS3, JavaScript/TypeScript e noções em algum framework moderno (React, Angular ou Vue.js).",
+        "Interesse ativo e utilização de ferramentas de Inteligência Artificial Generativa (Gemini, Claude, ChatGPT, Copilot) como suporte ao aprendizado e à programação.",
+        "Noções básicas de conceitos de testes de software (testes unitários com JUnit/Mockito, Jest ou similares) e boas práticas de Clean Code.",
+        "Conhecimento básico em bancos de dados relacionais (SQL, consultas simples, tabelas e relacionamentos).",
+        "Familiaridade com Git e fluxos de trabalho colaborativos (branches, commits, Pull Requests, GitHub/GitLab).",
+        "Interesse por mercado financeiro e vontade de aprender sobre produtos e rotinas de Renda Fixa e Crédito."
+      ],
+      "differentials": [],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4464141238",
+      "collectedAt": "2026-09-09T23:37:00Z",
+      "auto": true,
+      "key": "linkedin:4464141238",
+      "firstSeenAt": "2026-09-09T23:37:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 60,
+      "requirementsStructured": [
+        {
+          "text": "Conhecimento fundamental/base na linguagem Java e familiaridade com o ecossistema Spring (Spring Boot, Spring Data JPA, REST APIs).",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimentos básicos/intermediários em desenvolvimento Web: HTML5, CSS3, JavaScript/TypeScript e noções em algum framework moderno (React, Angular ou Vue.js).",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse ativo e utilização de ferramentas de Inteligência Artificial Generativa (Gemini, Claude, ChatGPT, Copilot) como suporte ao aprendizado e à programação.",
+          "mandatory": true
+        },
+        {
+          "text": "Noções básicas de conceitos de testes de software (testes unitários com JUnit/Mockito, Jest ou similares) e boas práticas de Clean Code.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico em bancos de dados relacionais (SQL, consultas simples, tabelas e relacionamentos).",
+          "mandatory": true
+        },
+        {
+          "text": "Familiaridade com Git e fluxos de trabalho colaborativos (branches, commits, Pull Requests, GitHub/GitLab).",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse por mercado financeiro e vontade de aprender sobre produtos e rotinas de Renda Fixa e Crédito.",
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "company": "Elo",
+      "role": "Analista de Riscos Financeiros Júnior",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "Automação",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Tenha formação superior completa ou em andamento nos cursos de Administração, Economia, Engenharia, Ciências Contábeis, Matemática, Estatística ou áreas correlatas.",
+        "Possua conhecimento em análise financeira e interpretação de demonstrações contábeis.",
+        "Tenha habilidade analítica e raciocínio lógico para avaliação de riscos e manipulação de dados.",
+        "Conheça Excel em nível intermediário ou avançado.",
+        "Possua boa comunicação e capacidade de relacionamento com diferentes áreas.",
+        "Demonstre organização, proatividade e interesse em desenvolver conhecimentos em gestão de riscos financeiros."
+      ],
+      "differentials": [
+        "Tiver experiência prévia em instituições financeiras, meios de pagamento, fintechs ou áreas de risco.",
+        "Possuir conhecimento em análise de crédito corporativo e avaliação de indicadores econômico-financeiros.",
+        "Tiver experiência com Power BI, SQL, Python ou ferramentas de automação e análise de dados."
+      ],
+      "location": null,
+      "modality": "Híbrido",
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4462189181",
+      "collectedAt": "2026-09-09T23:37:00Z",
+      "auto": true,
+      "key": "linkedin:4462189181",
+      "firstSeenAt": "2026-09-09T23:37:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 75,
+      "requirementsStructured": [
+        {
+          "text": "Tenha formação superior completa ou em andamento nos cursos de Administração, Economia, Engenharia, Ciências Contábeis, Matemática, Estatística ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Possua conhecimento em análise financeira e interpretação de demonstrações contábeis.",
+          "mandatory": true
+        },
+        {
+          "text": "Tenha habilidade analítica e raciocínio lógico para avaliação de riscos e manipulação de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Conheça Excel em nível intermediário ou avançado.",
+          "mandatory": true
+        },
+        {
+          "text": "Possua boa comunicação e capacidade de relacionamento com diferentes áreas.",
+          "mandatory": true
+        },
+        {
+          "text": "Demonstre organização, proatividade e interesse em desenvolver conhecimentos em gestão de riscos financeiros.",
+          "mandatory": true
+        },
+        {
+          "text": "Tiver experiência prévia em instituições financeiras, meios de pagamento, fintechs ou áreas de risco.",
+          "mandatory": false
+        },
+        {
+          "text": "Possuir conhecimento em análise de crédito corporativo e avaliação de indicadores econômico-financeiros.",
+          "mandatory": false
+        },
+        {
+          "text": "Tiver experiência com Power BI, SQL, Python ou ferramentas de automação e análise de dados.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "company": "XP Inc.",
+      "role": "Analista de Riscos de Crédito Junior",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Engenharia de Software",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "Testes",
+        "Dados/BI",
+        "Automação",
+        "IA/ML",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Formação em Economia, Engenharias, Ciências Exatas, Administração ou áreas correlatas.",
+        "Domínio do pacote Office (Excel Avançado e PowerPoint), com habilidade para construir apresentações gerenciais e executivas.",
+        "Capacidade analítica, visão crítica e disposição para aprender e resolver problemas complexos.",
+        "Boa comunicação e habilidade para interação com diferentes áreas e stakeholders.",
+        "Agilidade e organização para garantir entregas dentro dos prazos (comitês, metas, indicadores).",
+        "Testes gerais: Avaliação do alinhamento cultural com o teste da Mindsight e teste de raciocínio lógico da Predictive Index."
+      ],
+      "differentials": [
+        "Conhecimento ou experiência prévia em Risco de Crédito, Crédito, Produtos ou Estratégia & Performance.",
+        "Conhecimento em Python para automação de apurações e tratamento de dados.",
+        "Experiência com leitura e interpretação de resoluções regulatórias.",
+        "Vivência no setor financeiro.",
+        "Apurar e monitorar os KPIs da RAS (Apetite ao Risco) e MRI (Metas de Remuneração por Indicador), garantindo acuracidade e pontualidade nas entregas.",
+        "Apoiar na criação de materiais recorrentes para comitês executivos, traduzindo indicadores de risco em posicionamento estratégico para a alta liderança e o regulador.",
+        "Participar da gestão e fabricação de políticas de risco de crédito, avaliando aderência das áreas e propondo diretrizes de governança.",
+        "Apoiar a leitura e interpretação de normativas regulatórias, traduzindo requerimentos em processos e indicadores operacionais.",
+        "Trabalhar com times multidisciplinares de forma transversal, conectando risco de crédito à estratégia da instituição."
+      ],
+      "location": null,
+      "modality": "Presencial",
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4462743222",
+      "collectedAt": "2026-09-09T23:37:00Z",
+      "auto": true,
+      "key": "linkedin:4462743222",
+      "firstSeenAt": "2026-09-09T23:37:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 75,
+      "requirementsStructured": [
+        {
+          "text": "Formação em Economia, Engenharias, Ciências Exatas, Administração ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Domínio do pacote Office (Excel Avançado e PowerPoint), com habilidade para construir apresentações gerenciais e executivas.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade analítica, visão crítica e disposição para aprender e resolver problemas complexos.",
+          "mandatory": true
+        },
+        {
+          "text": "Boa comunicação e habilidade para interação com diferentes áreas e stakeholders.",
+          "mandatory": true
+        },
+        {
+          "text": "Agilidade e organização para garantir entregas dentro dos prazos (comitês, metas, indicadores).",
+          "mandatory": true
+        },
+        {
+          "text": "Testes gerais: Avaliação do alinhamento cultural com o teste da Mindsight e teste de raciocínio lógico da Predictive Index.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento ou experiência prévia em Risco de Crédito, Crédito, Produtos ou Estratégia & Performance.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento em Python para automação de apurações e tratamento de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com leitura e interpretação de resoluções regulatórias.",
+          "mandatory": false
+        },
+        {
+          "text": "Vivência no setor financeiro.",
+          "mandatory": false
+        },
+        {
+          "text": "Apurar e monitorar os KPIs da RAS (Apetite ao Risco) e MRI (Metas de Remuneração por Indicador), garantindo acuracidade e pontualidade nas entregas.",
+          "mandatory": false
+        },
+        {
+          "text": "Apoiar na criação de materiais recorrentes para comitês executivos, traduzindo indicadores de risco em posicionamento estratégico para a alta liderança e o regulador.",
+          "mandatory": false
+        },
+        {
+          "text": "Participar da gestão e fabricação de políticas de risco de crédito, avaliando aderência das áreas e propondo diretrizes de governança.",
+          "mandatory": false
+        },
+        {
+          "text": "Apoiar a leitura e interpretação de normativas regulatórias, traduzindo requerimentos em processos e indicadores operacionais.",
+          "mandatory": false
+        },
+        {
+          "text": "Trabalhar com times multidisciplinares de forma transversal, conectando risco de crédito à estratégia da instituição.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "company": "Banco Daycoval",
+      "role": "Analista de Risco de Crédito Pl",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Formação superior completa em Administração, Economia, Contabilidade, Engenharia, Matemática, Estatística ou áreas correlatas.",
+        "Experiência comprovada em Risco de Crédito em bancos ou financeiras;",
+        "Excel em nível intermediário/avançado;",
+        "SQL Avançado",
+        "Conhecimento em Python para análise e tratamento de dados."
+      ],
+      "differentials": [],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4452578955",
+      "collectedAt": "2026-09-09T23:37:00Z",
+      "auto": true,
+      "key": "linkedin:4452578955",
+      "firstSeenAt": "2026-09-09T23:37:00Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 60,
+      "requirementsStructured": [
+        {
+          "text": "Formação superior completa em Administração, Economia, Contabilidade, Engenharia, Matemática, Estatística ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência comprovada em Risco de Crédito em bancos ou financeiras;",
+          "mandatory": true
+        },
+        {
+          "text": "Excel em nível intermediário/avançado;",
+          "mandatory": true
+        },
+        {
+          "text": "SQL Avançado",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em Python para análise e tratamento de dados.",
+          "mandatory": true
         }
       ]
     }
