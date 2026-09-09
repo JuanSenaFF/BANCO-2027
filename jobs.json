@@ -1,12 +1,12 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-08T14:11:35+00:00",
-    "total": 57,
-    "added": 0,
-    "verificationAttempted": 50,
-    "lastCheckAttemptAt": "2026-09-08T14:11:35+00:00",
+    "catalogBuiltAt": "2026-09-09T14:12:13+00:00",
+    "total": 59,
+    "added": 2,
+    "verificationAttempted": 52,
+    "lastCheckAttemptAt": "2026-09-09T14:12:13+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-08T14:07:32Z"
+    "updatedAt": "2026-09-09T14:09:33Z"
   },
   "jobs": [
     {
@@ -436,8 +436,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 5,
@@ -716,8 +716,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 8,
@@ -805,7 +805,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -2874,8 +2874,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 32,
@@ -3144,8 +3144,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 35,
@@ -3273,8 +3273,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 36,
@@ -3595,8 +3595,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 39,
@@ -3680,7 +3680,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3776,7 +3776,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -3897,8 +3897,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T14:12:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 42,
@@ -4051,8 +4051,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 43,
@@ -4136,7 +4136,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4214,8 +4214,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 45,
@@ -4312,7 +4312,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4368,7 +4368,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4573,8 +4573,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 49,
@@ -4691,7 +4691,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4782,7 +4782,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4876,7 +4876,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4957,7 +4957,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4965,7 +4965,7 @@
       "company": "Sicoob",
       "role": "Desenvolvedor Java Júnior",
       "level": "Júnior",
-      "status": "Ativa",
+      "status": "Possivelmente encerrada",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Backend",
       "stack": "Java",
@@ -5044,8 +5044,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "Brasília, BR",
       "modality": "Remoto",
       "publishedAt": "2026-08-28T20:01:19.000Z",
@@ -5056,7 +5056,7 @@
       "company": "XP Inc.",
       "role": "Engenheiro(a) de Software | Assistente e Júnior",
       "level": "Assistente / Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Engenharia de Software",
       "stack": "Multistack",
@@ -5084,7 +5084,7 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-07T15:33:55+00:00",
+      "lastVerifiedAt": "2026-09-09T14:12:15+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 100,
@@ -5110,8 +5110,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:36+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
@@ -5184,7 +5184,7 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-08T14:11:37+00:00",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -5354,8 +5354,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-08T14:11:37+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 65,
       "requirementsStructured": [
         {
@@ -5401,6 +5401,285 @@
         {
           "text": "Conhecimento em fluxos de CI/CD.",
           "mandatory": true
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "company": "XP Inc.",
+      "role": "QuantDev Analyst",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Sistemas / Sustentação",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "Java",
+        "Testes",
+        "Dados/BI",
+        "IA/ML",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Ambiente dinâmico e aberto para novas ideias;",
+        "Liberdade para trilhar uma carreira protagonista;",
+        "Espaço para desenvolvimento e aprendizado constantes.",
+        "Teste cognitivo: Teste de raciocínio lógico da Predictive Index.",
+        "Vídeo entrevista: Uma oportunidade para nos conhecermos melhor e entender suas motivações e experiências.",
+        "Entrevista com a equipe de Recrutamento: Discussão sobre as expectativas em relação à vaga e aos objetivos profissionais.",
+        "Avaliação técnica: [Entrevista/dinâmica/teste] focado nas habilidades específicas necessárias para a função.",
+        "Entrevista com a liderança: Uma conversa para discutir sua visão e como você pode contribuir para a equipe e a empresa.",
+        "Entrevista com colegas de trabalho: Interação com futuros pares para avaliar a sinergia e o trabalho em equipe.",
+        "Entrevista focada em cultura: Exploração dos valores e princípios da empresa para garantir um bom encaixe cultural."
+      ],
+      "differentials": [],
+      "location": null,
+      "modality": "Presencial",
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4198276844",
+      "collectedAt": "2026-09-09T14:09:33Z",
+      "auto": true,
+      "key": "linkedin:4198276844",
+      "firstSeenAt": "2026-09-09T14:09:33Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 65,
+      "requirementsStructured": [
+        {
+          "text": "Ambiente dinâmico e aberto para novas ideias;",
+          "mandatory": true
+        },
+        {
+          "text": "Liberdade para trilhar uma carreira protagonista;",
+          "mandatory": true
+        },
+        {
+          "text": "Espaço para desenvolvimento e aprendizado constantes.",
+          "mandatory": true
+        },
+        {
+          "text": "Teste cognitivo: Teste de raciocínio lógico da Predictive Index.",
+          "mandatory": true
+        },
+        {
+          "text": "Vídeo entrevista: Uma oportunidade para nos conhecermos melhor e entender suas motivações e experiências.",
+          "mandatory": true
+        },
+        {
+          "text": "Entrevista com a equipe de Recrutamento: Discussão sobre as expectativas em relação à vaga e aos objetivos profissionais.",
+          "mandatory": true
+        },
+        {
+          "text": "Avaliação técnica: [Entrevista/dinâmica/teste] focado nas habilidades específicas necessárias para a função.",
+          "mandatory": true
+        },
+        {
+          "text": "Entrevista com a liderança: Uma conversa para discutir sua visão e como você pode contribuir para a equipe e a empresa.",
+          "mandatory": true
+        },
+        {
+          "text": "Entrevista com colegas de trabalho: Interação com futuros pares para avaliar a sinergia e o trabalho em equipe.",
+          "mandatory": true
+        },
+        {
+          "text": "Entrevista focada em cultura: Exploração dos valores e princípios da empresa para garantir um bom encaixe cultural.",
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "company": "Sicredi",
+      "role": "Assistente de Desenvolvimento de Sistemas - Pelotas/RS",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Automação & IA",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Dados/BI",
+        "Automação",
+        "IA/ML",
+        "Segurança",
+        "Crédito/Risco",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Conhecimento de lógica de programação e fundamentos de desenvolvimento de soluções.",
+        "Conhecimento em Python ou outra linguagem de programação.",
+        "Noções de processos de negócio, automação e gerenciamento de processos.",
+        "Noções de APIs, requisições HTTP, JSON e integração entre sistemas.",
+        "Noções de bancos de dados, SQL e manipulação de dados.",
+        "Conhecimento e familiaridade com ferramentas do Microsoft 365.",
+        "Capacidade de interpretar fluxos, regras de negócio e documentação técnica.",
+        "Organização para realizar testes, registrar informações e documentar soluções.",
+        "Interesse em aprender plataformas internas, ferramentas de BPM e tecnologias de automação.",
+        "Interesse ou experiência com aplicação de inteligência artificial na automação e melhoria de processos."
+      ],
+      "differentials": [
+        "Experiência com o Fluid ou com outras plataformas de BPM, workflow ou gerenciamento de processos.",
+        "Experiência com desenvolvimento de formulários, fluxos, regras de negócio, aprovações e encaminhamentos em plataformas BPM.",
+        "Conhecimento de integração entre plataformas BPM, APIs REST, bancos de dados e sistemas corporativos.",
+        "Experiência com BotCity, UiPath, Power Automate, Automation Anywhere ou ferramentas de RPA similares.",
+        "Conhecimento de Power Apps, SharePoint Online e outros recursos do Microsoft 365.",
+        "Conhecimento de autenticação em APIs, incluindo tokens, OAuth2, certificados digitais e mTLS.",
+        "Experiência com Python aplicado à automação, integração de sistemas ou manipulação de dados.",
+        "Conhecimento de Git ou outra ferramenta de controle de versões.",
+        "Noções de monitoramento, análise de logs, tratamento de exceções e sustentação de aplicações.",
+        "Noções de segurança da informação, LGPD e proteção de credenciais.",
+        "Experiência em instituições financeiras, cooperativas de crédito ou processos administrativos corporativos.",
+        "Familiaridade com ferramentas de IA, assistentes virtuais, chatbots ou plataformas de automação inteligente.",
+        "Experiência com soluções que utilizem OCR, processamento de documentos ou extração automática de informações.",
+        "Comunicação e influência;",
+        "Relacionamento interpessoal;",
+        "Planejamento e organização;",
+        "Adaptabilidade;",
+        "Trabalho colaborativo;"
+      ],
+      "location": null,
+      "modality": "Presencial",
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4458272564",
+      "collectedAt": "2026-09-09T14:09:33Z",
+      "auto": true,
+      "key": "linkedin:4458272564",
+      "firstSeenAt": "2026-09-09T14:09:33Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T14:12:15+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 75,
+      "requirementsStructured": [
+        {
+          "text": "Conhecimento de lógica de programação e fundamentos de desenvolvimento de soluções.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em Python ou outra linguagem de programação.",
+          "mandatory": true
+        },
+        {
+          "text": "Noções de processos de negócio, automação e gerenciamento de processos.",
+          "mandatory": true
+        },
+        {
+          "text": "Noções de APIs, requisições HTTP, JSON e integração entre sistemas.",
+          "mandatory": true
+        },
+        {
+          "text": "Noções de bancos de dados, SQL e manipulação de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento e familiaridade com ferramentas do Microsoft 365.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de interpretar fluxos, regras de negócio e documentação técnica.",
+          "mandatory": true
+        },
+        {
+          "text": "Organização para realizar testes, registrar informações e documentar soluções.",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse em aprender plataformas internas, ferramentas de BPM e tecnologias de automação.",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse ou experiência com aplicação de inteligência artificial na automação e melhoria de processos.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com o Fluid ou com outras plataformas de BPM, workflow ou gerenciamento de processos.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com desenvolvimento de formulários, fluxos, regras de negócio, aprovações e encaminhamentos em plataformas BPM.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de integração entre plataformas BPM, APIs REST, bancos de dados e sistemas corporativos.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com BotCity, UiPath, Power Automate, Automation Anywhere ou ferramentas de RPA similares.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de Power Apps, SharePoint Online e outros recursos do Microsoft 365.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de autenticação em APIs, incluindo tokens, OAuth2, certificados digitais e mTLS.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com Python aplicado à automação, integração de sistemas ou manipulação de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de Git ou outra ferramenta de controle de versões.",
+          "mandatory": false
+        },
+        {
+          "text": "Noções de monitoramento, análise de logs, tratamento de exceções e sustentação de aplicações.",
+          "mandatory": false
+        },
+        {
+          "text": "Noções de segurança da informação, LGPD e proteção de credenciais.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência em instituições financeiras, cooperativas de crédito ou processos administrativos corporativos.",
+          "mandatory": false
+        },
+        {
+          "text": "Familiaridade com ferramentas de IA, assistentes virtuais, chatbots ou plataformas de automação inteligente.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com soluções que utilizem OCR, processamento de documentos ou extração automática de informações.",
+          "mandatory": false
+        },
+        {
+          "text": "Comunicação e influência;",
+          "mandatory": false
+        },
+        {
+          "text": "Relacionamento interpessoal;",
+          "mandatory": false
+        },
+        {
+          "text": "Planejamento e organização;",
+          "mandatory": false
+        },
+        {
+          "text": "Adaptabilidade;",
+          "mandatory": false
+        },
+        {
+          "text": "Trabalho colaborativo;",
+          "mandatory": false
         }
       ]
     }
