@@ -66,16 +66,15 @@ def enhanced_linkedin_urls() -> list[str]:
             if url not in out:
                 out.append(url)
 
+    # Buscas genéricas preservam descoberta fora da lista prioritária.
     for keyword in core.LINKEDIN_KEYWORDS:
         add(core.linkedin_query_urls(keyword, (0, 10)))
 
-    # Uma consulta booleana por empresa; o filtro f_E=2 da função base restringe a nível de entrada.
+    # Uma consulta por empresa prioritária. Evitamos uma segunda tentativa redundante por empresa:
+    # o objetivo é ampliar cobertura sem transformar o workflow numa coleta excessivamente longa.
     for company in PRIORITY_COMPANIES:
         query = f'"{company}" AND (software OR tecnologia OR dados OR data OR cloud OR sistemas OR backend OR sre)'
-        urls = core.linkedin_query_urls(query, (0,))
-        if not urls:
-            urls = core.linkedin_query_urls(f'"{company}" tecnologia', (0,))
-        add(urls)
+        add(core.linkedin_query_urls(query, (0,)))
 
     print(f"[source] LinkedIn: {len(out)} URLs")
     return out
@@ -83,6 +82,7 @@ def enhanced_linkedin_urls() -> list[str]:
 
 def configure() -> None:
     core.MAX_NEW = 25
+    core.TIMEOUT = 10
     core.LINKEDIN_PRIORITY_COMPANIES = PRIORITY_COMPANIES[:]
     core.LINKEDIN_KEYWORDS = list(dict.fromkeys(core.LINKEDIN_KEYWORDS + EXTRA_KEYWORDS))
     core.JUNIOR_TERMS = list(dict.fromkeys(core.JUNIOR_TERMS + ENTRY_LEVEL_TERMS))
