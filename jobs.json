@@ -1,14 +1,16 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-09T18:15:27+00:00",
-    "total": 61,
-    "added": 1,
-    "verificationAttempted": 54,
-    "lastCheckAttemptAt": "2026-09-09T18:15:27+00:00",
+    "catalogBuiltAt": "2026-09-09T18:26:23+00:00",
+    "total": 64,
+    "added": 3,
+    "verificationAttempted": 57,
+    "lastCheckAttemptAt": "2026-09-09T18:26:23+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-09T18:10:10Z",
-    "included": 57,
-    "excluded": 4
+    "updatedAt": "2026-09-09T18:20:25Z",
+    "included": 60,
+    "excluded": 4,
+    "discovered": 3,
+    "candidateUrls": 350
   },
   "jobs": [
     {
@@ -438,8 +440,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:27+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 5,
@@ -718,7 +720,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:27+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -807,7 +809,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:27+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -2876,7 +2878,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:27+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3146,7 +3148,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:27+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3275,7 +3277,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:27+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:23+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3597,8 +3599,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:27+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 39,
@@ -3682,7 +3684,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:28+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3778,7 +3780,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:28+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -3899,7 +3901,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:28+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:24+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4053,7 +4055,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:28+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4138,7 +4140,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:28+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4216,8 +4218,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
       "id": 45,
@@ -4314,7 +4316,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4370,7 +4372,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4575,8 +4577,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
       "id": 49,
@@ -4693,7 +4695,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento"
     },
     {
@@ -4784,7 +4786,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4878,7 +4880,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -4959,7 +4961,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -5046,7 +5048,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:29+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "Brasília, BR",
       "modality": "Remoto",
@@ -5058,7 +5060,7 @@
       "company": "XP Inc.",
       "role": "Engenheiro(a) de Software | Assistente e Júnior",
       "level": "Assistente / Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Engenharia de Software",
       "stack": "Multistack",
@@ -5086,7 +5088,7 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-09T14:42:56+00:00",
+      "lastVerifiedAt": "2026-09-09T18:26:26+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 100,
@@ -5112,8 +5114,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:30+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
@@ -5186,7 +5188,7 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-09T18:15:30+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
     },
     {
@@ -5356,7 +5358,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:15:30+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 65,
       "requirementsStructured": [
@@ -5567,7 +5569,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:15:30+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 75,
       "requirementsStructured": [
@@ -5732,7 +5734,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:15:30+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 70,
       "requirementsStructured": [
@@ -5839,7 +5841,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T18:15:30+00:00",
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "requirementsStructured": [
@@ -5917,6 +5919,326 @@
         },
         {
           "text": "Participação em projetos acadêmicos, bootcamps, comunidades ou portfólio relacionado a dados.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "company": "Sicredi",
+      "role": "Analista de Desenvolvimento de Sistemas - Toledo/PR",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Docker",
+        "Mensageria",
+        "Observabilidade",
+        "Linux",
+        "Dados/BI",
+        "Automação",
+        "Crédito/Risco",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Projetar soluções de automação e integração entre sistemas corporativos.",
+        "Consumir e integrar APIs REST, serviços corporativos e plataformas de terceiros.",
+        "Realizar manipulação, tratamento e validação de dados provenientes de diferentes fontes.",
+        "Desenvolver mecanismos de monitoramento, observação e tratamento de falhas.",
+        "Atuar na análise de incidentes, correção de problemas e sustentação das soluções em produção.",
+        "Participar da modernização e migração de processos automatizados e tecnologias legadas.",
+        "Elaborar documentação técnica e operacional.",
+        "Aplicar boas práticas de desenvolvimento, versionamento, testes e qualidade de código.",
+        "Contribuir para a evolução da arquitetura das automações, visando escalabilidade, performance e manutenibilidade.",
+        "Identificar oportunidades de melhoria contínua e de geração de valor para o negócio.",
+        "Experiência com desenvolvimento em Python.",
+        "Experiência com integração de sistemas e consumo de APIs REST.",
+        "Conhecimento em SQL para consulta e manipulação de dados.",
+        "Experiência com tratamento e transformação de dados em diferentes formatos (JSON, CSV, Excel, PDF)."
+      ],
+      "differentials": [],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4458259681",
+      "collectedAt": "2026-09-09T18:20:25Z",
+      "auto": true,
+      "key": "linkedin:4458259681",
+      "firstSeenAt": "2026-09-09T18:20:25Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 60,
+      "requirementsStructured": [
+        {
+          "text": "Projetar soluções de automação e integração entre sistemas corporativos.",
+          "mandatory": true
+        },
+        {
+          "text": "Consumir e integrar APIs REST, serviços corporativos e plataformas de terceiros.",
+          "mandatory": true
+        },
+        {
+          "text": "Realizar manipulação, tratamento e validação de dados provenientes de diferentes fontes.",
+          "mandatory": true
+        },
+        {
+          "text": "Desenvolver mecanismos de monitoramento, observação e tratamento de falhas.",
+          "mandatory": true
+        },
+        {
+          "text": "Atuar na análise de incidentes, correção de problemas e sustentação das soluções em produção.",
+          "mandatory": true
+        },
+        {
+          "text": "Participar da modernização e migração de processos automatizados e tecnologias legadas.",
+          "mandatory": true
+        },
+        {
+          "text": "Elaborar documentação técnica e operacional.",
+          "mandatory": true
+        },
+        {
+          "text": "Aplicar boas práticas de desenvolvimento, versionamento, testes e qualidade de código.",
+          "mandatory": true
+        },
+        {
+          "text": "Contribuir para a evolução da arquitetura das automações, visando escalabilidade, performance e manutenibilidade.",
+          "mandatory": true
+        },
+        {
+          "text": "Identificar oportunidades de melhoria contínua e de geração de valor para o negócio.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com desenvolvimento em Python.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com integração de sistemas e consumo de APIs REST.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em SQL para consulta e manipulação de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com tratamento e transformação de dados em diferentes formatos (JSON, CSV, Excel, PDF).",
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "company": "Santander Brasil",
+      "role": "Anti-Fraud Spec III",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Dados/BI",
+        "IA/ML",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Experiência em análise de dados, gestão de riscos, prevenção a fraudes ou áreas correlatas.",
+        "Conhecimento de SQL e Python para manipulação de grandes volumes de dados.",
+        "Experiência na construção de indicadores e monitoramentos.",
+        "Conhecimento em ferramentas de visualização de dados e elaboração de dashboards."
+      ],
+      "differentials": [
+        "Conhecimento em Estatística Aplicada.",
+        "Experiência com modelos estatísticos e análises preditivas.",
+        "Conhecimento em Machine Learning e técnicas de detecção de anomalias.",
+        "Domínio de Python, SAS, R ou ferramentas de analytics.",
+        "Experiência em ambientes de Big Data e plataformas analíticas."
+      ],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4457316847",
+      "collectedAt": "2026-09-09T18:20:25Z",
+      "auto": true,
+      "key": "linkedin:4457316847",
+      "firstSeenAt": "2026-09-09T18:20:25Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Experiência em análise de dados, gestão de riscos, prevenção a fraudes ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de SQL e Python para manipulação de grandes volumes de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência na construção de indicadores e monitoramentos.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em ferramentas de visualização de dados e elaboração de dashboards.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em Estatística Aplicada.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com modelos estatísticos e análises preditivas.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento em Machine Learning e técnicas de detecção de anomalias.",
+          "mandatory": false
+        },
+        {
+          "text": "Domínio de Python, SAS, R ou ferramentas de analytics.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência em ambientes de Big Data e plataformas analíticas.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "company": "Santander Brasil",
+      "role": "Cyber Security Spec II (BISO)",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-09 — LinkedIn",
+      "area": "Cloud / SRE",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Cloud",
+        "Dados/BI",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Conhecimento de Security by Design e conceitos de desenvolvimento seguro (SSDLC).",
+        "Noções de Application Security, Cloud Security e Arquitetura de Segurança.",
+        "Conhecimento de IAM, Vulnerability Management e Incident Response.",
+        "Capacidade de acompanhar e analisar indicadores de segurança, riscos e planos de ação.",
+        "Boa comunicação e relacionamento interpessoal.",
+        "Perfil analítico, consultivo e colaborativo.",
+        "Capacidade de organização e acompanhamento de demandas.",
+        "Proatividade e interesse em desenvolver conhecimentos em cibersegurança.",
+        "Capacidade de trabalhar com diferentes áreas e equipes multidisciplinares.",
+        "Orientação para riscos e necessidades do negócio."
+      ],
+      "differentials": [
+        "Experiência em ambientes ágeis e transformação digital.",
+        "Vivência em setores regulados, especialmente no setor financeiro.",
+        "Conhecimento em Cloud Security, Data Security ou GenAI Security.",
+        "Experiência em atividades relacionadas a Cyber Security, Risk, Compliance ou Security Business Partner.",
+        "Certificações ou cursos relacionados à Segurança da Informação."
+      ],
+      "location": null,
+      "modality": null,
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4455991358",
+      "collectedAt": "2026-09-09T18:20:25Z",
+      "auto": true,
+      "key": "linkedin:4455991358",
+      "firstSeenAt": "2026-09-09T18:20:25Z",
+      "lastVerifiedAt": null,
+      "duplicateOf": null,
+      "excluded": false,
+      "lastCheckedAt": "2026-09-09T18:26:26+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "requirementsStructured": [
+        {
+          "text": "Conhecimento de Security by Design e conceitos de desenvolvimento seguro (SSDLC).",
+          "mandatory": true
+        },
+        {
+          "text": "Noções de Application Security, Cloud Security e Arquitetura de Segurança.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de IAM, Vulnerability Management e Incident Response.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de acompanhar e analisar indicadores de segurança, riscos e planos de ação.",
+          "mandatory": true
+        },
+        {
+          "text": "Boa comunicação e relacionamento interpessoal.",
+          "mandatory": true
+        },
+        {
+          "text": "Perfil analítico, consultivo e colaborativo.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de organização e acompanhamento de demandas.",
+          "mandatory": true
+        },
+        {
+          "text": "Proatividade e interesse em desenvolver conhecimentos em cibersegurança.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de trabalhar com diferentes áreas e equipes multidisciplinares.",
+          "mandatory": true
+        },
+        {
+          "text": "Orientação para riscos e necessidades do negócio.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em ambientes ágeis e transformação digital.",
+          "mandatory": false
+        },
+        {
+          "text": "Vivência em setores regulados, especialmente no setor financeiro.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento em Cloud Security, Data Security ou GenAI Security.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência em atividades relacionadas a Cyber Security, Risk, Compliance ou Security Business Partner.",
+          "mandatory": false
+        },
+        {
+          "text": "Certificações ou cursos relacionados à Segurança da Informação.",
           "mandatory": false
         }
       ]
