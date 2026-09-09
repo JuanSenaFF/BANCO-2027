@@ -11,8 +11,10 @@ def norm(s):
 
 
 def senior_conflict(title, description):
+    t=norm(title)
     return bool(
-        re.search(r'\b(pleno|senior|staff|lead|especialista|principal)\b', norm(title))
+        re.search(r'\b(pleno|senior|staff|lead|especialista|principal)\b', t)
+        or re.search(r'\b(?:spec|analyst|analista|developer|desenvolvedor|engenheir[oa])\s+(?:ii|iii|iv|v|[2-9])\b', t)
         or re.search(
             r'(?:experiencia\s+(?:como|de|em nivel)\s+|nivel de experiencia\s*[:\-]?\s*)'
             r'(?:profissional\s+)?(?:pleno|senior)',
