@@ -150,11 +150,13 @@ def valid(job: dict) -> tuple[bool, str]:
         return False, "empresa ausente"
     if original_excluded(job):
         return False, "vaga original do usuário"
-    from quality import senior_conflict
+    from quality import senior_conflict, requirements_quality_conflict
     if senior_conflict(role, " ".join(reqs)):
         return False, "senioridade fora do recorte"
     if len(reqs) < 3:
         return False, "requisitos insuficientes"
+    if requirements_quality_conflict(job.get("role", ""), reqs):
+        return False, "requisitos contaminados ou pouco informativos"
     # Empresas prioritárias/adicionais passam pelo nome. Empresas novas só passam quando os dados
     # extraídos ainda preservam contexto financeiro explícito; consultorias também exigem esse contexto.
     if not company_approved(company) and not finance_context(job):
