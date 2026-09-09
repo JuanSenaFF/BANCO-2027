@@ -17,6 +17,10 @@ APPROVED_COMPANIES = [
     "Will Bank", "Genial Investimentos", "EQI", "EQI Investimentos", "Rico", "Clear", "Avenue",
     "Sicoob", "Sicredi", "Sinqia", "Matera", "FitBank", "ANBIMA", "BMP", "Grupo Bancorbrás",
     "Via Certa Promotora", "Nava | Tech for Business", "Nava",
+    # Ecossistema financeiro adicional: não é prioridade de busca, mas pode entrar quando aparecer nas fontes.
+    "Agibank", "Banco Carrefour", "Banco Mercantil", "Banco Sofisa", "Banco Pine", "Banco Rendimento",
+    "Banco Bari", "Digio", "Banco Digio", "Banco Modal", "EBANX", "CloudWalk", "InfinitePay", "Asaas",
+    "Celcoin", "QI Tech", "Stark Bank", "Conta Simples", "RecargaPay", "Zoop", "Vindi", "Fiserv",
 ]
 
 CONTEXT_COMPANIES = ["Tata Consultancy Services", "TCS", "FCamara", "Qaracter", "Stefanini", "Capgemini", "Accenture"]
@@ -29,9 +33,9 @@ STRONG_FINANCE = [
 ]
 
 # Vagas originalmente fornecidas pelo usuário: nunca devem reaparecer como “novas”.
+# A vaga de Analista de Projetos de Tecnologia Júnior do Itaú deixou de ser excluída: ela deve ser
+# tratada pelas mesmas regras de requisitos/deduplicação das demais vagas.
 EXCLUDED = [
-    ("ita", "analista de projetos", "tecnologia"),
-    ("ita", "analista de projetos", "tenologia"),
     ("btg", "backend", "recovery credit"),
     ("btg", "software engineer junior", "sustentacao"),
     ("bradesco", "analista suporte ti", "jr"),
@@ -58,7 +62,13 @@ def compact(s: str) -> str:
 
 def company_approved(c: str) -> bool:
     cc = compact(c)
-    return bool(cc) and any(cc == compact(x) or (len(cc) >= 5 and cc in compact(x)) or (len(compact(x)) >= 5 and compact(x) in cc) for x in APPROVED_COMPANIES)
+    if not cc:
+        return False
+    approved = {compact(x) for x in APPROVED_COMPANIES}
+    if cc in approved:
+        return True
+    # Correspondência parcial só para nomes longos; evita casos como Clear x ClearSale.
+    return any(len(cc) >= 8 and len(x) >= 8 and (cc in x or x in cc) for x in approved)
 
 
 def company_contextual(c: str) -> bool:
@@ -145,8 +155,12 @@ def valid(job: dict) -> tuple[bool, str]:
         return False, "senioridade fora do recorte"
     if len(reqs) < 3:
         return False, "requisitos insuficientes"
-    if not company_approved(company) and not (company_contextual(company) and finance_context(job)):
+    # Empresas prioritárias/adicionais passam pelo nome. Empresas novas só passam quando os dados
+    # extraídos ainda preservam contexto financeiro explícito; consultorias também exigem esse contexto.
+    if not company_approved(company) and not finance_context(job):
         return False, "fora do ecossistema financeiro validado"
+    if company_contextual(company) and not finance_context(job):
+        return False, "consultoria sem contexto financeiro explícito"
     return True, "ok"
 
 
