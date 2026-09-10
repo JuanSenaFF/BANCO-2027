@@ -9,7 +9,7 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Match por requisito obrigatório e diferencial; nível e evidência; inglês, experiência, formação e preferências. Requisitos não mapeados e elegibilidade afirmativa exigem confirmação individual. Não inferimos condições pessoais.
 - Quatro filas de ação recalculadas pelo perfil: `Aplicar agora`, `Aplicar e estudar`, `Preparar por 1–2 semanas` e `Acompanhar`. A decisão combina aderência conhecida, gaps fecháveis, esforço, regras eliminatórias e confiança operacional do anúncio.
 - Requisitos desconhecidos não reduzem a aderência usada pelas filas e permanecem visíveis para confirmação. Vagas pendentes continuam no motor com confiança menor; anúncios encerrados ou excluídos não entram nas filas.
-- Ranking de estudo, simulação de vagas desbloqueadas, esforço heurístico explícito e score de empresa.
+- Plano de estudo por impacto: simula um avanço de nível com evidência prática, mede vagas que entram nas filas qualificadas, pondera cada anúncio pela confiança e ordena por candidaturas adicionais por hora. Frequência, promoções de fila e ganho de aderência permanecem como sinais secundários transparentes.
 - Pipeline com nove etapas, datas, feedback, próxima ação, observações, histórico de mudanças e taxas calculadas por candidaturas efetivamente registradas.
 - Histórico semanal de mercado no coletor e de perfil ao acessar o painel, além de registro manual. Não inventa snapshots de semanas anteriores nem considera uma amostra sem confirmação como queda de mercado.
 - Alertas no painel: match, backend júnior, empresa prioritária, Python+SQL+APIs e até um gap.
