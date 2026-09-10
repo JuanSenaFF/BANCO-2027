@@ -188,6 +188,12 @@ def valid(job: dict) -> tuple[bool, str]:
         return False, "requisitos insuficientes"
     if requirements_quality_conflict(job.get("role", ""), reqs):
         return False, "requisitos contaminados ou pouco informativos"
+    # Reapply the collector's role filter to the persistent automatic catalog.
+    # This removes records admitted by an older, more permissive version.
+    from update_vagas import is_relevant
+    relevance_text = " ".join(reqs + job.get("differentials", []) + [job.get("reason", "")])
+    if not is_relevant(job.get("role", ""), company, relevance_text):
+        return False, "cargo fora do recorte técnico"
     # Empresas prioritárias/adicionais passam pelo nome. Empresas novas só passam quando os dados
     # extraídos ainda preservam contexto financeiro explícito; consultorias também exigem esse contexto.
     if not company_approved(company) and not finance_context(job):

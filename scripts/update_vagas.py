@@ -65,13 +65,34 @@ STRONG_FINANCE_PHRASES = [
     "renda fixa", "investment banking", "financial services", "banking industry", "credit risk", "payments industry",
 ]
 
-JUNIOR_TERMS = ["júnior", "junior", " jr", "jr ", "assistente", "associate", "nível i", "nivel i", "trainee"]
+JUNIOR_TERMS = [
+    "júnior", "junior", " jr", "jr ", "assistente", "associate", "nível i", "nivel i",
+    "analyst i", "analista i", "level i", "nível 1", "nivel 1", "entry level", "entry-level",
+    "estágio", "estagio", "estagiário", "estagiario", "estagiária", "estagiaria", "intern", "internship",
+    "trainee",
+]
 SENIOR_TITLE_TERMS = ["sênior", "senior", "pleno", "specialist", "especialista", "lead", "principal", "staff"]
 TECH_TERMS = [
     "software", "backend", "back-end", "desenvolvedor", "developer", "engenharia", "dados", "data",
     "sistemas", "cloud", "sre", "devops", "automação", "automacao", "python", "java", ".net", "c#",
     "sql", "api", "qa", "qualidade", "segurança", "security", "infraestrutura",
 ]
+
+# A ocorrência de uma tecnologia em uma descrição longa não transforma uma
+# vaga administrativa em vaga de tecnologia. O título precisa indicar uma
+# área-alvo ou, em cargos genéricos de entrada, a descrição deve conter ao
+# menos dois sinais técnicos fortes.
+TARGET_TITLE_RE = re.compile(
+    r"software|backend|back-end|front-?end|full\s*stack|developer|desenvolv|"
+    r"engenheir|\bdata\b|dados|analytics|cientista|cloud|\bsre\b|devops|"
+    r"automa[cç][aã]o|systems?|sistemas|tecnologia|\bti\b|security|seguran[cç]a|"
+    r"cyber|\bqa\b|qualidade|risk|risco|credit|cr[eé]dito|fraud|fraude"
+)
+STRONG_TECH_TAGS = {
+    "Python", "SQL", "Java", ".NET/C#", "JavaScript/Node", "REST/APIs", "Git",
+    "AWS", "Azure", "GCP", "Docker", "Kubernetes", "CI/CD", "Microsserviços",
+    "Mensageria", "Cloud", "Linux", "Terraform/IaC",
+}
 
 # As 8 vagas originalmente fornecidas pelo usuário não podem voltar como “novas”.
 EXCLUDED_TITLE_FRAGMENTS = [
@@ -556,6 +577,10 @@ def is_relevant(title: str, company: str, text: str) -> bool:
     tech = any(t in merged for t in TECH_TERMS)
     if not (junior and tech):
         return False
+    if not TARGET_TITLE_RE.search(title_n):
+        strong_tags = set(classify_tags(text)) & STRONG_TECH_TAGS
+        if len(strong_tags) < 2:
+            return False
     if approved_company(company):
         return True
     # Consultorias e novas empresas só entram com contexto financeiro forte explícito no anúncio.

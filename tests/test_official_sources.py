@@ -13,7 +13,7 @@ from official_sources import (
     same_posting,
     source_metadata,
 )
-from validate_auto import req_similarity
+from validate_auto import req_similarity, valid
 import update_vagas
 
 
@@ -91,6 +91,40 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertEqual(report["counts"]["boards_failed"], 1)
         self.assertEqual(report["counts"]["boards_ok"], 1)
         self.assertEqual(report["errors"][0]["company"], "Broken")
+
+    def test_admin_title_is_not_admitted_by_incidental_technology_word(self):
+        self.assertFalse(update_vagas.is_relevant(
+            "Editor & Motion Designer Junior",
+            "Banco Inter",
+            "Uso eventual de inteligência artificial generativa.",
+        ))
+        self.assertFalse(update_vagas.is_relevant(
+            "Financial Planning Analyst I",
+            "Banco Inter",
+            "Planejamento financeiro, Excel e consultas simples em SQL.",
+        ))
+
+    def test_generic_entry_title_requires_two_strong_technical_signals(self):
+        self.assertTrue(update_vagas.is_relevant(
+            "Payment Performance Associate",
+            "Getnet",
+            "Processamento de dados com Python e SQL no setor de pagamentos.",
+        ))
+
+    def test_validation_removes_old_false_positive_from_auto_catalog(self):
+        ok, reason = valid({
+            "company": "Banco Inter",
+            "role": "Editor & Motion Designer Junior",
+            "requirements": [
+                "Ensino superior completo",
+                "Experiência com edição de vídeo",
+                "Interesse em inteligência artificial generativa",
+            ],
+            "differentials": [],
+            "reason": "Coletada automaticamente em Greenhouse.",
+        })
+        self.assertFalse(ok)
+        self.assertEqual(reason, "cargo fora do recorte técnico")
 
     def test_official_source_can_supersede_linkedin_for_same_posting(self):
         requirements = ["Python", "SQL", "APIs REST"]
