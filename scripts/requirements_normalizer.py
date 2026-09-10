@@ -37,6 +37,7 @@ TECHNOLOGIES = [
     Technology(r"\bspring\s*boot\b", "Java", "Spring Boot", "spring"),
     Technology(r"\bspring\s*(?:data|mvc|security|test)\b", "Java", "Spring", "spring"),
     Technology(r"\bhibernate\b|\bjpa\b", "Java", "Hibernate/JPA", "spring"),
+    Technology(r"\bjakarta\s*ee\b|\bjava\s*ee\b|\bj2ee\b", "Java", "Jakarta EE"),
     Technology(r"java server faces|\bjsf\b", "Java", "JavaServer Faces"),
     Technology(r"\bjboss\b|\bapache\b", "Java", "Servidor de aplicação"),
     Technology(r"\bjunit\b|\bmockito\b", "Testes", "JUnit/Mockito", "tests"),
@@ -185,6 +186,7 @@ def normalize_requirement(text: str, mandatory: bool, position: int = 0, source:
     eliminatory = mandatory and category in {"education", "location", "eligibility"}
     requirement_type = "eliminatory" if eliminatory else "mandatory" if mandatory else "differential"
     profile_ids = list(dict.fromkeys(t["profileSkillId"] for t in technologies if t["profileSkillId"]))
+    unmapped_skill_count = sum(not t["profileSkillId"] for t in technologies)
     relation = "single"
     if len(technologies) > 1:
         relation = "any" if re.search(r"\bou\b|\bor\b", normalized) or "/" in clean else "all"
@@ -202,6 +204,7 @@ def normalize_requirement(text: str, mandatory: bool, position: int = 0, source:
         "subskill": primary.get("subskill"),
         "skills": technologies,
         "profileSkillIds": profile_ids,
+        "unmappedSkillCount": unmapped_skill_count,
         "relation": relation,
         "level": level,
         "levelLabel": LEVEL_LABELS.get(level),
@@ -250,6 +253,8 @@ def validate_requirements(records: list[dict]) -> None:
             raise ValueError("mandatory flag conflicts with requirement type")
         if not isinstance(record.get("profileSkillIds"), list):
             raise ValueError("profileSkillIds must be a list")
+        if not isinstance(record.get("unmappedSkillCount"), int) or record["unmappedSkillCount"] < 0:
+            raise ValueError("unmappedSkillCount must be a non-negative integer")
 
 
 def normalization_summary(jobs: list[dict]) -> dict:

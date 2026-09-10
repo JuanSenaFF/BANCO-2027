@@ -36,7 +36,9 @@
       if(!mentioned.length)return {ratio:0,unknown:true,skills:[]};
       const xs=mentioned.map(s=>{const p=profile[s.id]||{l:0,e:0};return {id:s.id,label:s.label,req:need,current:p.l||0,evidence:p.e||0,ratio:Math.min((p.l||0)/need,1)*(factor[p.e]||0)};});
       const alternative=requirement.relation==='any'||(!exact&&/\bou\b|\bor\b|aws\s*\/\s*azure|azure\s*\/\s*gcp/.test(norm(text)));
-      return {ratio:alternative?Math.max(...xs.map(x=>x.ratio)):Math.min(...xs.map(x=>x.ratio)),unknown:false,skills:xs,alternative};
+      const ratio=alternative?Math.max(...xs.map(x=>x.ratio)):Math.min(...xs.map(x=>x.ratio));
+      const unmapped=exact&&Number(requirement.unmappedSkillCount||0)>0;
+      return {ratio,unknown:unmapped&&(alternative?ratio<.85:true),skills:xs,alternative};
     };
     const one=(requirement,index,mandatory)=>{
       const text=requirement.text||String(requirement||'');

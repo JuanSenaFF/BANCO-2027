@@ -44,6 +44,7 @@ class RequirementsNormalizerTests(unittest.TestCase):
         transferable = normalize_requirement("Git e testes automatizados", True)
         self.assertEqual(alternative["relation"], "any")
         self.assertEqual({item["skill"] for item in alternative["skills"]}, {"Java", "Go"})
+        self.assertEqual(alternative["unmappedSkillCount"], 1)
         self.assertTrue(transferable["transferable"])
 
     def test_affirmative_title_creates_an_eliminatory_gate(self):
@@ -84,6 +85,7 @@ class RequirementsNormalizerTests(unittest.TestCase):
                 "level": 2,
                 "minYears": None,
                 "profileSkillIds": ["python"],
+                "unmappedSkillCount": 0,
             }])
 
 

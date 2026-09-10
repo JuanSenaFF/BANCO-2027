@@ -10,8 +10,8 @@ def requirement_rows(jobs):
     rows=[]
     for job in jobs:
         records=job.get('requirementsStructured') or [
-            *({'text':text,'position':position,'mandatory':True,'requirementType':'mandatory','category':'other','relation':'single','profileSkillIds':[],'transferable':False} for position,text in enumerate(job.get('requirements',[]))),
-            *({'text':text,'position':position,'mandatory':False,'requirementType':'differential','category':'other','relation':'single','profileSkillIds':[],'transferable':False} for position,text in enumerate(job.get('differentials',[]))),
+            *({'text':text,'position':position,'mandatory':True,'requirementType':'mandatory','category':'other','relation':'single','profileSkillIds':[],'unmappedSkillCount':0,'transferable':False} for position,text in enumerate(job.get('requirements',[]))),
+            *({'text':text,'position':position,'mandatory':False,'requirementType':'differential','category':'other','relation':'single','profileSkillIds':[],'unmappedSkillCount':0,'transferable':False} for position,text in enumerate(job.get('differentials',[]))),
         ]
         for record in records:
             rows.append({
