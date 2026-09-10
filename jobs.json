@@ -1,24 +1,26 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-10T15:31:57+00:00",
-    "total": 69,
-    "added": 0,
-    "verificationAttempted": 62,
-    "lastCheckAttemptAt": "2026-09-10T14:05:25+00:00",
+    "catalogBuiltAt": "2026-09-10T15:35:36+00:00",
+    "total": 86,
+    "added": 17,
+    "verificationAttempted": 79,
+    "lastCheckAttemptAt": "2026-09-10T15:35:36+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-10T14:04:21Z",
-    "included": 62,
-    "excluded": 7,
-    "discovered": 0,
-    "candidateUrls": 489,
-    "validated": 18,
-    "rejected": 0,
-    "rejectionReasons": {},
+    "updatedAt": "2026-09-10T15:34:39Z",
+    "included": 77,
+    "excluded": 9,
+    "discovered": 17,
+    "candidateUrls": 432,
+    "validated": 34,
+    "rejected": 1,
+    "rejectionReasons": {
+      "exigências essencialmente idênticas": 1
+    },
     "needsReview": 0,
-    "pendingValidation": 37,
-    "officialSources": 9,
-    "linkedinFallbacks": 52,
-    "officialCoveragePct": 14.5
+    "pendingValidation": 54,
+    "officialSources": 26,
+    "linkedinFallbacks": 50,
+    "officialCoveragePct": 33.8
   },
   "jobs": [
     {
@@ -493,8 +495,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -818,8 +820,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -922,8 +924,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3336,8 +3338,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3651,8 +3653,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3795,8 +3797,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4162,8 +4164,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4262,8 +4264,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4373,8 +4375,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4509,8 +4511,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:27+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4678,8 +4680,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:27+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4778,8 +4780,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:27+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4871,7 +4873,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:27+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4984,8 +4986,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:27+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -5055,7 +5057,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:27+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -5290,8 +5292,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -5423,7 +5425,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -5529,7 +5531,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5648,7 +5650,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5744,7 +5746,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5846,8 +5848,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "Brasília, BR",
       "modality": "Remoto",
       "publishedAt": "2026-08-28T20:01:19.000Z",
@@ -5940,7 +5942,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
@@ -6228,8 +6230,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
         {
@@ -6467,8 +6469,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -6644,8 +6646,8 @@
       "key": "linkedin:4460341533",
       "firstSeenAt": "2026-09-09T14:55:31Z",
       "lastVerifiedAt": null,
-      "duplicateOf": null,
-      "excluded": false,
+      "duplicateOf": "boards.greenhouse.io/inter/jobs/4725206005",
+      "excluded": true,
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 57,
@@ -6765,8 +6767,8 @@
       "key": "linkedin:4462005969",
       "firstSeenAt": "2026-09-09T14:55:31Z",
       "lastVerifiedAt": null,
-      "duplicateOf": null,
-      "excluded": false,
+      "duplicateOf": "boards.greenhouse.io/inter/jobs/4726341005",
+      "excluded": true,
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 57,
@@ -6919,8 +6921,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -7270,7 +7272,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -7365,7 +7367,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:28+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -7458,8 +7460,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:29+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -7566,7 +7568,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:29+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -7684,7 +7686,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T14:05:29+00:00",
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -7721,6 +7723,1909 @@
           "provider": "linkedin",
           "official": false,
           "priority": 1
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "company": "Banco Inter",
+      "role": "BACK OFFICE ANALYST I - STOCK OPERATIONS BR",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "Automação",
+        "Segurança"
+      ],
+      "requirements": [
+        "Ensino superior completo;",
+        "Experiência de pelo menos 1 ano com investimentos;",
+        "Inglês avançado (interação com fornecedores externos);",
+        "Conhecimento em excel pelo menos intermediário."
+      ],
+      "differentials": [
+        "Experiência / Conhecimento em cripto;",
+        "Conhecimento de ferramentas de automação (VBA, Pyton, Alteryx, etc)."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-08-12T09:11:06-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4713263005?gh_jid=4713263005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4713263005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4713263005?gh_jid=4713263005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Ensino superior completo;",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência de pelo menos 1 ano com investimentos;",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês avançado (interação com fornecedores externos);",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em excel pelo menos intermediário.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência / Conhecimento em cripto;",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de ferramentas de automação (VBA, Pyton, Alteryx, etc).",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "company": "Banco Inter",
+      "role": "COMMERCIAL ANALYST I - SHOPPING BUSINESS MKP",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Engenharia de Software",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Formação em Administração ou áreas correlatas;",
+        "Experiência com e-commerce;",
+        "Organização, foco em resultados, resolução de problemas e resiliência em trocas de planos rápidos;",
+        "Excelente comunicação e relacionamento interpessoal;",
+        "Perfil analítico, com foco em transformar os indicadores em plano de ação junto com os stakeholders;",
+        "Habilidade de montar apresentações;",
+        "Experiência com e-commerce, varejo, campanhas de vendas.",
+        "Conhecimento avançado em excel e mínimo de AI."
+      ],
+      "differentials": [
+        "Experiência em gestão de KPI's, melhoria contínua;",
+        "Vivência em mercado de Abastecimento & Mobilidade ou Telecom & Recargas;",
+        "Conhecimento em AI;",
+        "Experiência com calendários comerciais."
+      ],
+      "location": "São Paulo, SP",
+      "modality": null,
+      "publishedAt": "2026-07-28T14:54:28-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4718130005?gh_jid=4718130005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4718130005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4718130005?gh_jid=4718130005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Formação em Administração ou áreas correlatas;",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com e-commerce;",
+          "mandatory": true
+        },
+        {
+          "text": "Organização, foco em resultados, resolução de problemas e resiliência em trocas de planos rápidos;",
+          "mandatory": true
+        },
+        {
+          "text": "Excelente comunicação e relacionamento interpessoal;",
+          "mandatory": true
+        },
+        {
+          "text": "Perfil analítico, com foco em transformar os indicadores em plano de ação junto com os stakeholders;",
+          "mandatory": true
+        },
+        {
+          "text": "Habilidade de montar apresentações;",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com e-commerce, varejo, campanhas de vendas.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento avançado em excel e mínimo de AI.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em gestão de KPI's, melhoria contínua;",
+          "mandatory": false
+        },
+        {
+          "text": "Vivência em mercado de Abastecimento & Mobilidade ou Telecom & Recargas;",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento em AI;",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com calendários comerciais.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "company": "Banco Inter",
+      "role": "DATA ANALYST I - INNOVATION OFFICE LCO",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Testes",
+        "Dados/BI",
+        "Automação",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Formação em áreas de dados, exatas, tecnologia, administração, economia ou afins.",
+        "SQL para extração e tratamento de dados.",
+        "Tableau (ou BI equivalente: Power BI, Metabase) e visualização de dados.",
+        "Capacidade de traduzir dados em direcionamento para liderança.",
+        "Organização, autonomia e interesse por governança de informação."
+      ],
+      "differentials": [
+        "Python para automação e análise.",
+        "Governança de dados e boas práticas de qualidade.",
+        "Jira e vivência em ambientes dinâmicos (startups, squads, células ágeis).",
+        "Interesse em Legal Ops, compliance ou inteligência operacional.",
+        "HTML/CSS básico para dashboards customizados.",
+        "Vivência em fintechs ou empresas de tecnologia."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-08-28T08:23:19-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4725206005?gh_jid=4725206005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "supersedesSource": "https://www.linkedin.com/jobs/view/4460341533",
+      "key": "boards.greenhouse.io/inter/jobs/4725206005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4725206005?gh_jid=4725206005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        },
+        {
+          "url": "https://www.linkedin.com/jobs/view/4460341533",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "sourceAliases": [
+        "linkedin:4460341533"
+      ],
+      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Formação em áreas de dados, exatas, tecnologia, administração, economia ou afins.",
+          "mandatory": true
+        },
+        {
+          "text": "SQL para extração e tratamento de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Tableau (ou BI equivalente: Power BI, Metabase) e visualização de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de traduzir dados em direcionamento para liderança.",
+          "mandatory": true
+        },
+        {
+          "text": "Organização, autonomia e interesse por governança de informação.",
+          "mandatory": true
+        },
+        {
+          "text": "Python para automação e análise.",
+          "mandatory": false
+        },
+        {
+          "text": "Governança de dados e boas práticas de qualidade.",
+          "mandatory": false
+        },
+        {
+          "text": "Jira e vivência em ambientes dinâmicos (startups, squads, células ágeis).",
+          "mandatory": false
+        },
+        {
+          "text": "Interesse em Legal Ops, compliance ou inteligência operacional.",
+          "mandatory": false
+        },
+        {
+          "text": "HTML/CSS básico para dashboards customizados.",
+          "mandatory": false
+        },
+        {
+          "text": "Vivência em fintechs ou empresas de tecnologia.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "company": "Banco Inter",
+      "role": "DATA ANALYST I | IT SERVICES",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Testes",
+        "Observabilidade",
+        "Cloud",
+        "Dados/BI",
+        "Automação",
+        "Segurança"
+      ],
+      "requirements": [
+        "Formação concluída em Sistemas de Informação, Ciência da Computação, Engenharia, Estatística, Matemática, Economia, Administração ou áreas correlatas.",
+        "Conhecimento básico ou intermediário de SQL.",
+        "Conhecimento de pelo menos uma ferramenta de BI ou visualização de dados.",
+        "Raciocínio lógico e capacidade analítica.",
+        "Interesse em compreender problemas de negócio e trabalhar com diferentes áreas.",
+        "Organização e atenção aos detalhes.",
+        "Boa comunicação oral e escrita.",
+        "Capacidade de aprender novas ferramentas e conceitos."
+      ],
+      "differentials": [
+        "Conhecimento ou experiência com Tableau.",
+        "Experiência com construção de dashboards e indicadores.",
+        "Experiência acadêmica ou profissional em análise de dados.",
+        "Conhecimento de boas práticas de visualização e storytelling com dados.",
+        "Conhecimento básico de Python.",
+        "Noções de modelagem de dados.",
+        "Noções de Data Lake, catálogo, qualidade ou governança de dados.",
+        "Experiência com Trino, Starburst ou ferramentas semelhantes.",
+        "Conhecimento sobre produtos financeiros ou serviços digitais.",
+        "Inglês intermediário.",
+        "Participação em projetos acadêmicos, bootcamps, comunidades ou portfólio relacionado a dados."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-09-01T14:06:34-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4726341005?gh_jid=4726341005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "supersedesSource": "https://www.linkedin.com/jobs/view/4462005969",
+      "key": "boards.greenhouse.io/inter/jobs/4726341005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4726341005?gh_jid=4726341005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        },
+        {
+          "url": "https://www.linkedin.com/jobs/view/4462005969",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "sourceAliases": [
+        "linkedin:4462005969"
+      ],
+      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Formação concluída em Sistemas de Informação, Ciência da Computação, Engenharia, Estatística, Matemática, Economia, Administração ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico ou intermediário de SQL.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de pelo menos uma ferramenta de BI ou visualização de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Raciocínio lógico e capacidade analítica.",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse em compreender problemas de negócio e trabalhar com diferentes áreas.",
+          "mandatory": true
+        },
+        {
+          "text": "Organização e atenção aos detalhes.",
+          "mandatory": true
+        },
+        {
+          "text": "Boa comunicação oral e escrita.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de aprender novas ferramentas e conceitos.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento ou experiência com Tableau.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com construção de dashboards e indicadores.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência acadêmica ou profissional em análise de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de boas práticas de visualização e storytelling com dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento básico de Python.",
+          "mandatory": false
+        },
+        {
+          "text": "Noções de modelagem de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Noções de Data Lake, catálogo, qualidade ou governança de dados.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com Trino, Starburst ou ferramentas semelhantes.",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento sobre produtos financeiros ou serviços digitais.",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês intermediário.",
+          "mandatory": false
+        },
+        {
+          "text": "Participação em projetos acadêmicos, bootcamps, comunidades ou portfólio relacionado a dados.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "company": "Banco Inter",
+      "role": "EDITOR & MOTION DESIGNER JUNIOR",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Engenharia de Software",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Ensino Superior Completo;",
+        "Experiência como editor de vídeo e motion designer em agências de publicidade, estúdios e/ou produtoras audiovisuais;",
+        "Disponibilidade para atuar 100% presencial;",
+        "Interesse em ferramentas de inteligência artificial generativa."
+      ],
+      "differentials": [
+        "Inglês intermediário."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": "Presencial",
+      "publishedAt": "2026-08-28T13:19:07-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4725470005?gh_jid=4725470005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4725470005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4725470005?gh_jid=4725470005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 75,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Ensino Superior Completo;",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência como editor de vídeo e motion designer em agências de publicidade, estúdios e/ou produtoras audiovisuais;",
+          "mandatory": true
+        },
+        {
+          "text": "Disponibilidade para atuar 100% presencial;",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse em ferramentas de inteligência artificial generativa.",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês intermediário.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "company": "Banco Inter",
+      "role": "FACILITIES ANALYST I",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "Segurança"
+      ],
+      "requirements": [
+        "Experiência prévia em gestão de facilities, serviços gerais ou infraestrutura corporativa",
+        "Habilidade na gestão de contratos e relacionamento com fornecedores",
+        "Conhecimento em manutenção predial (elétrica, hidráulica, ar-condicionado, SPDA)",
+        "Pacote Office intermediário/avançado (Excel e PowerPoint)",
+        "Formação em Administração, Engenharia, Arquitetura ou áreas correlatas"
+      ],
+      "differentials": [
+        "Experiência com sistemas de gestão de chamados",
+        "Vivência em empresas de grande porte ou ambientes corporativos de alta complexidade",
+        "Inglês básico/intermediário",
+        "Conhecimento em gestão orçamentária e processos de compras/procurement",
+        "Experiência com gestão de obras e reformas corporativas"
+      ],
+      "location": "São Paulo, SP",
+      "modality": null,
+      "publishedAt": "2026-08-07T10:28:01-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4720934005?gh_jid=4720934005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4720934005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4720934005?gh_jid=4720934005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Experiência prévia em gestão de facilities, serviços gerais ou infraestrutura corporativa",
+          "mandatory": true
+        },
+        {
+          "text": "Habilidade na gestão de contratos e relacionamento com fornecedores",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em manutenção predial (elétrica, hidráulica, ar-condicionado, SPDA)",
+          "mandatory": true
+        },
+        {
+          "text": "Pacote Office intermediário/avançado (Excel e PowerPoint)",
+          "mandatory": true
+        },
+        {
+          "text": "Formação em Administração, Engenharia, Arquitetura ou áreas correlatas",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com sistemas de gestão de chamados",
+          "mandatory": false
+        },
+        {
+          "text": "Vivência em empresas de grande porte ou ambientes corporativos de alta complexidade",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês básico/intermediário",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento em gestão orçamentária e processos de compras/procurement",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com gestão de obras e reformas corporativas",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "company": "Banco Inter",
+      "role": "FINANCIAL OPERATIONS ANALYST I",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "Dados/BI",
+        "IA/ML",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Formação de preferência em Exatas, ou Economia e Administração",
+        "Conhecimento em análise de dados",
+        "Bom raciocínio lógico e facilidade com números e matemática financeira"
+      ],
+      "differentials": [
+        "Inglês intermediário/avançado",
+        "Conhecimento de Tesouraria."
+      ],
+      "location": "Belo Horizonte, MG; São Paulo, SP",
+      "modality": null,
+      "publishedAt": "2026-09-04T09:30:37-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4723411005?gh_jid=4723411005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4723411005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4723411005?gh_jid=4723411005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Formação de preferência em Exatas, ou Economia e Administração",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em análise de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Bom raciocínio lógico e facilidade com números e matemática financeira",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês intermediário/avançado",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de Tesouraria.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "company": "Banco Inter",
+      "role": "FINANCIAL PLANNING ANALYST I",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Testes",
+        "Observabilidade",
+        "Dados/BI",
+        "Automação",
+        "IA/ML",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Graduação em Administração, Economia, Engenharia, Contabilidade, Matemática ou áreas correlatas.",
+        "Mínimo de 5 anos de experiência em FP&A, Controladoria, Consultoria Financeira ou Investment Banking.",
+        "Modelagem financeira em Excel (cenários, sensibilidades, Pivot) e construção/manutenção de P&L gerencial com decomposição em drivers operacionais (TPV, take rate, CAC, LTV, NII, CoF, CoR).",
+        "Familiaridade com SQL para extração autônoma de dados.",
+        "Experiência em variance analysis (Actual vs. Budget vs. Forecast) com identificação de causa-raiz e materialidade.",
+        "Construção de Budget e Forecast com lógica top-down e bottom-up.",
+        "Conhecimento de contabilidade gerencial e financeira aplicada a banco (DRE, Balanço, métricas regulatórias básicas) e unit economics em produtos financeiros (margem por cliente, payback, contribuição por linha).",
+        "Compreensão dos principais KPIs como NII, custo de funding, cost of risk e seu impacto no P&L.",
+        "Inglês intermediário para leitura de documentação técnica e construção de materiais.",
+        "Domínio de PowerPoint para síntese de análises em mensagens que traduzam a estratégia do negócio."
+      ],
+      "differentials": [
+        "Conhecimento e/ou interesse em linguagem de programação para automação de pipelines de dados, reconciliação e ETL.",
+        "Power BI ou Tableau para construção de dashboards executivos.",
+        "Uso aplicado e/ou interesse em IA em workflows de FP&A.",
+        "Experiência prévia em produtos de crédito varejo e familiaridade com as linhas de P&L que os envolvem.",
+        "Entendimento de como despesas e custos variáveis se relacionam com o produto e seu impacto no P&L.",
+        "MBA em Finanças ou certificações (CFA, CPA).",
+        "Experiência em Bancos, Fintechs ou Bancos Digitais."
+      ],
+      "location": "Belo Horizonte, MG; São Paulo, SP",
+      "modality": null,
+      "publishedAt": "2026-06-08T09:21:51-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4699115005?gh_jid=4699115005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4699115005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4699115005?gh_jid=4699115005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Graduação em Administração, Economia, Engenharia, Contabilidade, Matemática ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Mínimo de 5 anos de experiência em FP&A, Controladoria, Consultoria Financeira ou Investment Banking.",
+          "mandatory": true
+        },
+        {
+          "text": "Modelagem financeira em Excel (cenários, sensibilidades, Pivot) e construção/manutenção de P&L gerencial com decomposição em drivers operacionais (TPV, take rate, CAC, LTV, NII, CoF, CoR).",
+          "mandatory": true
+        },
+        {
+          "text": "Familiaridade com SQL para extração autônoma de dados.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em variance analysis (Actual vs. Budget vs. Forecast) com identificação de causa-raiz e materialidade.",
+          "mandatory": true
+        },
+        {
+          "text": "Construção de Budget e Forecast com lógica top-down e bottom-up.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de contabilidade gerencial e financeira aplicada a banco (DRE, Balanço, métricas regulatórias básicas) e unit economics em produtos financeiros (margem por cliente, payback, contribuição por linha).",
+          "mandatory": true
+        },
+        {
+          "text": "Compreensão dos principais KPIs como NII, custo de funding, cost of risk e seu impacto no P&L.",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês intermediário para leitura de documentação técnica e construção de materiais.",
+          "mandatory": true
+        },
+        {
+          "text": "Domínio de PowerPoint para síntese de análises em mensagens que traduzam a estratégia do negócio.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento e/ou interesse em linguagem de programação para automação de pipelines de dados, reconciliação e ETL.",
+          "mandatory": false
+        },
+        {
+          "text": "Power BI ou Tableau para construção de dashboards executivos.",
+          "mandatory": false
+        },
+        {
+          "text": "Uso aplicado e/ou interesse em IA em workflows de FP&A.",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência prévia em produtos de crédito varejo e familiaridade com as linhas de P&L que os envolvem.",
+          "mandatory": false
+        },
+        {
+          "text": "Entendimento de como despesas e custos variáveis se relacionam com o produto e seu impacto no P&L.",
+          "mandatory": false
+        },
+        {
+          "text": "MBA em Finanças ou certificações (CFA, CPA).",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência em Bancos, Fintechs ou Bancos Digitais.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "company": "Banco Inter",
+      "role": "GROWTH ANALYST I - Marketplace & Mortgage",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Dados & Analytics",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Testes",
+        "Observabilidade",
+        "Dados/BI"
+      ],
+      "requirements": [
+        "Experiência prévia em Growth/CRM/Marketing Digital",
+        "Noções de testes A/B e métricas de funil;",
+        "Habilidade analítica e atenção a detalhes;",
+        "Familiaridade com ferramentas de CRM/engajamento (ex.: Salesforce, RD, HubSpot, ) e dados/analytics (GA4, Tableau, Power BI).",
+        "Inglês avançado."
+      ],
+      "differentials": [
+        "Excel/Sheets intermediário;",
+        "Noções de SQL."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-08-27T17:33:40-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4726579005?gh_jid=4726579005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4726579005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4726579005?gh_jid=4726579005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Experiência prévia em Growth/CRM/Marketing Digital",
+          "mandatory": true
+        },
+        {
+          "text": "Noções de testes A/B e métricas de funil;",
+          "mandatory": true
+        },
+        {
+          "text": "Habilidade analítica e atenção a detalhes;",
+          "mandatory": true
+        },
+        {
+          "text": "Familiaridade com ferramentas de CRM/engajamento (ex.: Salesforce, RD, HubSpot, ) e dados/analytics (GA4, Tableau, Power BI).",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês avançado.",
+          "mandatory": true
+        },
+        {
+          "text": "Excel/Sheets intermediário;",
+          "mandatory": false
+        },
+        {
+          "text": "Noções de SQL.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "company": "Banco Inter",
+      "role": "GROWTH ANALYST I - User Acquisition / SEO",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Engenharia de Software",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "SQL",
+        "Testes",
+        "Observabilidade",
+        "Dados/BI",
+        "IA/ML"
+      ],
+      "requirements": [
+        "Planejar, executar e monitorar estratégias de SEO (on-page, off-page e técnico) para os mercados internacionais em que o Global Account atua",
+        "Atuar em GEO, otimizando presença e visibilidade em mecanismos de busca generativos (ChatGPT, Perplexity, Gemini, AI Overviews, entre outros)",
+        "Realizar pesquisa de palavras-chave e análise de intenção de busca considerando as particularidades de cada mercado",
+        "Acompanhar rankings, tráfego orgânico e métricas de performance via ferramentas como GA4, Google Search Console, Semrush/Ahrefs",
+        "Colaborar com times de conteúdo e produto para otimizar páginas e melhorar experiência de busca",
+        "Auxiliar na operação do programa de afiliados e MGM (Member Get Member), incluindo acompanhamento de parceiros e resultados",
+        "Dar suporte a campanhas com influenciadores, incluindo briefings, acompanhamento de entregas e reporte de performance",
+        "Produzir relatórios periódicos consolidando resultados de SEO, GEO e das frentes de afiliados/influenciadores",
+        "Experiência prévia com SEO (técnico, conteúdo ou ambos)",
+        "Conhecimento ou interesse em GEO e nas mudanças no comportamento de busca com IA generativa",
+        "Familiaridade com ferramentas de análise (GA4, Search Console, Semrush, Ahrefs ou similares)",
+        "Boa capacidade analítica e de organização de dados"
+      ],
+      "differentials": [
+        "Vivência em mercado internacional ou multi-país",
+        "Conhecimento de SQL ou ferramentas de BI",
+        "Experiência em fintech ou serviços financeiros"
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-08-27T17:24:54-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4726577005?gh_jid=4726577005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4726577005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4726577005?gh_jid=4726577005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Planejar, executar e monitorar estratégias de SEO (on-page, off-page e técnico) para os mercados internacionais em que o Global Account atua",
+          "mandatory": true
+        },
+        {
+          "text": "Atuar em GEO, otimizando presença e visibilidade em mecanismos de busca generativos (ChatGPT, Perplexity, Gemini, AI Overviews, entre outros)",
+          "mandatory": true
+        },
+        {
+          "text": "Realizar pesquisa de palavras-chave e análise de intenção de busca considerando as particularidades de cada mercado",
+          "mandatory": true
+        },
+        {
+          "text": "Acompanhar rankings, tráfego orgânico e métricas de performance via ferramentas como GA4, Google Search Console, Semrush/Ahrefs",
+          "mandatory": true
+        },
+        {
+          "text": "Colaborar com times de conteúdo e produto para otimizar páginas e melhorar experiência de busca",
+          "mandatory": true
+        },
+        {
+          "text": "Auxiliar na operação do programa de afiliados e MGM (Member Get Member), incluindo acompanhamento de parceiros e resultados",
+          "mandatory": true
+        },
+        {
+          "text": "Dar suporte a campanhas com influenciadores, incluindo briefings, acompanhamento de entregas e reporte de performance",
+          "mandatory": true
+        },
+        {
+          "text": "Produzir relatórios periódicos consolidando resultados de SEO, GEO e das frentes de afiliados/influenciadores",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência prévia com SEO (técnico, conteúdo ou ambos)",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento ou interesse em GEO e nas mudanças no comportamento de busca com IA generativa",
+          "mandatory": true
+        },
+        {
+          "text": "Familiaridade com ferramentas de análise (GA4, Search Console, Semrush, Ahrefs ou similares)",
+          "mandatory": true
+        },
+        {
+          "text": "Boa capacidade analítica e de organização de dados",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência em mercado internacional ou multi-país",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de SQL ou ferramentas de BI",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência em fintech ou serviços financeiros",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "company": "Banco Inter",
+      "role": "INTERN | MIDDLE ASSET SUPPORT",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Java",
+        "REST/APIs",
+        "Testes",
+        "Dados/BI",
+        "Automação",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Conhecimento em Python (requisito fundamental);",
+        "Superior cursando com previsão de conclusão em 2028",
+        "Interesse por tecnologia, automação de processos e desenvolvimento de soluções para problemas de negócio;",
+        "Capacidade analítica, curiosidade e aprendizado contínuo;",
+        "Boa comunicação para interação com diferentes áreas e times de tecnologia;",
+        "Perfil colaborativo, senso de responsabilidade e compromisso com prazos/acordos."
+      ],
+      "differentials": [
+        "Conhecimento em Java ;",
+        "Experiência ou familiaridade com consumo e integração de APIs ;",
+        "Conhecimento em bancos de dados e consultas SQL ;",
+        "Experiência com ferramentas de análise e visualização como Tableau ;",
+        "Projetos acadêmicos/pessoais relacionados a automação, dados ou desenvolvimento de software;"
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-08-13T09:30:05-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4718875005?gh_jid=4718875005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4718875005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4718875005?gh_jid=4718875005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Conhecimento em Python (requisito fundamental);",
+          "mandatory": true
+        },
+        {
+          "text": "Superior cursando com previsão de conclusão em 2028",
+          "mandatory": true
+        },
+        {
+          "text": "Interesse por tecnologia, automação de processos e desenvolvimento de soluções para problemas de negócio;",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade analítica, curiosidade e aprendizado contínuo;",
+          "mandatory": true
+        },
+        {
+          "text": "Boa comunicação para interação com diferentes áreas e times de tecnologia;",
+          "mandatory": true
+        },
+        {
+          "text": "Perfil colaborativo, senso de responsabilidade e compromisso com prazos/acordos.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em Java ;",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência ou familiaridade com consumo e integração de APIs ;",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento em bancos de dados e consultas SQL ;",
+          "mandatory": false
+        },
+        {
+          "text": "Experiência com ferramentas de análise e visualização como Tableau ;",
+          "mandatory": false
+        },
+        {
+          "text": "Projetos acadêmicos/pessoais relacionados a automação, dados ou desenvolvimento de software;",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "company": "Banco Inter",
+      "role": "ONBOARDING & EMPLOYEE EXPERIENCE ANALYST I",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "QA",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "Observabilidade",
+        "Dados/BI",
+        "IA/ML",
+        "Segurança",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Ensino superior completo.",
+        "Experiência prévia com onboarding e/ou Employee Experience , com atuação direta em jornada do colaborador .",
+        "Vivência estruturando e sustentando processos com visão de ciclo (especialmente primeiros 90 dias ).",
+        "Capacidade de definir e acompanhar indicadores e estabelecer rotinas de análise e aprendizado (PDCA, melhoria contínua).",
+        "Experiência com gestão de projetos (planejamento, execução, prazos, alinhamento com stakeholders).",
+        "Habilidade de apresentação e storytelling , transformando dados e insumos qualitativos em narrativa e recomendação.",
+        "Vivência com onboarding de liderança (coordenação, gerência ou posições estratégicas) — ainda que parcial.",
+        "Inglês fluente para conduzir onboarding com público US (reuniões, apresentações e comunicação escrita).",
+        "Facilidade com ferramentas de organização e colaboração (ex.: docs, planilhas, apresentações, fluxos e acompanhamento)."
+      ],
+      "differentials": [
+        "Experiência em ambiente de alta escala e crescimento (ex.: fintech, tech, banco digital, super app).",
+        "Conhecimento de ferramentas de pesquisa/feedback e métricas de experiência (ex.: eNPS, pulse, surveys).",
+        "Familiaridade com automações e/ou uso de IA para ganho de produtividade (ex.: análise de feedbacks, sumarização, criação de materiais)."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-08-19T15:56:34-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4725854005?gh_jid=4725854005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4725854005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4725854005?gh_jid=4725854005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Ensino superior completo.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência prévia com onboarding e/ou Employee Experience , com atuação direta em jornada do colaborador .",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência estruturando e sustentando processos com visão de ciclo (especialmente primeiros 90 dias ).",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade de definir e acompanhar indicadores e estabelecer rotinas de análise e aprendizado (PDCA, melhoria contínua).",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência com gestão de projetos (planejamento, execução, prazos, alinhamento com stakeholders).",
+          "mandatory": true
+        },
+        {
+          "text": "Habilidade de apresentação e storytelling , transformando dados e insumos qualitativos em narrativa e recomendação.",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência com onboarding de liderança (coordenação, gerência ou posições estratégicas) — ainda que parcial.",
+          "mandatory": true
+        },
+        {
+          "text": "Inglês fluente para conduzir onboarding com público US (reuniões, apresentações e comunicação escrita).",
+          "mandatory": true
+        },
+        {
+          "text": "Facilidade com ferramentas de organização e colaboração (ex.: docs, planilhas, apresentações, fluxos e acompanhamento).",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em ambiente de alta escala e crescimento (ex.: fintech, tech, banco digital, super app).",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de ferramentas de pesquisa/feedback e métricas de experiência (ex.: eNPS, pulse, surveys).",
+          "mandatory": false
+        },
+        {
+          "text": "Familiaridade com automações e/ou uso de IA para ganho de produtividade (ex.: análise de feedbacks, sumarização, criação de materiais).",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "company": "Banco Inter",
+      "role": "OPERATIONAL RISK & INTERNAL CONTROLS ASSISTANT",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Cloud / SRE",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Mensageria",
+        "Cloud",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Experiência nas áreas de Risco Operacional, Controles Internos, Auditoria Interna ou Externa, ou Consultorias com foco em gestão de riscos tecnológicos e de cibersegurança — ou recém-formados com vivência acadêmica na área;",
+        "Conhecimento básico em ambientes de tecnologia e infraestrutura (redes, cloud, segurança da informação);",
+        "Formação acadêmica completa ou em andamento em Ciências da Computação, Sistemas de Informação, Engenharia da Computação ou cursos correlatos à área de tecnologia;",
+        "Capacidade analítica e atenção aos detalhes;",
+        "Boa comunicação escrita e verbal;",
+        "Conhecimento básico/intermediário em Excel e PowerPoint; e",
+        "Organização e capacidade de gestão do próprio tempo sob supervisão."
+      ],
+      "differentials": [
+        "Conhecimento introdutório em frameworks de riscos e controles (COBIT, COSO, ISO 27001);",
+        "Certificações introdutórias relacionadas à governança de TI, cibersegurança ou segurança da informação (ex: ITIL Foundation, CC - ISC2, CompTIA Security+);",
+        "Vivência em empresas de auditoria ou consultoria, mesmo que por meio de estágio ou programa de trainee;",
+        "Inglês básico/intermediário para leitura de documentações técnicas."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-04-14T22:22:17-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4677494005?gh_jid=4677494005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4677494005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4677494005?gh_jid=4677494005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Experiência nas áreas de Risco Operacional, Controles Internos, Auditoria Interna ou Externa, ou Consultorias com foco em gestão de riscos tecnológicos e de cibersegurança — ou recém-formados com vivência acadêmica na área;",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico em ambientes de tecnologia e infraestrutura (redes, cloud, segurança da informação);",
+          "mandatory": true
+        },
+        {
+          "text": "Formação acadêmica completa ou em andamento em Ciências da Computação, Sistemas de Informação, Engenharia da Computação ou cursos correlatos à área de tecnologia;",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidade analítica e atenção aos detalhes;",
+          "mandatory": true
+        },
+        {
+          "text": "Boa comunicação escrita e verbal;",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento básico/intermediário em Excel e PowerPoint; e",
+          "mandatory": true
+        },
+        {
+          "text": "Organização e capacidade de gestão do próprio tempo sob supervisão.",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento introdutório em frameworks de riscos e controles (COBIT, COSO, ISO 27001);",
+          "mandatory": false
+        },
+        {
+          "text": "Certificações introdutórias relacionadas à governança de TI, cibersegurança ou segurança da informação (ex: ITIL Foundation, CC - ISC2, CompTIA Security+);",
+          "mandatory": false
+        },
+        {
+          "text": "Vivência em empresas de auditoria ou consultoria, mesmo que por meio de estágio ou programa de trainee;",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês básico/intermediário para leitura de documentações técnicas.",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "company": "Banco Inter",
+      "role": "OPERATIONS ANALYST I - SPB CONTROL",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "Segurança"
+      ],
+      "requirements": [
+        "Formação em Ciências Contábeis, Administração, Controladoria, Economia, Engenharia e afins;",
+        "Conhecimento de mercado financeiro;",
+        "Perfil organizado e disciplinado.",
+        "Disponibilidade para trabalhar alternar o horário de trabalho dentro do período entre as 06h e 20h."
+      ],
+      "differentials": [
+        "Experiência anterior em instituição financeira;",
+        "Excel avançado;"
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": null,
+      "publishedAt": "2026-09-02T08:42:50-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4725027005?gh_jid=4725027005",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4725027005",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4725027005?gh_jid=4725027005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Formação em Ciências Contábeis, Administração, Controladoria, Economia, Engenharia e afins;",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento de mercado financeiro;",
+          "mandatory": true
+        },
+        {
+          "text": "Perfil organizado e disciplinado.",
+          "mandatory": true
+        },
+        {
+          "text": "Disponibilidade para trabalhar alternar o horário de trabalho dentro do período entre as 06h e 20h.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência anterior em instituição financeira;",
+          "mandatory": false
+        },
+        {
+          "text": "Excel avançado;",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "company": "Getnet",
+      "role": "Culture & Engagement HR Associate",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Dados/BI",
+        "Automação",
+        "Segurança",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Graduação em Recursos Humanos, Administração de Empresas, Comunicação, Psicologia ou áreas correlatas.",
+        "Experiência prévia em Cultura Organizacional, Experiência do Colaborador, Desenvolvimento Organizacional, ou outras áreas/projetos relacionados a RH.",
+        "Experiência na análise de feedbacks e pesquisas de engajamento, transformando dados em recomendações práticas.",
+        "Vivência em funções globais e em organizações multinacionais. Experiência trabalhando com diferentes culturas e geografias será considerada um diferencial.",
+        "Experiência em consultoria (estratégia, gestão ou transformação), atuando com múltiplos stakeholders."
+      ],
+      "differentials": [
+        "Excelente capacidade de gestão de projetos e organização.",
+        "Habilidade para gerenciar múltiplas prioridades e frentes de trabalho simultaneamente.",
+        "Forte capacidade de gestão de stakeholders e influência.",
+        "Perfil autônomo, capaz de conduzir iniciativas com pouca supervisão.",
+        "Pensamento crítico e foco em melhoria contínua, questionando o status quo e propondo soluções inovadoras.",
+        "Excelente comunicação e habilidade de storytelling.",
+        "Criatividade, atenção à qualidade visual, branding e aos detalhes.",
+        "Fluência em português ou espanhol e inglês obrigatório ."
+      ],
+      "location": "Brazil - Porto Alegre/RS; Brazil - São Paulo/SP",
+      "modality": null,
+      "publishedAt": "2026-07-24T10:24:53-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://job-boards.eu.greenhouse.io/getnet/jobs/4937247101",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "job-boards.eu.greenhouse.io/getnet/jobs/4937247101",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://job-boards.eu.greenhouse.io/getnet/jobs/4937247101",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:40+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 70,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Graduação em Recursos Humanos, Administração de Empresas, Comunicação, Psicologia ou áreas correlatas.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência prévia em Cultura Organizacional, Experiência do Colaborador, Desenvolvimento Organizacional, ou outras áreas/projetos relacionados a RH.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência na análise de feedbacks e pesquisas de engajamento, transformando dados em recomendações práticas.",
+          "mandatory": true
+        },
+        {
+          "text": "Vivência em funções globais e em organizações multinacionais. Experiência trabalhando com diferentes culturas e geografias será considerada um diferencial.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiência em consultoria (estratégia, gestão ou transformação), atuando com múltiplos stakeholders.",
+          "mandatory": true
+        },
+        {
+          "text": "Excelente capacidade de gestão de projetos e organização.",
+          "mandatory": false
+        },
+        {
+          "text": "Habilidade para gerenciar múltiplas prioridades e frentes de trabalho simultaneamente.",
+          "mandatory": false
+        },
+        {
+          "text": "Forte capacidade de gestão de stakeholders e influência.",
+          "mandatory": false
+        },
+        {
+          "text": "Perfil autônomo, capaz de conduzir iniciativas com pouca supervisão.",
+          "mandatory": false
+        },
+        {
+          "text": "Pensamento crítico e foco em melhoria contínua, questionando o status quo e propondo soluções inovadoras.",
+          "mandatory": false
+        },
+        {
+          "text": "Excelente comunicação e habilidade de storytelling.",
+          "mandatory": false
+        },
+        {
+          "text": "Criatividade, atenção à qualidade visual, branding e aos detalhes.",
+          "mandatory": false
+        },
+        {
+          "text": "Fluência em português ou espanhol e inglês obrigatório .",
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "company": "Getnet",
+      "role": "Payment Performance Associate",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Terraform/IaC",
+        "Dados/BI",
+        "IA/ML",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Que tengas experiencia en un rol similar dentro de compañías de datos en áreas como prevención de fraude, performance optimización, producto.",
+        "✅ Lo que puede sumar puntos extra",
+        "Conocimiento del mundo de medios de pago Capacidad de procesamiento de datos (SQL, Python, uso de Databricks).",
+        "Conocimiento en herramientas de visualización de datos (Tableau, PowerBI, etc.)",
+        "Idiomas: Español e Inglés. Portugués recomendable.",
+        "🎯 Lo que ofrecemos",
+        "🍔 Vales de despensa y restaurante",
+        "🚑 Seguro de gastos médicos mayores",
+        "💰 Plan de pensiones",
+        "☕ Modelo de trabajo híbrido",
+        "🏋🏻 ♀️ Total pass con acceso a miles de gimnasios, estudios y clases en vivo con precios preferenciales",
+        "🌻 Programa de Apoyo Personal Especializado",
+        "📚 Plataforma educativa",
+        "💰 Bono anual"
+      ],
+      "differentials": [],
+      "location": "Mexico - Mexico City",
+      "modality": "Híbrido",
+      "publishedAt": "2026-09-07T21:00:12-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://job-boards.eu.greenhouse.io/getnet/jobs/4970180101",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "job-boards.eu.greenhouse.io/getnet/jobs/4970180101",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://job-boards.eu.greenhouse.io/getnet/jobs/4970180101",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:40+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 73,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Que tengas experiencia en un rol similar dentro de compañías de datos en áreas como prevención de fraude, performance optimización, producto.",
+          "mandatory": true
+        },
+        {
+          "text": "✅ Lo que puede sumar puntos extra",
+          "mandatory": true
+        },
+        {
+          "text": "Conocimiento del mundo de medios de pago Capacidad de procesamiento de datos (SQL, Python, uso de Databricks).",
+          "mandatory": true
+        },
+        {
+          "text": "Conocimiento en herramientas de visualización de datos (Tableau, PowerBI, etc.)",
+          "mandatory": true
+        },
+        {
+          "text": "Idiomas: Español e Inglés. Portugués recomendable.",
+          "mandatory": true
+        },
+        {
+          "text": "🎯 Lo que ofrecemos",
+          "mandatory": true
+        },
+        {
+          "text": "🍔 Vales de despensa y restaurante",
+          "mandatory": true
+        },
+        {
+          "text": "🚑 Seguro de gastos médicos mayores",
+          "mandatory": true
+        },
+        {
+          "text": "💰 Plan de pensiones",
+          "mandatory": true
+        },
+        {
+          "text": "☕ Modelo de trabajo híbrido",
+          "mandatory": true
+        },
+        {
+          "text": "🏋🏻 ♀️ Total pass con acceso a miles de gimnasios, estudios y clases en vivo con precios preferenciales",
+          "mandatory": true
+        },
+        {
+          "text": "🌻 Programa de Apoyo Personal Especializado",
+          "mandatory": true
+        },
+        {
+          "text": "📚 Plataforma educativa",
+          "mandatory": true
+        },
+        {
+          "text": "💰 Bono anual",
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "company": "Getnet",
+      "role": "Pre Sales Associate",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — Greenhouse",
+      "area": "Segurança",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "REST/APIs",
+        "Terraform/IaC",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Licenciatura concluida en Ingeniería, Sistemas, Tecnologías de la Información, Negocios, Finanzas o carreras afines.",
+        "Experiencia en preventa, consultoría de soluciones, producto, implementación o industria de pagos.",
+        "Conocimiento de adquirencia, medios de pago, comercio electrónico o servicios financieros.",
+        "Familiaridad con conceptos de pagos digitales como autorización, liquidación, terminales de pago, pagos en línea y soluciones omnicanal.",
+        "Experiencia colaborando con equipos multidisciplinarios y stakeholders de diferentes áreas.",
+        "Capacidad para entender requerimientos de negocio y traducirlos en propuestas de solución.",
+        "Habilidades de comunicación, presentación y relacionamiento con clientes internos y externos.",
+        "Inglés intermedio-avanzado.",
+        "Experiencia previa en fintech, adquirencia o procesamiento de pagos.",
+        "Conocimiento de APIs, integraciones y plataformas de pago.",
+        "Familiaridad con soluciones Card Present (POS, SoftPOS, Contactless) y Card Not Present (e-commerce, wallets, pagos recurrentes).",
+        "Conocimientos de tokenización, prevención de fraude o estándares de seguridad para pagos.",
+        "Experiencia participando en procesos de RFI/RFP.",
+        "Experiencia colaborando con clientes corporativos o Enterprise."
+      ],
+      "differentials": [],
+      "location": "Mexico - Mexico City",
+      "modality": "Híbrido",
+      "publishedAt": "2026-08-25T15:46:31-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://job-boards.eu.greenhouse.io/getnet/jobs/4960677101",
+      "collectedAt": "2026-09-10T15:34:39Z",
+      "auto": true,
+      "key": "job-boards.eu.greenhouse.io/getnet/jobs/4960677101",
+      "firstSeenAt": "2026-09-10T15:34:39Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://job-boards.eu.greenhouse.io/getnet/jobs/4960677101",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:35:40+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 73,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Licenciatura concluida en Ingeniería, Sistemas, Tecnologías de la Información, Negocios, Finanzas o carreras afines.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiencia en preventa, consultoría de soluciones, producto, implementación o industria de pagos.",
+          "mandatory": true
+        },
+        {
+          "text": "Conocimiento de adquirencia, medios de pago, comercio electrónico o servicios financieros.",
+          "mandatory": true
+        },
+        {
+          "text": "Familiaridad con conceptos de pagos digitales como autorización, liquidación, terminales de pago, pagos en línea y soluciones omnicanal.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiencia colaborando con equipos multidisciplinarios y stakeholders de diferentes áreas.",
+          "mandatory": true
+        },
+        {
+          "text": "Capacidad para entender requerimientos de negocio y traducirlos en propuestas de solución.",
+          "mandatory": true
+        },
+        {
+          "text": "Habilidades de comunicación, presentación y relacionamiento con clientes internos y externos.",
+          "mandatory": true
+        },
+        {
+          "text": "Inglés intermedio-avanzado.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiencia previa en fintech, adquirencia o procesamiento de pagos.",
+          "mandatory": true
+        },
+        {
+          "text": "Conocimiento de APIs, integraciones y plataformas de pago.",
+          "mandatory": true
+        },
+        {
+          "text": "Familiaridad con soluciones Card Present (POS, SoftPOS, Contactless) y Card Not Present (e-commerce, wallets, pagos recurrentes).",
+          "mandatory": true
+        },
+        {
+          "text": "Conocimientos de tokenización, prevención de fraude o estándares de seguridad para pagos.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiencia participando en procesos de RFI/RFP.",
+          "mandatory": true
+        },
+        {
+          "text": "Experiencia colaborando con clientes corporativos o Enterprise.",
+          "mandatory": true
         }
       ]
     }
