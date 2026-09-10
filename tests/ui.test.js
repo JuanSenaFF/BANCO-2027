@@ -24,5 +24,14 @@ test('queue board has responsive styles and all four visual states',()=>{
 });
 
 test('match API exposes the same derived action decision',()=>{
-  assert.match(read('api/match.js'),/action:E\.actionDecision\(job,analysis\)/);
+  const api=read('api/match.js');
+  assert.match(api,/action:E\.actionDecision\(j,analysis\)/);
+  assert.match(api,/studyPriorities:E\.priorities/);
+});
+
+test('study page presents application impact instead of demand alone',()=>{
+  const app=read('app.js');
+  assert.match(app,/candidaturas qualificadas adicionais por hora/);
+  assert.match(app,/Horas por candidatura/);
+  assert.match(app,/Vagas que mudam de fila/);
 });
