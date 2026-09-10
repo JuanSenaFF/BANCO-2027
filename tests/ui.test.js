@@ -37,3 +37,5 @@ test('study page presents application impact instead of demand alone',()=>{
 });
 
 test('pipeline freezes submission context and exposes score calibration',()=>{const app=read('app.js');assert.match(app,/captureMatchSnapshot/);assert.match(app,/O corte de 80% prevê entrevistas/);assert.match(app,/Desempenho por fonte/);assert.match(app,/Desempenho por fila de origem/);});
+
+test('profile captures structured evidence and uses the evidence engine',()=>{const app=read('app.js'),engine=read('engine.js');assert.match(app,/profile:profileEvidence/);assert.match(app,/Projeto ou repositório/);assert.match(app,/Última utilização/);assert.match(app,/evidenceForm/);assert.match(engine,/function evidenceLevel/);});
