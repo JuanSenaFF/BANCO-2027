@@ -3,6 +3,12 @@
   const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const level=t=>/especialista|expert|arquitetura avancada/.test(norm(t))?4:/avancad|solido|dominio/.test(norm(t))?3:/basic|fundamento|nocao|nocoes/.test(norm(t))?1:2;
   const factor=[0,.70,.9,1,1];
+  const EVIDENCE_STRENGTH={course:1,certification:2,project:2,work:3};
+  function evidenceLevel(p){
+    const legacy=Math.max(0,Math.min(4,Number(p?.e)||0)),items=Array.isArray(p?.evidences)?p.evidences.filter(x=>x&&typeof x==='object'&&x.title):[];
+    if(!items.length)return legacy;
+    return Math.max(...items.map(x=>Math.max(EVIDENCE_STRENGTH[x.type]||0,x.context==='production'?4:x.context==='personal'?2:x.context==='study'?1:0)));
+  }
   function normalizeSalary(s){
     if(!s||!['advertised','estimate'].includes(s.kind))return null;
     const min=Number(s.min),max=Number(s.max),median=Number(s.median);
@@ -34,7 +40,7 @@
       const mentioned=(exact?requirement.profileSkillIds.map(id=>skills.find(s=>s.id===id)).filter(Boolean):skills.filter(s=>s.re.test(norm(text))).filter(s=>!(s.id==='cloud'&&skills.some(x=>['aws','azure','gcp'].includes(x.id)&&x.re.test(norm(text))))));
       const need=exact?(requirement.level||1):level(text);
       if(!mentioned.length)return {ratio:0,unknown:true,skills:[]};
-      const xs=mentioned.map(s=>{const p=profile[s.id]||{l:0,e:0};return {id:s.id,label:s.label,req:need,current:p.l||0,evidence:p.e||0,ratio:Math.min((p.l||0)/need,1)*(factor[p.e]||0)};});
+      const xs=mentioned.map(s=>{const p=profile[s.id]||{l:0,e:0},e=evidenceLevel(p);return {id:s.id,label:s.label,req:need,current:p.l||0,evidence:e,ratio:Math.min((p.l||0)/need,1)*(factor[e]||0)};});
       const alternative=requirement.relation==='any'||(!exact&&/\bou\b|\bor\b|aws\s*\/\s*azure|azure\s*\/\s*gcp/.test(norm(text)));
       const ratio=alternative?Math.max(...xs.map(x=>x.ratio)):Math.min(...xs.map(x=>x.ratio));
       const unmapped=exact&&Number(requirement.unmappedSkillCount||0)>0;
@@ -153,5 +159,5 @@
     const high=mature.filter(r=>Number(r.snapshot.decisionScore)>=80),lower=mature.filter(r=>Number(r.snapshot.decisionScore)<80),highRate=rate(high.filter(r=>r.interview).length,high.length),lowerRate=rate(lower.filter(r=>r.interview).length,lower.length),ready=mature.length>=10&&high.length>=3&&lower.length>=3,difference=highRate==null||lowerRate==null?null:highRate-lowerRate;
     return {funnel:summarize(records),snapshotted:snapshotted.length,uncalibrated:records.length-snapshotted.length,mature:mature.length,bands,sources:groupBy('sourceName'),queues:groupBy('queueLabel'),calibration:{threshold:80,minimumMature:10,ready,high:{mature:high.length,interviews:high.filter(r=>r.interview).length,rate:highRate},lower:{mature:lower.length,interviews:lower.filter(r=>r.interview).length,rate:lowerRate},difference,status:!ready?'insufficient':difference>=10?'promising':'weak'}};
   }
-  const api={norm,level,canonical,requirementRecords,normalize,evaluate,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,applicationSnapshot,feedbackAnalytics,ACTION_QUEUES};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
+  const api={norm,level,canonical,requirementRecords,normalize,evaluate,evidenceLevel,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,applicationSnapshot,feedbackAnalytics,ACTION_QUEUES,EVIDENCE_STRENGTH};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
