@@ -13,6 +13,8 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Histórico semanal de mercado no coletor e de perfil ao acessar o painel, além de registro manual. Não inventa snapshots de semanas anteriores nem considera uma amostra sem confirmação como queda de mercado.
 - Alertas no painel: match, backend júnior, empresa prioritária, Python+SQL+APIs e até um gap.
 - Coletor Python com extração por seções (obrigatório/diferencial), regras centralizadas de entrada, cobertura por empresas prioritárias, senioridade contraditória, IDs preservados e chave estável por fonte.
+- Descoberta prioriza feeds públicos oficiais: Greenhouse (Stone, Inter e Getnet), Ashby (Nubank), páginas Gupy configuradas e Lever quando disponível. LinkedIn é consultado depois, como descoberta/fallback. Novos boards entram por configuração em `scripts/official_sources.py`.
+- Quando a mesma vaga aparece em mais de uma origem, a representação oficial vence; URLs do LinkedIn e de agregadores permanecem em `sources`/`sourceAliases` para auditoria. O relatório registra cobertura oficial, fallback e falhas isoladas por board.
 - Deduplicação normalizada por sinônimos: similaridade >=0,90 remove automaticamente; similaridade entre 0,75 e 0,89 mantém o registro marcado para revisão humana; abaixo disso permanece como oportunidade independente.
 - Verificação conservadora com estados `pending`, `confirmed`, `review` e `closed`: 403/429/timeout/HTML genérico permanecem pendentes, confirmação ativa expira após sete dias, e 404/410, prazo expirado ou encerramento explícito marcam encerrada.
 - Cada registro recebe confiança baixa/média/alta, motivo de validação e motivo de rejeição da execução; somente vagas ativas, elegíveis e sem revisão pendente entram nos rankings.
@@ -50,7 +52,7 @@ python scripts/build_catalog.py
 python scripts/build_site.py
 ```
 
-`build_catalog.py --verify` consulta os anúncios; exige acesso às fontes públicas. `sync_database.py` só publica no Supabase quando suas variáveis estão configuradas. Nunca executar o coletor com credenciais no código.
+`build_catalog.py --verify` consulta os anúncios; exige acesso às fontes públicas. `sync_database.py` só publica no Supabase quando suas variáveis estão configuradas. Nunca executar o coletor com credenciais no código. Os adaptadores oficiais usam somente endpoints públicos de leitura e não submetem candidaturas.
 
 ## Limites explícitos
 

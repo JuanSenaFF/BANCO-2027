@@ -71,8 +71,13 @@ def main():
         for i,text in enumerate(j.get(field,[]))
     ])
     upsert('job_sources',[
-        {'job_key':j['key'],'url':j['source'],'last_verified_at':j.get('lastVerifiedAt')}
-        for j in jobs if j.get('source')
+        {'job_key':j['key'],'url':source['url'],'last_verified_at':j.get('lastVerifiedAt')}
+        for j in jobs
+        for source in (
+            j.get('sources')
+            or ([{'url':j['source']}] if j.get('source') else [])
+        )
+        if source.get('url')
     ])
 
     # companies is also a catalog table, so remove names left with no current job.

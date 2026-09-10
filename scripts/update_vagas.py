@@ -16,6 +16,13 @@ import requests
 from bs4 import BeautifulSoup
 from quality import split_requirements, senior_conflict, location_fields
 from rules import DUPLICATE_SIMILARITY
+from official_sources import (
+    collect_official_postings,
+    prefer_source,
+    same_posting,
+    source_metadata,
+    source_priority,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
@@ -27,6 +34,8 @@ TIMEOUT = 20
 MAX_NEW = 10
 FETCH_WORKERS = 8
 SCAN_LIMIT = 400
+OFFICIAL_POSTING_CACHE: dict[str, dict] = {}
+OFFICIAL_DISCOVERY_REPORT: dict = {}
 
 TARGET_COMPANIES = [
     "Itaú", "Itaú Unibanco", "Bradesco", "Santander", "Santander Brasil", "BTG Pactual", "Nubank",
@@ -140,6 +149,8 @@ TAG_PATTERNS = {
 SOURCE_NAME = {
     "linkedin.com": "LinkedIn", "gupy.io": "Gupy", "jobs.lever.co": "Lever",
     "boards.greenhouse.io": "Greenhouse", "remotar.com.br": "Remotar",
+    "job-boards.greenhouse.io": "Greenhouse", "jobs.ashbyhq.com": "Ashby",
+    "greenhouse.io": "Greenhouse",
     "querovagastech.com.br": "Quero Vagas Tech",
 }
 
@@ -307,6 +318,46 @@ def lever_urls() -> list[str]:
     return out
 
 
+def official_ats_urls() -> list[str]:
+    """Read public ATS feeds before using LinkedIn discovery."""
+    global OFFICIAL_DISCOVERY_REPORT
+
+    def fetch_json(url: str):
+        response = safe_get(url, headers={"Accept": "application/json"})
+        if response is None or response.status_code >= 400:
+            code = response.status_code if response is not None else "unavailable"
+            raise RuntimeError(f"HTTP {code}")
+        return response.json()
+
+    candidates, OFFICIAL_DISCOVERY_REPORT = collect_official_postings(fetch_json)
+    out = []
+    for candidate in candidates:
+        url = candidate["url"]
+        posting = candidate["posting"]
+        title = str(posting.get("title") or "")
+        title_n = norm(title)
+        company = candidate["company"]
+        description = norm(str(posting.get("description") or ""))
+        # ATS feeds return the whole company board. Require the entry-level
+        # signal in the title so incidental words in a long description cannot
+        # admit a manager/senior posting.
+        if not any(term in title_n for term in JUNIOR_TERMS):
+            continue
+        if not is_relevant(title, company, description) or senior_conflict(title, description):
+            continue
+        OFFICIAL_POSTING_CACHE[url] = candidate
+        if url not in out:
+            out.append(url)
+    counts = OFFICIAL_DISCOVERY_REPORT.get("counts", {})
+    OFFICIAL_DISCOVERY_REPORT["relevant"] = len(out)
+    print(
+        "[source] ATS oficiais: "
+        f"{len(out)} URLs em {counts.get('boards_ok', 0)} boards; "
+        f"{counts.get('boards_failed', 0)} falhas"
+    )
+    return out
+
+
 def sitemap_job_urls(url: str, max_urls: int = 60) -> list[str]:
     r = safe_get(url)
     if not r or r.status_code >= 400:
@@ -358,6 +409,10 @@ def linkedin_job_id(url: str) -> str | None:
 
 
 def fetch_page(url: str) -> tuple[BeautifulSoup | None, dict | None]:
+    cached = OFFICIAL_POSTING_CACHE.get(url)
+    if cached:
+        posting = cached["posting"]
+        return BeautifulSoup(str(posting.get("description") or ""), "html.parser"), posting
     fetch_url = url
     if "linkedin.com/jobs/view/" in url:
         jid = linkedin_job_id(url)
@@ -574,7 +629,9 @@ def infer_domain(posting: dict | None) -> str | None:
 
 def discover_urls() -> list[str]:
     out = []
-    for bucket in [linkedin_urls(), gupy_urls(), lever_urls(), other_source_urls()]:
+    # Strongest evidence first. LinkedIn remains useful for discovering a job,
+    # but an official ATS candidate wins when both represent the same posting.
+    for bucket in [official_ats_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
         for u in bucket:
             if u not in out:
                 out.append(u)
@@ -632,15 +689,32 @@ def main() -> int:
         requirements, differentials = split_requirements(soup, posting)
         if len(requirements) < 3:
             continue
-        # Deduplicação principal solicitada pelo usuário: exigências essencialmente idênticas.
-        if any(similarity(requirements, j.get("requirements", [])) >= DUPLICATE_SIMILARITY for j in existing + new_jobs):
+        candidate_source = source_metadata(url, structured=bool(posting))
+        candidate_identity = {
+            "company": company,
+            "role": title,
+            "requirements": requirements,
+            "source": url,
+            "sourcePriority": candidate_source["priority"],
+        }
+        # Deduplicate by requirements, but allow an official source to replace
+        # the LinkedIn/aggregator representation of the same posting.
+        duplicate = next((
+            j for j in existing + new_jobs
+            if similarity(requirements, j.get("requirements", [])) >= DUPLICATE_SIMILARITY
+            or (
+                source_priority(candidate_identity) != source_priority(j)
+                and same_posting(candidate_identity, j, similarity)
+            )
+        ), None)
+        if duplicate and not prefer_source(candidate_identity, duplicate):
             continue
         tags = classify_tags(" ".join([title, text, " ".join(requirements)]))
         if len(tags) < 2:
             continue
 
         max_id += 1
-        source_label = SOURCE_NAME.get(src_domain, src_domain)
+        source_label = candidate_source["name"]
         job = {
             "id": max_id,
             "company": company or "Empresa não identificada",
@@ -656,11 +730,17 @@ def main() -> int:
             "differentials": differentials,
             **location_fields(posting, text),
             "sourceName": source_label,
+            "sourceProvider": candidate_source["provider"],
+            "sourceOfficial": candidate_source["official"],
+            "sourcePriority": candidate_source["priority"],
+            "sourceStructured": bool(posting),
             "reason": f"Coletada automaticamente em {source_label}. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
             "source": url,
             "collectedAt": collected_at,
             "auto": True,
         }
+        if duplicate:
+            job["supersedesSource"] = duplicate.get("source")
         new_jobs.append(job)
         known_sources.add(csource)
         dom = infer_domain(posting)
@@ -669,7 +749,22 @@ def main() -> int:
         print(f"[novo] {company} — {title}")
         time.sleep(0.12)
 
-    (ROOT / "collection-report.json").write_text(json.dumps({"updatedAt": collected_at, "added": len(new_jobs), "candidateUrls": len(candidate_urls)}), encoding="utf-8")
+    official_added = sum(source_priority(j) >= 3 for j in new_jobs)
+    source_counts = {}
+    for job in new_jobs:
+        name = job.get("sourceName", "Não classificada")
+        source_counts[name] = source_counts.get(name, 0) + 1
+    (ROOT / "collection-report.json").write_text(json.dumps({
+        "updatedAt": collected_at,
+        "added": len(new_jobs),
+        "candidateUrls": len(candidate_urls),
+        "officialCandidateUrls": sum(source_metadata(u, structured=u in OFFICIAL_POSTING_CACHE)["official"] for u in candidate_urls),
+        "linkedinCandidateUrls": sum("linkedin.com" in u for u in candidate_urls),
+        "officialAdded": official_added,
+        "fallbackAdded": len(new_jobs) - official_added,
+        "sourceCounts": source_counts,
+        "officialBoards": OFFICIAL_DISCOVERY_REPORT,
+    }, ensure_ascii=False), encoding="utf-8")
     if not new_jobs:
         print("[info] Nenhuma vaga nova e relevante, distinta por exigências, nesta execução.")
         return 0

@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from rules import DUPLICATE_SIMILARITY, REVIEW_SIMILARITY
+from official_sources import prefer_source, same_posting, source_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
@@ -225,12 +226,24 @@ def main() -> None:
                 for x in reference
                 if req_similarity(job.get("requirements", []), x.get("requirements", []))
                 >= DUPLICATE_SIMILARITY
+                or (
+                    source_metadata(job.get("source", ""))["priority"]
+                    != source_metadata(x.get("source", ""))["priority"]
+                    and same_posting(job, x, req_similarity)
+                )
             ),
             None,
         )
-        if duplicate:
+        if duplicate and not prefer_source(job, duplicate):
             removed.append((job.get("company"), job.get("role"), "exigências essencialmente idênticas"))
             continue
+        if duplicate:
+            job["supersedesSource"] = duplicate.get("source")
+        meta = source_metadata(job.get("source", ""), structured=bool(job.get("sourceStructured")))
+        job.setdefault("sourceName", meta["name"])
+        job.setdefault("sourceProvider", meta["provider"])
+        job.setdefault("sourceOfficial", meta["official"])
+        job.setdefault("sourcePriority", meta["priority"])
         review = next(
             (
                 x

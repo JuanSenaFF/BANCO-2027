@@ -1,21 +1,24 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-10T14:05:25+00:00",
+    "catalogBuiltAt": "2026-09-10T15:31:57+00:00",
     "total": 69,
     "added": 0,
     "verificationAttempted": 62,
     "lastCheckAttemptAt": "2026-09-10T14:05:25+00:00",
     "verificationConfirmed": 0,
     "updatedAt": "2026-09-10T14:04:21Z",
-    "included": 63,
-    "excluded": 6,
+    "included": 62,
+    "excluded": 7,
     "discovered": 0,
     "candidateUrls": 489,
     "validated": 18,
     "rejected": 0,
     "rejectionReasons": {},
     "needsReview": 0,
-    "pendingValidation": 37
+    "pendingValidation": 37,
+    "officialSources": 9,
+    "linkedinFallbacks": 52,
+    "officialCoveragePct": 14.5
   },
   "jobs": [
     {
@@ -65,7 +68,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -131,7 +134,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/8129-analista-de-automa%C3%A7%C3%A3o-j%C3%BAnior-python-at-b3-4482282810/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 2,
@@ -188,7 +204,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Java 8+",
@@ -274,7 +290,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/8085-analista-engenharia-software-jr-java-at-b3-4474777160/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 3,
@@ -313,7 +342,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Java básico",
@@ -359,7 +388,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/8038-analista-engenharia-software-jr-at-b3-4470704439/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 4,
@@ -400,7 +442,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -454,7 +496,20 @@
       "lastCheckedAt": "2026-09-10T14:05:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-engenharia-de-qualidade-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-b3-4391212887/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 5,
@@ -495,7 +550,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -541,7 +596,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-de-software-jr-foco-em-ia-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-cielo-4473806428/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 6,
@@ -582,7 +650,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -624,7 +692,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-jr-backend-java-full-stack-vaga-afirmativa-para-pcd-at-cielo-4481831631/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 7,
@@ -674,7 +755,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Node.js",
@@ -740,7 +821,20 @@
       "lastCheckedAt": "2026-09-10T14:05:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/junior-backend-developer-pcd-at-getnet-brasil-4442931588/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 8,
@@ -781,7 +875,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Node.js",
@@ -831,7 +925,20 @@
       "lastCheckedAt": "2026-09-10T14:05:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/junior-full-stack-developer-at-getnet-brasil-4444244513/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 9,
@@ -881,7 +988,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 90,
       "requirementsStructured": [
         {
           "text": "Java ou Go",
@@ -947,7 +1054,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "Lever",
+      "sourceProvider": "lever",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sources": [
+        {
+          "url": "https://jobs.lever.co/pismo/3b2c04cf-44c3-4e74-b6fd-38f45099d192",
+          "name": "Lever",
+          "provider": "lever",
+          "official": true,
+          "priority": 4
+        }
+      ]
     },
     {
       "id": 10,
@@ -998,7 +1118,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "PHP 8+",
@@ -1076,7 +1196,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-php-jr-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-picpay-4480708943/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 11,
@@ -1116,7 +1249,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "SQL intermediário",
@@ -1162,7 +1295,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-jr-risco-de-cr%C3%A9dito-at-banco-bv-4479798809/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 12,
@@ -1202,7 +1348,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 65,
       "requirementsStructured": [
         {
           "text": "React",
@@ -1254,7 +1400,20 @@
         }
       ],
       "validationState": "closed",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Média",
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sources": [
+        {
+          "url": "https://bancobmg.gupy.io/jobs/9708140",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        }
+      ]
     },
     {
       "id": 13,
@@ -1293,7 +1452,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -1337,7 +1496,20 @@
         }
       ],
       "validationState": "closed",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-de-sistemas-jr-fidc-at-banco-daycoval-4413223614/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 14,
@@ -1378,7 +1550,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -1432,7 +1604,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-de-jornada-digital-jr-at-banco-daycoval-4481580823/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 15,
@@ -1524,7 +1709,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceName": "Agregador",
+      "sourceProvider": "aggregator",
+      "sourceOfficial": false,
+      "sourcePriority": 0,
+      "sources": [
+        {
+          "url": "https://remotar.com.br/job/124228/dock/dba-junior-sqlserver",
+          "name": "Agregador",
+          "provider": "aggregator",
+          "official": false,
+          "priority": 0
+        }
+      ]
     },
     {
       "id": 16,
@@ -1561,7 +1759,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 65,
       "requirementsStructured": [
         {
           "text": "Excel",
@@ -1609,7 +1807,20 @@
         }
       ],
       "validationState": "closed",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Média",
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sources": [
+        {
+          "url": "https://nuclea.gupy.io/jobs/9398041",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        }
+      ]
     },
     {
       "id": 17,
@@ -1645,7 +1856,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Redes",
@@ -1689,7 +1900,20 @@
         }
       ],
       "validationState": "closed",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-de-ti-junior-at-sicoob-cooperaso-4356766510/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 18,
@@ -1734,7 +1958,7 @@
       "lastVerifiedAt": "2026-09-07T15:33:53+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -1800,7 +2024,20 @@
       "lastCheckedAt": "2026-09-07T15:33:53+00:00",
       "verificationReason": "Encerramento explícito",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/cas-analista-de-governan%C3%A7%C3%A3o-de-dados-jr-at-sicredi-4451811952/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 19,
@@ -1931,7 +2168,20 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceName": "Página oficial",
+      "sourceProvider": "company",
+      "sourceOfficial": true,
+      "sourcePriority": 5,
+      "sources": [
+        {
+          "url": "https://fitbank.vagas.solides.com.br/vaga/760567",
+          "name": "Página oficial",
+          "provider": "company",
+          "official": true,
+          "priority": 5
+        }
+      ]
     },
     {
       "id": 20,
@@ -1973,7 +2223,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -2035,7 +2285,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/conversational-designer-junior-ai-analyst-at-inter-4477967162/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 21,
@@ -2071,7 +2334,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Figma",
@@ -2117,7 +2380,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/tech-product-analyst-junior-crm-strategy-at-inter-4478053800/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 22,
@@ -2155,7 +2431,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -2197,7 +2473,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-dados-jr-at-banco-bradesco-4477779029/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 23,
@@ -2240,7 +2529,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "SQL intermediário/avançado",
@@ -2290,7 +2579,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-projetos-ti-jr-at-banco-bradesco-4479168144/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 24,
@@ -2326,7 +2628,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Análise de dados",
@@ -2364,7 +2666,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-canais-digitais-jr-pcd-at-banco-bradesco-4475358984/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 25,
@@ -2401,7 +2716,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Python básico",
@@ -2439,7 +2754,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4479113150/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 26,
@@ -2477,7 +2805,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Python avançado",
@@ -2519,7 +2847,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4478868061/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 27,
@@ -2559,7 +2900,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Excel avançado",
@@ -2609,7 +2950,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-intelig%C3%AAncia-neg%C3%B3cios-jr-pcd-at-banco-bradesco-4479573987/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 28,
@@ -2645,7 +2999,7 @@
       "lastVerifiedAt": "2026-09-06T17:40:31+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -2683,7 +3037,20 @@
       "lastCheckedAt": "2026-09-06T17:40:31+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-dados-planejamento-comercial-jr-at-banco-bradesco-4478186739/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 29,
@@ -2720,7 +3087,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -2758,7 +3125,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/data-scientist-i-at-banco-bradesco-4479731821/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 30,
@@ -2794,7 +3174,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -2836,7 +3216,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/business-analyst-jr-at-banco-bradesco-4479998555/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 31,
@@ -2884,7 +3277,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "C#",
@@ -2946,7 +3339,20 @@
       "lastCheckedAt": "2026-09-10T14:05:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenharia-software-engineer-ii-c%23-at-stone-4404512245/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 32,
@@ -2985,7 +3391,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 82,
       "requirementsStructured": [
         {
           "text": "UiPath",
@@ -3031,7 +3437,20 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/software-engineer-ii-automa%C3%A7%C3%A3o-rpa-at-stone-4476757291/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 33,
@@ -3072,7 +3491,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -3124,7 +3543,20 @@
         }
       ],
       "validationState": "closed",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-j%C3%BAnior-de-pol%C3%ADticas-de-cr%C3%A9dito-cr%C3%A9dit-business-analyst-at-lato-jobs-4450385570/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 34,
@@ -3168,7 +3600,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -3222,7 +3654,20 @@
       "lastCheckedAt": "2026-09-10T14:05:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/software-engineer-platform-services-at-mercado-livre-brasil-4450132519/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 35,
@@ -3275,7 +3720,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java ou Go",
@@ -3353,7 +3798,20 @@
       "lastCheckedAt": "2026-09-10T14:05:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/software-engineer-platform-services-at-mercado-livre-4458415021/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 36,
@@ -3411,7 +3869,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": true,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -3491,7 +3949,20 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-de-software-junior-ou-pleno-java-investment-products-at-btg-pactual-4455558143/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 37,
@@ -3537,7 +4008,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": true,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java/C#/Python",
@@ -3585,7 +4056,20 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-backend-j%C3%BAnior-pleno-%E2%80%93-it-trading-at-btg-pactual-4404018383/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 38,
@@ -3627,7 +4111,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "C#",
@@ -3681,7 +4165,20 @@
       "lastCheckedAt": "2026-09-10T14:05:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-junior-full-stack-it-accounting-clients-finance-report-at-btg-pactual-4462892770/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 39,
@@ -3722,7 +4219,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "C#/.NET",
@@ -3768,7 +4265,20 @@
       "lastCheckedAt": "2026-09-10T14:05:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenharia-de-software-back-end-assistente-e-j%C3%BAnior-vaga-exclusiva-para-pcd-at-xp-inc-4310494599/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 40,
@@ -3812,7 +4322,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -3866,7 +4376,20 @@
       "lastCheckedAt": "2026-09-10T14:05:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/analista-de-automa%C3%A7%C3%A3o-e-ia-j%C3%BAnior-%E2%80%93-analytics-processos-controles-at-c6-bank-4414036029/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 41,
@@ -3919,7 +4442,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -3989,7 +4512,20 @@
       "lastCheckedAt": "2026-09-10T14:05:27+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-java-at-pagbank-4436036193/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 42,
@@ -4051,7 +4587,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -4145,7 +4681,20 @@
       "lastCheckedAt": "2026-09-10T14:05:27+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-dados-at-pagbank-4460025351/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 43,
@@ -4186,7 +4735,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "AWS",
@@ -4232,7 +4781,20 @@
       "lastCheckedAt": "2026-09-10T14:05:27+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-sistemas-jr-sre-at-pagbank-4428707419/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 44,
@@ -4270,7 +4832,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Testes manuais",
@@ -4312,7 +4874,20 @@
       "lastCheckedAt": "2026-09-10T14:05:27+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-de-qualidade-de-software-jr-at-pagbank-4425839238/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 45,
@@ -4358,7 +4933,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -4412,7 +4987,20 @@
       "lastCheckedAt": "2026-09-10T14:05:27+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/cientista-de-dados-jr-at-pagbank-4418200168/",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 46,
@@ -4470,7 +5058,20 @@
       "lastCheckedAt": "2026-09-10T14:05:27+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "Página oficial",
+      "sourceProvider": "company",
+      "sourceOfficial": true,
+      "sourcePriority": 5,
+      "sources": [
+        {
+          "url": "https://carreiras.itau.com.br/busca-de-vagas/precisa/35299/1/1",
+          "name": "Página oficial",
+          "provider": "company",
+          "official": true,
+          "priority": 5
+        }
+      ]
     },
     {
       "id": 47,
@@ -4578,7 +5179,20 @@
       "lastCheckedAt": "2026-09-06T16:22:26+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceName": "Página oficial",
+      "sourceProvider": "company",
+      "sourceOfficial": true,
+      "sourcePriority": 5,
+      "sources": [
+        {
+          "url": "https://santander-brasil.interviewhr.com/offer/analista-de-ti-ii",
+          "name": "Página oficial",
+          "provider": "company",
+          "official": true,
+          "priority": 5
+        }
+      ]
     },
     {
       "id": 48,
@@ -4625,7 +5239,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Conhecimento básico de lógica de programação",
@@ -4679,7 +5293,20 @@
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-j%C3%BAnior-%E2%80%93-engenharia-projetos-t%C3%A9cnicos-at-bmp-4461307880",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 49,
@@ -4733,7 +5360,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java 8 ou superior",
@@ -4799,7 +5426,20 @@
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-backend-java-j%C3%BAnior-at-nava-tech-for-business-4461787817",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 50,
@@ -4842,7 +5482,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 65,
       "requirementsStructured": [
         {
           "text": "Pelo menos 1 ano de desenvolvimento em Java/Java EE",
@@ -4892,7 +5532,30 @@
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Média",
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sources": [
+        {
+          "url": "https://anbima.gupy.io/jobs/12378629?jobBoardSource=gupy_public_page",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        },
+        {
+          "url": "https://www.linkedin.com/jobs/view/4461939235",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ],
+      "sourceAliases": [
+        "linkedin:4461939235"
+      ]
     },
     {
       "id": 51,
@@ -4938,7 +5601,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 65,
       "requirementsStructured": [
         {
           "text": "Estatística descritiva e aplicada a Machine Learning",
@@ -4988,7 +5651,20 @@
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Média",
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sources": [
+        {
+          "url": "https://bancorbras.gupy.io/jobs/12424215?jobBoardSource=gupy_public_page",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        }
+      ]
     },
     {
       "id": 52,
@@ -5029,7 +5705,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 50,
+      "qualityScore": 65,
       "requirementsStructured": [
         {
           "text": "Mínimo de 1 ano com programação profissional",
@@ -5071,7 +5747,20 @@
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Média",
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sources": [
+        {
+          "url": "https://acertapromotora.gupy.io/jobs/11989163?jobBoardSource=gupy_public_page",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        }
+      ]
     },
     {
       "id": 53,
@@ -5114,7 +5803,7 @@
       "lastVerifiedAt": "2026-09-10T14:05:28+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 92,
       "requirementsStructured": [
         {
           "text": "Graduação em curso ou concluída em Tecnologia da Informação ou áreas correlatas",
@@ -5177,7 +5866,20 @@
         "sourceUrl": "https://www.glassdoor.com.br/Sal%C3%A1rios/bras%C3%ADlia-distrito-federal-desenvolvedor-java-j%C3%BAnior-sal%C3%A1rio-SRCH_IL.0%2C25_IC2494161_KO26%2C51.htm",
         "sourceCheckedAt": "2026-09-09",
         "note": "Estimativa de remuneração total compartilhada por usuários; não é a faixa oficial da vaga."
-      }
+      },
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/desenvolvedor-java-j%C3%BAnior-at-sicoob-4460399673",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 54,
@@ -5215,7 +5917,7 @@
       "lastVerifiedAt": "2026-09-09T18:26:26+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 92,
       "requirementsStructured": [
         {
           "text": "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens: C#, Java, Go ou Rust",
@@ -5245,7 +5947,20 @@
       "publishedAt": "2026-08-30T09:48:55.000Z",
       "validThrough": "2027-03-09T17:53:05.000Z",
       "validationState": "pending",
-      "confidenceLabel": "Alta"
+      "confidenceLabel": "Alta",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-assistente-e-j%C3%BAnior-at-xp-inc-4244881112",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 55,
@@ -5281,9 +5996,9 @@
       "key": "linkedin:4461939235",
       "firstSeenAt": "2026-09-06T03:26:20Z",
       "lastVerifiedAt": null,
-      "duplicateOf": null,
-      "excluded": false,
-      "qualityScore": 48,
+      "duplicateOf": "anbima.gupy.io:12378629",
+      "excluded": true,
+      "qualityScore": 55,
       "requirementsStructured": [
         {
           "text": "Participar das atividades de manutenção evolutiva e corretiva dos sistemas internos.",
@@ -5317,7 +6032,20 @@
       "lastCheckedAt": "2026-09-10T14:05:28+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4461939235",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 56,
@@ -5435,7 +6163,19 @@
         }
       ],
       "validationState": "closed",
-      "confidenceLabel": "Alta"
+      "confidenceLabel": "Alta",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4449243003",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 57,
@@ -5538,7 +6278,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4461407803",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 58,
@@ -5632,7 +6384,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4198276844",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 59,
@@ -5821,7 +6585,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4458272564",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 60,
@@ -5920,7 +6696,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4460341533",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 61,
@@ -6061,7 +6849,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4462005969",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 62,
@@ -6181,7 +6981,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4458259681",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 63,
@@ -6270,7 +7082,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4457316847",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 64,
@@ -6387,7 +7211,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4455991358",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 65,
@@ -6468,7 +7304,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4416987650",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 66,
@@ -6551,7 +7399,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4464141238",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 67,
@@ -6640,7 +7500,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4462189181",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 68,
@@ -6760,7 +7632,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Média"
+      "confidenceLabel": "Média",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4462743222",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     },
     {
       "id": 69,
@@ -6826,7 +7710,19 @@
         }
       ],
       "validationState": "pending",
-      "confidenceLabel": "Baixa"
+      "confidenceLabel": "Baixa",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4452578955",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ]
     }
   ]
 }

@@ -13,6 +13,12 @@ from rules import (
     age_days,
     validation_state,
 )
+from official_sources import (
+    merge_source_records,
+    same_posting,
+    source_metadata,
+    source_priority,
+)
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -28,10 +34,10 @@ def excluded_by_quality(j):
 
 def confidence_score(j):
     """Score the reliability of an extracted record, independent of candidate fit."""
-    source = str(j.get('sourceName') or '').lower()
+    source = str(j.get('sourceProvider') or j.get('sourceName') or '').lower()
     score = 0
     score += 25 if j.get('lastVerifiedAt') and age_days(j.get('lastVerifiedAt')) <= ACTIVE_VERIFICATION_DAYS else 0
-    score += 20 if source in {'gupy', 'lever', 'greenhouse'} else 12 if source == 'linkedin' else 5
+    score += 20 if source in {'gupy', 'lever', 'greenhouse', 'ashby'} else 12 if source == 'linkedin' else 5
     score += 15 if len(j.get('requirements', [])) >= 3 else 0
     score += 10 if j.get('company') else 0
     score += 10 if j.get('role') else 0
@@ -58,6 +64,53 @@ def apply_verification(job, result):
     return result
 
 
+def annotate_source(job):
+    meta=source_metadata(job.get('source',''),structured=bool(job.get('sourceStructured')))
+    # Reclassify known hosts on every build so catalog migrations do not keep
+    # an older "unknown" classification stored in jobs.json.
+    if meta['provider']!='unknown':
+        job['sourceName']=meta['name']
+        job['sourceProvider']=meta['provider']
+        job['sourceOfficial']=meta['official']
+        job['sourcePriority']=meta['priority']
+    else:
+        job['sourceName']=job.get('sourceName') or meta['name']
+        job['sourceProvider']=job.get('sourceProvider') or meta['provider']
+        job['sourceOfficial']=job.get('sourceOfficial',meta['official'])
+        job['sourcePriority']=job.get('sourcePriority',meta['priority'])
+    job['sources']=merge_source_records(job)
+    return job
+
+
+def apply_source_preference(jobs):
+    """Prefer official representations and retain every discovery URL as lineage."""
+    ordered=sorted(
+        jobs,
+        key=lambda j:(source_priority(j),bool(j.get('lastVerifiedAt')),str(j.get('firstSeenAt') or '')),
+        reverse=True,
+    )
+    winners=[]
+    for job in ordered:
+        duplicate=next((
+            winner for winner in winners
+            if req_similarity(job.get('requirements',[]),winner.get('requirements',[]))>=DUPLICATE_SIMILARITY
+            or (
+                source_priority(job)!=source_priority(winner)
+                and same_posting(job,winner,req_similarity)
+            )
+        ),None)
+        if duplicate:
+            job['duplicateOf']=duplicate['key']
+            duplicate['sources']=merge_source_records(duplicate,job)
+            aliases=set(duplicate.get('sourceAliases') or [])
+            aliases.add(job['key'])
+            duplicate['sourceAliases']=sorted(aliases)
+        else:
+            job['duplicateOf']=None
+            winners.append(job)
+    return jobs
+
+
 def run(online=False):
     path=ROOT/'jobs.json';old=json.loads(path.read_text()) if path.exists() else {'jobs':[],'meta':{}}
     salary_path=ROOT/'salary-estimates.json'
@@ -65,7 +118,7 @@ def run(online=False):
     prior={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     records=[]
     for name in [*(f'data-{i}.js' for i in range(1,7)),'data-auto.js']:records+=parse_jobs(ROOT/name)
-    out={**prior};seen=[]
+    out={**prior}
     for j in records:
         key=canonical_url(j.get('source','')) or 'legacy:'+str(j['id'])
         previous=prior.get(key,{})
@@ -84,11 +137,15 @@ def run(online=False):
         merged.setdefault('lastVerifiedAt',None)
         merged.setdefault('status','Possivelmente encerrada')
         if not merged['lastVerifiedAt'] and merged['status']!='Encerrada':merged['status']='Possivelmente encerrada'
-        merge_duplicate=next((x for x in seen if x['key']!=key and req_similarity(j.get('requirements',[]),x.get('requirements',[]))>=DUPLICATE_SIMILARITY),None)
-        merged['duplicateOf']=merge_duplicate['key'] if merge_duplicate else None
+        merged=annotate_source(merged)
         merged['excluded']=excluded_by_quality(merged)
         merged['validationState']=validation_state(merged)
-        out[key]=merged;seen.append(merged)
+        out[key]=merged
+    for key,job in list(out.items()):
+        out[key]=annotate_source(job)
+    apply_source_preference(list(out.values()))
+    for job in out.values():
+        job['excluded']=excluded_by_quality(job)
     if online:
         import requests
         def check(j):
@@ -99,6 +156,7 @@ def run(online=False):
             candidates=[j for j in out.values() if j['status']!='Encerrada' and not j['excluded']]
             for key,result in pool.map(check,candidates):out[key].update(apply_verification(out[key], result))
     for j in out.values():
+        annotate_source(j)
         j['excluded']=excluded_by_quality(j)
         j['validationState']=validation_state(j)
         j['qualityScore'],j['confidenceLabel']=confidence_score(j)
@@ -118,6 +176,9 @@ def run(online=False):
     meta['excluded']=sum(bool(j.get('excluded')) for j in out.values())
     meta['needsReview']=sum(bool(j.get('reviewRequired')) for j in out.values())
     meta['pendingValidation']=sum(j.get('validationState') in {'pending','review'} for j in out.values())
+    meta['officialSources']=sum(bool(j.get('sourceOfficial')) and not j.get('excluded') for j in out.values())
+    meta['linkedinFallbacks']=sum(j.get('sourceProvider')=='linkedin' and not j.get('excluded') for j in out.values())
+    meta['officialCoveragePct']=round(100*meta['officialSources']/max(1,meta['included']),1)
     data={'meta':meta,'jobs':list(out.values())};path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     history_path=ROOT/'market-history.json';history=json.loads(history_path.read_text()) if history_path.exists() else []
     week=(datetime.now(timezone.utc)-timedelta(days=datetime.now(timezone.utc).weekday())).date().isoformat()
