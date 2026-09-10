@@ -35,3 +35,5 @@ test('study page presents application impact instead of demand alone',()=>{
   assert.match(app,/Horas por candidatura/);
   assert.match(app,/Vagas que mudam de fila/);
 });
+
+test('pipeline freezes submission context and exposes score calibration',()=>{const app=read('app.js');assert.match(app,/captureMatchSnapshot/);assert.match(app,/O corte de 80% prevê entrevistas/);assert.match(app,/Desempenho por fonte/);assert.match(app,/Desempenho por fila de origem/);});
