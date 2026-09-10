@@ -7,6 +7,12 @@ from concurrent.futures import ThreadPoolExecutor
 from collections import Counter
 from validate_auto import parse_jobs, canonical_url, req_similarity
 from quality import senior_conflict, verify, requirements_quality_conflict
+from rules import (
+    ACTIVE_VERIFICATION_DAYS,
+    DUPLICATE_SIMILARITY,
+    age_days,
+    validation_state,
+)
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -18,6 +24,26 @@ def excluded_by_quality(j):
         or senior_conflict(j.get('role',''),' '.join(reqs))
         or requirements_quality_conflict(j.get('role',''),reqs)
     )
+
+
+def confidence_score(j):
+    """Score the reliability of an extracted record, independent of candidate fit."""
+    source = str(j.get('sourceName') or '').lower()
+    score = 0
+    score += 25 if j.get('lastVerifiedAt') and age_days(j.get('lastVerifiedAt')) <= ACTIVE_VERIFICATION_DAYS else 0
+    score += 20 if source in {'gupy', 'lever', 'greenhouse'} else 12 if source == 'linkedin' else 5
+    score += 15 if len(j.get('requirements', [])) >= 3 else 0
+    score += 10 if j.get('company') else 0
+    score += 10 if j.get('role') else 0
+    score += 8 if j.get('source') else 0
+    score += 5 if j.get('location') else 0
+    score += 5 if j.get('modality') else 0
+    score += 2 if j.get('differentials') else 0
+    if j.get('reviewRequired'):
+        score -= 15
+    score = max(0, min(100, score))
+    label = 'Alta' if score >= 80 else 'Média' if score >= 60 else 'Baixa'
+    return score, label
 
 
 def run(online=False):
@@ -40,9 +66,10 @@ def run(online=False):
         merged.setdefault('lastVerifiedAt',None)
         merged.setdefault('status','Possivelmente encerrada')
         if not merged['lastVerifiedAt'] and merged['status']!='Encerrada':merged['status']='Possivelmente encerrada'
-        merge_duplicate=next((x for x in seen if x['key']!=key and req_similarity(j.get('requirements',[]),x.get('requirements',[]))>=.90),None)
+        merge_duplicate=next((x for x in seen if x['key']!=key and req_similarity(j.get('requirements',[]),x.get('requirements',[]))>=DUPLICATE_SIMILARITY),None)
         merged['duplicateOf']=merge_duplicate['key'] if merge_duplicate else None
         merged['excluded']=excluded_by_quality(merged)
+        merged['validationState']=validation_state(merged)
         out[key]=merged;seen.append(merged)
     if online:
         import requests
@@ -55,7 +82,8 @@ def run(online=False):
             for key,result in pool.map(check,candidates):out[key].update(result)
     for j in out.values():
         j['excluded']=excluded_by_quality(j)
-        j['qualityScore']=min(100,(30 if len(j.get('requirements',[]))>=3 else 0)+(15 if j.get('lastVerifiedAt') else 0)+(10 if j.get('company') else 0)+(10 if j.get('role') else 0)+(10 if j.get('source') else 0)+(10 if j.get('location') else 0)+(5 if j.get('modality') else 0)+(10 if j.get('differentials') else 0))
+        j['validationState']=validation_state(j)
+        j['qualityScore'],j['confidenceLabel']=confidence_score(j)
         if requirements_quality_conflict(j.get('role',''),j.get('requirements',[])):
             j['qualityScore']=min(j['qualityScore'],35)
         j['requirementsStructured']=[{'text':t,'mandatory':True} for t in j.get('requirements',[])]+[{'text':t,'mandatory':False} for t in j.get('differentials',[])]
@@ -67,8 +95,11 @@ def run(online=False):
         report=json.loads(report_path.read_text())
         # "discovered" é o que o coletor encontrou antes da validação; "added" é o que realmente entrou no catálogo.
         meta.update(updatedAt=report.get('updatedAt'),discovered=report.get('added',0),candidateUrls=report.get('candidateUrls'))
+        meta.update(validated=report.get('validated',meta.get('validated',0)),rejected=report.get('rejected',meta.get('rejected',0)),rejectionReasons=report.get('rejectionReasons',meta.get('rejectionReasons',{})))
     meta['included']=sum(not j.get('excluded') for j in out.values())
     meta['excluded']=sum(bool(j.get('excluded')) for j in out.values())
+    meta['needsReview']=sum(bool(j.get('reviewRequired')) for j in out.values())
+    meta['pendingValidation']=sum(j.get('validationState') in {'pending','review'} for j in out.values())
     data={'meta':meta,'jobs':list(out.values())};path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     history_path=ROOT/'market-history.json';history=json.loads(history_path.read_text()) if history_path.exists() else []
     week=(datetime.now(timezone.utc)-timedelta(days=datetime.now(timezone.utc).weekday())).date().isoformat()

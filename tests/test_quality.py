@@ -3,7 +3,8 @@ from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from quality import split_requirements,senior_conflict,verify,requirements_quality_conflict
-from validate_auto import canonical_url,req_similarity
+from validate_auto import canonical_url,req_similarity,similarity_band
+from rules import validation_state
 from bs4 import BeautifulSoup
 class QualityTests(unittest.TestCase):
     def test_sections_exclude_benefits(self):
@@ -38,6 +39,13 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(canonical_url('https://linkedin.com/jobs/view/python-123456789'),canonical_url('https://br.linkedin.com/jobs/view/123456789?tracking=foo'))
     def test_similarity(self):
         self.assertEqual(req_similarity(['Python','SQL','APIs'],['SQL','APIs','Python']),1)
+        self.assertEqual(req_similarity(['APIs REST','Postgres','Microsserviços'],['REST APIs','PostgreSQL','Microservices']),1)
+        self.assertEqual(similarity_band(['Python','SQL','APIs','Docker'],['Python','SQL','APIs','Docker','Kafka']),'review')
+    def test_validation_states_are_explicit(self):
+        self.assertEqual(validation_state({'status':'Possivelmente encerrada'}),'pending')
+        self.assertEqual(validation_state({'status':'Encerrada'}),'closed')
+        self.assertEqual(validation_state({'status':'Ativa','lastVerifiedAt':'2099-01-01T00:00:00Z'}),'confirmed')
+        self.assertEqual(validation_state({'status':'Ativa','lastVerifiedAt':'2020-01-01T00:00:00Z'}),'pending')
     @patch('quality.safe_fetch')
     def test_http403_unknown(self,get):
         get.return_value.status_code=403

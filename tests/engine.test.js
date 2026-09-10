@@ -11,5 +11,6 @@ test('missing dates are not invented or treated as active',()=>{const n=E.normal
 test('confirmed mandatory and live status can recommend applying',()=>{const a=E.evaluate(j,p,S);assert.equal(a.score,100);assert.equal(a.canApply,true);assert.equal(E.evaluate({...j,status:'Encerrada'},p,S).canApply,false);});
 test('stale verification excludes active rankings',()=>{assert.equal(E.normalize({...j,lastVerifiedAt:'2020-01-01'}).status,'Possivelmente encerrada');});
 test('seniority in requirements overrides junior title',()=>{assert.equal(E.normalize({...j,requirements:['Python','SQL','Experiência como sênior']}).eligible,false);});
+test('intermediate duplicate review is not ranked as eligible',()=>{const n=E.normalize({...j,reviewRequired:true,reviewReason:'Exigências próximas'});assert.equal(n.eligible,false);assert.match(n.qualityIssues.join(' '),/Exigências próximas/);});
 test('location and modality gates block incompatible targets',()=>{const a=E.evaluate({...j,modality:'Presencial'},p,S,{location:'Recife'});assert.equal(a.canApply,false);assert.equal(a.label,'Inviável no recorte');});
 test('study priority simulates actual unlocked jobs',()=>{const a=E.priorities([{...j,requirements:['Python','AWS']}],p,S,{},{});assert.ok(a.length);assert.equal(a[0].skill.id,'aws');assert.equal(a[0].unlocked,1);});

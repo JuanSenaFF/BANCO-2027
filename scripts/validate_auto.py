@@ -5,6 +5,8 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
+from rules import DUPLICATE_SIMILARITY, REVIEW_SIMILARITY
+
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
 BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 7)]
@@ -107,15 +109,43 @@ def canonical_url(url: str) -> str:
 
 def tokens(reqs: list[str]) -> set[str]:
     stop = {"conhecimento", "experiencia", "vivencia", "basico", "intermediario", "avancado", "para", "com", "uma", "das", "dos", "que", "atuar", "desenvolver"}
+    aliases = {
+        "restful": "rest",
+        "restapi": "api",
+        "restapis": "api",
+        "postgres": "postgresql",
+        "postgresql": "postgresql",
+        "javascript": "javascript",
+        "nodejs": "node",
+        "node": "node",
+        "amazonwebservices": "aws",
+        "googlecloud": "gcp",
+        "microsoftazure": "azure",
+        "microservices": "microservice",
+        "microsservicos": "microservice",
+    }
     out = set()
     for r in reqs:
-        out.update(w for w in re.findall(r"[a-z0-9+#.]+", ascii_norm(r)) if len(w) > 2 and w not in stop)
+        out.update(
+            aliases.get(w, w)
+            for w in re.findall(r"[a-z0-9+#.]+", ascii_norm(r))
+            if len(w) > 2 and w not in stop
+        )
     return out
 
 
 def req_similarity(a: list[str], b: list[str]) -> float:
     A, B = tokens(a), tokens(b)
     return len(A & B) / len(A | B) if A and B else 0.0
+
+
+def similarity_band(a: list[str], b: list[str]) -> str | None:
+    score = req_similarity(a, b)
+    if score >= DUPLICATE_SIMILARITY:
+        return "duplicate"
+    if score >= REVIEW_SIMILARITY:
+        return "review"
+    return None
 
 
 def parse_jobs(path: Path) -> list[dict]:
@@ -179,6 +209,8 @@ def main() -> None:
     removed = []
 
     for job in auto:
+        job.pop("reviewRequired", None)
+        job.pop("reviewReason", None)
         ok, why = valid(job)
         if not ok:
             removed.append((job.get("company"), job.get("role"), why))
@@ -187,9 +219,32 @@ def main() -> None:
         if cu and cu in seen_urls:
             removed.append((job.get("company"), job.get("role"), "URL/ID já existente"))
             continue
-        if any(req_similarity(job.get("requirements", []), x.get("requirements", [])) >= 0.90 for x in reference):
+        duplicate = next(
+            (
+                x
+                for x in reference
+                if req_similarity(job.get("requirements", []), x.get("requirements", []))
+                >= DUPLICATE_SIMILARITY
+            ),
+            None,
+        )
+        if duplicate:
             removed.append((job.get("company"), job.get("role"), "exigências essencialmente idênticas"))
             continue
+        review = next(
+            (
+                x
+                for x in reference
+                if similarity_band(job.get("requirements", []), x.get("requirements", [])) == "review"
+            ),
+            None,
+        )
+        if review:
+            job["reviewRequired"] = True
+            job["reviewReason"] = (
+                "Exigências próximas de outra vaga; revisão humana recomendada "
+                f"({review.get('company', 'empresa')} — {review.get('role', 'cargo')})."
+            )
         kept.append(job)
         reference.append(job)
         if cu:
@@ -209,6 +264,21 @@ def main() -> None:
 
     for company, role, why in removed:
         print(f"[remove] {company} — {role}: {why}")
+    report_path = ROOT / "collection-report.json"
+    try:
+        report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else {}
+        report.update({
+            "validated": len(kept),
+            "rejected": len(removed),
+            "reviewRequired": sum(bool(j.get("reviewRequired")) for j in kept),
+            "rejectionReasons": {
+                reason: sum(1 for _, _, why in removed if why == reason)
+                for reason in sorted({why for _, _, why in removed})
+            },
+        })
+        report_path.write_text(json.dumps(report, ensure_ascii=False), encoding="utf-8")
+    except OSError:
+        pass
     print(f"[validate] mantidas {len(kept)} vagas automáticas; removidas {len(removed)}")
 
 

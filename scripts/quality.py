@@ -4,6 +4,7 @@ import ipaddress, socket, re, unicodedata, json
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
+from rules import VALIDATION_CLOSED, VALIDATION_CONFIRMED, VALIDATION_PENDING
 
 
 def norm(s):
@@ -155,17 +156,22 @@ def safe_fetch(session, url):
 
 def verify(job, session):
     at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    result = {'lastCheckedAt': at, 'status': 'Possivelmente encerrada', 'verificationReason': 'Não foi possível confirmar'}
+    result = {
+        'lastCheckedAt': at,
+        'status': 'Possivelmente encerrada',
+        'validationState': VALIDATION_PENDING,
+        'verificationReason': 'Não foi possível confirmar',
+    }
     try:
         response = safe_fetch(session, job.get('source', ''))
         if response.status_code in (404, 410):
-            return {**result, 'status': 'Encerrada', 'lastVerifiedAt': at, 'verificationReason': 'Anúncio removido (404/410)'}
+            return {**result, 'status': 'Encerrada', 'validationState': VALIDATION_CLOSED, 'lastVerifiedAt': at, 'verificationReason': 'Anúncio removido (404/410)'}
         if response.status_code != 200:
             return {**result, 'verificationReason': f'HTTP {response.status_code}; não confirma encerramento'}
         soup = BeautifulSoup(response.text, 'html.parser')
         text = norm(soup.get_text(' ', strip=True))
         if re.search(r'nao aceita mais candidaturas|no longer accepting applications|vaga (?:foi )?encerrada|job (?:is )?no longer available', text):
-            return {**result, 'status': 'Encerrada', 'lastVerifiedAt': at, 'verificationReason': 'Encerramento explícito'}
+            return {**result, 'status': 'Encerrada', 'validationState': VALIDATION_CLOSED, 'lastVerifiedAt': at, 'verificationReason': 'Encerramento explícito'}
         posting = None
 
         def find(o):
@@ -197,7 +203,7 @@ def verify(job, session):
                     if not expiry.tzinfo:
                         expiry = expiry.replace(tzinfo=timezone.utc)
                     if expiry < datetime.now(timezone.utc):
-                        return {**result, 'status': 'Encerrada', 'lastVerifiedAt': at, 'verificationReason': 'Prazo expirado'}
+                        return {**result, 'status': 'Encerrada', 'validationState': VALIDATION_CLOSED, 'lastVerifiedAt': at, 'verificationReason': 'Prazo expirado'}
                 except ValueError:
                     pass
             # A generic page or another job must not validate this record.
@@ -212,11 +218,12 @@ def verify(job, session):
                 return {
                     **result,
                     'status': 'Ativa',
+                    'validationState': VALIDATION_CONFIRMED,
                     'lastVerifiedAt': at,
                     'verificationReason': 'JobPosting correspondente e válido',
                     **location_fields(posting, text),
                     **extracted,
                 }
         return {**result, 'verificationReason': 'Página acessível, sem evidência suficiente de vaga aberta'}
-    except Exception:
-        return result
+    except Exception as exc:
+        return {**result, 'verificationReason': f'Falha de validação: {type(exc).__name__}'}

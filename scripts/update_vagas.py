@@ -6,6 +6,7 @@ import re
 import sys
 import time
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
@@ -14,6 +15,7 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 from quality import split_requirements, senior_conflict, location_fields
+from rules import DUPLICATE_SIMILARITY
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
@@ -23,6 +25,8 @@ SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8"})
 TIMEOUT = 20
 MAX_NEW = 10
+FETCH_WORKERS = 8
+SCAN_LIMIT = 400
 
 TARGET_COMPANIES = [
     "Itaú", "Itaú Unibanco", "Bradesco", "Santander", "Santander Brasil", "BTG Pactual", "Nubank",
@@ -31,6 +35,10 @@ TARGET_COMPANIES = [
     "Banco Daycoval", "Banco ABC Brasil", "Banco PAN", "Banco BMG", "Neon", "PicPay", "Creditas",
     "Will Bank", "Genial Investimentos", "EQI", "EQI Investimentos", "Rico", "Clear", "Avenue",
     "Sicoob", "Sicredi", "Sinqia", "Matera", "FitBank",
+    "Agibank", "Banco Carrefour", "Banco Mercantil", "Banco Sofisa", "Banco Pine",
+    "Banco Rendimento", "Banco Bari", "Digio", "Banco Digio", "Banco Modal", "EBANX",
+    "CloudWalk", "InfinitePay", "Asaas", "Celcoin", "QI Tech", "Stark Bank",
+    "Conta Simples", "RecargaPay", "Zoop", "Vindi", "Fiserv",
     # empresas do ecossistema já validadas pela pesquisa
     "ANBIMA", "BMP", "Grupo Bancorbrás", "Via Certa Promotora", "Nava | Tech for Business", "Nava",
 ]
@@ -58,7 +66,6 @@ TECH_TERMS = [
 
 # As 8 vagas originalmente fornecidas pelo usuário não podem voltar como “novas”.
 EXCLUDED_TITLE_FRAGMENTS = [
-    "analista de projetos de tecnologia júnior",
     "backend jr recovery credit",
     "software engineer junior it sustentação",
     "analista suporte ti jr",
@@ -445,6 +452,8 @@ def classify_area(title: str, text: str) -> str:
     x = norm(title + " " + text[:1600])
     if "backend" in x or "back-end" in x:
         return "Backend"
+    if any(k in x for k in ["segurança", "seguranca", "security", "cyber", "fraude", "fraud"]):
+        return "Segurança"
     if any(k in x for k in ["dados", "data scientist", "cientista de dados", "analytics", "data engineer"]):
         return "Dados & Analytics"
     if any(k in x for k in ["sre", "cloud", "infraestrutura", "devops"]):
@@ -453,6 +462,10 @@ def classify_area(title: str, text: str) -> str:
         return "Automação & IA"
     if any(k in x for k in ["qualidade", " qa", "testador"]):
         return "QA"
+    if any(k in x for k in ["governança", "governanca", "governance", "power bi", "power platform"]):
+        return "Governança & BI"
+    if any(k in x for k in ["pagamento", "payments", "open finance", "crédito", "credito", "risco"]):
+        return "Produtos Financeiros"
     if any(k in x for k in ["sistemas", "sustentação", "sustentacao"]):
         return "Sistemas / Sustentação"
     return "Engenharia de Software"
@@ -503,7 +516,14 @@ def req_tokens(reqs: Iterable[str]) -> set[str]:
 
 
 def similarity(a: list[str], b: list[str]) -> float:
-    A, B = req_tokens(a), req_tokens(b)
+    aliases = {
+        "restful": "rest", "restapi": "api", "restapis": "api",
+        "postgres": "postgresql", "nodejs": "node", "microservices": "microservice",
+        "microsservicos": "microservice", "amazonwebservices": "aws",
+        "googlecloud": "gcp", "microsoftazure": "azure",
+    }
+    A = {aliases.get(x, x) for x in req_tokens(a)}
+    B = {aliases.get(x, x) for x in req_tokens(b)}
     return len(A & B) / len(A | B) if A and B else 0.0
 
 
@@ -576,7 +596,21 @@ def main() -> int:
     domains = existing_auto_domains()
     collected_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
+    scan_urls = []
     for url in candidate_urls:
+        if len(scan_urls) >= SCAN_LIMIT:
+            break
+        csource = canonical_source(url)
+        if csource in known_sources:
+            continue
+        src_domain = domain_of(url)
+        if any(src_domain.endswith(d) for d in SOURCE_NAME):
+            scan_urls.append(url)
+    print(f"[info] URLs a validar: {len(scan_urls)} em até {FETCH_WORKERS} workers")
+    with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as pool:
+        fetched = dict(pool.map(lambda u: (u, fetch_page(u)), scan_urls))
+
+    for url in scan_urls:
         if len(new_jobs) >= MAX_NEW:
             break
         csource = canonical_source(url)
@@ -585,7 +619,7 @@ def main() -> int:
         src_domain = domain_of(url)
         if not any(src_domain.endswith(d) for d in SOURCE_NAME):
             continue
-        soup, posting = fetch_page(url)
+        soup, posting = fetched.get(url, (None, None))
         if not soup and not posting:
             continue
         title = title_from(posting, soup)
@@ -599,7 +633,7 @@ def main() -> int:
         if len(requirements) < 3:
             continue
         # Deduplicação principal solicitada pelo usuário: exigências essencialmente idênticas.
-        if any(similarity(requirements, j.get("requirements", [])) >= 0.90 for j in existing + new_jobs):
+        if any(similarity(requirements, j.get("requirements", [])) >= DUPLICATE_SIMILARITY for j in existing + new_jobs):
             continue
         tags = classify_tags(" ".join([title, text, " ".join(requirements)]))
         if len(tags) < 2:

@@ -12,8 +12,10 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Pipeline com nove etapas, datas, feedback, próxima ação, observações, histórico de mudanças e taxas calculadas por candidaturas efetivamente registradas.
 - Histórico semanal de mercado no coletor e de perfil ao acessar o painel, além de registro manual. Não inventa snapshots de semanas anteriores nem considera uma amostra sem confirmação como queda de mercado.
 - Alertas no painel: match, backend júnior, empresa prioritária, Python+SQL+APIs e até um gap.
-- Coletor Python preservado, extração por seções (obrigatório/diferencial), senioridade contraditória, deduplicação por similaridade >=0,90, IDs preservados e chave estável por fonte. Duplicatas e vagas excluídas permanecem no catálogo histórico, fora dos rankings.
-- Verificação conservadora: 403/429/timeout/HTML genérico não significam vaga aberta ou encerrada. Status ativo expira após sete dias sem confirmação. 404/410, prazo expirado ou encerramento explícito marcam encerrada.
+- Coletor Python com extração por seções (obrigatório/diferencial), regras centralizadas de entrada, cobertura por empresas prioritárias, senioridade contraditória, IDs preservados e chave estável por fonte.
+- Deduplicação normalizada por sinônimos: similaridade >=0,90 remove automaticamente; similaridade entre 0,75 e 0,89 mantém o registro marcado para revisão humana; abaixo disso permanece como oportunidade independente.
+- Verificação conservadora com estados `pending`, `confirmed`, `review` e `closed`: 403/429/timeout/HTML genérico permanecem pendentes, confirmação ativa expira após sete dias, e 404/410, prazo expirado ou encerramento explícito marcam encerrada.
+- Cada registro recebe confiança baixa/média/alta, motivo de validação e motivo de rejeição da execução; somente vagas ativas, elegíveis e sem revisão pendente entram nos rankings.
 - Vercel API implementada para jobs, perfil/pipeline, match, atualização autenticada e acompanhamento da coleta.
 - Supabase schema com tabelas de domínio, RLS por usuário, gravação transacional de estado pessoal, autenticação e limitação persistente de atualização.
 
@@ -21,9 +23,7 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 
 O frontend funciona no GitHub Pages usando a cópia pública `jobs.json`; os arquivos JavaScript antigos são fallback. Perfil e candidaturas ficam **em rascunho neste navegador** até conectar o Supabase. Há exportação/restauração de backup; nada pessoal é enviado ao repositório.
 
-A migração para um banco online e o backend **ainda precisam de configuração e implantação externas**. Não há URL Vercel nem projeto Supabase preenchidos. Não foram criadas contas, senhas, serviços pagos ou chaves. O botão informa essa dependência; não simula coleta bem-sucedida.
-
-Os 55 registros existentes foram preservados. A verificação neste ambiente não conseguiu confirmar anúncios ativos; anúncios sem evidência recente ficam como “Possivelmente encerrada”, visíveis no radar. A rotina no GitHub fará novas tentativas. Isso não é uma afirmação de que todas as vagas fecharam.
+O catálogo online e o backend dependem das variáveis descritas abaixo. Anúncios sem evidência recente ficam como “Possivelmente encerrada” e aguardam nova validação; isso não é uma afirmação de que todas as vagas fecharam.
 
 A publicação via `deploy-pages.yml` usa o ambiente `github-pages` e reage também à conclusão da coleta. Se o GitHub exigir, selecionar **GitHub Actions** em Settings → Pages → Source. Isso evita que commits do bot deixem a versão pública desatualizada.
 

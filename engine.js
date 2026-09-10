@@ -12,7 +12,9 @@
     let status=j.status==='Encerrada'?'Encerrada':j.status==='Ativa'&&!stale?'Ativa':'Possivelmente encerrada';
     const sufficient=(j.requirements||[]).length>=3;
     const quality=j.qualityScore??Math.min(85,(sufficient?30:5)+(j.company?10:0)+(j.role?10:0)+(canonical(j.source)?10:0)+(last?15:0)+(j.location?5:0)+(j.modality?5:0));
-    return {...j,key:j.key||canonical(j.source)||'legacy:'+j.id,legacyStatus:j.status,status,firstSeenAt:j.firstSeenAt||j.collectedAt||null,lastVerifiedAt:last,location:j.location||'Não informada',modality:j.modality||'Não informada',sourceName:j.sourceName||(()=>{try{return new URL(j.source).hostname;}catch{return 'Não informada';}})(),qualityScore:quality,eligible:sufficient&&!conflict&&!j.excluded,qualityIssues:[...(j.qualityIssues||[]),...(!sufficient?['Requisitos insuficientes']:[]),...(conflict?['Senioridade contraditória']:[]),...(stale?['Validade precisa ser confirmada']:[])]};
+    const review=Boolean(j.reviewRequired);
+    const validationState=review?'review':status==='Encerrada'?'closed':status==='Ativa'&&!stale?'confirmed':'pending';
+    return {...j,key:j.key||canonical(j.source)||'legacy:'+j.id,legacyStatus:j.status,status,validationState,firstSeenAt:j.firstSeenAt||j.collectedAt||null,lastVerifiedAt:last,location:j.location||'Não informada',modality:j.modality||'Não informada',sourceName:j.sourceName||(()=>{try{return new URL(j.source).hostname;}catch{return 'Não informada';}})(),qualityScore:quality,eligible:sufficient&&!conflict&&!j.excluded&&!review,qualityIssues:[...(j.qualityIssues||[]),...(!sufficient?['Requisitos insuficientes']:[]),...(conflict?['Senioridade contraditória']:[]),...(stale?['Validade precisa ser confirmada']:[]),...(review?[j.reviewReason||'Revisão humana necessária']:[])]};
   }
   function evaluate(j,profile,skills,prefs={},answers={}){
     const technical=(text)=>{

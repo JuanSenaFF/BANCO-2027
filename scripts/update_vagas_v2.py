@@ -16,6 +16,10 @@ PRIORITY_COMPANIES = [
     "Getnet", "Dock", "Pismo", "Banco BV", "Daycoval", "Banco ABC Brasil", "Banco PAN", "Banco BMG",
     "Neon", "PicPay", "Creditas", "Will Bank", "Genial Investimentos", "EQI Investimentos", "Rico",
     "Clear", "Avenue", "Sicoob", "Sicredi", "Sinqia", "Matera", "FitBank",
+    "Agibank", "Banco Carrefour", "Banco Mercantil", "Banco Sofisa", "Banco Pine",
+    "Banco Rendimento", "Banco Bari", "Digio", "Banco Modal", "EBANX", "CloudWalk",
+    "InfinitePay", "Asaas", "Celcoin", "QI Tech", "Stark Bank", "Conta Simples",
+    "RecargaPay", "Zoop", "Vindi", "Fiserv",
 ]
 
 ENTRY_LEVEL_TERMS = [
