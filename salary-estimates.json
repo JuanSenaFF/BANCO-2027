@@ -1,0 +1,15 @@
+{
+  "linkedin:4460399673": {
+    "kind": "estimate",
+    "currency": "BRL",
+    "period": "month",
+    "min": 3000,
+    "max": 4000,
+    "median": 3000,
+    "scope": "Sicoob · Desenvolvedor Java Júnior · Brasília/DF",
+    "sourceName": "Glassdoor",
+    "sourceUrl": "https://www.glassdoor.com.br/Sal%C3%A1rios/bras%C3%ADlia-distrito-federal-desenvolvedor-java-j%C3%BAnior-sal%C3%A1rio-SRCH_IL.0%2C25_IC2494161_KO26%2C51.htm",
+    "sourceCheckedAt": "2026-09-09",
+    "note": "Estimativa de remuneração total compartilhada por usuários; não é a faixa oficial da vaga."
+  }
+}

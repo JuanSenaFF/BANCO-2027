@@ -1,6 +1,6 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-10T00:40:16+00:00",
+    "catalogBuiltAt": "2026-09-10T02:23:54+00:00",
     "total": 69,
     "added": 0,
     "verificationAttempted": 62,
@@ -5164,7 +5164,20 @@
       "publishedAt": "2026-08-28T20:01:19.000Z",
       "validThrough": "2026-09-27T20:01:19.000Z",
       "validationState": "confirmed",
-      "confidenceLabel": "Alta"
+      "confidenceLabel": "Alta",
+      "salary": {
+        "kind": "estimate",
+        "currency": "BRL",
+        "period": "month",
+        "min": 3000,
+        "max": 4000,
+        "median": 3000,
+        "scope": "Sicoob · Desenvolvedor Java Júnior · Brasília/DF",
+        "sourceName": "Glassdoor",
+        "sourceUrl": "https://www.glassdoor.com.br/Sal%C3%A1rios/bras%C3%ADlia-distrito-federal-desenvolvedor-java-j%C3%BAnior-sal%C3%A1rio-SRCH_IL.0%2C25_IC2494161_KO26%2C51.htm",
+        "sourceCheckedAt": "2026-09-09",
+        "note": "Estimativa de remuneração total compartilhada por usuários; não é a faixa oficial da vaga."
+      }
     },
     {
       "id": 54,

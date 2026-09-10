@@ -60,6 +60,8 @@ def apply_verification(job, result):
 
 def run(online=False):
     path=ROOT/'jobs.json';old=json.loads(path.read_text()) if path.exists() else {'jobs':[],'meta':{}}
+    salary_path=ROOT/'salary-estimates.json'
+    salary_estimates=json.loads(salary_path.read_text()) if salary_path.exists() else {}
     prior={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     records=[]
     for name in [*(f'data-{i}.js' for i in range(1,7)),'data-auto.js']:records+=parse_jobs(ROOT/name)
@@ -69,6 +71,10 @@ def run(online=False):
         previous=prior.get(key,{})
         # Conteúdo atual da fonte substitui a extração antiga; a evidência de verificação é preservada.
         merged={**previous,**j,'key':key}
+        advertised=merged.get('salary') if merged.get('salary',{}).get('kind')=='advertised' else None
+        curated=salary_estimates.get(key)
+        if advertised or curated:merged['salary']=advertised or curated
+        else:merged.pop('salary',None)
         merged['firstSeenAt']=previous.get('firstSeenAt') or j.get('collectedAt')
         for field in ('lastVerifiedAt','lastCheckedAt','verificationReason'):
             if previous.get(field) is not None:

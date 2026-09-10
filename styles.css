@@ -35,3 +35,7 @@ main{padding:38px 38px 86px;max-width:1320px;width:100%;margin:0 auto}
 .filters{box-shadow:0 12px 38px #12213d08}
 .note{border:1px solid color-mix(in srgb,var(--blue) 18%,var(--line));background:var(--accent-soft)}
 @media(max-width:760px){main{padding:24px 15px 58px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric:first-child{grid-column:1/-1}.pagehead h1{font-size:32px}.stage{flex-basis:86vw}}
+.salary-line{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:var(--accent-soft)}
+.salary-line span{color:var(--muted);font-size:12px;text-align:right}
+.salary-box{margin:18px 0;padding:18px;border:1px solid color-mix(in srgb,var(--green) 28%,var(--line));border-radius:14px;background:color-mix(in srgb,var(--card) 88%,var(--accent-soft))}
+.salary-box h2{margin-bottom:6px}.salary-box p{margin:5px 0}.salary-box strong{font-size:22px;font-variant-numeric:tabular-nums}

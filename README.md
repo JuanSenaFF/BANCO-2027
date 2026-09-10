@@ -16,6 +16,7 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Deduplicação normalizada por sinônimos: similaridade >=0,90 remove automaticamente; similaridade entre 0,75 e 0,89 mantém o registro marcado para revisão humana; abaixo disso permanece como oportunidade independente.
 - Verificação conservadora com estados `pending`, `confirmed`, `review` e `closed`: 403/429/timeout/HTML genérico permanecem pendentes, confirmação ativa expira após sete dias, e 404/410, prazo expirado ou encerramento explícito marcam encerrada.
 - Cada registro recebe confiança baixa/média/alta, motivo de validação e motivo de rejeição da execução; somente vagas ativas, elegíveis e sem revisão pendente entram nos rankings.
+- Faixa salarial separa valor anunciado de estimativa externa, exibindo moeda, período, escopo, fonte e data da consulta; remuneração não altera o match técnico.
 - Vercel API implementada para jobs, perfil/pipeline, match, atualização autenticada e acompanhamento da coleta.
 - Supabase schema com tabelas de domínio, RLS por usuário, gravação transacional de estado pessoal, autenticação e limitação persistente de atualização.
 
@@ -57,6 +58,7 @@ python scripts/build_site.py
 - Texto não mapeado exige confirmação; revisar o anúncio continua necessário. LinkedIn/Gupy podem restringir consulta pública.
 - O histórico de perfil semanal é registrado ao abrir o painel, não por um agendamento que conheça o perfil quando o usuário não acessa. O histórico de mercado é automatizado.
 - Alertas são internos ao painel. E-mails, push e mensagens externas não foram ativados.
+- Estimativas salariais são referências de mercado, não ofertas oficiais. Elas só aparecem quando há fonte, escopo e data registrados em `salary-estimates.json`.
 - Autenticação funciona com uma conta previamente provisionada. Cadastro, recuperação de senha e prova prática automática são evoluções futuras.
 - A integração online exige validação real após provisionar os serviços. Os testes atuais verificam regras locais, rotas e proteção básica, não um ambiente Supabase/Vercel em produção.
 

@@ -3,6 +3,12 @@
   const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const level=t=>/especialista|expert|arquitetura avancada/.test(norm(t))?4:/avancad|solido|dominio/.test(norm(t))?3:/basic|fundamento|nocao|nocoes/.test(norm(t))?1:2;
   const factor=[0,.70,.9,1,1];
+  function normalizeSalary(s){
+    if(!s||!['advertised','estimate'].includes(s.kind))return null;
+    const min=Number(s.min),max=Number(s.max),median=Number(s.median);
+    if(!Number.isFinite(min)||!Number.isFinite(max)||min<0||max<min)return null;
+    return {...s,min,max,median:Number.isFinite(median)&&median>=min&&median<=max?median:null,currency:s.currency||'BRL',period:s.period||'month'};
+  }
   function canonical(url){try{const u=new URL(url);const id=u.pathname.match(/(?:jobs?\/view\/.*?|jobs?\/)(\d{7,})(?:\/|$)/);return u.hostname.endsWith('linkedin.com')&&id?'linkedin:'+id[1]:u.hostname.replace(/^www\./,'')+u.pathname.replace(/\/$/,'');}catch{return '';}}
   function normalize(j){
     const title=norm(j.role), req=(j.requirements||[]).join(' ');
@@ -14,7 +20,7 @@
     const quality=j.qualityScore??Math.min(85,(sufficient?30:5)+(j.company?10:0)+(j.role?10:0)+(canonical(j.source)?10:0)+(last?15:0)+(j.location?5:0)+(j.modality?5:0));
     const review=Boolean(j.reviewRequired);
     const validationState=review?'review':status==='Encerrada'?'closed':status==='Ativa'&&!stale?'confirmed':'pending';
-    return {...j,key:j.key||canonical(j.source)||'legacy:'+j.id,legacyStatus:j.status,status,validationState,firstSeenAt:j.firstSeenAt||j.collectedAt||null,lastVerifiedAt:last,location:j.location||'Não informada',modality:j.modality||'Não informada',sourceName:j.sourceName||(()=>{try{return new URL(j.source).hostname;}catch{return 'Não informada';}})(),qualityScore:quality,eligible:sufficient&&!conflict&&!j.excluded&&!review,qualityIssues:[...(j.qualityIssues||[]),...(!sufficient?['Requisitos insuficientes']:[]),...(conflict?['Senioridade contraditória']:[]),...(stale?['Validade precisa ser confirmada']:[]),...(review?[j.reviewReason||'Revisão humana necessária']:[])]};
+    return {...j,key:j.key||canonical(j.source)||'legacy:'+j.id,legacyStatus:j.status,status,validationState,firstSeenAt:j.firstSeenAt||j.collectedAt||null,lastVerifiedAt:last,location:j.location||'Não informada',modality:j.modality||'Não informada',salary:normalizeSalary(j.salary),sourceName:j.sourceName||(()=>{try{return new URL(j.source).hostname;}catch{return 'Não informada';}})(),qualityScore:quality,eligible:sufficient&&!conflict&&!j.excluded&&!review,qualityIssues:[...(j.qualityIssues||[]),...(!sufficient?['Requisitos insuficientes']:[]),...(conflict?['Senioridade contraditória']:[]),...(stale?['Validade precisa ser confirmada']:[]),...(review?[j.reviewReason||'Revisão humana necessária']:[])]};
   }
   function evaluate(j,profile,skills,prefs={},answers={}){
     const technical=(text)=>{
