@@ -1,26 +1,27 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-10T15:46:30+00:00",
+    "catalogBuiltAt": "2026-09-10T15:52:41+00:00",
     "total": 87,
-    "added": 1,
+    "added": 0,
     "verificationAttempted": 80,
-    "lastCheckAttemptAt": "2026-09-10T15:46:30+00:00",
+    "lastCheckAttemptAt": "2026-09-10T15:52:41+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-10T15:45:37Z",
-    "included": 78,
-    "excluded": 9,
+    "updatedAt": "2026-09-10T15:51:46Z",
+    "included": 77,
+    "excluded": 10,
     "discovered": 1,
-    "candidateUrls": 362,
-    "validated": 22,
-    "rejected": 13,
+    "candidateUrls": 361,
+    "validated": 21,
+    "rejected": 2,
     "rejectionReasons": {
-      "cargo fora do recorte técnico": 13
+      "cargo fora do recorte técnico": 1,
+      "senioridade fora do recorte": 1
     },
     "needsReview": 0,
     "pendingValidation": 54,
     "officialSources": 26,
-    "linkedinFallbacks": 51,
-    "officialCoveragePct": 33.3
+    "linkedinFallbacks": 50,
+    "officialCoveragePct": 33.8
   },
   "jobs": [
     {
@@ -495,7 +496,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -820,7 +821,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -924,8 +925,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3338,7 +3339,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3653,8 +3654,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3797,8 +3798,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4164,7 +4165,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4264,8 +4265,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4375,8 +4376,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4511,8 +4512,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:52:42+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4680,8 +4681,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:43+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4780,7 +4781,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:43+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4873,8 +4874,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:52:43+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4986,7 +4987,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:43+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -5057,7 +5058,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:43+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -5292,8 +5293,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:43+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -5425,8 +5426,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:52:43+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -5531,7 +5532,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5650,7 +5651,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5746,7 +5747,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5848,7 +5849,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "Brasília, BR",
       "modality": "Remoto",
@@ -5942,8 +5943,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
@@ -6230,8 +6231,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 60,
       "requirementsStructured": [
         {
@@ -6469,7 +6470,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -6921,7 +6922,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -7272,7 +7273,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -7367,7 +7368,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -7460,8 +7461,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:44+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -7568,8 +7569,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -7686,8 +7687,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -7779,7 +7780,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -7868,7 +7869,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -7995,7 +7996,7 @@
       "sourceAliases": [
         "linkedin:4460341533"
       ],
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8128,7 +8129,7 @@
       "sourceAliases": [
         "linkedin:4462005969"
       ],
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8262,7 +8263,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "confidenceLabel": "Média",
@@ -8345,7 +8346,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8445,7 +8446,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8540,7 +8541,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8670,7 +8671,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8769,7 +8770,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8899,7 +8900,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9012,7 +9013,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9126,7 +9127,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9229,7 +9230,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:46+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9321,7 +9322,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:35+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:47+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9443,7 +9444,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:35+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:47+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 73,
       "confidenceLabel": "Média",
@@ -9566,7 +9567,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:46:35+00:00",
+      "lastCheckedAt": "2026-09-10T15:52:47+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 73,
       "confidenceLabel": "Média",
@@ -9700,7 +9701,7 @@
           "priority": 1
         }
       ],
-      "excluded": false,
+      "excluded": true,
       "validationState": "pending",
       "duplicateOf": null,
       "lastCheckedAt": "2026-09-10T15:46:35+00:00",
