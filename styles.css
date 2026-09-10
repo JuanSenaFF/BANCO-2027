@@ -62,3 +62,4 @@ main{padding:38px 38px 86px;max-width:1320px;width:100%;margin:0 auto}
 .impact-examples{margin:18px 0;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--accent-soft)}
 .impact-examples>p{margin:10px 0 0}
 @media(max-width:560px){.impact-card>.metrics{grid-template-columns:1fr}}
+.feedback-calibration{border-color:color-mix(in srgb,var(--blue) 30%,var(--line))}.feedback-calibration h2{margin:5px 0}.calibration-progress{display:grid;gap:8px;margin:18px 0}.calibration-progress small{color:var(--muted)}
