@@ -6,6 +6,33 @@ import requests
 ROOT=Path(__file__).resolve().parents[1]
 
 
+def requirement_rows(jobs):
+    rows=[]
+    for job in jobs:
+        records=job.get('requirementsStructured') or [
+            *({'text':text,'position':position,'mandatory':True,'requirementType':'mandatory','category':'other','relation':'single','profileSkillIds':[],'transferable':False} for position,text in enumerate(job.get('requirements',[]))),
+            *({'text':text,'position':position,'mandatory':False,'requirementType':'differential','category':'other','relation':'single','profileSkillIds':[],'transferable':False} for position,text in enumerate(job.get('differentials',[]))),
+        ]
+        for record in records:
+            rows.append({
+                'job_key':job['key'],
+                'position':record.get('position',0),
+                'mandatory':bool(record.get('mandatory')),
+                'requirement':record.get('text',''),
+                'requirement_type':record.get('requirementType','mandatory' if record.get('mandatory') else 'differential'),
+                'category':record.get('category','other'),
+                'skill':record.get('skill'),
+                'subskill':record.get('subskill'),
+                'required_level':record.get('level'),
+                'min_years':record.get('minYears'),
+                'transferable':bool(record.get('transferable')),
+                'relation':record.get('relation','single'),
+                'profile_skill_ids':record.get('profileSkillIds') or [],
+                'attributes':record,
+            })
+    return rows
+
+
 def main():
     url=os.getenv('SUPABASE_URL');key=os.getenv('SUPABASE_SERVICE_ROLE_KEY')
     if not url or not key:
@@ -64,12 +91,7 @@ def main():
         delete_eq('job_requirements','job_key',job_key)
         delete_eq('job_sources','job_key',job_key)
 
-    upsert('job_requirements',[
-        {'job_key':j['key'],'position':i,'mandatory':mandatory,'requirement':text}
-        for j in jobs
-        for mandatory,field in [(True,'requirements'),(False,'differentials')]
-        for i,text in enumerate(j.get(field,[]))
-    ])
+    upsert('job_requirements',requirement_rows(jobs))
     upsert('job_sources',[
         {'job_key':j['key'],'url':source['url'],'last_verified_at':j.get('lastVerifiedAt')}
         for j in jobs

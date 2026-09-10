@@ -13,6 +13,7 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Histórico semanal de mercado no coletor e de perfil ao acessar o painel, além de registro manual. Não inventa snapshots de semanas anteriores nem considera uma amostra sem confirmação como queda de mercado.
 - Alertas no painel: match, backend júnior, empresa prioritária, Python+SQL+APIs e até um gap.
 - Coletor Python com extração por seções (obrigatório/diferencial), regras centralizadas de entrada, cobertura por empresas prioritárias, senioridade contraditória, IDs preservados e chave estável por fonte.
+- Requisitos normalizados preservam o texto original e registram tipo (`mandatory`, `differential` ou `eliminatory`), categoria, tecnologia, subtecnologia, nível explícito, experiência mínima, relação entre alternativas e transferibilidade. Spring Boot é avaliado separadamente de Java; campos não extraídos permanecem nulos ou a confirmar.
 - Descoberta prioriza feeds públicos oficiais: Greenhouse (Stone, Inter e Getnet), Ashby (Nubank), páginas Gupy configuradas e Lever quando disponível. LinkedIn é consultado depois, como descoberta/fallback. Novos boards entram por configuração em `scripts/official_sources.py`.
 - Quando a mesma vaga aparece em mais de uma origem, a representação oficial vence; URLs do LinkedIn e de agregadores permanecem em `sources`/`sourceAliases` para auditoria. O relatório registra cobertura oficial, fallback e falhas isoladas por board.
 - Deduplicação normalizada por sinônimos: similaridade >=0,90 remove automaticamente; similaridade entre 0,75 e 0,89 mantém o registro marcado para revisão humana; abaixo disso permanece como oportunidade independente.
@@ -32,7 +33,7 @@ A publicação via `deploy-pages.yml` usa o ambiente `github-pages` e reage tamb
 
 ## Ativar Vercel + Supabase
 
-1. Criar ou selecionar um projeto Supabase dedicado e executar `supabase/schema.sql` uma vez. O script usa `auth.users`; cria políticas RLS e as funções transacionais.
+1. Criar ou selecionar um projeto Supabase dedicado e executar `supabase/schema.sql` uma vez. O script usa `auth.users`; cria políticas RLS e as funções transacionais. Em instalações anteriores à normalização de requisitos, aplicar `supabase/migrations/20260910160000_normalize_job_requirements.sql` antes da próxima sincronização.
 2. Criar o usuário proprietário em Supabase Authentication. Para uso pessoal, desabilitar novos cadastros públicos. A interface usa login por e-mail/senha de usuário já provisionado.
 3. Importar este repositório na Vercel, com framework **Other**. `vercel.json` constrói `dist` e detecta `api/*.js` como funções. A compilação só copia arquivos públicos; não expõe SQL, testes, segredos ou scripts do servidor.
 4. Definir variáveis da Vercel conforme `.env.example`: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` (ou a legada `SUPABASE_ANON_KEY` no servidor), `OWNER_USER_ID`, `GITHUB_TOKEN`, `GITHUB_REPOSITORY`, `ALLOWED_ORIGINS`. `GITHUB_TOKEN` deve ser fine-grained e restrito a este repositório, com Actions read/write. Não incluir token, chave `secret` nem `service_role` em `config.js`. `ALLOWED_ORIGINS` pode acrescentar origens extras; GitHub Pages e os domínios oficiais da Vercel já são permitidos pelo backend.

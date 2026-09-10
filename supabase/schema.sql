@@ -2,7 +2,23 @@
 begin;
 create table public.companies (name text primary key, domain text);
 create table public.jobs (key text primary key, company text references public.companies(name), payload jsonb not null, updated_at timestamptz not null default now());
-create table public.job_requirements (job_key text references public.jobs(key), position integer, mandatory boolean not null, requirement text not null, primary key(job_key,mandatory,position));
+create table public.job_requirements (
+  job_key text references public.jobs(key),
+  position integer,
+  mandatory boolean not null,
+  requirement text not null,
+  requirement_type text not null default 'mandatory' check(requirement_type in ('mandatory','differential','eliminatory')),
+  category text not null default 'other' check(category in ('technical','experience','education','language','location','modality','eligibility','behavioral','domain','other')),
+  skill text,
+  subskill text,
+  required_level smallint check(required_level between 1 and 4),
+  min_years numeric(4,1) check(min_years >= 0),
+  transferable boolean not null default false,
+  relation text not null default 'single' check(relation in ('single','any','all')),
+  profile_skill_ids text[] not null default '{}',
+  attributes jsonb not null default '{}',
+  primary key(job_key,mandatory,position)
+);
 create table public.job_sources (job_key text references public.jobs(key), url text not null, last_verified_at timestamptz, primary key(job_key,url));
 create table public.collection_meta (id text primary key, payload jsonb not null);
 create table public.market_snapshots (week date primary key, payload jsonb not null);

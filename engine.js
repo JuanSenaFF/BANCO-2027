@@ -10,6 +10,11 @@
     return {...s,min,max,median:Number.isFinite(median)&&median>=min&&median<=max?median:null,currency:s.currency||'BRL',period:s.period||'month'};
   }
   function canonical(url){try{const u=new URL(url);const id=u.pathname.match(/(?:jobs?\/view\/.*?|jobs?\/)(\d{7,})(?:\/|$)/);return u.hostname.endsWith('linkedin.com')&&id?'linkedin:'+id[1]:u.hostname.replace(/^www\./,'')+u.pathname.replace(/\/$/,'');}catch{return '';}}
+  function requirementRecords(j){
+    const structured=Array.isArray(j.requirementsStructured)&&j.requirementsStructured.length&&j.requirementsStructured.every(r=>r&&typeof r==='object'&&r.requirementType);
+    if(structured)return j.requirementsStructured;
+    return [...(j.requirements||[]).map((text,position)=>({text,position,mandatory:true,requirementType:'mandatory'})),...(j.differentials||[]).map((text,position)=>({text,position,mandatory:false,requirementType:'differential'}))];
+  }
   function normalize(j){
     const title=norm(j.role), req=(j.requirements||[]).join(' ');
     const conflict=/\b(pleno|senior|staff|lead|especialista)\b/.test(title)||/experiencia\s+(?:como|de|em nivel)\s+(?:profissional\s+)?(?:pleno|senior)|(?:exigimos|requer|nivel de experiencia)\s*[:\-]?\s*(?:pleno|senior)/.test(norm(req));
@@ -23,27 +28,38 @@
     return {...j,key:j.key||canonical(j.source)||'legacy:'+j.id,legacyStatus:j.status,status,validationState,firstSeenAt:j.firstSeenAt||j.collectedAt||null,lastVerifiedAt:last,location:j.location||'Não informada',modality:j.modality||'Não informada',salary:normalizeSalary(j.salary),sourceName:j.sourceName||(()=>{try{return new URL(j.source).hostname;}catch{return 'Não informada';}})(),qualityScore:quality,eligible:sufficient&&!conflict&&!j.excluded&&!review,qualityIssues:[...(j.qualityIssues||[]),...(!sufficient?['Requisitos insuficientes']:[]),...(conflict?['Senioridade contraditória']:[]),...(stale?['Validade precisa ser confirmada']:[]),...(review?[j.reviewReason||'Revisão humana necessária']:[])]};
   }
   function evaluate(j,profile,skills,prefs={},answers={}){
-    const technical=(text)=>{
-      const mentioned=skills.filter(s=>s.re.test(norm(text))).filter(s=>!(s.id==='cloud'&&skills.some(x=>['aws','azure','gcp'].includes(x.id)&&x.re.test(norm(text)))));
-      const need=level(text);
+    const technical=(requirement)=>{
+      const text=requirement.text||String(requirement||'');
+      const exact=Array.isArray(requirement.profileSkillIds);
+      const mentioned=(exact?requirement.profileSkillIds.map(id=>skills.find(s=>s.id===id)).filter(Boolean):skills.filter(s=>s.re.test(norm(text))).filter(s=>!(s.id==='cloud'&&skills.some(x=>['aws','azure','gcp'].includes(x.id)&&x.re.test(norm(text))))));
+      const need=exact?(requirement.level||1):level(text);
       if(!mentioned.length)return {ratio:0,unknown:true,skills:[]};
       const xs=mentioned.map(s=>{const p=profile[s.id]||{l:0,e:0};return {id:s.id,label:s.label,req:need,current:p.l||0,evidence:p.e||0,ratio:Math.min((p.l||0)/need,1)*(factor[p.e]||0)};});
-      const alternative=/\bou\b|\bor\b|aws\s*\/\s*azure|azure\s*\/\s*gcp/.test(norm(text));
+      const alternative=requirement.relation==='any'||(!exact&&/\bou\b|\bor\b|aws\s*\/\s*azure|azure\s*\/\s*gcp/.test(norm(text)));
       return {ratio:alternative?Math.max(...xs.map(x=>x.ratio)):Math.min(...xs.map(x=>x.ratio)),unknown:false,skills:xs,alternative};
     };
-    const one=(text,index,mandatory)=>{
-      let r=technical(text), n=norm(text), confirm=answers[j.key]?.[(mandatory?'r':'d')+index];
-      if(/anos?\s+(?:de\s+)?experiencia/.test(n)){const years=n.match(/(\d+)\s*anos?/);r={...r,unknown:prefs.years==null||!years,ratio:years&&prefs.years!=null?Math.min(prefs.years/+years[1],1):0};}
+    const one=(requirement,index,mandatory)=>{
+      const text=requirement.text||String(requirement||'');
+      let r=technical(requirement), n=norm(text), confirm=answers[j.key]?.[(mandatory?'r':'d')+index];
+      const requiredYears=requirement.minYears??(Number(n.match(/(\d+(?:[.,]\d+)?)\s*anos?/)?.[1]?.replace(',','.'))||null);
+      if(requiredYears!=null){const experience={unknown:prefs.years==null,ratio:prefs.years==null?0:Math.min(prefs.years/requiredYears,1)};r={...r,unknown:r.skills.length?r.unknown||experience.unknown:experience.unknown,ratio:r.skills.length?Math.min(r.ratio,experience.ratio):experience.ratio};}
       else if(/superior|graduacao|formacao academica/.test(n)){r={...r,unknown:!prefs.education,ratio:prefs.education==='completed'?1:prefs.education==='studying'&&/cursando|em andamento/.test(n)?1:0};}
       else if(/ingles|english/.test(n)){const need=/fluente|fluent|avancad/.test(n)?3:/intermedi/.test(n)?2:1;r={...r,unknown:prefs.english==null,ratio:prefs.english==null?0:Math.min(prefs.english/need,1)};}
       if(confirm==='yes')r={...r,ratio:1,unknown:false,confirmed:true};
       if(confirm==='partial')r={...r,ratio:.5,unknown:false,confirmed:true};
       if(confirm==='no')r={...r,ratio:0,unknown:false,confirmed:true};
-      return {...r,text,index,mandatory,state:r.unknown?'unknown':r.ratio>=.85?'ok':r.ratio>0?'partial':'gap'};
+      return {...requirement,...r,text,index,mandatory,state:r.unknown?'unknown':r.ratio>=.85?'ok':r.ratio>0?'partial':'gap'};
     };
-    const rows=(j.requirements||[]).map((t,i)=>one(t,i,true)), diffs=(j.differentials||[]).map((t,i)=>one(t,i,false));
-    const gates=[];
-    if(/\bpcd\b|pessoas com deficiencia/.test(norm(j.role)))gates.push({text:'Elegibilidade para vaga afirmativa: confirmar no anúncio',state:answers[j.key]?.eligibility==='yes'?'ok':answers[j.key]?.eligibility==='no'?'gap':'unknown'});
+    const records=requirementRecords(j);
+    const rows=records.filter(r=>r.requirementType==='mandatory').map((r,i)=>one(r,i,true));
+    const diffs=records.filter(r=>r.requirementType==='differential').map((r,i)=>one(r,i,false));
+    const gates=records.filter(r=>r.requirementType==='eliminatory').map(r=>{
+      if(r.category==='education')return {...r,state:!prefs.education?'unknown':prefs.education==='completed'||(prefs.education==='studying'&&/cursando|em andamento/.test(norm(r.text)))?'ok':'gap'};
+      if(r.category==='eligibility')return {...r,state:answers[j.key]?.eligibility==='yes'?'ok':answers[j.key]?.eligibility==='no'?'gap':'unknown'};
+      if(r.category==='location')return {...r,state:!prefs.location?'unknown':norm(r.text).includes(norm(prefs.location))?'ok':'gap'};
+      return {...r,state:'unknown'};
+    });
+    if(!gates.some(g=>g.category==='eligibility')&&/\bpcd\b|pessoas com deficiencia/.test(norm(j.role)))gates.push({text:'Elegibilidade para vaga afirmativa: confirmar no anúncio',category:'eligibility',requirementType:'eliminatory',state:answers[j.key]?.eligibility==='yes'?'ok':answers[j.key]?.eligibility==='no'?'gap':'unknown'});
     if(prefs.location&&j.modality!=='Remoto')gates.push({text:'Localização',state:j.location==='Não informada'?'unknown':norm(j.location).includes(norm(prefs.location))?'ok':'gap'});
     if(prefs.modality)gates.push({text:'Modalidade desejada',state:j.modality==='Não informada'?'unknown':j.modality===prefs.modality?'ok':'gap'});
     if(prefs.area)gates.push({text:'Área desejada',state:j.area===prefs.area?'ok':'gap'});
@@ -70,5 +86,5 @@
       return {skill:s,frequency:affected.length,close:affected.filter(x=>x.a.score>=65).length,unlocked,gain,hours,target:Math.min(4,p.l+1),priority:Math.round((affected.length+affected.filter(x=>x.a.score>=65).length*2+unlocked*5+gain/10)/hours*100)};
     }).filter(Boolean).sort((a,b)=>b.priority-a.priority);
   }
-  const api={norm,level,canonical,normalize,evaluate,priorities};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
+  const api={norm,level,canonical,requirementRecords,normalize,evaluate,priorities};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

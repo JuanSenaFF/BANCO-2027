@@ -19,6 +19,11 @@ from official_sources import (
     source_metadata,
     source_priority,
 )
+from requirements_normalizer import (
+    SCHEMA_VERSION as REQUIREMENTS_SCHEMA_VERSION,
+    normalize_job_requirements,
+    normalization_summary,
+)
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -162,7 +167,8 @@ def run(online=False):
         j['qualityScore'],j['confidenceLabel']=confidence_score(j)
         if requirements_quality_conflict(j.get('role',''),j.get('requirements',[])):
             j['qualityScore']=min(j['qualityScore'],35)
-        j['requirementsStructured']=[{'text':t,'mandatory':True} for t in j.get('requirements',[])]+[{'text':t,'mandatory':False} for t in j.get('differentials',[])]
+        j['requirementsStructured']=normalize_job_requirements(j)
+        j['requirementsSchemaVersion']=REQUIREMENTS_SCHEMA_VERSION
     actual_added=len(set(out)-set(prior)) if online else old.get('meta',{}).get('added',0)
     meta={**old.get('meta',{}),'catalogBuiltAt':now,'total':len(out),'added':actual_added}
     if online:meta.update(lastCheckAttemptAt=now,verificationAttempted=len([j for j in out.values() if j.get('lastCheckedAt')]),verificationConfirmed=sum(j.get('lastVerifiedAt','')==now for j in out.values()))
@@ -179,6 +185,7 @@ def run(online=False):
     meta['officialSources']=sum(bool(j.get('sourceOfficial')) and not j.get('excluded') for j in out.values())
     meta['linkedinFallbacks']=sum(j.get('sourceProvider')=='linkedin' and not j.get('excluded') for j in out.values())
     meta['officialCoveragePct']=round(100*meta['officialSources']/max(1,meta['included']),1)
+    meta['requirementsNormalization']=normalization_summary(list(out.values()))
     data={'meta':meta,'jobs':list(out.values())};path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     history_path=ROOT/'market-history.json';history=json.loads(history_path.read_text()) if history_path.exists() else []
     week=(datetime.now(timezone.utc)-timedelta(days=datetime.now(timezone.utc).weekday())).date().isoformat()
