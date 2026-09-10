@@ -126,13 +126,18 @@
     return Object.values(ACTION_QUEUES).map(queue=>({queue,items:decisions.filter(x=>x.decision.id===queue.id).sort((a,b)=>b.decision.decisionScore-a.decision.decisionScore||b.decision.confidence-a.decision.confidence)}));
   }
   function priorities(jobs,profile,skills,prefs,answers){
-    const active=jobs.filter(j=>j.status==='Ativa'&&j.eligible),base=active.map(j=>({j,a:evaluate(j,profile,skills,prefs,answers)}));
+    const qualified=d=>d&&['apply_now','apply_study'].includes(d.id),round=(n,d=2)=>Number(n.toFixed(d));
+    const base=jobs.map(j=>{const a=evaluate(j,profile,skills,prefs,answers);return {j,a,d:actionDecision(j,a)};}).filter(x=>x.d);
     return skills.map(s=>{const affected=base.filter(x=>x.a.skillGaps.some(g=>g.id===s.id));const p=profile[s.id]||{l:0,e:0};if(p.l>=4||!affected.length)return null;
       const simulated={...profile,[s.id]:{...p,l:Math.min(4,p.l+1),e:Math.max(2,p.e)}};
-      const after=base.map(x=>({before:x.a,after:evaluate(x.j,simulated,skills,prefs,answers)}));
-      const unlocked=after.filter(x=>!x.before.canApply&&x.after.canApply).length, gain=after.reduce((n,x)=>n+x.after.score-x.before.score,0),hours=12+(p.e<2?8:0);
-      return {skill:s,frequency:affected.length,close:affected.filter(x=>x.a.score>=65).length,unlocked,gain,hours,target:Math.min(4,p.l+1),priority:Math.round((affected.length+affected.filter(x=>x.a.score>=65).length*2+unlocked*5+gain/10)/hours*100)};
-    }).filter(Boolean).sort((a,b)=>b.priority-a.priority);
+      const after=affected.map(x=>{const analysis=evaluate(x.j,simulated,skills,prefs,answers);return {...x,after:analysis,next:actionDecision(x.j,analysis)};});
+      const unlockedJobs=after.filter(x=>!qualified(x.d)&&qualified(x.next)),promotedJobs=after.filter(x=>x.next&&x.next.order<x.d.order);
+      const hours=12+(p.e<2?8:0),weightedUnlocked=unlockedJobs.reduce((n,x)=>n+x.d.confidence,0),weightedPromoted=promotedJobs.reduce((n,x)=>n+x.d.confidence,0);
+      const weightedFrequency=affected.reduce((n,x)=>n+x.d.confidence,0),gain=after.reduce((n,x)=>n+Math.max(0,x.next.decisionScore-x.d.decisionScore)*x.d.confidence,0);
+      const applicationsPerHour=weightedUnlocked/hours,impactPerHour=(weightedUnlocked+weightedPromoted*.25+gain/100*.1)/hours;
+      const examples=(unlockedJobs.length?unlockedJobs:promotedJobs).slice(0,3).map(x=>({key:x.j.key,company:x.j.company,role:x.j.role,before:x.d.label,after:x.next.label,confidence:x.d.confidence}));
+      return {skill:s,frequency:affected.length,weightedFrequency:round(weightedFrequency),close:affected.filter(x=>x.d.order<=3).length,unlocked:unlockedJobs.length,weightedUnlocked:round(weightedUnlocked),promoted:promotedJobs.length,weightedPromoted:round(weightedPromoted),gain:round(gain,1),hours,target:Math.min(4,p.l+1),applicationsPerHour:round(applicationsPerHour,3),hoursPerApplication:weightedUnlocked?round(hours/weightedUnlocked,1):null,impactPerHour:round(impactPerHour,3),priority:round(impactPerHour*100,1),examples};
+    }).filter(Boolean).sort((a,b)=>b.applicationsPerHour-a.applicationsPerHour||b.impactPerHour-a.impactPerHour||b.weightedFrequency-a.weightedFrequency);
   }
   const api={norm,level,canonical,requirementRecords,normalize,evaluate,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,ACTION_QUEUES};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
