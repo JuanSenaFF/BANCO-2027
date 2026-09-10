@@ -79,6 +79,52 @@
     const label=!j.eligible||gates.some(g=>g.state==='gap')?'Inviável no recorte':canApply?'Aplicar agora':unknown?'Confirmar requisitos':score>=65?'Boa com poucos gaps':score>=40?'Possível':'Gaps relevantes';
     return {score,potential,rows,diffs,gates,unknown,critical,gaps,skillGaps,hours,canApply,label,ok:rows.filter(r=>r.state==='ok').length,partial:rows.filter(r=>r.state==='partial').length};
   }
+  const ACTION_QUEUES={
+    apply_now:{id:'apply_now',label:'Aplicar agora',order:1},
+    apply_study:{id:'apply_study',label:'Aplicar e estudar',order:2},
+    prepare:{id:'prepare',label:'Preparar por 1–2 semanas',order:3},
+    monitor:{id:'monitor',label:'Acompanhar',order:4}
+  };
+  function vacancyConfidence(j){
+    const state=j.validationState||'';
+    if(state==='closed'||j.status==='Encerrada')return 0;
+    const checked=Date.parse(j.lastVerifiedAt||''),recent=Number.isFinite(checked)&&Date.now()-checked<=7*864e5;
+    if(state==='confirmed')return j.sourceOfficial?1:.9;
+    if(recent)return .8;
+    if(j.sourceOfficial)return .55;
+    if((j.sourceProvider||'').toLowerCase()==='linkedin')return .3;
+    if(!state&&j.status==='Ativa')return .8;
+    return .4;
+  }
+  function knownFit(a){
+    const rows=a.rows.filter(r=>!r.unknown),diffs=a.diffs.filter(r=>!r.unknown);
+    if(!rows.length)return {score:0,coverage:0,known:0,total:a.rows.length};
+    const weighted=rows.reduce((n,r)=>n+r.ratio,0)+diffs.reduce((n,r)=>n+r.ratio*.25,0);
+    return {score:Math.round(100*weighted/(rows.length+diffs.length*.25)),coverage:Math.round(100*rows.length/Math.max(1,a.rows.length)),known:rows.length,total:a.rows.length};
+  }
+  function isSmallGap(r){
+    if(!r.skills.length)return false;
+    const candidates=r.alternative?[r.skills.slice().sort((a,b)=>b.ratio-a.ratio)[0]]:r.skills;
+    return candidates.every(s=>s.req-s.current<=1);
+  }
+  function actionDecision(j,a){
+    if(j.validationState==='closed'||j.status==='Encerrada'||j.excluded)return null;
+    const confidence=vacancyConfidence(j),fit=knownFit(a),gapRows=a.rows.filter(r=>r.state==='gap'||r.state==='partial');
+    const gateBlocks=a.gates.filter(g=>g.state==='gap'),small=gapRows.filter(isSmallGap),lowConfidence=confidence<.55;
+    let queue=ACTION_QUEUES.monitor,reason='Distância alta para o perfil atual';
+    if(lowConfidence){reason='Confirmar se o anúncio continua aberto';}
+    else if(!j.eligible||gateBlocks.length){reason=gateBlocks.length?'Há regra eliminatória incompatível':'Vaga fora do recorte qualificado';}
+    else if(!fit.known){reason='Ainda não há requisitos conhecidos suficientes';}
+    else if(!gapRows.length&&fit.score>=70){queue=ACTION_QUEUES.apply_now;reason=a.unknown?'Boa aderência conhecida; confirmar itens pendentes':'Boa aderência e nenhum impeditivo conhecido';}
+    else if(gapRows.length===1&&small.length===1&&fit.score>=60&&a.hours<=20){queue=ACTION_QUEUES.apply_study;reason='Um gap pequeno e fechável em paralelo';}
+    else if(gapRows.length<=3&&gapRows.length===small.length&&a.hours<=40&&fit.score>=40){queue=ACTION_QUEUES.prepare;reason=`${gapRows.length} gap${gapRows.length===1?'':'s'} fechável${gapRows.length===1?'':'is'} em até 40h`;}
+    else if(a.unknown&&!gapRows.length){reason='Confirmar requisitos antes de decidir';}
+    return {...queue,reason,confidence,confidenceLabel:confidence>=.8?'Alta':confidence>=.55?'Média':'Baixa',decisionScore:fit.score,knownCoverage:fit.coverage,knownRequirements:fit.known,totalRequirements:fit.total,gapCount:gapRows.length,unknownCount:a.unknown,hours:a.hours,blockerCount:gateBlocks.length};
+  }
+  function actionQueues(jobs,profile,skills,prefs={},answers={}){
+    const decisions=jobs.map(j=>{const analysis=evaluate(j,profile,skills,prefs,answers);return {j,analysis,decision:actionDecision(j,analysis)};}).filter(x=>x.decision);
+    return Object.values(ACTION_QUEUES).map(queue=>({queue,items:decisions.filter(x=>x.decision.id===queue.id).sort((a,b)=>b.decision.decisionScore-a.decision.decisionScore||b.decision.confidence-a.decision.confidence)}));
+  }
   function priorities(jobs,profile,skills,prefs,answers){
     const active=jobs.filter(j=>j.status==='Ativa'&&j.eligible),base=active.map(j=>({j,a:evaluate(j,profile,skills,prefs,answers)}));
     return skills.map(s=>{const affected=base.filter(x=>x.a.skillGaps.some(g=>g.id===s.id));const p=profile[s.id]||{l:0,e:0};if(p.l>=4||!affected.length)return null;
@@ -88,5 +134,5 @@
       return {skill:s,frequency:affected.length,close:affected.filter(x=>x.a.score>=65).length,unlocked,gain,hours,target:Math.min(4,p.l+1),priority:Math.round((affected.length+affected.filter(x=>x.a.score>=65).length*2+unlocked*5+gain/10)/hours*100)};
     }).filter(Boolean).sort((a,b)=>b.priority-a.priority);
   }
-  const api={norm,level,canonical,requirementRecords,normalize,evaluate,priorities};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
+  const api={norm,level,canonical,requirementRecords,normalize,evaluate,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,ACTION_QUEUES};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
