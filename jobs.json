@@ -1,26 +1,26 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-10T15:35:36+00:00",
-    "total": 86,
-    "added": 17,
-    "verificationAttempted": 79,
-    "lastCheckAttemptAt": "2026-09-10T15:35:36+00:00",
+    "catalogBuiltAt": "2026-09-10T15:46:30+00:00",
+    "total": 87,
+    "added": 1,
+    "verificationAttempted": 80,
+    "lastCheckAttemptAt": "2026-09-10T15:46:30+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-10T15:34:39Z",
-    "included": 77,
+    "updatedAt": "2026-09-10T15:45:37Z",
+    "included": 78,
     "excluded": 9,
-    "discovered": 17,
-    "candidateUrls": 432,
-    "validated": 34,
-    "rejected": 1,
+    "discovered": 1,
+    "candidateUrls": 362,
+    "validated": 22,
+    "rejected": 13,
     "rejectionReasons": {
-      "exigências essencialmente idênticas": 1
+      "cargo fora do recorte técnico": 13
     },
     "needsReview": 0,
     "pendingValidation": 54,
     "officialSources": 26,
-    "linkedinFallbacks": 50,
-    "officialCoveragePct": 33.8
+    "linkedinFallbacks": 51,
+    "officialCoveragePct": 33.3
   },
   "jobs": [
     {
@@ -495,7 +495,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -820,8 +820,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -924,8 +924,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3338,8 +3338,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3653,8 +3653,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3797,7 +3797,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:30+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4164,8 +4164,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4264,8 +4264,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4375,7 +4375,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4511,7 +4511,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4680,8 +4680,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -4780,7 +4780,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4873,7 +4873,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:31+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -4986,8 +4986,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -5057,7 +5057,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -5292,8 +5292,8 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -5425,7 +5425,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -5531,7 +5531,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5650,7 +5650,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5746,7 +5746,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -5848,7 +5848,7 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "Brasília, BR",
       "modality": "Remoto",
@@ -5888,7 +5888,7 @@
       "company": "XP Inc.",
       "role": "Engenheiro(a) de Software | Assistente e Júnior",
       "level": "Assistente / Júnior",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 06/09/2026 — LinkedIn",
       "area": "Engenharia de Software",
       "stack": "Multistack",
@@ -5916,7 +5916,7 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-09T18:26:26+00:00",
+      "lastVerifiedAt": "2026-09-10T15:46:32+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 92,
@@ -5942,13 +5942,13 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
       "validThrough": "2027-03-09T17:53:05.000Z",
-      "validationState": "pending",
+      "validationState": "confirmed",
       "confidenceLabel": "Alta",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
@@ -6230,7 +6230,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
@@ -6469,7 +6469,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -6921,7 +6921,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -7272,8 +7272,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:32+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -7367,7 +7367,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -7460,8 +7460,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -7568,8 +7568,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -7686,8 +7686,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -7779,7 +7779,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:37+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -7868,7 +7868,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -7995,7 +7995,7 @@
       "sourceAliases": [
         "linkedin:4460341533"
       ],
-      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8128,7 +8128,7 @@
       "sourceAliases": [
         "linkedin:4462005969"
       ],
-      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8262,7 +8262,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:33+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "confidenceLabel": "Média",
@@ -8345,7 +8345,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8445,7 +8445,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:38+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8540,7 +8540,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8670,7 +8670,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8769,7 +8769,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -8899,7 +8899,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9012,7 +9012,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9126,7 +9126,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9229,7 +9229,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:39+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:34+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9321,7 +9321,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:40+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -9443,7 +9443,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:40+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 73,
       "confidenceLabel": "Média",
@@ -9566,7 +9566,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-10T15:35:40+00:00",
+      "lastCheckedAt": "2026-09-10T15:46:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 73,
       "confidenceLabel": "Média",
@@ -9626,6 +9626,167 @@
         {
           "text": "Experiencia colaborando con clientes corporativos o Enterprise.",
           "mandatory": true
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "company": "Santander",
+      "role": "SSD Brasil - Cyber Analyst lll - SOC",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-10 — LinkedIn",
+      "area": "Segurança",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Mensageria",
+        "Observabilidade",
+        "Cloud",
+        "Linux",
+        "Dados/BI",
+        "Segurança",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Experiência em tecnologia da informação e operações de Cyber Security (essencial)",
+        "Habilidades em análise de eventos de segurança complexos, identificação de ameaças, assim como a amplitude de ataques (essencial)",
+        "Conhecimento em investigação de alertas de segurança e resposta a incidentes (essencial)",
+        "Conhecimento em ferramentas de SIEM e linguagem de processamento de pesquisa Splunk (SPL) (essencial)",
+        "Conhecimento sobre os principais vetores e métodos de ataque (DDoS, Sniffing, phishing, Trojan, escalonamento de privilégios, etc.) (essencial)",
+        "Conhecimento sobre frameworks de Cyber Security (Mitre ATT&CK, Cyber Kill Chain, etc.) e etapas que compõem os ataques cibernéticos (desejável)"
+      ],
+      "differentials": [
+        "Compreensão dos cenários de ameaça internos e externos à organização aliado a capacidade de identificar quais ameaças devem ser priorizadas (essencial)",
+        "Identificar TTPs (Táticas, Técnicas e Procedimentos) usados pelos atores de ameaça e propor novos mecanismos de detecção (desejável)",
+        "Identificar ameaças cibernéticas desconhecidas dentro do Grupo Santander usando técnicas de ciência de dados em data lakes de segurança (desejável)",
+        "Conhecimento de ferramentas de segurança (Firewalls, Antivírus, Sistemas de intrusão, Sistemas de autenticação, detecção de malware, EDR, WAF, Proxy, etc.) (desejável)",
+        "Capacidade analítica e de resolução de problemas, com precisão e atenção a detalhes",
+        "Habilidades interpessoais (trabalho em equipe, resolução de problemas e gestão do tempo)",
+        "Flexibilidade e adaptabilidade",
+        "Habilidades de comunicação, escrita e verbal",
+        "Nível: Superior Completo",
+        "Formação: Cibersegurança, Tecnologia da Informação, Ciências da Computação, Sistemas de Informação, Engenharia da Computação, Tecnologia de Redes ou similar",
+        "Cursos ou certificações relacionados a Cibersecurity",
+        "Cursos relacionados com SIEM",
+        "Inglês Avançado",
+        "Espanhol Avançado"
+      ],
+      "location": null,
+      "modality": "Híbrido",
+      "publishedAt": null,
+      "validThrough": null,
+      "sourceName": "LinkedIn",
+      "sourceProvider": "linkedin",
+      "sourceOfficial": false,
+      "sourcePriority": 1,
+      "sourceStructured": false,
+      "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://www.linkedin.com/jobs/view/4455743110",
+      "collectedAt": "2026-09-10T15:45:37Z",
+      "auto": true,
+      "key": "linkedin:4455743110",
+      "firstSeenAt": "2026-09-10T15:45:37Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/jobs/view/4455743110",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-10T15:46:35+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 62,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Experiência em tecnologia da informação e operações de Cyber Security (essencial)",
+          "mandatory": true
+        },
+        {
+          "text": "Habilidades em análise de eventos de segurança complexos, identificação de ameaças, assim como a amplitude de ataques (essencial)",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em investigação de alertas de segurança e resposta a incidentes (essencial)",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento em ferramentas de SIEM e linguagem de processamento de pesquisa Splunk (SPL) (essencial)",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento sobre os principais vetores e métodos de ataque (DDoS, Sniffing, phishing, Trojan, escalonamento de privilégios, etc.) (essencial)",
+          "mandatory": true
+        },
+        {
+          "text": "Conhecimento sobre frameworks de Cyber Security (Mitre ATT&CK, Cyber Kill Chain, etc.) e etapas que compõem os ataques cibernéticos (desejável)",
+          "mandatory": true
+        },
+        {
+          "text": "Compreensão dos cenários de ameaça internos e externos à organização aliado a capacidade de identificar quais ameaças devem ser priorizadas (essencial)",
+          "mandatory": false
+        },
+        {
+          "text": "Identificar TTPs (Táticas, Técnicas e Procedimentos) usados pelos atores de ameaça e propor novos mecanismos de detecção (desejável)",
+          "mandatory": false
+        },
+        {
+          "text": "Identificar ameaças cibernéticas desconhecidas dentro do Grupo Santander usando técnicas de ciência de dados em data lakes de segurança (desejável)",
+          "mandatory": false
+        },
+        {
+          "text": "Conhecimento de ferramentas de segurança (Firewalls, Antivírus, Sistemas de intrusão, Sistemas de autenticação, detecção de malware, EDR, WAF, Proxy, etc.) (desejável)",
+          "mandatory": false
+        },
+        {
+          "text": "Capacidade analítica e de resolução de problemas, com precisão e atenção a detalhes",
+          "mandatory": false
+        },
+        {
+          "text": "Habilidades interpessoais (trabalho em equipe, resolução de problemas e gestão do tempo)",
+          "mandatory": false
+        },
+        {
+          "text": "Flexibilidade e adaptabilidade",
+          "mandatory": false
+        },
+        {
+          "text": "Habilidades de comunicação, escrita e verbal",
+          "mandatory": false
+        },
+        {
+          "text": "Nível: Superior Completo",
+          "mandatory": false
+        },
+        {
+          "text": "Formação: Cibersegurança, Tecnologia da Informação, Ciências da Computação, Sistemas de Informação, Engenharia da Computação, Tecnologia de Redes ou similar",
+          "mandatory": false
+        },
+        {
+          "text": "Cursos ou certificações relacionados a Cibersecurity",
+          "mandatory": false
+        },
+        {
+          "text": "Cursos relacionados com SIEM",
+          "mandatory": false
+        },
+        {
+          "text": "Inglês Avançado",
+          "mandatory": false
+        },
+        {
+          "text": "Espanhol Avançado",
+          "mandatory": false
         }
       ]
     }
