@@ -1,16 +1,21 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-09T23:43:04+00:00",
+    "catalogBuiltAt": "2026-09-10T00:32:40+00:00",
     "total": 69,
-    "added": 4,
+    "added": 0,
     "verificationAttempted": 62,
-    "lastCheckAttemptAt": "2026-09-09T23:43:04+00:00",
+    "lastCheckAttemptAt": "2026-09-10T00:32:40+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-09T23:37:00Z",
+    "updatedAt": "2026-09-10T00:32:25Z",
     "included": 63,
     "excluded": 6,
-    "discovered": 4,
-    "candidateUrls": 373
+    "discovered": 0,
+    "candidateUrls": 144,
+    "validated": 18,
+    "rejected": 0,
+    "rejectionReasons": {},
+    "needsReview": 0,
+    "pendingValidation": 38
   },
   "jobs": [
     {
@@ -60,7 +65,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -124,7 +129,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 2,
@@ -181,7 +188,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Java 8+",
@@ -265,7 +272,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 3,
@@ -304,7 +313,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Java básico",
@@ -348,7 +357,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 4,
@@ -389,7 +400,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -440,8 +451,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 5,
@@ -482,7 +495,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -526,7 +539,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 6,
@@ -567,7 +582,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -607,7 +622,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 7,
@@ -657,7 +674,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Node.js",
@@ -720,8 +737,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 8,
@@ -762,7 +781,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Node.js",
@@ -809,8 +828,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 9,
@@ -860,7 +881,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Java ou Go",
@@ -924,7 +945,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 10,
@@ -975,7 +998,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "PHP 8+",
@@ -1051,7 +1074,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 11,
@@ -1091,7 +1116,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "SQL intermediário",
@@ -1135,7 +1160,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 12,
@@ -1175,7 +1202,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "React",
@@ -1225,7 +1252,9 @@
           "text": "Layouts responsivos",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "closed",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 13,
@@ -1264,7 +1293,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -1306,7 +1335,9 @@
           "text": "Conhecimento de fundos de direitos creditórios",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "closed",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 14,
@@ -1347,7 +1378,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -1399,7 +1430,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 15,
@@ -1441,7 +1474,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "SQL Server",
@@ -1489,7 +1522,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 16,
@@ -1526,7 +1561,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Excel",
@@ -1572,7 +1607,9 @@
           "text": "Projeções e correlações",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "closed",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 17,
@@ -1608,7 +1645,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Redes",
@@ -1650,7 +1687,9 @@
           "text": "Experiência corporativa",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "closed",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 18,
@@ -1695,7 +1734,7 @@
       "lastVerifiedAt": "2026-09-07T15:33:53+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -1759,7 +1798,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-07T15:33:53+00:00",
-      "verificationReason": "Encerramento explícito"
+      "verificationReason": "Encerramento explícito",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 19,
@@ -1812,7 +1853,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "PHP",
@@ -1888,7 +1929,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 20,
@@ -1930,7 +1973,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -1990,7 +2033,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 21,
@@ -2026,7 +2071,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Figma",
@@ -2070,7 +2115,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 22,
@@ -2108,7 +2155,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -2148,7 +2195,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 23,
@@ -2191,7 +2240,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "SQL intermediário/avançado",
@@ -2239,7 +2288,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 24,
@@ -2275,7 +2326,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Análise de dados",
@@ -2311,7 +2362,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 25,
@@ -2348,7 +2401,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Python básico",
@@ -2384,7 +2437,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 26,
@@ -2422,7 +2477,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Python avançado",
@@ -2462,7 +2517,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 27,
@@ -2502,7 +2559,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Excel avançado",
@@ -2550,7 +2607,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 28,
@@ -2586,7 +2645,7 @@
       "lastVerifiedAt": "2026-09-06T17:40:31+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -2622,7 +2681,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T17:40:31+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 29,
@@ -2659,7 +2720,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -2695,7 +2756,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 30,
@@ -2731,7 +2794,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -2771,7 +2834,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 31,
@@ -2819,7 +2884,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "C#",
@@ -2878,8 +2943,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 32,
@@ -2918,7 +2985,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "UiPath",
@@ -2962,7 +3029,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 33,
@@ -3003,7 +3072,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -3053,7 +3122,9 @@
           "text": "Precificação",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "closed",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 34,
@@ -3097,7 +3168,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -3148,8 +3219,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 35,
@@ -3202,7 +3275,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java ou Go",
@@ -3277,8 +3350,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 36,
@@ -3336,7 +3411,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": true,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -3414,7 +3489,9 @@
           "text": "Design Patterns",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 37,
@@ -3460,7 +3537,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": true,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java/C#/Python",
@@ -3506,7 +3583,9 @@
           "text": "Mercado financeiro",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 38,
@@ -3548,7 +3627,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "C#",
@@ -3599,8 +3678,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 39,
@@ -3641,7 +3722,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "C#/.NET",
@@ -3684,8 +3765,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:04+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 40,
@@ -3729,7 +3812,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -3780,8 +3863,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 41,
@@ -3834,7 +3919,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -3901,8 +3986,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 42,
@@ -3964,7 +4051,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -4055,8 +4142,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:41+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 43,
@@ -4097,7 +4186,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "AWS",
@@ -4140,8 +4229,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 44,
@@ -4179,7 +4270,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Testes manuais",
@@ -4218,8 +4309,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 45,
@@ -4265,7 +4358,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -4316,8 +4409,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 46,
@@ -4349,7 +4444,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": ".NET",
@@ -4372,8 +4467,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 47,
@@ -4419,7 +4516,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:26+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 85,
+      "qualityScore": 75,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -4479,7 +4576,9 @@
         }
       ],
       "lastCheckedAt": "2026-09-06T16:22:26+00:00",
-      "verificationReason": "Anúncio removido (404/410)"
+      "verificationReason": "Anúncio removido (404/410)",
+      "validationState": "closed",
+      "confidenceLabel": "Média"
     },
     {
       "id": 48,
@@ -4526,7 +4625,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Conhecimento básico de lógica de programação",
@@ -4577,8 +4676,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 49,
@@ -4632,7 +4733,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java 8 ou superior",
@@ -4695,8 +4796,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 50,
@@ -4739,7 +4842,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Pelo menos 1 ano de desenvolvimento em Java/Java EE",
@@ -4786,8 +4889,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 51,
@@ -4833,7 +4938,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Estatística descritiva e aplicada a Machine Learning",
@@ -4880,8 +4985,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:05+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 52,
@@ -4922,7 +5029,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 70,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Mínimo de 1 ano com programação profissional",
@@ -4961,8 +5068,10 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 53,
@@ -5005,7 +5114,7 @@
       "lastVerifiedAt": "2026-09-09T18:39:17+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 100,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Graduação em curso ou concluída em Tecnologia da Informação ou áreas correlatas",
@@ -5048,12 +5157,14 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "Brasília, BR",
       "modality": "Remoto",
       "publishedAt": "2026-08-28T20:01:19.000Z",
-      "validThrough": "2026-09-27T20:01:19.000Z"
+      "validThrough": "2026-09-27T20:01:19.000Z",
+      "validationState": "pending",
+      "confidenceLabel": "Alta"
     },
     {
       "id": 54,
@@ -5091,7 +5202,7 @@
       "lastVerifiedAt": "2026-09-09T18:26:26+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 100,
+      "qualityScore": 85,
       "requirementsStructured": [
         {
           "text": "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens: C#, Java, Go ou Rust",
@@ -5114,12 +5225,14 @@
           "mandatory": false
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
-      "validThrough": "2027-03-09T17:53:05.000Z"
+      "validThrough": "2027-03-09T17:53:05.000Z",
+      "validationState": "pending",
+      "confidenceLabel": "Alta"
     },
     {
       "id": 55,
@@ -5157,7 +5270,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 60,
+      "qualityScore": 48,
       "requirementsStructured": [
         {
           "text": "Participar das atividades de manutenção evolutiva e corretiva dos sistemas internos.",
@@ -5188,8 +5301,10 @@
           "mandatory": true
         }
       ],
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento"
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 56,
@@ -5305,7 +5420,9 @@
           "text": "Licença maternidade e paternidade estendida",
           "mandatory": true
         }
-      ]
+      ],
+      "validationState": "closed",
+      "confidenceLabel": "Alta"
     },
     {
       "id": 57,
@@ -5358,9 +5475,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
-      "qualityScore": 65,
+      "qualityScore": 60,
       "requirementsStructured": [
         {
           "text": "Ensino Superior Completo em Tecnologia da Informação, Ciência de Dados ou áreas;",
@@ -5406,7 +5523,9 @@
           "text": "Conhecimento em fluxos de CI/CD.",
           "mandatory": true
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Média"
     },
     {
       "id": 58,
@@ -5498,7 +5617,9 @@
           "text": "Entrevista focada em cultura: Exploração dos valores e princípios da empresa para garantir um bom encaixe cultural.",
           "mandatory": true
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Média"
     },
     {
       "id": 59,
@@ -5569,9 +5690,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
-      "qualityScore": 75,
+      "qualityScore": 62,
       "requirementsStructured": [
         {
           "text": "Conhecimento de lógica de programação e fundamentos de desenvolvimento de soluções.",
@@ -5685,7 +5806,9 @@
           "text": "Trabalho colaborativo;",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Média"
     },
     {
       "id": 60,
@@ -5734,9 +5857,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
-      "qualityScore": 70,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Formação em áreas de dados, exatas, tecnologia, administração, economia ou afins.",
@@ -5782,7 +5905,9 @@
           "text": "Vivência em fintechs ou empresas de tecnologia.",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 61,
@@ -5841,9 +5966,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
-      "qualityScore": 70,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Formação concluída em Sistemas de Informação, Ciência da Computação, Engenharia, Estatística, Matemática, Economia, Administração ou áreas correlatas.",
@@ -5921,7 +6046,9 @@
           "text": "Participação em projetos acadêmicos, bootcamps, comunidades ou portfólio relacionado a dados.",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 62,
@@ -5979,9 +6106,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 55,
       "requirementsStructured": [
         {
           "text": "Projetar soluções de automação e integração entre sistemas corporativos.",
@@ -6039,7 +6166,9 @@
           "text": "Experiência com tratamento e transformação de dados em diferentes formatos (JSON, CSV, Excel, PDF).",
           "mandatory": true
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 63,
@@ -6088,7 +6217,7 @@
       "excluded": true,
       "lastCheckedAt": "2026-09-09T18:39:18+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
-      "qualityScore": 70,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Experiência em análise de dados, gestão de riscos, prevenção a fraudes ou áreas correlatas.",
@@ -6126,7 +6255,9 @@
           "text": "Experiência em ambientes de Big Data e plataformas analíticas.",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 64,
@@ -6179,7 +6310,7 @@
       "excluded": true,
       "lastCheckedAt": "2026-09-09T18:39:18+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 70,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Conhecimento de Security by Design e conceitos de desenvolvimento seguro (SSDLC).",
@@ -6241,7 +6372,9 @@
           "text": "Certificações ou cursos relacionados à Segurança da Informação.",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 65,
@@ -6288,9 +6421,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 75,
+      "lastCheckedAt": "2026-09-10T00:32:42+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 62,
       "requirementsStructured": [
         {
           "text": "Ensino superior em andamento ou completo;",
@@ -6320,7 +6453,9 @@
           "text": "Antecipação Saque aniversário do FGTS;",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Média"
     },
     {
       "id": 66,
@@ -6369,9 +6504,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
+      "lastCheckedAt": "2026-09-10T00:32:43+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 55,
       "requirementsStructured": [
         {
           "text": "Conhecimento fundamental/base na linguagem Java e familiaridade com o ecossistema Spring (Spring Boot, Spring Data JPA, REST APIs).",
@@ -6401,7 +6536,9 @@
           "text": "Interesse por mercado financeiro e vontade de aprender sobre produtos e rotinas de Renda Fixa e Crédito.",
           "mandatory": true
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     },
     {
       "id": 67,
@@ -6448,9 +6585,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 75,
+      "lastCheckedAt": "2026-09-10T00:32:43+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 62,
       "requirementsStructured": [
         {
           "text": "Tenha formação superior completa ou em andamento nos cursos de Administração, Economia, Engenharia, Ciências Contábeis, Matemática, Estatística ou áreas correlatas.",
@@ -6488,7 +6625,9 @@
           "text": "Tiver experiência com Power BI, SQL, Python ou ferramentas de automação e análise de dados.",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Média"
     },
     {
       "id": 68,
@@ -6542,9 +6681,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 75,
+      "lastCheckedAt": "2026-09-10T00:32:43+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 62,
       "requirementsStructured": [
         {
           "text": "Formação em Economia, Engenharias, Ciências Exatas, Administração ou áreas correlatas.",
@@ -6606,7 +6745,9 @@
           "text": "Trabalhar com times multidisciplinares de forma transversal, conectando risco de crédito à estratégia da instituição.",
           "mandatory": false
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Média"
     },
     {
       "id": 69,
@@ -6646,9 +6787,9 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-09T23:43:06+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
+      "lastCheckedAt": "2026-09-10T00:32:43+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
+      "qualityScore": 55,
       "requirementsStructured": [
         {
           "text": "Formação superior completa em Administração, Economia, Contabilidade, Engenharia, Matemática, Estatística ou áreas correlatas.",
@@ -6670,7 +6811,9 @@
           "text": "Conhecimento em Python para análise e tratamento de dados.",
           "mandatory": true
         }
-      ]
+      ],
+      "validationState": "pending",
+      "confidenceLabel": "Baixa"
     }
   ]
 }
