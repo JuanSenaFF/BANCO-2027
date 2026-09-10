@@ -7,7 +7,8 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Frontend responsivo, tema claro/escuro, busca em requisitos, filtros persistentes, favoritos e comparação de até três vagas.
 - Detalhes endereçáveis por hash para vagas e empresas; links continuam funcionando no GitHub Pages.
 - Match por requisito obrigatório e diferencial; nível e evidência; inglês, experiência, formação e preferências. Requisitos não mapeados e elegibilidade afirmativa exigem confirmação individual. Não inferimos condições pessoais.
-- Separação entre score atual, simulação de potencial, requisitos pendentes e impedimentos. “Aplicar agora” requer vaga ativa, elegível, >=80%, sem obrigatório ausente e sem pendências.
+- Quatro filas de ação recalculadas pelo perfil: `Aplicar agora`, `Aplicar e estudar`, `Preparar por 1–2 semanas` e `Acompanhar`. A decisão combina aderência conhecida, gaps fecháveis, esforço, regras eliminatórias e confiança operacional do anúncio.
+- Requisitos desconhecidos não reduzem a aderência usada pelas filas e permanecem visíveis para confirmação. Vagas pendentes continuam no motor com confiança menor; anúncios encerrados ou excluídos não entram nas filas.
 - Ranking de estudo, simulação de vagas desbloqueadas, esforço heurístico explícito e score de empresa.
 - Pipeline com nove etapas, datas, feedback, próxima ação, observações, histórico de mudanças e taxas calculadas por candidaturas efetivamente registradas.
 - Histórico semanal de mercado no coletor e de perfil ao acessar o painel, além de registro manual. Não inventa snapshots de semanas anteriores nem considera uma amostra sem confirmação como queda de mercado.
@@ -18,7 +19,7 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Quando a mesma vaga aparece em mais de uma origem, a representação oficial vence; URLs do LinkedIn e de agregadores permanecem em `sources`/`sourceAliases` para auditoria. O relatório registra cobertura oficial, fallback e falhas isoladas por board.
 - Deduplicação normalizada por sinônimos: similaridade >=0,90 remove automaticamente; similaridade entre 0,75 e 0,89 mantém o registro marcado para revisão humana; abaixo disso permanece como oportunidade independente.
 - Verificação conservadora com estados `pending`, `confirmed`, `review` e `closed`: 403/429/timeout/HTML genérico permanecem pendentes, confirmação ativa expira após sete dias, e 404/410, prazo expirado ou encerramento explícito marcam encerrada.
-- Cada registro recebe confiança baixa/média/alta, motivo de validação e motivo de rejeição da execução; somente vagas ativas, elegíveis e sem revisão pendente entram nos rankings.
+- Cada registro recebe confiança baixa/média/alta, motivo de validação e motivo de rejeição da execução. Rankings de estudo continuam conservadores; as filas de ação também aproveitam anúncios pendentes, sem equipará-los aos confirmados.
 - Faixa salarial separa valor anunciado de estimativa externa, exibindo moeda, período, escopo, fonte e data da consulta; remuneração não altera o match técnico.
 - Vercel API implementada para jobs, perfil/pipeline, match, atualização autenticada e acompanhamento da coleta.
 - Supabase schema com tabelas de domínio, RLS por usuário, gravação transacional de estado pessoal, autenticação e limitação persistente de atualização.
