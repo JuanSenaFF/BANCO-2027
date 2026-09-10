@@ -35,6 +35,7 @@ class QualityTests(unittest.TestCase):
         self.assertTrue(senior_conflict('Anti-Fraud Spec III','SQL e Python'))
         self.assertTrue(senior_conflict('Cyber Security Spec II (BISO)','Cloud Security'))
         self.assertTrue(senior_conflict('Data Analyst II','SQL'))
+        self.assertTrue(senior_conflict('SSD Brasil - Cyber Analyst lll - SOC','Cloud Security'))
         self.assertFalse(senior_conflict('Data Analyst I','SQL'))
     def test_same_linkedin_id(self):
         self.assertEqual(canonical_url('https://linkedin.com/jobs/view/python-123456789'),canonical_url('https://br.linkedin.com/jobs/view/123456789?tracking=foo'))
