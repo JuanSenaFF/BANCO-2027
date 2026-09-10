@@ -5,6 +5,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from quality import split_requirements,senior_conflict,verify,requirements_quality_conflict
 from validate_auto import canonical_url,req_similarity,similarity_band
 from rules import validation_state
+from build_catalog import apply_verification
 from bs4 import BeautifulSoup
 class QualityTests(unittest.TestCase):
     def test_sections_exclude_benefits(self):
@@ -46,6 +47,13 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(validation_state({'status':'Encerrada'}),'closed')
         self.assertEqual(validation_state({'status':'Ativa','lastVerifiedAt':'2099-01-01T00:00:00Z'}),'confirmed')
         self.assertEqual(validation_state({'status':'Ativa','lastVerifiedAt':'2020-01-01T00:00:00Z'}),'pending')
+    def test_inconclusive_check_does_not_close_active_job(self):
+        result = apply_verification(
+            {'status': 'Ativa'},
+            {'status': 'Possivelmente encerrada', 'verificationReason': 'HTTP 403'},
+        )
+        self.assertEqual(result['status'], 'Ativa')
+        self.assertEqual(result['validationState'], 'pending')
     @patch('quality.safe_fetch')
     def test_http403_unknown(self,get):
         get.return_value.status_code=403

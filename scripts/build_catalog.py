@@ -46,6 +46,18 @@ def confidence_score(j):
     return score, label
 
 
+def apply_verification(job, result):
+    """Do not close a previously active job on an inconclusive fetch failure."""
+    if job.get('status') == 'Ativa' and result.get('status') == 'Possivelmente encerrada':
+        return {
+            **result,
+            'status': 'Ativa',
+            'validationState': 'pending',
+            'verificationReason': result.get('verificationReason') or 'Validação inconclusiva; status anterior preservado',
+        }
+    return result
+
+
 def run(online=False):
     path=ROOT/'jobs.json';old=json.loads(path.read_text()) if path.exists() else {'jobs':[],'meta':{}}
     prior={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -79,7 +91,7 @@ def run(online=False):
                 return j['key'],verify(j,session)
         with ThreadPoolExecutor(max_workers=6) as pool:
             candidates=[j for j in out.values() if j['status']!='Encerrada' and not j['excluded']]
-            for key,result in pool.map(check,candidates):out[key].update(result)
+            for key,result in pool.map(check,candidates):out[key].update(apply_verification(out[key], result))
     for j in out.values():
         j['excluded']=excluded_by_quality(j)
         j['validationState']=validation_state(j)
