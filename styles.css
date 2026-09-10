@@ -39,3 +39,22 @@ main{padding:38px 38px 86px;max-width:1320px;width:100%;margin:0 auto}
 .salary-line span{color:var(--muted);font-size:12px;text-align:right}
 .salary-box{margin:18px 0;padding:18px;border:1px solid color-mix(in srgb,var(--green) 28%,var(--line));border-radius:14px;background:color-mix(in srgb,var(--card) 88%,var(--accent-soft))}
 .salary-box h2{margin-bottom:6px}.salary-box p{margin:5px 0}.salary-box strong{font-size:22px;font-variant-numeric:tabular-nums}
+
+/* Filas de ação: decisão derivada de aderência conhecida, esforço e confiança do anúncio. */
+.queue-board{display:grid;grid-template-columns:repeat(4,minmax(260px,1fr));gap:14px;align-items:start;overflow-x:auto;padding:4px 2px 18px}
+.action-lane{min-height:280px;padding:16px;border:1px solid var(--line);border-top:4px solid var(--muted);border-radius:var(--radius-lg);background:color-mix(in srgb,var(--card) 80%,var(--accent-soft))}
+.action-lane>h2{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0;font-size:16px}
+.action-lane>h2 span{min-width:28px;padding:3px 8px;border-radius:999px;background:var(--card);text-align:center;font-size:13px}
+.action-lane.queue-apply_now{border-top-color:var(--green)}
+.action-lane.queue-apply_study{border-top-color:var(--blue)}
+.action-lane.queue-prepare{border-top-color:var(--amber)}
+.queue-card{margin-top:12px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.queue-card h3{margin:10px 0 7px;font-size:16px;line-height:1.3}
+.queue-card p{margin:7px 0;color:var(--muted)}
+.queue-card .company img{width:26px;height:26px}
+.queue-card .actions{padding-top:11px;margin-top:12px}
+.badge.queue-apply_now{border-color:color-mix(in srgb,var(--green) 45%,var(--line));color:var(--green)}
+.badge.queue-apply_study{border-color:color-mix(in srgb,var(--blue) 45%,var(--line));color:var(--blue)}
+.badge.queue-prepare{border-color:color-mix(in srgb,var(--amber) 45%,var(--line));color:var(--amber)}
+.badge.queue-monitor{color:var(--muted)}
+@media(max-width:1100px){.queue-board{grid-template-columns:repeat(4,minmax(280px,78vw))}}
