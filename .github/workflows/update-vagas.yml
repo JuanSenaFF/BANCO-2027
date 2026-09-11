@@ -8,6 +8,8 @@ on:
     paths:
       - '.github/workflows/update-vagas.yml'
       - 'scripts/**'
+      - 'supabase/**'
+      - 'tests/**'
 permissions:
   contents: write
 concurrency:
