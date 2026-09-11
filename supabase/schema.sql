@@ -1,5 +1,14 @@
 -- Execute once in a dedicated Supabase project. Private records use auth.uid().
 begin;
+
+-- New objects are private by default. Every Data API grant is declared below.
+alter default privileges for role postgres in schema public
+  revoke all privileges on tables from anon, authenticated;
+alter default privileges for role postgres in schema public
+  revoke all privileges on sequences from anon, authenticated;
+alter default privileges for role postgres in schema public
+  revoke execute on functions from public, anon, authenticated;
+
 create table public.companies (name text primary key, domain text);
 create table public.jobs (key text primary key, company text references public.companies(name), payload jsonb not null, updated_at timestamptz not null default now());
 create table public.job_requirements (
@@ -33,19 +42,19 @@ create table public.refresh_requests (user_id uuid primary key references auth.u
 do $$ declare t text; begin
 foreach t in array array['companies','jobs','job_requirements','job_sources','collection_meta','market_snapshots'] loop
 execute format('alter table public.%I enable row level security',t);
-execute format('create policy public_read on public.%I for select using (true)',t);
+execute format('create policy public_read on public.%I for select to anon, authenticated using (true)',t);
+execute format('revoke all privileges on table public.%I from anon, authenticated',t);
 execute format('grant select on public.%I to anon, authenticated',t);
-execute format('revoke insert, update, delete on public.%I from anon, authenticated',t);
 end loop;
 foreach t in array array['user_state','skills','skill_history','applications','alerts','profile_snapshots'] loop
 execute format('alter table public.%I enable row level security',t);
 execute format('create policy owner_only on public.%I for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()))',t);
+execute format('revoke all privileges on table public.%I from anon, authenticated',t);
 execute format('grant select,insert,update,delete on public.%I to authenticated',t);
-execute format('revoke all on public.%I from anon',t);
 end loop;
 end $$;
 alter table public.refresh_requests enable row level security;
-revoke all on public.refresh_requests from anon,authenticated;
+revoke all privileges on table public.refresh_requests from anon,authenticated;
 create function public.claim_refresh() returns boolean language plpgsql security definer set search_path=public as $$
 declare affected integer;
 begin
@@ -54,7 +63,7 @@ insert into refresh_requests(user_id,requested_at) values(auth.uid(),now()) on c
 get diagnostics affected=row_count;
 return affected=1;
 end $$;
-revoke all on function public.claim_refresh() from public,anon;
+revoke all on function public.claim_refresh() from public,anon,authenticated;
 grant execute on function public.claim_refresh() to authenticated;
 
 -- One transaction for the UI snapshot plus normalized career tables.
@@ -74,6 +83,6 @@ insert into profile_snapshots select u,ordinality::integer,value from jsonb_arra
 delete from alerts where user_id=u;
 insert into alerts values(u,'rules',jsonb_build_object('rules',p_state->'alertRules','dismissed',p_state->'dismissed'));
 end $$;
-revoke all on function public.save_career_state(jsonb) from public,anon;
+revoke all on function public.save_career_state(jsonb) from public,anon,authenticated;
 grant execute on function public.save_career_state(jsonb) to authenticated;
 commit;
