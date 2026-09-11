@@ -112,7 +112,12 @@ LEVEL_PATTERNS = [
 ]
 LEVEL_LABELS = {1: "básico", 2: "intermediário", 3: "avançado", 4: "especialista"}
 
-EDUCATION_RE = re.compile(r"formacao|graduacao|ensino superior|bacharel|cursando|curso superior|degree")
+# Academic terms must match complete words. Without boundaries, ``formacao``
+# also matches ``informacao`` and ``transformacao``, turning technical phrases
+# into false eliminatory education gates.
+EDUCATION_RE = re.compile(
+    r"\b(?:formacao|graduacao|ensino superior|bacharel(?:ado)?|cursando|curso superior|degrees?)\b"
+)
 LANGUAGE_RE = re.compile(r"\bingles\b|\benglish\b|\bespanhol\b|\bspanish\b|\bportugues\b|\bportuguese\b")
 LOCATION_RE = re.compile(r"residir|residencia|localizacao|disponibilidade para (?:atuar|trabalhar|mudanca)|\bpresencial\b")
 ELIGIBILITY_RE = re.compile(r"\bpcd\b|pessoa(?:s)? com deficiencia|vaga afirmativa|elegibilidade")
