@@ -22,6 +22,7 @@ test('queue board has responsive styles and all four visual states',()=>{
   assert.match(css,/\.queue-board/);
   for(const id of ['apply_now','apply_study','prepare','monitor'])assert.match(css,new RegExp(`queue-${id}`));
 });
+test('action queues explain minimum known coverage',()=>{const app=read('app.js');assert.match(app,/70% para Aplicar agora/);assert.match(app,/60% para Aplicar e estudar/);assert.match(app,/40% para Preparar/);assert.match(app,/Cobertura conhecida/);});
 
 test('match API exposes the same derived action decision',()=>{
   const api=read('api/match.js');

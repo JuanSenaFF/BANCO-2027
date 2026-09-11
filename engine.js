@@ -85,6 +85,7 @@
     prepare:{id:'prepare',label:'Preparar por 1–2 semanas',order:3},
     monitor:{id:'monitor',label:'Acompanhar',order:4}
   };
+  const MIN_KNOWN_COVERAGE={apply_now:70,apply_study:60,prepare:40};
   function vacancyConfidence(j){
     const state=j.validationState||'';
     if(state==='closed'||j.status==='Encerrada')return 0;
@@ -111,15 +112,19 @@
     if(j.validationState==='closed'||j.status==='Encerrada'||j.excluded)return null;
     const confidence=vacancyConfidence(j),fit=knownFit(a),gapRows=a.rows.filter(r=>r.state==='gap'||r.state==='partial');
     const gateBlocks=a.gates.filter(g=>g.state==='gap'),small=gapRows.filter(isSmallGap),lowConfidence=confidence<.55;
-    let queue=ACTION_QUEUES.monitor,reason='Distância alta para o perfil atual';
+    let candidate=ACTION_QUEUES.monitor,candidateReason='Distância alta para o perfil atual';
+    if(!gapRows.length&&fit.score>=70){candidate=ACTION_QUEUES.apply_now;candidateReason=a.unknown?'Boa aderência conhecida; confirmar itens pendentes':'Boa aderência e nenhum impeditivo conhecido';}
+    else if(gapRows.length===1&&small.length===1&&fit.score>=60&&a.hours<=20){candidate=ACTION_QUEUES.apply_study;candidateReason='Um gap pequeno e fechável em paralelo';}
+    else if(gapRows.length<=3&&gapRows.length===small.length&&a.hours<=40&&fit.score>=40){candidate=ACTION_QUEUES.prepare;candidateReason=`${gapRows.length} gap${gapRows.length===1?'':'s'} fechável${gapRows.length===1?'':'is'} em até 40h`;}
+    else if(a.unknown&&!gapRows.length){candidateReason='Confirmar requisitos antes de decidir';}
+    const coverageRequired=MIN_KNOWN_COVERAGE[candidate.id]||0,coverageBelowMinimum=coverageRequired>0&&fit.coverage<coverageRequired;
+    let queue=ACTION_QUEUES.monitor,reason=candidateReason,coverageLimited=false;
     if(lowConfidence){reason='Confirmar se o anúncio continua aberto';}
     else if(!j.eligible||gateBlocks.length){reason=gateBlocks.length?'Há regra eliminatória incompatível':'Vaga fora do recorte qualificado';}
     else if(!fit.known){reason='Ainda não há requisitos conhecidos suficientes';}
-    else if(!gapRows.length&&fit.score>=70){queue=ACTION_QUEUES.apply_now;reason=a.unknown?'Boa aderência conhecida; confirmar itens pendentes':'Boa aderência e nenhum impeditivo conhecido';}
-    else if(gapRows.length===1&&small.length===1&&fit.score>=60&&a.hours<=20){queue=ACTION_QUEUES.apply_study;reason='Um gap pequeno e fechável em paralelo';}
-    else if(gapRows.length<=3&&gapRows.length===small.length&&a.hours<=40&&fit.score>=40){queue=ACTION_QUEUES.prepare;reason=`${gapRows.length} gap${gapRows.length===1?'':'s'} fechável${gapRows.length===1?'':'is'} em até 40h`;}
-    else if(a.unknown&&!gapRows.length){reason='Confirmar requisitos antes de decidir';}
-    return {...queue,reason,confidence,confidenceLabel:confidence>=.8?'Alta':confidence>=.55?'Média':'Baixa',decisionScore:fit.score,knownCoverage:fit.coverage,knownRequirements:fit.known,totalRequirements:fit.total,gapCount:gapRows.length,unknownCount:a.unknown,hours:a.hours,blockerCount:gateBlocks.length};
+    else if(coverageBelowMinimum){coverageLimited=true;reason=`Cobertura conhecida insuficiente para ${candidate.label.toLowerCase()}: ${fit.coverage}% de ${coverageRequired}%`;}
+    else {queue=candidate;reason=candidateReason;}
+    return {...queue,reason,confidence,confidenceLabel:confidence>=.8?'Alta':confidence>=.55?'Média':'Baixa',decisionScore:fit.score,knownCoverage:fit.coverage,knownRequirements:fit.known,totalRequirements:fit.total,coverageRequired,coverageBelowMinimum,coverageLimited,coverageTargetId:candidate.id,coverageTargetLabel:candidate.label,gapCount:gapRows.length,unknownCount:a.unknown,hours:a.hours,blockerCount:gateBlocks.length};
   }
   function actionQueues(jobs,profile,skills,prefs={},answers={}){
     const decisions=jobs.map(j=>{const analysis=evaluate(j,profile,skills,prefs,answers);return {j,analysis,decision:actionDecision(j,analysis)};}).filter(x=>x.decision);
@@ -141,7 +146,7 @@
   }
   function applicationSnapshot(j,a,d,capturedAt=new Date().toISOString()){
     if(!j||!a||!d)return null;
-    return {version:1,capturedAt,score:a.score,decisionScore:d.decisionScore,queueId:d.id,queueLabel:d.label,confidence:d.confidence,sourceProvider:j.sourceProvider||'',sourceName:j.sourceName||'Não informada',company:j.company||'',role:j.role||'',gapCount:d.gapCount,unknownCount:d.unknownCount};
+    return {version:1,capturedAt,score:a.score,decisionScore:d.decisionScore,knownCoverage:d.knownCoverage,queueId:d.id,queueLabel:d.label,confidence:d.confidence,sourceProvider:j.sourceProvider||'',sourceName:j.sourceName||'Não informada',company:j.company||'',role:j.role||'',gapCount:d.gapCount,unknownCount:d.unknownCount};
   }
   function feedbackAnalytics(applications,now=new Date().toISOString()){
     const apps=Array.isArray(applications)?applications:Object.values(applications||{}),nowMs=Date.parse(now),responseStages=new Set(['Teste técnico','Entrevista RH','Entrevista técnica','Rejeitado','Oferta']),interviewStages=new Set(['Entrevista RH','Entrevista técnica','Oferta']);
@@ -153,5 +158,5 @@
     const high=mature.filter(r=>Number(r.snapshot.decisionScore)>=80),lower=mature.filter(r=>Number(r.snapshot.decisionScore)<80),highRate=rate(high.filter(r=>r.interview).length,high.length),lowerRate=rate(lower.filter(r=>r.interview).length,lower.length),ready=mature.length>=10&&high.length>=3&&lower.length>=3,difference=highRate==null||lowerRate==null?null:highRate-lowerRate;
     return {funnel:summarize(records),snapshotted:snapshotted.length,uncalibrated:records.length-snapshotted.length,mature:mature.length,bands,sources:groupBy('sourceName'),queues:groupBy('queueLabel'),calibration:{threshold:80,minimumMature:10,ready,high:{mature:high.length,interviews:high.filter(r=>r.interview).length,rate:highRate},lower:{mature:lower.length,interviews:lower.filter(r=>r.interview).length,rate:lowerRate},difference,status:!ready?'insufficient':difference>=10?'promising':'weak'}};
   }
-  const api={norm,level,canonical,requirementRecords,normalize,evaluate,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,applicationSnapshot,feedbackAnalytics,ACTION_QUEUES};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
+  const api={norm,level,canonical,requirementRecords,normalize,evaluate,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,applicationSnapshot,feedbackAnalytics,ACTION_QUEUES,MIN_KNOWN_COVERAGE};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
