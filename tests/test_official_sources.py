@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from build_catalog import apply_source_preference
+from build_catalog import apply_source_preference, reconcile_prior_records
 from official_sources import (
     Board,
     collect_official_postings,
@@ -125,6 +125,71 @@ class OfficialSourceTests(unittest.TestCase):
         })
         self.assertFalse(ok)
         self.assertEqual(reason, "cargo fora do recorte técnico")
+
+    def test_catalog_retires_only_invalid_included_automatic_history(self):
+        technical = {
+            "id": 62,
+            "key": "linkedin:4458259681",
+            "company": "Sicredi",
+            "role": "Analista de Desenvolvimento de Sistemas - Toledo/PR",
+            "level": "Júnior / entrada",
+            "statusRaw": "Coleta automática — LinkedIn",
+            "requirements": ["Python", "SQL", "Integração com APIs REST"],
+            "differentials": [],
+            "reason": "Coletada automaticamente em LinkedIn.",
+            "source": "https://www.linkedin.com/jobs/view/4458259681",
+            "auto": True,
+            "excluded": False,
+        }
+        administrative = {
+            "id": 70,
+            "key": "boards.greenhouse.io/inter/jobs/4713263005",
+            "company": "Banco Inter",
+            "role": "BACK OFFICE ANALYST I - STOCK OPERATIONS BR",
+            "level": "Júnior / entrada",
+            "requirements": ["Excel", "Rotinas operacionais", "Comunicação"],
+            "differentials": [],
+            "reason": "Coletada automaticamente em Greenhouse.",
+            "source": "https://boards.greenhouse.io/inter/jobs/4713263005",
+            "auto": True,
+            "excluded": False,
+        }
+        already_excluded = {**administrative, "key": "historical:excluded", "id": 71, "excluded": True}
+        curated = {**administrative, "key": "historical:curated", "id": 72, "auto": False}
+
+        retained, retired = reconcile_prior_records({
+            technical["key"]: technical,
+            administrative["key"]: administrative,
+            already_excluded["key"]: already_excluded,
+            curated["key"]: curated,
+        }, [])
+
+        self.assertIn(technical["key"], retained)
+        self.assertIn(already_excluded["key"], retained)
+        self.assertIn(curated["key"], retained)
+        self.assertNotIn(administrative["key"], retained)
+        self.assertEqual(retired, [{
+            "key": administrative["key"],
+            "company": "Banco Inter",
+            "role": administrative["role"],
+            "reason": "cargo fora do recorte técnico",
+        }])
+
+    def test_current_automatic_record_is_not_retired_by_reconciliation(self):
+        job = {
+            "id": 70,
+            "key": "boards.greenhouse.io/inter/jobs/4713263005",
+            "company": "Banco Inter",
+            "role": "BACK OFFICE ANALYST I - STOCK OPERATIONS BR",
+            "requirements": ["Excel", "Rotinas operacionais", "Comunicação"],
+            "differentials": [],
+            "source": "https://boards.greenhouse.io/inter/jobs/4713263005",
+            "auto": True,
+            "excluded": False,
+        }
+        retained, retired = reconcile_prior_records({job["key"]: job}, [job])
+        self.assertIn(job["key"], retained)
+        self.assertEqual(retired, [])
 
     def test_official_source_can_supersede_linkedin_for_same_posting(self):
         requirements = ["Python", "SQL", "APIs REST"]
