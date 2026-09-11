@@ -191,7 +191,17 @@ def valid(job: dict) -> tuple[bool, str]:
     # Reapply the collector's role filter to the persistent automatic catalog.
     # This removes records admitted by an older, more permissive version.
     from update_vagas import is_relevant
-    relevance_text = " ".join(reqs + job.get("differentials", []) + [job.get("reason", "")])
+    # Registros históricos podem ter perdido o termo de entrada no título publicado,
+    # embora o nível tenha sido capturado quando a vaga foi coletada. Coloque essa
+    # evidência antes da descrição (is_relevant limita a janela de contexto de nível)
+    # para não descartar uma vaga técnica legítima em uma coleta temporariamente vazia.
+    relevance_text = " ".join([
+        job.get("level", ""),
+        job.get("statusRaw", ""),
+        *reqs,
+        *job.get("differentials", []),
+        job.get("reason", ""),
+    ])
     if not is_relevant(job.get("role", ""), company, relevance_text):
         return False, "cargo fora do recorte técnico"
     # Empresas prioritárias/adicionais passam pelo nome. Empresas novas só passam quando os dados
