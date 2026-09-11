@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import datetime,timezone,timedelta
 from concurrent.futures import ThreadPoolExecutor
 from collections import Counter
-from validate_auto import parse_jobs, canonical_url, req_similarity
+from validate_auto import parse_jobs, canonical_url, req_similarity, valid
 from quality import senior_conflict, verify, requirements_quality_conflict
 from rules import (
     ACTIVE_VERIFICATION_DAYS,
@@ -25,6 +25,41 @@ from requirements_normalizer import (
     normalization_summary,
 )
 ROOT=Path(__file__).resolve().parents[1]
+
+
+def job_key(job):
+    return canonical_url(job.get('source','')) or 'legacy:'+str(job['id'])
+
+
+def reconcile_prior_records(prior, current_records):
+    """Retire only explicitly invalid automatic records, never mere absences.
+
+    A source outage or an empty feed must not erase useful history. Automatic
+    records absent from the current collection are therefore kept unless they
+    were previously included and fail the current validator. Records already
+    excluded remain as historical lineage and cannot re-enter action queues.
+    """
+    current_keys={job_key(job) for job in current_records}
+    retained={}
+    retired=[]
+    for key,job in prior.items():
+        should_revalidate=(
+            bool(job.get('auto'))
+            and not job.get('excluded')
+            and key not in current_keys
+        )
+        if should_revalidate:
+            ok,reason=valid(job)
+            if not ok:
+                retired.append({
+                    'key':key,
+                    'company':job.get('company'),
+                    'role':job.get('role'),
+                    'reason':reason,
+                })
+                continue
+        retained[key]=job
+    return retained,retired
 
 
 def excluded_by_quality(j):
@@ -120,13 +155,14 @@ def run(online=False):
     path=ROOT/'jobs.json';old=json.loads(path.read_text()) if path.exists() else {'jobs':[],'meta':{}}
     salary_path=ROOT/'salary-estimates.json'
     salary_estimates=json.loads(salary_path.read_text()) if salary_path.exists() else {}
-    prior={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    prior_all={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     records=[]
     for name in [*(f'data-{i}.js' for i in range(1,7)),'data-auto.js']:records+=parse_jobs(ROOT/name)
+    prior,retired=reconcile_prior_records(prior_all,records)
     out={**prior}
     for j in records:
-        key=canonical_url(j.get('source','')) or 'legacy:'+str(j['id'])
-        previous=prior.get(key,{})
+        key=job_key(j)
+        previous=prior_all.get(key,{})
         # Conteúdo atual da fonte substitui a extração antiga; a evidência de verificação é preservada.
         merged={**previous,**j,'key':key}
         advertised=merged.get('salary') if merged.get('salary',{}).get('kind')=='advertised' else None
@@ -169,12 +205,26 @@ def run(online=False):
             j['qualityScore']=min(j['qualityScore'],35)
         j['requirementsStructured']=normalize_job_requirements(j)
         j['requirementsSchemaVersion']=REQUIREMENTS_SCHEMA_VERSION
-    actual_added=len(set(out)-set(prior)) if online else old.get('meta',{}).get('added',0)
+    actual_added=len(set(out)-set(prior_all)) if online else old.get('meta',{}).get('added',0)
     meta={**old.get('meta',{}),'catalogBuiltAt':now,'total':len(out),'added':actual_added}
     if online:meta.update(lastCheckAttemptAt=now,verificationAttempted=len([j for j in out.values() if j.get('lastCheckedAt')]),verificationConfirmed=sum(j.get('lastVerifiedAt','')==now for j in out.values()))
     report_path=ROOT/'collection-report.json'
     if report_path.exists():
         report=json.loads(report_path.read_text())
+        if retired:
+            retirement_reasons=dict(Counter(item['reason'] for item in retired))
+            report.update(
+                catalogRetiredAt=now,
+                catalogRetired=len(retired),
+                catalogRetirementReasons=retirement_reasons,
+                catalogRetiredJobs=retired,
+            )
+            report_path.write_text(json.dumps(report,ensure_ascii=False),encoding='utf-8')
+            meta.update(
+                catalogRetiredAt=now,
+                catalogRetired=len(retired),
+                catalogRetirementReasons=retirement_reasons,
+            )
         # "discovered" é o que o coletor encontrou antes da validação; "added" é o que realmente entrou no catálogo.
         meta.update(updatedAt=report.get('updatedAt'),discovered=report.get('added',0),candidateUrls=report.get('candidateUrls'))
         meta.update(validated=report.get('validated',meta.get('validated',0)),rejected=report.get('rejected',meta.get('rejected',0)),rejectionReasons=report.get('rejectionReasons',meta.get('rejectionReasons',{})))
