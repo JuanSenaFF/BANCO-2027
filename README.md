@@ -1,15 +1,15 @@
 # BANCO 2027
 
-Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidências, análise de requisitos, prioridades de estudo, candidaturas, empresas, histórico e alertas.
+Sistema pessoal de inteligência de carreira para conquistar uma vaga em banco ou fintech entre julho e dezembro de 2027. O radar atual orienta um ciclo sustentável de 12 meses de aprendizagem, prática, evidências e preparação para candidaturas.
 
 ## Implementado
 
 - Frontend responsivo, tema claro/escuro, busca em requisitos, filtros persistentes, favoritos e comparação de até três vagas.
 - Detalhes endereçáveis por hash para vagas e empresas; links continuam funcionando no GitHub Pages.
 - Match por requisito obrigatório e diferencial; nível e evidência; inglês, experiência, formação e preferências. Requisitos não mapeados e elegibilidade afirmativa exigem confirmação individual. Não inferimos condições pessoais.
-- Quatro filas de ação recalculadas pelo perfil: `Aplicar agora`, `Aplicar e estudar`, `Preparar por 1–2 semanas` e `Acompanhar`. A decisão combina aderência conhecida, cobertura dos obrigatórios, gaps fecháveis, esforço, regras eliminatórias e confiança operacional do anúncio.
+- Quatro filas de ação recalculadas pelo perfil: `Aplicar agora`, `Aplicar e estudar`, `Preparar em até 12 meses` e `Acompanhar`. A decisão combina aderência conhecida, cobertura dos obrigatórios, gaps fecháveis, esforço, regras eliminatórias e confiança operacional do anúncio.
 - Requisitos desconhecidos não reduzem a aderência nem viram gaps, mas diminuem a cobertura conhecida da análise. Para impedir recomendações baseadas em amostras pequenas, as filas exigem cobertura mínima de 70% para `Aplicar agora`, 60% para `Aplicar e estudar` e 40% para `Preparar`; confirmar itens pendentes recalcula a decisão imediatamente.
-- Plano de estudo por impacto: simula um avanço de nível com evidência prática, mede vagas que entram nas filas qualificadas, pondera cada anúncio pela confiança e ordena por candidaturas adicionais por hora. Frequência, promoções de fila e ganho de aderência permanecem como sinais secundários transparentes.
+- Plano de estudo por impacto dentro do ciclo anual: considera 8 horas por semana, 48 horas por avanço de nível e 32 horas para projeto e evidência. Simula a evolução, mede vagas que entram nas filas qualificadas e mantém frequência, promoções de fila e ganho de aderência como sinais transparentes.
 - Pipeline com nove etapas, datas, feedback, próxima ação, observações, histórico de mudanças e taxas calculadas por candidaturas efetivamente registradas.
 - Ao registrar uma candidatura, o sistema congela score, fila, confiança, gaps e fonte daquele momento. O painel mede funil, fontes e filas e compara entrevistas acima/abaixo de 80%; só classifica o corte após 10 resultados maduros, com pelo menos três casos em cada grupo. Candidaturas sem resposta só amadurecem após 21 dias, evitando falsos negativos precoces.
 - Histórico semanal de mercado no coletor e de perfil ao acessar o painel, além de registro manual. Não inventa snapshots de semanas anteriores nem considera uma amostra sem confirmação como queda de mercado.

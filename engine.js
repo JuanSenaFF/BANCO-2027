@@ -3,6 +3,8 @@
   const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const level=t=>/especialista|expert|arquitetura avancada/.test(norm(t))?4:/avancad|solido|dominio/.test(norm(t))?3:/basic|fundamento|nocao|nocoes/.test(norm(t))?1:2;
   const factor=[0,.70,.9,1,1];
+  const CAREER_PLAN={targetStart:'2027-07-01',targetEnd:'2027-12-31',learningMonths:12,weeklyHours:8,monthlyHours:32,hoursPerLevel:48,evidenceHours:32};
+  const learningMonths=hours=>hours?Math.ceil(hours/CAREER_PLAN.monthlyHours):0;
   function normalizeSalary(s){
     if(!s||!['advertised','estimate'].includes(s.kind))return null;
     const min=Number(s.min),max=Number(s.max),median=Number(s.median);
@@ -72,17 +74,17 @@
     const critical=rows.filter(r=>r.state==='gap').length+gates.filter(g=>g.state==='gap').length;
     const gaps=rows.filter(r=>r.state==='gap'||r.state==='partial');
     const skillGaps=[...new Map(gaps.flatMap(r=>r.alternative?[r.skills.slice().sort((a,b)=>b.ratio-a.ratio)[0]].filter(Boolean):r.skills).filter(s=>s.ratio<.85).map(s=>[s.id,s])).values()];
-    const hours=skillGaps.reduce((n,s)=>n+Math.max(1,s.req-s.current)*12+(s.evidence<2?8:0),0);
+    const hours=skillGaps.reduce((n,s)=>n+Math.max(1,s.req-s.current)*CAREER_PLAN.hoursPerLevel+(s.evidence<2?CAREER_PLAN.evidenceHours:0),0),months=learningMonths(hours);
     const potentialRows=rows.map(r=>!r.confirmed&&!r.unknown&&r.skills.length&&r.skills.every(s=>s.req-s.current<=1)?1:r.ratio);
     const potential=rows.length?Math.max(score,Math.round(100*(potentialRows.reduce((a,b)=>a+b,0)+diffs.reduce((n,r)=>n+r.ratio*.25,0))/(rows.length+diffs.length*.25))):0;
     const canApply=j.eligible&&j.status==='Ativa'&&score>=80&&!unknown&&!critical;
     const label=!j.eligible||gates.some(g=>g.state==='gap')?'Inviável no recorte':canApply?'Aplicar agora':unknown?'Confirmar requisitos':score>=65?'Boa com poucos gaps':score>=40?'Possível':'Gaps relevantes';
-    return {score,potential,rows,diffs,gates,unknown,critical,gaps,skillGaps,hours,canApply,label,ok:rows.filter(r=>r.state==='ok').length,partial:rows.filter(r=>r.state==='partial').length};
+    return {score,potential,rows,diffs,gates,unknown,critical,gaps,skillGaps,hours,months,canApply,label,ok:rows.filter(r=>r.state==='ok').length,partial:rows.filter(r=>r.state==='partial').length};
   }
   const ACTION_QUEUES={
     apply_now:{id:'apply_now',label:'Aplicar agora',order:1},
     apply_study:{id:'apply_study',label:'Aplicar e estudar',order:2},
-    prepare:{id:'prepare',label:'Preparar por 1–2 semanas',order:3},
+    prepare:{id:'prepare',label:'Preparar em até 12 meses',order:3},
     monitor:{id:'monitor',label:'Acompanhar',order:4}
   };
   const MIN_KNOWN_COVERAGE={apply_now:70,apply_study:60,prepare:40};
@@ -114,8 +116,8 @@
     const gateBlocks=a.gates.filter(g=>g.state==='gap'),small=gapRows.filter(isSmallGap),lowConfidence=confidence<.55;
     let candidate=ACTION_QUEUES.monitor,candidateReason='Distância alta para o perfil atual';
     if(!gapRows.length&&fit.score>=70){candidate=ACTION_QUEUES.apply_now;candidateReason=a.unknown?'Boa aderência conhecida; confirmar itens pendentes':'Boa aderência e nenhum impeditivo conhecido';}
-    else if(gapRows.length===1&&small.length===1&&fit.score>=60&&a.hours<=20){candidate=ACTION_QUEUES.apply_study;candidateReason='Um gap pequeno e fechável em paralelo';}
-    else if(gapRows.length<=3&&gapRows.length===small.length&&a.hours<=40&&fit.score>=40){candidate=ACTION_QUEUES.prepare;candidateReason=`${gapRows.length} gap${gapRows.length===1?'':'s'} fechável${gapRows.length===1?'':'is'} em até 40h`;}
+    else if(gapRows.length===1&&small.length===1&&fit.score>=60&&a.months<=3){candidate=ACTION_QUEUES.apply_study;candidateReason=`Um gap pequeno, estimado em ${a.months} ${a.months===1?'mês':'meses'}`;}
+    else if(gapRows.length<=3&&gapRows.length===small.length&&a.months<=CAREER_PLAN.learningMonths&&fit.score>=40){candidate=ACTION_QUEUES.prepare;candidateReason=`${gapRows.length} gap${gapRows.length===1?'':'s'} dentro do plano de aproximadamente ${a.months} ${a.months===1?'mês':'meses'}`;}
     else if(a.unknown&&!gapRows.length){candidateReason='Confirmar requisitos antes de decidir';}
     const coverageRequired=MIN_KNOWN_COVERAGE[candidate.id]||0,coverageBelowMinimum=coverageRequired>0&&fit.coverage<coverageRequired;
     let queue=ACTION_QUEUES.monitor,reason=candidateReason,coverageLimited=false;
@@ -124,7 +126,7 @@
     else if(!fit.known){reason='Ainda não há requisitos conhecidos suficientes';}
     else if(coverageBelowMinimum){coverageLimited=true;reason=`Cobertura conhecida insuficiente para ${candidate.label.toLowerCase()}: ${fit.coverage}% de ${coverageRequired}%`;}
     else {queue=candidate;reason=candidateReason;}
-    return {...queue,reason,confidence,confidenceLabel:confidence>=.8?'Alta':confidence>=.55?'Média':'Baixa',decisionScore:fit.score,knownCoverage:fit.coverage,knownRequirements:fit.known,totalRequirements:fit.total,coverageRequired,coverageBelowMinimum,coverageLimited,coverageTargetId:candidate.id,coverageTargetLabel:candidate.label,gapCount:gapRows.length,unknownCount:a.unknown,hours:a.hours,blockerCount:gateBlocks.length};
+    return {...queue,reason,confidence,confidenceLabel:confidence>=.8?'Alta':confidence>=.55?'Média':'Baixa',decisionScore:fit.score,knownCoverage:fit.coverage,knownRequirements:fit.known,totalRequirements:fit.total,coverageRequired,coverageBelowMinimum,coverageLimited,coverageTargetId:candidate.id,coverageTargetLabel:candidate.label,gapCount:gapRows.length,unknownCount:a.unknown,hours:a.hours,months:a.months,blockerCount:gateBlocks.length};
   }
   function actionQueues(jobs,profile,skills,prefs={},answers={}){
     const decisions=jobs.map(j=>{const analysis=evaluate(j,profile,skills,prefs,answers);return {j,analysis,decision:actionDecision(j,analysis)};}).filter(x=>x.decision);
@@ -137,11 +139,11 @@
       const simulated={...profile,[s.id]:{...p,l:Math.min(4,p.l+1),e:Math.max(2,p.e)}};
       const after=affected.map(x=>{const analysis=evaluate(x.j,simulated,skills,prefs,answers);return {...x,after:analysis,next:actionDecision(x.j,analysis)};});
       const unlockedJobs=after.filter(x=>!qualified(x.d)&&qualified(x.next)),promotedJobs=after.filter(x=>x.next&&x.next.order<x.d.order);
-      const hours=12+(p.e<2?8:0),weightedUnlocked=unlockedJobs.reduce((n,x)=>n+x.d.confidence,0),weightedPromoted=promotedJobs.reduce((n,x)=>n+x.d.confidence,0);
+      const hours=CAREER_PLAN.hoursPerLevel+(p.e<2?CAREER_PLAN.evidenceHours:0),months=learningMonths(hours),weightedUnlocked=unlockedJobs.reduce((n,x)=>n+x.d.confidence,0),weightedPromoted=promotedJobs.reduce((n,x)=>n+x.d.confidence,0);
       const weightedFrequency=affected.reduce((n,x)=>n+x.d.confidence,0),gain=after.reduce((n,x)=>n+Math.max(0,x.next.decisionScore-x.d.decisionScore)*x.d.confidence,0);
       const applicationsPerHour=weightedUnlocked/hours,impactPerHour=(weightedUnlocked+weightedPromoted*.25+gain/100*.1)/hours;
       const examples=(unlockedJobs.length?unlockedJobs:promotedJobs).slice(0,3).map(x=>({key:x.j.key,company:x.j.company,role:x.j.role,before:x.d.label,after:x.next.label,confidence:x.d.confidence}));
-      return {skill:s,frequency:affected.length,weightedFrequency:round(weightedFrequency),close:affected.filter(x=>x.d.order<=3).length,unlocked:unlockedJobs.length,weightedUnlocked:round(weightedUnlocked),promoted:promotedJobs.length,weightedPromoted:round(weightedPromoted),gain:round(gain,1),hours,target:Math.min(4,p.l+1),applicationsPerHour:round(applicationsPerHour,3),hoursPerApplication:weightedUnlocked?round(hours/weightedUnlocked,1):null,impactPerHour:round(impactPerHour,3),priority:round(impactPerHour*100,1),examples};
+      return {skill:s,frequency:affected.length,weightedFrequency:round(weightedFrequency),close:affected.filter(x=>x.d.order<=3).length,unlocked:unlockedJobs.length,weightedUnlocked:round(weightedUnlocked),promoted:promotedJobs.length,weightedPromoted:round(weightedPromoted),gain:round(gain,1),hours,months,target:Math.min(4,p.l+1),applicationsPerHour:round(applicationsPerHour,3),hoursPerApplication:weightedUnlocked?round(hours/weightedUnlocked,1):null,impactPerHour:round(impactPerHour,3),priority:round(impactPerHour*100,1),examples};
     }).filter(Boolean).sort((a,b)=>b.applicationsPerHour-a.applicationsPerHour||b.impactPerHour-a.impactPerHour||b.weightedFrequency-a.weightedFrequency);
   }
   function applicationSnapshot(j,a,d,capturedAt=new Date().toISOString()){
@@ -158,5 +160,5 @@
     const high=mature.filter(r=>Number(r.snapshot.decisionScore)>=80),lower=mature.filter(r=>Number(r.snapshot.decisionScore)<80),highRate=rate(high.filter(r=>r.interview).length,high.length),lowerRate=rate(lower.filter(r=>r.interview).length,lower.length),ready=mature.length>=10&&high.length>=3&&lower.length>=3,difference=highRate==null||lowerRate==null?null:highRate-lowerRate;
     return {funnel:summarize(records),snapshotted:snapshotted.length,uncalibrated:records.length-snapshotted.length,mature:mature.length,bands,sources:groupBy('sourceName'),queues:groupBy('queueLabel'),calibration:{threshold:80,minimumMature:10,ready,high:{mature:high.length,interviews:high.filter(r=>r.interview).length,rate:highRate},lower:{mature:lower.length,interviews:lower.filter(r=>r.interview).length,rate:lowerRate},difference,status:!ready?'insufficient':difference>=10?'promising':'weak'}};
   }
-  const api={norm,level,canonical,requirementRecords,normalize,evaluate,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,applicationSnapshot,feedbackAnalytics,ACTION_QUEUES,MIN_KNOWN_COVERAGE};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
+  const api={norm,level,canonical,requirementRecords,normalize,evaluate,vacancyConfidence,knownFit,actionDecision,actionQueues,priorities,applicationSnapshot,feedbackAnalytics,ACTION_QUEUES,MIN_KNOWN_COVERAGE,CAREER_PLAN,learningMonths};root.BancoEngine=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
