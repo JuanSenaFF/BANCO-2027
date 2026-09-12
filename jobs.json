@@ -1,34 +1,34 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-11T14:05:21+00:00",
-    "total": 76,
-    "added": 0,
-    "verificationAttempted": 69,
-    "lastCheckAttemptAt": "2026-09-11T14:05:21+00:00",
+    "catalogBuiltAt": "2026-09-12T06:56:07+00:00",
+    "total": 77,
+    "added": 1,
+    "verificationAttempted": 70,
+    "lastCheckAttemptAt": "2026-09-12T06:56:07+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-11T14:04:19Z",
-    "included": 66,
+    "updatedAt": "2026-09-12T06:55:04Z",
+    "included": 67,
     "excluded": 10,
-    "discovered": 1,
-    "candidateUrls": 498,
-    "validated": 22,
+    "discovered": 2,
+    "candidateUrls": 493,
+    "validated": 23,
     "rejected": 1,
     "rejectionReasons": {
       "cargo fora do recorte técnico": 1
     },
     "needsReview": 0,
-    "pendingValidation": 42,
-    "officialSources": 14,
+    "pendingValidation": 43,
+    "officialSources": 15,
     "linkedinFallbacks": 51,
-    "officialCoveragePct": 21.2,
+    "officialCoveragePct": 22.4,
     "requirementsNormalization": {
       "schemaVersion": 2,
-      "total": 939,
-      "mandatory": 637,
-      "differential": 276,
-      "eliminatory": 26,
+      "total": 946,
+      "mandatory": 640,
+      "differential": 278,
+      "eliminatory": 28,
       "technicalMapped": 590,
-      "unmapped": 205
+      "unmapped": 206
     },
     "catalogRetiredAt": "2026-09-11T11:10:02+00:00",
     "catalogRetired": 12,
@@ -1735,7 +1735,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:07+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -2869,7 +2869,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:07+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3198,8 +3198,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-12T06:56:07+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -10886,7 +10886,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:07+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -12355,8 +12355,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-12T06:56:07+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -13606,8 +13606,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-12T06:56:07+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -13927,7 +13927,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:08+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14263,7 +14263,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:08+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14720,7 +14720,7 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:21+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:08+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15344,7 +15344,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:22+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15625,7 +15625,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:22+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15899,7 +15899,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:22+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16241,7 +16241,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:22+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16417,7 +16417,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:23+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:09+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17162,7 +17162,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:23+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17608,7 +17608,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:23+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17923,7 +17923,7 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:23+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -18293,7 +18293,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:23+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -18532,7 +18532,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:23+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Média",
@@ -18826,8 +18826,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:23+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "location": "Brasília, BR",
       "modality": "Remoto",
       "publishedAt": "2026-08-28T20:01:19.000Z",
@@ -18895,7 +18895,7 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-11T14:05:24+00:00",
+      "lastVerifiedAt": "2026-09-12T06:56:10+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 92,
@@ -19024,10 +19024,10 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
-      "modality": "Híbrido",
+      "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
       "validThrough": "2027-03-09T17:53:05.000Z",
       "validationState": "confirmed",
@@ -19672,7 +19672,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:10+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
@@ -20323,8 +20323,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -21880,7 +21880,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -23000,8 +23000,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -23238,8 +23238,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -23536,7 +23536,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -23834,8 +23834,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -24225,7 +24225,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-11T14:05:24+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -24440,7 +24440,7 @@
       "sourceAliases": [
         "linkedin:4460341533"
       ],
-      "lastCheckedAt": "2026-09-11T14:05:25+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -24782,7 +24782,7 @@
       "sourceAliases": [
         "linkedin:4462005969"
       ],
-      "lastCheckedAt": "2026-09-11T14:05:25+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -25267,7 +25267,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-11T14:05:25+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -25588,7 +25588,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-11T14:05:25+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:11+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 70,
       "confidenceLabel": "Média",
@@ -25901,7 +25901,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-11T14:05:25+00:00",
+      "lastCheckedAt": "2026-09-12T06:56:12+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 73,
       "confidenceLabel": "Média",
@@ -26800,8 +26800,8 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-11T14:05:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-12T06:56:12+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "confidenceLabel": "Média",
       "requirementsStructured": [
@@ -27258,6 +27258,193 @@
           "mandatory": false,
           "requirementType": "differential",
           "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        }
+      ],
+      "requirementsSchemaVersion": 2
+    },
+    {
+      "id": 88,
+      "company": "Banco Inter",
+      "role": "CREDIT ANALYST I | CORPORATE CREDIT ANALYSIS",
+      "level": "Júnior / entrada",
+      "status": "Possivelmente encerrada",
+      "statusRaw": "Coleta automática em 2026-09-12 — Greenhouse",
+      "area": "Produtos Financeiros",
+      "stack": "Multistack",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Testes",
+        "Crédito/Risco"
+      ],
+      "requirements": [
+        "Formação Superior completa em Administração, Economia, Engenharias ou áreas correlatas;",
+        "Disponibilidade para atuar de forma presencial no nosso escritório em Belo Horizonte/MG;",
+        "Experiência em análise de crédito;",
+        "Conhecimento em análise de demonstrações financeiras;",
+        "Conhecimento de produtos de crédito estruturados e garantias;"
+      ],
+      "differentials": [
+        "Inglês intermediário/avançado;",
+        "Experiência com comitês de crédito."
+      ],
+      "location": "Belo Horizonte, MG",
+      "modality": "Presencial",
+      "publishedAt": "2026-09-11T17:28:18-04:00",
+      "validThrough": null,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Greenhouse. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://boards.greenhouse.io/inter/jobs/4731709005?gh_jid=4731709005",
+      "collectedAt": "2026-09-12T06:55:04Z",
+      "auto": true,
+      "key": "boards.greenhouse.io/inter/jobs/4731709005",
+      "firstSeenAt": "2026-09-12T06:55:04Z",
+      "lastVerifiedAt": null,
+      "sources": [
+        {
+          "url": "https://boards.greenhouse.io/inter/jobs/4731709005?gh_jid=4731709005",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "pending",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-09-12T06:56:12+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "qualityScore": 75,
+      "confidenceLabel": "Média",
+      "requirementsStructured": [
+        {
+          "text": "Formação Superior completa em Administração, Economia, Engenharias ou áreas correlatas;",
+          "position": 0,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Disponibilidade para atuar de forma presencial no nosso escritório em Belo Horizonte/MG;",
+          "position": 1,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "location",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Experiência em análise de crédito;",
+          "position": 2,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "experience",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento em análise de demonstrações financeiras;",
+          "position": 3,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento de produtos de crédito estruturados e garantias;",
+          "position": 4,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "domain",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Inglês intermediário/avançado;",
+          "position": 0,
+          "source": "description",
+          "mandatory": false,
+          "requirementType": "differential",
+          "category": "language",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 3,
+          "levelLabel": "avançado",
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Experiência com comitês de crédito.",
+          "position": 1,
+          "source": "description",
+          "mandatory": false,
+          "requirementType": "differential",
+          "category": "experience",
           "skill": null,
           "subskill": null,
           "skills": [],
