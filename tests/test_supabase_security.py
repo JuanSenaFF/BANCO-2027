@@ -4,6 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MIGRATION = ROOT / "supabase" / "migrations" / "20260911004234_enforce_least_privilege.sql"
+HARDENING_MIGRATION = ROOT / "supabase" / "migrations" / "20260912065130_harden_claim_refresh.sql"
 SCHEMA = ROOT / "supabase" / "schema.sql"
 
 CATALOG_TABLES = {
@@ -28,6 +29,7 @@ class SupabaseSecurityContractTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.migration = MIGRATION.read_text(encoding="utf-8").lower()
+        cls.hardening = HARDENING_MIGRATION.read_text(encoding="utf-8").lower()
         cls.schema = SCHEMA.read_text(encoding="utf-8").lower()
 
     def test_migration_covers_every_application_table(self):
@@ -58,6 +60,31 @@ class SupabaseSecurityContractTests(unittest.TestCase):
             "revoke all privileges on table public.%i from anon, authenticated",
             self.schema,
         )
+
+    def test_claim_refresh_keeps_elevated_code_out_of_public_schema(self):
+        for sql in (self.hardening, self.schema):
+            self.assertIn("function private.claim_refresh()", sql)
+            self.assertIn("security definer", sql)
+            self.assertIn("set search_path = ''", sql)
+            self.assertIn("public.refresh_requests", sql)
+            self.assertIn("function public.claim_refresh()", sql)
+            self.assertIn("security invoker", sql)
+
+    def test_claim_refresh_permissions_are_explicit(self):
+        for sql in (self.hardening, self.schema):
+            normalized = " ".join(sql.replace(",", " ").split())
+            self.assertIn(
+                "revoke all on function private.claim_refresh() from public anon authenticated",
+                normalized,
+            )
+            self.assertIn(
+                "grant execute on function private.claim_refresh() to authenticated",
+                sql,
+            )
+            self.assertIn(
+                "grant execute on function public.claim_refresh() to authenticated",
+                sql,
+            )
 
 
 if __name__ == "__main__":
