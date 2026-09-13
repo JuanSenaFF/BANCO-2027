@@ -138,6 +138,7 @@ class OfficialSourceTests(unittest.TestCase):
             "differentials": [],
             "reason": "Coletada automaticamente em LinkedIn.",
             "source": "https://www.linkedin.com/jobs/view/4458259681",
+            "location": "São Paulo, SP",
             "auto": True,
             "excluded": False,
         }

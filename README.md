@@ -1,5 +1,28 @@
 # BANCO 2027
 
+## Recorte de mercado
+
+O radar coleta vagas de entrada em instituições financeiras para São Paulo ou
+trabalho remoto no Brasil. A amostra de mercado permanece ampla, mas cada vaga é
+classificada como **tecnologia principal**, **negócio financeiro com tecnologia**,
+**tecnologia como diferencial** ou **contexto de mercado**. O plano pessoal usa
+Python, SQL, dados e automação como direção; vagas de outra stack continuam nos
+indicadores, sem comandar a trilha de estudo.
+
+As instituições de maior porte recebem peso adicional como referência, sem que
+várias vagas da mesma empresa sejam contadas como várias empresas na métrica de
+demanda por tecnologia.
+
+### Indeed
+
+O Indeed não oferece uma API pública aberta para buscar vagas individuais. As
+APIs de Job Sync/Update são destinadas a empregadores e parceiros que gerenciam
+seus próprios anúncios. O Hiring Lab oferece apenas séries agregadas e exige
+credencial concedida a parceiros ou pesquisadores. Por isso o projeto não faz
+scraping do Indeed nem apresenta uma integração incompleta como fonte de vagas.
+Se uma credencial do Hiring Lab for concedida, ela poderá ser configurada em
+`INDEED_HIRING_LAB_API_KEY` para complementar tendências, nunca anúncios.
+
 Sistema pessoal de inteligência de carreira para conquistar uma vaga em banco ou fintech entre julho e dezembro de 2027. O radar atual orienta um ciclo sustentável de 12 meses de aprendizagem, prática, evidências e preparação para candidaturas.
 
 ## Implementado

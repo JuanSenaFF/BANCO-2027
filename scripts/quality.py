@@ -14,7 +14,7 @@ def norm(s):
 def senior_conflict(title, description):
     t=norm(title)
     return bool(
-        re.search(r'\b(pleno|senior|staff|lead|especialista|principal)\b', t)
+        re.search(r'\b(pl|pleno|senior|staff|lead|especialista|principal)\b', t)
         # Some job boards render Roman II/III with lowercase ``l`` characters
         # (for example, "Analyst lll"). Treat those lookalikes as non-entry
         # levels too, without rejecting the legitimate suffix "I".

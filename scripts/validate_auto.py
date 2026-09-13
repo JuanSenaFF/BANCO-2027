@@ -210,6 +210,9 @@ def valid(job: dict) -> tuple[bool, str]:
         return False, "fora do ecossistema financeiro validado"
     if company_contextual(company) and not finance_context(job):
         return False, "consultoria sem contexto financeiro explícito"
+    from market_model import geography
+    if not geography(job)["geographyEligible"]:
+        return False, "local fora de São Paulo/remoto ou não confirmado"
     return True, "ok"
 
 

@@ -24,6 +24,7 @@ from requirements_normalizer import (
     normalize_job_requirements,
     normalization_summary,
 )
+from market_model import annotate as annotate_market
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -152,9 +153,9 @@ def apply_source_preference(jobs):
 
 
 def run(online=False):
-    path=ROOT/'jobs.json';old=json.loads(path.read_text()) if path.exists() else {'jobs':[],'meta':{}}
+    path=ROOT/'jobs.json';old=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'jobs':[],'meta':{}}
     salary_path=ROOT/'salary-estimates.json'
-    salary_estimates=json.loads(salary_path.read_text()) if salary_path.exists() else {}
+    salary_estimates=json.loads(salary_path.read_text(encoding='utf-8')) if salary_path.exists() else {}
     prior_all={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     records=[]
     for name in [*(f'data-{i}.js' for i in range(1,7)),'data-auto.js']:records+=parse_jobs(ROOT/name)
@@ -205,12 +206,13 @@ def run(online=False):
             j['qualityScore']=min(j['qualityScore'],35)
         j['requirementsStructured']=normalize_job_requirements(j)
         j['requirementsSchemaVersion']=REQUIREMENTS_SCHEMA_VERSION
+        annotate_market(j)
     actual_added=len(set(out)-set(prior_all)) if online else old.get('meta',{}).get('added',0)
     meta={**old.get('meta',{}),'catalogBuiltAt':now,'total':len(out),'added':actual_added}
     if online:meta.update(lastCheckAttemptAt=now,verificationAttempted=len([j for j in out.values() if j.get('lastCheckedAt')]),verificationConfirmed=sum(j.get('lastVerifiedAt','')==now for j in out.values()))
     report_path=ROOT/'collection-report.json'
     if report_path.exists():
-        report=json.loads(report_path.read_text())
+        report=json.loads(report_path.read_text(encoding='utf-8'))
         if retired:
             retirement_reasons=dict(Counter(item['reason'] for item in retired))
             report.update(
@@ -236,13 +238,39 @@ def run(online=False):
     meta['linkedinFallbacks']=sum(j.get('sourceProvider')=='linkedin' and not j.get('excluded') for j in out.values())
     meta['officialCoveragePct']=round(100*meta['officialSources']/max(1,meta['included']),1)
     meta['requirementsNormalization']=normalization_summary(list(out.values()))
-    data={'meta':meta,'jobs':list(out.values())};path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
-    history_path=ROOT/'market-history.json';history=json.loads(history_path.read_text()) if history_path.exists() else []
+    meta['marketModel']={
+        'version':1,
+        'segments':dict(Counter(j.get('marketSegment','market_context') for j in out.values())),
+        'alignments':dict(Counter(j.get('careerAlignment','context') for j in out.values())),
+        'geographies':dict(Counter(j.get('geographyScope','unverified') for j in out.values())),
+        'referenceInstitutions':sum(j.get('institutionTier')=='reference' for j in out.values()),
+    }
+    meta['indeed']={
+        'individualVacanciesEnabled':False,
+        'hiringLabTrendsEnabled':False,
+        'reason':'API pública para vagas individuais indisponível; Hiring Lab requer acesso de parceiro/pesquisador',
+    }
+    data={'meta':meta,'jobs':list(out.values())};path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    history_path=ROOT/'market-history.json';history=json.loads(history_path.read_text(encoding='utf-8')) if history_path.exists() else []
     week=(datetime.now(timezone.utc)-timedelta(days=datetime.now(timezone.utc).weekday())).date().isoformat()
     if online and any(j.get('lastVerifiedAt','')==now for j in out.values()) and not any(s['week']==week for s in history):
         active=[j for j in out.values() if j['status']=='Ativa' and not j['excluded']]
-        history.append({'week':week,'at':now,'total':len(active),'technologies':dict(Counter(t for j in active for t in set(j.get('tags',[])))),'companies':dict(Counter(j['company'] for j in active)),'areas':dict(Counter(j.get('area','Não informada') for j in active))})
-    history_path.write_text(json.dumps(history,ensure_ascii=False,indent=2)+'\n')
+        technology_jobs=Counter(t for j in active for t in set(j.get('tags',[])))
+        technology_companies={
+            tag:len({j.get('company') for j in active if tag in set(j.get('tags',[])) and j.get('company')})
+            for tag in technology_jobs
+        }
+        history.append({
+            'week':week,
+            'at':now,
+            'total':len(active),
+            'technologies':dict(technology_jobs),
+            'technologyCompanies':technology_companies,
+            'companies':dict(Counter(j['company'] for j in active)),
+            'areas':dict(Counter(j.get('area','Não informada') for j in active)),
+            'segments':dict(Counter(j.get('marketSegment','market_context') for j in active)),
+        })
+    history_path.write_text(json.dumps(history,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Catálogo: {len(out)} vagas; {sum(not j.get("excluded") for j in out.values())} incluídas; {sum(j["status"]=="Ativa" and not j["excluded"] for j in out.values())} ativas confirmadas.')
     return data
 if __name__=='__main__':

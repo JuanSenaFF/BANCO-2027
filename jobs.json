@@ -1,14 +1,14 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-12T22:19:45+00:00",
+    "catalogBuiltAt": "2026-09-13T06:39:29+00:00",
     "total": 77,
     "added": 0,
     "verificationAttempted": 70,
     "lastCheckAttemptAt": "2026-09-12T22:19:45+00:00",
     "verificationConfirmed": 0,
     "updatedAt": "2026-09-12T22:18:46Z",
-    "included": 67,
-    "excluded": 10,
+    "included": 66,
+    "excluded": 11,
     "discovered": 1,
     "candidateUrls": 490,
     "validated": 23,
@@ -19,8 +19,8 @@
     "needsReview": 0,
     "pendingValidation": 43,
     "officialSources": 15,
-    "linkedinFallbacks": 51,
-    "officialCoveragePct": 22.4,
+    "linkedinFallbacks": 50,
+    "officialCoveragePct": 22.7,
     "requirementsNormalization": {
       "schemaVersion": 2,
       "total": 946,
@@ -34,6 +34,33 @@
     "catalogRetired": 12,
     "catalogRetirementReasons": {
       "cargo fora do recorte técnico": 12
+    },
+    "marketModel": {
+      "version": 1,
+      "segments": {
+        "core_technology": 58,
+        "finance_with_technology": 17,
+        "market_context": 2
+      },
+      "alignments": {
+        "target": 61,
+        "other_stack": 3,
+        "context": 5,
+        "adjacent": 8
+      },
+      "geographies": {
+        "sao_paulo_unverified": 58,
+        "unverified": 10,
+        "remote_brazil": 2,
+        "sao_paulo": 1,
+        "outside_scope": 6
+      },
+      "referenceInstitutions": 51
+    },
+    "indeed": {
+      "individualVacanciesEnabled": false,
+      "hiringLabTrendsEnabled": false,
+      "reason": "API pública para vagas individuais indisponível; Hiring Lab requer acesso de parceiro/pesquisador"
     }
   },
   "jobs": [
@@ -494,7 +521,37 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "auto",
+        "data",
+        "design",
+        "git",
+        "js",
+        "prod",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "api",
+        "auto",
+        "data",
+        "docker",
+        "js"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 2,
@@ -1102,7 +1159,37 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "git",
+        "java",
+        "spring",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "azure",
+        "cicd",
+        "cloud",
+        "design",
+        "docker",
+        "js",
+        "msg",
+        "tests"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 3,
@@ -1407,7 +1494,26 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "other_stack",
+      "careerAlignmentLabel": "Outra stack",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "design",
+        "java",
+        "prod",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 4,
@@ -1752,7 +1858,27 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "java",
+        "linux",
+        "sec",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 5,
@@ -2086,7 +2212,31 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "api",
+        "cloud",
+        "gcp",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "ai",
+        "api"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 6,
@@ -2405,7 +2555,30 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "aws",
+        "azure",
+        "cloud",
+        "data",
+        "gcp",
+        "java",
+        "spring"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 7,
@@ -2886,7 +3059,35 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "cicd",
+        "cloud",
+        "design",
+        "git",
+        "java",
+        "js",
+        "micro",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "js",
+        "tests"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 8,
@@ -3215,7 +3416,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "git",
+        "js",
+        "prod",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 9,
@@ -3682,7 +3904,33 @@
           "priority": 4
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "design",
+        "git",
+        "java",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "aws",
+        "msg",
+        "obs",
+        "python",
+        "sql"
+      ],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 10,
@@ -4231,7 +4479,33 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "design",
+        "docker",
+        "git",
+        "sec",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "design",
+        "micro",
+        "msg",
+        "sec"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 11,
@@ -4541,7 +4815,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "ai",
+        "data"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 12,
@@ -4895,7 +5190,26 @@
           "priority": 4
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "api",
+        "design",
+        "git",
+        "js"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 13,
@@ -5188,7 +5502,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "prod",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 14,
@@ -5543,7 +5875,30 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "api",
+        "auto",
+        "data",
+        "design",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "auto"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 15,
@@ -5881,7 +6236,27 @@
           "priority": 0
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "aws",
+        "azure",
+        "cloud",
+        "prod",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 16,
@@ -6182,7 +6557,23 @@
           "priority": 4
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "data"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 17,
@@ -6448,7 +6839,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "context",
+      "careerAlignmentLabel": "Contexto de mercado",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "obs",
+        "prod",
+        "sec"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 18,
@@ -6895,7 +7304,30 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "design",
+        "git",
+        "sec",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "cloud",
+        "obs"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 19,
@@ -7431,7 +7863,34 @@
           "priority": 5
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "api",
+        "design",
+        "docker",
+        "git",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "cicd",
+        "dotnet",
+        "git",
+        "micro",
+        "msg"
+      ],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 20,
@@ -7815,7 +8274,27 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.385,
+      "requiredSkillIds": [
+        "ai",
+        "data"
+      ],
+      "differentialSkillIds": [
+        "ai",
+        "sql"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 21,
@@ -8073,7 +8552,23 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.385,
+      "requiredSkillIds": [
+        "data"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 22,
@@ -8333,7 +8828,26 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "auto",
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 23,
@@ -8669,7 +9183,29 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "design",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "azure",
+        "git",
+        "python"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 24,
@@ -8933,7 +9469,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.385,
+      "requiredSkillIds": [
+        "data",
+        "obs"
+      ],
+      "differentialSkillIds": [
+        "design",
+        "python",
+        "sql"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 25,
@@ -9166,7 +9723,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 26,
@@ -9418,7 +9993,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 27,
@@ -9758,7 +10351,27 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.385,
+      "requiredSkillIds": [
+        "ai",
+        "data"
+      ],
+      "differentialSkillIds": [
+        "cloud",
+        "data"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 28,
@@ -10006,7 +10619,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 29,
@@ -10231,7 +10862,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 30,
@@ -10489,7 +11138,24 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 31,
@@ -10903,7 +11569,33 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "design",
+        "docker",
+        "dotnet",
+        "git",
+        "prod",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "ai",
+        "msg",
+        "obs"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 32,
@@ -11206,7 +11898,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "auto",
+        "git",
+        "python"
+      ],
+      "differentialSkillIds": [
+        "auto"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 33,
@@ -11513,7 +12226,26 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.385,
+      "requiredSkillIds": [
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "data",
+        "python"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 34,
@@ -11855,7 +12587,30 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "cloud",
+        "git",
+        "java",
+        "js",
+        "obs"
+      ],
+      "differentialSkillIds": [
+        "prod"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 35,
@@ -12372,7 +13127,33 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "aws",
+        "cloud",
+        "design",
+        "gcp",
+        "git",
+        "java",
+        "obs",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "ai"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 36,
@@ -12961,7 +13742,39 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "aws",
+        "cicd",
+        "docker",
+        "git",
+        "java",
+        "k8s",
+        "micro",
+        "msg",
+        "prod",
+        "spring",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "cicd",
+        "design",
+        "git",
+        "js"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 37,
@@ -13291,7 +14104,32 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "design",
+        "git",
+        "java",
+        "micro",
+        "msg",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "aws",
+        "azure"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 38,
@@ -13623,7 +14461,26 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "aws",
+        "data",
+        "design",
+        "dotnet"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 39,
@@ -13944,7 +14801,29 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "other_stack",
+      "careerAlignmentLabel": "Outra stack",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "cloud",
+        "design",
+        "dotnet",
+        "micro",
+        "msg"
+      ],
+      "differentialSkillIds": [
+        "azure"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 40,
@@ -14280,7 +15159,30 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "api",
+        "auto",
+        "design",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "ai"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 41,
@@ -14737,7 +15639,34 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "cicd",
+        "design",
+        "git",
+        "java",
+        "msg",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "aws",
+        "data",
+        "micro"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 42,
@@ -15361,7 +16290,38 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "aws",
+        "cicd",
+        "data",
+        "docker",
+        "git",
+        "iac",
+        "java",
+        "k8s",
+        "linux",
+        "micro",
+        "msg",
+        "obs",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "data"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 43,
@@ -15642,7 +16602,27 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "auto",
+        "aws",
+        "cicd",
+        "iac",
+        "micro"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 44,
@@ -15916,7 +16896,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "obs",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 45,
@@ -16258,7 +17256,31 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "aws",
+        "azure",
+        "data",
+        "gcp"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 46,
@@ -16434,7 +17456,24 @@
           "priority": 5
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "api",
+        "dotnet"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 47,
@@ -16835,7 +17874,31 @@
           "priority": 5
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "api",
+        "cicd",
+        "java",
+        "obs",
+        "prod",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "auto",
+        "prod"
+      ],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 48,
@@ -17179,7 +18242,30 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "design",
+        "git",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "api",
+        "aws",
+        "dotnet"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 49,
@@ -17625,7 +18711,36 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "cloud",
+        "git",
+        "java",
+        "micro",
+        "obs",
+        "spring",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "cicd",
+        "docker",
+        "k8s",
+        "msg"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "consulting",
+      "institutionTierLabel": "Consultoria do ecossistema",
+      "institutionWeight": 0.75
     },
     {
       "id": 50,
@@ -17950,7 +19065,26 @@
       "sourceAliases": [
         "linkedin:4461939235"
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "java",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "data"
+      ],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 51,
@@ -18310,7 +19444,32 @@
           "priority": 4
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "ai",
+        "aws",
+        "cloud",
+        "data",
+        "git",
+        "prod",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "cicd"
+      ],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 52,
@@ -18549,7 +19708,24 @@
           "priority": 4
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "java",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "unverified",
+      "geographyLabel": "Local a confirmar",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 53,
@@ -18860,7 +20036,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 1.0,
+      "requiredSkillIds": [
+        "api",
+        "git",
+        "java",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "spring"
+      ],
+      "geographyScope": "remote_brazil",
+      "geographyLabel": "Remoto no Brasil",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 54,
@@ -19045,7 +20242,26 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "other_stack",
+      "careerAlignmentLabel": "Outra stack",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "java"
+      ],
+      "differentialSkillIds": [
+        "azure",
+        "cloud"
+      ],
+      "geographyScope": "sao_paulo",
+      "geographyLabel": "São Paulo",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 55,
@@ -19274,7 +20490,24 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "java",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 56,
@@ -19619,7 +20852,21 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "context",
+      "careerAlignmentLabel": "Contexto de mercado",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 57,
@@ -19989,7 +21236,32 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 1.0,
+      "requiredSkillIds": [
+        "ai",
+        "aws",
+        "cicd",
+        "cloud",
+        "data",
+        "git",
+        "prod",
+        "python",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "remote_brazil",
+      "geographyLabel": "Remoto no Brasil",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 58,
@@ -20252,7 +21524,23 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "market_context",
+      "marketSegmentLabel": "Contexto de mercado",
+      "careerAlignment": "context",
+      "careerAlignmentLabel": "Contexto de mercado",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 59,
@@ -21010,7 +22298,40 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "api",
+        "auto",
+        "data",
+        "design",
+        "python",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "ai",
+        "api",
+        "auto",
+        "data",
+        "git",
+        "obs",
+        "prod",
+        "python",
+        "sec"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 60,
@@ -21330,7 +22651,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "auto",
+        "data",
+        "python"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 61,
@@ -21822,7 +23164,27 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "data",
+        "python"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 62,
@@ -22235,7 +23597,31 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "api",
+        "auto",
+        "data",
+        "design",
+        "obs",
+        "prod",
+        "python",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 63,
@@ -22531,7 +23917,30 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "obs",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "ai",
+        "data",
+        "python"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 64,
@@ -22953,7 +24362,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "cloud",
+        "data",
+        "sec"
+      ],
+      "differentialSkillIds": [
+        "cloud",
+        "sec"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 65,
@@ -23189,7 +24619,27 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "auto",
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 66,
@@ -23489,7 +24939,31 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "api",
+        "design",
+        "git",
+        "java",
+        "js",
+        "spring",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 67,
@@ -23780,7 +25254,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.385,
+      "requiredSkillIds": [
+        "data"
+      ],
+      "differentialSkillIds": [
+        "auto",
+        "data",
+        "python",
+        "sql"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 68,
@@ -24185,7 +25680,28 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.385,
+      "requiredSkillIds": [
+        "data",
+        "tests"
+      ],
+      "differentialSkillIds": [
+        "auto",
+        "data",
+        "python"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 69,
@@ -24224,7 +25740,7 @@
       "firstSeenAt": "2026-09-09T23:37:00Z",
       "lastVerifiedAt": null,
       "duplicateOf": null,
-      "excluded": false,
+      "excluded": true,
       "lastCheckedAt": "2026-09-12T22:19:49+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
@@ -24366,7 +25882,25 @@
           "priority": 1
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     },
     {
       "id": 72,
@@ -24698,7 +26232,28 @@
           "transferable": false
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "data",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "auto",
+        "data",
+        "python"
+      ],
+      "geographyScope": "outside_scope",
+      "geographyLabel": "Fora de São Paulo",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 73,
@@ -25202,7 +26757,27 @@
           "transferable": false
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "data",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "data",
+        "python"
+      ],
+      "geographyScope": "outside_scope",
+      "geographyLabel": "Fora de São Paulo",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 80,
@@ -25527,7 +27102,30 @@
           "transferable": true
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "auto",
+        "python"
+      ],
+      "differentialSkillIds": [
+        "api",
+        "auto",
+        "data",
+        "java",
+        "sql"
+      ],
+      "geographyScope": "outside_scope",
+      "geographyLabel": "Fora de São Paulo",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 82,
@@ -25836,7 +27434,28 @@
           "transferable": false
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "adjacent",
+      "careerAlignmentLabel": "Adjacente ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "cloud",
+        "data",
+        "sec"
+      ],
+      "differentialSkillIds": [
+        "prod",
+        "sec"
+      ],
+      "geographyScope": "outside_scope",
+      "geographyLabel": "Fora de São Paulo",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 85,
@@ -26192,7 +27811,25 @@
           "transferable": false
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "data",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "outside_scope",
+      "geographyLabel": "Fora de São Paulo",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 87,
@@ -26718,7 +28355,28 @@
           "transferable": false
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "context",
+      "careerAlignmentLabel": "Contexto útil",
+      "careerWeight": 0.105,
+      "requiredSkillIds": [
+        "obs",
+        "prod",
+        "sec"
+      ],
+      "differentialSkillIds": [
+        "data",
+        "sec"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 87,
@@ -27270,7 +28928,34 @@
           "transferable": false
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 0.7,
+      "requiredSkillIds": [
+        "ai",
+        "api",
+        "aws",
+        "cloud",
+        "design",
+        "java",
+        "micro",
+        "python",
+        "spring"
+      ],
+      "differentialSkillIds": [
+        "aws",
+        "cloud"
+      ],
+      "geographyScope": "sao_paulo_unverified",
+      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyEligible": true,
+      "geographyWeight": 0.7,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     },
     {
       "id": 88,
@@ -27457,7 +29142,21 @@
           "transferable": false
         }
       ],
-      "requirementsSchemaVersion": 2
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "market_context",
+      "marketSegmentLabel": "Contexto de mercado",
+      "careerAlignment": "context",
+      "careerAlignmentLabel": "Contexto de mercado",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [],
+      "differentialSkillIds": [],
+      "geographyScope": "outside_scope",
+      "geographyLabel": "Fora de São Paulo",
+      "geographyEligible": false,
+      "geographyWeight": 0.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
     }
   ]
 }

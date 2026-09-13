@@ -47,3 +47,7 @@ test('career goal and learning estimates use the annual 2027 horizon',()=>{
 });
 
 test('pipeline freezes submission context and exposes score calibration',()=>{const app=read('app.js');assert.match(app,/captureMatchSnapshot/);assert.match(app,/O corte de 80% prevê entrevistas/);assert.match(app,/Desempenho por fonte/);assert.match(app,/Desempenho por fila de origem/);});
+
+test('technology market dashboard is reachable and company-based',()=>{const app=read('app.js'),index=read('index.html');assert.match(index,/href="#technologies">Tecnologias/);assert.match(app,/function technologies\(\)/);assert.match(app,/DEMANDA POR EMPRESAS/);assert.match(app,/empresas exigem/);assert.match(app,/citam como diferencial/);assert.match(app,/Outra stack, como Java, permanece na visão ampla/);});
+
+test('vacancy cards and radar expose market classification',()=>{const app=read('app.js');assert.match(app,/marketSegmentLabel/);assert.match(app,/careerAlignmentLabel/);assert.match(app,/geographyLabel/);assert.match(app,/Tipo de vaga/);assert.match(app,/Recorte geográfico/);});

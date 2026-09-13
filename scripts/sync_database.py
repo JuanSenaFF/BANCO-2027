@@ -38,8 +38,8 @@ def main():
     if not url or not key:
         print('Supabase não configurado: catálogo público continua no GitHub Pages.');return
 
-    data=json.loads((ROOT/'jobs.json').read_text())
-    history=json.loads((ROOT/'market-history.json').read_text())
+    data=json.loads((ROOT/'jobs.json').read_text(encoding='utf-8'))
+    history=json.loads((ROOT/'market-history.json').read_text(encoding='utf-8'))
     jobs=data['jobs']
     current_keys={j['key'] for j in jobs}
     current_companies={j['company'] for j in jobs}

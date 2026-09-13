@@ -23,6 +23,7 @@ from official_sources import (
     source_metadata,
     source_priority,
 )
+from market_model import geography
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
@@ -740,6 +741,15 @@ def main() -> int:
 
         max_id += 1
         source_label = candidate_source["name"]
+        location = location_fields(posting, text)
+        search_scope = "São Paulo" if candidate_source["provider"] == "linkedin" else None
+        geo = geography({**location, "searchScopeLocation": search_scope})
+        # The collector is a São Paulo/remote radar. Explicitly external or
+        # unknown official-board locations remain outside; LinkedIn results are
+        # retained with a clear "location to confirm" marker because the query
+        # itself is scoped to São Paulo.
+        if not geo["geographyEligible"]:
+            continue
         job = {
             "id": max_id,
             "company": company or "Empresa não identificada",
@@ -753,7 +763,8 @@ def main() -> int:
             "tags": tags,
             "requirements": requirements[:14],
             "differentials": differentials,
-            **location_fields(posting, text),
+            **location,
+            "searchScopeLocation": search_scope,
             "sourceName": source_label,
             "sourceProvider": candidate_source["provider"],
             "sourceOfficial": candidate_source["official"],
