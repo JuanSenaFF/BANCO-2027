@@ -86,7 +86,7 @@ document.addEventListener('change',async e=>{const t=e.target;try{if(t.dataset.f
 document.addEventListener('submit',e=>{if(e.target.id!=='appForm')return;const f=new FormData(e.target),a=state.applications[e.target.dataset.key],appliedAt=f.get('appliedAt');if(appliedAt)captureMatchSnapshot(a,appliedAt+'T12:00:00Z');});
 document.addEventListener('submit',async e=>{if(!['appForm','loginForm','recoveryForm'].includes(e.target.id))return;e.preventDefault();const b=e.target.querySelector('button');b.disabled=true;try{if(e.target.id==='loginForm')await login(e.target);else if(e.target.id==='recoveryForm')await resetPassword(e.target);else{const f=new FormData(e.target),a=state.applications[e.target.dataset.key];['nextAction','dueDate','feedback','notes'].forEach(k=>a[k]=f.get(k));a.appliedAt=f.get('appliedAt')?f.get('appliedAt')+'T12:00:00Z':null;save();$('#modal').close();route();}}catch(err){const error=$('#recoveryError');if(error&&e.target.id==='recoveryForm')error.textContent=err.message;else toast(err.message);}finally{b.disabled=false;}});
 window.addEventListener('hashchange',()=>{route();window.scrollTo({top:0});});
-document.documentElement.dataset.theme=read('b2027theme',matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+document.documentElement.dataset.theme=read('b2027theme','dark');
 if(renderRecovery())return;
 try{const data=await fetch('jobs.json',{cache:'no-store'}).then(r=>r.ok?r.json():null);if(data){jobs=data.jobs;meta=data.meta||{};}}catch{}
 if(!jobs.length)jobs=D.jobs;
