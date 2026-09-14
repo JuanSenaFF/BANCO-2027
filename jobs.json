@@ -1,22 +1,19 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-13T06:44:23+00:00",
+    "catalogBuiltAt": "2026-09-14T00:25:43+00:00",
     "total": 68,
     "added": 0,
     "verificationAttempted": 61,
-    "lastCheckAttemptAt": "2026-09-13T06:44:23+00:00",
+    "lastCheckAttemptAt": "2026-09-14T00:25:43+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-13T06:43:20Z",
+    "updatedAt": "2026-09-14T00:24:59Z",
     "included": 60,
     "excluded": 8,
     "discovered": 0,
-    "candidateUrls": 494,
+    "candidateUrls": 329,
     "validated": 13,
-    "rejected": 10,
-    "rejectionReasons": {
-      "local fora de São Paulo/remoto ou não confirmado": 9,
-      "senioridade fora do recorte": 1
-    },
+    "rejected": 0,
+    "rejectionReasons": {},
     "needsReview": 0,
     "pendingValidation": 34,
     "officialSources": 6,
@@ -111,7 +108,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -507,7 +504,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -608,7 +605,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java 8+",
@@ -1145,7 +1142,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -1228,7 +1225,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java básico",
@@ -1480,7 +1477,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -1841,7 +1838,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:23+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -1919,7 +1916,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -2198,7 +2195,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -2277,7 +2274,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -2541,7 +2538,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -3042,7 +3039,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:23+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3399,8 +3396,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:23+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3487,7 +3484,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 90,
+      "qualityScore": 65,
       "requirementsStructured": [
         {
           "text": "Java ou Go",
@@ -3890,7 +3887,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Média",
       "sourceName": "Lever",
       "sourceProvider": "lever",
       "sourceOfficial": true,
@@ -3981,7 +3978,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "PHP 8+",
@@ -4465,7 +4462,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -4545,7 +4542,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "SQL intermediário",
@@ -4801,7 +4798,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -5561,7 +5558,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -5861,7 +5858,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -5940,7 +5937,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "SQL Server",
@@ -6222,7 +6219,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média",
+      "confidenceLabel": "Baixa",
       "sourceName": "Agregador",
       "sourceProvider": "aggregator",
       "sourceOfficial": false,
@@ -7380,7 +7377,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:24+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "PHP",
@@ -7849,7 +7846,7 @@
       "lastCheckedAt": "2026-09-06T16:22:24+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média",
+      "confidenceLabel": "Baixa",
       "sourceName": "Página oficial",
       "sourceProvider": "company",
       "sourceOfficial": true,
@@ -7932,7 +7929,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Chatbots",
@@ -8260,7 +8257,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -8330,7 +8327,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Figma",
@@ -8538,7 +8535,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -8606,7 +8603,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -8814,7 +8811,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -8890,7 +8887,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "SQL intermediário/avançado",
@@ -9169,7 +9166,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -9241,7 +9238,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Análise de dados",
@@ -9455,7 +9452,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -9527,7 +9524,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python básico",
@@ -9709,7 +9706,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -9779,7 +9776,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python avançado",
@@ -9979,7 +9976,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -10051,7 +10048,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Excel avançado",
@@ -10337,7 +10334,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -10407,7 +10404,7 @@
       "lastVerifiedAt": "2026-09-06T17:40:31+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -10605,7 +10602,7 @@
       "lastCheckedAt": "2026-09-06T17:40:31+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -10674,7 +10671,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "Python",
@@ -10848,7 +10845,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -10916,7 +10913,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "SQL",
@@ -11124,7 +11121,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -11552,8 +11549,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:23+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -11634,7 +11631,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:25+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 82,
+      "qualityScore": 57,
       "requirementsStructured": [
         {
           "text": "UiPath",
@@ -11884,7 +11881,7 @@
       "lastCheckedAt": "2026-09-06T16:22:25+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Alta",
+      "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -13110,8 +13107,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:23+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -14444,7 +14441,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:23+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14784,8 +14781,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:24+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15142,7 +15139,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:24+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15622,7 +15619,7 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:24+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16273,7 +16270,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:24+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:44+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16585,7 +16582,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:25+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16879,8 +16876,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -17239,7 +17236,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:25+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17439,7 +17436,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:25+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17519,7 +17516,7 @@
       "lastVerifiedAt": "2026-09-06T16:22:26+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 75,
+      "qualityScore": 50,
       "requirementsStructured": [
         {
           "text": "Java",
@@ -17860,7 +17857,7 @@
       "lastCheckedAt": "2026-09-06T16:22:26+00:00",
       "verificationReason": "Anúncio removido (404/410)",
       "validationState": "closed",
-      "confidenceLabel": "Média",
+      "confidenceLabel": "Baixa",
       "sourceName": "Página oficial",
       "sourceProvider": "company",
       "sourceOfficial": true,
@@ -18225,8 +18222,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -18694,8 +18691,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:25+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -19017,7 +19014,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "location": "Brasília, BR",
       "modality": "Remoto",
@@ -19236,8 +19233,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
@@ -19488,7 +19485,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -19934,7 +19931,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
@@ -20626,8 +20623,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -21395,7 +21392,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 57,
       "requirementsStructured": [
@@ -21746,7 +21743,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 57,
       "requirementsStructured": [
@@ -22257,8 +22254,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:45+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -23445,8 +23442,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-14T00:25:46+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -23703,8 +23700,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-14T00:25:46+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -24025,8 +24022,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:46+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -24344,8 +24341,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-14T00:25:46+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -25544,8 +25541,8 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-13T06:44:26+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-14T00:25:46+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "confidenceLabel": "Média",
       "requirementsStructured": [
