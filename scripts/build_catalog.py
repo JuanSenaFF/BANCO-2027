@@ -158,7 +158,7 @@ def run(online=False):
     salary_estimates=json.loads(salary_path.read_text(encoding='utf-8')) if salary_path.exists() else {}
     prior_all={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     records=[]
-    for name in [*(f'data-{i}.js' for i in range(1,7)),'data-auto.js']:records+=parse_jobs(ROOT/name)
+    for name in [*(f'data-{i}.js' for i in range(1,8)),'data-auto.js']:records+=parse_jobs(ROOT/name)
     prior,retired=reconcile_prior_records(prior_all,records)
     out={**prior}
     for j in records:
