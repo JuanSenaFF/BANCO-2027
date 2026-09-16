@@ -40,6 +40,14 @@ jobs:
           python scripts/update_vagas_v2.py
           python scripts/validate_auto.py
           python scripts/build_catalog.py --verify
+      - name: Persistir descobertas das APIs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
+        run: python scripts/candidate_pipeline.py
       - name: Sincronizar banco quando conectado
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
