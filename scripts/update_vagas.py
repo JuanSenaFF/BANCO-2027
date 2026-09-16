@@ -27,7 +27,7 @@ from market_model import geography
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
-BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 7)]
+BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 8)]
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36 Banco2027JobRadar/1.2"
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8"})
@@ -137,6 +137,7 @@ GUPY_CAREERS = [
 
 LEVER_BOARDS = ["https://jobs.lever.co/pismo"]
 SITEMAPS = ["https://remotar.com.br/sitemap.xml", "https://querovagastech.com.br/sitemap.xml"]
+OFFICIAL_COMPANY_SITEMAPS = ["https://carreiras.itau.com.br/sitemap.xml"]
 
 TAG_PATTERNS = {
     "Python": r"\bpython\b|\bpyspark\b",
@@ -409,6 +410,22 @@ def other_source_urls() -> list[str]:
     return out
 
 
+def official_company_urls() -> list[str]:
+    """Discover entry-level postings exposed by official company sitemaps."""
+    out = []
+    entry_slug = re.compile(
+        r"(?:junior|júnior|jr|estagio|estágio|estagiario|estagiário|trainee|assistente)",
+        re.I,
+    )
+    for sitemap in OFFICIAL_COMPANY_SITEMAPS:
+        # Filter slugs before fetching pages so discovery stays bounded.
+        for url in sitemap_job_urls(sitemap, SCAN_LIMIT):
+            if entry_slug.search(url) and url not in out:
+                out.append(url)
+    print(f"[source] Páginas oficiais: {len(out)} URLs")
+    return out
+
+
 def find_jobposting(obj):
     if isinstance(obj, dict):
         if obj.get("@type") == "JobPosting":
@@ -657,7 +674,7 @@ def discover_urls() -> list[str]:
     out = []
     # Strongest evidence first. LinkedIn remains useful for discovering a job,
     # but an official ATS candidate wins when both represent the same posting.
-    for bucket in [official_ats_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
+    for bucket in [official_ats_urls(), official_company_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
         for u in bucket:
             if u not in out:
                 out.append(u)

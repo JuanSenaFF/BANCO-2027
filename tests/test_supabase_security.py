@@ -5,6 +5,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MIGRATION = ROOT / "supabase" / "migrations" / "20260911004234_enforce_least_privilege.sql"
 HARDENING_MIGRATION = ROOT / "supabase" / "migrations" / "20260912065130_harden_claim_refresh.sql"
+PIPELINE_MIGRATION = ROOT / "supabase" / "migrations" / "20260916120000_add_job_candidate_pipeline.sql"
+PIPELINE_HARDENING = ROOT / "supabase" / "migrations" / "20260916123000_harden_job_candidate_pipeline.sql"
 SCHEMA = ROOT / "supabase" / "schema.sql"
 
 CATALOG_TABLES = {
@@ -30,6 +32,8 @@ class SupabaseSecurityContractTests(unittest.TestCase):
     def setUpClass(cls):
         cls.migration = MIGRATION.read_text(encoding="utf-8").lower()
         cls.hardening = HARDENING_MIGRATION.read_text(encoding="utf-8").lower()
+        cls.pipeline = PIPELINE_MIGRATION.read_text(encoding="utf-8").lower()
+        cls.pipeline_hardening = PIPELINE_HARDENING.read_text(encoding="utf-8").lower()
         cls.schema = SCHEMA.read_text(encoding="utf-8").lower()
 
     def test_migration_covers_every_application_table(self):
@@ -85,6 +89,25 @@ class SupabaseSecurityContractTests(unittest.TestCase):
                 "grant execute on function public.claim_refresh() to authenticated",
                 sql,
             )
+
+    def test_ingestion_payloads_are_backend_only(self):
+        for table in ("source_registry", "job_candidates", "source_runs"):
+            self.assertIn(f"alter table public.{table} enable row level security", self.pipeline)
+            self.assertIn(
+                f"revoke all privileges on table public.{table} from anon, authenticated",
+                self.pipeline,
+            )
+            self.assertIn(
+                f"grant select, insert, update, delete on table public.{table} to service_role",
+                self.pipeline,
+            )
+        self.assertNotIn("create policy", self.pipeline)
+
+    def test_candidate_terminal_state_cannot_regress_on_rediscovery(self):
+        self.assertIn("private.preserve_candidate_terminal_state()", self.pipeline_hardening)
+        self.assertIn("old.processing_status in ('published', 'closed')", self.pipeline_hardening)
+        self.assertIn("new.processing_status := old.processing_status", self.pipeline_hardening)
+        self.assertIn("job_candidates_published_job_idx", self.pipeline_hardening)
 
 
 if __name__ == "__main__":
