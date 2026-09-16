@@ -1,32 +1,32 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-16T00:18:19+00:00",
-    "total": 68,
-    "added": 0,
-    "verificationAttempted": 61,
-    "lastCheckAttemptAt": "2026-09-16T00:18:19+00:00",
+    "catalogBuiltAt": "2026-09-16T14:11:35+00:00",
+    "total": 69,
+    "added": 1,
+    "verificationAttempted": 62,
+    "lastCheckAttemptAt": "2026-09-16T14:11:35+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-16T00:17:17Z",
-    "included": 60,
+    "updatedAt": "2026-09-16T14:10:34Z",
+    "included": 61,
     "excluded": 8,
     "discovered": 0,
-    "candidateUrls": 505,
+    "candidateUrls": 471,
     "validated": 13,
     "rejected": 0,
     "rejectionReasons": {},
     "needsReview": 0,
     "pendingValidation": 34,
-    "officialSources": 6,
+    "officialSources": 7,
     "linkedinFallbacks": 53,
-    "officialCoveragePct": 10.0,
+    "officialCoveragePct": 11.5,
     "requirementsNormalization": {
       "schemaVersion": 2,
-      "total": 842,
-      "mandatory": 578,
-      "differential": 242,
-      "eliminatory": 22,
-      "technicalMapped": 547,
-      "unmapped": 178
+      "total": 853,
+      "mandatory": 585,
+      "differential": 245,
+      "eliminatory": 23,
+      "technicalMapped": 552,
+      "unmapped": 182
     },
     "catalogRetiredAt": "2026-09-13T06:44:23+00:00",
     "catalogRetired": 9,
@@ -36,12 +36,12 @@
     "marketModel": {
       "version": 1,
       "segments": {
-        "core_technology": 53,
+        "core_technology": 54,
         "finance_with_technology": 14,
         "market_context": 1
       },
       "alignments": {
-        "target": 54,
+        "target": 55,
         "other_stack": 3,
         "context": 4,
         "adjacent": 7
@@ -50,7 +50,7 @@
         "sao_paulo_unverified": 58,
         "unverified": 7,
         "remote_brazil": 2,
-        "sao_paulo": 1
+        "sao_paulo": 2
       },
       "referenceInstitutions": 45
     },
@@ -1838,8 +1838,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3039,7 +3039,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3396,7 +3396,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -11549,8 +11549,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -13107,7 +13107,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14441,8 +14441,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -14781,8 +14781,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15139,8 +15139,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:19+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15619,7 +15619,7 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:20+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16270,8 +16270,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:20+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -16582,7 +16582,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:20+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16876,8 +16876,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:20+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -17236,7 +17236,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:36+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17436,7 +17436,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -18222,7 +18222,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -18691,7 +18691,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -19014,8 +19014,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "location": "Brasília, BR",
       "modality": "Remoto",
       "publishedAt": "2026-08-28T20:01:19.000Z",
@@ -19104,7 +19104,7 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-13T06:44:26+00:00",
+      "lastVerifiedAt": "2026-09-16T14:11:37+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 92,
@@ -19233,8 +19233,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:37+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-08-30T09:48:55.000Z",
@@ -19485,7 +19485,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -19931,8 +19931,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
       "requirementsStructured": [
         {
@@ -20623,8 +20623,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:21+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -21392,8 +21392,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -21743,8 +21743,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -22254,7 +22254,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -23442,8 +23442,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -23700,7 +23700,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -24022,8 +24022,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T14:11:38+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -24341,7 +24341,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:39+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -25541,7 +25541,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-16T00:18:22+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:39+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "confidenceLabel": "Média",
@@ -26039,6 +26039,354 @@
       "institutionTier": "reference",
       "institutionTierLabel": "Instituição de referência",
       "institutionWeight": 1.25
+    },
+    {
+      "id": 88,
+      "company": "Fundação Itaú",
+      "role": "Analista de Projetos de Tecnologia Júnior",
+      "level": "Júnior",
+      "status": "Ativa",
+      "statusRaw": "Confirmada no portal oficial do Itaú em 2026-09-16",
+      "area": "Engenharia de Software",
+      "stack": "Multistack",
+      "fit": "MUITO ALTA COMO PORTA DE ENTRADA",
+      "tags": [
+        "Python",
+        "JavaScript/Node",
+        "REST/APIs",
+        "Git",
+        "Testes",
+        "Cloud",
+        "Dados/BI",
+        "Automação",
+        "Segurança"
+      ],
+      "requirements": [
+        "Graduação completa em Tecnologia da Informação, Engenharia da Computação, Ciência da Computação, Sistemas de Informação ou áreas afins",
+        "Inglês intermediário",
+        "Conhecimentos básicos em arquitetura de sistemas e cloud",
+        "Levantamento e análise de requisitos, desenho de fluxos e estimativas de desenvolvimento",
+        "Conhecimento de linguagens de programação: Node.js, React, Ruby on Rails, PHP e Python",
+        "Conhecimento de backend, banco de dados, controle de versão e QA",
+        "Desenvolvimento de software com Code Review e análise de bugs e vulnerabilidades",
+        "Conhecimento de dados e boas práticas de engenharia de dados"
+      ],
+      "differentials": [
+        "Gestão de fornecedores de tecnologia",
+        "Melhoria e automação de processos",
+        "Pesquisa e prospecção de novas tecnologias e softwares"
+      ],
+      "location": "São Paulo, São Paulo, Brasil",
+      "modality": null,
+      "publishedAt": "2026-8-3",
+      "validThrough": null,
+      "sourceName": "Página oficial",
+      "sourceProvider": "company",
+      "sourceOfficial": true,
+      "sourcePriority": 5,
+      "sourceStructured": false,
+      "reason": "Vaga júnior da área de TI da Fundação Itaú, alinhada a desenvolvimento, arquitetura, cloud, segurança, dados e automação. É uma porta de entrada relevante, embora exija graduação completa e inglês intermediário.",
+      "source": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
+      "collectedAt": "2026-09-16T12:30:00Z",
+      "lastVerifiedAt": "2026-09-16T14:11:39+00:00",
+      "lastCheckedAt": "2026-09-16T14:11:39+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
+      "auto": false,
+      "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
+      "firstSeenAt": "2026-09-16T12:30:00Z",
+      "sources": [
+        {
+          "url": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
+          "name": "Página oficial",
+          "provider": "company",
+          "official": true,
+          "priority": 5
+        }
+      ],
+      "excluded": false,
+      "validationState": "confirmed",
+      "duplicateOf": null,
+      "qualityScore": 80,
+      "confidenceLabel": "Alta",
+      "requirementsStructured": [
+        {
+          "text": "Graduação completa em Tecnologia da Informação, Engenharia da Computação, Ciência da Computação, Sistemas de Informação ou áreas afins",
+          "position": 0,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Inglês intermediário",
+          "position": 1,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "language",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 2,
+          "levelLabel": "intermediário",
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimentos básicos em arquitetura de sistemas e cloud",
+          "position": 2,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Cloud",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Cloud",
+              "subskill": null,
+              "profileSkillId": "cloud"
+            }
+          ],
+          "profileSkillIds": [
+            "cloud"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Levantamento e análise de requisitos, desenho de fluxos e estimativas de desenvolvimento",
+          "position": 3,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento de linguagens de programação: Node.js, React, Ruby on Rails, PHP e Python",
+          "position": 4,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Python",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Python",
+              "subskill": null,
+              "profileSkillId": "python"
+            },
+            {
+              "skill": "JavaScript",
+              "subskill": "Node.js",
+              "profileSkillId": "js"
+            },
+            {
+              "skill": "JavaScript",
+              "subskill": "React",
+              "profileSkillId": null
+            },
+            {
+              "skill": "PHP",
+              "subskill": null,
+              "profileSkillId": null
+            }
+          ],
+          "profileSkillIds": [
+            "python",
+            "js"
+          ],
+          "unmappedSkillCount": 2,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento de backend, banco de dados, controle de versão e QA",
+          "position": 5,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Banco de dados",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Banco de dados",
+              "subskill": null,
+              "profileSkillId": "sql"
+            }
+          ],
+          "profileSkillIds": [
+            "sql"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Desenvolvimento de software com Code Review e análise de bugs e vulnerabilidades",
+          "position": 6,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Design de software",
+          "subskill": "POO/Design",
+          "skills": [
+            {
+              "skill": "Design de software",
+              "subskill": "POO/Design",
+              "profileSkillId": "design"
+            }
+          ],
+          "profileSkillIds": [
+            "design"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimento de dados e boas práticas de engenharia de dados",
+          "position": 7,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Gestão de fornecedores de tecnologia",
+          "position": 0,
+          "source": "description",
+          "mandatory": false,
+          "requirementType": "differential",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Melhoria e automação de processos",
+          "position": 1,
+          "source": "description",
+          "mandatory": false,
+          "requirementType": "differential",
+          "category": "technical",
+          "skill": "Automação",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
+            }
+          ],
+          "profileSkillIds": [
+            "auto"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Pesquisa e prospecção de novas tecnologias e softwares",
+          "position": 2,
+          "source": "description",
+          "mandatory": false,
+          "requirementType": "differential",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        }
+      ],
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 1.0,
+      "requiredSkillIds": [
+        "cloud",
+        "design",
+        "js",
+        "python",
+        "sql"
+      ],
+      "differentialSkillIds": [
+        "auto"
+      ],
+      "geographyScope": "sao_paulo",
+      "geographyLabel": "São Paulo",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     }
   ]
 }
