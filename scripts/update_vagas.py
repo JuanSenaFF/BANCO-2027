@@ -124,6 +124,7 @@ LINKEDIN_PRIORITY_COMPANIES = [
 ]
 
 GUPY_CAREERS = [
+    "https://pagseguro.gupy.io/",
     "https://anbima.gupy.io/",
     "https://bancorbras.gupy.io/",
     "https://acertapromotora.gupy.io/",
