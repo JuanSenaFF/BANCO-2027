@@ -70,6 +70,38 @@ O status da atualização é observado pelo ID/data da execução do workflow. O
 
 ## Verificação local
 
+### Resolução LinkedIn → Gupy
+
+Durante `build_catalog.py --verify`, vagas não encerradas e não excluídas do
+LinkedIn são procuradas no board Gupy cadastrado da própria empresa. O registro
+de aliases está em `scripts/source_resolution.py` (inclui PagBank/PagSeguro).
+São usados links públicos e dados incorporados `__NEXT_DATA__`; não é necessário
+login, cookies nem uma API privada. O board e os detalhes são reutilizados por
+execução, com limites de 10 páginas por board e 20 detalhes por busca.
+Há um orçamento global de 80 consultas de descoberta/detalhes ou 180 segundos
+antes de iniciar a próxima consulta; requisições em andamento mantêm seus
+timeouts de rede. O que exceder o orçamento fica pendente para outra execução.
+
+A associação exige empresa correta, título semelhante, requisitos suficientes,
+ausência de conflito de cidade/senioridade/PCD, score heurístico mínimo de 85 e
+nenhuma segunda candidata com score de 70 ou mais. Título pesa 55, cobertura de
+requisitos 20, requisitos/responsabilidades 10 e cidade 15; cidade desconhecida
+fica fora do denominador, não é inventada como correspondência. Data não define
+identidade, pois anúncios podem ser republicados. A fonte final ainda precisa
+passar pela verificação conservadora de atividade.
+
+O resultado fica em `sourceResolution` (`resolved`, `review_required`, `pending`
+ou `fetch_failed`), com motivos, candidatas e evidências; o resumo por execução
+fica em `meta.sourceResolution`. Ambiguidades entram na fila de revisão.
+Resolução confirmada troca a URL principal, preserva ambas as fontes e mantém
+`key`, ID e data inicial. Reconstruções offline preservam essa associação.
+
+Falhas de consulta não encerram a vaga do LinkedIn. Listas vazias, limites
+atingidos ou paginação dinâmica detectada sem link público ficam inconclusivos;
+esses boards precisam de um adaptador adicional. Os testes offline não comprovam
+a cobertura atual dos portais. Após publicar, executar a atualização online e
+inspecionar seus motivos antes de contar vagas recuperadas.
+
 ```sh
 pip install requests beautifulsoup4
 python -m unittest discover -s tests -p 'test_*.py'

@@ -25,6 +25,7 @@ from requirements_normalizer import (
     normalization_summary,
 )
 from market_model import annotate as annotate_market
+from source_resolution import resolve_catalog, restore_source
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -127,7 +128,7 @@ def apply_source_preference(jobs):
     """Prefer official representations and retain every discovery URL as lineage."""
     ordered=sorted(
         jobs,
-        key=lambda j:(source_priority(j),bool(j.get('lastVerifiedAt')),str(j.get('firstSeenAt') or '')),
+        key=lambda j:(source_priority(j),j.get('sourceResolution',{}).get('state')=='resolved',bool(j.get('lastVerifiedAt')),str(j.get('firstSeenAt') or '')),
         reverse=True,
     )
     winners=[]
@@ -161,11 +162,15 @@ def run(online=False):
     for name in [*(f'data-{i}.js' for i in range(1,8)),'data-auto.js']:records+=parse_jobs(ROOT/name)
     prior,retired=reconcile_prior_records(prior_all,records)
     out={**prior}
+    resolved_keys={canonical_url(j['source']):j['key'] for j in prior.values()
+                   if j.get('sourceResolution',{}).get('state')=='resolved'}
     for j in records:
-        key=job_key(j)
+        key=resolved_keys.get(job_key(j),job_key(j))
         previous=prior_all.get(key,{})
         # Conteúdo atual da fonte substitui a extração antiga; a evidência de verificação é preservada.
         merged={**previous,**j,'key':key}
+        if previous.get('id') is not None:merged['id']=previous['id']
+        merged=restore_source(previous,merged)
         advertised=merged.get('salary') if merged.get('salary',{}).get('kind')=='advertised' else None
         curated=salary_estimates.get(key)
         if advertised or curated:merged['salary']=advertised or curated
@@ -185,6 +190,12 @@ def run(online=False):
         out[key]=merged
     for key,job in list(out.items()):
         out[key]=annotate_source(job)
+    resolution_counts=None
+    if online:
+        import requests
+        with requests.Session() as session:
+            session.headers['User-Agent']='Banco2027/2.0 (public job source resolution)'
+            resolution_counts=resolve_catalog(list(out.values()),session)
     apply_source_preference(list(out.values()))
     for job in out.values():
         job['excluded']=excluded_by_quality(job)
@@ -209,6 +220,7 @@ def run(online=False):
         annotate_market(j)
     actual_added=len(set(out)-set(prior_all)) if online else old.get('meta',{}).get('added',0)
     meta={**old.get('meta',{}),'catalogBuiltAt':now,'total':len(out),'added':actual_added}
+    if resolution_counts is not None:meta['sourceResolution']=resolution_counts
     if online:meta.update(lastCheckAttemptAt=now,verificationAttempted=len([j for j in out.values() if j.get('lastCheckedAt')]),verificationConfirmed=sum(j.get('lastVerifiedAt','')==now for j in out.values()))
     report_path=ROOT/'collection-report.json'
     if report_path.exists():
