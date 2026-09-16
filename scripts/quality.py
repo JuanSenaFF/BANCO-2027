@@ -1,6 +1,6 @@
 """Conservative extraction and verification. No successful check is inferred from HTTP 200 alone."""
 from __future__ import annotations
-import ipaddress, socket, re, unicodedata, json
+import html, ipaddress, socket, re, unicodedata, json
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
@@ -9,6 +9,49 @@ from rules import VALIDATION_CLOSED, VALIDATION_CONFIRMED, VALIDATION_PENDING
 
 def norm(s):
     return ''.join(c for c in unicodedata.normalize('NFD', str(s or '')) if unicodedata.category(c) != 'Mn').lower()
+
+
+def parse_json_ld(raw):
+    """Parse regular or HTML-entity-encoded JSON-LD without altering valid JSON."""
+    payload = str(raw or '').strip()
+    for _ in range(3):
+        if not payload:
+            return None
+        try:
+            return json.loads(payload)
+        except (ValueError, TypeError):
+            decoded = html.unescape(payload)
+            if decoded == payload:
+                return None
+            payload = decoded
+    return None
+
+
+def find_jobposting(obj):
+    if isinstance(obj, dict):
+        if obj.get('@type') == 'JobPosting':
+            return obj
+        for value in obj.values():
+            posting = find_jobposting(value)
+            if posting:
+                return posting
+    elif isinstance(obj, list):
+        for value in obj:
+            posting = find_jobposting(value)
+            if posting:
+                return posting
+    return None
+
+
+def extract_jobposting(soup):
+    """Return the first JobPosting from any supported JSON-LD representation."""
+    if soup is None:
+        return None
+    for script in soup.select('script[type="application/ld+json"]'):
+        posting = find_jobposting(parse_json_ld(script.string or script.get_text()))
+        if posting:
+            return posting
+    return None
 
 
 def senior_conflict(title, description):
@@ -179,29 +222,7 @@ def verify(job, session):
         text = norm(soup.get_text(' ', strip=True))
         if re.search(r'nao aceita mais candidaturas|no longer accepting applications|vaga (?:foi )?encerrada|job (?:is )?no longer available', text):
             return {**result, 'status': 'Encerrada', 'validationState': VALIDATION_CLOSED, 'lastVerifiedAt': at, 'verificationReason': 'Encerramento explícito'}
-        posting = None
-
-        def find(o):
-            if isinstance(o, dict):
-                if o.get('@type') == 'JobPosting':
-                    return o
-                for v in o.values():
-                    r = find(v)
-                    if r:
-                        return r
-            if isinstance(o, list):
-                for v in o:
-                    r = find(v)
-                    if r:
-                        return r
-
-        for script in soup.select('script[type="application/ld+json"]'):
-            try:
-                posting = find(json.loads(script.get_text()))
-            except (ValueError, TypeError):
-                continue
-            if posting:
-                break
+        posting = extract_jobposting(soup)
         if posting:
             valid = posting.get('validThrough')
             if valid:

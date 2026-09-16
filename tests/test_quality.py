@@ -1,13 +1,21 @@
-import unittest,sys
+import html,json,unittest,sys
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from quality import split_requirements,senior_conflict,verify,requirements_quality_conflict
+from quality import parse_json_ld,split_requirements,senior_conflict,verify,requirements_quality_conflict
 from validate_auto import canonical_url,req_similarity,similarity_band
 from rules import validation_state
 from build_catalog import apply_verification
 from bs4 import BeautifulSoup
 class QualityTests(unittest.TestCase):
+    def test_jsonld_parser_supports_plain_and_encoded_payloads(self):
+        posting={'@type':'JobPosting','title':'Cientista de Dados Jr.'}
+        plain=json.dumps(posting,ensure_ascii=False)
+        self.assertEqual(parse_json_ld(plain),posting)
+        self.assertEqual(parse_json_ld(html.escape(plain)),posting)
+        self.assertEqual(parse_json_ld(html.escape(html.escape(plain))),posting)
+        self.assertIsNone(parse_json_ld('{invalid'))
+
     def test_sections_exclude_benefits(self):
         html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL básico</li><li>Experiência com APIs</li></ul><h2>Diferenciais</h2><ul><li>AWS</li></ul><h2>Benefícios</h2><ul><li>Plano de saúde</li></ul>'
         a,b=split_requirements(None,{'description':html})
@@ -69,4 +77,20 @@ class QualityTests(unittest.TestCase):
     def test_generic200_unknown(self,get):
         get.return_value.status_code=200;get.return_value.text='<h1>Carreiras</h1>'
         self.assertEqual(verify({'source':'https://example.com'},object())['status'],'Possivelmente encerrada')
+    @patch('quality.safe_fetch')
+    def test_entity_encoded_gupy_jsonld_is_confirmed(self,get):
+        posting={
+            '@context':'https://schema.org','@type':'JobPosting','title':'Cientista de Dados Jr.',
+            'validThrough':'2099-12-31','datePosted':'2026-05-25',
+            'description':'<h2>Requisitos e qualificações</h2><ul><li>Python para análise de dados</li><li>SQL para manipulação de dados</li><li>Fundamentos de Machine Learning</li></ul><p>O profissional apoiará análises, modelos preditivos, documentação e iniciativas de risco.</p>',
+        }
+        encoded=html.escape(json.dumps(posting,ensure_ascii=False))
+        get.return_value.status_code=200
+        get.return_value.text=f'<script type="application/ld+json">{encoded}</script>'
+        result=verify({'source':'https://pagseguro.gupy.io/jobs/11175121','role':'Cientista de Dados Jr.'},object())
+        self.assertEqual(result['status'],'Ativa')
+        self.assertEqual(result['validationState'],'confirmed')
+        self.assertEqual(result['verificationReason'],'JobPosting correspondente e válido')
+        self.assertEqual(result['validThrough'],'2099-12-31')
+        self.assertTrue({'Python para análise de dados','SQL para manipulação de dados','Fundamentos de Machine Learning'}.issubset(result['requirements']))
 if __name__=='__main__':unittest.main()

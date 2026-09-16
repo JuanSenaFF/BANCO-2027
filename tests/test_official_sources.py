@@ -1,3 +1,5 @@
+import html
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -18,6 +20,22 @@ import update_vagas
 
 
 class OfficialSourceTests(unittest.TestCase):
+    @patch("update_vagas.safe_get")
+    def test_fetch_page_reads_entity_encoded_gupy_jsonld(self, safe_get):
+        posting = {
+            "@type": "JobPosting",
+            "title": "Cientista de Dados Jr.",
+            "description": "<p>Python, SQL e Machine Learning.</p>",
+        }
+        safe_get.return_value.status_code = 200
+        safe_get.return_value.text = (
+            '<script type="application/ld+json">'
+            + html.escape(json.dumps(posting, ensure_ascii=False))
+            + '</script>'
+        )
+        _, extracted = update_vagas.fetch_page("https://pagseguro.gupy.io/jobs/11175121")
+        self.assertEqual(extracted, posting)
+
     def test_source_authority_separates_official_from_discovery(self):
         greenhouse = source_metadata("https://job-boards.greenhouse.io/stone/jobs/123")
         linkedin = source_metadata("https://www.linkedin.com/jobs/view/123456789")
