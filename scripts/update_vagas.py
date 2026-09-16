@@ -14,7 +14,7 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
-from quality import split_requirements, senior_conflict, location_fields
+from quality import extract_jobposting, split_requirements, senior_conflict, location_fields
 from rules import DUPLICATE_SIMILARITY
 from official_sources import (
     collect_official_postings,
@@ -426,22 +426,6 @@ def official_company_urls() -> list[str]:
     return out
 
 
-def find_jobposting(obj):
-    if isinstance(obj, dict):
-        if obj.get("@type") == "JobPosting":
-            return obj
-        for v in obj.values():
-            found = find_jobposting(v)
-            if found:
-                return found
-    elif isinstance(obj, list):
-        for v in obj:
-            found = find_jobposting(v)
-            if found:
-                return found
-    return None
-
-
 def linkedin_job_id(url: str) -> str | None:
     ids = re.findall(r"(\d{7,})", url)
     return ids[-1] if ids else None
@@ -461,15 +445,7 @@ def fetch_page(url: str) -> tuple[BeautifulSoup | None, dict | None]:
     if not r or r.status_code >= 400:
         return None, None
     soup = BeautifulSoup(r.text, "html.parser")
-    posting = None
-    for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
-        try:
-            posting = find_jobposting(json.loads(script.string or script.get_text()))
-            if posting:
-                break
-        except Exception:
-            continue
-    return soup, posting
+    return soup, extract_jobposting(soup)
 
 
 def text_from_posting(posting: dict | None, soup: BeautifulSoup | None) -> str:
