@@ -31,6 +31,16 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertGreater(greenhouse["priority"], linkedin["priority"])
         self.assertGreater(linkedin["priority"], aggregator["priority"])
 
+    @patch("update_vagas.sitemap_job_urls")
+    def test_itau_sitemap_discovers_only_entry_level_jobs(self, sitemap_job_urls):
+        sitemap_job_urls.return_value = [
+            "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
+            "https://carreiras.itau.com.br/vaga/sao-paulo/engenharia-de-software-senior/35299/12345678",
+        ]
+        self.assertEqual(update_vagas.official_company_urls(), [
+            "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
+        ])
+
     def test_greenhouse_adapter_normalizes_public_feed(self):
         board = Board("Stone", "greenhouse", "stone")
         payload = {"jobs": [{
