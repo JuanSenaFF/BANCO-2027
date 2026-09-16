@@ -1,32 +1,32 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-16T20:17:48+00:00",
-    "total": 69,
-    "added": 0,
-    "verificationAttempted": 62,
-    "lastCheckAttemptAt": "2026-09-16T20:17:48+00:00",
+    "catalogBuiltAt": "2026-09-16T20:54:34+00:00",
+    "total": 70,
+    "added": 1,
+    "verificationAttempted": 63,
+    "lastCheckAttemptAt": "2026-09-16T20:54:34+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-16T20:16:45Z",
+    "updatedAt": "2026-09-16T20:53:30Z",
     "included": 61,
-    "excluded": 8,
-    "discovered": 0,
-    "candidateUrls": 492,
-    "validated": 13,
+    "excluded": 9,
+    "discovered": 1,
+    "candidateUrls": 436,
+    "validated": 14,
     "rejected": 0,
     "rejectionReasons": {},
     "needsReview": 0,
     "pendingValidation": 34,
-    "officialSources": 7,
-    "linkedinFallbacks": 53,
-    "officialCoveragePct": 11.5,
+    "officialSources": 8,
+    "linkedinFallbacks": 52,
+    "officialCoveragePct": 13.1,
     "requirementsNormalization": {
       "schemaVersion": 2,
-      "total": 853,
-      "mandatory": 585,
+      "total": 864,
+      "mandatory": 594,
       "differential": 245,
-      "eliminatory": 23,
-      "technicalMapped": 552,
-      "unmapped": 182
+      "eliminatory": 25,
+      "technicalMapped": 560,
+      "unmapped": 183
     },
     "catalogRetiredAt": "2026-09-13T06:44:23+00:00",
     "catalogRetired": 9,
@@ -36,12 +36,12 @@
     "marketModel": {
       "version": 1,
       "segments": {
-        "core_technology": 54,
+        "core_technology": 55,
         "finance_with_technology": 14,
         "market_context": 1
       },
       "alignments": {
-        "target": 55,
+        "target": 56,
         "other_stack": 3,
         "context": 4,
         "adjacent": 7
@@ -49,7 +49,7 @@
       "geographies": {
         "sao_paulo_unverified": 58,
         "unverified": 7,
-        "remote_brazil": 2,
+        "remote_brazil": 3,
         "sao_paulo": 2
       },
       "referenceInstitutions": 45
@@ -1838,7 +1838,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3039,7 +3039,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3396,7 +3396,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -11549,7 +11549,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -13107,7 +13107,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14441,8 +14441,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -14781,7 +14781,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15139,7 +15139,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:49+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15619,8 +15619,8 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T20:54:36+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -16270,7 +16270,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:50+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:36+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -16582,8 +16582,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:50+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T20:54:36+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -16876,8 +16876,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T20:54:36+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -17236,7 +17236,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:50+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:36+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17436,7 +17436,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:50+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -18222,7 +18222,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:50+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -18691,7 +18691,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:51+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -19014,7 +19014,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:51+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "location": "Brasília, BR",
       "modality": "Remoto",
@@ -19233,7 +19233,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:51+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
@@ -19485,8 +19485,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-16T20:17:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -19929,8 +19929,8 @@
       "key": "linkedin:4461407803",
       "firstSeenAt": "2026-09-07T15:30:24Z",
       "lastVerifiedAt": null,
-      "duplicateOf": null,
-      "excluded": false,
+      "duplicateOf": "bancorbras.gupy.io:12424215",
+      "excluded": true,
       "lastCheckedAt": "2026-09-16T20:17:51+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 60,
@@ -20623,8 +20623,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -21392,8 +21392,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -21743,8 +21743,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -22254,7 +22254,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:52+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -23442,8 +23442,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:52+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -23700,7 +23700,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:52+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "requirementsStructured": [
@@ -24022,7 +24022,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:52+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -24341,8 +24341,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-16T20:17:52+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -25541,8 +25541,8 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-16T20:17:52+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-16T20:54:37+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "confidenceLabel": "Média",
       "requirementsStructured": [
@@ -26088,8 +26088,8 @@
       "reason": "Vaga júnior da área de TI da Fundação Itaú, alinhada a desenvolvimento, arquitetura, cloud, segurança, dados e automação. É uma porta de entrada relevante, embora exija graduação completa e inglês intermediário.",
       "source": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
       "collectedAt": "2026-09-16T12:30:00Z",
-      "lastVerifiedAt": "2026-09-16T20:17:52+00:00",
-      "lastCheckedAt": "2026-09-16T20:17:52+00:00",
+      "lastVerifiedAt": "2026-09-16T20:54:38+00:00",
+      "lastCheckedAt": "2026-09-16T20:54:38+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "auto": false,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
@@ -26382,6 +26382,414 @@
       ],
       "geographyScope": "sao_paulo",
       "geographyLabel": "São Paulo",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
+    },
+    {
+      "id": 97,
+      "company": "Grupo Bancorbrás",
+      "role": "CIENTISTA DE DADOS JÚNIOR",
+      "level": "Júnior / entrada",
+      "status": "Ativa",
+      "statusRaw": "Coleta automática em 2026-09-16 — Gupy",
+      "area": "Dados & Analytics",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "SQL",
+        "Git",
+        "Testes",
+        "AWS",
+        "CI/CD",
+        "Cloud",
+        "Dados/BI",
+        "IA/ML",
+        "Segurança",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Ensino Superior Completo em Tecnologia da Informação, Ciência de Dados ou áreas;",
+        "Conhecimentos em Estatística Descritiva, distribuições probabilísticas, testes de hipótese, estatística aplicada a Machine Learning;",
+        "Conhecimento sólido em linguagem de programação SQL e Python e domínio no uso de bibliotecas como Pandas, Scikit-Learn, Stats Models e PySpark;",
+        "Interação com bancos de dados, extração, transformação e manipulação de dados usando a linguagem SQL;",
+        "Familiaridade em versionamento de código (Git);",
+        "Experiência em Cloud Computing (AWS);",
+        "Conhecimento em deploy de modelos;",
+        "Conhecimento em IA generativa.",
+        "Cursos ou pós-graduação na Área de Ciência de Dados;",
+        "Conhecimento em NLP;",
+        "Conhecimento em fluxos de CI/CD."
+      ],
+      "differentials": [],
+      "location": "Brasil",
+      "modality": "Remoto",
+      "publishedAt": "2026-09-04",
+      "validThrough": "2026-10-05",
+      "searchScopeLocation": null,
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Gupy. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://bancorbras.gupy.io/jobs/12424215?jobBoardSource=gupy_public_page",
+      "collectedAt": "2026-09-16T20:53:30Z",
+      "auto": true,
+      "supersedesSource": "https://www.linkedin.com/jobs/view/4461407803",
+      "key": "bancorbras.gupy.io:12424215",
+      "firstSeenAt": "2026-09-16T20:53:30Z",
+      "lastVerifiedAt": "2026-09-16T20:54:38+00:00",
+      "sources": [
+        {
+          "url": "https://bancorbras.gupy.io/jobs/12424215?jobBoardSource=gupy_public_page",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        },
+        {
+          "url": "https://www.linkedin.com/jobs/view/4461407803",
+          "name": "LinkedIn",
+          "provider": "linkedin",
+          "official": false,
+          "priority": 1
+        }
+      ],
+      "excluded": false,
+      "validationState": "confirmed",
+      "duplicateOf": null,
+      "sourceAliases": [
+        "linkedin:4461407803"
+      ],
+      "lastCheckedAt": "2026-09-16T20:54:38+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
+      "qualityScore": 98,
+      "confidenceLabel": "Alta",
+      "requirementsStructured": [
+        {
+          "text": "Ensino Superior Completo em Tecnologia da Informação, Ciência de Dados ou áreas;",
+          "position": 0,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimentos em Estatística Descritiva, distribuições probabilísticas, testes de hipótese, estatística aplicada a Machine Learning;",
+          "position": 1,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Testes",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Testes",
+              "subskill": null,
+              "profileSkillId": "tests"
+            },
+            {
+              "skill": "IA/ML",
+              "subskill": null,
+              "profileSkillId": "ai"
+            },
+            {
+              "skill": "Dados/BI",
+              "subskill": null,
+              "profileSkillId": "data"
+            }
+          ],
+          "profileSkillIds": [
+            "tests",
+            "ai",
+            "data"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimento sólido em linguagem de programação SQL e Python e domínio no uso de bibliotecas como Pandas, Scikit-Learn, Stats Models e PySpark;",
+          "position": 2,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Dados/BI",
+          "subskill": "Spark",
+          "skills": [
+            {
+              "skill": "Dados/BI",
+              "subskill": "Spark",
+              "profileSkillId": "data"
+            },
+            {
+              "skill": "Python",
+              "subskill": null,
+              "profileSkillId": "python"
+            },
+            {
+              "skill": "SQL",
+              "subskill": null,
+              "profileSkillId": "sql"
+            }
+          ],
+          "profileSkillIds": [
+            "data",
+            "python",
+            "sql"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": 3,
+          "levelLabel": "avançado",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Interação com bancos de dados, extração, transformação e manipulação de dados usando a linguagem SQL;",
+          "position": 3,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Dados/BI",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Dados/BI",
+              "subskill": null,
+              "profileSkillId": "data"
+            },
+            {
+              "skill": "SQL",
+              "subskill": null,
+              "profileSkillId": "sql"
+            }
+          ],
+          "profileSkillIds": [
+            "data",
+            "sql"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Familiaridade em versionamento de código (Git);",
+          "position": 4,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Controle de versão",
+          "subskill": "Git",
+          "skills": [
+            {
+              "skill": "Controle de versão",
+              "subskill": "Git",
+              "profileSkillId": "git"
+            }
+          ],
+          "profileSkillIds": [
+            "git"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Experiência em Cloud Computing (AWS);",
+          "position": 5,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "AWS",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "AWS",
+              "subskill": null,
+              "profileSkillId": "aws"
+            },
+            {
+              "skill": "Cloud",
+              "subskill": null,
+              "profileSkillId": "cloud"
+            }
+          ],
+          "profileSkillIds": [
+            "aws",
+            "cloud"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimento em deploy de modelos;",
+          "position": 6,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Produção",
+          "subskill": "Troubleshooting",
+          "skills": [
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            }
+          ],
+          "profileSkillIds": [
+            "prod"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimento em IA generativa.",
+          "position": 7,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "IA/ML",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "IA/ML",
+              "subskill": null,
+              "profileSkillId": "ai"
+            }
+          ],
+          "profileSkillIds": [
+            "ai"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Cursos ou pós-graduação na Área de Ciência de Dados;",
+          "position": 8,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento em NLP;",
+          "position": 9,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento em fluxos de CI/CD.",
+          "position": 10,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "CI/CD",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "CI/CD",
+              "subskill": null,
+              "profileSkillId": "cicd"
+            }
+          ],
+          "profileSkillIds": [
+            "cicd"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        }
+      ],
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 1.0,
+      "requiredSkillIds": [
+        "ai",
+        "aws",
+        "cicd",
+        "cloud",
+        "data",
+        "git",
+        "prod",
+        "python",
+        "sql",
+        "tests"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "remote_brazil",
+      "geographyLabel": "Remoto no Brasil",
       "geographyEligible": true,
       "geographyWeight": 1.0,
       "institutionTier": "ecosystem",
