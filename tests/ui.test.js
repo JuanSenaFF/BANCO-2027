@@ -73,3 +73,4 @@ test('Spell-inspired text and label behavior stays accessible and motion-safe',(
   assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
   assert.doesNotMatch(css,/transition:\s*all/);
 });
+test('profile captures structured evidence and uses the evidence engine',()=>{const app=read('app.js'),engine=read('engine.js');assert.match(app,/profile:profileEvidence/);assert.match(app,/Projeto ou repositório/);assert.match(app,/Última utilização/);assert.match(app,/evidenceForm/);assert.match(engine,/function evidenceLevel/);});
