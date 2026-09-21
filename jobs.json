@@ -1,16 +1,16 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-21T13:43:09+00:00",
+    "catalogBuiltAt": "2026-09-21T16:14:09+00:00",
     "total": 72,
     "added": 0,
     "verificationAttempted": 65,
-    "lastCheckAttemptAt": "2026-09-21T13:43:09+00:00",
+    "lastCheckAttemptAt": "2026-09-21T16:14:09+00:00",
     "verificationConfirmed": 0,
-    "updatedAt": "2026-09-21T13:42:06Z",
+    "updatedAt": "2026-09-21T16:13:13Z",
     "included": 63,
     "excluded": 9,
     "discovered": 2,
-    "candidateUrls": 527,
+    "candidateUrls": 484,
     "validated": 17,
     "rejected": 2,
     "rejectionReasons": {
@@ -1845,8 +1845,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:13+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -1885,7 +1885,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382569+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682153+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/analista-engenharia-de-qualidade-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-b3-4391212887/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -3053,8 +3053,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:13+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3101,7 +3101,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382599+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682182+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-backend-developer-pcd-at-getnet-brasil-4442931588/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -3417,8 +3417,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:13+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3458,7 +3458,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382612+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682195+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-full-stack-developer-at-getnet-brasil-4444244513/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -11577,8 +11577,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:13+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -11623,7 +11623,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382675+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682257+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenharia-software-engineer-ii-c%23-at-stone-4404512245/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -13142,7 +13142,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:13+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -13188,7 +13188,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382696+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682279+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/software-engineer-platform-services-at-mercado-livre-4458415021/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -14483,7 +14483,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:13+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14522,7 +14522,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382712+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682294+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-junior-full-stack-it-accounting-clients-finance-report-at-btg-pactual-4462892770/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -14830,7 +14830,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:13+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14872,7 +14872,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382722+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682304+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenharia-de-software-back-end-assistente-e-j%C3%BAnior-vaga-exclusiva-para-pcd-at-xp-inc-4310494599/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -15195,7 +15195,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:17+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:14+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15238,7 +15238,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:09.382732+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682314+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/analista-de-automa%C3%A7%C3%A3o-e-ia-j%C3%BAnior-%E2%80%93-analytics-processos-controles-at-c6-bank-4414036029/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -15682,8 +15682,8 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:18+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15729,7 +15729,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-21T13:43:09.382741+00:00",
+        "checkedAt": "2026-09-21T16:14:09.682323+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-java-at-pagbank-4436036193/",
         "candidates": [
           {
@@ -15743,16 +15743,6 @@
             "location": "Brasil"
           },
           {
-            "url": "https://pagseguro.gupy.io/jobs/11882547",
-            "score": 67.5,
-            "title": "Engenheiro de Software Sr. (Java)",
-            "titleSimilarity": 0.906,
-            "requirementCoverage": 0.25,
-            "descriptionCoverage": 0.25,
-            "requirementsConfirmed": false,
-            "location": "São Paulo, São Paulo, Brasil"
-          },
-          {
             "url": "https://pagseguro.gupy.io/jobs/11864583",
             "score": 67.5,
             "title": "Engenheiro de Software Sr. (Java)",
@@ -15761,6 +15751,16 @@
             "descriptionCoverage": 0.25,
             "requirementsConfirmed": false,
             "location": "SAO PAULO, São Paulo, Brasil"
+          },
+          {
+            "url": "https://pagseguro.gupy.io/jobs/11882547",
+            "score": 67.5,
+            "title": "Engenheiro de Software Sr. (Java)",
+            "titleSimilarity": 0.906,
+            "requirementCoverage": 0.25,
+            "descriptionCoverage": 0.25,
+            "requirementsConfirmed": false,
+            "location": "São Paulo, São Paulo, Brasil"
           },
           {
             "url": "https://pagseguro.gupy.io/jobs/11258042",
@@ -16391,8 +16391,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:18+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "review",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -16442,7 +16442,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-21T13:43:13.303506+00:00",
+        "checkedAt": "2026-09-21T16:14:11.504484+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-dados-at-pagbank-4460025351/",
         "candidates": [
           {
@@ -16764,8 +16764,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:18+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "review",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -16804,7 +16804,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-09-21T13:43:13.734806+00:00",
+        "checkedAt": "2026-09-21T16:14:11.886134+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-sistemas-jr-sre-at-pagbank-4428707419/",
         "candidates": [
           {
@@ -17079,8 +17079,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:18+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:14+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -17117,7 +17117,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-21T13:43:14.381921+00:00",
+        "checkedAt": "2026-09-21T16:14:12.269222+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-qualidade-de-software-jr-at-pagbank-4425839238/",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -17159,7 +17159,7 @@
       "source": "https://pagseguro.gupy.io/jobs/11175121",
       "key": "linkedin:4418200168",
       "firstSeenAt": null,
-      "lastVerifiedAt": "2026-09-21T13:43:18+00:00",
+      "lastVerifiedAt": "2026-09-21T16:14:14+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 93,
@@ -17392,7 +17392,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:18+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:14+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "validationState": "confirmed",
       "confidenceLabel": "Alta",
@@ -17618,8 +17618,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:18+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:15+00:00",
+      "verificationReason": "Falha de validação: ReadTimeout",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "Página oficial",
@@ -18404,8 +18404,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:19+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:15+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -18447,7 +18447,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:14.588299+00:00",
+        "checkedAt": "2026-09-21T16:14:12.485426+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/desenvolvedor-a-j%C3%BAnior-%E2%80%93-engenharia-projetos-t%C3%A9cnicos-at-bmp-4461307880",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -18880,7 +18880,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:19+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:15+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -18929,7 +18929,7 @@
       "institutionWeight": 0.75,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:14.588337+00:00",
+        "checkedAt": "2026-09-21T16:14:12.485457+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/desenvolvedor-a-backend-java-j%C3%BAnior-at-nava-tech-for-business-4461787817",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -19307,7 +19307,7 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-21T13:43:19+00:00",
+      "lastVerifiedAt": "2026-09-21T16:14:15+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 92,
@@ -19436,7 +19436,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-21T13:43:19+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:15+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
       "modality": "Presencial",
@@ -19479,7 +19479,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:14.588372+00:00",
+        "checkedAt": "2026-09-21T16:14:12.485485+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-assistente-e-j%C3%BAnior-at-xp-inc-4244881112",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -20587,7 +20587,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:19+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:15+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -21310,7 +21310,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-21T13:43:14.588414+00:00",
+        "checkedAt": "2026-09-21T16:14:12.485528+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4458272564",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -21363,8 +21363,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:19+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-21T16:14:15+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -21658,7 +21658,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.307022+00:00",
+        "checkedAt": "2026-09-21T16:14:13.155914+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4460341533",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -21721,8 +21721,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -22177,7 +22177,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.307059+00:00",
+        "checkedAt": "2026-09-21T16:14:13.155945+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462005969",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -22239,8 +22239,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -22621,7 +22621,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-21T13:43:16.307081+00:00",
+        "checkedAt": "2026-09-21T16:14:13.155982+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4458259681",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -23434,7 +23434,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -23646,7 +23646,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.675316+00:00",
+        "checkedAt": "2026-09-21T16:14:13.394270+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4416987650",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -23699,8 +23699,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "requirementsStructured": [
         {
@@ -23977,7 +23977,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.675352+00:00",
+        "checkedAt": "2026-09-21T16:14:13.394298+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4464141238",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -24028,7 +24028,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -24296,7 +24296,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.675371+00:00",
+        "checkedAt": "2026-09-21T16:14:13.394317+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462189181",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -24354,7 +24354,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -24729,7 +24729,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.675394+00:00",
+        "checkedAt": "2026-09-21T16:14:13.394335+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462743222",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -25561,8 +25561,8 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "confidenceLabel": "Média",
       "requirementsStructured": [
@@ -26061,7 +26061,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.675433+00:00",
+        "checkedAt": "2026-09-21T16:14:13.394371+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4465896330",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -26103,9 +26103,9 @@
         "Melhoria e automação de processos",
         "Pesquisa e prospecção de novas tecnologias e softwares"
       ],
-      "location": "São Paulo, São Paulo, Brasil",
+      "location": "São Paulo, SP",
       "modality": null,
-      "publishedAt": "2026-8-3",
+      "publishedAt": null,
       "validThrough": null,
       "sourceName": "Página oficial",
       "sourceProvider": "company",
@@ -26116,8 +26116,8 @@
       "source": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
       "collectedAt": "2026-09-16T12:30:00Z",
       "lastVerifiedAt": "2026-09-21T13:43:20+00:00",
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
+      "verificationReason": "Falha de validação: ReadTimeout",
       "auto": false,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
       "firstSeenAt": "2026-09-16T12:30:00Z",
@@ -26469,7 +26469,7 @@
       "supersedesSource": "https://www.linkedin.com/jobs/view/4461407803",
       "key": "bancorbras.gupy.io:12424215",
       "firstSeenAt": "2026-09-16T20:53:30Z",
-      "lastVerifiedAt": "2026-09-21T13:43:20+00:00",
+      "lastVerifiedAt": "2026-09-21T16:14:16+00:00",
       "sources": [
         {
           "url": "https://bancorbras.gupy.io/jobs/12424215?jobBoardSource=gupy_public_page",
@@ -26492,7 +26492,7 @@
       "sourceAliases": [
         "linkedin:4461407803"
       ],
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 98,
       "confidenceLabel": "Alta",
@@ -26863,7 +26863,7 @@
       "auto": true,
       "key": "pagseguro.gupy.io:11559783",
       "firstSeenAt": "2026-09-16T21:41:56Z",
-      "lastVerifiedAt": "2026-09-21T13:43:20+00:00",
+      "lastVerifiedAt": "2026-09-21T16:14:16+00:00",
       "sources": [
         {
           "url": "https://pagseguro.gupy.io/jobs/11559783?jobBoardSource=gupy_public_page",
@@ -26876,7 +26876,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:16+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
@@ -27069,7 +27069,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
+      "lastCheckedAt": "2026-09-21T16:14:17+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "confidenceLabel": "Média",
@@ -27427,14 +27427,14 @@
       "validationState": "pending",
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-21T13:43:16.675487+00:00",
+        "checkedAt": "2026-09-21T16:14:13.394421+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4465374376",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-21T13:43:20+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-21T16:14:17+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "confidenceLabel": "Média",
       "requirementsStructured": [
