@@ -8,11 +8,13 @@ on:
     paths:
       - '.github/workflows/update-vagas.yml'
       - 'scripts/**'
+      - 'supabase/**'
+      - 'tests/**'
 permissions:
   contents: write
 concurrency:
   group: atualizar-vagas
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   atualizar:
     runs-on: ubuntu-latest
@@ -21,6 +23,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -38,6 +41,14 @@ jobs:
           python scripts/update_vagas_v2.py
           python scripts/validate_auto.py
           python scripts/build_catalog.py --verify
+      - name: Persistir descobertas das APIs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
+        run: python scripts/candidate_pipeline.py
       - name: Sincronizar banco quando conectado
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -50,8 +61,12 @@ jobs:
           git add data-auto.js jobs.json market-history.json collection-report.json
           if ! git diff --cached --quiet; then
             git commit -m "Atualiza e verifica vagas; preserva histórico"
-            git pull --rebase origin main
-            git push
+            git fetch origin main
+            if [ "$(git rev-parse HEAD^)" != "$(git rev-parse origin/main)" ]; then
+              echo "::error::A branch main avançou durante a coleta. Execute o workflow novamente."
+              exit 1
+            fi
+            git push origin HEAD:main
           fi
       - name: Construir site público
         run: python scripts/build_site.py

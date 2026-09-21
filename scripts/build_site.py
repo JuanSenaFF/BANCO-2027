@@ -2,7 +2,7 @@
 import os,json,shutil
 from pathlib import Path
 root=Path(__file__).resolve().parents[1];out=root/'dist';out.mkdir(exist_ok=True)
-for name in ['index.html','styles.css','app.js','engine.js','skills.js','config.js','data.js','data-auto.js','jobs.json','market-history.json',*(f'data-{i}.js' for i in range(1,7))]:
+for name in ['index.html','styles.css','design.js','app.js','engine.js','skills.js','config.js','data.js','data-auto.js','jobs.json','market-history.json',*(f'data-{i}.js' for i in range(1,8))]:
     shutil.copy2(root/name,out/name)
 public_key=os.getenv('SUPABASE_PUBLISHABLE_KEY') or os.getenv('SUPABASE_ANON_KEY')
 if os.getenv('SUPABASE_URL') and public_key:

@@ -14,7 +14,7 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
-from quality import split_requirements, senior_conflict, location_fields
+from quality import extract_jobposting, split_requirements, senior_conflict, location_fields
 from rules import DUPLICATE_SIMILARITY
 from official_sources import (
     collect_official_postings,
@@ -23,10 +23,11 @@ from official_sources import (
     source_metadata,
     source_priority,
 )
+from market_model import geography
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
-BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 7)]
+BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 8)]
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36 Banco2027JobRadar/1.2"
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8"})
@@ -123,6 +124,7 @@ LINKEDIN_PRIORITY_COMPANIES = [
 ]
 
 GUPY_CAREERS = [
+    "https://pagseguro.gupy.io/",
     "https://anbima.gupy.io/",
     "https://bancorbras.gupy.io/",
     "https://acertapromotora.gupy.io/",
@@ -136,6 +138,7 @@ GUPY_CAREERS = [
 
 LEVER_BOARDS = ["https://jobs.lever.co/pismo"]
 SITEMAPS = ["https://remotar.com.br/sitemap.xml", "https://querovagastech.com.br/sitemap.xml"]
+OFFICIAL_COMPANY_SITEMAPS = ["https://carreiras.itau.com.br/sitemap.xml"]
 
 TAG_PATTERNS = {
     "Python": r"\bpython\b|\bpyspark\b",
@@ -408,20 +411,20 @@ def other_source_urls() -> list[str]:
     return out
 
 
-def find_jobposting(obj):
-    if isinstance(obj, dict):
-        if obj.get("@type") == "JobPosting":
-            return obj
-        for v in obj.values():
-            found = find_jobposting(v)
-            if found:
-                return found
-    elif isinstance(obj, list):
-        for v in obj:
-            found = find_jobposting(v)
-            if found:
-                return found
-    return None
+def official_company_urls() -> list[str]:
+    """Discover entry-level postings exposed by official company sitemaps."""
+    out = []
+    entry_slug = re.compile(
+        r"(?:junior|júnior|jr|estagio|estágio|estagiario|estagiário|trainee|assistente)",
+        re.I,
+    )
+    for sitemap in OFFICIAL_COMPANY_SITEMAPS:
+        # Filter slugs before fetching pages so discovery stays bounded.
+        for url in sitemap_job_urls(sitemap, SCAN_LIMIT):
+            if entry_slug.search(url) and url not in out:
+                out.append(url)
+    print(f"[source] Páginas oficiais: {len(out)} URLs")
+    return out
 
 
 def linkedin_job_id(url: str) -> str | None:
@@ -443,15 +446,7 @@ def fetch_page(url: str) -> tuple[BeautifulSoup | None, dict | None]:
     if not r or r.status_code >= 400:
         return None, None
     soup = BeautifulSoup(r.text, "html.parser")
-    posting = None
-    for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
-        try:
-            posting = find_jobposting(json.loads(script.string or script.get_text()))
-            if posting:
-                break
-        except Exception:
-            continue
-    return soup, posting
+    return soup, extract_jobposting(soup)
 
 
 def text_from_posting(posting: dict | None, soup: BeautifulSoup | None) -> str:
@@ -656,7 +651,7 @@ def discover_urls() -> list[str]:
     out = []
     # Strongest evidence first. LinkedIn remains useful for discovering a job,
     # but an official ATS candidate wins when both represent the same posting.
-    for bucket in [official_ats_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
+    for bucket in [official_ats_urls(), official_company_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
         for u in bucket:
             if u not in out:
                 out.append(u)
@@ -740,6 +735,15 @@ def main() -> int:
 
         max_id += 1
         source_label = candidate_source["name"]
+        location = location_fields(posting, text)
+        search_scope = "São Paulo" if candidate_source["provider"] == "linkedin" else None
+        geo = geography({**location, "searchScopeLocation": search_scope})
+        # The collector is a São Paulo/remote radar. Explicitly external or
+        # unknown official-board locations remain outside; LinkedIn results are
+        # retained with a clear "location to confirm" marker because the query
+        # itself is scoped to São Paulo.
+        if not geo["geographyEligible"]:
+            continue
         job = {
             "id": max_id,
             "company": company or "Empresa não identificada",
@@ -753,7 +757,8 @@ def main() -> int:
             "tags": tags,
             "requirements": requirements[:14],
             "differentials": differentials,
-            **location_fields(posting, text),
+            **location,
+            "searchScopeLocation": search_scope,
             "sourceName": source_label,
             "sourceProvider": candidate_source["provider"],
             "sourceOfficial": candidate_source["official"],

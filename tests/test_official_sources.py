@@ -1,3 +1,5 @@
+import html
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -5,7 +7,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from build_catalog import apply_source_preference
+from build_catalog import apply_source_preference, reconcile_prior_records
 from official_sources import (
     Board,
     collect_official_postings,
@@ -18,6 +20,22 @@ import update_vagas
 
 
 class OfficialSourceTests(unittest.TestCase):
+    @patch("update_vagas.safe_get")
+    def test_fetch_page_reads_entity_encoded_gupy_jsonld(self, safe_get):
+        posting = {
+            "@type": "JobPosting",
+            "title": "Cientista de Dados Jr.",
+            "description": "<p>Python, SQL e Machine Learning.</p>",
+        }
+        safe_get.return_value.status_code = 200
+        safe_get.return_value.text = (
+            '<script type="application/ld+json">'
+            + html.escape(json.dumps(posting, ensure_ascii=False))
+            + '</script>'
+        )
+        _, extracted = update_vagas.fetch_page("https://pagseguro.gupy.io/jobs/11175121")
+        self.assertEqual(extracted, posting)
+
     def test_source_authority_separates_official_from_discovery(self):
         greenhouse = source_metadata("https://job-boards.greenhouse.io/stone/jobs/123")
         linkedin = source_metadata("https://www.linkedin.com/jobs/view/123456789")
@@ -30,6 +48,16 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertGreater(company["priority"], greenhouse["priority"])
         self.assertGreater(greenhouse["priority"], linkedin["priority"])
         self.assertGreater(linkedin["priority"], aggregator["priority"])
+
+    @patch("update_vagas.sitemap_job_urls")
+    def test_itau_sitemap_discovers_only_entry_level_jobs(self, sitemap_job_urls):
+        sitemap_job_urls.return_value = [
+            "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
+            "https://carreiras.itau.com.br/vaga/sao-paulo/engenharia-de-software-senior/35299/12345678",
+        ]
+        self.assertEqual(update_vagas.official_company_urls(), [
+            "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
+        ])
 
     def test_greenhouse_adapter_normalizes_public_feed(self):
         board = Board("Stone", "greenhouse", "stone")
@@ -125,6 +153,72 @@ class OfficialSourceTests(unittest.TestCase):
         })
         self.assertFalse(ok)
         self.assertEqual(reason, "cargo fora do recorte técnico")
+
+    def test_catalog_retires_only_invalid_included_automatic_history(self):
+        technical = {
+            "id": 62,
+            "key": "linkedin:4458259681",
+            "company": "Sicredi",
+            "role": "Analista de Desenvolvimento de Sistemas - Toledo/PR",
+            "level": "Júnior / entrada",
+            "statusRaw": "Coleta automática — LinkedIn",
+            "requirements": ["Python", "SQL", "Integração com APIs REST"],
+            "differentials": [],
+            "reason": "Coletada automaticamente em LinkedIn.",
+            "source": "https://www.linkedin.com/jobs/view/4458259681",
+            "location": "São Paulo, SP",
+            "auto": True,
+            "excluded": False,
+        }
+        administrative = {
+            "id": 70,
+            "key": "boards.greenhouse.io/inter/jobs/4713263005",
+            "company": "Banco Inter",
+            "role": "BACK OFFICE ANALYST I - STOCK OPERATIONS BR",
+            "level": "Júnior / entrada",
+            "requirements": ["Excel", "Rotinas operacionais", "Comunicação"],
+            "differentials": [],
+            "reason": "Coletada automaticamente em Greenhouse.",
+            "source": "https://boards.greenhouse.io/inter/jobs/4713263005",
+            "auto": True,
+            "excluded": False,
+        }
+        already_excluded = {**administrative, "key": "historical:excluded", "id": 71, "excluded": True}
+        curated = {**administrative, "key": "historical:curated", "id": 72, "auto": False}
+
+        retained, retired = reconcile_prior_records({
+            technical["key"]: technical,
+            administrative["key"]: administrative,
+            already_excluded["key"]: already_excluded,
+            curated["key"]: curated,
+        }, [])
+
+        self.assertIn(technical["key"], retained)
+        self.assertIn(already_excluded["key"], retained)
+        self.assertIn(curated["key"], retained)
+        self.assertNotIn(administrative["key"], retained)
+        self.assertEqual(retired, [{
+            "key": administrative["key"],
+            "company": "Banco Inter",
+            "role": administrative["role"],
+            "reason": "cargo fora do recorte técnico",
+        }])
+
+    def test_current_automatic_record_is_not_retired_by_reconciliation(self):
+        job = {
+            "id": 70,
+            "key": "boards.greenhouse.io/inter/jobs/4713263005",
+            "company": "Banco Inter",
+            "role": "BACK OFFICE ANALYST I - STOCK OPERATIONS BR",
+            "requirements": ["Excel", "Rotinas operacionais", "Comunicação"],
+            "differentials": [],
+            "source": "https://boards.greenhouse.io/inter/jobs/4713263005",
+            "auto": True,
+            "excluded": False,
+        }
+        retained, retired = reconcile_prior_records({job["key"]: job}, [job])
+        self.assertIn(job["key"], retained)
+        self.assertEqual(retired, [])
 
     def test_official_source_can_supersede_linkedin_for_same_posting(self):
         requirements = ["Python", "SQL", "APIs REST"]

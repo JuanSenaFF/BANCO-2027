@@ -1,6 +1,29 @@
 # BANCO 2027
 
-Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidências, análise de requisitos, prioridades de estudo, candidaturas, empresas, histórico e alertas.
+## Recorte de mercado
+
+O radar coleta vagas de entrada em instituições financeiras para São Paulo ou
+trabalho remoto no Brasil. A amostra de mercado permanece ampla, mas cada vaga é
+classificada como **tecnologia principal**, **negócio financeiro com tecnologia**,
+**tecnologia como diferencial** ou **contexto de mercado**. O plano pessoal usa
+Python, SQL, dados e automação como direção; vagas de outra stack continuam nos
+indicadores, sem comandar a trilha de estudo.
+
+As instituições de maior porte recebem peso adicional como referência, sem que
+várias vagas da mesma empresa sejam contadas como várias empresas na métrica de
+demanda por tecnologia.
+
+### Indeed
+
+O Indeed não oferece uma API pública aberta para buscar vagas individuais. As
+APIs de Job Sync/Update são destinadas a empregadores e parceiros que gerenciam
+seus próprios anúncios. O Hiring Lab oferece apenas séries agregadas e exige
+credencial concedida a parceiros ou pesquisadores. Por isso o projeto não faz
+scraping do Indeed nem apresenta uma integração incompleta como fonte de vagas.
+Se uma credencial do Hiring Lab for concedida, ela poderá ser configurada em
+`INDEED_HIRING_LAB_API_KEY` para complementar tendências, nunca anúncios.
+
+Sistema pessoal de inteligência de carreira para conquistar uma vaga em banco ou fintech entre julho e dezembro de 2027. O radar atual orienta um ciclo sustentável de 12 meses de aprendizagem, prática, evidências e preparação para candidaturas.
 
 ## Implementado
 
@@ -8,9 +31,9 @@ Sistema pessoal de inteligência de carreira: radar, perfil com níveis e evidê
 - Detalhes endereçáveis por hash para vagas e empresas; links continuam funcionando no GitHub Pages.
 - Match por requisito obrigatório e diferencial; nível e evidência; inglês, experiência, formação e preferências. Requisitos não mapeados e elegibilidade afirmativa exigem confirmação individual. Não inferimos condições pessoais.
 - Evidências do perfil podem ser registradas como projeto/repositório, experiência profissional, curso ou certificação, com contexto, última utilização, link e descrição. Havendo registros estruturados, sua força substitui a autoavaliação de evidência no score; valores antigos continuam como fallback compatível.
-- Quatro filas de ação recalculadas pelo perfil: `Aplicar agora`, `Aplicar e estudar`, `Preparar por 1–2 semanas` e `Acompanhar`. A decisão combina aderência conhecida, gaps fecháveis, esforço, regras eliminatórias e confiança operacional do anúncio.
-- Requisitos desconhecidos não reduzem a aderência usada pelas filas e permanecem visíveis para confirmação. Vagas pendentes continuam no motor com confiança menor; anúncios encerrados ou excluídos não entram nas filas.
-- Plano de estudo por impacto: simula um avanço de nível com evidência prática, mede vagas que entram nas filas qualificadas, pondera cada anúncio pela confiança e ordena por candidaturas adicionais por hora. Frequência, promoções de fila e ganho de aderência permanecem como sinais secundários transparentes.
+- Quatro filas de ação recalculadas pelo perfil: `Aplicar agora`, `Aplicar e estudar`, `Preparar em até 12 meses` e `Acompanhar`. A decisão combina aderência conhecida, cobertura dos obrigatórios, gaps fecháveis, esforço, regras eliminatórias e confiança operacional do anúncio.
+- Requisitos desconhecidos não reduzem a aderência nem viram gaps, mas diminuem a cobertura conhecida da análise. Para impedir recomendações baseadas em amostras pequenas, as filas exigem cobertura mínima de 70% para `Aplicar agora`, 60% para `Aplicar e estudar` e 40% para `Preparar`; confirmar itens pendentes recalcula a decisão imediatamente.
+- Plano de estudo por impacto dentro do ciclo anual: considera 8 horas por semana, 48 horas por avanço de nível e 32 horas para projeto e evidência. Simula a evolução, mede vagas que entram nas filas qualificadas e mantém frequência, promoções de fila e ganho de aderência como sinais transparentes.
 - Pipeline com nove etapas, datas, feedback, próxima ação, observações, histórico de mudanças e taxas calculadas por candidaturas efetivamente registradas.
 - Ao registrar uma candidatura, o sistema congela score, fila, confiança, gaps e fonte daquele momento. O painel mede funil, fontes e filas e compara entrevistas acima/abaixo de 80%; só classifica o corte após 10 resultados maduros, com pelo menos três casos em cada grupo. Candidaturas sem resposta só amadurecem após 21 dias, evitando falsos negativos precoces.
 - Histórico semanal de mercado no coletor e de perfil ao acessar o painel, além de registro manual. Não inventa snapshots de semanas anteriores nem considera uma amostra sem confirmação como queda de mercado.
@@ -47,6 +70,38 @@ A publicação via `deploy-pages.yml` usa o ambiente `github-pages` e reage tamb
 O status da atualização é observado pelo ID/data da execução do workflow. O token GitHub nunca passa pelo navegador. O bloqueio de cinco minutos usa PostgreSQL; não depende de memória de uma função serverless. A coleta continua no GitHub Actions e não fica presa ao tempo de execução HTTP.
 
 ## Verificação local
+
+### Resolução LinkedIn → Gupy
+
+Durante `build_catalog.py --verify`, vagas não encerradas e não excluídas do
+LinkedIn são procuradas no board Gupy cadastrado da própria empresa. O registro
+de aliases está em `scripts/source_resolution.py` (inclui PagBank/PagSeguro).
+São usados links públicos e dados incorporados `__NEXT_DATA__`; não é necessário
+login, cookies nem uma API privada. O board e os detalhes são reutilizados por
+execução, com limites de 10 páginas por board e 20 detalhes por busca.
+Há um orçamento global de 80 consultas de descoberta/detalhes ou 180 segundos
+antes de iniciar a próxima consulta; requisições em andamento mantêm seus
+timeouts de rede. O que exceder o orçamento fica pendente para outra execução.
+
+A associação exige empresa correta, título semelhante, requisitos suficientes,
+ausência de conflito de cidade/senioridade/PCD, score heurístico mínimo de 85 e
+nenhuma segunda candidata com score de 70 ou mais. Título pesa 55, cobertura de
+requisitos 20, requisitos/responsabilidades 10 e cidade 15; cidade desconhecida
+fica fora do denominador, não é inventada como correspondência. Data não define
+identidade, pois anúncios podem ser republicados. A fonte final ainda precisa
+passar pela verificação conservadora de atividade.
+
+O resultado fica em `sourceResolution` (`resolved`, `review_required`, `pending`
+ou `fetch_failed`), com motivos, candidatas e evidências; o resumo por execução
+fica em `meta.sourceResolution`. Ambiguidades entram na fila de revisão.
+Resolução confirmada troca a URL principal, preserva ambas as fontes e mantém
+`key`, ID e data inicial. Reconstruções offline preservam essa associação.
+
+Falhas de consulta não encerram a vaga do LinkedIn. Listas vazias, limites
+atingidos ou paginação dinâmica detectada sem link público ficam inconclusivos;
+esses boards precisam de um adaptador adicional. Os testes offline não comprovam
+a cobertura atual dos portais. Após publicar, executar a atualização online e
+inspecionar seus motivos antes de contar vagas recuperadas.
 
 ```sh
 pip install requests beautifulsoup4
