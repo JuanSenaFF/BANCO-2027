@@ -24,6 +24,14 @@ from official_sources import (
     source_priority,
 )
 from market_model import geography
+from company_policy import (
+    TARGET_COMPANIES,
+    CORE_PRIORITY_COMPANIES,
+    CONTEXT_COMPANIES as CONTEXT_ALLOWED_COMPANIES,
+    normalize_company as canon_company,
+    is_target_company as approved_company,
+    is_contextual_company as contextual_company,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
@@ -37,26 +45,6 @@ FETCH_WORKERS = 8
 SCAN_LIMIT = 400
 OFFICIAL_POSTING_CACHE: dict[str, dict] = {}
 OFFICIAL_DISCOVERY_REPORT: dict = {}
-
-TARGET_COMPANIES = [
-    "Itaú", "Itaú Unibanco", "Bradesco", "Santander", "Santander Brasil", "BTG Pactual", "Nubank",
-    "Banco Inter", "Inter", "C6 Bank", "XP", "XP Inc.", "Safra", "Mercado Pago", "Stone", "PagBank",
-    "B3", "Núclea", "CERC", "Cielo", "Rede", "Getnet", "Dock", "Pismo", "Banco BV", "Daycoval",
-    "Banco Daycoval", "Banco ABC Brasil", "Banco PAN", "Banco BMG", "Neon", "PicPay", "Creditas",
-    "Will Bank", "Genial Investimentos", "EQI", "EQI Investimentos", "Rico", "Clear", "Avenue",
-    "Sicoob", "Sicredi", "Sinqia", "Matera", "FitBank",
-    "Agibank", "Banco Carrefour", "Banco Mercantil", "Banco Sofisa", "Banco Pine",
-    "Banco Rendimento", "Banco Bari", "Digio", "Banco Digio", "Banco Modal", "EBANX",
-    "CloudWalk", "InfinitePay", "Asaas", "Celcoin", "QI Tech", "Stark Bank",
-    "Conta Simples", "RecargaPay", "Zoop", "Vindi", "Fiserv",
-    # empresas de tecnologia fora do nicho financeiro incluídas como alvos estratégicos
-    "Microsoft", "Google",
-    # empresas do ecossistema já validadas pela pesquisa
-    "ANBIMA", "BMP", "Grupo Bancorbrás", "Via Certa Promotora", "Nava | Tech for Business", "Nava",
-]
-
-# Consultorias/techs só entram quando o anúncio deixa explícito que o projeto é bancário/financeiro.
-CONTEXT_ALLOWED_COMPANIES = ["Tata Consultancy Services", "FCamara", "Qaracter", "Stefanini", "Capgemini", "Accenture"]
 
 STRONG_FINANCE_PHRASES = [
     "segmento bancário", "segmento bancario", "setor bancário", "setor bancario", "mercado financeiro",
@@ -120,11 +108,7 @@ LINKEDIN_KEYWORDS = [
 ]
 
 # Buscas adicionais em empresas prioritárias. Uma consulta por empresa mantém o custo do workflow controlado.
-LINKEDIN_PRIORITY_COMPANIES = [
-    "Itaú", "Bradesco", "Santander", "BTG Pactual", "Nubank", "Banco Inter", "C6 Bank", "XP",
-    "Mercado Pago", "Stone", "PagBank", "B3", "Cielo", "Pismo", "PicPay", "Sicredi",
-    "Microsoft", "Google",
-]
+LINKEDIN_PRIORITY_COMPANIES = list(CORE_PRIORITY_COMPANIES)
 
 GUPY_CAREERS = [
     "https://pagseguro.gupy.io/",
@@ -190,20 +174,6 @@ METADATA_PREFIXES = [
 def norm(s: str) -> str:
     s = htmllib.unescape(re.sub(r"<[^>]+>", " ", s or ""))
     return re.sub(r"\s+", " ", s).strip().lower()
-
-
-def canon_company(s: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", norm(s))
-
-
-def approved_company(company: str) -> bool:
-    c = canon_company(company)
-    return any(c == canon_company(t) or (len(c) >= 5 and c in canon_company(t)) or (len(canon_company(t)) >= 5 and canon_company(t) in c) for t in TARGET_COMPANIES)
-
-
-def contextual_company(company: str) -> bool:
-    c = canon_company(company)
-    return any(c == canon_company(t) or canon_company(t) in c for t in CONTEXT_ALLOWED_COMPANIES)
 
 
 def strong_finance_context(text: str) -> bool:
@@ -767,7 +737,7 @@ def main() -> int:
             "sourceOfficial": candidate_source["official"],
             "sourcePriority": candidate_source["priority"],
             "sourceStructured": bool(posting),
-            "reason": f"Coletada automaticamente em {source_label}. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+            "reason": f"Coletada automaticamente em {source_label}. A vaga passou pelos filtros de nível, tecnologia, empresa-alvo ou contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
             "source": url,
             "collectedAt": collected_at,
             "auto": True,

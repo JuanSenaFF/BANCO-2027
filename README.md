@@ -2,7 +2,8 @@
 
 ## Recorte de mercado
 
-O radar coleta vagas de entrada em instituições financeiras para São Paulo ou
+O radar coleta vagas de entrada em instituições financeiras e, como exceções
+explícitas fora desse nicho, na Microsoft e no Google, para São Paulo ou
 trabalho remoto no Brasil. A amostra de mercado permanece ampla, mas cada vaga é
 classificada como **tecnologia principal**, **negócio financeiro com tecnologia**,
 **tecnologia como diferencial** ou **contexto de mercado**. O plano pessoal usa
@@ -12,6 +13,15 @@ indicadores, sem comandar a trilha de estudo.
 As instituições de maior porte recebem peso adicional como referência, sem que
 várias vagas da mesma empresa sejam contadas como várias empresas na métrica de
 demanda por tecnologia.
+
+Empresas-alvo, aliases e prioridades de consulta ficam em
+`scripts/company_policy.py`. Coletor, qualificação das APIs e validador final
+usam a mesma regra de identificação: nome completo normalizado ou alias explícito,
+sem aprovação por trecho do nome (por exemplo, Clear não aprova ClearSale).
+Microsoft e Google não precisam de contexto financeiro, mas continuam sujeitos
+aos filtros de cargo, nível, requisitos e localização. Consultorias continuam
+dependendo de contexto financeiro explícito. A lista compartilhada não publica
+automaticamente os candidatos provenientes das APIs.
 
 ### Indeed
 
