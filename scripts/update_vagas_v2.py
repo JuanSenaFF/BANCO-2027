@@ -19,6 +19,7 @@ PRIORITY_COMPANIES = [
     "Agibank", "Banco Carrefour", "Banco Mercantil", "Banco Sofisa", "Banco Pine",
     "Banco Rendimento", "Banco Bari", "Digio", "Banco Modal", "EBANX", "CloudWalk",
     "InfinitePay", "Asaas", "Celcoin", "QI Tech", "Stark Bank", "Conta Simples",
+    "Microsoft", "Google",
     "RecargaPay", "Zoop", "Vindi", "Fiserv",
 ]
 

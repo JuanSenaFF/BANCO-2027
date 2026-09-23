@@ -49,6 +49,8 @@ TARGET_COMPANIES = [
     "Banco Rendimento", "Banco Bari", "Digio", "Banco Digio", "Banco Modal", "EBANX",
     "CloudWalk", "InfinitePay", "Asaas", "Celcoin", "QI Tech", "Stark Bank",
     "Conta Simples", "RecargaPay", "Zoop", "Vindi", "Fiserv",
+    # empresas de tecnologia fora do nicho financeiro incluídas como alvos estratégicos
+    "Microsoft", "Google",
     # empresas do ecossistema já validadas pela pesquisa
     "ANBIMA", "BMP", "Grupo Bancorbrás", "Via Certa Promotora", "Nava | Tech for Business", "Nava",
 ]
@@ -121,6 +123,7 @@ LINKEDIN_KEYWORDS = [
 LINKEDIN_PRIORITY_COMPANIES = [
     "Itaú", "Bradesco", "Santander", "BTG Pactual", "Nubank", "Banco Inter", "C6 Bank", "XP",
     "Mercado Pago", "Stone", "PagBank", "B3", "Cielo", "Pismo", "PicPay", "Sicredi",
+    "Microsoft", "Google",
 ]
 
 GUPY_CAREERS = [

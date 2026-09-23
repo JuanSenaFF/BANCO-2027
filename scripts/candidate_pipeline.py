@@ -31,7 +31,7 @@ PRIORITY_COMPANIES = (
     "banco pan", "banco bmg", "neon", "picpay", "creditas", "will bank", "sicredi",
     "sicoob", "sinqia", "matera", "fitbank", "agibank", "ebanx", "cloudwalk", "asaas",
     "celcoin", "qi tech", "stark bank", "conta simples", "recargapay", "zoop", "vindi",
-    "fiserv",
+    "fiserv", "microsoft", "google",
 )
 JUNIOR_TERMS = ("junior", " jr", "estagio", "estagiario", "trainee", "intern", "entry level", "analista i")
 SENIOR_TERMS = ("senior", " sr", "pleno", "especialista", "specialist", "lead", "principal", "staff", "gerente")
@@ -135,18 +135,21 @@ def qualification(candidate: Candidate) -> dict[str, Any]:
     senior_title = any(term in f" {title}" for term in SENIOR_TERMS)
     technology = any(term in combined for term in TECH_TERMS)
     priority_company = any(term == company or term in company for term in PRIORITY_COMPANIES)
-    finance = priority_company or any(term in combined for term in FINANCE_TERMS)
+    finance_context = any(term in combined for term in FINANCE_TERMS)
+    target_context = priority_company or finance_context
 
     reasons: list[str] = []
     if senior_title:
         status, confidence = "rejected", 0.05
         reasons.append("seniority_conflict_in_title")
-    elif junior_title and technology and finance:
+    elif junior_title and technology and target_context:
         status, confidence = "qualified", 0.9 if priority_company else 0.78
-        reasons.extend(("entry_level_title", "technology_signal", "financial_context"))
-    elif technology and finance and (junior_title or junior_body):
+        reasons.extend(("entry_level_title", "technology_signal"))
+        reasons.append("priority_company" if priority_company else "financial_context")
+    elif technology and target_context and (junior_title or junior_body):
         status, confidence = "review_required", 0.6
-        reasons.extend(("entry_level_signal", "technology_signal", "financial_context"))
+        reasons.extend(("entry_level_signal", "technology_signal"))
+        reasons.append("priority_company" if priority_company else "financial_context")
     elif technology and priority_company:
         status, confidence = "review_required", 0.5
         reasons.extend(("priority_company", "technology_signal", "seniority_not_confirmed"))
@@ -161,7 +164,8 @@ def qualification(candidate: Candidate) -> dict[str, Any]:
             "junior_body": junior_body,
             "senior_title": senior_title,
             "technology": technology,
-            "finance": finance,
+            "finance": finance_context,
+            "target_context": target_context,
             "priority_company": priority_company,
         },
         "reasons": reasons,
