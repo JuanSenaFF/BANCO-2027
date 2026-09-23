@@ -69,6 +69,21 @@ class CandidateQualificationTests(unittest.TestCase):
         self.assertEqual(row["processing_status"], "qualified")
         self.assertGreaterEqual(row["qualification"]["confidence"], 0.8)
 
+    def test_non_financial_priority_tech_companies_are_qualified(self):
+        for company in ("Microsoft", "Google"):
+            with self.subTest(company=company):
+                row = candidate_row(Candidate(
+                    provider="api_br", external_id=company.lower(),
+                    source_url=f"https://example.test/{company.lower()}",
+                    title="Software Engineer Junior", company=company,
+                    description="Desenvolvimento de APIs e serviços cloud.", raw={"company": company},
+                ))
+                self.assertEqual(row["processing_status"], "qualified")
+                self.assertTrue(row["qualification"]["signals"]["priority_company"])
+                self.assertTrue(row["qualification"]["signals"]["target_context"])
+                self.assertFalse(row["qualification"]["signals"]["finance"])
+                self.assertIn("priority_company", row["qualification"]["reasons"])
+
     def test_senior_title_is_rejected_even_if_body_mentions_junior(self):
         row = candidate_row(Candidate(
             provider="api_br", external_id="2", source_url="https://example.test/2",
