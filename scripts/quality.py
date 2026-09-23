@@ -204,7 +204,7 @@ def safe_fetch(session, url):
     raise ValueError('Redirecionamentos excessivos')
 
 
-def verify(job, session):
+def verify(job, session, *, response=None):
     at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     result = {
         'lastCheckedAt': at,
@@ -213,7 +213,7 @@ def verify(job, session):
         'verificationReason': 'Não foi possível confirmar',
     }
     try:
-        response = safe_fetch(session, job.get('source', ''))
+        response = response if response is not None else safe_fetch(session, job.get('source', ''))
         if response.status_code in (404, 410):
             return {**result, 'status': 'Encerrada', 'validationState': VALIDATION_CLOSED, 'lastVerifiedAt': at, 'verificationReason': 'Anúncio removido (404/410)'}
         if response.status_code != 200:
