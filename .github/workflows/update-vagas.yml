@@ -36,11 +36,8 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_*.py'
           node --test tests/*.test.js
-      - name: Coletar e validar
-        run: |
-          python scripts/update_vagas_v2.py
-          python scripts/validate_auto.py
-          python scripts/build_catalog.py --verify
+      - name: Coletar anúncios oficiais
+        run: python scripts/update_vagas_v2.py
       - name: Persistir descobertas das APIs
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -49,11 +46,25 @@ jobs:
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
           JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
         run: python scripts/candidate_pipeline.py
+      - name: Conferir candidatos das APIs nos anúncios oficiais
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/publish_candidates.py prepare
+      - name: Validar e verificar catálogo
+        run: |
+          python scripts/validate_auto.py
+          python scripts/build_catalog.py --verify
       - name: Sincronizar banco quando conectado
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: python scripts/sync_database.py
+      - name: Vincular candidatos publicados às vagas sincronizadas
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/publish_candidates.py finalize
       - name: Preservar catálogo e histórico
         run: |
           git config user.name "banco-2027-bot"

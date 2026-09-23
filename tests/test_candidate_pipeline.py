@@ -115,7 +115,8 @@ class AdapterTests(unittest.TestCase):
         result = ApiBrAdapter(session, terms=("junior",), max_pages=5).collect()
         self.assertEqual(result.request_count, 2)
         self.assertEqual(len(result.candidates), 101)
-        self.assertEqual(result.candidates[0].company, "Banco Inter")
+        self.assertEqual(result.candidates[0].company, "")
+        self.assertEqual(result.candidates[-1].company, "Itaú")
 
     def test_keyed_adapters_skip_without_spending_requests(self):
         session = FakeCollectionSession([])

@@ -21,6 +21,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from company_policy import is_target_company
+from update_vagas import STRONG_FINANCE_PHRASES
 
 
 USER_AGENT = "Banco2027JobRadar/2.0 (+https://github.com/JuanSenaFF/BANCO-2027)"
@@ -32,10 +33,7 @@ TECH_TERMS = (
     "cloud", "sre", "devops", "sistemas", "tecnologia", "infraestrutura", "security", "seguranca",
     "python", "java", "sql", "api", "qa", "automacao", "engenheir",
 )
-FINANCE_TERMS = (
-    "banco", "bancario", "fintech", "financeir", "pagamento", "credito", "risco", "fraude",
-    "open finance", "mercado de capitais", "investimento",
-)
+MAX_POSTING_AGE_DAYS = 90
 
 
 def utcnow() -> str:
@@ -83,6 +81,18 @@ def nested_name(value: Any) -> str:
     return str(value or "")
 
 
+def posting_age_days(value: str | None) -> int | None:
+    if not value:
+        return None
+    try:
+        posted = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        if posted.tzinfo is None:
+            posted = posted.replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - posted).days
+    except ValueError:
+        return None
+
+
 @dataclass
 class Candidate:
     provider: str
@@ -126,15 +136,19 @@ def qualification(candidate: Candidate) -> dict[str, Any]:
     senior_title = any(term in f" {title}" for term in SENIOR_TERMS)
     technology = any(term in combined for term in TECH_TERMS)
     priority_company = is_target_company(candidate.company)
-    finance_context = any(term in combined for term in FINANCE_TERMS)
-    target_context = priority_company or finance_context
+    finance_context = any(normalized(term) in combined for term in STRONG_FINANCE_PHRASES)
+    target_context = priority_company or bool(normalized(candidate.company) and finance_context)
+    age_days = posting_age_days(candidate.published_at)
 
     reasons: list[str] = []
-    if senior_title:
+    if age_days is not None and age_days > MAX_POSTING_AGE_DAYS:
+        status, confidence = "rejected", 0.0
+        reasons.append("stale_publication")
+    elif senior_title:
         status, confidence = "rejected", 0.05
         reasons.append("seniority_conflict_in_title")
-    elif junior_title and technology and target_context:
-        status, confidence = "qualified", 0.9 if priority_company else 0.78
+    elif junior_title and technology and priority_company:
+        status, confidence = "qualified", 0.9
         reasons.extend(("entry_level_title", "technology_signal"))
         reasons.append("priority_company" if priority_company else "financial_context")
     elif technology and target_context and (junior_title or junior_body):
@@ -158,10 +172,11 @@ def qualification(candidate: Candidate) -> dict[str, Any]:
             "finance": finance_context,
             "target_context": target_context,
             "priority_company": priority_company,
+            "posting_age_days": age_days,
         },
         "reasons": reasons,
         "qualified_at": utcnow(),
-        "policy_version": "2026-09-23.1",
+        "policy_version": "2026-09-23.2",
     }
 
 
@@ -186,7 +201,7 @@ def candidate_row(candidate: Candidate) -> dict[str, Any]:
         "dedupe_key": candidate.dedupe_key,
         "qualification": evaluation,
         "raw_payload": candidate.raw,
-        "rejection_reason": "seniority_conflict_in_title" if evaluation["status"] == "rejected" else None,
+        "rejection_reason": evaluation["reasons"][0] if evaluation["status"] == "rejected" else None,
     }
 
 
@@ -234,14 +249,14 @@ class ApiBrAdapter:
     def _map(self, record: dict[str, Any]) -> Candidate:
         external_id = str(first(record, "id", "number", "issueId", "node_id"))
         url = str(first(record, "html_url", "url", "issueUrl", "sourceUrl"))
-        repository = first(record, "repository", "organization", "owner")
         return Candidate(
             provider=self.provider,
             external_id=external_id or url,
             source_url=url,
             apply_url=str(first(record, "applyUrl", "apply_url")),
             title=str(first(record, "title", "name")),
-            company=nested_name(first(record, "company", "organization", default=repository)),
+            # GitHub repository/organization identifies the aggregator, not the employer.
+            company=nested_name(first(record, "company")),
             location=str(first(record, "location", "local")),
             description=str(first(record, "body", "description")),
             published_at=first(record, "created_at", "createdAt", "published_at", default=None),
