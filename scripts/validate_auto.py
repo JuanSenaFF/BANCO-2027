@@ -7,26 +7,17 @@ from urllib.parse import urlparse
 
 from rules import DUPLICATE_SIMILARITY, REVIEW_SIMILARITY
 from official_sources import prefer_source, same_posting, source_metadata
+from company_policy import (
+    TARGET_COMPANIES as APPROVED_COMPANIES,
+    CONTEXT_COMPANIES,
+    is_target_company as company_approved,
+    is_contextual_company as company_contextual,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
 BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 7)]
 
-APPROVED_COMPANIES = [
-    "Itaú", "Itaú Unibanco", "Bradesco", "Santander", "Santander Brasil", "BTG Pactual", "Nubank",
-    "Banco Inter", "Inter", "C6 Bank", "XP", "XP Inc.", "Safra", "Mercado Pago", "Stone", "PagBank",
-    "B3", "Núclea", "CERC", "Cielo", "Rede", "Getnet", "Dock", "Pismo", "Banco BV", "Daycoval",
-    "Banco Daycoval", "Banco ABC Brasil", "Banco PAN", "Banco BMG", "Neon", "PicPay", "Creditas",
-    "Will Bank", "Genial Investimentos", "EQI", "EQI Investimentos", "Rico", "Clear", "Avenue",
-    "Sicoob", "Sicredi", "Sinqia", "Matera", "FitBank", "ANBIMA", "BMP", "Grupo Bancorbrás",
-    "Via Certa Promotora", "Nava | Tech for Business", "Nava",
-    # Ecossistema financeiro adicional: não é prioridade de busca, mas pode entrar quando aparecer nas fontes.
-    "Agibank", "Banco Carrefour", "Banco Mercantil", "Banco Sofisa", "Banco Pine", "Banco Rendimento",
-    "Banco Bari", "Digio", "Banco Digio", "Banco Modal", "EBANX", "CloudWalk", "InfinitePay", "Asaas",
-    "Celcoin", "QI Tech", "Stark Bank", "Conta Simples", "RecargaPay", "Zoop", "Vindi", "Fiserv",
-]
-
-CONTEXT_COMPANIES = ["Tata Consultancy Services", "TCS", "FCamara", "Qaracter", "Stefanini", "Capgemini", "Accenture"]
 STRONG_FINANCE = [
     "segmento bancário", "segmento bancario", "setor bancário", "setor bancario", "mercado financeiro",
     "instituição financeira", "instituicao financeira", "serviços financeiros", "servicos financeiros",
@@ -57,26 +48,6 @@ def ascii_norm(s: str) -> str:
     s = "".join(c for c in s if unicodedata.category(c) != "Mn")
     s = s.lower().replace("—", " ").replace("–", " ").replace("-", " ").replace("/", " ")
     return re.sub(r"[^a-z0-9+#.]+", " ", s).strip()
-
-
-def compact(s: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", ascii_norm(s))
-
-
-def company_approved(c: str) -> bool:
-    cc = compact(c)
-    if not cc:
-        return False
-    approved = {compact(x) for x in APPROVED_COMPANIES}
-    if cc in approved:
-        return True
-    # Correspondência parcial só para nomes longos; evita casos como Clear x ClearSale.
-    return any(len(cc) >= 8 and len(x) >= 8 and (cc in x or x in cc) for x in approved)
-
-
-def company_contextual(c: str) -> bool:
-    cc = compact(c)
-    return bool(cc) and any(compact(x) in cc or cc in compact(x) for x in CONTEXT_COMPANIES)
 
 
 def finance_context(job: dict) -> bool:
@@ -207,7 +178,7 @@ def valid(job: dict) -> tuple[bool, str]:
     # Empresas prioritárias/adicionais passam pelo nome. Empresas novas só passam quando os dados
     # extraídos ainda preservam contexto financeiro explícito; consultorias também exigem esse contexto.
     if not company_approved(company) and not finance_context(job):
-        return False, "fora do ecossistema financeiro validado"
+        return False, "fora das empresas-alvo e sem contexto financeiro explícito"
     if company_contextual(company) and not finance_context(job):
         return False, "consultoria sem contexto financeiro explícito"
     from market_model import geography

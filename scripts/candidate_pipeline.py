@@ -20,19 +20,11 @@ from urllib.parse import urlencode
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from company_policy import is_target_company
 
 
 USER_AGENT = "Banco2027JobRadar/2.0 (+https://github.com/JuanSenaFF/BANCO-2027)"
 TIMEOUT = 25
-PRIORITY_COMPANIES = (
-    "itau", "bradesco", "santander", "btg pactual", "nubank", "banco inter", "c6 bank",
-    "xp", "safra", "mercado pago", "stone", "pagbank", "b3", "nuclea", "cerc", "cielo",
-    "rede", "getnet", "dock", "pismo", "banco bv", "daycoval", "banco abc brasil",
-    "banco pan", "banco bmg", "neon", "picpay", "creditas", "will bank", "sicredi",
-    "sicoob", "sinqia", "matera", "fitbank", "agibank", "ebanx", "cloudwalk", "asaas",
-    "celcoin", "qi tech", "stark bank", "conta simples", "recargapay", "zoop", "vindi",
-    "fiserv", "microsoft", "google",
-)
 JUNIOR_TERMS = ("junior", " jr", "estagio", "estagiario", "trainee", "intern", "entry level", "analista i")
 SENIOR_TERMS = ("senior", " sr", "pleno", "especialista", "specialist", "lead", "principal", "staff", "gerente")
 TECH_TERMS = (
@@ -128,13 +120,12 @@ class CollectionResult:
 def qualification(candidate: Candidate) -> dict[str, Any]:
     title = normalized(candidate.title)
     body = normalized(candidate.description)
-    company = normalized(candidate.company)
     combined = f"{title} {body}"
     junior_title = any(term in f" {title}" for term in JUNIOR_TERMS)
     junior_body = any(term in f" {body}" for term in JUNIOR_TERMS)
     senior_title = any(term in f" {title}" for term in SENIOR_TERMS)
     technology = any(term in combined for term in TECH_TERMS)
-    priority_company = any(term == company or term in company for term in PRIORITY_COMPANIES)
+    priority_company = is_target_company(candidate.company)
     finance_context = any(term in combined for term in FINANCE_TERMS)
     target_context = priority_company or finance_context
 
@@ -170,7 +161,7 @@ def qualification(candidate: Candidate) -> dict[str, Any]:
         },
         "reasons": reasons,
         "qualified_at": utcnow(),
-        "policy_version": "2026-09-16.1",
+        "policy_version": "2026-09-23.1",
     }
 
 
