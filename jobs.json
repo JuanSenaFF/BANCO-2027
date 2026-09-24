@@ -1,35 +1,33 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-09-24T03:45:14+00:00",
+    "catalogBuiltAt": "2026-09-24T08:41:50+00:00",
     "total": 74,
-    "added": 1,
+    "added": 0,
     "verificationAttempted": 30,
-    "lastCheckAttemptAt": "2026-09-24T03:45:14+00:00",
-    "verificationConfirmed": 6,
-    "updatedAt": "2026-09-24T03:44:05Z",
+    "lastCheckAttemptAt": "2026-09-24T08:41:50+00:00",
+    "verificationConfirmed": 4,
+    "updatedAt": "2026-09-24T08:40:44Z",
     "included": 63,
     "excluded": 11,
-    "discovered": 3,
-    "candidateUrls": 544,
+    "discovered": 1,
+    "candidateUrls": 440,
     "validated": 18,
-    "rejected": 4,
+    "rejected": 1,
     "rejectionReasons": {
-      "cargo fora do recorte técnico": 2,
-      "local fora de São Paulo/remoto ou não confirmado": 1,
-      "requisitos contaminados ou pouco informativos": 1
+      "cargo fora do recorte técnico": 1
     },
     "needsReview": 2,
-    "pendingValidation": 33,
+    "pendingValidation": 35,
     "officialSources": 12,
     "linkedinFallbacks": 50,
     "officialCoveragePct": 19.0,
     "requirementsNormalization": {
       "schemaVersion": 2,
-      "total": 917,
-      "mandatory": 620,
-      "differential": 264,
-      "eliminatory": 33,
-      "technicalMapped": 590,
+      "total": 909,
+      "mandatory": 618,
+      "differential": 259,
+      "eliminatory": 32,
+      "technicalMapped": 585,
       "unmapped": 190
     },
     "catalogRetiredAt": "2026-09-24T03:45:14+00:00",
@@ -67,8 +65,7 @@
     "sourceResolution": {
       "pending": 18,
       "fetch_failed": 4,
-      "review_required": 1,
-      "resolved": 1
+      "review_required": 1
     }
   },
   "jobs": [
@@ -1849,7 +1846,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:22+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:56+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -1889,7 +1886,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:14.352615+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212536+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/analista-engenharia-de-qualidade-vaga-afirmativa-para-pessoas-com-defici%C3%AAncia-at-b3-4391212887/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -3057,7 +3054,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:22+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:56+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3105,7 +3102,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:14.352646+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212558+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-backend-developer-pcd-at-getnet-brasil-4442931588/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -3421,7 +3418,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:22+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:56+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3462,7 +3459,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:14.352660+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212569+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-full-stack-developer-at-getnet-brasil-4444244513/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -13146,7 +13143,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:22+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:56+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -13192,7 +13189,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:14.352736+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212627+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/software-engineer-platform-services-at-mercado-livre-4458415021/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -14487,7 +14484,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:22+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:56+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14526,7 +14523,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:14.352753+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212643+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-junior-full-stack-it-accounting-clients-finance-report-at-btg-pactual-4462892770/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -14834,7 +14831,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:22+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:56+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -14876,7 +14873,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:14.352763+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212651+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenharia-de-software-back-end-assistente-e-j%C3%BAnior-vaga-exclusiva-para-pcd-at-xp-inc-4310494599/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -15199,8 +15196,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:23+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-24T08:41:57+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15242,7 +15239,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:14.352773+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212658+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/analista-de-automa%C3%A7%C3%A3o-e-ia-j%C3%BAnior-%E2%80%93-analytics-processos-controles-at-c6-bank-4414036029/",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -15686,7 +15683,7 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:23+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:57+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15733,7 +15730,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-24T03:45:14.352783+00:00",
+        "checkedAt": "2026-09-24T08:41:50.212665+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-java-at-pagbank-4436036193/",
         "candidates": [
           {
@@ -16355,7 +16352,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:23+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:57+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "review",
       "confidenceLabel": "Baixa",
@@ -16406,16 +16403,16 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-24T03:45:18.546798+00:00",
+        "checkedAt": "2026-09-24T08:41:53.613311+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-dados-at-pagbank-4460025351/",
         "candidates": [
           {
             "url": "https://pagseguro.gupy.io/jobs/12484543",
-            "score": 63.9,
+            "score": 65.9,
             "title": "Engenheiro de Software (Java)",
             "titleSimilarity": 0.806,
-            "requirementCoverage": 0.333,
-            "descriptionCoverage": 0.333,
+            "requirementCoverage": 0.389,
+            "descriptionCoverage": 0.389,
             "requirementsConfirmed": false,
             "location": "Brasil"
           }
@@ -16688,7 +16685,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:23+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:58+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "review",
       "confidenceLabel": "Baixa",
@@ -16728,7 +16725,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-09-24T03:45:19.098642+00:00",
+        "checkedAt": "2026-09-24T08:41:54.405129+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-sistemas-jr-sre-at-pagbank-4428707419/",
         "candidates": [
           {
@@ -17003,8 +17000,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:23+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-24T08:41:58+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -17041,7 +17038,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-24T03:45:19.636632+00:00",
+        "checkedAt": "2026-09-24T08:41:54.954995+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-qualidade-de-software-jr-at-pagbank-4425839238/",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -17069,7 +17066,6 @@
         "Crédito/Risco"
       ],
       "requirements": [
-        "Superior completo em Estatística, Matemática, Ciências da Computação, Engenharia ou áreas correlatas. Conhecimento em Python e SQL para análise e manipulação de dados. Conhecimento em estatística e fundamentos de Ciência de Dados. Conhecimento básico em modelos de classificação e modelos preditivos. Experiência ou conhecimento em manipulação e estruturação de bases de dados. Conhecimento em pacote Office (Excel, PowerPoint e Word). Interesse em Analytics, Inteligência Artificial e Machine Learning.",
         "Superior completo em Estatística, Matemática, Ciências da Computação, Engenharia ou áreas correlatas.",
         "Conhecimento em Python e SQL para análise e manipulação de dados.",
         "Conhecimento em estatística e fundamentos de Ciência de Dados.",
@@ -17083,63 +17079,14 @@
       "source": "https://pagseguro.gupy.io/jobs/11175121",
       "key": "linkedin:4418200168",
       "firstSeenAt": null,
-      "lastVerifiedAt": "2026-09-24T03:45:23+00:00",
+      "lastVerifiedAt": "2026-09-24T08:41:58+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 93,
       "requirementsStructured": [
         {
-          "text": "Superior completo em Estatística, Matemática, Ciências da Computação, Engenharia ou áreas correlatas. Conhecimento em Python e SQL para análise e manipulação de dados. Conhecimento em estatística e fundamentos de Ciência de Dados. Conhecimento básico em modelos de classificação e modelos preditivos. Experiência ou conhecimento em manipulação e estruturação de bases de dados. Conhecimento em pacote Office (Excel, PowerPoint e Word). Interesse em Analytics, Inteligência Artificial e Machine Learning.",
-          "position": 0,
-          "source": "description",
-          "mandatory": true,
-          "requirementType": "mandatory",
-          "category": "technical",
-          "skill": "Dados/BI",
-          "subskill": "Excel",
-          "skills": [
-            {
-              "skill": "Dados/BI",
-              "subskill": "Excel",
-              "profileSkillId": "data"
-            },
-            {
-              "skill": "IA/ML",
-              "subskill": null,
-              "profileSkillId": "ai"
-            },
-            {
-              "skill": "Dados/BI",
-              "subskill": null,
-              "profileSkillId": "data"
-            },
-            {
-              "skill": "Python",
-              "subskill": null,
-              "profileSkillId": "python"
-            },
-            {
-              "skill": "SQL",
-              "subskill": null,
-              "profileSkillId": "sql"
-            }
-          ],
-          "profileSkillIds": [
-            "data",
-            "ai",
-            "python",
-            "sql"
-          ],
-          "unmappedSkillCount": 0,
-          "relation": "any",
-          "level": 1,
-          "levelLabel": "básico",
-          "minYears": null,
-          "transferable": true
-        },
-        {
           "text": "Superior completo em Estatística, Matemática, Ciências da Computação, Engenharia ou áreas correlatas.",
-          "position": 1,
+          "position": 0,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -17165,7 +17112,7 @@
         },
         {
           "text": "Conhecimento em Python e SQL para análise e manipulação de dados.",
-          "position": 2,
+          "position": 1,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -17203,7 +17150,7 @@
         },
         {
           "text": "Conhecimento em estatística e fundamentos de Ciência de Dados.",
-          "position": 3,
+          "position": 2,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -17229,7 +17176,7 @@
         },
         {
           "text": "Conhecimento básico em modelos de classificação e modelos preditivos.",
-          "position": 4,
+          "position": 3,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -17247,7 +17194,7 @@
         },
         {
           "text": "Experiência ou conhecimento em manipulação e estruturação de bases de dados.",
-          "position": 5,
+          "position": 4,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -17265,7 +17212,7 @@
         },
         {
           "text": "Conhecimento em pacote Office (Excel, PowerPoint e Word).",
-          "position": 6,
+          "position": 5,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -17291,7 +17238,7 @@
         },
         {
           "text": "Interesse em Analytics, Inteligência Artificial e Machine Learning.",
-          "position": 7,
+          "position": 6,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -17316,7 +17263,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:23+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:58+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "validationState": "confirmed",
       "confidenceLabel": "Alta",
@@ -17542,7 +17489,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:23+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:58+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -18328,7 +18275,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:58+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -18371,7 +18318,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:19.854162+00:00",
+        "checkedAt": "2026-09-24T08:41:55.334533+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/desenvolvedor-a-j%C3%BAnior-%E2%80%93-engenharia-projetos-t%C3%A9cnicos-at-bmp-4461307880",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -18804,8 +18751,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-09-24T08:41:58+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -18853,7 +18800,7 @@
       "institutionWeight": 0.75,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:19.854221+00:00",
+        "checkedAt": "2026-09-24T08:41:55.334559+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/desenvolvedor-a-backend-java-j%C3%BAnior-at-nava-tech-for-business-4461787817",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -19231,10 +19178,10 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-09-24T03:45:24+00:00",
+      "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 92,
+      "qualityScore": 67,
       "requirementsStructured": [
         {
           "text": "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens: C#, Java, Go ou Rust",
@@ -19360,14 +19307,14 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastCheckedAt": "2026-09-24T08:41:58+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-09-20T10:03:22.000Z",
       "validThrough": "2027-04-08T17:53:05.000Z",
-      "validationState": "confirmed",
-      "confidenceLabel": "Alta",
+      "validationState": "pending",
+      "confidenceLabel": "Média",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -19403,11 +19350,12 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:19.854251+00:00",
+        "checkedAt": "2026-09-24T08:41:55.334578+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-assistente-e-j%C3%BAnior-at-xp-inc-4244881112",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
-      }
+      },
+      "previouslyVerifiedAt": "2026-09-24T03:45:24+00:00"
     },
     {
       "id": 56,
@@ -20511,7 +20459,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -21234,7 +21182,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-09-24T03:45:19.854291+00:00",
+        "checkedAt": "2026-09-24T08:41:55.334606+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4458272564",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -21287,8 +21235,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -21582,7 +21530,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.793921+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735642+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4460341533",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -21645,8 +21593,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 57,
       "requirementsStructured": [
         {
@@ -22101,7 +22049,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.793956+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735671+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462005969",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -23358,7 +23306,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -23570,7 +23518,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.793999+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735704+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4416987650",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -23952,7 +23900,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -24220,7 +24168,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.794024+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735721+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462189181",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -24278,7 +24226,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -24653,7 +24601,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.794041+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735734+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462743222",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -25485,7 +25433,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "confidenceLabel": "Média",
@@ -25985,7 +25933,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.794076+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735761+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4465896330",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
@@ -26027,9 +25975,9 @@
         "Melhoria e automação de processos",
         "Pesquisa e prospecção de novas tecnologias e softwares"
       ],
-      "location": "São Paulo, São Paulo, Brasil",
+      "location": "São Paulo, SP",
       "modality": null,
-      "publishedAt": "2026-8-3",
+      "publishedAt": null,
       "validThrough": null,
       "sourceName": "Página oficial",
       "sourceProvider": "company",
@@ -26039,9 +25987,9 @@
       "reason": "Vaga júnior da área de TI da Fundação Itaú, alinhada a desenvolvimento, arquitetura, cloud, segurança, dados e automação. É uma porta de entrada relevante, embora exija graduação completa e inglês intermediário.",
       "source": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
       "collectedAt": "2026-09-16T12:30:00Z",
-      "lastVerifiedAt": "2026-09-24T03:45:24+00:00",
-      "lastCheckedAt": "2026-09-24T03:45:24+00:00",
-      "verificationReason": "JobPosting correspondente e válido",
+      "lastVerifiedAt": null,
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
+      "verificationReason": "JobPosting pertence a outra empresa",
       "auto": false,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
       "firstSeenAt": "2026-09-16T12:30:00Z",
@@ -26055,10 +26003,10 @@
         }
       ],
       "excluded": false,
-      "validationState": "confirmed",
+      "validationState": "pending",
       "duplicateOf": null,
-      "qualityScore": 80,
-      "confidenceLabel": "Alta",
+      "qualityScore": 55,
+      "confidenceLabel": "Baixa",
       "requirementsStructured": [
         {
           "text": "Graduação completa em Tecnologia da Informação, Engenharia da Computação, Ciência da Computação, Sistemas de Informação ou áreas afins",
@@ -26337,7 +26285,8 @@
       "geographyWeight": 1.0,
       "institutionTier": "ecosystem",
       "institutionTierLabel": "Ecossistema financeiro",
-      "institutionWeight": 1.0
+      "institutionWeight": 1.0,
+      "previouslyVerifiedAt": "2026-09-24T03:45:24+00:00"
     },
     {
       "id": 97,
@@ -26393,7 +26342,7 @@
       "supersedesSource": "https://www.linkedin.com/jobs/view/4461407803",
       "key": "bancorbras.gupy.io:12424215",
       "firstSeenAt": "2026-09-16T20:53:30Z",
-      "lastVerifiedAt": "2026-09-24T03:45:25+00:00",
+      "lastVerifiedAt": "2026-09-24T08:41:59+00:00",
       "sources": [
         {
           "url": "https://bancorbras.gupy.io/jobs/12424215?jobBoardSource=gupy_public_page",
@@ -26416,7 +26365,7 @@
       "sourceAliases": [
         "linkedin:4461407803"
       ],
-      "lastCheckedAt": "2026-09-24T03:45:25+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 98,
       "confidenceLabel": "Alta",
@@ -26763,7 +26712,6 @@
         "Crédito/Risco"
       ],
       "requirements": [
-        "Superior em Tecnologia, Engenharias ou áreas correlatas. Experiência em projetos de controles internos de TI (avaliação de ITGCs – Gestão de Mudanças, Gestão de Acessos e Gestão de Operações de TI). Experiência de 1 a 2 anos na área. Experiência no atendimento a auditorias externas e internas. Reports para os times de tecnologia.",
         "Superior em Tecnologia, Engenharias ou áreas correlatas.",
         "Experiência em projetos de controles internos de TI (avaliação de ITGCs – Gestão de Mudanças, Gestão de Acessos e Gestão de Operações de TI).",
         "Experiência de 1 a 2 anos na área.",
@@ -26787,7 +26735,7 @@
       "auto": true,
       "key": "pagseguro.gupy.io:11559783",
       "firstSeenAt": "2026-09-16T21:41:56Z",
-      "lastVerifiedAt": "2026-09-24T03:45:25+00:00",
+      "lastVerifiedAt": "2026-09-24T08:41:59+00:00",
       "sources": [
         {
           "url": "https://pagseguro.gupy.io/jobs/11559783?jobBoardSource=gupy_public_page",
@@ -26800,32 +26748,14 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-24T03:45:25+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
-          "text": "Superior em Tecnologia, Engenharias ou áreas correlatas. Experiência em projetos de controles internos de TI (avaliação de ITGCs – Gestão de Mudanças, Gestão de Acessos e Gestão de Operações de TI). Experiência de 1 a 2 anos na área. Experiência no atendimento a auditorias externas e internas. Reports para os times de tecnologia.",
-          "position": 0,
-          "source": "description",
-          "mandatory": true,
-          "requirementType": "mandatory",
-          "category": "experience",
-          "skill": null,
-          "subskill": null,
-          "skills": [],
-          "profileSkillIds": [],
-          "unmappedSkillCount": 0,
-          "relation": "single",
-          "level": null,
-          "levelLabel": null,
-          "minYears": 2.0,
-          "transferable": false
-        },
-        {
           "text": "Superior em Tecnologia, Engenharias ou áreas correlatas.",
-          "position": 1,
+          "position": 0,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -26843,7 +26773,7 @@
         },
         {
           "text": "Experiência em projetos de controles internos de TI (avaliação de ITGCs – Gestão de Mudanças, Gestão de Acessos e Gestão de Operações de TI).",
-          "position": 2,
+          "position": 1,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -26861,7 +26791,7 @@
         },
         {
           "text": "Experiência de 1 a 2 anos na área.",
-          "position": 3,
+          "position": 2,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -26879,7 +26809,7 @@
         },
         {
           "text": "Experiência no atendimento a auditorias externas e internas.",
-          "position": 4,
+          "position": 3,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -26897,7 +26827,7 @@
         },
         {
           "text": "Reports para os times de tecnologia.",
-          "position": 5,
+          "position": 4,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -26993,7 +26923,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-24T03:45:25+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "confidenceLabel": "Média",
@@ -27351,13 +27281,13 @@
       "validationState": "pending",
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.794125+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735801+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4465374376",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-24T03:45:25+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "confidenceLabel": "Média",
@@ -27676,13 +27606,13 @@
       "validationState": "pending",
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-09-24T03:45:21.794141+00:00",
+        "checkedAt": "2026-09-24T08:41:56.735813+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462487120",
         "candidates": [],
         "reason": "Empresa sem board Gupy cadastrado"
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-09-24T03:45:25+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "confidenceLabel": "Média",
@@ -28332,7 +28262,6 @@
         "IA/ML"
       ],
       "requirements": [
-        "Curso técnico ou profissionalizante completo ou cursando em Tecnologia da Informação, Análise de Sistemas, Ciência da Computação ou áreas correlatas; ou superior completo ou cursando nessas áreas. Conhecimento básico de lógica de programação. Conhecimento básico de Java ou de outra linguagem orientada a objetos. Noções de Programação Orientada a Objetos (POO). Conhecimento básico de banco de dados e SQL. Conhecimento básico de Git e versionamento de código. Familiaridade com os sistemas operacionais Windows ou Linux. Inglês básico para leitura de documentação técnica.",
         "Curso técnico ou profissionalizante completo ou cursando em Tecnologia da Informação, Análise de Sistemas, Ciência da Computação ou áreas correlatas; ou superior completo ou cursando nessas áreas.",
         "Conhecimento básico de lógica de programação.",
         "Conhecimento básico de Java ou de outra linguagem orientada a objetos.",
@@ -28342,13 +28271,7 @@
         "Familiaridade com os sistemas operacionais Windows ou Linux.",
         "Inglês básico para leitura de documentação técnica."
       ],
-      "differentials": [
-        "Conhecimento básico de Spring Boot.",
-        "Participação em projetos acadêmicos, cursos, bootcamps ou projetos pessoais relacionados ao desenvolvimento de software.",
-        "Noções de testes unitários.",
-        "Conhecimento básico de metodologias ágeis, como Scrum ou Kanban.",
-        "Familiaridade com ferramentas de Inteligência Artificial aplicadas ao desenvolvimento de software"
-      ],
+      "differentials": [],
       "location": "São Paulo, São Paulo, Brasil",
       "modality": null,
       "publishedAt": "2025-11-05",
@@ -28365,7 +28288,7 @@
       "auto": true,
       "key": "linkedin:4468935647",
       "firstSeenAt": "2026-09-24T03:44:05Z",
-      "lastVerifiedAt": "2026-09-24T03:45:25+00:00",
+      "lastVerifiedAt": "2026-09-24T08:41:59+00:00",
       "sources": [
         {
           "url": "https://pagseguro.gupy.io/jobs/10246849",
@@ -28413,70 +28336,15 @@
         "reason": "Empresa, título e requisitos correspondentes; fonte confirmada",
         "url": "https://pagseguro.gupy.io/jobs/10246849"
       },
-      "lastCheckedAt": "2026-09-24T03:45:25+00:00",
+      "lastCheckedAt": "2026-09-24T08:41:59+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "duplicateOf": null,
-      "qualityScore": 95,
+      "qualityScore": 93,
       "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
-          "text": "Curso técnico ou profissionalizante completo ou cursando em Tecnologia da Informação, Análise de Sistemas, Ciência da Computação ou áreas correlatas; ou superior completo ou cursando nessas áreas. Conhecimento básico de lógica de programação. Conhecimento básico de Java ou de outra linguagem orientada a objetos. Noções de Programação Orientada a Objetos (POO). Conhecimento básico de banco de dados e SQL. Conhecimento básico de Git e versionamento de código. Familiaridade com os sistemas operacionais Windows ou Linux. Inglês básico para leitura de documentação técnica.",
-          "position": 0,
-          "source": "description",
-          "mandatory": true,
-          "requirementType": "eliminatory",
-          "category": "education",
-          "skill": "Controle de versão",
-          "subskill": "Git",
-          "skills": [
-            {
-              "skill": "Controle de versão",
-              "subskill": "Git",
-              "profileSkillId": "git"
-            },
-            {
-              "skill": "Design de software",
-              "subskill": "POO/Design",
-              "profileSkillId": "design"
-            },
-            {
-              "skill": "Linux",
-              "subskill": null,
-              "profileSkillId": "linux"
-            },
-            {
-              "skill": "Banco de dados",
-              "subskill": null,
-              "profileSkillId": "sql"
-            },
-            {
-              "skill": "Java",
-              "subskill": null,
-              "profileSkillId": "java"
-            },
-            {
-              "skill": "SQL",
-              "subskill": null,
-              "profileSkillId": "sql"
-            }
-          ],
-          "profileSkillIds": [
-            "git",
-            "design",
-            "linux",
-            "sql",
-            "java"
-          ],
-          "unmappedSkillCount": 0,
-          "relation": "any",
-          "level": 1,
-          "levelLabel": "básico",
-          "minYears": null,
-          "transferable": true
-        },
-        {
           "text": "Curso técnico ou profissionalizante completo ou cursando em Tecnologia da Informação, Análise de Sistemas, Ciência da Computação ou áreas correlatas; ou superior completo ou cursando nessas áreas.",
-          "position": 1,
+          "position": 0,
           "source": "description",
           "mandatory": true,
           "requirementType": "eliminatory",
@@ -28494,7 +28362,7 @@
         },
         {
           "text": "Conhecimento básico de lógica de programação.",
-          "position": 2,
+          "position": 1,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -28520,7 +28388,7 @@
         },
         {
           "text": "Conhecimento básico de Java ou de outra linguagem orientada a objetos.",
-          "position": 3,
+          "position": 2,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -28546,7 +28414,7 @@
         },
         {
           "text": "Noções de Programação Orientada a Objetos (POO).",
-          "position": 4,
+          "position": 3,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -28564,7 +28432,7 @@
         },
         {
           "text": "Conhecimento básico de banco de dados e SQL.",
-          "position": 5,
+          "position": 4,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -28595,7 +28463,7 @@
         },
         {
           "text": "Conhecimento básico de Git e versionamento de código.",
-          "position": 6,
+          "position": 5,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -28621,7 +28489,7 @@
         },
         {
           "text": "Familiaridade com os sistemas operacionais Windows ou Linux.",
-          "position": 7,
+          "position": 6,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -28647,7 +28515,7 @@
         },
         {
           "text": "Inglês básico para leitura de documentação técnica.",
-          "position": 8,
+          "position": 7,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
@@ -28664,128 +28532,8 @@
           "transferable": false
         },
         {
-          "text": "Conhecimento básico de Spring Boot.",
-          "position": 0,
-          "source": "description",
-          "mandatory": false,
-          "requirementType": "differential",
-          "category": "technical",
-          "skill": "Java",
-          "subskill": "Spring Boot",
-          "skills": [
-            {
-              "skill": "Java",
-              "subskill": "Spring Boot",
-              "profileSkillId": "spring"
-            }
-          ],
-          "profileSkillIds": [
-            "spring"
-          ],
-          "unmappedSkillCount": 0,
-          "relation": "single",
-          "level": 1,
-          "levelLabel": "básico",
-          "minYears": null,
-          "transferable": false
-        },
-        {
-          "text": "Participação em projetos acadêmicos, cursos, bootcamps ou projetos pessoais relacionados ao desenvolvimento de software.",
-          "position": 1,
-          "source": "description",
-          "mandatory": false,
-          "requirementType": "differential",
-          "category": "technical",
-          "skill": null,
-          "subskill": null,
-          "skills": [],
-          "profileSkillIds": [],
-          "unmappedSkillCount": 0,
-          "relation": "single",
-          "level": null,
-          "levelLabel": null,
-          "minYears": null,
-          "transferable": false
-        },
-        {
-          "text": "Noções de testes unitários.",
-          "position": 2,
-          "source": "description",
-          "mandatory": false,
-          "requirementType": "differential",
-          "category": "technical",
-          "skill": "Testes",
-          "subskill": null,
-          "skills": [
-            {
-              "skill": "Testes",
-              "subskill": null,
-              "profileSkillId": "tests"
-            }
-          ],
-          "profileSkillIds": [
-            "tests"
-          ],
-          "unmappedSkillCount": 0,
-          "relation": "single",
-          "level": 1,
-          "levelLabel": "básico",
-          "minYears": null,
-          "transferable": true
-        },
-        {
-          "text": "Conhecimento básico de metodologias ágeis, como Scrum ou Kanban.",
-          "position": 3,
-          "source": "description",
-          "mandatory": false,
-          "requirementType": "differential",
-          "category": "technical",
-          "skill": "Métodos ágeis",
-          "subskill": null,
-          "skills": [
-            {
-              "skill": "Métodos ágeis",
-              "subskill": null,
-              "profileSkillId": null
-            }
-          ],
-          "profileSkillIds": [],
-          "unmappedSkillCount": 1,
-          "relation": "single",
-          "level": 1,
-          "levelLabel": "básico",
-          "minYears": null,
-          "transferable": false
-        },
-        {
-          "text": "Familiaridade com ferramentas de Inteligência Artificial aplicadas ao desenvolvimento de software",
-          "position": 4,
-          "source": "description",
-          "mandatory": false,
-          "requirementType": "differential",
-          "category": "technical",
-          "skill": "IA/ML",
-          "subskill": null,
-          "skills": [
-            {
-              "skill": "IA/ML",
-              "subskill": null,
-              "profileSkillId": "ai"
-            }
-          ],
-          "profileSkillIds": [
-            "ai"
-          ],
-          "unmappedSkillCount": 0,
-          "relation": "single",
-          "level": 1,
-          "levelLabel": "básico",
-          "minYears": null,
-          "transferable": false
-        },
-        {
           "text": "Elegibilidade para vaga afirmativa: confirmar no anúncio",
-          "position": 9,
+          "position": 8,
           "source": "title",
           "mandatory": true,
           "requirementType": "eliminatory",
@@ -28815,11 +28563,7 @@
         "linux",
         "sql"
       ],
-      "differentialSkillIds": [
-        "ai",
-        "spring",
-        "tests"
-      ],
+      "differentialSkillIds": [],
       "geographyScope": "sao_paulo",
       "geographyLabel": "São Paulo",
       "geographyEligible": true,
