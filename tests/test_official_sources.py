@@ -243,6 +243,14 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertIn(linkedin["source"], {x["url"] for x in official["sources"]})
         self.assertIn(linkedin["key"], official["sourceAliases"])
 
+    def test_equal_requirements_at_different_companies_are_not_duplicates(self):
+        requirements = ["Python", "SQL", "APIs REST"]
+        a = {"key": "a", "company": "Banco Inter", "role": "Analista de Dados Jr", "requirements": requirements, "source": "https://www.linkedin.com/jobs/view/123456789"}
+        b = {"key": "b", "company": "Stone", "role": "Analista de Dados Jr", "requirements": requirements, "source": "https://www.linkedin.com/jobs/view/123456788"}
+        apply_source_preference([a, b])
+        self.assertIsNone(a["duplicateOf"])
+        self.assertIsNone(b["duplicateOf"])
+
     @patch.object(update_vagas, "official_ats_urls", return_value=["official"])
     @patch.object(update_vagas, "gupy_urls", return_value=["gupy"])
     @patch.object(update_vagas, "lever_urls", return_value=["lever"])

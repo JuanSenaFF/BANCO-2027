@@ -22,6 +22,9 @@ NON_ENTRY_TITLE_TERMS = [
     " analista ii", " analista iii", " analista iv", " analista v",
     " developer ii", " developer iii", " developer iv", " developer v",
     " desenvolvedor ii", " desenvolvedor iii", " desenvolvedor iv", " desenvolvedor v",
+    " engineer ii", " engineer iii", " engineer iv", " engineer v",
+    " software engineer ii", " software engineer iii", " software engineer iv", " software engineer v",
+    " data engineer ii", " data engineer iii", " data engineer iv", " data engineer v",
 ]
 
 EXTRA_KEYWORDS = [

@@ -20,6 +20,10 @@ class QualityTests(unittest.TestCase):
         html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL básico</li><li>Experiência com APIs</li></ul><h2>Diferenciais</h2><ul><li>AWS</li></ul><h2>Benefícios</h2><ul><li>Plano de saúde</li></ul>'
         a,b=split_requirements(None,{'description':html})
         self.assertEqual(a,['Python','SQL básico','Experiência com APIs']);self.assertEqual(b,['AWS'])
+    def test_requirement_section_stops_before_unheaded_benefits_and_metadata(self):
+        html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL</li><li>APIs REST</li></ul><p>Viva Bem: programa de saúde</p><p>Universidade corporativa</p><p>Nível de experiência Não aplicável</p>'
+        a,_=split_requirements(None,{'description':html})
+        self.assertEqual(a,['Python','SQL','APIs REST'])
     def test_process_steps_do_not_leak_into_requirements(self):
         html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL</li><li>APIs REST</li></ul><h2>Etapas do processo seletivo</h2><ul><li>Teste cognitivo</li><li>Entrevista com a liderança</li></ul>'
         a,b=split_requirements(None,{'description':html})
@@ -46,6 +50,9 @@ class QualityTests(unittest.TestCase):
         self.assertTrue(senior_conflict('SSD Brasil - Cyber Analyst lll - SOC','Cloud Security'))
         self.assertFalse(senior_conflict('Data Analyst I','SQL'))
         self.assertTrue(senior_conflict('Analista de Risco de Crédito Pl','SQL'))
+        self.assertTrue(senior_conflict('Software Engineer II','Python'))
+        self.assertTrue(senior_conflict('Data Engineer III','Python'))
+        self.assertTrue(senior_conflict('Backend Dev Sr.','Python'))
     def test_same_linkedin_id(self):
         self.assertEqual(canonical_url('https://linkedin.com/jobs/view/python-123456789'),canonical_url('https://br.linkedin.com/jobs/view/123456789?tracking=foo'))
     def test_similarity(self):

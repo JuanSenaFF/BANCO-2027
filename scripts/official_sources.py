@@ -140,6 +140,17 @@ def same_posting(a: dict, b: dict, requirement_similarity: Callable[[list[str], 
     return title_score >= 0.72 and req_score >= 0.45
 
 
+def same_company(a: dict, b: dict) -> bool:
+    """Return whether two records refer to the same employer, including known aliases."""
+    company_a, company_b = _norm(a.get("company")), _norm(b.get("company"))
+    if not company_a or not company_b:
+        return False
+    if company_a == company_b or company_a in company_b or company_b in company_a:
+        return True
+    aliases = ({"banco inter", "inter"}, {"xp", "xp inc"}, {"itau", "itau unibanco"})
+    return any(company_a in group and company_b in group for group in aliases)
+
+
 def merge_source_records(*jobs: dict) -> list[dict]:
     """Preserve source lineage while keeping the preferred URL first."""
     by_url: dict[str, dict] = {}
