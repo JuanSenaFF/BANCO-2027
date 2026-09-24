@@ -64,6 +64,15 @@ class MarketModelTests(unittest.TestCase):
         self.assertEqual(result["geographyScope"], "sao_paulo_unverified")
         self.assertEqual(result["geographyWeight"], 0.7)
 
+    def test_remote_requires_brazil_evidence(self):
+        brazil = geography({"location": "Brasil", "modality": "Remoto"})
+        foreign = geography({"location": "Austin, United States", "modality": "Remoto"})
+        unknown = geography({"location": "Remoto", "modality": "Remoto"})
+        self.assertEqual(brazil["geographyScope"], "remote_brazil")
+        self.assertEqual(foreign["geographyScope"], "outside_scope")
+        self.assertFalse(foreign["geographyEligible"])
+        self.assertEqual(unknown["geographyScope"], "remote_unverified")
+
 
 if __name__ == "__main__":
     unittest.main()

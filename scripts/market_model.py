@@ -61,12 +61,29 @@ def geography(job: dict) -> dict:
     location = norm(job.get("location"))
     modality = norm(job.get("modality"))
     search_scope = norm(job.get("searchScopeLocation"))
-    if "remot" in modality or "remot" in location:
+    remote = "remot" in modality or "remot" in location
+    brazil_markers = re.compile(r"\b(brasil|brazil|br)\b|\b(?:s[aã]o paulo|rio de janeiro|belo horizonte|curitiba|recife|bras[ií]lia)\b")
+    foreign_markers = re.compile(r"\b(?:united states|usa|u\.s\.a\.|austin|new york|san francisco|seattle|lisbon|london|portugal|spain|canada|mexico|argentina|chile|germany|france|ireland)\b")
+    if remote and foreign_markers.search(location) and not brazil_markers.search(location):
+        return {
+            "geographyScope": "outside_scope",
+            "geographyLabel": "Remoto fora do Brasil",
+            "geographyEligible": False,
+            "geographyWeight": 0.0,
+        }
+    if remote and (brazil_markers.search(location) or "brazil" in norm(job.get("searchScopeLocation")) or "brasil" in norm(job.get("searchScopeLocation"))):
         return {
             "geographyScope": "remote_brazil",
             "geographyLabel": "Remoto no Brasil",
             "geographyEligible": True,
             "geographyWeight": 1.0,
+        }
+    if remote:
+        return {
+            "geographyScope": "remote_unverified",
+            "geographyLabel": "Remoto · país a confirmar",
+            "geographyEligible": False,
+            "geographyWeight": 0.0,
         }
     if SAO_PAULO_RE.search(location):
         return {

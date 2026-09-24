@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from rules import DUPLICATE_SIMILARITY, REVIEW_SIMILARITY
-from official_sources import prefer_source, same_posting, source_metadata
+from official_sources import prefer_source, same_posting, same_company, source_metadata
 from company_policy import (
     TARGET_COMPANIES as APPROVED_COMPANIES,
     CONTEXT_COMPANIES,
@@ -214,7 +214,7 @@ def main() -> None:
             (
                 x
                 for x in reference
-                if req_similarity(job.get("requirements", []), x.get("requirements", []))
+                if (same_company(job, x) and req_similarity(job.get("requirements", []), x.get("requirements", [])))
                 >= DUPLICATE_SIMILARITY
                 or (
                     source_metadata(job.get("source", ""))["priority"]

@@ -16,6 +16,7 @@ from rules import (
 from official_sources import (
     merge_source_records,
     same_posting,
+    same_company,
     source_metadata,
     source_priority,
 )
@@ -135,7 +136,7 @@ def apply_source_preference(jobs):
     for job in ordered:
         duplicate=next((
             winner for winner in winners
-            if req_similarity(job.get('requirements',[]),winner.get('requirements',[]))>=DUPLICATE_SIMILARITY
+            if (same_company(job, winner) and req_similarity(job.get('requirements',[]),winner.get('requirements',[]))>=DUPLICATE_SIMILARITY)
             or (
                 source_priority(job)!=source_priority(winner)
                 and same_posting(job,winner,req_similarity)
@@ -207,7 +208,9 @@ def run(online=False):
                 return j['key'],verify(j,session)
         with ThreadPoolExecutor(max_workers=6) as pool:
             candidates=[j for j in out.values() if j['status']!='Encerrada' and not j['excluded']]
-            for key,result in pool.map(check,candidates):out[key].update(apply_verification(out[key], result))
+            verification_results=list(pool.map(check,candidates))
+            for key,result in verification_results:out[key].update(apply_verification(out[key], result))
+        current_verified_keys={key for key,result in verification_results if result.get('lastVerifiedAt')}
     for j in out.values():
         annotate_source(j)
         j['excluded']=excluded_by_quality(j)
@@ -221,7 +224,7 @@ def run(online=False):
     actual_added=len(set(out)-set(prior_all)) if online else old.get('meta',{}).get('added',0)
     meta={**old.get('meta',{}),'catalogBuiltAt':now,'total':len(out),'added':actual_added}
     if resolution_counts is not None:meta['sourceResolution']=resolution_counts
-    if online:meta.update(lastCheckAttemptAt=now,verificationAttempted=len([j for j in out.values() if j.get('lastCheckedAt')]),verificationConfirmed=sum(j.get('lastVerifiedAt','')==now for j in out.values()))
+    if online:meta.update(lastCheckAttemptAt=now,verificationAttempted=len(verification_results),verificationConfirmed=len(current_verified_keys))
     report_path=ROOT/'collection-report.json'
     if report_path.exists():
         report=json.loads(report_path.read_text(encoding='utf-8'))
@@ -265,7 +268,7 @@ def run(online=False):
     data={'meta':meta,'jobs':list(out.values())};path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     history_path=ROOT/'market-history.json';history=json.loads(history_path.read_text(encoding='utf-8')) if history_path.exists() else []
     week=(datetime.now(timezone.utc)-timedelta(days=datetime.now(timezone.utc).weekday())).date().isoformat()
-    if online and any(j.get('lastVerifiedAt','')==now for j in out.values()) and not any(s['week']==week for s in history):
+    if online and current_verified_keys and not any(s['week']==week for s in history):
         active=[j for j in out.values() if j['status']=='Ativa' and not j['excluded']]
         technology_jobs=Counter(t for j in active for t in set(j.get('tags',[])))
         technology_companies={

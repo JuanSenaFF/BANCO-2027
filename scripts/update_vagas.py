@@ -20,6 +20,7 @@ from official_sources import (
     collect_official_postings,
     prefer_source,
     same_posting,
+    same_company,
     source_metadata,
     source_priority,
 )
@@ -694,7 +695,7 @@ def main() -> int:
         # the LinkedIn/aggregator representation of the same posting.
         duplicate = next((
             j for j in existing + new_jobs
-            if similarity(requirements, j.get("requirements", [])) >= DUPLICATE_SIMILARITY
+            if (same_company(candidate_identity, j) and similarity(requirements, j.get("requirements", [])) >= DUPLICATE_SIMILARITY)
             or (
                 source_priority(candidate_identity) != source_priority(j)
                 and same_posting(candidate_identity, j, similarity)

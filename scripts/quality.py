@@ -57,12 +57,12 @@ def extract_jobposting(soup):
 def senior_conflict(title, description):
     t=norm(title)
     return bool(
-        re.search(r'\b(pl|pleno|senior|staff|lead|especialista|principal)\b', t)
+        re.search(r'\b(pl|pleno|sr|senior|staff|lead|especialista|specialist|principal)\b', t)
         # Some job boards render Roman II/III with lowercase ``l`` characters
         # (for example, "Analyst lll"). Treat those lookalikes as non-entry
         # levels too, without rejecting the legitimate suffix "I".
         or re.search(
-            r'\b(?:spec|analyst|analista|developer|desenvolvedor|engenheir[oa])\s+'
+            r'\b(?:spec|analyst|analista|developer|desenvolvedor|engenheir[oa]|software engineer|data engineer|engineer|engenheiro de software|engenheiro de dados)\s+'
             r'(?:ii|iii|iv|v|ll|lll|[2-9])\b',
             t,
         )
@@ -85,8 +85,10 @@ NON_REQUIREMENT_RE = re.compile(
     r'\bseguro de vida\b|\bprevidencia privada\b|\bplr\b|\blicenca (?:maternidade|paternidade)\b|'
     r'\bdescontos? exclusivos?\b|\bgympass\b|\bwellhub\b|\btotalpass\b|'
     r'\bteste cognitivo\b|\bvideo entrevista\b|\bentrevista com\b|\bentrevista focada\b|'
+    r'\bviva bem\b|\buniversidade corporativa\b|\bparcerias? educacionais\b|\bparticipacao nos lucros\b|'
+    r'\bcondicoes especiais em produtos\b|\bisencao de tarifas\b|\b\d+\s*[ªa]?\s*cesta alimentacao\b|\bauxilio creche\b|'
     r'\bprocesso seletivo\b|\brecrutamento\b|\bavaliacao tecnica\b|\betapas? do processo\b|'
-    r'\bambiente dinamico\b|\bliberdade para trilhar\b|\bespaco para desenvolvimento\b'
+    r'\bambiente dinamico\b|\bliberdade para trilhar\b|\bespaco para desenvolvimento\b|\bnivel de experiencia\b'
 )
 
 TECHNICAL_TITLE_RE = re.compile(
@@ -137,6 +139,9 @@ def split_requirements(soup, posting=None):
         if len(t) < 130:
             if re.search(r'diferencia|nice.to.have|sera um plus|desejave', n):
                 mode = 'diff'
+                continue
+            if re.search(r'benef[ií]cios|what we offer|offerings|benefits|responsabilidades|atribuicoes|oferecemos|sobre (?:nos|a empresa|o time)|processo seletivo|etapas do processo|etapas|nossa cultura|informacoes adicionais', n):
+                mode = None
                 continue
             if re.search(r'requisitos|qualificaco|requirements|o que (?:buscamos|precisa)|precisamos que', n):
                 mode = 'req'
