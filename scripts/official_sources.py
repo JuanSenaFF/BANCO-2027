@@ -15,6 +15,8 @@ from dataclasses import dataclass
 from typing import Any, Callable, Iterable
 from urllib.parse import urlparse
 
+from company_policy import same_company_name
+
 
 @dataclass(frozen=True)
 class Board:
@@ -72,18 +74,21 @@ def _norm(value: Any) -> str:
 
 
 def provider_for_url(url: str, *, structured: bool = False) -> str:
-    host = urlparse(str(url or "")).netloc.lower().removeprefix("www.")
+    host = (urlparse(str(url or "")).hostname or "").lower().removeprefix("www.")
+    def is_domain(domain: str) -> bool:
+        return host == domain or host.endswith("." + domain)
+
     if host in OFFICIAL_COMPANY_HOSTS:
         return "company"
-    if host.endswith("linkedin.com"):
+    if is_domain("linkedin.com"):
         return "linkedin"
-    if host.endswith("greenhouse.io") and (host.startswith("boards") or host.startswith("job-boards")):
+    if is_domain("greenhouse.io") and host.split(".", 1)[0] in {"boards", "job-boards"}:
         return "greenhouse"
     if host in {"api.lever.co", "api.eu.lever.co", "jobs.lever.co", "jobs.eu.lever.co"}:
         return "lever"
     if host in {"api.ashbyhq.com", "jobs.ashbyhq.com"}:
         return "ashby"
-    if host.endswith("gupy.io"):
+    if is_domain("gupy.io"):
         return "gupy"
     if host in {"remotar.com.br", "querovagastech.com.br"}:
         return "aggregator"
@@ -126,15 +131,11 @@ def prefer_source(candidate: dict, current: dict) -> bool:
 
 def same_posting(a: dict, b: dict, requirement_similarity: Callable[[list[str], list[str]], float]) -> bool:
     """Conservative cross-source identity match used only for source promotion."""
-    company_a, company_b = _norm(a.get("company")), _norm(b.get("company"))
-    if not company_a or not company_b:
+    if not same_company(a, b):
         return False
-    if company_a != company_b and company_a not in company_b and company_b not in company_a:
-        aliases = ({"banco inter", "inter"}, {"xp", "xp inc"}, {"itau", "itau unibanco"})
-        if not any(company_a in group and company_b in group for group in aliases):
-            return False
-    title_a = set(_norm(a.get("role")).split())
-    title_b = set(_norm(b.get("role")).split())
+    title_aliases = {"jr": "junior", "eng": "engineer", "dev": "developer"}
+    title_a = {title_aliases.get(token, token) for token in _norm(a.get("role")).split()}
+    title_b = {title_aliases.get(token, token) for token in _norm(b.get("role")).split()}
     title_score = len(title_a & title_b) / len(title_a | title_b) if title_a and title_b else 0
     req_score = requirement_similarity(a.get("requirements", []), b.get("requirements", []))
     return title_score >= 0.72 and req_score >= 0.45
@@ -142,13 +143,7 @@ def same_posting(a: dict, b: dict, requirement_similarity: Callable[[list[str], 
 
 def same_company(a: dict, b: dict) -> bool:
     """Return whether two records refer to the same employer, including known aliases."""
-    company_a, company_b = _norm(a.get("company")), _norm(b.get("company"))
-    if not company_a or not company_b:
-        return False
-    if company_a == company_b or company_a in company_b or company_b in company_a:
-        return True
-    aliases = ({"banco inter", "inter"}, {"xp", "xp inc"}, {"itau", "itau unibanco"})
-    return any(company_a in group and company_b in group for group in aliases)
+    return same_company_name(a.get("company", ""), b.get("company", ""))
 
 
 def merge_source_records(*jobs: dict) -> list[dict]:

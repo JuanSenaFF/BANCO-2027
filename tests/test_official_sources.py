@@ -12,6 +12,8 @@ from official_sources import (
     Board,
     collect_official_postings,
     prefer_source,
+    provider_for_url,
+    same_company,
     same_posting,
     source_metadata,
 )
@@ -48,6 +50,15 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertGreater(company["priority"], greenhouse["priority"])
         self.assertGreater(greenhouse["priority"], linkedin["priority"])
         self.assertGreater(linkedin["priority"], aggregator["priority"])
+
+    def test_provider_domains_require_a_real_hostname_boundary(self):
+        self.assertEqual(provider_for_url("https://notgupy.io/jobs/1"), "unknown")
+        self.assertEqual(provider_for_url("https://boards-maliciousgreenhouse.io/jobs/1"), "unknown")
+        self.assertEqual(provider_for_url("https://evil-linkedin.com/jobs/view/1234567"), "unknown")
+
+    def test_company_identity_uses_exact_aliases(self):
+        self.assertTrue(same_company({"company": "Inter"}, {"company": "Banco Inter"}))
+        self.assertFalse(same_company({"company": "Inter"}, {"company": "Winter"}))
 
     @patch("update_vagas.sitemap_job_urls")
     def test_itau_sitemap_discovers_only_entry_level_jobs(self, sitemap_job_urls):
@@ -250,6 +261,14 @@ class OfficialSourceTests(unittest.TestCase):
         apply_source_preference([a, b])
         self.assertIsNone(a["duplicateOf"])
         self.assertIsNone(b["duplicateOf"])
+
+    def test_equal_requirements_in_distinct_roles_are_not_duplicates(self):
+        requirements = ["Python", "SQL", "APIs REST"]
+        backend = {"key": "backend", "company": "Banco Inter", "role": "Backend Developer Junior", "requirements": requirements, "source": "https://www.linkedin.com/jobs/view/123456781"}
+        data = {"key": "data", "company": "Banco Inter", "role": "Data Analyst Junior", "requirements": requirements, "source": "https://www.linkedin.com/jobs/view/123456782"}
+        apply_source_preference([backend, data])
+        self.assertIsNone(backend["duplicateOf"])
+        self.assertIsNone(data["duplicateOf"])
 
     @patch.object(update_vagas, "official_ats_urls", return_value=["official"])
     @patch.object(update_vagas, "gupy_urls", return_value=["gupy"])

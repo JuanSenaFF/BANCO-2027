@@ -25,15 +25,17 @@
   }
   function normalize(j){
     const title=norm(j.role), req=(j.requirements||[]).join(' ');
-    const conflict=/\b(pl|pleno|senior|staff|lead|especialista)\b/.test(title)||/experiencia\s+(?:como|de|em nivel)\s+(?:profissional\s+)?(?:pleno|senior)|(?:exigimos|requer|nivel de experiencia)\s*[:\-]?\s*(?:pleno|senior)/.test(norm(req));
+    const conflict=/\b(pl|pleno|sr|senior|staff|lead|especialista|specialist|principal)\b/.test(title)||/\b(?:spec|analyst|analista|developer|desenvolvedor|engenheir[oa]|software engineer|data engineer|engineer|engenheiro de software|engenheiro de dados)\s+(?:ii|iii|iv|v|ll|lll|[2-9])\b/.test(title)||/(?:experiencia\s+(?:como|de|em nivel)\s+|nivel de experiencia\s*[:\-]?\s*)(?:profissional\s+)?(?:pleno|senior)/.test(norm(req));
     const last=j.lastVerifiedAt||null;
     const stale=!last||Date.now()-new Date(last).getTime()>7*864e5;
-    let status=j.status==='Encerrada'?'Encerrada':j.status==='Ativa'&&!stale?'Ativa':'Possivelmente encerrada';
+    const checkedAt=Date.parse(j.lastCheckedAt||''),verifiedAt=Date.parse(last||'');
+    const newerPending=j.validationState==='pending'&&Number.isFinite(checkedAt)&&(!Number.isFinite(verifiedAt)||checkedAt>verifiedAt);
+    let status=j.status==='Encerrada'?'Encerrada':j.status==='Ativa'&&!stale&&!newerPending?'Ativa':'Possivelmente encerrada';
     const sufficient=(j.requirements||[]).length>=3;
     const quality=j.qualityScore??Math.min(85,(sufficient?30:5)+(j.company?10:0)+(j.role?10:0)+(canonical(j.source)?10:0)+(last?15:0)+(j.location?5:0)+(j.modality?5:0));
     const review=Boolean(j.reviewRequired);
-    const validationState=review?'review':status==='Encerrada'?'closed':status==='Ativa'&&!stale?'confirmed':'pending';
-    return {...j,key:j.key||canonical(j.source)||'legacy:'+j.id,legacyStatus:j.status,status,validationState,firstSeenAt:j.firstSeenAt||j.collectedAt||null,lastVerifiedAt:last,location:j.location||'Não informada',modality:j.modality||'Não informada',salary:normalizeSalary(j.salary),sourceName:j.sourceName||(()=>{try{return new URL(j.source).hostname;}catch{return 'Não informada';}})(),qualityScore:quality,eligible:sufficient&&!conflict&&!j.excluded&&!review,qualityIssues:[...(j.qualityIssues||[]),...(!sufficient?['Requisitos insuficientes']:[]),...(conflict?['Senioridade contraditória']:[]),...(stale?['Validade precisa ser confirmada']:[]),...(review?[j.reviewReason||'Revisão humana necessária']:[])]};
+    const validationState=review?'review':status==='Encerrada'?'closed':newerPending?'pending':status==='Ativa'&&!stale?'confirmed':'pending';
+    return {...j,key:j.key||canonical(j.source)||'legacy:'+j.id,legacyStatus:j.status,status,validationState,firstSeenAt:j.firstSeenAt||j.collectedAt||null,lastVerifiedAt:last,location:j.location||'Não informada',modality:j.modality||'Não informada',salary:normalizeSalary(j.salary),sourceName:j.sourceName||(()=>{try{return new URL(j.source).hostname;}catch{return 'Não informada';}})(),qualityScore:quality,eligible:sufficient&&!conflict&&!j.excluded&&!review,qualityIssues:[...(j.qualityIssues||[]),...(!sufficient?['Requisitos insuficientes']:[]),...(conflict?['Senioridade contraditória']:[]),...((stale||newerPending)?['Validade precisa ser confirmada']:[]),...(review?[j.reviewReason||'Revisão humana necessária']:[])]};
   }
   function evaluate(j,profile,skills,prefs={},answers={}){
     const technical=(requirement)=>{

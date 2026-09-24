@@ -2,7 +2,7 @@ import html,json,unittest,sys
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from quality import parse_json_ld,split_requirements,senior_conflict,verify,requirements_quality_conflict
+from quality import deduplicate_requirement_containers,parse_json_ld,split_requirements,senior_conflict,verify,requirements_quality_conflict
 from validate_auto import canonical_url,req_similarity,similarity_band
 from rules import validation_state
 from build_catalog import apply_verification
@@ -32,6 +32,31 @@ class QualityTests(unittest.TestCase):
         html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL</li><li>Git</li><li>Vale-Refeição</li><li>Plano médico</li></ul>'
         a,_=split_requirements(None,{'description':html})
         self.assertEqual(a,['Python','SQL','Git'])
+    def test_inline_emphasis_does_not_drop_requirement_text(self):
+        description='<h2>Requisitos</h2><p>Conhecimento em <strong>Python</strong></p><p>SQL</p><p>APIs REST</p>'
+        req,_=split_requirements(None,{'description':description})
+        self.assertEqual(req,['Conhecimento em Python','SQL','APIs REST'])
+    def test_container_text_is_not_duplicated_with_list_items(self):
+        description='<h2>Requisitos</h2><p><ul><li>Python</li><li>SQL</li><li>APIs REST</li></ul></p>'
+        req,_=split_requirements(None,{'description':description})
+        self.assertEqual(req,['Python','SQL','APIs REST'])
+    def test_historical_combined_requirement_is_removed(self):
+        individual=[
+            'Superior em Tecnologia, Engenharias ou áreas correlatas.',
+            'Experiência em projetos de controles internos de TI e gestão de acessos.',
+            'Experiência de 1 a 2 anos na área.',
+        ]
+        combined=' '.join(individual) + ' ' + ('Contexto adicional. ' * 5)
+        self.assertEqual(deduplicate_requirement_containers([combined,*individual]),individual)
+    def test_english_qualification_headings_are_recognized(self):
+        description='<h2>Minimum qualifications</h2><ul><li>Python</li><li>SQL</li><li>REST APIs</li></ul><h2>Preferred qualifications</h2><ul><li>GCP</li></ul>'
+        req,diff=split_requirements(None,{'description':description})
+        self.assertEqual(req,['Python','SQL','REST APIs'])
+        self.assertEqual(diff,['GCP'])
+    def test_employment_type_stops_requirement_section(self):
+        description='<h2>Requisitos</h2><ul><li>Python</li><li>SQL</li><li>APIs REST</li></ul><h2>Tipo de emprego</h2><p>Tempo integral</p>'
+        req,_=split_requirements(None,{'description':description})
+        self.assertEqual(req,['Python','SQL','APIs REST'])
     def test_technical_role_requires_hard_skill_signal(self):
         self.assertTrue(requirements_quality_conflict('Engenharia de Software .Net Júnior',['Curiosidade e vontade de aprender','Proatividade','Boa comunicação']))
         self.assertFalse(requirements_quality_conflict('Engenharia de Software .Net Júnior',['C# e .NET','APIs REST','SQL']))
@@ -71,6 +96,14 @@ class QualityTests(unittest.TestCase):
         )
         self.assertEqual(result['status'], 'Ativa')
         self.assertEqual(result['validationState'], 'pending')
+        self.assertIsNone(result['lastVerifiedAt'])
+    def test_new_inconclusive_check_supersedes_old_confirmation(self):
+        result = apply_verification(
+            {'status':'Ativa','lastVerifiedAt':'2026-09-20T00:00:00Z'},
+            {'status':'Possivelmente encerrada','validationState':'pending','lastCheckedAt':'2026-09-24T00:00:00Z'},
+        )
+        self.assertEqual(result['previouslyVerifiedAt'],'2026-09-20T00:00:00Z')
+        self.assertEqual(validation_state({**result,'status':'Ativa'}),'pending')
     @patch('quality.safe_fetch')
     def test_http403_unknown(self,get):
         get.return_value.status_code=403
@@ -88,16 +121,41 @@ class QualityTests(unittest.TestCase):
     def test_entity_encoded_gupy_jsonld_is_confirmed(self,get):
         posting={
             '@context':'https://schema.org','@type':'JobPosting','title':'Cientista de Dados Jr.',
+            'hiringOrganization':{'name':'PagBank'},
             'validThrough':'2099-12-31','datePosted':'2026-05-25',
             'description':'<h2>Requisitos e qualificações</h2><ul><li>Python para análise de dados</li><li>SQL para manipulação de dados</li><li>Fundamentos de Machine Learning</li></ul><p>O profissional apoiará análises, modelos preditivos, documentação e iniciativas de risco.</p>',
         }
         encoded=html.escape(json.dumps(posting,ensure_ascii=False))
         get.return_value.status_code=200
         get.return_value.text=f'<script type="application/ld+json">{encoded}</script>'
-        result=verify({'source':'https://pagseguro.gupy.io/jobs/11175121','role':'Cientista de Dados Jr.'},object())
+        result=verify({'source':'https://pagseguro.gupy.io/jobs/11175121','role':'Cientista de Dados Jr.','company':'PagBank'},object())
         self.assertEqual(result['status'],'Ativa')
         self.assertEqual(result['validationState'],'confirmed')
         self.assertEqual(result['verificationReason'],'JobPosting correspondente e válido')
         self.assertEqual(result['validThrough'],'2099-12-31')
         self.assertTrue({'Python para análise de dados','SQL para manipulação de dados','Fundamentos de Machine Learning'}.issubset(result['requirements']))
+    @patch('quality.safe_fetch')
+    def test_jobposting_from_another_company_is_not_confirmed(self,get):
+        posting={
+            '@type':'JobPosting','title':'Software Engineer Junior',
+            'hiringOrganization':{'name':'Other Company'},
+            'description':'<h2>Requirements</h2><ul><li>Python</li><li>SQL</li><li>REST APIs</li></ul>' + 'x'*200,
+        }
+        get.return_value.status_code=200
+        get.return_value.text=f'<script type="application/ld+json">{json.dumps(posting)}</script>'
+        result=verify({'source':'https://example.com/job','role':'Software Engineer Junior','company':'Google'},object())
+        self.assertEqual(result['validationState'],'pending')
+        self.assertEqual(result['verificationReason'],'JobPosting pertence a outra empresa')
+    @patch('quality.safe_fetch')
+    def test_senior_jobposting_does_not_confirm_junior_record(self,get):
+        posting={
+            '@type':'JobPosting','title':'Software Engineer Senior',
+            'hiringOrganization':{'name':'Google LLC'},
+            'description':'<h2>Requirements</h2><ul><li>Python</li><li>SQL</li><li>REST APIs</li></ul>' + 'x'*200,
+        }
+        get.return_value.status_code=200
+        get.return_value.text=f'<script type="application/ld+json">{json.dumps(posting)}</script>'
+        result=verify({'source':'https://example.com/job','role':'Software Engineer Junior','company':'Google'},object())
+        self.assertEqual(result['validationState'],'pending')
+        self.assertEqual(result['verificationReason'],'JobPosting tem senioridade fora do recorte')
 if __name__=='__main__':unittest.main()

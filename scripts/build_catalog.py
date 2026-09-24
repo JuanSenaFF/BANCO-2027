@@ -6,7 +6,12 @@ from datetime import datetime,timezone,timedelta
 from concurrent.futures import ThreadPoolExecutor
 from collections import Counter
 from validate_auto import parse_jobs, canonical_url, req_similarity, valid
-from quality import senior_conflict, verify, requirements_quality_conflict
+from quality import (
+    deduplicate_requirement_containers,
+    requirements_quality_conflict,
+    senior_conflict,
+    verify,
+)
 from rules import (
     ACTIVE_VERIFICATION_DAYS,
     DUPLICATE_SIMILARITY,
@@ -16,7 +21,6 @@ from rules import (
 from official_sources import (
     merge_source_records,
     same_posting,
-    same_company,
     source_metadata,
     source_priority,
 )
@@ -97,13 +101,19 @@ def confidence_score(j):
 
 def apply_verification(job, result):
     """Do not close a previously active job on an inconclusive fetch failure."""
-    if job.get('status') == 'Ativa' and result.get('status') == 'Possivelmente encerrada':
-        return {
+    if result.get('validationState') == 'pending' or result.get('status') == 'Possivelmente encerrada':
+        pending = {
             **result,
-            'status': 'Ativa',
+            'status': 'Ativa' if job.get('status') == 'Ativa' else result.get('status', 'Possivelmente encerrada'),
             'validationState': 'pending',
+            # The latest attempt supersedes old confirmation evidence. Keep the
+            # historical timestamp separately, but never expose it as current.
+            'lastVerifiedAt': None,
             'verificationReason': result.get('verificationReason') or 'Validação inconclusiva; status anterior preservado',
         }
+        if job.get('lastVerifiedAt'):
+            pending['previouslyVerifiedAt'] = job['lastVerifiedAt']
+        return pending
     return result
 
 
@@ -136,10 +146,10 @@ def apply_source_preference(jobs):
     for job in ordered:
         duplicate=next((
             winner for winner in winners
-            if (same_company(job, winner) and req_similarity(job.get('requirements',[]),winner.get('requirements',[]))>=DUPLICATE_SIMILARITY)
-            or (
-                source_priority(job)!=source_priority(winner)
-                and same_posting(job,winner,req_similarity)
+            if same_posting(job,winner,req_similarity)
+            and (
+                req_similarity(job.get('requirements',[]),winner.get('requirements',[]))>=DUPLICATE_SIMILARITY
+                or source_priority(job)!=source_priority(winner)
             )
         ),None)
         if duplicate:
@@ -210,9 +220,11 @@ def run(online=False):
             candidates=[j for j in out.values() if j['status']!='Encerrada' and not j['excluded']]
             verification_results=list(pool.map(check,candidates))
             for key,result in verification_results:out[key].update(apply_verification(out[key], result))
-        current_verified_keys={key for key,result in verification_results if result.get('lastVerifiedAt')}
+        current_verified_keys={key for key,result in verification_results if result.get('validationState')=='confirmed'}
     for j in out.values():
         annotate_source(j)
+        j['requirements']=deduplicate_requirement_containers(j.get('requirements',[]))
+        j['differentials']=deduplicate_requirement_containers(j.get('differentials',[]))
         j['excluded']=excluded_by_quality(j)
         j['validationState']=validation_state(j)
         j['qualityScore'],j['confidenceLabel']=confidence_score(j)

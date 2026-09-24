@@ -34,7 +34,10 @@ COMPANIES = (
     TargetCompany("Safra"),
     TargetCompany("Mercado Pago", search_tier="core"),
     TargetCompany("Stone", search_tier="core"),
-    TargetCompany("PagBank", search_tier="core"),
+    TargetCompany("PagBank", (
+        "PagSeguro", "PagSeguro PagBank",
+        "PagSeguro Internet Instituição de Pagamento S.A.",
+    ), "core"),
     TargetCompany("B3", search_tier="core"),
     TargetCompany("Núclea"),
     TargetCompany("CERC"),
@@ -113,12 +116,30 @@ def normalize_company(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", text.casefold())
 
 
-TARGET_KEYS = frozenset(normalize_company(name) for name in TARGET_COMPANIES)
+COMPANY_CANONICAL_KEYS = {
+    normalize_company(alias): normalize_company(company.name)
+    for company in COMPANIES
+    for alias in (company.name, *company.aliases)
+}
+TARGET_KEYS = frozenset(COMPANY_CANONICAL_KEYS)
 CONTEXT_KEYS = frozenset(normalize_company(name) for name in CONTEXT_COMPANIES)
 
 
 def is_target_company(company: str) -> bool:
     return normalize_company(company) in TARGET_KEYS
+
+
+def company_identity(company: str) -> str:
+    """Return an exact canonical identity for known aliases and unknown names."""
+    key = normalize_company(company)
+    return COMPANY_CANONICAL_KEYS.get(key, key)
+
+
+def same_company_name(first: str, second: str) -> bool:
+    """Compare employers without unsafe substring matching."""
+    first_key = company_identity(first)
+    second_key = company_identity(second)
+    return bool(first_key and second_key and first_key == second_key)
 
 
 def is_contextual_company(company: str) -> bool:

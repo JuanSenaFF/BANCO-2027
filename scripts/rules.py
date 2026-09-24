@@ -38,7 +38,24 @@ def validation_state(job: dict) -> str:
         return VALIDATION_REVIEW
     if job.get("status") == "Encerrada":
         return VALIDATION_CLOSED
+    # A newer inconclusive attempt invalidates the current confirmation while
+    # the previous timestamp remains available as history.
+    if job.get("validationState") == VALIDATION_PENDING:
+        checked = _timestamp(job.get("lastCheckedAt"))
+        verified = _timestamp(job.get("lastVerifiedAt"))
+        if checked is not None and (verified is None or checked > verified):
+            return VALIDATION_PENDING
     verified_age = age_days(job.get("lastVerifiedAt"))
     if job.get("status") == "Ativa" and verified_age is not None and verified_age <= ACTIVE_VERIFICATION_DAYS:
         return VALIDATION_CONFIRMED
     return VALIDATION_PENDING
+
+
+def _timestamp(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        return None

@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from rules import DUPLICATE_SIMILARITY, REVIEW_SIMILARITY
-from official_sources import prefer_source, same_posting, same_company, source_metadata
+from official_sources import prefer_source, same_posting, source_metadata
 from company_policy import (
     TARGET_COMPANIES as APPROVED_COMPANIES,
     CONTEXT_COMPANIES,
@@ -210,20 +210,15 @@ def main() -> None:
         if cu and cu in seen_urls:
             removed.append((job.get("company"), job.get("role"), "URL/ID já existente"))
             continue
-        duplicate = next(
-            (
-                x
-                for x in reference
-                if (same_company(job, x) and req_similarity(job.get("requirements", []), x.get("requirements", [])))
-                >= DUPLICATE_SIMILARITY
-                or (
-                    source_metadata(job.get("source", ""))["priority"]
-                    != source_metadata(x.get("source", ""))["priority"]
-                    and same_posting(job, x, req_similarity)
-                )
-            ),
-            None,
-        )
+        duplicate = next((
+            x for x in reference
+            if same_posting(job, x, req_similarity)
+            and (
+                req_similarity(job.get("requirements", []), x.get("requirements", [])) >= DUPLICATE_SIMILARITY
+                or source_metadata(job.get("source", ""))["priority"]
+                != source_metadata(x.get("source", ""))["priority"]
+            )
+        ), None)
         if duplicate and not prefer_source(job, duplicate):
             removed.append((job.get("company"), job.get("role"), "exigências essencialmente idênticas"))
             continue
@@ -238,7 +233,8 @@ def main() -> None:
             (
                 x
                 for x in reference
-                if similarity_band(job.get("requirements", []), x.get("requirements", [])) == "review"
+                if same_posting(job, x, req_similarity)
+                and similarity_band(job.get("requirements", []), x.get("requirements", [])) == "review"
             ),
             None,
         )
