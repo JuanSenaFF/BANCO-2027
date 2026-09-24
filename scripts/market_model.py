@@ -43,7 +43,17 @@ OTHER_LOCATION_RE = re.compile(
     r"rio de janeiro|\brj\b|minas gerais|\bmg\b|belo horizonte|paran[aá]|\bpr\b|"
     r"curitiba|rio grande do sul|\brs\b|porto alegre|santa catarina|\bsc\b|"
     r"florian[oó]polis|recife|pernambuco|\bpe\b|bahia|\bba\b|salvador|"
-    r"bras[ií]lia|distrito federal|\bdf\b|fortaleza|cear[aá]|\bce\b|m[eé]xico|mexico"
+    r"bras[ií]lia|distrito federal|\bdf\b|fortaleza|cear[aá]|\bce\b"
+)
+BRAZIL_LOCATION_RE = re.compile(
+    r"\b(?:brasil|brazil|br)\b|sao paulo|campinas|barueri|osasco|alphaville|jundiai|"
+    r"rio de janeiro|belo horizonte|curitiba|porto alegre|florianopolis|recife|salvador|"
+    r"brasilia|fortaleza|\b(?:sp|rj|mg|pr|rs|sc|pe|ba|df|ce)\b"
+)
+FOREIGN_LOCATION_RE = re.compile(
+    r"\b(?:united states|usa|u\.s\.a\.|portugal|spain|espanha|canada|mexico|argentina|chile|"
+    r"germany|alemanha|deutschland|france|franca|ireland|irlanda|united kingdom|reino unido|"
+    r"austin|new york|san francisco|seattle|lisbon|lisboa|london|londres|berlin|madrid|paris)\b"
 )
 
 
@@ -62,16 +72,19 @@ def geography(job: dict) -> dict:
     modality = norm(job.get("modality"))
     search_scope = norm(job.get("searchScopeLocation"))
     remote = "remot" in modality or "remot" in location
-    brazil_markers = re.compile(r"\b(brasil|brazil|br)\b|\b(?:s[aã]o paulo|rio de janeiro|belo horizonte|curitiba|recife|bras[ií]lia)\b")
-    foreign_markers = re.compile(r"\b(?:united states|usa|u\.s\.a\.|austin|new york|san francisco|seattle|lisbon|london|portugal|spain|canada|mexico|argentina|chile|germany|france|ireland)\b")
-    if remote and foreign_markers.search(location) and not brazil_markers.search(location):
+    brazil_location = bool(BRAZIL_LOCATION_RE.search(location))
+    foreign_location = bool(FOREIGN_LOCATION_RE.search(location))
+    brazil_scope = bool(re.search(r"\b(?:brasil|brazil|br)\b", search_scope))
+
+    # An explicit workplace always outranks the discovery query's geo scope.
+    if foreign_location and not brazil_location:
         return {
             "geographyScope": "outside_scope",
-            "geographyLabel": "Remoto fora do Brasil",
+            "geographyLabel": "Remoto fora do Brasil" if remote else "Fora de São Paulo",
             "geographyEligible": False,
             "geographyWeight": 0.0,
         }
-    if remote and (brazil_markers.search(location) or "brazil" in norm(job.get("searchScopeLocation")) or "brasil" in norm(job.get("searchScopeLocation"))):
+    if remote and (brazil_location or brazil_scope):
         return {
             "geographyScope": "remote_brazil",
             "geographyLabel": "Remoto no Brasil",

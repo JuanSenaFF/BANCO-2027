@@ -73,6 +73,30 @@ class MarketModelTests(unittest.TestCase):
         self.assertFalse(foreign["geographyEligible"])
         self.assertEqual(unknown["geographyScope"], "remote_unverified")
 
+    def test_explicit_foreign_location_overrides_linkedin_scope(self):
+        result = geography({
+            "location": "Lisboa, Portugal",
+            "modality": "Presencial",
+            "sourceProvider": "linkedin",
+            "searchScopeLocation": "São Paulo",
+        })
+        self.assertEqual(result["geographyScope"], "outside_scope")
+        self.assertFalse(result["geographyEligible"])
+
+    def test_brazilian_city_is_valid_evidence_for_remote_role(self):
+        result = geography({"location": "Campinas, SP", "modality": "Remoto"})
+        self.assertEqual(result["geographyScope"], "remote_brazil")
+        self.assertTrue(result["geographyEligible"])
+
+    def test_foreign_remote_location_beats_brazil_search_scope(self):
+        result = geography({
+            "location": "Berlin, Germany",
+            "modality": "Remoto",
+            "searchScopeLocation": "Brasil",
+        })
+        self.assertEqual(result["geographyScope"], "outside_scope")
+        self.assertFalse(result["geographyEligible"])
+
 
 if __name__ == "__main__":
     unittest.main()
