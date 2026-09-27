@@ -1,0 +1,36 @@
+name: Validar projeto
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '*.md'
+      - 'data-auto.js'
+      - 'jobs.json'
+      - 'market-history.json'
+      - 'collection-report.json'
+permissions:
+  contents: read
+concurrency:
+  group: validar-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dependências do coletor
+        run: pip install requests beautifulsoup4
+      - name: Testar regras, API e sincronização
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.js
+      - name: Construir site público
+        run: python scripts/build_site.py
