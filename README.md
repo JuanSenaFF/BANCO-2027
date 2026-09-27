@@ -122,6 +122,8 @@ python scripts/build_catalog.py
 python scripts/build_site.py
 ```
 
+O workflow `Validar projeto` executa os testes e a compilação em cada PR, sem credenciais de produção e sem disparar a coleta. A API e a restauração de backups compartilham a validação do estado pessoal. Salvamentos na mesma aba são serializados; alterações simultâneas em dispositivos diferentes ainda usam a última gravação recebida.
+
 `build_catalog.py --verify` consulta os anúncios; exige acesso às fontes públicas. `sync_database.py` só publica no Supabase quando suas variáveis estão configuradas. Nunca executar o coletor com credenciais no código. Os adaptadores oficiais usam somente endpoints públicos de leitura e não submetem candidaturas.
 
 ## Limites explícitos
@@ -131,7 +133,7 @@ python scripts/build_site.py
 - O histórico de perfil semanal é registrado ao abrir o painel, não por um agendamento que conheça o perfil quando o usuário não acessa. O histórico de mercado é automatizado.
 - Alertas são internos ao painel. E-mails, push e mensagens externas não foram ativados.
 - Estimativas salariais são referências de mercado, não ofertas oficiais. Elas só aparecem quando há fonte, escopo e data registrados em `salary-estimates.json`.
-- Autenticação funciona com uma conta previamente provisionada. Cadastro, recuperação de senha e prova prática automática são evoluções futuras.
+- Autenticação funciona com uma conta previamente provisionada. Links de recuperação permitem definir uma nova senha; cadastro e envio do e-mail de recuperação pela interface ainda não foram implementados. A sessão é renovada enquanto a página permanece aberta, inclusive após suspensão da aba. Recarregar a página exige novo login.
 - A integração online exige validação real após provisionar os serviços. Os testes atuais verificam regras locais, rotas e proteção básica, não um ambiente Supabase/Vercel em produção.
 
 Referências de implementação: [Vercel Node.js](https://vercel.com/docs/functions/runtimes/node-js), [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [GitHub workflow dispatch](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event).
