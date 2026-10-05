@@ -162,5 +162,71 @@
     "segments": {
       "core_technology": 7
     }
+  },
+  {
+    "week": "2026-10-05",
+    "at": "2026-10-05T19:05:44+00:00",
+    "total": 6,
+    "technologies": {
+      "SQL": 3,
+      "IA/ML": 4,
+      "AWS": 2,
+      "GCP": 1,
+      "Crédito/Risco": 2,
+      "Dados/BI": 4,
+      "Azure": 2,
+      "Python": 3,
+      "Cloud": 4,
+      "Java": 2,
+      "JavaScript/Node": 2,
+      "POO/Design": 1,
+      ".NET/C#": 1,
+      "Git": 3,
+      "Automação": 2,
+      "Testes": 4,
+      "REST/APIs": 1,
+      "Segurança": 3,
+      "Troubleshooting/Produção": 1,
+      "CI/CD": 2,
+      "Linux": 1
+    },
+    "technologyCompanies": {
+      "SQL": 2,
+      "IA/ML": 2,
+      "AWS": 2,
+      "GCP": 1,
+      "Crédito/Risco": 2,
+      "Dados/BI": 3,
+      "Azure": 2,
+      "Python": 3,
+      "Cloud": 4,
+      "Java": 2,
+      "JavaScript/Node": 2,
+      "POO/Design": 1,
+      ".NET/C#": 1,
+      "Git": 3,
+      "Automação": 2,
+      "Testes": 3,
+      "REST/APIs": 1,
+      "Segurança": 2,
+      "Troubleshooting/Produção": 1,
+      "CI/CD": 1,
+      "Linux": 1
+    },
+    "companies": {
+      "PagBank": 2,
+      "XP Inc.": 1,
+      "Fundação Itaú": 1,
+      "Grupo Bancorbrás": 2
+    },
+    "areas": {
+      "Dados & Analytics": 2,
+      "Engenharia de Software": 2,
+      "Backend": 1,
+      "Segurança": 1
+    },
+    "segments": {
+      "core_technology": 6
+    }
   }
 ]
