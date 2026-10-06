@@ -282,6 +282,7 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertIsNone(data["duplicateOf"])
 
     @patch.object(update_vagas, "official_ats_urls", return_value=["official"])
+    @patch.object(update_vagas, "official_company_urls", return_value=["itau"])
     @patch.object(update_vagas, "gupy_urls", return_value=["gupy"])
     @patch.object(update_vagas, "lever_urls", return_value=["lever"])
     @patch.object(update_vagas, "workday_urls", return_value=[])
@@ -291,7 +292,7 @@ class OfficialSourceTests(unittest.TestCase):
     def test_discovery_orders_official_sources_before_linkedin(self, *_):
         self.assertEqual(
             update_vagas.discover_urls(),
-            ["official", "gupy", "lever", "linkedin", "aggregator"],
+            ["official", "itau", "gupy", "lever", "linkedin", "aggregator"],
         )
 
 
