@@ -82,17 +82,41 @@ O status da atualização é observado pelo ID/data da execução do workflow. O
 
 ## Verificação local
 
-### Resolução LinkedIn → Gupy
+### Funil de coleta e resolução oficial
+
+`collection-report.json` traz `discovered`, `scheduled_for_scan`, `scanned`,
+`not_scanned`, `outcomes`, `reasons`, `sourceFunnel` e uma linha por URL em
+`candidates`. A soma dos estados terminais deve ser igual a `discovered`.
+`candidate-history.json` guarda a URL canônica, primeiro/último avistamento,
+motivo, hash do conteúdo, versão da política e próxima tentativa. Rejeições
+recentes são reutilizadas por um dia; mudança da versão de política força
+reanálise. O histórico é retido por 180 dias. O arquivo entra no commit do bot.
+
+As fontes oficiais e as consultas das empresas core têm orçamento sem corte
+global. Consultas prioritárias adicionais, genéricas e agregadores têm tetos
+separados (180, 140 e 40 URLs, respectivamente). Excedentes aparecem como
+`not_scanned`, e falhas HTTP como `fetch_failed`. `accepted` significa entrada
+na coleta automática; `validated` é o total mantido pela validação posterior;
+`confirmed_active` depende de evidência atual, e `published` da inclusão no
+catálogo. O painel mostra essas medidas sem chamar o catálogo inteiro de
+aprovações da execução atual.
 
 Durante `build_catalog.py --verify`, vagas não encerradas e não excluídas do
-LinkedIn são procuradas no board Gupy cadastrado da própria empresa. O registro
-de aliases está em `scripts/source_resolution.py` (inclui PagBank/PagSeguro).
-São usados links públicos e dados incorporados `__NEXT_DATA__`; não é necessário
-login, cookies nem uma API privada. O board e os detalhes são reutilizados por
-execução, com limites de 10 páginas por board e 20 detalhes por busca.
-Há um orçamento global de 80 consultas de descoberta/detalhes ou 180 segundos
-antes de iniciar a próxima consulta; requisições em andamento mantêm seus
-timeouts de rede. O que exceder o orçamento fica pendente para outra execução.
+LinkedIn são procuradas no provedor oficial cadastrado da própria empresa:
+Gupy, Greenhouse, Ashby, Lever, Itaú Careers, Santander Workday e Google
+Careers. Vagas promovidas para feeds ATS também são reconfirmadas nesses feeds
+em execuções futuras. O catálogo de configuração e
+suas lacunas estão em `scripts/official_sources.py`; aliases são centralizados
+em `scripts/company_policy.py`.
+Empresas sem adaptador público verificado aparecem como `unconfigured` no
+catálogo de fontes; continuam com descoberta LinkedIn e não recebem falsa
+confirmação oficial. A expansão dessa cobertura pode ser feita por empresa,
+sem mudar os filtros de qualidade.
+No Gupy são usados links públicos e dados incorporados `__NEXT_DATA__`;
+Greenhouse, Ashby e Lever usam seus feeds públicos. Não é necessário login
+nem API privada. O orçamento Gupy é de 10 páginas por board, 20 detalhes por
+busca e 80 consultas ou 180 segundos por execução. O que exceder o orçamento
+fica pendente para outra execução.
 
 A associação exige empresa correta, título semelhante, requisitos suficientes,
 ausência de conflito de cidade/senioridade/PCD, score heurístico mínimo de 85 e

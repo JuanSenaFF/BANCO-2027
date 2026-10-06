@@ -8,7 +8,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import update_vagas as core
-from company_policy import PRIORITY_COMPANIES, is_target_company as enhanced_approved_company
+from company_policy import PRIORITY_COMPANIES, CORE_PRIORITY_COMPANIES, is_target_company as enhanced_approved_company
 
 ENTRY_LEVEL_TERMS = [
     "analyst i", "analista i", "level i", "nível 1", "nivel 1", "entry level", "entry-level",
@@ -40,22 +40,24 @@ def enhanced_linkedin_urls() -> list[str]:
             if url not in out:
                 out.append(url)
 
-    # Buscas genéricas preservam descoberta fora da lista prioritária.
-    for keyword in core.LINKEDIN_KEYWORDS:
-        add(core.linkedin_query_urls(keyword, (0, 10)))
-
-    # Uma consulta por empresa prioritária. Evitamos uma segunda tentativa redundante por empresa:
-    # o objetivo é ampliar cobertura sem transformar o workflow numa coleta excessivamente longa.
-    for company in PRIORITY_COMPANIES:
+    for company in [*CORE_PRIORITY_COMPANIES, *(c for c in PRIORITY_COMPANIES if c not in CORE_PRIORITY_COMPANIES)]:
         query = f'"{company}" AND (software OR tecnologia OR dados OR data OR cloud OR sistemas OR backend OR sre)'
-        add(core.linkedin_query_urls(query, (0,)))
+        urls = core.linkedin_query_urls(query, (0,))
+        add(urls)
+        for url in urls:
+            core.LINKEDIN_URL_BUCKET[url] = "core" if company in CORE_PRIORITY_COMPANIES else "priority"
+
+    for keyword in core.LINKEDIN_KEYWORDS:
+        urls = core.linkedin_query_urls(keyword, (0, 10))
+        add(urls)
+        for url in urls:
+            core.LINKEDIN_URL_BUCKET.setdefault(url, "generic")
 
     print(f"[source] LinkedIn: {len(out)} URLs")
     return out
 
 
 def configure() -> None:
-    core.MAX_NEW = 25
     core.TIMEOUT = 10
     core.LINKEDIN_PRIORITY_COMPANIES = list(PRIORITY_COMPANIES)
     core.LINKEDIN_KEYWORDS = list(dict.fromkeys(core.LINKEDIN_KEYWORDS + EXTRA_KEYWORDS))

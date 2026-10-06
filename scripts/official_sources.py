@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from typing import Any, Callable, Iterable
 from urllib.parse import urlparse
 
-from company_policy import same_company_name
+from company_policy import COMPANIES, company_identity, same_company_name
 
 
 @dataclass(frozen=True)
@@ -33,7 +33,55 @@ OFFICIAL_BOARDS = (
     Board("Banco Inter", "greenhouse", "inter"),
     Board("Getnet", "greenhouse", "getnet"),
     Board("Nubank", "ashby", "nubank"),
+    Board("Pismo", "lever", "pismo"),
 )
+
+
+@dataclass(frozen=True)
+class SourceConfig:
+    company: str
+    provider: str
+    careers_url: str | None
+    board_token: str | None
+    discovery_strategy: str
+    validation_strategy: str
+
+
+_KNOWN_SOURCES = {
+    company_identity(board.company): SourceConfig(
+        board.company, board.provider, (
+            f"https://jobs.ashbyhq.com/{board.token}" if board.provider == "ashby" else
+            f"https://jobs.lever.co/{board.token}" if board.provider == "lever" else
+            f"https://boards.greenhouse.io/{board.token}"),
+        board.token, "public_ats_feed", "public_ats_feed")
+    for board in OFFICIAL_BOARDS
+}
+_KNOWN_SOURCES.update({
+    company_identity("Itaú"): SourceConfig("Itaú", "company", "https://carreiras.itau.com.br/busca-de-vagas", None, "paginated_results", "jobposting_page"),
+    company_identity("Santander"): SourceConfig("Santander", "company", "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers", None, "workday_public_search", "workday_public_detail"),
+    company_identity("Google"): SourceConfig("Google", "company", "https://www.google.com/about/careers/applications/jobs/results/", None, "public_search", "public_careers_page"),
+    company_identity("PagBank"): SourceConfig("PagBank", "gupy", "https://pagseguro.gupy.io/", "pagseguro", "public_board", "jobposting_page"),
+    company_identity("Sicredi"): SourceConfig("Sicredi", "gupy", "https://sicredi.gupy.io/", "sicredi", "public_board", "jobposting_page"),
+    company_identity("PicPay"): SourceConfig("PicPay", "gupy", "https://picpay.gupy.io/", "picpay", "public_board", "jobposting_page"),
+})
+for _company, _token in (
+    ("ANBIMA", "anbima"), ("Grupo Bancorbrás", "bancorbras"),
+    ("Via Certa Promotora", "acertapromotora"), ("Banco BMG", "bancobmg"),
+    ("Núclea", "nuclea"), ("Sicoob", "sicoob"), ("Banco BV", "bancobv"),
+):
+    _KNOWN_SOURCES[company_identity(_company)] = SourceConfig(
+        _company, "gupy", f"https://{_token}.gupy.io/", _token, "public_board", "jobposting_page")
+
+
+def official_source_catalog() -> tuple[SourceConfig, ...]:
+    """Expose coverage gaps explicitly; unverified portals are not called active."""
+    return tuple(_KNOWN_SOURCES.get(company_identity(company.name), SourceConfig(
+        company.name, "unconfigured", None, None, "not_configured", "not_configured"))
+        for company in COMPANIES)
+
+
+def source_for_company(company: str) -> SourceConfig | None:
+    return _KNOWN_SOURCES.get(company_identity(company))
 
 
 PROVIDER_LABELS = {
@@ -64,6 +112,7 @@ OFFICIAL_COMPANY_HOSTS = {
     "carreiras.itau.com.br",
     "santander-brasil.interviewhr.com",
     "fitbank.vagas.solides.com.br",
+    "santander.wd3.myworkdayjobs.com",
 }
 
 
@@ -79,6 +128,8 @@ def provider_for_url(url: str, *, structured: bool = False) -> str:
         return host == domain or host.endswith("." + domain)
 
     if host in OFFICIAL_COMPANY_HOSTS:
+        return "company"
+    if host in {"google.com", "www.google.com"} and urlparse(str(url or "")).path.startswith("/about/careers/applications/jobs/results/"):
         return "company"
     if is_domain("linkedin.com"):
         return "linkedin"

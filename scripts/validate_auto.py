@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 
 from rules import DUPLICATE_SIMILARITY, REVIEW_SIMILARITY
 from official_sources import prefer_source, same_posting, source_metadata
+from collection_audit import canonical_url as candidate_url
 from company_policy import (
     TARGET_COMPANIES as APPROVED_COMPANIES,
     CONTEXT_COMPANIES,
@@ -16,7 +17,7 @@ from company_policy import (
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTO_FILE = ROOT / "data-auto.js"
-BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 7)]
+BASE_FILES = [ROOT / f"data-{i}.js" for i in range(1, 8)]
 
 STRONG_FINANCE = [
     "segmento bancário", "segmento bancario", "setor bancário", "setor bancario", "mercado financeiro",
@@ -198,6 +199,7 @@ def main() -> None:
     seen_urls = {canonical_url(j.get("source", "")) for j in base if j.get("source")}
     reference = list(base)
     removed = []
+    removed_urls = {}
 
     for job in auto:
         job.pop("reviewRequired", None)
@@ -205,10 +207,12 @@ def main() -> None:
         ok, why = valid(job)
         if not ok:
             removed.append((job.get("company"), job.get("role"), why))
+            removed_urls[candidate_url(job.get("source", ""))] = why
             continue
         cu = canonical_url(job.get("source", ""))
         if cu and cu in seen_urls:
             removed.append((job.get("company"), job.get("role"), "URL/ID já existente"))
+            removed_urls[candidate_url(job.get("source", ""))] = "URL/ID já existente"
             continue
         duplicate = next((
             x for x in reference
@@ -221,6 +225,7 @@ def main() -> None:
         ), None)
         if duplicate and not prefer_source(job, duplicate):
             removed.append((job.get("company"), job.get("role"), "exigências essencialmente idênticas"))
+            removed_urls[candidate_url(job.get("source", ""))] = "exigências essencialmente idênticas"
             continue
         if duplicate:
             job["supersedesSource"] = duplicate.get("source")
@@ -266,10 +271,23 @@ def main() -> None:
     report_path = ROOT / "collection-report.json"
     try:
         report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else {}
+        kept_urls = {candidate_url(job.get("source", "")) for job in kept}
+        validated_this_run = 0
+        for row in report.get("candidates", []):
+            if row.get("status") != "accepted":
+                continue
+            if row["canonical_url"] in kept_urls:
+                if not any(t.get("stage") == "validated" for t in row.get("transitions", [])):
+                    row.setdefault("transitions", []).append({"stage": "validated", "reason": "validator_kept"})
+                validated_this_run += 1
+            else:
+                if not any(t.get("stage") == "rejected" for t in row.get("transitions", [])):
+                    row.setdefault("transitions", []).append({"stage": "rejected", "reason": removed_urls.get(row["canonical_url"], "validator_removed")})
         report.update({
             "validated": len(kept),
             "rejected": len(removed),
             "reviewRequired": sum(bool(j.get("reviewRequired")) for j in kept),
+            "validatedThisRun": validated_this_run,
             "rejectionReasons": {
                 reason: sum(1 for _, _, why in removed if why == reason)
                 for reason in sorted({why for _, _, why in removed})

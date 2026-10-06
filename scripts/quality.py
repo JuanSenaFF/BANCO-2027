@@ -84,12 +84,13 @@ SECTION_STOP_RE = re.compile(
 )
 
 REQUIREMENTS_HEADING_RE = re.compile(
-    r'^(?:requisitos(?: e qualificacoes)?|qualificacoes|qualifications|requirements|minimum qualifications|'
+    r'^(?:requisitos(?: e qualificacoes| imprescindiveis| obrigatorios)?|qualificacoes|qualifications|requirements|minimum qualifications|'
     r'basic qualifications|required qualifications|what you need|who you are|o que (?:buscamos(?: em voce)?|voce precisa)|'
+    r'no que voce precisa mandar bem\??|conhecimentos necessarios|perfil desejado|'
     r'precisamos que)\s*:?$'
 )
 DIFFERENTIALS_HEADING_RE = re.compile(
-    r'^(?:diferenciais?|nice[ -]to[ -]have|preferred qualifications|sera um plus|desejaveis?)\s*:?$'
+    r'^(?:diferenciais?|requisitos desejaveis|nice[ -]to[ -]have|preferred qualifications|sera um plus|desejaveis?)\s*:?$'
 )
 STOP_HEADING_RE = re.compile(
     r'^(?:beneficios|benefits|what we offer|offerings|responsabilidades|atribuicoes|responsibilities|'
