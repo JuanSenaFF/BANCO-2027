@@ -14,7 +14,8 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
-from quality import extract_jobposting, split_requirements, senior_conflict, location_fields
+from quality import extract_jobposting, split_requirements, senior_conflict, location_fields, requirements_quality_conflict
+from collection_audit import CandidateAudit, schedule, canonical_url as audit_url
 from rules import DUPLICATE_SIMILARITY
 from official_sources import (
     collect_official_postings,
@@ -41,11 +42,11 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.3
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8"})
 TIMEOUT = 20
-MAX_NEW = 10
 FETCH_WORKERS = 8
-SCAN_LIMIT = 400
 OFFICIAL_POSTING_CACHE: dict[str, dict] = {}
 OFFICIAL_DISCOVERY_REPORT: dict = {}
+LINKEDIN_URL_BUCKET: dict[str, str] = {}
+FETCH_FAILURES: dict[str, str] = {}
 
 STRONG_FINANCE_PHRASES = [
     "segmento bancário", "segmento bancario", "setor bancário", "setor bancario", "mercado financeiro",
@@ -61,7 +62,7 @@ JUNIOR_TERMS = [
     "júnior", "junior", " jr", "jr ", "assistente", "associate", "nível i", "nivel i",
     "analyst i", "analista i", "level i", "nível 1", "nivel 1", "entry level", "entry-level",
     "estágio", "estagio", "estagiário", "estagiario", "estagiária", "estagiaria", "intern", "internship",
-    "trainee",
+    "trainee", "early career", "graduate", "engineer i", "developer i",
 ]
 SENIOR_TITLE_TERMS = ["sênior", "senior", "pleno", "specialist", "especialista", "lead", "principal", "staff"]
 TECH_TERMS = [
@@ -77,7 +78,7 @@ TECH_TERMS = [
 TARGET_TITLE_RE = re.compile(
     r"software|backend|back-end|front-?end|full\s*stack|developer|desenvolv|"
     r"engenheir|\bdata\b|dados|analytics|cientista|cloud|\bsre\b|devops|"
-    r"automa[cç][aã]o|systems?|sistemas|tecnologia|\bti\b|security|seguran[cç]a|"
+    r"automa[cç][aã]o|systems?|sistemas|tecnologia|\bti\b|\bit\b|security|seguran[cç]a|"
     r"cyber|\bqa\b|qualidade|risk|risco|credit|cr[eé]dito|fraud|fraude"
 )
 STRONG_TECH_TAGS = {
@@ -126,7 +127,10 @@ GUPY_CAREERS = [
 
 LEVER_BOARDS = ["https://jobs.lever.co/pismo"]
 SITEMAPS = ["https://remotar.com.br/sitemap.xml", "https://querovagastech.com.br/sitemap.xml"]
-OFFICIAL_COMPANY_SITEMAPS = ["https://carreiras.itau.com.br/sitemap.xml"]
+ITAU_CAREERS = "https://carreiras.itau.com.br/busca-de-vagas"
+SANTANDER_WORKDAY = "https://santander.wd3.myworkdayjobs.com"
+SANTANDER_SEARCHES = ("IT Analyst I", "Software Engineer Junior", "Data Analyst I", "Desenvolvedor Junior", "Analista Tecnologia Jr")
+GOOGLE_CAREERS = "https://www.google.com/about/careers/applications/jobs/results/"
 
 TAG_PATTERNS = {
     "Python": r"\bpython\b|\bpyspark\b",
@@ -252,14 +256,16 @@ def linkedin_query_urls(keyword: str, starts=(0,)) -> list[str]:
 
 def linkedin_urls() -> list[str]:
     out = []
-    for kw in LINKEDIN_KEYWORDS:
-        for u in linkedin_query_urls(kw, (0, 10)):
-            if u not in out:
-                out.append(u)
     for company in LINKEDIN_PRIORITY_COMPANIES:
         for u in linkedin_query_urls(f'"{company}" junior tecnologia', (0,)):
             if u not in out:
                 out.append(u)
+            LINKEDIN_URL_BUCKET[u] = "core" if company in CORE_PRIORITY_COMPANIES else "priority"
+    for kw in LINKEDIN_KEYWORDS:
+        for u in linkedin_query_urls(kw, (0, 10)):
+            if u not in out:
+                out.append(u)
+                LINKEDIN_URL_BUCKET[u] = "generic"
     print(f"[source] LinkedIn: {len(out)} URLs")
     return out
 
@@ -289,7 +295,7 @@ def page_links(base: str, patterns: list[str], limit: int = 60) -> list[str]:
 def gupy_urls() -> list[str]:
     out = []
     for base in GUPY_CAREERS:
-        urls = page_links(base, [r"\.gupy\.io/(?:job|jobs)/"])
+        urls = page_links(base, [r"\.gupy\.io/(?:job|jobs)/"], 500)
         if not urls:
             r = safe_get(base)
             if r and r.status_code < 400:
@@ -298,7 +304,7 @@ def gupy_urls() -> list[str]:
                     u = f"https://{host}/jobs/{m.group(1)}?jobBoardSource=gupy_public_page"
                     if u not in urls:
                         urls.append(u)
-        for u in urls[:50]:
+        for u in urls:
             if u not in out:
                 out.append(u)
         time.sleep(0.1)
@@ -309,7 +315,7 @@ def gupy_urls() -> list[str]:
 def lever_urls() -> list[str]:
     out = []
     for board in LEVER_BOARDS:
-        for u in page_links(board, [r"jobs\.lever\.co/[^/]+/[a-z0-9-]+$"], 100):
+        for u in page_links(board, [r"jobs\.lever\.co/[^/]+/[a-z0-9-]+$"], 500):
             if u not in out:
                 out.append(u)
     print(f"[source] Lever: {len(out)} URLs")
@@ -331,23 +337,11 @@ def official_ats_urls() -> list[str]:
     out = []
     for candidate in candidates:
         url = candidate["url"]
-        posting = candidate["posting"]
-        title = str(posting.get("title") or "")
-        title_n = norm(title)
-        company = candidate["company"]
-        description = norm(str(posting.get("description") or ""))
-        # ATS feeds return the whole company board. Require the entry-level
-        # signal in the title so incidental words in a long description cannot
-        # admit a manager/senior posting.
-        if not any(term in title_n for term in JUNIOR_TERMS):
-            continue
-        if not is_relevant(title, company, description) or senior_conflict(title, description):
-            continue
         OFFICIAL_POSTING_CACHE[url] = candidate
         if url not in out:
             out.append(url)
     counts = OFFICIAL_DISCOVERY_REPORT.get("counts", {})
-    OFFICIAL_DISCOVERY_REPORT["relevant"] = len(out)
+    OFFICIAL_DISCOVERY_REPORT["scheduled_for_audit"] = len(out)
     print(
         "[source] ATS oficiais: "
         f"{len(out)} URLs em {counts.get('boards_ok', 0)} boards; "
@@ -386,18 +380,76 @@ def other_source_urls() -> list[str]:
 
 
 def official_company_urls() -> list[str]:
-    """Discover entry-level postings exposed by official company sitemaps."""
+    """Discover postings from the Itaú public results, including pagination."""
     out = []
-    entry_slug = re.compile(
-        r"(?:junior|júnior|jr|estagio|estágio|estagiario|estagiário|trainee|assistente)",
-        re.I,
-    )
-    for sitemap in OFFICIAL_COMPANY_SITEMAPS:
-        # Filter slugs before fetching pages so discovery stays bounded.
-        for url in sitemap_job_urls(sitemap, SCAN_LIMIT):
-            if entry_slug.search(url) and url not in out:
-                out.append(url)
+    page = 1
+    total_pages = 1
+    while page <= min(total_pages, 20):
+        response = safe_get(ITAU_CAREERS, params={"p": page})
+        if response is None or response.status_code != 200:
+            OFFICIAL_DISCOVERY_REPORT.setdefault("errors", []).append({"company": "Itaú", "provider": "company", "error": f"HTTP {response.status_code}" if response is not None else "fetch_unavailable"})
+            break
+        soup = BeautifulSoup(response.text, "html.parser")
+        page_input = soup.select_one("input.pagination-current[max]")
+        if page_input:
+            total_pages = min(20, int(page_input.get("max", 1)))
+        links = [urljoin(ITAU_CAREERS, a["href"]) for a in soup.select('a[href*="/vaga/"]')]
+        links = [u for u in links if urlparse(u).hostname == "carreiras.itau.com.br" and
+                 re.search(r"/vaga/[^/]+/[^/]+/\d+/\d+/?$", urlparse(u).path)]
+        if not links:
+            break
+        out.extend(u for u in links if u not in out)
+        page += 1
     print(f"[source] Páginas oficiais: {len(out)} URLs")
+    return out
+
+
+def workday_urls() -> list[str]:
+    """Search Santander's public Workday feed with a bounded set of entry titles."""
+    out = []
+    endpoint = f"{SANTANDER_WORKDAY}/wday/cxs/santander/SantanderCareers/jobs"
+    for query in SANTANDER_SEARCHES:
+        offset = 0
+        while offset < 100:
+            try:
+                response = SESSION.post(endpoint, json={"appliedFacets": {}, "limit": 20,
+                                                        "offset": offset, "searchText": query}, timeout=TIMEOUT)
+                response.raise_for_status()
+                payload = response.json()
+            except (requests.RequestException, ValueError) as exc:
+                OFFICIAL_DISCOVERY_REPORT.setdefault("errors", []).append({
+                    "company": "Santander", "provider": "company", "query": query, "error": type(exc).__name__})
+                break
+            records = payload.get("jobPostings", [])
+            for row in records:
+                path = row.get("externalPath", "")
+                if re.fullmatch(r"/job/[^?#]+", path):
+                    url = SANTANDER_WORKDAY + "/pt-BR/SantanderCareers" + path
+                    if url not in out:
+                        out.append(url)
+            offset += len(records)
+            if not records or offset >= payload.get("total", 0):
+                break
+    print(f"[source] Santander Workday: {len(out)} URLs")
+    return out
+
+
+def google_careers_urls() -> list[str]:
+    out = []
+    for query in ("early career", "software engineer junior", "data analyst"):
+        response = safe_get(GOOGLE_CAREERS, params={"q": query, "location": "Brazil"})
+        if response is None or response.status_code != 200:
+            OFFICIAL_DISCOVERY_REPORT.setdefault("errors", []).append({
+                "company": "Google", "provider": "company", "query": query,
+                "error": f"HTTP {response.status_code}" if response is not None else "fetch_unavailable"})
+            continue
+        soup = BeautifulSoup(response.text, "html.parser")
+        for anchor in soup.select('a[href^="jobs/results/"]'):
+            url = urljoin("https://www.google.com/about/careers/applications/", anchor["href"])
+            if urlparse(url).hostname == "www.google.com" and re.match(r"/about/careers/applications/jobs/results/\d+-", urlparse(url).path):
+                if url not in out:
+                    out.append(url)
+    print(f"[source] Google Careers: {len(out)} URLs")
     return out
 
 
@@ -411,13 +463,50 @@ def fetch_page(url: str) -> tuple[BeautifulSoup | None, dict | None]:
     if cached:
         posting = cached["posting"]
         return BeautifulSoup(str(posting.get("description") or ""), "html.parser"), posting
+    parsed = urlparse(url)
+    if parsed.hostname == "www.google.com" and parsed.path.startswith("/about/careers/applications/jobs/results/"):
+        response = safe_get(url)
+        if response is None or response.status_code != 200:
+            FETCH_FAILURES[url] = f"fetch_{response.status_code}" if response is not None else "fetch_unavailable"
+            return None, None
+        page = BeautifulSoup(response.text, "html.parser")
+        detail = page.select_one("div.DkhPwc")
+        title = detail.select_one("h2.p1N2lc") if detail else None
+        if not detail or not title:
+            FETCH_FAILURES[url] = "parser_missing_detail"
+            return None, None
+        place = detail.select_one("span.pwO9Dc.vo5qdf")
+        location_text = place.get_text(" ", strip=True) if place else ""
+        location = "São Paulo, Brasil" if re.search(r"s[aã]o paulo", location_text, re.I) else location_text
+        posting = {"@type": "JobPosting", "title": title.get_text(" ", strip=True),
+                   "description": str(detail), "hiringOrganization": {"name": "Google"},
+                   "jobLocation": {"address": {"addressLocality": location}} if location else {}}
+        return detail, posting
+    if (parsed.hostname == "santander.wd3.myworkdayjobs.com"
+            and parsed.path.startswith("/pt-BR/SantanderCareers/job/")):
+        detail_url = SANTANDER_WORKDAY + "/wday/cxs/santander/SantanderCareers" + parsed.path.split("/SantanderCareers", 1)[1]
+        response = safe_get(detail_url, headers={"Accept": "application/json"})
+        if response is None or response.status_code != 200:
+            FETCH_FAILURES[url] = f"fetch_{response.status_code}" if response is not None else "fetch_unavailable"
+            return None, None
+        try:
+            detail = response.json().get("jobPostingInfo", {})
+        except ValueError:
+            FETCH_FAILURES[url] = "fetch_invalid_json"
+            return None, None
+        posting = {"@type": "JobPosting", "title": detail.get("title"),
+                   "description": detail.get("jobDescription"), "hiringOrganization": {"name": "Santander"},
+                   "jobLocation": {"address": {"addressLocality": detail.get("location")}},
+                   "datePosted": detail.get("startDate")}
+        return BeautifulSoup(str(posting["description"] or ""), "html.parser"), posting
     fetch_url = url
     if "linkedin.com/jobs/view/" in url:
         jid = linkedin_job_id(url)
         if jid:
             fetch_url = f"https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{jid}"
     r = safe_get(fetch_url)
-    if not r or r.status_code >= 400:
+    if r is None or r.status_code >= 400:
+        FETCH_FAILURES[url] = f"fetch_{r.status_code}" if r is not None else "fetch_unavailable"
         return None, None
     soup = BeautifulSoup(r.text, "html.parser")
     return soup, extract_jobposting(soup)
@@ -625,12 +714,49 @@ def discover_urls() -> list[str]:
     out = []
     # Strongest evidence first. LinkedIn remains useful for discovering a job,
     # but an official ATS candidate wins when both represent the same posting.
-    for bucket in [official_ats_urls(), official_company_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
+    for bucket in [official_ats_urls(), official_company_urls(), workday_urls(), google_careers_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
         for u in bucket:
             if u not in out:
                 out.append(u)
     print(f"[info] URLs candidatas totais: {len(out)}")
     return out
+
+
+def discovery_rows(urls: list[str]) -> list[dict]:
+    rows = []
+    for url in urls:
+        provider = source_metadata(url, structured=url in OFFICIAL_POSTING_CACHE)["provider"]
+        bucket = ("aggregator" if provider == "aggregator" else
+                  LINKEDIN_URL_BUCKET.get(url, "generic") if provider == "linkedin" else "official")
+        host = urlparse(url).hostname or ""
+        source = ("Itaú Careers" if host == "carreiras.itau.com.br" else
+                  "Santander Workday" if host == "santander.wd3.myworkdayjobs.com" else
+                  "Google Careers" if host == "www.google.com" else provider)
+        rows.append({"url": url, "source": source, "bucket": bucket})
+    return rows
+
+
+def requirements_for(soup, posting):
+    req, diff = split_requirements(soup, posting)
+    method = "section"
+    if len(req) < 3:
+        # JSON-LD may carry a structured qualification field even when its
+        # description has no recognized heading. Do not split free-form prose.
+        raw = (posting or {}).get("qualifications") or (posting or {}).get("skills")
+        if isinstance(raw, list):
+            structured = [str(item).strip() for item in raw if isinstance(item, str) and item.strip()]
+            if len(structured) >= 3:
+                req, method = structured, "json_ld"
+        if len(req) < 3:
+            bullets = extract_bullets(soup, posting)
+            # A responsibilities list can mention many technologies. Require
+            # explicit qualification wording before treating loose bullets as
+            # candidate requirements without a recognized heading.
+            qualification_cues = r"conhecimento|experi[eê]ncia|familiaridade|forma[cç][aã]o|proficiency|knowledge|experience|required"
+            if (len(bullets) >= 3 and any(re.search(qualification_cues, item, re.I) for item in bullets)
+                    and not requirements_quality_conflict((posting or {}).get("title", ""), bullets)):
+                req, method = bullets, "technical_bullets"
+    return req, diff, method
 
 
 def main() -> int:
@@ -640,118 +766,149 @@ def main() -> int:
     auto_existing = parse_js_array(AUTO_FILE)
     existing.extend(auto_existing)
     max_id = max([int(j.get("id", 0)) for j in existing] + [0])
-    known_sources = {canonical_source(j.get("source", "")) for j in existing if j.get("source")}
+    known_sources = {audit_url(u) for j in existing for u in
+                     [j.get("source"), *(row.get("url") for row in j.get("sources", []) if isinstance(row, dict))] if u}
 
     candidate_urls = discover_urls()
     new_jobs = []
     domains = existing_auto_domains()
     collected_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
-    scan_urls = []
-    for url in candidate_urls:
-        if len(scan_urls) >= SCAN_LIMIT:
-            break
-        csource = canonical_source(url)
-        if csource in known_sources:
-            continue
-        src_domain = domain_of(url)
-        if any(src_domain.endswith(d) for d in SOURCE_NAME):
-            scan_urls.append(url)
+    audit = CandidateAudit(ROOT / "candidate-history.json", discovery_rows(candidate_urls), collected_at)
+    scan_urls = schedule(discovery_rows(candidate_urls), audit, known_sources,
+                         lambda url: source_metadata(url, structured=url in OFFICIAL_POSTING_CACHE)["provider"] != "unknown")
     print(f"[info] URLs a validar: {len(scan_urls)} em até {FETCH_WORKERS} workers")
+    def timed_fetch(url):
+        started = time.monotonic()
+        try:
+            result = fetch_page(url)
+        except Exception as exc:
+            FETCH_FAILURES[url] = f"fetch_exception_{type(exc).__name__}"
+            result = (None, None)
+        return url, (result, round((time.monotonic() - started) * 1000))
     with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as pool:
-        fetched = dict(pool.map(lambda u: (u, fetch_page(u)), scan_urls))
+        fetched = dict(pool.map(timed_fetch, scan_urls))
 
     for url in scan_urls:
-        if len(new_jobs) >= MAX_NEW:
-            break
-        csource = canonical_source(url)
-        if csource in known_sources:
-            continue
-        src_domain = domain_of(url)
-        if not any(src_domain.endswith(d) for d in SOURCE_NAME):
-            continue
-        soup, posting = fetched.get(url, (None, None))
-        if not soup and not posting:
-            continue
-        title = title_from(posting, soup)
-        company = company_from(posting, soup)
-        text = text_from_posting(posting, soup)
-        if not title or not is_relevant(title, company, text):
-            continue
-        if senior_conflict(title, text):
-            continue
-        requirements, differentials = split_requirements(soup, posting)
-        if len(requirements) < 3:
-            continue
-        candidate_source = source_metadata(url, structured=bool(posting))
-        candidate_identity = {
-            "company": company,
-            "role": title,
-            "requirements": requirements,
-            "source": url,
-            "sourcePriority": candidate_source["priority"],
-        }
-        # Deduplicate by requirements, but allow an official source to replace
-        # the LinkedIn/aggregator representation of the same posting.
-        duplicate = next((
-            j for j in existing + new_jobs
-            if (same_company(candidate_identity, j) and similarity(requirements, j.get("requirements", [])) >= DUPLICATE_SIMILARITY)
-            or (
-                source_priority(candidate_identity) != source_priority(j)
-                and same_posting(candidate_identity, j, similarity)
-            )
-        ), None)
-        if duplicate and not prefer_source(candidate_identity, duplicate):
-            continue
-        tags = classify_tags(" ".join([title, text, " ".join(requirements)]))
-        if len(tags) < 2:
-            continue
+        try:
+            csource = audit_url(url)
+            (soup, posting), elapsed_ms = fetched[url]
+            audit.records[url]["fetchMs"] = elapsed_ms
+            if not soup and not posting:
+                failure = FETCH_FAILURES.get(url, "fetch_empty")
+                audit.mark(url, "retry" if failure in {"fetch_429", "fetch_500", "fetch_502", "fetch_503", "fetch_504"}
+                           else "fetch_failed", failure)
+                continue
+            title = title_from(posting, soup)
+            company = company_from(posting, soup)
+            audit.records[url].update(company=company or None, role=title or None)
+            text = text_from_posting(posting, soup)
+            content = json.dumps(posting, ensure_ascii=False, sort_keys=True) if posting else str(soup)
+            if not title:
+                audit.mark(url, "rejected", "title_missing", content=content)
+                continue
+            if not company:
+                audit.mark(url, "rejected", "company_missing", content=content)
+                continue
+            audit.transition(url, "parsed", "title_and_company_extracted")
+            if not is_relevant(title, company, text):
+                reason = ("seniority_conflict" if any(term in norm(title) for term in SENIOR_TITLE_TERMS) else
+                          "company_not_target" if not approved_company(company) and not strong_finance_context(text) else
+                          "role_irrelevant")
+                audit.mark(url, "rejected", reason, content=content)
+                continue
+            if senior_conflict(title, text):
+                audit.mark(url, "rejected", "seniority_conflict", content=content)
+                continue
+            requirements, differentials, method = requirements_for(soup, posting)
+            if len(requirements) < 3:
+                possible_review = source_metadata(url, structured=bool(posting))
+                state = "retry" if possible_review["official"] and requirements and len(classify_tags(text)) >= 2 else "rejected"
+                audit.mark(url, state, "requirements_review" if state == "retry" else "requirements_insufficient", content=content, method=method)
+                continue
+            if requirements_quality_conflict(title, requirements):
+                audit.mark(url, "rejected", "requirements_quality_conflict", content=content, method=method)
+                continue
+            candidate_source = source_metadata(url, structured=bool(posting))
+            candidate_identity = {
+                "company": company,
+                "role": title,
+                "requirements": requirements,
+                "source": url,
+                "sourcePriority": candidate_source["priority"],
+            }
+            # Deduplicate by requirements, but allow an official source to replace
+            # the LinkedIn/aggregator representation of the same posting.
+            duplicate = next((
+                j for j in existing + new_jobs
+                if same_posting(candidate_identity, j, similarity) and (
+                    similarity(requirements, j.get("requirements", [])) >= DUPLICATE_SIMILARITY
+                    or source_priority(candidate_identity) != source_priority(j)
+                )
+            ), None)
+            if duplicate and not prefer_source(candidate_identity, duplicate):
+                audit.mark(url, "duplicate", "duplicate_requirements", content=content, method=method)
+                continue
+            tags = classify_tags(" ".join([title, text, " ".join(requirements)]))
+            if len(tags) < 2:
+                audit.mark(url, "rejected", "technical_tags_insufficient", content=content, method=method)
+                continue
 
-        max_id += 1
-        source_label = candidate_source["name"]
-        location = location_fields(posting, text)
-        search_scope = "São Paulo" if candidate_source["provider"] == "linkedin" else None
-        geo = geography({**location, "searchScopeLocation": search_scope})
-        # The collector is a São Paulo/remote radar. Explicitly external or
-        # unknown official-board locations remain outside; LinkedIn results are
-        # retained with a clear "location to confirm" marker because the query
-        # itself is scoped to São Paulo.
-        if not geo["geographyEligible"]:
-            continue
-        job = {
-            "id": max_id,
-            "company": company or "Empresa não identificada",
-            "role": title,
-            "level": "Júnior / entrada",
-            "status": "Possivelmente encerrada",
-            "statusRaw": f"Coleta automática em {collected_at[:10]} — {source_label}",
-            "area": classify_area(title, text),
-            "stack": classify_stack(tags, title),
-            "fit": "AUTO — NOVA",
-            "tags": tags,
-            "requirements": requirements[:14],
-            "differentials": differentials,
-            **location,
-            "searchScopeLocation": search_scope,
-            "sourceName": source_label,
-            "sourceProvider": candidate_source["provider"],
-            "sourceOfficial": candidate_source["official"],
-            "sourcePriority": candidate_source["priority"],
-            "sourceStructured": bool(posting),
-            "reason": f"Coletada automaticamente em {source_label}. A vaga passou pelos filtros de nível, tecnologia, empresa-alvo ou contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
-            "source": url,
-            "collectedAt": collected_at,
-            "auto": True,
-        }
-        if duplicate:
-            job["supersedesSource"] = duplicate.get("source")
-        new_jobs.append(job)
-        known_sources.add(csource)
-        dom = infer_domain(posting)
-        if company and dom:
-            domains[company] = dom
-        print(f"[novo] {company} — {title}")
-        time.sleep(0.12)
+            source_label = candidate_source["name"]
+            location = location_fields(posting, text)
+            search_scope = "São Paulo" if candidate_source["provider"] == "linkedin" else None
+            geo = geography({**location, "searchScopeLocation": search_scope})
+            # The collector is a São Paulo/remote radar. Explicitly external or
+            # unknown official-board locations remain outside; LinkedIn results are
+            # retained with a clear "location to confirm" marker because the query
+            # itself is scoped to São Paulo.
+            if not geo["geographyEligible"]:
+                reason = "geography_review" if geo["geographyScope"] in {"unverified", "remote_unverified"} else "outside_geography"
+                audit.mark(url, "retry" if reason == "geography_review" else "rejected", reason, content=content, method=method)
+                continue
+            audit.transition(url, "qualified", "quality_and_geography_passed")
+            max_id += 1
+            job = {
+                "id": max_id,
+                "company": company or "Empresa não identificada",
+                "role": title,
+                "level": "Júnior / entrada",
+                "status": "Possivelmente encerrada",
+                "statusRaw": f"Coleta automática em {collected_at[:10]} — {source_label}",
+                "area": classify_area(title, text),
+                "stack": classify_stack(tags, title),
+                "fit": "AUTO — NOVA",
+                "tags": tags,
+                "requirements": requirements[:14],
+                "requirementsExtractionMethod": method,
+                "differentials": differentials,
+                **location,
+                "searchScopeLocation": search_scope,
+                "sourceName": source_label,
+                "sourceProvider": candidate_source["provider"],
+                "sourceOfficial": candidate_source["official"],
+                "sourcePriority": candidate_source["priority"],
+                "sourceStructured": bool(posting),
+                "reason": f"Coletada automaticamente em {source_label}. A vaga passou pelos filtros de nível, tecnologia, empresa-alvo ou contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+                "source": url,
+                "collectedAt": collected_at,
+                "auto": True,
+            }
+            if duplicate:
+                job["supersedesSource"] = duplicate.get("source")
+            new_jobs.append(job)
+            audit.mark(url, "accepted", "qualified_for_catalog", content=content, method=method)
+            known_sources.add(csource)
+            dom = infer_domain(posting)
+            if company and dom:
+                domains[company] = dom
+            print(f"[novo] {company} — {title}")
+        except Exception as exc:
+            if audit.records[url]["status"] is None:
+                audit.mark(url, "retry", f"processing_exception_{type(exc).__name__}")
+            print(f"[candidate] {url} -> {type(exc).__name__}")
+
+    funnel = audit.finish(scheduled=len(scan_urls), scanned=len(scan_urls))
 
     official_added = sum(source_priority(j) >= 3 for j in new_jobs)
     source_counts = {}
@@ -768,6 +925,7 @@ def main() -> int:
         "fallbackAdded": len(new_jobs) - official_added,
         "sourceCounts": source_counts,
         "officialBoards": OFFICIAL_DISCOVERY_REPORT,
+        **funnel,
     }, ensure_ascii=False), encoding="utf-8")
     if not new_jobs:
         print("[info] Nenhuma vaga nova e relevante, distinta por exigências, nesta execução.")

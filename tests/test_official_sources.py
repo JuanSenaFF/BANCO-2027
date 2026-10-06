@@ -3,6 +3,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -16,6 +17,8 @@ from official_sources import (
     same_company,
     same_posting,
     source_metadata,
+    official_source_catalog,
+    source_for_company,
 )
 from validate_auto import req_similarity, valid
 import update_vagas
@@ -60,15 +63,23 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertTrue(same_company({"company": "Inter"}, {"company": "Banco Inter"}))
         self.assertFalse(same_company({"company": "Inter"}, {"company": "Winter"}))
 
-    @patch("update_vagas.sitemap_job_urls")
-    def test_itau_sitemap_discovers_only_entry_level_jobs(self, sitemap_job_urls):
-        sitemap_job_urls.return_value = [
-            "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
-            "https://carreiras.itau.com.br/vaga/sao-paulo/engenharia-de-software-senior/35299/12345678",
+    def test_catalog_exposes_configured_sources_and_coverage_gaps(self):
+        from company_policy import COMPANIES
+        catalog = official_source_catalog()
+        self.assertEqual(len(catalog), len(COMPANIES))
+        self.assertEqual(source_for_company("Banco Itau").provider, "company")
+        self.assertEqual(source_for_company("Inter").provider, "greenhouse")
+        self.assertEqual(source_for_company("Pismo").provider, "lever")
+        self.assertEqual(source_for_company("Google").provider, "company")
+
+    @patch("update_vagas.safe_get")
+    def test_itau_portal_paginates_and_keeps_all_urls_for_auditing(self, safe_get):
+        safe_get.side_effect = [
+            SimpleNamespace(status_code=200, text='<input class="pagination-current" max="2"><a href="/vaga/sao-paulo/engenharia-de-software-senior/35299/12345678">Sênior</a>'),
+            SimpleNamespace(status_code=200, text='<input class="pagination-current" max="2"><a href="/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632">Júnior</a>'),
         ]
-        self.assertEqual(update_vagas.official_company_urls(), [
-            "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-projetos-de-tenologia-junior/35299/98698985632",
-        ])
+        self.assertEqual(len(update_vagas.official_company_urls()), 2)
+        self.assertEqual([call.kwargs["params"]["p"] for call in safe_get.call_args_list], [1, 2])
 
     def test_greenhouse_adapter_normalizes_public_feed(self):
         board = Board("Stone", "greenhouse", "stone")
@@ -273,6 +284,8 @@ class OfficialSourceTests(unittest.TestCase):
     @patch.object(update_vagas, "official_ats_urls", return_value=["official"])
     @patch.object(update_vagas, "gupy_urls", return_value=["gupy"])
     @patch.object(update_vagas, "lever_urls", return_value=["lever"])
+    @patch.object(update_vagas, "workday_urls", return_value=[])
+    @patch.object(update_vagas, "google_careers_urls", return_value=[])
     @patch.object(update_vagas, "linkedin_urls", return_value=["linkedin"])
     @patch.object(update_vagas, "other_source_urls", return_value=["aggregator"])
     def test_discovery_orders_official_sources_before_linkedin(self, *_):
