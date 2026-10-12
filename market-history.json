@@ -228,5 +228,66 @@
     "segments": {
       "core_technology": 6
     }
+  },
+  {
+    "week": "2026-10-12",
+    "at": "2026-10-12T19:39:47+00:00",
+    "total": 4,
+    "technologies": {
+      "SQL": 2,
+      "Crédito/Risco": 2,
+      "GCP": 1,
+      "AWS": 1,
+      "Python": 1,
+      "Cloud": 2,
+      "IA/ML": 3,
+      "Dados/BI": 2,
+      "Azure": 2,
+      "Java": 2,
+      "JavaScript/Node": 1,
+      ".NET/C#": 1,
+      "POO/Design": 1,
+      "Linux": 1,
+      "Git": 1,
+      "Testes": 2,
+      "Segurança": 1,
+      "Automação": 1,
+      "CI/CD": 1
+    },
+    "technologyCompanies": {
+      "SQL": 1,
+      "Crédito/Risco": 2,
+      "GCP": 1,
+      "AWS": 1,
+      "Python": 1,
+      "Cloud": 2,
+      "IA/ML": 2,
+      "Dados/BI": 1,
+      "Azure": 2,
+      "Java": 2,
+      "JavaScript/Node": 1,
+      ".NET/C#": 1,
+      "POO/Design": 1,
+      "Linux": 1,
+      "Git": 1,
+      "Testes": 2,
+      "Segurança": 1,
+      "Automação": 1,
+      "CI/CD": 1
+    },
+    "companies": {
+      "PagBank": 2,
+      "XP Inc.": 1,
+      "Grupo Bancorbrás": 1
+    },
+    "areas": {
+      "Dados & Analytics": 1,
+      "Engenharia de Software": 1,
+      "Backend": 1,
+      "Segurança": 1
+    },
+    "segments": {
+      "core_technology": 4
+    }
   }
 ]
