@@ -47,6 +47,28 @@ def markup(p):
 
 
 class SourceResolutionTests(unittest.TestCase):
+    def test_loose_qualification_extraction_is_shared_with_resolver(self):
+        p = posting(description='<ul><li>Conhecimento em Python</li><li>Experiência em SQL</li><li>Familiaridade com Git</li></ul>')
+        j = {**job(), 'requirements':['Conhecimento em Python','Experiência em SQL','Familiaridade com Git']}
+        self.assertTrue(match_evidence(j,p,'pagseguro')['requirementsConfirmed'])
+
+    def test_exact_ats_url_disambiguates_identical_titles_but_keeps_content_checks(self):
+        from source_resolution import GreenhouseResolver
+        urls = ['https://job-boards.greenhouse.io/xpinc/jobs/1','https://job-boards.greenhouse.io/xpinc/jobs/2']
+        p = posting(title='Software Engineer Junior',hiringOrganization={'name':'XP'},
+                    description='<ul><li>Conhecimento em Python</li><li>Experiência em SQL</li><li>Familiaridade com Git</li></ul>')
+        j = {**job(), 'company':'XP','role':p['title'],'source':urls[0],
+             'requirements':['Conhecimento em Python','Experiência em SQL','Familiaridade com Git']}
+        resolver = GreenhouseResolver(object())
+        from official_sources import OFFICIAL_BOARDS
+        board = next(b for b in OFFICIAL_BOARDS if b.company == 'XP')
+        resolver.cache[board] = ([{'url':url,'posting':p} for url in urls],None)
+        self.assertEqual(resolver.resolve(j)['state'],'resolved')
+        j['source']='https://www.linkedin.com/jobs/view/12345678'
+        self.assertEqual(resolver.resolve(j)['state'],'review_required')
+        j['source']=urls[0];j['requirements']=['Java','Spring','Kotlin']
+        self.assertNotEqual(resolver.resolve(j)['state'],'resolved')
+
     def resolve(self, p=None, board=None, second=None):
         pages = {BASE: board or '<a href="/jobs/11175121">Cientista de Dados Jr.</a>',
                  URL: markup(p or posting())}

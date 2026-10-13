@@ -214,7 +214,10 @@ def run(online=False):
     if online:
         import requests
         def check(j):
+            from official_sources import source_for_company
+            source_config = source_for_company(j.get('company'))
             if ((j.get('sourceProvider') in {'greenhouse','ashby','lever'}
+                    or source_config and source_config.provider in {'greenhouse','ashby','lever'} and j.get('sourceOfficial')
                     or 'santander.wd3.myworkdayjobs.com' in j.get('source','')
                     or 'google.com/about/careers/applications/jobs/results/' in j.get('source',''))
                     and j.get('sourceResolution',{}).get('state')=='resolved'
@@ -291,6 +294,11 @@ def run(online=False):
                     candidateUrls=report.get('candidateUrls'),collectionAdded=report.get('added',0),
                     collectionFunnel={key:report.get(key) for key in ('discovered','scheduled_for_scan','scanned','not_scanned','outcomes','reasons','validatedThisRun','publishedThisRun','confirmedThisRun')},
                     collectionSourceFunnel=report.get('sourceFunnel',{}))
+        meta['collectionRequestPolicy']=report.get('requestPolicy',{})
+        coverage=report.get('companyCoverage',[])
+        meta['companySourceCoverage']={'total':len(coverage),
+                                      'configured':sum(row.get('provider')!='unconfigured' for row in coverage),
+                                      'unconfigured':[row['company'] for row in coverage if row.get('provider')=='unconfigured']}
         meta.update(validated=report.get('validated',meta.get('validated',0)),rejected=report.get('rejected',meta.get('rejected',0)),rejectionReasons=report.get('rejectionReasons',meta.get('rejectionReasons',{})))
     health_path=ROOT/'source-health.json'
     if health_path.exists():

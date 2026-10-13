@@ -16,6 +16,7 @@ import requests
 from bs4 import BeautifulSoup
 from quality import extract_jobposting, split_requirements, senior_conflict, location_fields, requirements_quality_conflict
 from collection_audit import CandidateAudit, schedule, canonical_url as audit_url
+from http_policy import PublicHTTP
 from rules import DUPLICATE_SIMILARITY
 from official_sources import (
     collect_official_postings,
@@ -48,6 +49,7 @@ OFFICIAL_POSTING_CACHE: dict[str, dict] = {}
 OFFICIAL_DISCOVERY_REPORT: dict = {}
 LINKEDIN_URL_BUCKET: dict[str, str] = {}
 FETCH_FAILURES: dict[str, str] = {}
+HTTP = PublicHTTP(ROOT / '.http-cache')
 
 STRONG_FINANCE_PHRASES = [
     "segmento bancário", "segmento bancario", "setor bancário", "setor bancario", "mercado financeiro",
@@ -126,6 +128,10 @@ GUPY_CAREERS = [
     "https://picpay.gupy.io/",
     "https://asaas.gupy.io/",
     "https://creditas.gupy.io/",
+    "https://venhasersafra.gupy.io/", "https://abcbrasil.gupy.io/",
+    "https://genial.gupy.io/", "https://mercantil.gupy.io/",
+    "https://daycoval-tech.gupy.io/", "https://digio.gupy.io/",
+    "https://contasimples.gupy.io/",
 ]
 
 LEVER_BOARDS = ["https://jobs.lever.co/pismo"]
@@ -218,11 +224,7 @@ def excluded_title(title: str) -> bool:
 
 def safe_get(url: str, **kwargs):
     try:
-        r = SESSION.get(url, timeout=TIMEOUT, allow_redirects=True, **kwargs)
-        if r.status_code in (429, 500, 502, 503, 504):
-            time.sleep(1.2)
-            r = SESSION.get(url, timeout=TIMEOUT, allow_redirects=True, **kwargs)
-        return r
+        return HTTP.get(SESSION, url, timeout=TIMEOUT, **kwargs)
     except Exception as exc:
         print(f"[fetch] {url} -> {exc}")
         return None
@@ -297,16 +299,19 @@ def page_links(base: str, patterns: list[str], limit: int = 60) -> list[str]:
 
 def gupy_urls() -> list[str]:
     out = []
+    from source_resolution import board_page
     for base in GUPY_CAREERS:
-        urls = page_links(base, [r"\.gupy\.io/(?:job|jobs)/"], 500)
-        if not urls:
-            r = safe_get(base)
-            if r and r.status_code < 400:
-                host = urlparse(base).netloc
-                for m in re.finditer(r"/jobs/(\d+)", r.text):
-                    u = f"https://{host}/jobs/{m.group(1)}?jobBoardSource=gupy_public_page"
-                    if u not in urls:
-                        urls.append(u)
+        r = safe_get(base)
+        host = urlparse(base).hostname.split('.')[0]
+        urls = []
+        if r is not None and r.status_code == 200:
+            rows, more, has_next, total = board_page(r.text, host)
+            urls = list(rows)
+            status = 'incomplete' if has_next or more or total > len(rows) else 'ok'
+        else:
+            status, total = 'fetch_failed', 0
+        OFFICIAL_DISCOVERY_REPORT.setdefault('gupyBoards', []).append(
+            {'board': host, 'status': status, 'discovered': len(urls), 'advertisedTotal': total})
         for u in urls:
             if u not in out:
                 out.append(u)
@@ -749,12 +754,27 @@ def discover_urls() -> list[str]:
     out = []
     # Strongest evidence first. LinkedIn remains useful for discovering a job,
     # but an official ATS candidate wins when both represent the same posting.
-    for bucket in [official_ats_urls(), official_company_urls(), workday_urls(), google_careers_urls(), gupy_urls(), lever_urls(), linkedin_urls(), other_source_urls()]:
+    for bucket in [official_ats_urls(), official_company_urls(), workday_urls(), google_careers_urls(), gupy_urls(), lever_urls(), extra_company_urls(), linkedin_urls(), other_source_urls()]:
         for u in bucket:
             if u not in out:
                 out.append(u)
     print(f"[info] URLs candidatas totais: {len(out)}")
     return out
+
+
+def extra_company_urls() -> list[str]:
+    urls = []
+    for company, patterns in (
+        ('Microsoft', [r'^https://apply\.careers\.microsoft\.com/careers/job/\d+']),
+        ('FitBank', [r'^https://atracaodetalentos\.totvs\.app/fits/\d+/']),
+    ):
+        from official_sources import source_for_company
+        config = source_for_company(company)
+        rows = page_links(config.careers_url, patterns, 1000)
+        urls.extend(rows)
+        OFFICIAL_DISCOVERY_REPORT.setdefault('companyBoards', []).append(
+            {'company': company, 'discovered': len(rows), 'status': 'ok' if rows else 'empty_or_inaccessible'})
+    return urls
 
 
 def discovery_rows(urls: list[str]) -> list[dict]:
@@ -805,6 +825,15 @@ def main() -> int:
                      [j.get("source"), *(row.get("url") for row in j.get("sources", []) if isinstance(row, dict))] if u}
 
     candidate_urls = discover_urls()
+    # Retry previously blocked discoveries even if a later search cannot
+    # rediscover them. Old entries without their original URL remain readable.
+    try:
+        history = json.loads((ROOT / 'candidate-history.json').read_text())['candidates']
+        for previous in history.values():
+            if previous.get('status') == 'retry' and previous.get('url') and previous['url'] not in candidate_urls:
+                candidate_urls.append(previous['url'])
+    except (OSError, ValueError, KeyError):
+        pass
     new_jobs = []
     domains = existing_auto_domains()
     collected_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -945,6 +974,7 @@ def main() -> int:
             print(f"[candidate] {url} -> {type(exc).__name__}")
 
     funnel = audit.finish(scheduled=len(scan_urls), scanned=len(scan_urls))
+    request_policy = HTTP.save()
 
     official_added = sum(source_priority(j) >= 3 for j in new_jobs)
     source_counts = {}
@@ -961,6 +991,7 @@ def main() -> int:
         "fallbackAdded": len(new_jobs) - official_added,
         "sourceCounts": source_counts,
         "officialBoards": OFFICIAL_DISCOVERY_REPORT,
+        "requestPolicy": request_policy,
         "companyCoverage": [{"company": source.company, "provider": source.provider,
                              "careersUrl": source.careers_url,
                              "discoveryStrategy": source.discovery_strategy}
