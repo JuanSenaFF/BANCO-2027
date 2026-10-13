@@ -1,34 +1,34 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-10-13T13:01:15+00:00",
+    "catalogBuiltAt": "2026-10-13T13:04:04+00:00",
     "total": 104,
-    "added": 3,
-    "verificationAttempted": 49,
-    "lastCheckAttemptAt": "2026-10-13T13:01:15+00:00",
+    "added": 0,
+    "verificationAttempted": 47,
+    "lastCheckAttemptAt": "2026-10-13T13:04:04+00:00",
     "verificationConfirmed": 31,
-    "updatedAt": "2026-10-13T12:53:36Z",
-    "included": 93,
-    "excluded": 11,
-    "discovered": 3404,
-    "candidateUrls": 3404,
+    "updatedAt": "2026-10-13T13:03:59Z",
+    "included": 92,
+    "excluded": 12,
+    "discovered": 3614,
+    "candidateUrls": 3614,
     "validated": 48,
     "rejected": 5,
     "rejectionReasons": {
       "URL/ID já existente": 2,
       "cargo fora do recorte técnico": 3
     },
-    "needsReview": 7,
-    "pendingValidation": 28,
+    "needsReview": 6,
+    "pendingValidation": 27,
     "officialSources": 40,
-    "linkedinFallbacks": 52,
-    "officialCoveragePct": 43.0,
+    "linkedinFallbacks": 51,
+    "officialCoveragePct": 43.5,
     "requirementsNormalization": {
       "schemaVersion": 2,
-      "total": 1313,
-      "mandatory": 876,
+      "total": 1320,
+      "mandatory": 883,
       "differential": 383,
       "eliminatory": 54,
-      "technicalMapped": 811,
+      "technicalMapped": 819,
       "unmapped": 270
     },
     "catalogRetiredAt": "2026-09-24T03:45:14+00:00",
@@ -51,9 +51,9 @@
         "adjacent": 8
       },
       "geographies": {
-        "sao_paulo_unverified": 60,
+        "sao_paulo_unverified": 59,
         "unverified": 7,
-        "sao_paulo": 33,
+        "sao_paulo": 34,
         "remote_brazil": 3,
         "remote_unverified": 1
       },
@@ -65,42 +65,35 @@
       "reason": "API pública para vagas individuais indisponível; Hiring Lab requer acesso de parceiro/pesquisador"
     },
     "sourceResolution": {
-      "pending": 11,
+      "pending": 10,
       "review_required": 4,
       "fetch_failed": 2,
-      "resolved": 19
+      "resolved": 20
     },
-    "collectionAdded": 8,
+    "collectionAdded": 5,
     "collectionFunnel": {
-      "discovered": 3404,
-      "scheduled_for_scan": 3377,
-      "scanned": 3377,
-      "not_scanned": 0,
+      "discovered": 3614,
+      "scheduled_for_scan": 195,
+      "scanned": 195,
+      "not_scanned": 20,
       "outcomes": {
         "rejected": 3358,
-        "already_known": 25,
-        "accepted": 8,
-        "retry": 11,
-        "duplicate": 2
+        "already_known": 28,
+        "accepted": 5,
+        "retry": 203,
+        "not_scanned": 20
       },
       "reasons": {
-        "entry_level_unconfirmed": 1010,
-        "role_irrelevant": 282,
-        "seniority_conflict": 1271,
-        "url_already_known": 25,
-        "outside_geography": 15,
-        "requirements_insufficient": 3,
-        "qualified_for_catalog": 8,
-        "technical_tags_insufficient": 4,
-        "requirements_review": 3,
-        "geography_review": 8,
-        "duplicate_url": 2,
-        "company_missing": 772,
-        "requirements_quality_conflict": 1
+        "recent_rejection": 3358,
+        "url_already_known": 28,
+        "qualified_for_catalog": 5,
+        "retry_deferred": 13,
+        "fetch_429": 190,
+        "source_budget_exhausted": 20
       },
-      "validatedThisRun": 3,
-      "publishedThisRun": 3,
-      "confirmedThisRun": 3
+      "validatedThisRun": 0,
+      "publishedThisRun": 0,
+      "confirmedThisRun": 0
     },
     "collectionSourceFunnel": {
       "greenhouse": {
@@ -109,79 +102,86 @@
         "accepted": 5,
         "retry": 1,
         "discovered": 1211,
-        "scanned": 1193,
+        "scanned": 5,
         "qualified": 5,
-        "conversionPct": 0.4,
-        "averageFetchMs": 32
+        "conversionPct": 100.0,
+        "averageFetchMs": 3
       },
       "ashby": {
         "rejected": 100,
         "discovered": 100,
-        "scanned": 100,
+        "scanned": 0,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 45
+        "averageFetchMs": null
       },
       "lever": {
         "rejected": 25,
         "retry": 1,
         "discovered": 26,
-        "scanned": 26,
+        "scanned": 0,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 8
+        "averageFetchMs": null
       },
       "Itaú Careers": {
         "rejected": 132,
         "already_known": 5,
         "discovered": 137,
-        "scanned": 132,
+        "scanned": 0,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 2819
+        "averageFetchMs": null
       },
       "Santander Workday": {
         "already_known": 1,
         "rejected": 34,
         "retry": 2,
         "discovered": 37,
-        "scanned": 36,
+        "scanned": 0,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 3426
+        "averageFetchMs": null
       },
       "Google Careers": {
-        "retry": 2,
+        "retry": 4,
         "rejected": 11,
-        "duplicate": 2,
         "discovered": 15,
-        "scanned": 13,
+        "scanned": 0,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 977
+        "averageFetchMs": null
       },
       "gupy": {
         "rejected": 1846,
-        "accepted": 3,
-        "already_known": 1,
+        "already_known": 4,
         "retry": 5,
         "discovered": 1855,
-        "scanned": 1854,
-        "qualified": 3,
-        "conversionPct": 0.2,
-        "averageFetchMs": 1538
+        "scanned": 0,
+        "qualified": 0,
+        "conversionPct": 0.0,
+        "averageFetchMs": null
       },
       "company": {
         "rejected": 23,
         "discovered": 23,
-        "scanned": 23,
+        "scanned": 0,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 1551
+        "averageFetchMs": null
+      },
+      "linkedin": {
+        "retry": 190,
+        "not_scanned": 20,
+        "discovered": 210,
+        "scanned": 190,
+        "qualified": 0,
+        "conversionPct": 0.0,
+        "averageFetchMs": 1
       }
     },
     "sourceHealth": {
-      "updatedAt": "2026-10-13T13:01:14.248978+00:00",
+      "updatedAt": "2026-10-13T13:04:03.822873+00:00",
       "sources": [
         {
           "id": "api_br",
@@ -216,8 +216,8 @@
         {
           "id": "adzuna_br",
           "enabled": true,
-          "health_status": "healthy",
-          "last_success_at": "2026-10-13T13:01:14.058617+00:00",
+          "health_status": "degraded",
+          "last_success_at": "2026-10-13T13:04:03.642841+00:00",
           "metadata": {
             "role": "discovery",
             "confidence": "medium",
@@ -226,15 +226,16 @@
             "qualified_yield": 0,
             "transport_health": "healthy",
             "requires_terms_review": true,
-            "consecutive_zero_yield": 2
+            "consecutive_zero_yield": 3
           }
         }
       ]
     },
     "collectionRequestPolicy": {
-      "network_requests": 2108,
+      "cache_hits": 43,
+      "network_requests": 8,
       "rate_limited": 1,
-      "cooldown_skips": 99
+      "cooldown_skips": 288
     },
     "companySourceCoverage": {
       "total": 67,
@@ -2053,8 +2054,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3260,8 +3261,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3308,7 +3309,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T13:01:15.418491+00:00",
+        "checkedAt": "2026-10-13T13:04:05.087006+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-backend-developer-pcd-at-getnet-brasil-4442931588/",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -3624,7 +3625,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3665,7 +3666,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T13:01:15.611105+00:00",
+        "checkedAt": "2026-10-13T13:04:05.230696+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-full-stack-developer-at-getnet-brasil-4444244513/",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -14690,7 +14691,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "review",
       "confidenceLabel": "Baixa",
@@ -14729,7 +14730,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T13:01:15.616920+00:00",
+        "checkedAt": "2026-10-13T13:04:05.236851+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-junior-full-stack-it-accounting-clients-finance-report-at-btg-pactual-4462892770/",
         "candidates": [
           {
@@ -15061,8 +15062,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "review",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15103,7 +15104,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T13:01:15.968597+00:00",
+        "checkedAt": "2026-10-13T13:04:05.562875+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenharia-de-software-back-end-assistente-e-j%C3%BAnior-vaga-exclusiva-para-pcd-at-xp-inc-4310494599/",
         "candidates": [
           {
@@ -15440,8 +15441,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15483,7 +15484,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T13:01:16.207194+00:00",
+        "checkedAt": "2026-10-13T13:04:05.833441+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/analista-de-automa%C3%A7%C3%A3o-e-ia-j%C3%BAnior-%E2%80%93-analytics-processos-controles-at-c6-bank-4414036029/",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -15927,7 +15928,7 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:36+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "review",
       "confidenceLabel": "Baixa",
@@ -15974,7 +15975,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T13:01:16.693267+00:00",
+        "checkedAt": "2026-10-13T13:04:06.097807+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-java-at-pagbank-4436036193/",
         "candidates": [],
         "reason": "Muitas candidatas; busca inconclusiva"
@@ -16921,8 +16922,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:36+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "review",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -16961,7 +16962,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-10-13T13:01:17.083457+00:00",
+        "checkedAt": "2026-10-13T13:04:06.974469+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-sistemas-jr-sre-at-pagbank-4428707419/",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -17225,7 +17226,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:36+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17263,7 +17264,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-10-13T13:01:18.444344+00:00",
+        "checkedAt": "2026-10-13T13:04:08.517713+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-qualidade-de-software-jr-at-pagbank-4425839238/",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -17304,7 +17305,7 @@
       "source": "https://pagseguro.gupy.io/jobs/11175121",
       "key": "linkedin:4418200168",
       "firstSeenAt": null,
-      "lastVerifiedAt": "2026-10-13T13:01:37+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:25+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 93,
@@ -17488,7 +17489,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "validationState": "confirmed",
       "confidenceLabel": "Alta",
@@ -17714,7 +17715,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:25+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -19403,7 +19404,7 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": "2026-10-13T13:01:37+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:26+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 77,
@@ -19532,7 +19533,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:26+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
       "modality": "Presencial",
@@ -19575,7 +19576,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T13:01:21.916683+00:00",
+        "checkedAt": "2026-10-13T13:04:11.237426+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-assistente-e-j%C3%BAnior-at-xp-inc-4244881112",
         "candidates": [
           {
@@ -20708,7 +20709,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -21431,7 +21432,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T13:01:21.977604+00:00",
+        "checkedAt": "2026-10-13T13:04:11.304218+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4458272564",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no board"
@@ -23555,7 +23556,7 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
@@ -25681,8 +25682,8 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-10-13T13:04:26+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 62,
       "confidenceLabel": "Média",
       "requirementsStructured": [
@@ -26181,7 +26182,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T13:01:23.420459+00:00",
+        "checkedAt": "2026-10-13T13:04:13.508788+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4465896330",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no portal"
@@ -27171,7 +27172,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:26+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "confidenceLabel": "Média",
@@ -27472,7 +27473,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T13:01:23.863369+00:00",
+        "checkedAt": "2026-10-13T13:04:13.980494+00:00",
         "discoveryUrl": "https://boards.greenhouse.io/inter/jobs/4726054005?gh_jid=4726054005",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -27786,7 +27787,7 @@
       "company": "XP Inc.",
       "role": "Analista de Automação Junior | Exclusiva para PCD",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-09-21 — LinkedIn",
       "area": "Cloud / SRE",
       "stack": "Python",
@@ -27815,9 +27816,16 @@
         "Conhecimento básico de redes, protocolos e arquitetura de sistemas",
         "Conhecimento básico em Cloud (Azure, AWS, GCP)",
         "Capacidade analítica para interpretar dados operacionais e propor melhorias",
-        "Boa comunicação para interação com times multidisciplinares",
         "Desejo de aprendizado contínuo em automação e otimização de processos",
-        "Testes gerais: Avaliação do alinhamento cultural com o teste da Mindsight e teste de raciocínio lógico da Predictive Index."
+        "Experiência acadêmica ou projetos pessoais relacionados a automação",
+        "Conhecimento básico em metodologias de melhoria contínua (Lean, PDCA) ou ágeis (Scrum, Kanban)",
+        "Experiência com ferramentas de automação (Ansible, Power Automate, etc.)",
+        "Conhecimentos básicos em ITIL",
+        "Desenvolver e manter scripts de automação para rotinas operacionais críticas, reduzindo falhas manuais e aumentando a eficiência dos processos de infraestrutura",
+        "Colaborar com times de engenharia e operações na construção de pipelines de automação, integrações entre sistemas e orquestração de tarefas",
+        "Participar da configuração e gestão de ferramentas de automação (Ansible, Power Automate, scripts em Python/PowerShell), contribuindo para a evolução da esteira de deploy e operações",
+        "Apoiar na migração e operação de workloads em cloud (Azure, AWS, GCP), garantindo que as rotinas automatizadas estejam alinhadas às melhores práticas de arquitetura e segurança",
+        "Monitorar e interpretar dados operacionais para propor melhorias contínuas nos fluxos automatizados, gerando indicadores de eficiência e disponibilidade"
       ],
       "differentials": [
         "Experiência acadêmica ou projetos pessoais relacionados a automação",
@@ -27831,24 +27839,31 @@
         "Apoiar na migração e operação de workloads em cloud (Azure, AWS, GCP), garantindo que as rotinas automatizadas estejam alinhadas às melhores práticas de arquitetura e segurança",
         "Monitorar e interpretar dados operacionais para propor melhorias contínuas nos fluxos automatizados, gerando indicadores de eficiência e disponibilidade"
       ],
-      "location": null,
-      "modality": "Presencial",
-      "publishedAt": null,
+      "location": "São Paulo, SP",
+      "modality": null,
+      "publishedAt": "2026-09-02T12:54:55-04:00",
       "validThrough": null,
       "searchScopeLocation": "São Paulo",
-      "sourceName": "LinkedIn",
-      "sourceProvider": "linkedin",
-      "sourceOfficial": false,
-      "sourcePriority": 1,
-      "sourceStructured": false,
+      "sourceName": "Greenhouse",
+      "sourceProvider": "greenhouse",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
       "reason": "Coletada automaticamente em LinkedIn. A vaga passou pelos filtros de nível, tecnologia, contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
-      "source": "https://www.linkedin.com/jobs/view/4462487120",
+      "source": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
       "collectedAt": "2026-09-21T17:40:33Z",
       "auto": true,
       "key": "linkedin:4462487120",
       "firstSeenAt": "2026-09-21T17:40:33Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:04:14.163504+00:00",
       "sources": [
+        {
+          "url": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
+          "name": "Greenhouse",
+          "provider": "greenhouse",
+          "official": true,
+          "priority": 4
+        },
         {
           "url": "https://www.linkedin.com/jobs/view/4462487120",
           "name": "LinkedIn",
@@ -27857,31 +27872,32 @@
           "priority": 1
         }
       ],
-      "excluded": false,
-      "validationState": "review",
+      "excluded": true,
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.155580+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:04:14.163504+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4462487120",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
-            "score": 64.7,
+            "score": 93.6,
             "title": "Analista de Automação Junior | Exclusiva para PCD",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 0.818,
+            "descriptionCoverage": 0.818,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002"
       },
-      "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 47,
-      "confidenceLabel": "Baixa",
+      "duplicateOf": "job-boards.greenhouse.io/xpinc/jobs/8774288002",
+      "lastCheckedAt": "2026-10-13T13:04:14.163504+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Formação superior na área de tecnologia, sistemas de informação ou áreas correlatas",
@@ -28092,16 +28108,24 @@
           "transferable": false
         },
         {
-          "text": "Boa comunicação para interação com times multidisciplinares",
+          "text": "Desejo de aprendizado contínuo em automação e otimização de processos",
           "position": 8,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
-          "category": "behavioral",
-          "skill": null,
+          "category": "technical",
+          "skill": "Automação",
           "subskill": null,
-          "skills": [],
-          "profileSkillIds": [],
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
+            }
+          ],
+          "profileSkillIds": [
+            "auto"
+          ],
           "unmappedSkillCount": 0,
           "relation": "single",
           "level": null,
@@ -28110,7 +28134,7 @@
           "transferable": true
         },
         {
-          "text": "Desejo de aprendizado contínuo em automação e otimização de processos",
+          "text": "Experiência acadêmica ou projetos pessoais relacionados a automação",
           "position": 9,
           "source": "description",
           "mandatory": true,
@@ -28136,23 +28160,245 @@
           "transferable": true
         },
         {
-          "text": "Testes gerais: Avaliação do alinhamento cultural com o teste da Mindsight e teste de raciocínio lógico da Predictive Index.",
+          "text": "Conhecimento básico em metodologias de melhoria contínua (Lean, PDCA) ou ágeis (Scrum, Kanban)",
           "position": 10,
           "source": "description",
           "mandatory": true,
           "requirementType": "mandatory",
           "category": "technical",
-          "skill": "Testes",
+          "skill": "Métodos ágeis",
           "subskill": null,
           "skills": [
             {
-              "skill": "Testes",
+              "skill": "Métodos ágeis",
               "subskill": null,
-              "profileSkillId": "tests"
+              "profileSkillId": null
+            }
+          ],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 1,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Experiência com ferramentas de automação (Ansible, Power Automate, etc.)",
+          "position": 11,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Automação",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
             }
           ],
           "profileSkillIds": [
-            "tests"
+            "auto"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimentos básicos em ITIL",
+          "position": 12,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Produção",
+          "subskill": "Troubleshooting",
+          "skills": [
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            }
+          ],
+          "profileSkillIds": [
+            "prod"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Desenvolver e manter scripts de automação para rotinas operacionais críticas, reduzindo falhas manuais e aumentando a eficiência dos processos de infraestrutura",
+          "position": 13,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Automação",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
+            }
+          ],
+          "profileSkillIds": [
+            "auto"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Colaborar com times de engenharia e operações na construção de pipelines de automação, integrações entre sistemas e orquestração de tarefas",
+          "position": 14,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Automação",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
+            },
+            {
+              "skill": "APIs",
+              "subskill": "Integração",
+              "profileSkillId": "api"
+            }
+          ],
+          "profileSkillIds": [
+            "auto",
+            "api"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Participar da configuração e gestão de ferramentas de automação (Ansible, Power Automate, scripts em Python/PowerShell), contribuindo para a evolução da esteira de deploy e operações",
+          "position": 15,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Automação",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
+            },
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            },
+            {
+              "skill": "Python",
+              "subskill": null,
+              "profileSkillId": "python"
+            }
+          ],
+          "profileSkillIds": [
+            "auto",
+            "prod",
+            "python"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "any",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Apoiar na migração e operação de workloads em cloud (Azure, AWS, GCP), garantindo que as rotinas automatizadas estejam alinhadas às melhores práticas de arquitetura e segurança",
+          "position": 16,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "AWS",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "AWS",
+              "subskill": null,
+              "profileSkillId": "aws"
+            },
+            {
+              "skill": "Azure",
+              "subskill": null,
+              "profileSkillId": "azure"
+            },
+            {
+              "skill": "GCP",
+              "subskill": null,
+              "profileSkillId": "gcp"
+            },
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            },
+            {
+              "skill": "Cloud",
+              "subskill": null,
+              "profileSkillId": "cloud"
+            }
+          ],
+          "profileSkillIds": [
+            "aws",
+            "azure",
+            "gcp",
+            "sec",
+            "cloud"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Monitorar e interpretar dados operacionais para propor melhorias contínuas nos fluxos automatizados, gerando indicadores de eficiência e disponibilidade",
+          "position": 17,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Dados/BI",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Dados/BI",
+              "subskill": null,
+              "profileSkillId": "data"
+            }
+          ],
+          "profileSkillIds": [
+            "data"
           ],
           "unmappedSkillCount": 0,
           "relation": "single",
@@ -28455,7 +28701,7 @@
         },
         {
           "text": "Elegibilidade para vaga afirmativa: confirmar no anúncio",
-          "position": 11,
+          "position": 18,
           "source": "title",
           "mandatory": true,
           "requirementType": "eliminatory",
@@ -28477,16 +28723,19 @@
       "marketSegmentLabel": "Tecnologia principal",
       "careerAlignment": "target",
       "careerAlignmentLabel": "Alinhada ao foco",
-      "careerWeight": 0.7,
+      "careerWeight": 1.0,
       "requiredSkillIds": [
+        "api",
         "auto",
         "aws",
         "azure",
         "cloud",
+        "data",
         "gcp",
         "linux",
+        "prod",
         "python",
-        "tests"
+        "sec"
       ],
       "differentialSkillIds": [
         "api",
@@ -28500,16 +28749,14 @@
         "python",
         "sec"
       ],
-      "geographyScope": "sao_paulo_unverified",
-      "geographyLabel": "Busca São Paulo · local a confirmar",
+      "geographyScope": "sao_paulo",
+      "geographyLabel": "São Paulo",
       "geographyEligible": true,
-      "geographyWeight": 0.7,
+      "geographyWeight": 1.0,
       "institutionTier": "reference",
       "institutionTierLabel": "Instituição de referência",
       "institutionWeight": 1.25,
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua"
+      "reviewRequired": false
     },
     {
       "id": 147,
@@ -28557,7 +28804,7 @@
       "auto": true,
       "key": "linkedin:4468935647",
       "firstSeenAt": "2026-09-24T03:44:05Z",
-      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:26+00:00",
       "sources": [
         {
           "url": "https://pagseguro.gupy.io/jobs/10246849",
@@ -28605,7 +28852,7 @@
         "reason": "Empresa, título e requisitos correspondentes; fonte confirmada",
         "url": "https://pagseguro.gupy.io/jobs/10246849"
       },
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:26+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "duplicateOf": null,
       "qualityScore": 93,
@@ -28887,7 +29134,7 @@
       "auto": true,
       "key": "bancorbras.gupy.io:12602979",
       "firstSeenAt": "2026-09-27T04:24:11Z",
-      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://bancorbras.gupy.io/jobs/12602979?jobBoardSource=gupy_public_page",
@@ -28900,7 +29147,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 100,
       "confidenceLabel": "Alta",
@@ -29165,7 +29412,7 @@
       "auto": true,
       "key": "boards.greenhouse.io/inter/jobs/4723994005",
       "firstSeenAt": "2026-09-30T16:16:52Z",
-      "lastVerifiedAt": "2026-10-13T13:01:32.732957+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:14.215927+00:00",
       "sources": [
         {
           "url": "https://boards.greenhouse.io/inter/jobs/4723994005?gh_jid=4723994005",
@@ -29178,7 +29425,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:32.732957+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:14.215927+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -29309,7 +29556,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:32.732957+00:00",
+        "checkedAt": "2026-10-13T13:04:14.215927+00:00",
         "discoveryUrl": "https://boards.greenhouse.io/inter/jobs/4723994005?gh_jid=4723994005",
         "candidates": [
           {
@@ -29387,8 +29634,8 @@
         "candidates": []
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "confidenceLabel": "Baixa",
       "requirementsStructured": [
@@ -29596,14 +29843,14 @@
       "validationState": "pending",
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T13:01:32.748035+00:00",
+        "checkedAt": "2026-10-13T13:04:14.232800+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4475560772",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no board"
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 55,
       "confidenceLabel": "Baixa",
       "requirementsStructured": [
@@ -29996,7 +30243,7 @@
       "auto": true,
       "key": "boards.greenhouse.io/inter/jobs/4739789005",
       "firstSeenAt": "2026-10-08T17:12:40Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.190909+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:14.654513+00:00",
       "sources": [
         {
           "url": "https://boards.greenhouse.io/inter/jobs/4739789005?gh_jid=4739789005",
@@ -30009,7 +30256,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.190909+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:14.654513+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -30359,7 +30606,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.190909+00:00",
+        "checkedAt": "2026-10-13T13:04:14.654513+00:00",
         "discoveryUrl": "https://boards.greenhouse.io/inter/jobs/4739789005?gh_jid=4739789005",
         "candidates": [
           {
@@ -30425,7 +30672,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/stone/jobs/8010055003",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.218012+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:14.686594+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/stone/jobs/8010055003",
@@ -30439,7 +30686,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.218012+00:00",
+        "checkedAt": "2026-10-13T13:04:14.686594+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/stone/jobs/8010055003",
         "candidates": [
           {
@@ -30458,7 +30705,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.218012+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:14.686594+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
@@ -30777,7 +31024,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/stone/jobs/7827757003",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.483748+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:14.936233+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/stone/jobs/7827757003",
@@ -30791,7 +31038,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.483748+00:00",
+        "checkedAt": "2026-10-13T13:04:14.936233+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/stone/jobs/7827757003",
         "candidates": [
           {
@@ -30810,7 +31057,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.483748+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:14.936233+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
@@ -31294,7 +31541,7 @@
       "auto": true,
       "key": "carreiras.btgpactual.com/vagas",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.537994+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:14.997633+00:00",
       "sources": [
         {
           "url": "https://carreiras.btgpactual.com/vagas?gh_jid=6164513004",
@@ -31307,7 +31554,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.537994+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:14.997633+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 80,
       "confidenceLabel": "Alta",
@@ -31584,7 +31831,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.537994+00:00",
+        "checkedAt": "2026-10-13T13:04:14.997633+00:00",
         "discoveryUrl": "https://carreiras.btgpactual.com/vagas?gh_jid=6164513004",
         "candidates": [
           {
@@ -31677,7 +31924,7 @@
       "supersedesSource": "https://www.linkedin.com/jobs/view/4462487120",
       "key": "job-boards.greenhouse.io/xpinc/jobs/8774288002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.572050+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.034237+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
@@ -31698,7 +31945,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.572050+00:00",
+        "checkedAt": "2026-10-13T13:04:15.034237+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
         "candidates": [
           {
@@ -31720,7 +31967,7 @@
       "sourceAliases": [
         "linkedin:4462487120"
       ],
-      "lastCheckedAt": "2026-10-13T13:01:33.572050+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.034237+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -32647,7 +32894,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8867814002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.612902+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.082103+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8867814002",
@@ -32661,7 +32908,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.612902+00:00",
+        "checkedAt": "2026-10-13T13:04:15.082103+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8867814002",
         "candidates": [
           {
@@ -32680,7 +32927,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.612902+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.082103+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -33371,7 +33618,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8836938002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.654098+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.126175+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8836938002",
@@ -33385,7 +33632,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.654098+00:00",
+        "checkedAt": "2026-10-13T13:04:15.126175+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8836938002",
         "candidates": [
           {
@@ -33404,7 +33651,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.654098+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.126175+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -34113,7 +34360,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8811996002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.702593+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.181066+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8811996002",
@@ -34127,7 +34374,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.702593+00:00",
+        "checkedAt": "2026-10-13T13:04:15.181066+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8811996002",
         "candidates": [
           {
@@ -34146,7 +34393,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.702593+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.181066+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -34598,7 +34845,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8843085002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.745845+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.227346+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8843085002",
@@ -34612,7 +34859,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.745845+00:00",
+        "checkedAt": "2026-10-13T13:04:15.227346+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8843085002",
         "candidates": [
           {
@@ -34631,7 +34878,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.745845+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.227346+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -35600,7 +35847,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8839562002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.792163+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.278870+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8839562002",
@@ -35614,7 +35861,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.792163+00:00",
+        "checkedAt": "2026-10-13T13:04:15.278870+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8839562002",
         "candidates": [
           {
@@ -35633,7 +35880,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.792163+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.278870+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -36362,7 +36609,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/7927229002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.834988+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.327561+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/7927229002",
@@ -36376,7 +36623,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.834988+00:00",
+        "checkedAt": "2026-10-13T13:04:15.327561+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/7927229002",
         "candidates": [
           {
@@ -36395,7 +36642,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.834988+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.327561+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
@@ -36779,7 +37026,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8147533002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.881239+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.377279+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8147533002",
@@ -36793,7 +37040,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.881239+00:00",
+        "checkedAt": "2026-10-13T13:04:15.377279+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8147533002",
         "candidates": [
           {
@@ -36812,7 +37059,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.881239+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.377279+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -37257,7 +37504,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8875109002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.923951+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.427662+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
@@ -37271,7 +37518,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.923951+00:00",
+        "checkedAt": "2026-10-13T13:04:15.427662+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
         "candidates": [
           {
@@ -37290,7 +37537,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.923951+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.427662+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -37642,7 +37889,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8023579002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:33.963245+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.469809+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
@@ -37656,7 +37903,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:33.963245+00:00",
+        "checkedAt": "2026-10-13T13:04:15.469809+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
         "candidates": [
           {
@@ -37675,7 +37922,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:33.963245+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.469809+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -38028,7 +38275,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8639452002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:34.000277+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.513371+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8639452002",
@@ -38042,7 +38289,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:34.000277+00:00",
+        "checkedAt": "2026-10-13T13:04:15.513371+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8639452002",
         "candidates": [
           {
@@ -38061,7 +38308,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:34.000277+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.513371+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -38516,7 +38763,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8802620002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:34.040700+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.556206+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8802620002",
@@ -38530,7 +38777,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:34.040700+00:00",
+        "checkedAt": "2026-10-13T13:04:15.556206+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8802620002",
         "candidates": [
           {
@@ -38549,7 +38796,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:34.040700+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.556206+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
@@ -38783,7 +39030,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/c6bank/jobs/4733675005",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:34.082922+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.604648+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/c6bank/jobs/4733675005",
@@ -38797,7 +39044,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:34.082922+00:00",
+        "checkedAt": "2026-10-13T13:04:15.604648+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/c6bank/jobs/4733675005",
         "candidates": [
           {
@@ -38816,7 +39063,7 @@
       },
       "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:34.082922+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.604648+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
@@ -39122,7 +39369,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-de-qualidade-junior-atendimento/35299/101653734992",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-qualidade-junior-atendimento/35299/101653734992",
@@ -39135,7 +39382,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -39340,7 +39587,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-operacional-atacado-junior/35299/101627791280",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-operacional-atacado-junior/35299/101627791280",
@@ -39353,7 +39600,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -39620,7 +39867,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/pessoa-analista-de-engenharia-de-ti-junior-net-e-aws/35299/101618434096",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/pessoa-analista-de-engenharia-de-ti-junior-net-e-aws/35299/101618434096",
@@ -39633,7 +39880,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -40065,7 +40312,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/engenharia-de-software-junior-python-aws-comunidade-financas/35299/101396973696",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/engenharia-de-software-junior-python-aws-comunidade-financas/35299/101396973696",
@@ -40078,7 +40325,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -40318,7 +40565,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/anl-engenharia-ti-jr-dados/35299/101004728032",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/anl-engenharia-ti-jr-dados/35299/101004728032",
@@ -40331,7 +40578,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 85,
       "confidenceLabel": "Alta",
@@ -40805,7 +41052,7 @@
       "auto": true,
       "key": "santander.wd3.myworkdayjobs.com/pt-br/santandercareers/job/sao-paulo/it-analyst-i--qa-_req1615266",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T13:01:34.115024+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:15.638612+00:00",
       "sources": [
         {
           "url": "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers/job/SAO-PAULO/IT-Analyst-I--QA-_Req1615266",
@@ -40819,7 +41066,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T13:01:34.115024+00:00",
+        "checkedAt": "2026-10-13T13:04:15.638612+00:00",
         "discoveryUrl": "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers/job/SAO-PAULO/IT-Analyst-I--QA-_Req1615266",
         "candidates": [
           {
@@ -40836,7 +41083,7 @@
         "reason": "Vaga presente na busca e no detalhe público do Workday",
         "url": "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers/job/SAO-PAULO/IT-Analyst-I--QA-_Req1615266"
       },
-      "lastCheckedAt": "2026-10-13T13:01:34.115024+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:15.638612+00:00",
       "verificationReason": "Busca e detalhe públicos do Workday correspondentes",
       "duplicateOf": null,
       "qualityScore": 80,
@@ -41269,7 +41516,7 @@
       "auto": true,
       "key": "pagseguro.gupy.io:12072812",
       "firstSeenAt": "2026-10-13T12:53:36Z",
-      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://pagseguro.gupy.io/jobs/12072812",
@@ -41282,7 +41529,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 98,
       "confidenceLabel": "Alta",
@@ -41537,7 +41784,7 @@
       "auto": true,
       "key": "pagseguro.gupy.io:11441939",
       "firstSeenAt": "2026-10-13T12:53:36Z",
-      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://pagseguro.gupy.io/jobs/11441939",
@@ -41550,7 +41797,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
@@ -41748,7 +41995,7 @@
       "auto": true,
       "key": "genial.gupy.io:12433761",
       "firstSeenAt": "2026-10-13T12:53:36Z",
-      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
+      "lastVerifiedAt": "2026-10-13T13:04:27+00:00",
       "sources": [
         {
           "url": "https://genial.gupy.io/jobs/12433761",
@@ -41761,7 +42008,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
+      "lastCheckedAt": "2026-10-13T13:04:27+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 93,
       "confidenceLabel": "Alta",
