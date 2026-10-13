@@ -112,6 +112,7 @@ STOP_HEADING_RE = re.compile(
 )
 
 NON_REQUIREMENT_RE = re.compile(
+    r'^\s*#li[- ](?:hybrid|remote|onsite)\b|'
     r'\bincentivo (?:a|aos) estudos\b|\bacesso aos clubes de lazer\b|\balgumas vantagens\b|'
     r'\bconheca mais sobre nossa cultura\b|\bao se tornar (?:um |uma )?ituber\b|'
     r'^\s*[#*+]?\s*(?:estimulamos candidaturas|somos comprometidos com a inclusao|vemproitau|vemserituber)\b|'
@@ -149,7 +150,7 @@ def ends_requirement_section(text):
         r'^(?:ao se tornar (?:um |uma )?ituber\b|(?:nossos? |suas? )?(?:beneficios|vantagens)\b|'
         r'conheca mais sobre nossa cultura\b|se identificou com\b|inscreva-se e venha\b|assista o video\b|'
         r'para saber mais sobre nossas\b|saiba mais sobre nosso dia a dia\b|nosso pacote de remuneracao e beneficios\b|'
-        r'jornada de trabalho\b|modelo/local de trabalho\b|modalidade\b|o que (?:oferecemos|voce ganha)\b)', n))
+        r'jornada de trabalho\b|modelo/local de trabalho\b|modalidade\b|o que (?:oferecemos|voce ganha|voce encontrara)\b)', n))
 
 
 def heading_norm(text):
@@ -223,7 +224,9 @@ def split_job_sections(soup, posting=None):
         # content ("Conhecimento em <strong>Python</strong>"). Ignore block
         # containers so their list items are not emitted twice.
         parent_p = node.find_parent('p')
-        if node.find_parent('li') or (node.name in {'strong', 'b'} and parent_p and not parent_p.find(['ul','ol','li'])):
+        if (node.find_parent('li') and node.name != 'li') or (node.name in {'strong', 'b'} and parent_p and not parent_p.find(['ul','ol','li'])):
+            continue
+        if node.name == 'li' and node.find('li'):
             continue
         if node.name == 'p' and node.find(['ul', 'ol', 'li']):
             continue
