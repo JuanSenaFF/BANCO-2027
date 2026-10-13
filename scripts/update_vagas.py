@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 from quality import extract_jobposting, split_requirements, senior_conflict, location_fields, requirements_quality_conflict, is_non_requirement_item, clean_requirement_items
 from collection_audit import CandidateAudit, schedule, retry_url, canonical_url as audit_url
 from http_policy import PublicHTTP
+from quality import fallback_qualifications, split_job_sections
 from rules import DUPLICATE_SIMILARITY
 from official_sources import (
     collect_official_postings,
@@ -805,12 +806,11 @@ def requirements_for(soup, posting):
             if len(structured) >= 3:
                 req, method = structured, "json_ld"
         if len(req) < 3:
-            bullets = extract_bullets(soup, posting)
+            bullets = fallback_qualifications(soup, posting)
             # A responsibilities list can mention many technologies. Require
             # explicit qualification wording before treating loose bullets as
             # candidate requirements without a recognized heading.
-            qualification_cues = r"conhecimento|experi[eê]ncia|familiaridade|forma[cç][aã]o|proficiency|knowledge|experience|required"
-            if (len(bullets) >= 3 and any(re.search(qualification_cues, item, re.I) for item in bullets)
+            if (len(bullets) >= 3
                     and not requirements_quality_conflict((posting or {}).get("title", ""), bullets)):
                 req, method = bullets, "technical_bullets"
     return clean_requirement_items(req), clean_requirement_items(diff), method
@@ -951,6 +951,7 @@ def main() -> int:
                 "tags": tags,
                 "requirements": requirements[:14],
                 "requirementsExtractionMethod": method,
+                "responsibilities": split_job_sections(soup, posting)[2],
                 "differentials": differentials,
                 **location,
                 "searchScopeLocation": search_scope,

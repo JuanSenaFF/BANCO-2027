@@ -298,6 +298,7 @@ def restore_source(previous, merged):
     """Curated input still carries LinkedIn: don't undo a confirmed promotion."""
     resolution = previous.get('sourceResolution') or {}
     if (resolution.get('state') == 'resolved'
+            and previous.get('source') != merged.get('source')
             and resolution.get('discoveryUrl') == merged.get('source')
             and resolution.get('url') == previous.get('source')):
         for field in ('source', 'sourceStructured', 'sourceName', 'sourceProvider',
@@ -358,13 +359,16 @@ class ATSResolver:
             except ValueError:
                 pass
         from update_vagas import requirements_for
-        req, diff, _ = requirements_for(None, posting)
+        req, diff, method = requirements_for(None, posting)
+        from quality import split_job_sections
         return {**outcome, 'state': 'resolved', 'reason': 'Vaga presente no feed oficial; empresa, título e requisitos correspondentes',
                 'url': best['url'], 'verification': {
                     'status': 'Ativa', 'validationState': 'confirmed',
                     'lastCheckedAt': outcome['checkedAt'], 'lastVerifiedAt': outcome['checkedAt'],
                     'verificationReason': 'Feed público oficial contém a vaga correspondente',
                     'requirements': req, 'differentials': diff,
+                    'requirementsExtractionMethod': method,
+                    'responsibilities': split_job_sections(None, posting)[2],
                     **location_fields(posting, ''),
                 }}
 

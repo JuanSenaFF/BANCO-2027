@@ -21,6 +21,40 @@ class QualityTests(unittest.TestCase):
         a,b=split_requirements(None,{'description':html})
         self.assertEqual(a,['Python','SQL básico','Experiência com APIs']);self.assertEqual(b,['AWS'])
 
+    def test_xp_prerequisites_differential_and_duties_are_separate(self):
+        from quality import split_job_sections
+        markup=('<p><strong>Principais responsabilidades:</strong></p><ul>'
+                '<li>Desenvolver modelos de machine learning em Python</li><li>Realizar testes dos modelos</li></ul>'
+                '<p><strong>Pré-requisitos para candidatura:</strong></p><ul>'
+                '<li>Ter a nossa cultura</li><li>Conhecimento em Python</li><li>Conhecimentos em estatística</li>'
+                '<li>Habilidade de comunicação</li><li>Residir em São Paulo</li></ul>'
+                '<p><strong>Diferencial:</strong></p><ul><li>Experiência em Databricks</li><li>Conhecimento em Kedro</li></ul>'
+                '<p>Benefícios:</p><li>Crédito consignado e home equity</li>')
+        req,diff,duties=split_job_sections(None,{'description':markup})
+        self.assertEqual(req,['Ter a nossa cultura','Conhecimento em Python','Conhecimentos em estatística','Habilidade de comunicação','Residir em São Paulo'])
+        self.assertEqual(diff,['Experiência em Databricks','Conhecimento em Kedro'])
+        self.assertEqual(duties,['Desenvolver modelos de machine learning em Python','Realizar testes dos modelos'])
+
+    def test_fallback_never_mixes_duties_with_a_single_qualification(self):
+        from update_vagas import requirements_for
+        p={'title':'Software Engineer Junior','description':'<ul><li>Desenvolver em Python</li><li>Implementar APIs</li><li>Conhecimento em SQL</li><li>Experiência em Git</li></ul>'}
+        self.assertEqual(requirements_for(None,p)[0],[])
+
+    def test_short_explicit_qualification_section_is_not_filled_by_duties(self):
+        from update_vagas import requirements_for
+        p={'title':'Software Engineer Junior','description':'<h2>Requisitos</h2><li>Python</li><li>SQL</li><h2>Principais responsabilidades:</h2><li>Experiência do cliente e API</li><li>Desenvolver em Java</li><li>Implementar REST</li>'}
+        self.assertEqual(requirements_for(None,p)[0],['Python','SQL'])
+
+    def test_emoji_xp_and_stone_headings_keep_duties_out_of_differentials(self):
+        from quality import split_job_sections
+        p={'description':'<p>Pré-requisitos Essenciais:</p><li>Python</li><li>SQL</li><li>Git</li><p>Diferenciais:</p><li>AWS</li><p>🎯 Desafios e Impacto</p><li>Desenvolver APIs</li><p>⏳ Etapas do Processo</p><li>Teste cognitivo</li>'}
+        self.assertEqual(split_job_sections(None,p),(['Python','SQL','Git'],['AWS'],['Desenvolver APIs']))
+
+    def test_heading_inside_paragraph_list_container_is_not_lost(self):
+        p={'description':'<p><strong>O que esperamos de você:</strong><ul><li>Python</li><li>SQL</li><li>Git</li></ul></p>'}
+        self.assertEqual(split_requirements(None,p),(['Python','SQL','Git'],[]))
+
+
     def test_itau_benefits_and_footer_stop_differentials(self):
         description=('<strong>No que você precisa mandar bem?</strong><ul><li>Python</li><li>SQL</li><li>Git</li></ul>'
                      '<strong>Diferenciais</strong><ul><li>AWS</li><li>APIs REST</li></ul>'
