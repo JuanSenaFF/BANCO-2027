@@ -94,3 +94,12 @@ class HTTPPolicyTests(unittest.TestCase):
         self.assertEqual(later.history['linkedin:12345678']['retry_after'], '2026-10-13T12:30:00+00:00')
         self.assertEqual(later.history['linkedin:12345678']['attempt_count'], 1)
         self.assertEqual(later.history['linkedin:12345678']['url'], url)
+
+    def test_legacy_null_retry_deadline_can_be_scheduled(self):
+        import json
+        url = 'https://www.linkedin.com/jobs/view/12345678'
+        rows = [{'url':url,'source':'linkedin','bucket':'core'}]
+        path = Path(self.tmp.name)/'history.json'
+        path.write_text(json.dumps({'candidates':{'linkedin:12345678':{'status':'retry','retry_after':None}}}))
+        audit = CandidateAudit(path,rows,'2026-10-13T12:00:00Z')
+        self.assertEqual(schedule(rows,audit,set(),lambda _:True), [url])

@@ -84,6 +84,8 @@ class CandidateAudit:
 
     def recent_rejection(self, url: str) -> bool:
         previous = self.history.get(canonical_url(url), {})
+        if not isinstance(previous.get('retry_after'), str):
+            return False
         try:
             retry_after = datetime.fromisoformat(previous["retry_after"].replace("Z", "+00:00"))
         except (KeyError, TypeError, ValueError):
@@ -93,6 +95,8 @@ class CandidateAudit:
 
     def retry_pending(self, url: str) -> bool:
         previous = self.history.get(canonical_url(url), {})
+        if not isinstance(previous.get('retry_after'), str):
+            return False
         try:
             return (previous.get('status') == 'retry' and previous.get('policy_version') == POLICY_VERSION
                     and datetime.fromisoformat(previous['retry_after'].replace('Z', '+00:00')) >
