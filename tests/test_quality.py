@@ -58,6 +58,10 @@ class QualityTests(unittest.TestCase):
         p={'description':'<h2>O que esperamos de você:</h2><ul><li><ul><li><p>Experiência com Python</p></li><li><p>SQL</p></li><li><p>Git</p></li></ul></li></ul>'}
         self.assertEqual(split_requirements(None,p),(['Experiência com Python','SQL','Git'],[]))
 
+    def test_nested_list_container_also_keeps_direct_qualification_paragraphs(self):
+        p={'description':'<h2>Requisitos</h2><ul><li><ul><li>Python</li><li>SQL</li><li>Git</li></ul><p>Conhecimento em AWS</p></li></ul>'}
+        self.assertEqual(split_requirements(None,p),(['Python','SQL','Git','Conhecimento em AWS'],[]))
+
 
     def test_itau_benefits_and_footer_stop_differentials(self):
         description=('<strong>No que você precisa mandar bem?</strong><ul><li>Python</li><li>SQL</li><li>Git</li></ul>'

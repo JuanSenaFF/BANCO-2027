@@ -224,7 +224,8 @@ def split_job_sections(soup, posting=None):
         # content ("Conhecimento em <strong>Python</strong>"). Ignore block
         # containers so their list items are not emitted twice.
         parent_p = node.find_parent('p')
-        if (node.find_parent('li') and node.name != 'li') or (node.name in {'strong', 'b'} and parent_p and not parent_p.find(['ul','ol','li'])):
+        parent_li = node.find_parent('li')
+        if (parent_li and node.name != 'li' and not parent_li.find('li')) or (node.name in {'strong', 'b'} and parent_p and not parent_p.find(['ul','ol','li'])):
             continue
         if node.name == 'li' and node.find('li'):
             continue
