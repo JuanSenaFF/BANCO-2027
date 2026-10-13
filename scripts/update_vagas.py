@@ -15,7 +15,7 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 from quality import extract_jobposting, split_requirements, senior_conflict, location_fields, requirements_quality_conflict
-from collection_audit import CandidateAudit, schedule, canonical_url as audit_url
+from collection_audit import CandidateAudit, schedule, retry_url, canonical_url as audit_url
 from http_policy import PublicHTTP
 from rules import DUPLICATE_SIMILARITY
 from official_sources import (
@@ -830,8 +830,11 @@ def main() -> int:
     try:
         history = json.loads((ROOT / 'candidate-history.json').read_text())['candidates']
         for previous in history.values():
-            if previous.get('status') == 'retry' and previous.get('url') and previous['url'] not in candidate_urls:
-                candidate_urls.append(previous['url'])
+            url = retry_url(previous)
+            if previous.get('status') == 'retry' and url and url not in candidate_urls:
+                candidate_urls.append(url)
+                if 'linkedin.com/' in url:
+                    LINKEDIN_URL_BUCKET[url] = previous.get('bucket') or 'priority'
     except (OSError, ValueError, KeyError):
         pass
     new_jobs = []

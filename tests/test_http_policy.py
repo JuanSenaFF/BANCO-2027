@@ -8,7 +8,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from http_policy import PublicHTTP
-from collection_audit import CandidateAudit, schedule
+from collection_audit import CandidateAudit, schedule, retry_url
 
 
 def response(url, status=200, body='public job', headers=None):
@@ -103,3 +103,23 @@ class HTTPPolicyTests(unittest.TestCase):
         path.write_text(json.dumps({'candidates':{'linkedin:12345678':{'status':'retry','retry_after':None}}}))
         audit = CandidateAudit(path,rows,'2026-10-13T12:00:00Z')
         self.assertEqual(schedule(rows,audit,set(),lambda _:True), [url])
+
+    def test_legacy_canonical_ids_restore_retry_urls(self):
+        self.assertEqual(retry_url({'canonical_url':'linkedin:12345678'}),'https://www.linkedin.com/jobs/view/12345678')
+        self.assertEqual(retry_url({'canonical_url':'pagseguro.gupy.io:123'}),'https://pagseguro.gupy.io/jobs/123')
+        self.assertIsNone(retry_url({'canonical_url':'unknown:bad'}))
+
+    def test_budget_deferral_does_not_remove_a_retry_from_history(self):
+        from unittest.mock import patch
+        import collection_audit
+        url = 'https://www.linkedin.com/jobs/view/12345678'
+        rows = [{'url':url,'source':'linkedin','bucket':'generic'}]
+        path = Path(self.tmp.name)/'history.json'
+        audit=CandidateAudit(path,rows,'2026-10-13T12:00:00Z')
+        audit.mark(url,'retry','fetch_429');audit.finish(scheduled=1,scanned=1)
+        later=CandidateAudit(path,rows,'2026-10-13T13:00:00Z')
+        with patch.dict(collection_audit.BUCKET_BUDGETS,{'generic':0}):
+            self.assertEqual(schedule(rows,later,set(),lambda _:True),[])
+        self.assertEqual(later.records[url]['status'],'not_scanned')
+        self.assertEqual(later.history['linkedin:12345678']['status'],'retry')
+        self.assertEqual(later.history['linkedin:12345678']['bucket'],'generic')
