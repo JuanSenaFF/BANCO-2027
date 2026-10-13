@@ -31,6 +31,7 @@ from requirements_normalizer import (
 )
 from market_model import annotate as annotate_market
 from source_resolution import resolve_catalog, restore_source
+from collection_audit import canonical_url as candidate_url
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -213,6 +214,15 @@ def run(online=False):
     if online:
         import requests
         def check(j):
+            if ((j.get('sourceProvider') in {'greenhouse','ashby','lever'}
+                    or 'santander.wd3.myworkdayjobs.com' in j.get('source','')
+                    or 'google.com/about/careers/applications/jobs/results/' in j.get('source',''))
+                    and j.get('sourceResolution',{}).get('state')=='resolved'
+                    and j.get('validationState')=='confirmed'):
+                return j['key'],{'status':'Ativa','validationState':'confirmed',
+                                  'lastCheckedAt':j.get('lastCheckedAt'),
+                                  'lastVerifiedAt':j.get('lastVerifiedAt'),
+                                  'verificationReason':j.get('verificationReason')}
             with requests.Session() as session:
                 session.headers['User-Agent']='Banco2027/2.0 (public job status verification)'
                 return j['key'],verify(j,session)
@@ -254,9 +264,37 @@ def run(online=False):
                 catalogRetired=len(retired),
                 catalogRetirementReasons=retirement_reasons,
             )
+        published_this_run=0
+        confirmed_this_run=0
+        catalog_by_source={candidate_url(url):job for job in out.values() if not job.get('excluded')
+                           for url in [job.get('source'), *(item.get('url') for item in job.get('sources',[]) if isinstance(item,dict))]
+                           if url}
+        for row in report.get('candidates',[]):
+            if row.get('status')!='accepted' or not any(t.get('stage')=='validated' for t in row.get('transitions',[])):
+                continue
+            job=catalog_by_source.get(row.get('canonical_url'))
+            if not job:
+                if not any(t.get('stage')=='review_required' for t in row['transitions']):
+                    row['transitions'].append({'stage':'review_required','reason':'catalog_not_included'})
+                continue
+            if job.get('validationState')=='confirmed' and job.get('status')=='Ativa':
+                if not any(t.get('stage')=='confirmed_active' for t in row['transitions']):
+                    row['transitions'].append({'stage':'confirmed_active','reason':job.get('verificationReason') or 'official_evidence'})
+                confirmed_this_run+=1
+            if not any(t.get('stage')=='published' for t in row['transitions']):
+                row['transitions'].append({'stage':'published','reason':'catalog_included'})
+            published_this_run+=1
+        report.update(publishedThisRun=published_this_run,confirmedThisRun=confirmed_this_run)
+        report_path.write_text(json.dumps(report,ensure_ascii=False),encoding='utf-8')
         # "discovered" é o que o coletor encontrou antes da validação; "added" é o que realmente entrou no catálogo.
-        meta.update(updatedAt=report.get('updatedAt'),discovered=report.get('added',0),candidateUrls=report.get('candidateUrls'))
+        meta.update(updatedAt=report.get('updatedAt'),discovered=report.get('discovered',report.get('candidateUrls')),
+                    candidateUrls=report.get('candidateUrls'),collectionAdded=report.get('added',0),
+                    collectionFunnel={key:report.get(key) for key in ('discovered','scheduled_for_scan','scanned','not_scanned','outcomes','reasons','validatedThisRun','publishedThisRun','confirmedThisRun')},
+                    collectionSourceFunnel=report.get('sourceFunnel',{}))
         meta.update(validated=report.get('validated',meta.get('validated',0)),rejected=report.get('rejected',meta.get('rejected',0)),rejectionReasons=report.get('rejectionReasons',meta.get('rejectionReasons',{})))
+    health_path=ROOT/'source-health.json'
+    if health_path.exists():
+        meta['sourceHealth']=json.loads(health_path.read_text(encoding='utf-8'))
     meta['included']=sum(not j.get('excluded') for j in out.values())
     meta['excluded']=sum(bool(j.get('excluded')) for j in out.values())
     meta['needsReview']=sum(bool(j.get('reviewRequired')) for j in out.values())

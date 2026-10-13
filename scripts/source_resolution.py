@@ -1,4 +1,4 @@
-"""Resolve LinkedIn discoveries against known public employer Gupy boards.
+"""Resolve LinkedIn discoveries against public employer boards and career pages.
 
 No login, guessed private API, or title-only promotion. Network failures and
 ambiguous matches retain the original record and carry an auditable reason.
@@ -12,7 +12,9 @@ from difflib import SequenceMatcher
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
-from official_sources import merge_source_records
+from official_sources import (merge_source_records, source_metadata, source_for_company,
+                              OFFICIAL_BOARDS, ADAPTERS, board_endpoint)
+from company_policy import same_company_name
 from quality import (extract_jobposting, location_fields, norm, parse_json_ld,
                      safe_fetch, senior_conflict, split_requirements, verify)
 
@@ -42,6 +44,7 @@ def title_words(value):
     text = normalized(value)
     text = re.sub(r'\b(jr|junior)\b', 'junior', text)
     text = re.sub(r'\bdev\b', 'desenvolvedor', text)
+    text = re.sub(r'\banl\b', 'analista', text)
     # Keep seniority, PCD, technologies and locations: none is harmless noise.
     return text
 
@@ -215,7 +218,9 @@ class GupyResolver:
 
 def match_evidence(job, posting, board):
     organization = posting.get('hiringOrganization') or {}
-    if not isinstance(organization, dict) or board_for(organization.get('name')) != board:
+    if not isinstance(organization, dict) or not (
+        board_for(organization.get('name')) == board or same_company_name(organization.get('name'), board)
+    ):
         return None
     title = posting.get('title', '')
     if senior_conflict(title, ''):
@@ -281,8 +286,9 @@ def promote_source(job, outcome):
         job.pop('reviewReason', None)
     original = dict(job)
     job.update(outcome['verification'])
-    job.update(source=outcome['url'], sourceStructured=True, sourceName='Gupy',
-               sourceProvider='gupy', sourceOfficial=True, sourcePriority=4)
+    metadata = source_metadata(outcome['url'], structured=True)
+    job.update(source=outcome['url'], sourceStructured=True, sourceName=metadata['name'],
+               sourceProvider=metadata['provider'], sourceOfficial=True, sourcePriority=metadata['priority'])
     job['sources'] = merge_source_records(job, original)
 
 
@@ -300,12 +306,257 @@ def restore_source(previous, merged):
     return merged
 
 
+class ATSResolver:
+    """Match a live structured official feed against company, title and requirements."""
+    def __init__(self, session, provider):
+        self.session, self.provider, self.cache = session, provider, {}
+
+    def resolve(self, job):
+        config = source_for_company(job.get('company'))
+        outcome = {'state': 'pending', 'checkedAt': datetime.now(timezone.utc).isoformat(),
+                   'discoveryUrl': job.get('source'), 'candidates': []}
+        board = next((b for b in OFFICIAL_BOARDS if b.provider == self.provider and
+                      config and same_company_name(b.company, config.company)), None)
+        if not board:
+            return {**outcome, 'reason': 'Board oficial não cadastrado'}
+        if board not in self.cache:
+            try:
+                response = safe_fetch(self.session, board_endpoint(board))
+                if response.status_code != 200:
+                    raise ValueError(f'HTTP {response.status_code}')
+                self.cache[board] = (list(ADAPTERS[self.provider](board, response.json())), None)
+            except Exception as exc:
+                self.cache[board] = ([], f'{type(exc).__name__}: {exc}')
+        rows, error = self.cache[board]
+        if error:
+            return {**outcome, 'state': 'fetch_failed', 'reason': error}
+        ranked = []
+        for row in rows:
+            evidence = match_evidence(job, row['posting'], board.company)
+            if evidence:
+                ranked.append({'url': row['url'], **evidence, 'posting': row['posting']})
+        ranked.sort(key=lambda row: row['score'], reverse=True)
+        outcome['candidates'] = [{k: v for k, v in item.items() if k != 'posting'} for item in ranked[:5]]
+        if not ranked:
+            return {**outcome, 'reason': 'Nenhuma correspondência suficiente no feed oficial'}
+        best = ranked[0]
+        if best['score'] < 85 or not best['requirementsConfirmed'] or (len(ranked) > 1 and ranked[1]['score'] >= 70):
+            return {**outcome, 'state': 'review_required', 'reason': 'Correspondência insuficiente ou ambígua'}
+        posting = best['posting']
+        expiry = posting.get('validThrough')
+        if expiry:
+            try:
+                expiry_at = datetime.fromisoformat(str(expiry).replace('Z', '+00:00'))
+                if expiry_at.tzinfo is None:
+                    expiry_at = expiry_at.replace(tzinfo=timezone.utc)
+                if expiry_at < datetime.now(timezone.utc):
+                    return {**outcome, 'reason': 'Prazo expirado no feed oficial'}
+            except ValueError:
+                pass
+        req, diff = split_requirements(None, posting)
+        return {**outcome, 'state': 'resolved', 'reason': 'Vaga presente no feed oficial; empresa, título e requisitos correspondentes',
+                'url': best['url'], 'verification': {
+                    'status': 'Ativa', 'validationState': 'confirmed',
+                    'lastCheckedAt': outcome['checkedAt'], 'lastVerifiedAt': outcome['checkedAt'],
+                    'verificationReason': 'Feed público oficial contém a vaga correspondente',
+                    'requirements': req, 'differentials': diff,
+                    **location_fields(posting, ''),
+                }}
+
+
+class GreenhouseResolver(ATSResolver):
+    def __init__(self, session): super().__init__(session, 'greenhouse')
+
+
+class AshbyResolver(ATSResolver):
+    def __init__(self, session): super().__init__(session, 'ashby')
+
+
+class LeverResolver(ATSResolver):
+    def __init__(self, session): super().__init__(session, 'lever')
+
+
+class CompanyCareersResolver:
+    def __init__(self, session):
+        self.session, self.pages = session, {}
+
+    def resolve(self, job):
+        config = source_for_company(job.get('company'))
+        outcome = {'state': 'pending', 'checkedAt': datetime.now(timezone.utc).isoformat(),
+                   'discoveryUrl': job.get('source'), 'candidates': []}
+        if config and config.company == 'Santander':
+            return self.resolve_workday(job, outcome)
+        if config and config.company == 'Google':
+            return self.resolve_google(job, outcome)
+        if not config or config.company != 'Itaú':
+            return {**outcome, 'reason': 'Portal oficial sem adaptador de busca'}
+        if config.company not in self.pages:
+            try:
+                # Import here to reuse the same paginated public HTML discovery.
+                from update_vagas import official_company_urls
+                self.pages[config.company] = (official_company_urls(), None)
+            except Exception as exc:
+                self.pages[config.company] = ([], f'{type(exc).__name__}: {exc}')
+        urls, error = self.pages[config.company]
+        if error:
+            return {**outcome, 'state': 'fetch_failed', 'reason': error}
+        # URL slugs are only a prefilter; matching still requires the detail page.
+        relevant = [url for url in urls if title_score(job.get('role'), urlparse(url).path.split('/')[-3].replace('-', ' ')) >= .65]
+        if len(relevant) > MAX_DETAILS:
+            return {**outcome, 'state': 'review_required', 'reason': 'Muitas candidatas no portal oficial'}
+        ranked = []
+        failed = False
+        for url in relevant:
+            try:
+                response = safe_fetch(self.session, url)
+                if response.status_code != 200:
+                    failed = True
+                    continue
+                posting = extract_jobposting(BeautifulSoup(response.text, 'html.parser'))
+                evidence = match_evidence(job, posting, config.company) if posting else None
+                if evidence:
+                    ranked.append({'url': url, **evidence, 'response': response})
+            except Exception:
+                failed = True
+        ranked.sort(key=lambda row: row['score'], reverse=True)
+        outcome['candidates'] = [{k: v for k, v in row.items() if k != 'response'} for row in ranked[:5]]
+        if failed:
+            return {**outcome, 'state': 'fetch_failed', 'reason': 'Detalhes inacessíveis; unicidade não confirmada'}
+        if not ranked:
+            return {**outcome, 'reason': 'Nenhuma correspondência suficiente no portal'}
+        best = ranked[0]
+        if best['score'] < 85 or not best['requirementsConfirmed'] or (len(ranked) > 1 and ranked[1]['score'] >= 70):
+            return {**outcome, 'state': 'review_required', 'reason': 'Correspondência insuficiente ou ambígua'}
+        checked = verify({**job, 'source': best['url']}, self.session, response=best['response'])
+        if checked.get('validationState') != 'confirmed':
+            return {**outcome, 'reason': 'Página oficial não confirmou atividade'}
+        return {**outcome, 'state': 'resolved', 'reason': 'Portal oficial confirma empresa, título e requisitos',
+                'url': best['url'], 'verification': checked}
+
+    def resolve_workday(self, job, outcome):
+        from update_vagas import SANTANDER_WORKDAY, workday_urls
+        if 'Santander' not in self.pages:
+            try:
+                self.pages['Santander'] = (workday_urls(), None)
+            except Exception as exc:
+                self.pages['Santander'] = ([], f'{type(exc).__name__}: {exc}')
+        urls, error = self.pages['Santander']
+        if error:
+            return {**outcome, 'state': 'fetch_failed', 'reason': error}
+        candidates = []
+        for url in urls:
+            slug = urlparse(url).path.rsplit('/', 1)[-1]
+            slug = re.sub(r'_Req\d+.*$', '', slug).replace('-', ' ')
+            if title_score(job.get('role'), slug) >= .65:
+                candidates.append(url)
+        if len(candidates) > MAX_DETAILS:
+            return {**outcome, 'state': 'review_required', 'reason': 'Muitas candidatas no Workday'}
+        ranked, failed = [], False
+        for url in candidates:
+            path = urlparse(url).path.split('/SantanderCareers', 1)[-1]
+            try:
+                response = safe_fetch(self.session, SANTANDER_WORKDAY + '/wday/cxs/santander/SantanderCareers' + path)
+                if response.status_code != 200:
+                    failed = True
+                    continue
+                detail = response.json().get('jobPostingInfo', {})
+                posting = {'title': detail.get('title'), 'description': detail.get('jobDescription'),
+                           'hiringOrganization': {'name': 'Santander'},
+                           'jobLocation': {'address': {'addressLocality': detail.get('location')}},
+                           'datePosted': detail.get('startDate')}
+                evidence = match_evidence(job, posting, 'Santander')
+                if evidence:
+                    ranked.append({'url': url, **evidence, 'posting': posting})
+            except Exception:
+                failed = True
+        ranked.sort(key=lambda row: row['score'], reverse=True)
+        outcome['candidates'] = [{k: v for k, v in row.items() if k != 'posting'} for row in ranked[:5]]
+        if failed:
+            return {**outcome, 'state': 'fetch_failed', 'reason': 'Detalhes Workday inacessíveis; unicidade não confirmada'}
+        if not ranked:
+            return {**outcome, 'reason': 'Nenhuma correspondência suficiente no Workday'}
+        best = ranked[0]
+        if best['score'] < 85 or not best['requirementsConfirmed'] or (len(ranked) > 1 and ranked[1]['score'] >= 70):
+            return {**outcome, 'state': 'review_required', 'reason': 'Correspondência insuficiente ou ambígua'}
+        req, diff = split_requirements(None, best['posting'])
+        return {**outcome, 'state': 'resolved', 'reason': 'Vaga presente na busca e no detalhe público do Workday',
+                'url': best['url'], 'verification': {
+                    'status': 'Ativa', 'validationState': 'confirmed',
+                    'lastCheckedAt': outcome['checkedAt'], 'lastVerifiedAt': outcome['checkedAt'],
+                    'verificationReason': 'Busca e detalhe públicos do Workday correspondentes',
+                    'requirements': req, 'differentials': diff,
+                    **location_fields(best['posting'], ''),
+                }}
+
+    def resolve_google(self, job, outcome):
+        from update_vagas import google_careers_urls, fetch_page
+        if 'Google' not in self.pages:
+            try:
+                self.pages['Google'] = (google_careers_urls(), None)
+            except Exception as exc:
+                self.pages['Google'] = ([], f'{type(exc).__name__}: {exc}')
+        urls, error = self.pages['Google']
+        if error:
+            return {**outcome, 'state': 'fetch_failed', 'reason': error}
+        candidates = [url for url in urls if title_score(job.get('role'),
+            re.sub(r'^\d+-', '', urlparse(url).path.rsplit('/', 1)[-1]).replace('-', ' ')) >= .65]
+        if len(candidates) > MAX_DETAILS:
+            return {**outcome, 'state': 'review_required', 'reason': 'Muitas candidatas no Google Careers'}
+        ranked, failed = [], False
+        for url in candidates:
+            try:
+                _, posting = fetch_page(url)
+                if not posting:
+                    failed = True
+                    continue
+                evidence = match_evidence(job, posting, 'Google')
+                if evidence:
+                    ranked.append({'url': url, **evidence, 'posting': posting})
+            except Exception:
+                failed = True
+        ranked.sort(key=lambda row: row['score'], reverse=True)
+        outcome['candidates'] = [{k: v for k, v in row.items() if k != 'posting'} for row in ranked[:5]]
+        if failed:
+            return {**outcome, 'state': 'fetch_failed', 'reason': 'Detalhes Google inacessíveis; unicidade não confirmada'}
+        if not ranked:
+            return {**outcome, 'reason': 'Nenhuma correspondência suficiente no Google Careers'}
+        best = ranked[0]
+        if best['score'] < 85 or not best['requirementsConfirmed'] or (len(ranked) > 1 and ranked[1]['score'] >= 70):
+            return {**outcome, 'state': 'review_required', 'reason': 'Correspondência insuficiente ou ambígua'}
+        req, diff = split_requirements(None, best['posting'])
+        return {**outcome, 'state': 'resolved', 'reason': 'Busca e detalhe públicos do Google Careers correspondentes',
+                'url': best['url'], 'verification': {
+                    'status': 'Ativa', 'validationState': 'confirmed',
+                    'lastCheckedAt': outcome['checkedAt'], 'lastVerifiedAt': outcome['checkedAt'],
+                    'verificationReason': 'Busca e detalhe públicos do Google Careers correspondentes',
+                    'requirements': req, 'differentials': diff,
+                    **location_fields(best['posting'], ''),
+                }}
+
+
+class OfficialSourceResolver:
+    def __init__(self, session):
+        self.adapters = {'gupy': GupyResolver(session), 'greenhouse': GreenhouseResolver(session),
+                         'ashby': AshbyResolver(session), 'lever': LeverResolver(session),
+                         'company': CompanyCareersResolver(session)}
+
+    def resolve(self, job):
+        config = source_for_company(job.get('company'))
+        if not config:
+            return {'state': 'pending', 'reason': 'Empresa sem fonte oficial configurada',
+                    'discoveryUrl': job.get('source'), 'candidates': []}
+        return self.adapters[config.provider].resolve(job)
+
+
 def resolve_catalog(jobs, session):
-    resolver = GupyResolver(session)
+    resolver = OfficialSourceResolver(session)
     counts = {}
     for job in jobs:
         host = urlparse(job.get('source', '')).hostname or ''
-        if (not (host == 'linkedin.com' or host.endswith('.linkedin.com'))
+        ats_source = (job.get('sourceProvider') in {'greenhouse', 'ashby', 'lever'}
+                      or host == 'santander.wd3.myworkdayjobs.com'
+                      or host == 'www.google.com' and urlparse(job.get('source','')).path.startswith('/about/careers/applications/jobs/results/'))
+        if (not (host == 'linkedin.com' or host.endswith('.linkedin.com') or ats_source)
                 or job.get('excluded') or job.get('status') == 'Encerrada'):
             continue
         outcome = resolver.resolve(job)

@@ -59,6 +59,18 @@ class FakeSupabaseSession:
         return FakeResponse({})
 
 
+class ExistingSupabaseSession(FakeSupabaseSession):
+    def __init__(self, payload_hash=None, zero_runs=0):
+        super().__init__()
+        self.payload_hash, self.zero_runs = payload_hash, zero_runs
+
+    def get(self, url, **kwargs):
+        if url.endswith('job_candidates'):
+            key = kwargs['params']['candidate_key'].removeprefix('in.(').removesuffix(')')
+            return FakeResponse([{'candidate_key': key, 'payload_hash': self.payload_hash}] if self.payload_hash else [])
+        return FakeResponse([{'metadata': {'consecutive_zero_yield': self.zero_runs}}])
+
+
 class CandidateQualificationTests(unittest.TestCase):
     def test_priority_bank_junior_technology_role_is_qualified(self):
         row = candidate_row(Candidate(
@@ -143,6 +155,25 @@ class PersistenceTests(unittest.TestCase):
         self.assertEqual(len(session.patches), 1)
         candidate_request = session.posts[0][1]
         self.assertIn("resolution=merge-duplicates", candidate_request["headers"]["Prefer"])
+
+    def test_identical_payload_is_not_rewritten(self):
+        from candidate_pipeline import CollectionResult
+        candidate = Candidate("adzuna", "9", "https://example.test/9", "Data Analyst I", raw={"id": 9})
+        expected = candidate_row(candidate)["payload_hash"]
+        session = ExistingSupabaseSession(payload_hash=expected)
+        inbox = SupabaseInbox("https://project.supabase.co", "secret", session=session)
+        self.assertEqual(inbox.persist(CollectionResult("adzuna_br", [candidate], request_count=1), "2026-10-06T12:00:00Z"), 0)
+        self.assertEqual([url.rsplit("/", 1)[-1] for url, _ in session.posts], ["source_runs"])
+
+    def test_repeated_zero_yield_is_degraded_even_when_http_succeeded(self):
+        from candidate_pipeline import CollectionResult
+        session = ExistingSupabaseSession(zero_runs=2)
+        SupabaseInbox("https://project.supabase.co", "secret", session=session).persist(
+            CollectionResult("adzuna_br", request_count=2), "2026-10-06T12:00:00Z")
+        registry = session.patches[0][1]["json"]
+        self.assertEqual(registry["health_status"], "degraded")
+        self.assertEqual(registry["metadata"]["yield_health"], "zero_yield")
+        self.assertEqual(registry["metadata"]["consecutive_zero_yield"], 3)
 
 
 if __name__ == "__main__":

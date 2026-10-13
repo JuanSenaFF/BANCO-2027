@@ -23,7 +23,7 @@ class TargetCompany:
 # Search tiers preserve the existing query budgets of both collector versions.
 # "discovery" companies are allowed when found, without an extra LinkedIn query.
 COMPANIES = (
-    TargetCompany("Itaú", ("Itaú Unibanco",), "core"),
+    TargetCompany("Itaú", ("Itaú Unibanco", "Banco Itau"), "core"),
     TargetCompany("Bradesco", search_tier="core"),
     TargetCompany("Santander", ("Santander Brasil",), "core"),
     TargetCompany("BTG Pactual", search_tier="core"),

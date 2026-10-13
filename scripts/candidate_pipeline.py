@@ -14,6 +14,7 @@ import sys
 import unicodedata
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlencode
 
@@ -26,7 +27,7 @@ from update_vagas import STRONG_FINANCE_PHRASES
 
 USER_AGENT = "Banco2027JobRadar/2.0 (+https://github.com/JuanSenaFF/BANCO-2027)"
 TIMEOUT = 25
-JUNIOR_TERMS = ("junior", " jr", "estagio", "estagiario", "trainee", "intern", "entry level", "analista i")
+JUNIOR_TERMS = ("junior", " jr", "estagio", "estagiario", "trainee", "intern", "entry level", "early career", "graduate", "analista i", "analyst i", "engineer i")
 SENIOR_TERMS = ("senior", " sr", "pleno", "especialista", "specialist", "lead", "principal", "staff", "gerente")
 TECH_TERMS = (
     "software", "desenvolv", "developer", "backend", "front-end", "frontend", "dados", "data ",
@@ -383,7 +384,31 @@ class SupabaseInbox:
 
     def persist(self, result: CollectionResult, started_at: str) -> int:
         rows = [candidate_row(candidate) for candidate in result.candidates if candidate.source_url]
-        self.post("job_candidates", rows, upsert=True)
+        # Do not rewrite identical aggregator payloads on every scheduled run.
+        if hasattr(self.session, "get"):
+            for start in range(0, len(rows), 50):
+                chunk = rows[start:start + 50]
+                response = self.session.get(self._endpoint("job_candidates"), params={
+                    "select": "candidate_key,payload_hash", "candidate_key": "in.(" + ",".join(row["candidate_key"] for row in chunk) + ")",
+                }, timeout=TIMEOUT)
+                if not response.ok:
+                    raise RuntimeError(f"Supabase job_candidates lookup: HTTP {response.status_code}")
+                previous = {item["candidate_key"]: item["payload_hash"] for item in response.json()}
+                for row in chunk:
+                    row["_unchanged"] = previous.get(row["candidate_key"]) == row["payload_hash"]
+        changed = [{k: v for k, v in row.items() if k != "_unchanged"} for row in rows if not row.get("_unchanged")]
+        self.post("job_candidates", changed, upsert=True)
+        qualified = sum(row["processing_status"] == "qualified" for row in rows)
+        previous_zero = 0
+        previous_metadata = {}
+        if hasattr(self.session, "get"):
+            response = self.session.get(self._endpoint("source_registry"), params={
+                "select": "metadata", "id": f"eq.{result.source_id}",
+            }, timeout=TIMEOUT)
+            if response.ok and response.json():
+                previous_metadata = response.json()[0].get("metadata", {})
+                previous_zero = previous_metadata.get("consecutive_zero_yield", 0)
+        zero_runs = previous_zero + 1 if result.request_count and not result.candidates and not result.errors else 0
         if result.skipped_reason:
             status = "skipped"
         elif result.errors and not rows:
@@ -399,18 +424,26 @@ class SupabaseInbox:
             "status": status,
             "request_count": result.request_count,
             "discovered_count": len(result.candidates),
-            "persisted_count": len(rows),
+            "persisted_count": len(changed),
             "error_count": len(result.errors),
             "error": " | ".join(result.errors)[:2000] or result.skipped_reason,
+            "metadata": {"qualified_yield": qualified, "unchanged_count": len(rows) - len(changed),
+                         "transport_health": "failed" if result.errors else "healthy" if result.request_count else "disabled",
+                         "yield_health": "zero_yield" if zero_runs else "healthy" if result.candidates else "disabled"},
         }])
-        health = "credentials_missing" if result.skipped_reason == "credentials_missing" else (
-            "unavailable" if status == "failed" else "degraded" if status == "partial" else "healthy"
-        )
+        health = ("credentials_missing" if result.skipped_reason == "credentials_missing" else
+                  "degraded" if result.skipped_reason else
+                  "degraded" if zero_runs >= 3 or status == "partial" else
+                  "unavailable" if status == "failed" else "healthy")
         registry = {
             "id": result.source_id,
             "enabled": result.skipped_reason is None,
             "health_status": health,
             "last_error": " | ".join(result.errors)[:2000] or result.skipped_reason,
+            "metadata": {**previous_metadata, "transport_health": "failed" if result.errors else "healthy" if result.request_count else "disabled",
+                         "yield_health": "zero_yield" if zero_runs else "healthy" if result.candidates else "disabled",
+                         "qualified_yield": qualified, "consecutive_zero_yield": zero_runs,
+                         "last_useful_at": utcnow() if qualified else previous_metadata.get("last_useful_at")},
             "updated_at": utcnow(),
         }
         if status == "success":
@@ -423,7 +456,7 @@ class SupabaseInbox:
         )
         if not response.ok:
             raise RuntimeError(f"Supabase source_registry: HTTP {response.status_code}: {response.text[:300]}")
-        return len(rows)
+        return len(changed)
 
 
 def csv_env(name: str, default: str) -> tuple[str, ...]:
@@ -439,14 +472,18 @@ def main() -> int:
 
     session = resilient_session()
     adapters = [
-        ApiBrAdapter(session, csv_env("API_BR_TERMS", "junior,estagio"), int(os.getenv("API_BR_MAX_PAGES", "10"))),
         AdzunaAdapter(session, os.getenv("ADZUNA_APP_ID", ""), os.getenv("ADZUNA_APP_KEY", ""),
                       csv_env("ADZUNA_QUERIES", "tecnologia junior banco,dados junior fintech"),
                       int(os.getenv("ADZUNA_MAX_PAGES", "1"))),
-        JoobleAdapter(session, os.getenv("JOOBLE_API_KEY", ""),
-                      csv_env("JOOBLE_QUERIES", "tecnologia junior banco")),
     ]
+    if os.getenv("JOOBLE_API_KEY"):
+        adapters.append(JoobleAdapter(session, os.getenv("JOOBLE_API_KEY", ""),
+                                      csv_env("JOOBLE_QUERIES", "tecnologia junior banco")))
     inbox = SupabaseInbox(supabase_url, service_key)
+    for source_id, reason in (("api_br", "historical_zero_qualified_yield"),
+                              ("jooble_br", "credentials_missing" if not os.getenv("JOOBLE_API_KEY") else None)):
+        if reason:
+            inbox.persist(CollectionResult(source_id, skipped_reason=reason), utcnow())
     failures = 0
     for adapter in adapters:
         started_at = utcnow()
@@ -457,6 +494,14 @@ def main() -> int:
         except RuntimeError as exc:
             failures += 1
             print(f"[{result.source_id}] falha de persistência: {exc}", file=sys.stderr)
+    if hasattr(inbox.session, "get"):
+        response = inbox.session.get(inbox._endpoint("source_registry"), params={
+            "select": "id,enabled,health_status,last_success_at,metadata",
+            "id": "in.(api_br,adzuna_br,jooble_br)",
+        }, timeout=TIMEOUT)
+        if response.ok:
+            (Path(__file__).resolve().parents[1] / "source-health.json").write_text(
+                json.dumps({"updatedAt": utcnow(), "sources": response.json()}, ensure_ascii=False), encoding="utf-8")
     return 1 if failures else 0
 
 
