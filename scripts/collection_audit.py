@@ -36,6 +36,17 @@ def canonical_url(url: str) -> str:
     return urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path.rstrip("/"), query, ""))
 
 
+def retry_url(record: dict) -> str | None:
+    """Recover public URLs from the canonical identifiers in legacy history."""
+    value = record.get('url') or record.get('canonical_url') or ''
+    if re.fullmatch(r'linkedin:\d{7,}', value):
+        return 'https://www.linkedin.com/jobs/view/' + value.split(':')[1]
+    gupy = re.fullmatch(r'([a-z0-9-]+\.gupy\.io):(\d+)', value)
+    if gupy:
+        return f'https://{gupy[1]}/jobs/{gupy[2]}'
+    return value if value.startswith('https://') else None
+
+
 class CandidateAudit:
     def __init__(self, path: Path, discovered: list[dict], at: str):
         self.path, self.at = path, at
@@ -69,15 +80,17 @@ class CandidateAudit:
             "url": url,
             "canonical_url": key, "first_seen_at": previous.get("first_seen_at") or self.at,
             "last_seen_at": self.at, "last_processed_at": self.at if attempts > previous.get("attempt_count", 0) else previous.get("last_processed_at"),
-            "status": status, "reason": previous.get("reason", reason) if reason == "recent_rejection" else reason,
+            "status": previous.get('status', status) if status == 'not_scanned' else status,
+            "reason": previous.get("reason", reason) if reason in {"recent_rejection", "retry_deferred"} or status == 'not_scanned' else reason,
             "content_hash": hashlib.sha256(content.encode()).hexdigest() if content else previous.get("content_hash"),
-            "retry_after": previous.get("retry_after") if reason in {"recent_rejection", "retry_deferred"} else (
+            "retry_after": previous.get("retry_after") if reason in {"recent_rejection", "retry_deferred"} or status == 'not_scanned' else (
                 (datetime.fromisoformat(self.at.replace("Z", "+00:00")) + REJECTION_TTL).isoformat()
                 if status == "rejected" else
                 (datetime.fromisoformat(self.at.replace("Z", "+00:00")) + timedelta(minutes=30)).isoformat()
                 if status == "retry" else None),
             "attempt_count": attempts, "policy_version": POLICY_VERSION,
             "source": row["source"], "requirements_extraction_method": method or previous.get("requirements_extraction_method"),
+            "bucket": row.get('bucket') or previous.get('bucket'),
             "company": row.get("company") or previous.get("company"),
             "role": row.get("role") or previous.get("role"),
         }
