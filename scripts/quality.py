@@ -84,13 +84,25 @@ SECTION_STOP_RE = re.compile(
 )
 
 REQUIREMENTS_HEADING_RE = re.compile(
-    r'^(?:requisitos(?: e qualificacoes| imprescindiveis| obrigatorios)?|qualificacoes|qualifications|requirements|minimum qualifications|'
+    r'^(?:pre[- ]requisitos(?: para candidatura| essenciais)?|requisitos(?: e qualificacoes| imprescindiveis| obrigatorios)?|qualificacoes|qualifications|requirements|minimum qualifications|'
     r'basic qualifications|required qualifications|what you need|who you are|o que (?:buscamos(?: em voce)?|voce precisa)|'
-    r'no que voce precisa mandar bem\??|conhecimentos necessarios|perfil desejado|'
+    r'o que procuramos|o perfil que estamos buscando e pre[- ]requisitos|'
+    r'no que voce precisa mandar bem\??|(?:o que )?esperamos de voce|conhecimentos necessarios|perfil desejado|'
     r'precisamos que)\s*:?$'
 )
+RESPONSIBILITIES_HEADING_RE = re.compile(
+    r'^(?:as suas principais responsabilidades serao|(?:principais |suas |nossas )?(?:responsabilidades(?: e atribuicoes)?|atribuicoes)|'
+    r'desafios e impacto|sobre a area de .+|principais atividades|atividades(?: da funcao)?|no seu dia a dia|o que voce (?:vai fazer|fara)(?: \(responsabilidades\))?|'
+    r'responsibilities|what you (?:will|would) do|o que buscamos e principais responsabilidades)\s*:?$'
+)
+QUALIFICATION_CUE_RE = re.compile(
+    r'^(?:conhecimentos?\b|experiencia\b|vivencia\b|familiaridade\b|dominio\b|formacao\b|'
+    r'graduacao\b|ensino\b|superior\b|capacidade de\b|habilidade de\b|residir\b|'
+    r'(?:ter|possuir) (?:conhecimento|experiencia|vivencia|formacao|graduacao)\b|'
+    r'knowledge\b|experience\b|proficiency\b|familiarity\b|bachelor|master|degree\b)'
+)
 DIFFERENTIALS_HEADING_RE = re.compile(
-    r'^(?:diferenciais?|requisitos desejaveis|nice[ -]to[ -]have|preferred qualifications|sera um plus|desejaveis?)\s*:?$'
+    r'^(?:diferencia(?:l|is)|o que aumenta as suas chances|requisitos desejaveis|nice[ -]to[ -]have|preferred qualifications|sera um plus|desejaveis?)\s*:?$'
 )
 STOP_HEADING_RE = re.compile(
     r'^(?:beneficios|benefits|what we offer|offerings|responsabilidades|atribuicoes|responsibilities|'
@@ -100,6 +112,7 @@ STOP_HEADING_RE = re.compile(
 )
 
 NON_REQUIREMENT_RE = re.compile(
+    r'^\s*#li[- ](?:hybrid|remote|onsite)\b|'
     r'\bincentivo (?:a|aos) estudos\b|\bacesso aos clubes de lazer\b|\balgumas vantagens\b|'
     r'\bconheca mais sobre nossa cultura\b|\bao se tornar (?:um |uma )?ituber\b|'
     r'^\s*[#*+]?\s*(?:estimulamos candidaturas|somos comprometidos com a inclusao|vemproitau|vemserituber)\b|'
@@ -132,10 +145,16 @@ def is_non_requirement_item(text):
 
 
 def ends_requirement_section(text):
-    n = norm(text).strip(' :_!?')
+    n = heading_norm(text).strip(' :_!?')
     return bool(STOP_HEADING_RE.fullmatch(n) or re.match(
         r'^(?:ao se tornar (?:um |uma )?ituber\b|(?:nossos? |suas? )?(?:beneficios|vantagens)\b|'
-        r'conheca mais sobre nossa cultura\b|o que (?:oferecemos|voce ganha)\b)', n))
+        r'conheca mais sobre nossa cultura\b|se identificou com\b|inscreva-se e venha\b|assista o video\b|'
+        r'para saber mais sobre nossas\b|saiba mais sobre nosso dia a dia\b|nosso pacote de remuneracao e beneficios\b|'
+        r'jornada de trabalho\b|modelo/local de trabalho\b|modalidade\b|o que (?:oferecemos|voce ganha|voce encontrara)\b)', n))
+
+
+def heading_norm(text):
+    return re.sub(r'^[^a-z0-9]+', '', norm(text)).strip()
 
 
 def clean_requirement_items(items):
@@ -188,25 +207,35 @@ def deduplicate_requirement_containers(items):
     return out
 
 
-def split_requirements(soup, posting=None):
+def description_root(soup, posting=None):
     if posting and posting.get('description'):
-        root = BeautifulSoup(str(posting['description']), 'html.parser')
-    else:
-        root = soup.select_one('.show-more-less-html__markup, .description__text, [class*="description"]') if soup else None
+        return BeautifulSoup(str(posting['description']), 'html.parser')
+    return soup.select_one('.show-more-less-html__markup, .description__text, [class*="description"]') if soup else None
+
+
+def split_job_sections(soup, posting=None):
+    root = description_root(soup, posting)
     if root is None:
-        return [], []
-    req, diff = [], []
+        return [], [], []
+    req, diff, duties = [], [], []
     mode = None
     for node in root.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong', 'b', 'p', 'li']):
         # Process a paragraph as a whole so inline emphasis does not discard
         # content ("Conhecimento em <strong>Python</strong>"). Ignore block
         # containers so their list items are not emitted twice.
-        if node.find_parent('li') or (node.name in {'strong', 'b'} and node.find_parent('p')):
+        parent_p = node.find_parent('p')
+        parent_li = node.find_parent('li')
+        if (parent_li and node.name != 'li' and not parent_li.find('li')) or (node.name in {'strong', 'b'} and parent_p and not parent_p.find(['ul','ol','li'])):
+            continue
+        if node.name == 'li' and node.find('li'):
             continue
         if node.name == 'p' and node.find(['ul', 'ol', 'li']):
             continue
         t = re.sub(r'\s+', ' ', node.get_text(' ', strip=True)).strip()
-        n = norm(t)
+        n = heading_norm(t)
+        if RESPONSIBILITIES_HEADING_RE.fullmatch(n):
+            mode = 'duties'
+            continue
         if ends_requirement_section(t):
             mode = None
             continue
@@ -220,17 +249,46 @@ def split_requirements(soup, posting=None):
             if REQUIREMENTS_HEADING_RE.fullmatch(n):
                 mode = 'req'
                 continue
-            if SECTION_STOP_RE.search(n):
+            if SECTION_STOP_RE.search(n) and node.name != 'li' and not QUALIFICATION_CUE_RE.search(n):
                 mode = None
                 continue
         if node.name not in ['li', 'p'] or not (3 <= len(t) <= 700):
             continue
         if is_non_requirement_item(t):
             continue
-        target = diff if mode == 'diff' else req if mode == 'req' else None
+        target = diff if mode == 'diff' else req if mode == 'req' else duties if mode == 'duties' else None
         if target is not None and t not in target:
             target.append(t)
-    return clean_requirement_items(req)[:30], clean_requirement_items(diff)[:20]
+    return clean_requirement_items(req)[:30], clean_requirement_items(diff)[:20], clean_requirement_items(duties)[:30]
+
+
+def split_requirements(soup, posting=None):
+    req, diff, _ = split_job_sections(soup, posting)
+    return req, diff
+
+
+def fallback_qualifications(soup, posting=None):
+    """Only positively worded qualifications outside responsibility/benefit blocks."""
+    root = description_root(soup, posting)
+    if root is None:
+        return []
+    nodes = root.find_all(['h1','h2','h3','h4','h5','h6','strong','b','p','li'])
+    # A short explicit requirement section must stay short; do not fill it
+    # with duties, preferred skills or benefits from another section.
+    if any(REQUIREMENTS_HEADING_RE.fullmatch(heading_norm(n.get_text(' ', strip=True))) for n in nodes):
+        return []
+    allowed, items = True, []
+    for node in nodes:
+        if node.find_parent('li'):
+            continue
+        t = re.sub(r'\s+', ' ', node.get_text(' ',strip=True)).strip()
+        n = heading_norm(t)
+        if RESPONSIBILITIES_HEADING_RE.fullmatch(n) or ends_requirement_section(t) or DIFFERENTIALS_HEADING_RE.fullmatch(n):
+            allowed = False
+            continue
+        if allowed and node.name == 'li' and QUALIFICATION_CUE_RE.search(n) and not is_non_requirement_item(t):
+            items.append(t)
+    return clean_requirement_items(items)
 
 
 def posting_company(posting):
@@ -343,10 +401,11 @@ def verify(job, session, *, response=None):
             company_matches = bool(company and expected_company and posting_company_matches(company, expected_company))
             seniority_matches = not senior_conflict(posting.get('title', ''), posting.get('description', ''))
             if title_matches and company_matches and seniority_matches and len(str(posting.get('description', ''))) > 150:
-                req, diff = split_requirements(soup, posting)
+                req, diff, duties = split_job_sections(soup, posting)
                 extracted = {}
                 if len(req) >= 3 and not requirements_quality_conflict(posting.get('title') or job.get('role', ''), req):
-                    extracted = {'requirements': req, 'differentials': diff}
+                    extracted = {'requirements': req, 'differentials': diff,
+                                 'responsibilities': duties, 'requirementsExtractionMethod':'section'}
                 return {
                     **result,
                     'status': 'Ativa',

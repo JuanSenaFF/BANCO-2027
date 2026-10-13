@@ -47,6 +47,11 @@ def markup(p):
 
 
 class SourceResolutionTests(unittest.TestCase):
+    def test_same_official_source_does_not_restore_stale_requirements(self):
+        before={**job(),'source':URL,'requirements':['Duties mixed with skills'],
+                'sourceResolution':{'state':'resolved','discoveryUrl':URL,'url':URL}}
+        updated={**before,'requirements':['Python','SQL','Git']}
+        self.assertEqual(restore_source(before,updated)['requirements'],['Python','SQL','Git'])
     def test_loose_qualification_extraction_is_shared_with_resolver(self):
         p = posting(description='<ul><li>Conhecimento em Python</li><li>Experiência em SQL</li><li>Familiaridade com Git</li></ul>')
         j = {**job(), 'requirements':['Conhecimento em Python','Experiência em SQL','Familiaridade com Git']}
