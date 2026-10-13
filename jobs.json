@@ -1,35 +1,35 @@
 {
   "meta": {
-    "catalogBuiltAt": "2026-10-13T12:32:32+00:00",
-    "total": 101,
-    "added": 22,
-    "verificationAttempted": 45,
-    "lastCheckAttemptAt": "2026-10-13T12:32:32+00:00",
-    "verificationConfirmed": 11,
-    "updatedAt": "2026-10-13T12:31:35Z",
-    "included": 89,
-    "excluded": 12,
-    "discovered": 1793,
-    "candidateUrls": 1793,
-    "validated": 45,
+    "catalogBuiltAt": "2026-10-13T13:01:15+00:00",
+    "total": 104,
+    "added": 3,
+    "verificationAttempted": 49,
+    "lastCheckAttemptAt": "2026-10-13T13:01:15+00:00",
+    "verificationConfirmed": 31,
+    "updatedAt": "2026-10-13T12:53:36Z",
+    "included": 93,
+    "excluded": 11,
+    "discovered": 3404,
+    "candidateUrls": 3404,
+    "validated": 48,
     "rejected": 5,
     "rejectionReasons": {
       "URL/ID já existente": 2,
       "cargo fora do recorte técnico": 3
     },
-    "needsReview": 22,
-    "pendingValidation": 45,
-    "officialSources": 37,
-    "linkedinFallbacks": 51,
-    "officialCoveragePct": 41.6,
+    "needsReview": 7,
+    "pendingValidation": 28,
+    "officialSources": 40,
+    "linkedinFallbacks": 52,
+    "officialCoveragePct": 43.0,
     "requirementsNormalization": {
       "schemaVersion": 2,
-      "total": 1281,
-      "mandatory": 851,
+      "total": 1313,
+      "mandatory": 876,
       "differential": 383,
-      "eliminatory": 47,
-      "technicalMapped": 792,
-      "unmapped": 267
+      "eliminatory": 54,
+      "technicalMapped": 811,
+      "unmapped": 270
     },
     "catalogRetiredAt": "2026-09-24T03:45:14+00:00",
     "catalogRetired": 1,
@@ -39,25 +39,25 @@
     "marketModel": {
       "version": 1,
       "segments": {
-        "core_technology": 71,
-        "finance_with_technology": 26,
+        "core_technology": 73,
+        "finance_with_technology": 27,
         "market_context": 3,
         "technology_differential": 1
       },
       "alignments": {
-        "target": 76,
+        "target": 77,
         "other_stack": 7,
-        "context": 10,
+        "context": 12,
         "adjacent": 8
       },
       "geographies": {
         "sao_paulo_unverified": 60,
         "unverified": 7,
-        "sao_paulo": 30,
+        "sao_paulo": 33,
         "remote_brazil": 3,
         "remote_unverified": 1
       },
-      "referenceInstitutions": 69
+      "referenceInstitutions": 71
     },
     "indeed": {
       "individualVacanciesEnabled": false,
@@ -66,54 +66,53 @@
     },
     "sourceResolution": {
       "pending": 11,
-      "review_required": 20,
+      "review_required": 4,
       "fetch_failed": 2,
-      "resolved": 3
+      "resolved": 19
     },
-    "collectionAdded": 27,
+    "collectionAdded": 8,
     "collectionFunnel": {
-      "discovered": 1793,
-      "scheduled_for_scan": 1788,
-      "scanned": 1788,
+      "discovered": 3404,
+      "scheduled_for_scan": 3377,
+      "scanned": 3377,
       "not_scanned": 0,
       "outcomes": {
-        "rejected": 1550,
-        "accepted": 27,
-        "already_known": 3,
-        "retry": 210,
-        "duplicate": 3
+        "rejected": 3358,
+        "already_known": 25,
+        "accepted": 8,
+        "retry": 11,
+        "duplicate": 2
       },
       "reasons": {
-        "entry_level_unconfirmed": 744,
-        "role_irrelevant": 100,
-        "seniority_conflict": 667,
-        "qualified_for_catalog": 27,
-        "outside_geography": 11,
-        "url_already_known": 3,
+        "entry_level_unconfirmed": 1010,
+        "role_irrelevant": 282,
+        "seniority_conflict": 1271,
+        "url_already_known": 25,
+        "outside_geography": 15,
         "requirements_insufficient": 3,
-        "technical_tags_insufficient": 1,
+        "qualified_for_catalog": 8,
+        "technical_tags_insufficient": 4,
         "requirements_review": 3,
-        "geography_review": 3,
+        "geography_review": 8,
         "duplicate_url": 2,
-        "company_missing": 24,
-        "duplicate_requirements": 1,
-        "fetch_429": 204
+        "company_missing": 772,
+        "requirements_quality_conflict": 1
       },
-      "validatedThisRun": 22,
-      "publishedThisRun": 22,
-      "confirmedThisRun": 6
+      "validatedThisRun": 3,
+      "publishedThisRun": 3,
+      "confirmedThisRun": 3
     },
     "collectionSourceFunnel": {
       "greenhouse": {
-        "rejected": 1188,
-        "accepted": 21,
-        "already_known": 2,
+        "rejected": 1187,
+        "already_known": 18,
+        "accepted": 5,
         "retry": 1,
-        "discovered": 1212,
-        "scanned": 1210,
-        "qualified": 21,
-        "conversionPct": 1.7,
-        "averageFetchMs": 23
+        "discovered": 1211,
+        "scanned": 1193,
+        "qualified": 5,
+        "conversionPct": 0.4,
+        "averageFetchMs": 32
       },
       "ashby": {
         "rejected": 100,
@@ -121,26 +120,35 @@
         "scanned": 100,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 66
+        "averageFetchMs": 45
+      },
+      "lever": {
+        "rejected": 25,
+        "retry": 1,
+        "discovered": 26,
+        "scanned": 26,
+        "qualified": 0,
+        "conversionPct": 0.0,
+        "averageFetchMs": 8
       },
       "Itaú Careers": {
         "rejected": 132,
-        "accepted": 5,
+        "already_known": 5,
         "discovered": 137,
-        "scanned": 137,
-        "qualified": 5,
-        "conversionPct": 3.6,
-        "averageFetchMs": 230
+        "scanned": 132,
+        "qualified": 0,
+        "conversionPct": 0.0,
+        "averageFetchMs": 2819
       },
       "Santander Workday": {
-        "accepted": 1,
+        "already_known": 1,
         "rejected": 34,
         "retry": 2,
         "discovered": 37,
-        "scanned": 37,
-        "qualified": 1,
-        "conversionPct": 2.7,
-        "averageFetchMs": 562
+        "scanned": 36,
+        "qualified": 0,
+        "conversionPct": 0.0,
+        "averageFetchMs": 3426
       },
       "Google Careers": {
         "retry": 2,
@@ -150,31 +158,30 @@
         "scanned": 13,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 312
+        "averageFetchMs": 977
       },
       "gupy": {
-        "rejected": 71,
+        "rejected": 1846,
+        "accepted": 3,
         "already_known": 1,
-        "retry": 1,
-        "discovered": 73,
-        "scanned": 72,
-        "qualified": 0,
-        "conversionPct": 0.0,
-        "averageFetchMs": 206
+        "retry": 5,
+        "discovered": 1855,
+        "scanned": 1854,
+        "qualified": 3,
+        "conversionPct": 0.2,
+        "averageFetchMs": 1538
       },
-      "linkedin": {
-        "duplicate": 1,
-        "retry": 204,
-        "rejected": 14,
-        "discovered": 219,
-        "scanned": 219,
+      "company": {
+        "rejected": 23,
+        "discovered": 23,
+        "scanned": 23,
         "qualified": 0,
         "conversionPct": 0.0,
-        "averageFetchMs": 1220
+        "averageFetchMs": 1551
       }
     },
     "sourceHealth": {
-      "updatedAt": "2026-10-13T12:32:31.969677+00:00",
+      "updatedAt": "2026-10-13T13:01:14.248978+00:00",
       "sources": [
         {
           "id": "api_br",
@@ -210,7 +217,7 @@
           "id": "adzuna_br",
           "enabled": true,
           "health_status": "healthy",
-          "last_success_at": "2026-10-13T12:32:31.818325+00:00",
+          "last_success_at": "2026-10-13T13:01:14.058617+00:00",
           "metadata": {
             "role": "discovery",
             "confidence": "medium",
@@ -219,9 +226,52 @@
             "qualified_yield": 0,
             "transport_health": "healthy",
             "requires_terms_review": true,
-            "consecutive_zero_yield": 1
+            "consecutive_zero_yield": 2
           }
         }
+      ]
+    },
+    "collectionRequestPolicy": {
+      "network_requests": 2108,
+      "rate_limited": 1,
+      "cooldown_skips": 99
+    },
+    "companySourceCoverage": {
+      "total": 67,
+      "configured": 35,
+      "unconfigured": [
+        "Bradesco",
+        "Mercado Pago",
+        "B3",
+        "CERC",
+        "Cielo",
+        "Rede",
+        "Dock",
+        "Banco PAN",
+        "Will Bank",
+        "EQI Investimentos",
+        "Rico",
+        "Clear",
+        "Avenue",
+        "Sinqia",
+        "Matera",
+        "Agibank",
+        "Banco Carrefour",
+        "Banco Sofisa",
+        "Banco Pine",
+        "Banco Rendimento",
+        "Banco Bari",
+        "Banco Modal",
+        "InfinitePay",
+        "Celcoin",
+        "QI Tech",
+        "Stark Bank",
+        "RecargaPay",
+        "Zoop",
+        "Vindi",
+        "Fiserv",
+        "BMP",
+        "Nava | Tech for Business"
       ]
     }
   },
@@ -2003,7 +2053,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -3210,8 +3260,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3258,7 +3308,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T12:32:32.959631+00:00",
+        "checkedAt": "2026-10-13T13:01:15.418491+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-backend-developer-pcd-at-getnet-brasil-4442931588/",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -3574,8 +3624,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -3615,7 +3665,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T12:32:35.141553+00:00",
+        "checkedAt": "2026-10-13T13:01:15.611105+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/junior-full-stack-developer-at-getnet-brasil-4444244513/",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -14640,8 +14690,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "review",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -14679,26 +14729,26 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:35.145749+00:00",
+        "checkedAt": "2026-10-13T13:01:15.616920+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-junior-full-stack-it-accounting-clients-finance-report-at-btg-pactual-4462892770/",
         "candidates": [
           {
             "url": "https://carreiras.btgpactual.com/vagas?gh_jid=5691114004",
-            "score": 58.4,
+            "score": 68.0,
             "title": "Engenheiro(a) de Software (Full Stack) | IT Accounting",
             "titleSimilarity": 0.902,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
+            "requirementCoverage": 0.273,
+            "descriptionCoverage": 0.273,
             "requirementsConfirmed": false,
             "location": "São Paulo ou Rio de Janeiro"
           },
           {
             "url": "https://carreiras.btgpactual.com/vagas?gh_jid=5691138004",
-            "score": 52.0,
+            "score": 68.0,
             "title": "Engenheiro(a) de Software Junior(Full stack) | IT Accounting Clients & Finance Report",
             "titleSimilarity": 0.803,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
+            "requirementCoverage": 0.455,
+            "descriptionCoverage": 0.455,
             "requirementsConfirmed": false,
             "location": "São Paulo ou Rio de Janeiro"
           }
@@ -15011,8 +15061,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "review",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -15053,16 +15103,16 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:35.393639+00:00",
+        "checkedAt": "2026-10-13T13:01:15.968597+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenharia-de-software-back-end-assistente-e-j%C3%BAnior-vaga-exclusiva-para-pcd-at-xp-inc-4310494599/",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8147533002",
-            "score": 54.8,
+            "score": 74.9,
             "title": "Engenharia de Software Back-end Assistente e Júnior | Vaga exclusiva para PCD ",
             "titleSimilarity": 0.846,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
+            "requirementCoverage": 0.571,
+            "descriptionCoverage": 0.571,
             "requirementsConfirmed": false,
             "location": "São Paulo, SP"
           }
@@ -15390,7 +15440,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:35+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -15433,7 +15483,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T12:32:35.598409+00:00",
+        "checkedAt": "2026-10-13T13:01:16.207194+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/analista-de-automa%C3%A7%C3%A3o-e-ia-j%C3%BAnior-%E2%80%93-analytics-processos-controles-at-c6-bank-4414036029/",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -15877,7 +15927,7 @@
           "transferable": true
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:36+00:00",
       "verificationReason": "HTTP 429; não confirma encerramento",
       "validationState": "review",
       "confidenceLabel": "Baixa",
@@ -15924,7 +15974,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:35.751397+00:00",
+        "checkedAt": "2026-10-13T13:01:16.693267+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-software-jr-java-at-pagbank-4436036193/",
         "candidates": [],
         "reason": "Muitas candidatas; busca inconclusiva"
@@ -16871,8 +16921,8 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:36+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "review",
       "confidenceLabel": "Baixa",
       "sourceName": "LinkedIn",
@@ -16911,7 +16961,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-10-13T12:32:35.896892+00:00",
+        "checkedAt": "2026-10-13T13:01:17.083457+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-sistemas-jr-sre-at-pagbank-4428707419/",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -17175,7 +17225,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:36+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -17213,7 +17263,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "fetch_failed",
-        "checkedAt": "2026-10-13T12:32:36.357288+00:00",
+        "checkedAt": "2026-10-13T13:01:18.444344+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-de-qualidade-de-software-jr-at-pagbank-4425839238/",
         "candidates": [],
         "reason": "Candidatas inacessíveis; unicidade não confirmada"
@@ -17254,7 +17304,7 @@
       "source": "https://pagseguro.gupy.io/jobs/11175121",
       "key": "linkedin:4418200168",
       "firstSeenAt": null,
-      "lastVerifiedAt": "2026-10-13T12:32:49+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:37+00:00",
       "duplicateOf": null,
       "excluded": false,
       "qualityScore": 93,
@@ -17438,7 +17488,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "validationState": "confirmed",
       "confidenceLabel": "Alta",
@@ -17664,7 +17714,7 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "validationState": "pending",
       "confidenceLabel": "Baixa",
@@ -19353,10 +19403,10 @@
       "auto": true,
       "key": "linkedin:4244881112",
       "firstSeenAt": "2026-09-06T03:23:00Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:37+00:00",
       "duplicateOf": null,
       "excluded": false,
-      "qualityScore": 52,
+      "qualityScore": 77,
       "requirementsStructured": [
         {
           "text": "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens: C#, Java, Go ou Rust",
@@ -19482,14 +19532,14 @@
           "transferable": false
         }
       ],
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
       "location": "São Paulo, BR",
       "modality": "Presencial",
       "publishedAt": "2026-10-11T10:03:49.000Z",
       "validThrough": "2027-05-08T17:53:05.000Z",
       "validationState": "review",
-      "confidenceLabel": "Baixa",
+      "confidenceLabel": "Média",
       "sourceName": "LinkedIn",
       "sourceProvider": "linkedin",
       "sourceOfficial": false,
@@ -19525,26 +19575,26 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:37.913370+00:00",
+        "checkedAt": "2026-10-13T13:01:21.916683+00:00",
         "discoveryUrl": "https://br.linkedin.com/jobs/view/engenheiro-a-de-software-assistente-e-j%C3%BAnior-at-xp-inc-4244881112",
         "candidates": [
           {
-            "url": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
-            "score": 70.0,
+            "url": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
+            "score": 80.0,
             "title": "Engenheiro(a) de Software | Assistente e Júnior",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
+            "requirementCoverage": 0.333,
+            "descriptionCoverage": 0.333,
             "requirementsConfirmed": false,
             "location": "São Paulo, SP"
           },
           {
-            "url": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
-            "score": 70.0,
+            "url": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
+            "score": 80.0,
             "title": "Engenheiro(a) de Software | Assistente e Júnior",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
+            "requirementCoverage": 0.333,
+            "descriptionCoverage": 0.333,
             "requirementsConfirmed": false,
             "location": "São Paulo, SP"
           }
@@ -20658,8 +20708,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -21381,7 +21431,7 @@
       "institutionWeight": 1.0,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T12:32:37.949735+00:00",
+        "checkedAt": "2026-10-13T13:01:21.977604+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4458272564",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no board"
@@ -23505,8 +23555,8 @@
       "lastVerifiedAt": null,
       "duplicateOf": null,
       "excluded": false,
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "requirementsStructured": [
         {
@@ -25631,8 +25681,8 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
+      "lastCheckedAt": "2026-10-13T13:01:37+00:00",
+      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 62,
       "confidenceLabel": "Média",
       "requirementsStructured": [
@@ -26131,7 +26181,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T12:32:38.602946+00:00",
+        "checkedAt": "2026-10-13T13:01:23.420459+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4465896330",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no portal"
@@ -27121,7 +27171,7 @@
       "excluded": false,
       "validationState": "pending",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 75,
       "confidenceLabel": "Média",
@@ -27422,7 +27472,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T12:32:39.353097+00:00",
+        "checkedAt": "2026-10-13T13:01:23.863369+00:00",
         "discoveryUrl": "https://boards.greenhouse.io/inter/jobs/4726054005?gh_jid=4726054005",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no feed oficial"
@@ -27433,7 +27483,7 @@
       "company": "Santander",
       "role": "SSD Brasil - IT Analyst I (Suporte) - Pessoa com Deficiência",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Encerrada",
       "statusRaw": "Coleta automática em 2026-09-18 — LinkedIn",
       "area": "Cloud / SRE",
       "stack": "Cloud / SRE",
@@ -27472,7 +27522,7 @@
       "auto": true,
       "key": "linkedin:4465374376",
       "firstSeenAt": "2026-09-18T14:06:51Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
       "sources": [
         {
           "url": "https://www.linkedin.com/jobs/view/4465374376",
@@ -27483,19 +27533,19 @@
         }
       ],
       "excluded": false,
-      "validationState": "pending",
+      "validationState": "closed",
       "sourceResolution": {
         "state": "pending",
-        "checkedAt": "2026-10-13T12:32:39.532419+00:00",
+        "checkedAt": "2026-10-13T13:01:24.045512+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4465374376",
         "candidates": [],
         "reason": "Nenhuma correspondência suficiente no Workday"
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
-      "verificationReason": "HTTP 429; não confirma encerramento",
-      "qualityScore": 62,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "verificationReason": "Encerramento explícito",
+      "qualityScore": 87,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Sistema Operacional Windows;",
@@ -27807,7 +27857,7 @@
           "priority": 1
         }
       ],
-      "excluded": true,
+      "excluded": false,
       "validationState": "review",
       "sourceResolution": {
         "state": "review_required",
@@ -27827,8 +27877,8 @@
         ],
         "reason": "Correspondência insuficiente ou ambígua"
       },
-      "duplicateOf": "job-boards.greenhouse.io/xpinc/jobs/8774288002",
-      "lastCheckedAt": "2026-10-12T19:39:51+00:00",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
       "qualityScore": 47,
       "confidenceLabel": "Baixa",
@@ -28507,7 +28557,7 @@
       "auto": true,
       "key": "linkedin:4468935647",
       "firstSeenAt": "2026-09-24T03:44:05Z",
-      "lastVerifiedAt": "2026-10-13T12:32:49+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
       "sources": [
         {
           "url": "https://pagseguro.gupy.io/jobs/10246849",
@@ -28555,7 +28605,7 @@
         "reason": "Empresa, título e requisitos correspondentes; fonte confirmada",
         "url": "https://pagseguro.gupy.io/jobs/10246849"
       },
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "duplicateOf": null,
       "qualityScore": 93,
@@ -28837,7 +28887,7 @@
       "auto": true,
       "key": "bancorbras.gupy.io:12602979",
       "firstSeenAt": "2026-09-27T04:24:11Z",
-      "lastVerifiedAt": "2026-10-13T12:32:49+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
       "sources": [
         {
           "url": "https://bancorbras.gupy.io/jobs/12602979?jobBoardSource=gupy_public_page",
@@ -28850,7 +28900,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:49+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 100,
       "confidenceLabel": "Alta",
@@ -29115,7 +29165,7 @@
       "auto": true,
       "key": "boards.greenhouse.io/inter/jobs/4723994005",
       "firstSeenAt": "2026-09-30T16:16:52Z",
-      "lastVerifiedAt": "2026-10-13T12:32:47.168786+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:32.732957+00:00",
       "sources": [
         {
           "url": "https://boards.greenhouse.io/inter/jobs/4723994005?gh_jid=4723994005",
@@ -29128,7 +29178,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:47.168786+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:32.732957+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -29259,7 +29309,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T12:32:47.168786+00:00",
+        "checkedAt": "2026-10-13T13:01:32.732957+00:00",
         "discoveryUrl": "https://boards.greenhouse.io/inter/jobs/4723994005?gh_jid=4723994005",
         "candidates": [
           {
@@ -29337,8 +29387,8 @@
         "candidates": []
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "confidenceLabel": "Baixa",
       "requirementsStructured": [
@@ -29546,13 +29596,14 @@
       "validationState": "pending",
       "sourceResolution": {
         "state": "pending",
-        "reason": "Empresa sem fonte oficial configurada",
+        "checkedAt": "2026-10-13T13:01:32.748035+00:00",
         "discoveryUrl": "https://www.linkedin.com/jobs/view/4475560772",
-        "candidates": []
+        "candidates": [],
+        "reason": "Nenhuma correspondência suficiente no board"
       },
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
+      "verificationReason": "HTTP 429; não confirma encerramento",
       "qualityScore": 55,
       "confidenceLabel": "Baixa",
       "requirementsStructured": [
@@ -29945,7 +29996,7 @@
       "auto": true,
       "key": "boards.greenhouse.io/inter/jobs/4739789005",
       "firstSeenAt": "2026-10-08T17:12:40Z",
-      "lastVerifiedAt": "2026-10-13T12:32:47.182746+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:33.190909+00:00",
       "sources": [
         {
           "url": "https://boards.greenhouse.io/inter/jobs/4739789005?gh_jid=4739789005",
@@ -29958,7 +30009,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:47.182746+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:33.190909+00:00",
       "verificationReason": "Feed público oficial contém a vaga correspondente",
       "qualityScore": 95,
       "confidenceLabel": "Alta",
@@ -30308,7 +30359,7 @@
       "institutionWeight": 1.25,
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T12:32:47.182746+00:00",
+        "checkedAt": "2026-10-13T13:01:33.190909+00:00",
         "discoveryUrl": "https://boards.greenhouse.io/inter/jobs/4739789005?gh_jid=4739789005",
         "candidates": [
           {
@@ -30331,7 +30382,7 @@
       "company": "Stone",
       "role": "Analista de Riscos de Mercado e Liquidez | Júnior (Híbrido/SP)",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Produtos Financeiros",
       "stack": "Python",
@@ -30359,7 +30410,7 @@
       "requirementsExtractionMethod": "technical_bullets",
       "differentials": [],
       "location": "Sao Paulo, Sao Paulo, Brasil",
-      "modality": "Híbrido",
+      "modality": null,
       "publishedAt": "2026-10-01T11:48:36-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -30374,7 +30425,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/stone/jobs/8010055003",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.218012+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/stone/jobs/8010055003",
@@ -30385,33 +30436,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.209786+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.218012+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/stone/jobs/8010055003",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/stone/jobs/8010055003",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Analista de Riscos de Mercado e Liquidez | Júnior (Híbrido/SP)",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "Sao Paulo, Sao Paulo, Brasil"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/stone/jobs/8010055003"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 58,
-      "confidenceLabel": "Baixa",
+      "lastCheckedAt": "2026-10-13T13:01:33.218012+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 93,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Auxiliar na identificação, avaliação e monitoramento dos riscos de mercado e de liquidez da Companhia, o que inclui risco de taxa de juros da carteira bancária, risco cambial e risco de fluxo de caixa;",
@@ -30676,7 +30726,7 @@
       "company": "Stone",
       "role": "Analista Júnior  de Políticas de Crédito / Crédit Business Analyst",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Produtos Financeiros",
       "stack": "Python",
@@ -30705,7 +30755,9 @@
         "Domínio Técnico em Dados: Experiência consistente em extração e manipulação de dados utilizando SQL . Familiaridade e vivência com o ecossistema Databricks e linguagens associadas ( Python, PySpark, R ou Scala );",
         "Visão Quantitativa & Risco: Capacidade de conectar métricas operacionais e padrões de dados (Volatilidade, Roll Rates, Inadimplência) com impacto financeiro direto no negócio (NPV);",
         "Conhecimento em Crédito: Passagem ou forte interesse pela área de crédito, risco ou produtos financeiros (preferencialmente Cartão de Crédito em fintechs, bancos ou adquirentes);",
-        "Comunicação e Influência: Boa interlocução em estrutura matricial, sendo capaz de traduzir análises de dados complexas em recomendações claras para Product Managers (PMs) e times de negócio."
+        "Comunicação e Influência: Boa interlocução em estrutura matricial, sendo capaz de traduzir análises de dados complexas em recomendações claras para Product Managers (PMs) e times de negócio.",
+        "Formação (concluída ou em andamento) em cursos da vertente STEM (Engenharias, Ciência da Computação, Estatística, Matemática, Física) ou áreas de alto viés quantitativo; Vivência no uso de dados alternativos (Open Finance, comportamento transacional de adquirência) aplicados à modelagem e flexibilização de políticas; Experiência prática na construção de pipelines de acompanhamento para testes A/B em ambientes de produção.",
+        "Formação (concluída ou em andamento) em cursos da vertente STEM (Engenharias, Ciência da Computação, Estatística, Matemática, Física) ou áreas de alto viés quantitativo;"
       ],
       "requirementsExtractionMethod": "technical_bullets",
       "differentials": [],
@@ -30725,7 +30777,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/stone/jobs/7827757003",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.483748+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/stone/jobs/7827757003",
@@ -30736,33 +30788,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.455008+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.483748+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/stone/jobs/7827757003",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/stone/jobs/7827757003",
-            "score": 75.0,
+            "score": 100.0,
             "title": "Analista Júnior  de Políticas de Crédito / Crédit Business Analyst ",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.5,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "Sao Paulo, Sao Paulo, Brasil"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/stone/jobs/7827757003"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 53,
-      "confidenceLabel": "Baixa",
+      "lastCheckedAt": "2026-10-13T13:01:33.483748+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 93,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Acquisition: Focado na criação de ofertas, políticas de concessão, jornadas de aquisição e ativação de linhas de crédito integradas aos canais de venda.",
@@ -31106,6 +31157,70 @@
           "levelLabel": null,
           "minYears": null,
           "transferable": true
+        },
+        {
+          "text": "Formação (concluída ou em andamento) em cursos da vertente STEM (Engenharias, Ciência da Computação, Estatística, Matemática, Física) ou áreas de alto viés quantitativo; Vivência no uso de dados alternativos (Open Finance, comportamento transacional de adquirência) aplicados à modelagem e flexibilização de políticas; Experiência prática na construção de pipelines de acompanhamento para testes A/B em ambientes de produção.",
+          "position": 14,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": "Testes",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Testes",
+              "subskill": null,
+              "profileSkillId": "tests"
+            },
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            },
+            {
+              "skill": "Dados/BI",
+              "subskill": null,
+              "profileSkillId": "data"
+            }
+          ],
+          "profileSkillIds": [
+            "tests",
+            "prod",
+            "data"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "any",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Formação (concluída ou em andamento) em cursos da vertente STEM (Engenharias, Ciência da Computação, Estatística, Matemática, Física) ou áreas de alto viés quantitativo;",
+          "position": 15,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": "Dados/BI",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Dados/BI",
+              "subskill": null,
+              "profileSkillId": "data"
+            }
+          ],
+          "profileSkillIds": [
+            "data"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
         }
       ],
       "requirementsSchemaVersion": 2,
@@ -31136,7 +31251,7 @@
       "company": "BTG Pactual",
       "role": "Analista de Operações Jr | Middle International",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Engenharia de Software",
       "stack": "Python",
@@ -31164,7 +31279,7 @@
         "Presencial (Seg a sex) - Faria Lima - São Paulo"
       ],
       "location": "São Paulo",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-08-26T16:11:08-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -31179,7 +31294,7 @@
       "auto": true,
       "key": "carreiras.btgpactual.com/vagas",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.537994+00:00",
       "sources": [
         {
           "url": "https://carreiras.btgpactual.com/vagas?gh_jid=6164513004",
@@ -31190,12 +31305,12 @@
         }
       ],
       "excluded": false,
-      "validationState": "pending",
+      "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.537994+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 80,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Geração de métricas e KPIs acerca dos principais ofensores;",
@@ -31466,14 +31581,33 @@
       "geographyWeight": 1.0,
       "institutionTier": "reference",
       "institutionTierLabel": "Instituição de referência",
-      "institutionWeight": 1.25
+      "institutionWeight": 1.25,
+      "sourceResolution": {
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.537994+00:00",
+        "discoveryUrl": "https://carreiras.btgpactual.com/vagas?gh_jid=6164513004",
+        "candidates": [
+          {
+            "url": "https://carreiras.btgpactual.com/vagas?gh_jid=6164513004",
+            "score": 100.0,
+            "title": "Analista de Operações Jr | Middle International",
+            "titleSimilarity": 1.0,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
+            "location": "São Paulo"
+          }
+        ],
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://carreiras.btgpactual.com/vagas?gh_jid=6164513004"
+      }
     },
     {
       "id": 188,
       "company": "XP",
       "role": "Analista de Automação Junior | Exclusiva para PCD",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Cloud / SRE",
       "stack": "Python",
@@ -31507,7 +31641,11 @@
         "Conhecimento básico em metodologias de melhoria contínua (Lean, PDCA) ou ágeis (Scrum, Kanban)",
         "Experiência com ferramentas de automação (Ansible, Power Automate, etc.)",
         "Conhecimentos básicos em ITIL",
-        "Desenvolver e manter scripts de automação para rotinas operacionais críticas, reduzindo falhas manuais e aumentando a eficiência dos processos de infraestrutura"
+        "Desenvolver e manter scripts de automação para rotinas operacionais críticas, reduzindo falhas manuais e aumentando a eficiência dos processos de infraestrutura",
+        "Colaborar com times de engenharia e operações na construção de pipelines de automação, integrações entre sistemas e orquestração de tarefas",
+        "Participar da configuração e gestão de ferramentas de automação (Ansible, Power Automate, scripts em Python/PowerShell), contribuindo para a evolução da esteira de deploy e operações",
+        "Apoiar na migração e operação de workloads em cloud (Azure, AWS, GCP), garantindo que as rotinas automatizadas estejam alinhadas às melhores práticas de arquitetura e segurança",
+        "Monitorar e interpretar dados operacionais para propor melhorias contínuas nos fluxos automatizados, gerando indicadores de eficiência e disponibilidade"
       ],
       "requirementsExtractionMethod": "technical_bullets",
       "differentials": [
@@ -31523,7 +31661,7 @@
         "Monitorar e interpretar dados operacionais para propor melhorias contínuas nos fluxos automatizados, gerando indicadores de eficiência e disponibilidade"
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-09-02T12:54:55-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -31539,7 +31677,7 @@
       "supersedesSource": "https://www.linkedin.com/jobs/view/4462487120",
       "key": "job-boards.greenhouse.io/xpinc/jobs/8774288002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.572050+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
@@ -31557,36 +31695,35 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.529645+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.572050+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Analista de Automação Junior | Exclusiva para PCD",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8774288002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
       "sourceAliases": [
         "linkedin:4462487120"
       ],
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.572050+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Formação superior na área de tecnologia, sistemas de informação ou áreas correlatas",
@@ -31951,6 +32088,152 @@
           "transferable": true
         },
         {
+          "text": "Colaborar com times de engenharia e operações na construção de pipelines de automação, integrações entre sistemas e orquestração de tarefas",
+          "position": 14,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Automação",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
+            },
+            {
+              "skill": "APIs",
+              "subskill": "Integração",
+              "profileSkillId": "api"
+            }
+          ],
+          "profileSkillIds": [
+            "auto",
+            "api"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Participar da configuração e gestão de ferramentas de automação (Ansible, Power Automate, scripts em Python/PowerShell), contribuindo para a evolução da esteira de deploy e operações",
+          "position": 15,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Automação",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Automação",
+              "subskill": null,
+              "profileSkillId": "auto"
+            },
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            },
+            {
+              "skill": "Python",
+              "subskill": null,
+              "profileSkillId": "python"
+            }
+          ],
+          "profileSkillIds": [
+            "auto",
+            "prod",
+            "python"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "any",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Apoiar na migração e operação de workloads em cloud (Azure, AWS, GCP), garantindo que as rotinas automatizadas estejam alinhadas às melhores práticas de arquitetura e segurança",
+          "position": 16,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "AWS",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "AWS",
+              "subskill": null,
+              "profileSkillId": "aws"
+            },
+            {
+              "skill": "Azure",
+              "subskill": null,
+              "profileSkillId": "azure"
+            },
+            {
+              "skill": "GCP",
+              "subskill": null,
+              "profileSkillId": "gcp"
+            },
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            },
+            {
+              "skill": "Cloud",
+              "subskill": null,
+              "profileSkillId": "cloud"
+            }
+          ],
+          "profileSkillIds": [
+            "aws",
+            "azure",
+            "gcp",
+            "sec",
+            "cloud"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Monitorar e interpretar dados operacionais para propor melhorias contínuas nos fluxos automatizados, gerando indicadores de eficiência e disponibilidade",
+          "position": 17,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Dados/BI",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Dados/BI",
+              "subskill": null,
+              "profileSkillId": "data"
+            }
+          ],
+          "profileSkillIds": [
+            "data"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
           "text": "Experiência acadêmica ou projetos pessoais relacionados a automação",
           "position": 0,
           "source": "description",
@@ -32244,7 +32527,7 @@
         },
         {
           "text": "Elegibilidade para vaga afirmativa: confirmar no anúncio",
-          "position": 14,
+          "position": 18,
           "source": "title",
           "mandatory": true,
           "requirementType": "eliminatory",
@@ -32268,14 +32551,17 @@
       "careerAlignmentLabel": "Alinhada ao foco",
       "careerWeight": 1.0,
       "requiredSkillIds": [
+        "api",
         "auto",
         "aws",
         "azure",
         "cloud",
+        "data",
         "gcp",
         "linux",
         "prod",
-        "python"
+        "python",
+        "sec"
       ],
       "differentialSkillIds": [
         "api",
@@ -32302,7 +32588,7 @@
       "company": "XP",
       "role": "Analista de Revenue Junior - Vaga exclusiva para Pessoas com Deficiência",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -32346,7 +32632,7 @@
         "Colaborar com equipes multidisciplinares em projetos de analytics"
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-10-05T17:20:37-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -32361,7 +32647,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8867814002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.612902+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8867814002",
@@ -32372,33 +32658,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.544344+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.612902+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8867814002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8867814002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Analista de Revenue Junior - Vaga exclusiva para Pessoas com Deficiência",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8867814002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.612902+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Conhecimento em Power BI para criação e manutenção de dashboards;",
@@ -33023,7 +33308,7 @@
       "company": "XP",
       "role": "Analista Júnior de Gestão de Portfolio Solutions",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -33071,7 +33356,7 @@
         "Trabalhar de forma transversal com times de negócio, produtos, tecnologia, compliance e dados para desenvolver soluções que aumentem a qualidade da experiência de investimento dos clientes."
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-09-23T12:08:50-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -33086,7 +33371,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8836938002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.654098+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8836938002",
@@ -33097,33 +33382,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.571695+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.654098+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8836938002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8836938002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Analista Júnior de Gestão de Portfolio Solutions",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8836938002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:50+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.654098+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Experiência no mercado financeiro, preferencialmente em investimentos, alocação, produtos, estratégia, governança, risco ou áreas correlatas.",
@@ -33778,7 +34062,7 @@
       "company": "XP",
       "role": "Analista Júnior de Inside Sales - Distribuição Produtos de Trading",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Engenharia de Software",
       "stack": "Python",
@@ -33814,7 +34098,7 @@
         "Monitorar pipeline, conversão, receitas e pós-venda, mantendo registros e controles atualizados."
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-09-15T17:35:35-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -33829,7 +34113,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8811996002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.702593+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8811996002",
@@ -33840,33 +34124,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.595849+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.702593+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8811996002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8811996002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Analista Júnior de Inside Sales - Distribuição Produtos de Trading",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8811996002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.702593+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Conhecimento básico de mercado financeiro, Renda Variável e Derivativos;",
@@ -34238,7 +34521,7 @@
       "company": "XP",
       "role": "Analista Júnior em Infraestrutura | SRE",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Cloud / SRE",
       "stack": "Dados / BI",
@@ -34276,7 +34559,11 @@
         "Noções de cloud computing (AWS, Azure ou GCP)",
         "Conhecimento básico de firewall (iptables, security groups)",
         "Experiência com ferramentas de logging (ELK, Loki)",
-        "Certificações como LPIC-1, RHCSA, AWS Cloud Practitioner ou CKAD"
+        "Certificações como LPIC-1, RHCSA, AWS Cloud Practitioner ou CKAD",
+        "Aprender na prática com tecnologias complexas : você terá contato direto com Kubernetes, Kafka, RabbitMQ e RHEL em produção — uma curva de aprendizado íngreme, mas com mentoria do time sênior para te apoiar",
+        "Monitorar ativamente a saúde dos sistemas : acompanhar dashboards de Dynatrace, Grafana e Prometheus, identificar anomalias e acionar os times corretos conforme runbooks",
+        "Atender incidentes N1 com disciplina : realizar troubleshooting inicial, classificar gravidade e saber exatamente quando escalar para o nível sênior — sem pular etapas",
+        "Executar mudanças padronizadas e deploys : realizar alterações de baixa complexidade e baixo risco seguindo procedimentos operacionais, além de fazer deploy de artefatos em ambientes não produtivos"
       ],
       "requirementsExtractionMethod": "technical_bullets",
       "differentials": [
@@ -34296,7 +34583,7 @@
         "Contribuir para a melhoria contínua : atualizar runbooks e documentação, e identificar pelo menos 1 tarefa repetitiva por trimestre que possa ser automatizada"
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-09-24T16:21:37-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -34311,7 +34598,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8843085002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.745845+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8843085002",
@@ -34322,33 +34609,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.619681+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.745845+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8843085002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8843085002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Analista Júnior em Infraestrutura | SRE",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8843085002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.745845+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Ensino superior cursando ou completo em Ciência da Computação, Engenharia da Computação, Sistemas de Informação ou áreas correlatas",
@@ -34709,6 +34995,122 @@
           ],
           "unmappedSkillCount": 0,
           "relation": "any",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Aprender na prática com tecnologias complexas : você terá contato direto com Kubernetes, Kafka, RabbitMQ e RHEL em produção — uma curva de aprendizado íngreme, mas com mentoria do time sênior para te apoiar",
+          "position": 14,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Contêineres",
+          "subskill": "Kubernetes",
+          "skills": [
+            {
+              "skill": "Contêineres",
+              "subskill": "Kubernetes",
+              "profileSkillId": "k8s"
+            },
+            {
+              "skill": "Mensageria",
+              "subskill": null,
+              "profileSkillId": "msg"
+            },
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            }
+          ],
+          "profileSkillIds": [
+            "k8s",
+            "msg",
+            "prod"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Monitorar ativamente a saúde dos sistemas : acompanhar dashboards de Dynatrace, Grafana e Prometheus, identificar anomalias e acionar os times corretos conforme runbooks",
+          "position": 15,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Observabilidade",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Observabilidade",
+              "subskill": null,
+              "profileSkillId": "obs"
+            }
+          ],
+          "profileSkillIds": [
+            "obs"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Atender incidentes N1 com disciplina : realizar troubleshooting inicial, classificar gravidade e saber exatamente quando escalar para o nível sênior — sem pular etapas",
+          "position": 16,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Produção",
+          "subskill": "Troubleshooting",
+          "skills": [
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            }
+          ],
+          "profileSkillIds": [
+            "prod"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Executar mudanças padronizadas e deploys : realizar alterações de baixa complexidade e baixo risco seguindo procedimentos operacionais, além de fazer deploy de artefatos em ambientes não produtivos",
+          "position": 17,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Produção",
+          "subskill": "Troubleshooting",
+          "skills": [
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            }
+          ],
+          "profileSkillIds": [
+            "prod"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
           "level": null,
           "levelLabel": null,
           "minYears": null,
@@ -35107,6 +35509,7 @@
         "k8s",
         "linux",
         "msg",
+        "obs",
         "prod",
         "sec"
       ],
@@ -35135,7 +35538,7 @@
       "company": "XP",
       "role": "Business Intelligence Jr",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -35164,7 +35567,8 @@
         "Desenvolver automatizações e melhorias em processos utilizando Python.",
         "Trabalhar em parceria com times de Tecnologia para entender necessidades e traduzi-las em soluções de dados.",
         "Contribuir para a evolução da cultura orientada por dados dentro da área.",
-        "Testes gerais : Avaliação do alinhamento cultural com o teste da Mindsight e teste de raciocínio lógico da Predictive Index."
+        "Testes gerais : Avaliação do alinhamento cultural com o teste da Mindsight e teste de raciocínio lógico da Predictive Index.",
+        "Crédito (consignado, home equity, CCB Imobiliário, etc.)"
       ],
       "requirementsExtractionMethod": "technical_bullets",
       "differentials": [
@@ -35181,7 +35585,7 @@
         "Contribuir para a evolução da cultura orientada por dados dentro da área."
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-09-23T16:13:45-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -35196,7 +35600,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8839562002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.792163+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8839562002",
@@ -35207,33 +35611,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.641612+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.792163+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8839562002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8839562002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Business Intelligence Jr ",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8839562002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.792163+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Conhecimento em Power BI para criação e manutenção de dashboards.",
@@ -35595,6 +35998,24 @@
           "transferable": true
         },
         {
+          "text": "Crédito (consignado, home equity, CCB Imobiliário, etc.)",
+          "position": 14,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "domain",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
           "text": "Vivência com automação de processos.",
           "position": 0,
           "source": "description",
@@ -35894,7 +36315,7 @@
       "company": "XP",
       "role": "Cientista de Dados",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -35926,7 +36347,7 @@
       "requirementsExtractionMethod": "technical_bullets",
       "differentials": [],
       "location": "São Paulo, SP",
-      "modality": "Híbrido",
+      "modality": null,
       "publishedAt": "2025-03-25T14:03:28-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -35941,7 +36362,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/7927229002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.834988+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/7927229002",
@@ -35952,33 +36373,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.663458+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.834988+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/7927229002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/7927229002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Cientista de Dados",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/7927229002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 58,
-      "confidenceLabel": "Baixa",
+      "lastCheckedAt": "2026-10-13T13:01:33.834988+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 93,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Realizar estudos e análises com grande volume de dados para embasar decisões estratégicas;",
@@ -36305,7 +36725,7 @@
       "company": "XP",
       "role": "Engenharia de Software Back-end Assistente e Júnior | Vaga exclusiva para PCD",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Backend",
       "stack": ".NET / C#",
@@ -36344,7 +36764,7 @@
         "Assista o vídeo abaixo e conheça mais sobre como é trabalhar em Tech na XP!"
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2025-10-03T14:48:29-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -36359,7 +36779,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8147533002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.881239+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8147533002",
@@ -36370,33 +36790,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.682353+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.881239+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8147533002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8147533002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Engenharia de Software Back-end Assistente e Júnior | Vaga exclusiva para PCD ",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8147533002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.881239+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Possuir conhecimento de linguagem de programação C# e .Net",
@@ -36790,7 +37209,7 @@
       "company": "XP",
       "role": "Engenheiro(a) de Software | Assistente e Júnior",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Segurança",
       "stack": "Java",
@@ -36823,7 +37242,7 @@
         "Assista o vídeo abaixo e conheça mais sobre como é trabalhar em Tech na XP!"
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-10-07T10:16:59-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -36838,7 +37257,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8875109002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.923951+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
@@ -36849,43 +37268,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.697601+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.923951+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Engenheiro(a) de Software | Assistente e Júnior",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
-            "location": "São Paulo, SP"
-          },
-          {
-            "url": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
-            "score": 70.0,
-            "title": "Engenheiro(a) de Software | Assistente e Júnior",
-            "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.923951+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens de programação (C#, Java, Go ou Rust)",
@@ -37185,7 +37593,7 @@
       "company": "XP",
       "role": "Engenheiro(a) de Software | Assistente e Júnior",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Segurança",
       "stack": "Java",
@@ -37219,7 +37627,7 @@
         "Assista o vídeo abaixo e conheça mais sobre como é trabalhar em Tech na XP!"
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2025-06-04T11:09:29-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -37234,7 +37642,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8023579002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:33.963245+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
@@ -37245,43 +37653,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.730981+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:33.963245+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
         "candidates": [
           {
-            "url": "https://job-boards.greenhouse.io/xpinc/jobs/8875109002",
-            "score": 70.0,
-            "title": "Engenheiro(a) de Software | Assistente e Júnior",
-            "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
-            "location": "São Paulo, SP"
-          },
-          {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Engenheiro(a) de Software | Assistente e Júnior",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8023579002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:33.963245+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Conhecimento básico em desenvolvimento de software em uma ou mais linguagens de programação (C#, Java, Go ou Rust)",
@@ -37581,7 +37978,7 @@
       "company": "XP",
       "role": "Estagiário(a) | Corporate Desk",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -37616,7 +38013,7 @@
         "Apoiar as atividades comerciais (relatórios e endereçamento de demandas de clientes)"
       ],
       "location": "São Paulo, SP",
-      "modality": "Presencial",
+      "modality": null,
       "publishedAt": "2026-07-17T17:55:23-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -37631,7 +38028,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8639452002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:34.000277+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8639452002",
@@ -37642,33 +38039,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.764357+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:34.000277+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8639452002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8639452002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Estagiário(a) | Corporate Desk",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, SP"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8639452002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 60,
-      "confidenceLabel": "Média",
+      "lastCheckedAt": "2026-10-13T13:01:34.000277+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 95,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Conhecimento em ferramentas de tecnologia (ex.: Excel avançado, Python, SQL, VBA, Power BI, LLMs, etc.)",
@@ -38080,7 +38476,7 @@
       "company": "XP",
       "role": "Programa de Estágio Xtag 2027.1",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -38105,7 +38501,7 @@
       "requirementsExtractionMethod": "technical_bullets",
       "differentials": [],
       "location": "São Paulo",
-      "modality": "Híbrido",
+      "modality": null,
       "publishedAt": "2026-09-15T13:06:28-04:00",
       "validThrough": null,
       "searchScopeLocation": null,
@@ -38120,7 +38516,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/xpinc/jobs/8802620002",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:34.040700+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/xpinc/jobs/8802620002",
@@ -38131,33 +38527,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.783833+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:34.040700+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/xpinc/jobs/8802620002",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/xpinc/jobs/8802620002",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Programa de Estágio Xtag 2027.1",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/xpinc/jobs/8802620002"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 58,
-      "confidenceLabel": "Baixa",
+      "lastCheckedAt": "2026-10-13T13:01:34.040700+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 93,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Nossa cultura de mente aberta torna o ambiente horizontal para que as decisões sejam tomadas com base em fatos e dados, colocando os interesses dos clientes sempre em primeiro lugar.",
@@ -38348,7 +38743,7 @@
       "company": "C6 Bank",
       "role": "Pessoa Estagiária em Monitoração Financeira - Python | Operações",
       "level": "Júnior / entrada",
-      "status": "Possivelmente encerrada",
+      "status": "Ativa",
       "statusRaw": "Coleta automática em 2026-10-13 — Greenhouse",
       "area": "Dados & Analytics",
       "stack": "Python",
@@ -38388,7 +38783,7 @@
       "auto": true,
       "key": "job-boards.greenhouse.io/c6bank/jobs/4733675005",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": null,
+      "lastVerifiedAt": "2026-10-13T13:01:34.082922+00:00",
       "sources": [
         {
           "url": "https://job-boards.greenhouse.io/c6bank/jobs/4733675005",
@@ -38399,33 +38794,32 @@
         }
       ],
       "excluded": false,
-      "validationState": "review",
+      "validationState": "confirmed",
       "sourceResolution": {
-        "state": "review_required",
-        "checkedAt": "2026-10-13T12:32:47.801971+00:00",
+        "state": "resolved",
+        "checkedAt": "2026-10-13T13:01:34.082922+00:00",
         "discoveryUrl": "https://job-boards.greenhouse.io/c6bank/jobs/4733675005",
         "candidates": [
           {
             "url": "https://job-boards.greenhouse.io/c6bank/jobs/4733675005",
-            "score": 70.0,
+            "score": 100.0,
             "title": "Pessoa Estagiária em Monitoração Financeira - Python | Operações ",
             "titleSimilarity": 1.0,
-            "requirementCoverage": 0.0,
-            "descriptionCoverage": 0.0,
-            "requirementsConfirmed": false,
+            "requirementCoverage": 1.0,
+            "descriptionCoverage": 1.0,
+            "requirementsConfirmed": true,
             "location": "São Paulo, Brazil"
           }
         ],
-        "reason": "Correspondência insuficiente ou ambígua"
+        "reason": "Vaga presente no feed oficial; empresa, título e requisitos correspondentes",
+        "url": "https://job-boards.greenhouse.io/c6bank/jobs/4733675005"
       },
-      "reviewRequired": true,
-      "reviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
-      "sourceResolutionReviewReason": "Fonte oficial: Correspondência insuficiente ou ambígua",
+      "reviewRequired": false,
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
-      "verificationReason": "Página acessível, sem evidência suficiente de vaga aberta",
-      "qualityScore": 53,
-      "confidenceLabel": "Baixa",
+      "lastCheckedAt": "2026-10-13T13:01:34.082922+00:00",
+      "verificationReason": "Feed público oficial contém a vaga correspondente",
+      "qualityScore": 93,
+      "confidenceLabel": "Alta",
       "requirementsStructured": [
         {
           "text": "Elaborar queries em SQL para extração, manipulação e análise de dados;",
@@ -38728,7 +39122,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-de-qualidade-junior-atendimento/35299/101653734992",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T12:32:51+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-de-qualidade-junior-atendimento/35299/101653734992",
@@ -38741,7 +39135,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -38946,7 +39340,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/analista-operacional-atacado-junior/35299/101627791280",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T12:32:51+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/analista-operacional-atacado-junior/35299/101627791280",
@@ -38959,7 +39353,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -39226,7 +39620,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/pessoa-analista-de-engenharia-de-ti-junior-net-e-aws/35299/101618434096",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T12:32:51+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/pessoa-analista-de-engenharia-de-ti-junior-net-e-aws/35299/101618434096",
@@ -39239,7 +39633,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -39671,7 +40065,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/engenharia-de-software-junior-python-aws-comunidade-financas/35299/101396973696",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T12:32:51+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:38+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/engenharia-de-software-junior-python-aws-comunidade-financas/35299/101396973696",
@@ -39684,7 +40078,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:38+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 78,
       "confidenceLabel": "Média",
@@ -39924,7 +40318,7 @@
       "auto": true,
       "key": "carreiras.itau.com.br/vaga/sao-paulo/anl-engenharia-ti-jr-dados/35299/101004728032",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T12:32:51+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
       "sources": [
         {
           "url": "https://carreiras.itau.com.br/vaga/sao-paulo/anl-engenharia-ti-jr-dados/35299/101004728032",
@@ -39937,7 +40331,7 @@
       "excluded": false,
       "validationState": "confirmed",
       "duplicateOf": null,
-      "lastCheckedAt": "2026-10-13T12:32:51+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
       "verificationReason": "JobPosting correspondente e válido",
       "qualityScore": 85,
       "confidenceLabel": "Alta",
@@ -40411,7 +40805,7 @@
       "auto": true,
       "key": "santander.wd3.myworkdayjobs.com/pt-br/santandercareers/job/sao-paulo/it-analyst-i--qa-_req1615266",
       "firstSeenAt": "2026-10-13T12:31:35Z",
-      "lastVerifiedAt": "2026-10-13T12:32:47.825429+00:00",
+      "lastVerifiedAt": "2026-10-13T13:01:34.115024+00:00",
       "sources": [
         {
           "url": "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers/job/SAO-PAULO/IT-Analyst-I--QA-_Req1615266",
@@ -40425,7 +40819,7 @@
       "validationState": "confirmed",
       "sourceResolution": {
         "state": "resolved",
-        "checkedAt": "2026-10-13T12:32:47.825429+00:00",
+        "checkedAt": "2026-10-13T13:01:34.115024+00:00",
         "discoveryUrl": "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers/job/SAO-PAULO/IT-Analyst-I--QA-_Req1615266",
         "candidates": [
           {
@@ -40442,7 +40836,7 @@
         "reason": "Vaga presente na busca e no detalhe público do Workday",
         "url": "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers/job/SAO-PAULO/IT-Analyst-I--QA-_Req1615266"
       },
-      "lastCheckedAt": "2026-10-13T12:32:47.825429+00:00",
+      "lastCheckedAt": "2026-10-13T13:01:34.115024+00:00",
       "verificationReason": "Busca e detalhe públicos do Workday correspondentes",
       "duplicateOf": null,
       "qualityScore": 80,
@@ -40823,6 +41217,765 @@
       "institutionTier": "reference",
       "institutionTierLabel": "Instituição de referência",
       "institutionWeight": 1.25
+    },
+    {
+      "id": 213,
+      "company": "PagBank",
+      "role": "Analista de Segurança da Informação Jr. (SOC)",
+      "level": "Júnior / entrada",
+      "status": "Ativa",
+      "statusRaw": "Coleta automática em 2026-10-13 — Gupy",
+      "area": "Segurança",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "REST/APIs",
+        "AWS",
+        "Mensageria",
+        "Observabilidade",
+        "Cloud",
+        "Linux",
+        "Dados/BI",
+        "Automação",
+        "Segurança",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Ensino Superior completo em Tecnologia da Informação ou áreas correlatas.",
+        "Experiência com monitoramento de segurança da informação (SOC, NOC ou áreas correlatas).",
+        "Vivência em SIEMs modernos (preferencialmente Google SecOps, Splunk, QRadar, Elastic ou similares).",
+        "Conhecimento em redes, protocolos e logs (firewall, proxy, DNS, syslog, endpoint, cloud).",
+        "Familiaridade com soluções de EDR/XDR, DLP, WAF, IDS/IPS e GuardDuty.",
+        "Capacidade analítica para correlação de eventos e triagem de alertas.",
+        "Noções de gestão de incidentes e escalonamento para CSIRT.",
+        "Ter disponibilidade para atuar em operação 24x7 , com escala presencial das 06:00 às 15:00 ou das 13:00 às 22:00 , na região da Faria Lima"
+      ],
+      "requirementsExtractionMethod": "section",
+      "differentials": [],
+      "location": "São Paulo, São Paulo, Brasil",
+      "modality": "Presencial",
+      "publishedAt": "2026-08-18",
+      "validThrough": "2026-12-31",
+      "searchScopeLocation": null,
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Gupy. A vaga passou pelos filtros de nível, tecnologia, empresa-alvo ou contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://pagseguro.gupy.io/jobs/12072812",
+      "collectedAt": "2026-10-13T12:53:36Z",
+      "auto": true,
+      "key": "pagseguro.gupy.io:12072812",
+      "firstSeenAt": "2026-10-13T12:53:36Z",
+      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
+      "sources": [
+        {
+          "url": "https://pagseguro.gupy.io/jobs/12072812",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "confirmed",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
+      "qualityScore": 98,
+      "confidenceLabel": "Alta",
+      "requirementsStructured": [
+        {
+          "text": "Ensino Superior completo em Tecnologia da Informação ou áreas correlatas.",
+          "position": 0,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Experiência com monitoramento de segurança da informação (SOC, NOC ou áreas correlatas).",
+          "position": 1,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Segurança",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            },
+            {
+              "skill": "Observabilidade",
+              "subskill": null,
+              "profileSkillId": "obs"
+            }
+          ],
+          "profileSkillIds": [
+            "sec",
+            "obs"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "any",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Vivência em SIEMs modernos (preferencialmente Google SecOps, Splunk, QRadar, Elastic ou similares).",
+          "position": 2,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Observabilidade",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Observabilidade",
+              "subskill": null,
+              "profileSkillId": "obs"
+            }
+          ],
+          "profileSkillIds": [
+            "obs"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimento em redes, protocolos e logs (firewall, proxy, DNS, syslog, endpoint, cloud).",
+          "position": 3,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Cloud",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Cloud",
+              "subskill": null,
+              "profileSkillId": "cloud"
+            }
+          ],
+          "profileSkillIds": [
+            "cloud"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Familiaridade com soluções de EDR/XDR, DLP, WAF, IDS/IPS e GuardDuty.",
+          "position": 4,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Capacidade analítica para correlação de eventos e triagem de alertas.",
+          "position": 5,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Noções de gestão de incidentes e escalonamento para CSIRT.",
+          "position": 6,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Produção",
+          "subskill": "Troubleshooting",
+          "skills": [
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            }
+          ],
+          "profileSkillIds": [
+            "prod"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Ter disponibilidade para atuar em operação 24x7 , com escala presencial das 06:00 às 15:00 ou das 13:00 às 22:00 , na região da Faria Lima",
+          "position": 7,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "location",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        }
+      ],
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "context",
+      "careerAlignmentLabel": "Contexto de mercado",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "cloud",
+        "obs",
+        "prod",
+        "sec"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo",
+      "geographyLabel": "São Paulo",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
+    },
+    {
+      "id": 214,
+      "company": "PagBank",
+      "role": "Assistente de Engenharia",
+      "level": "Júnior / entrada",
+      "status": "Ativa",
+      "statusRaw": "Coleta automática em 2026-10-13 — Gupy",
+      "area": "Segurança",
+      "stack": "Python",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "Python",
+        "Java",
+        "JavaScript/Node",
+        "Testes",
+        "AWS",
+        "Cloud",
+        "Dados/BI",
+        "Automação",
+        "Segurança"
+      ],
+      "requirements": [
+        "Ensino Superior cursando em Ciência da Computação, Engenharia da Computação, Sistemas de Informação ou áreas correlatas.",
+        "Conhecimento em alguma linguagem de programação (Python, Java, C#, JavaScript ou similares).",
+        "Noções de banco de dados relacionais e/ou não relacionais.",
+        "Interesse e disposição para aprender sobre temas ligados à segurança da informação (criptografia, autenticação, OWASP etc.).",
+        "Inglês básico/técnico para leitura."
+      ],
+      "requirementsExtractionMethod": "section",
+      "differentials": [],
+      "location": "São Paulo, São Paulo, Brasil",
+      "modality": null,
+      "publishedAt": "2026-07-01",
+      "validThrough": "2026-12-31",
+      "searchScopeLocation": null,
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Gupy. A vaga passou pelos filtros de nível, tecnologia, empresa-alvo ou contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://pagseguro.gupy.io/jobs/11441939",
+      "collectedAt": "2026-10-13T12:53:36Z",
+      "auto": true,
+      "key": "pagseguro.gupy.io:11441939",
+      "firstSeenAt": "2026-10-13T12:53:36Z",
+      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
+      "sources": [
+        {
+          "url": "https://pagseguro.gupy.io/jobs/11441939",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "confirmed",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
+      "qualityScore": 93,
+      "confidenceLabel": "Alta",
+      "requirementsStructured": [
+        {
+          "text": "Ensino Superior cursando em Ciência da Computação, Engenharia da Computação, Sistemas de Informação ou áreas correlatas.",
+          "position": 0,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento em alguma linguagem de programação (Python, Java, C#, JavaScript ou similares).",
+          "position": 1,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Python",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Python",
+              "subskill": null,
+              "profileSkillId": "python"
+            },
+            {
+              "skill": "Java",
+              "subskill": null,
+              "profileSkillId": "java"
+            },
+            {
+              "skill": "JavaScript",
+              "subskill": null,
+              "profileSkillId": "js"
+            }
+          ],
+          "profileSkillIds": [
+            "python",
+            "java",
+            "js"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "any",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Noções de banco de dados relacionais e/ou não relacionais.",
+          "position": 2,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Banco de dados",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Banco de dados",
+              "subskill": null,
+              "profileSkillId": "sql"
+            }
+          ],
+          "profileSkillIds": [
+            "sql"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Interesse e disposição para aprender sobre temas ligados à segurança da informação (criptografia, autenticação, OWASP etc.).",
+          "position": 3,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Segurança",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            }
+          ],
+          "profileSkillIds": [
+            "sec"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Inglês básico/técnico para leitura.",
+          "position": 4,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "language",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": false
+        }
+      ],
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "finance_with_technology",
+      "marketSegmentLabel": "Negócio financeiro com tecnologia",
+      "careerAlignment": "target",
+      "careerAlignmentLabel": "Alinhada ao foco",
+      "careerWeight": 1.0,
+      "requiredSkillIds": [
+        "java",
+        "js",
+        "python",
+        "sec",
+        "sql"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo",
+      "geographyLabel": "São Paulo",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "reference",
+      "institutionTierLabel": "Instituição de referência",
+      "institutionWeight": 1.25
+    },
+    {
+      "id": 215,
+      "company": "Genial Investimentos",
+      "role": "Analista de Segurança da Informação Júnior | Exclusiva para PCD",
+      "level": "Júnior / entrada",
+      "status": "Ativa",
+      "statusRaw": "Coleta automática em 2026-10-13 — Gupy",
+      "area": "Segurança",
+      "stack": "Dados / BI",
+      "fit": "AUTO — NOVA",
+      "tags": [
+        "REST/APIs",
+        "Dados/BI",
+        "Segurança",
+        "Crédito/Risco",
+        "Troubleshooting/Produção"
+      ],
+      "requirements": [
+        "Ensino superior completo em Segurança da Informação, Tecnologia da Informação, Ciência da Computação, Sistemas de Informação ou áreas correlatas;",
+        "Conhecimento ou experiência prévia em Segurança da Informação e/ou Operações de Segurança;",
+        "Conhecimento básico em análise e tratamento de incidentes de Segurança da Informação;",
+        "Capacidade analítica para compreender cenários, identificar riscos e propor soluções;",
+        "Interesse e curiosidade por tecnologia, segurança e melhoria de processos;",
+        "Facilidade para compreender fluxos operacionais e identificar oportunidades de melhoria;",
+        "Conhecimento básico em lógica de programação e/ou interesse em desenvolver automações."
+      ],
+      "requirementsExtractionMethod": "section",
+      "differentials": [],
+      "location": "São Paulo, São Paulo, Brasil",
+      "modality": null,
+      "publishedAt": "2026-09-08",
+      "validThrough": "2026-10-30",
+      "searchScopeLocation": null,
+      "sourceName": "Gupy",
+      "sourceProvider": "gupy",
+      "sourceOfficial": true,
+      "sourcePriority": 4,
+      "sourceStructured": true,
+      "reason": "Coletada automaticamente em Gupy. A vaga passou pelos filtros de nível, tecnologia, empresa-alvo ou contexto financeiro e duplicidade por exigências; revise o anúncio original antes de se candidatar.",
+      "source": "https://genial.gupy.io/jobs/12433761",
+      "collectedAt": "2026-10-13T12:53:36Z",
+      "auto": true,
+      "key": "genial.gupy.io:12433761",
+      "firstSeenAt": "2026-10-13T12:53:36Z",
+      "lastVerifiedAt": "2026-10-13T13:01:39+00:00",
+      "sources": [
+        {
+          "url": "https://genial.gupy.io/jobs/12433761",
+          "name": "Gupy",
+          "provider": "gupy",
+          "official": true,
+          "priority": 4
+        }
+      ],
+      "excluded": false,
+      "validationState": "confirmed",
+      "duplicateOf": null,
+      "lastCheckedAt": "2026-10-13T13:01:39+00:00",
+      "verificationReason": "JobPosting correspondente e válido",
+      "qualityScore": 93,
+      "confidenceLabel": "Alta",
+      "requirementsStructured": [
+        {
+          "text": "Ensino superior completo em Segurança da Informação, Tecnologia da Informação, Ciência da Computação, Sistemas de Informação ou áreas correlatas;",
+          "position": 0,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "education",
+          "skill": "Segurança",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            }
+          ],
+          "profileSkillIds": [
+            "sec"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimento ou experiência prévia em Segurança da Informação e/ou Operações de Segurança;",
+          "position": 1,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Segurança",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            }
+          ],
+          "profileSkillIds": [
+            "sec"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Conhecimento básico em análise e tratamento de incidentes de Segurança da Informação;",
+          "position": 2,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Segurança",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            },
+            {
+              "skill": "Produção",
+              "subskill": "Troubleshooting",
+              "profileSkillId": "prod"
+            }
+          ],
+          "profileSkillIds": [
+            "sec",
+            "prod"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "all",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Capacidade analítica para compreender cenários, identificar riscos e propor soluções;",
+          "position": 3,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "domain",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Interesse e curiosidade por tecnologia, segurança e melhoria de processos;",
+          "position": 4,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Segurança",
+          "subskill": null,
+          "skills": [
+            {
+              "skill": "Segurança",
+              "subskill": null,
+              "profileSkillId": "sec"
+            }
+          ],
+          "profileSkillIds": [
+            "sec"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Facilidade para compreender fluxos operacionais e identificar oportunidades de melhoria;",
+          "position": 5,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "other",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        },
+        {
+          "text": "Conhecimento básico em lógica de programação e/ou interesse em desenvolver automações.",
+          "position": 6,
+          "source": "description",
+          "mandatory": true,
+          "requirementType": "mandatory",
+          "category": "technical",
+          "skill": "Design de software",
+          "subskill": "POO/Design",
+          "skills": [
+            {
+              "skill": "Design de software",
+              "subskill": "POO/Design",
+              "profileSkillId": "design"
+            }
+          ],
+          "profileSkillIds": [
+            "design"
+          ],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": 1,
+          "levelLabel": "básico",
+          "minYears": null,
+          "transferable": true
+        },
+        {
+          "text": "Elegibilidade para vaga afirmativa: confirmar no anúncio",
+          "position": 7,
+          "source": "title",
+          "mandatory": true,
+          "requirementType": "eliminatory",
+          "category": "eligibility",
+          "skill": null,
+          "subskill": null,
+          "skills": [],
+          "profileSkillIds": [],
+          "unmappedSkillCount": 0,
+          "relation": "single",
+          "level": null,
+          "levelLabel": null,
+          "minYears": null,
+          "transferable": false
+        }
+      ],
+      "requirementsSchemaVersion": 2,
+      "marketSegment": "core_technology",
+      "marketSegmentLabel": "Tecnologia principal",
+      "careerAlignment": "context",
+      "careerAlignmentLabel": "Contexto de mercado",
+      "careerWeight": 0.0,
+      "requiredSkillIds": [
+        "design",
+        "prod",
+        "sec"
+      ],
+      "differentialSkillIds": [],
+      "geographyScope": "sao_paulo",
+      "geographyLabel": "São Paulo",
+      "geographyEligible": true,
+      "geographyWeight": 1.0,
+      "institutionTier": "ecosystem",
+      "institutionTierLabel": "Ecossistema financeiro",
+      "institutionWeight": 1.0
     }
   ]
 }
