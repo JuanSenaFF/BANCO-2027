@@ -14,7 +14,7 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
-from quality import extract_jobposting, split_requirements, senior_conflict, location_fields, requirements_quality_conflict
+from quality import extract_jobposting, split_requirements, senior_conflict, location_fields, requirements_quality_conflict, is_non_requirement_item, clean_requirement_items
 from collection_audit import CandidateAudit, schedule, retry_url, canonical_url as audit_url
 from http_policy import PublicHTTP
 from rules import DUPLICATE_SIMILARITY
@@ -579,6 +579,8 @@ def extract_bullets(soup: BeautifulSoup | None, posting: dict | None) -> list[st
     out, seen = [], set()
     for t in raw:
         lt = norm(t)
+        if is_non_requirement_item(t):
+            continue
         if any(lt.startswith(p) for p in METADATA_PREFIXES) or any(b in lt for b in benefit_words):
             continue
         tech_or_req = any(re.search(p, lt, re.I) for p in TAG_PATTERNS.values()) or any(k in lt for k in [
@@ -811,7 +813,7 @@ def requirements_for(soup, posting):
             if (len(bullets) >= 3 and any(re.search(qualification_cues, item, re.I) for item in bullets)
                     and not requirements_quality_conflict((posting or {}).get("title", ""), bullets)):
                 req, method = bullets, "technical_bullets"
-    return req, diff, method
+    return clean_requirement_items(req), clean_requirement_items(diff), method
 
 
 def main() -> int:

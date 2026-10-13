@@ -202,6 +202,8 @@ def main() -> None:
     removed_urls = {}
 
     for job in auto:
+        from quality import clean_job_requirements
+        clean_job_requirements(job)
         job.pop("reviewRequired", None)
         job.pop("reviewReason", None)
         ok, why = valid(job)

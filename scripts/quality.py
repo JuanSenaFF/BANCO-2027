@@ -100,6 +100,9 @@ STOP_HEADING_RE = re.compile(
 )
 
 NON_REQUIREMENT_RE = re.compile(
+    r'\bincentivo (?:a|aos) estudos\b|\bacesso aos clubes de lazer\b|\balgumas vantagens\b|'
+    r'\bconheca mais sobre nossa cultura\b|\bao se tornar (?:um |uma )?ituber\b|'
+    r'^\s*[#*+]?\s*(?:estimulamos candidaturas|somos comprometidos com a inclusao|vemproitau|vemserituber)\b|'
     r'\bvale[- ]?(?:transporte|refeicao|alimentacao)\b|\bplano (?:medico|de saude|odontologico)\b|'
     r'\bseguro de vida\b|\bprevidencia privada\b|\bplr\b|\blicenca (?:maternidade|paternidade)\b|'
     r'\bdescontos? exclusivos?\b|\bgympass\b|\bwellhub\b|\btotalpass\b|'
@@ -126,6 +129,30 @@ HARD_SKILL_RE = re.compile(
 
 def is_non_requirement_item(text):
     return bool(NON_REQUIREMENT_RE.search(norm(text)))
+
+
+def ends_requirement_section(text):
+    n = norm(text).strip(' :_!?')
+    return bool(STOP_HEADING_RE.fullmatch(n) or re.match(
+        r'^(?:ao se tornar (?:um |uma )?ituber\b|(?:nossos? |suas? )?(?:beneficios|vantagens)\b|'
+        r'conheca mais sobre nossa cultura\b|o que (?:oferecemos|voce ganha)\b)', n))
+
+
+def clean_requirement_items(items):
+    """Remove benefit/footer leakage from previously stored requirement lists."""
+    cleaned = []
+    for item in items or []:
+        if ends_requirement_section(item):
+            break
+        if not is_non_requirement_item(item):
+            cleaned.append(item)
+    return deduplicate_requirement_containers(cleaned)
+
+
+def clean_job_requirements(job):
+    for field in ('requirements', 'differentials'):
+        job[field] = clean_requirement_items(job.get(field, []))
+    return job
 
 
 def requirements_quality_conflict(title, requirements):
@@ -170,7 +197,7 @@ def split_requirements(soup, posting=None):
         return [], []
     req, diff = [], []
     mode = None
-    for node in root.find_all(['h2', 'h3', 'h4', 'strong', 'b', 'p', 'li']):
+    for node in root.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong', 'b', 'p', 'li']):
         # Process a paragraph as a whole so inline emphasis does not discard
         # content ("Conhecimento em <strong>Python</strong>"). Ignore block
         # containers so their list items are not emitted twice.
@@ -180,6 +207,9 @@ def split_requirements(soup, posting=None):
             continue
         t = re.sub(r'\s+', ' ', node.get_text(' ', strip=True)).strip()
         n = norm(t)
+        if ends_requirement_section(t):
+            mode = None
+            continue
         if len(t) < 130:
             if DIFFERENTIALS_HEADING_RE.fullmatch(n):
                 mode = 'diff'
@@ -200,7 +230,7 @@ def split_requirements(soup, posting=None):
         target = diff if mode == 'diff' else req if mode == 'req' else None
         if target is not None and t not in target:
             target.append(t)
-    return deduplicate_requirement_containers(req)[:30], deduplicate_requirement_containers(diff)[:20]
+    return clean_requirement_items(req)[:30], clean_requirement_items(diff)[:20]
 
 
 def posting_company(posting):

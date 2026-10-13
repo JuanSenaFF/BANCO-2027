@@ -20,6 +20,37 @@ class QualityTests(unittest.TestCase):
         html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL básico</li><li>Experiência com APIs</li></ul><h2>Diferenciais</h2><ul><li>AWS</li></ul><h2>Benefícios</h2><ul><li>Plano de saúde</li></ul>'
         a,b=split_requirements(None,{'description':html})
         self.assertEqual(a,['Python','SQL básico','Experiência com APIs']);self.assertEqual(b,['AWS'])
+
+    def test_itau_benefits_and_footer_stop_differentials(self):
+        description=('<strong>No que você precisa mandar bem?</strong><ul><li>Python</li><li>SQL</li><li>Git</li></ul>'
+                     '<strong>Diferenciais</strong><ul><li>AWS</li><li>APIs REST</li></ul>'
+                     '<p><strong>Ao se tornar um ituber você tem_</strong></p><ul>'
+                     '<li>Incentivo a estudos</li><li>Acesso aos Clubes de Lazer Itaú (Guarapiranga)</li>'
+                     '<li>+ Algumas vantagens que você pode conhecer durante o processo 😊</li>'
+                     '<li>Benefício com acesso a cursos Python e AWS</li></ul>'
+                     '<p>Conheça mais sobre nossa cultura: https://www.itau.com.br/cultura</p>'
+                     '<p>*Estimulamos candidaturas de pessoas com deficiência em todas as nossas posições</p>'
+                     '<p>#VemProItaú #VemSerItuber</p>')
+        req,diff=split_requirements(None,{'description':description})
+        self.assertEqual(req,['Python','SQL','Git'])
+        self.assertEqual(diff,['AWS','APIs REST'])
+
+    def test_legacy_cleanup_and_normalization_preserve_real_qualifications(self):
+        from quality import clean_job_requirements
+        from requirements_normalizer import normalize_job_requirements
+        job={'role':'Engenharia de Dados Jr','requirements':['Superior cursando em TI','Conhecimento em Python','SQL'],
+             'differentials':['AWS','Incentivo a estudos','Acesso aos Clubes de Lazer Itaú',
+                             '+ Algumas vantagens que você pode conhecer durante o processo 😊',
+                             'Conheça mais sobre nossa cultura: https://www.itau.com.br/cultura']}
+        texts=[r['text'] for r in normalize_job_requirements(job)]
+        self.assertEqual(texts,['Superior cursando em TI','Conhecimento em Python','SQL','AWS'])
+        clean_job_requirements(job)
+        self.assertEqual(job['differentials'],['AWS'])
+        self.assertEqual(len(job['requirements']),3)
+
+    def test_h5_benefit_heading_does_not_leak_technical_words(self):
+        req,diff=split_requirements(None,{'description':'<h5>Requisitos</h5><li>Python</li><li>SQL</li><li>Git</li><h5>Vantagens</h5><li>Curso de AWS e Python</li>'})
+        self.assertEqual(req,['Python','SQL','Git']);self.assertEqual(diff,[])
     def test_requirement_section_stops_before_unheaded_benefits_and_metadata(self):
         html='<h2>Requisitos</h2><ul><li>Python</li><li>SQL</li><li>APIs REST</li></ul><p>Viva Bem: programa de saúde</p><p>Universidade corporativa</p><p>Nível de experiência Não aplicável</p>'
         a,_=split_requirements(None,{'description':html})
