@@ -63,6 +63,23 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertTrue(same_company({"company": "Inter"}, {"company": "Banco Inter"}))
         self.assertFalse(same_company({"company": "Inter"}, {"company": "Winter"}))
 
+    def test_custom_employer_url_retains_verified_feed_provenance(self):
+        url = "https://carreiras.btgpactual.com/vagas?gh_jid=123"
+        row = {"provider": "greenhouse", "sourceName": "Greenhouse",
+               "sourceOfficial": True, "sourcePriority": 4}
+        with patch.dict(update_vagas.OFFICIAL_POSTING_CACHE, {url: row}, clear=True):
+            metadata = update_vagas.candidate_source_metadata(url)
+            self.assertEqual(metadata["provider"], "greenhouse")
+            self.assertEqual(metadata["priority"], 4)
+            self.assertEqual(update_vagas.discovery_rows([url])[0]["source"], "greenhouse")
+        self.assertEqual(update_vagas.candidate_source_metadata(url)["provider"], "unknown")
+
+    def test_expanded_boards_are_available_to_discovery_and_resolution(self):
+        for company in ("BTG Pactual", "XP", "C6 Bank", "EBANX"):
+            self.assertEqual(source_for_company(company).provider, "greenhouse")
+        for company in ("Asaas", "Creditas"):
+            self.assertEqual(source_for_company(company).provider, "gupy")
+
     def test_catalog_exposes_configured_sources_and_coverage_gaps(self):
         from company_policy import COMPANIES
         catalog = official_source_catalog()

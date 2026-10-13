@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-POLICY_VERSION = "2026-10-06.1"
+POLICY_VERSION = "2026-10-13.1"
 TERMINAL_STATES = {"accepted", "duplicate", "rejected", "fetch_failed", "retry", "already_known", "not_scanned"}
 REJECTION_TTL = timedelta(days=1)
 HISTORY_TTL = timedelta(days=180)

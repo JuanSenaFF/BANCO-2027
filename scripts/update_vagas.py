@@ -24,6 +24,7 @@ from official_sources import (
     same_company,
     source_metadata,
     source_priority,
+    official_source_catalog,
 )
 from market_model import geography
 from company_policy import (
@@ -123,6 +124,8 @@ GUPY_CAREERS = [
     "https://sicoob.gupy.io/",
     "https://bancobv.gupy.io/",
     "https://picpay.gupy.io/",
+    "https://asaas.gupy.io/",
+    "https://creditas.gupy.io/",
 ]
 
 LEVER_BOARDS = ["https://jobs.lever.co/pismo"]
@@ -348,6 +351,15 @@ def official_ats_urls() -> list[str]:
         f"{counts.get('boards_failed', 0)} falhas"
     )
     return out
+
+
+def candidate_source_metadata(url: str) -> dict:
+    """Keep feed provenance when an ATS links to the employer's own domain."""
+    cached = OFFICIAL_POSTING_CACHE.get(url)
+    if cached:
+        return {"name": cached["sourceName"], "provider": cached["provider"],
+                "official": cached["sourceOfficial"], "priority": cached["sourcePriority"]}
+    return source_metadata(url)
 
 
 def sitemap_job_urls(url: str, max_urls: int = 60) -> list[str]:
@@ -626,12 +638,16 @@ def is_relevant(title: str, company: str, text: str) -> bool:
     merged = norm(" ".join([title, company, text[:6000]]))
     if excluded_title(title):
         return False
-    if any(t in title_n for t in SENIOR_TITLE_TERMS):
+    if senior_conflict(title, text) or re.search(
+        r"\b(?:coordenador[a]?|gerente|director|diretor[a]?|head|manager)\b", title_n
+    ):
         return False
     # Algumas páginas do LinkedIn exibem senioridade contraditória ao título.
     if any(x in merged for x in ["nível de experiência pleno-sênior", "nivel de experiencia pleno-senior", "nível de experiência sênior", "nivel de experiencia senior"]):
         return False
-    junior = any(t in title_n for t in JUNIOR_TERMS) or any(t in merged[:1200] for t in JUNIOR_TERMS)
+    # Substrings such as 'intern' in 'internos/international' are not evidence
+    # of entry level. Apply word boundaries to every term, including level I.
+    junior = entry_level_for_job(title, text)
     tech = any(t in merged for t in TECH_TERMS)
     if not (junior and tech):
         return False
@@ -643,6 +659,25 @@ def is_relevant(title: str, company: str, text: str) -> bool:
         return True
     # Consultorias e novas empresas só entram com contexto financeiro forte explícito no anúncio.
     return strong_finance_context(merged) and (contextual_company(company) or len([p for p in STRONG_FINANCE_PHRASES if p in merged]) >= 2)
+
+
+def entry_level_evidence(text: str) -> bool:
+    return any(re.search(r"(?<!\w)" + re.escape(norm(term).strip()) + r"(?!\w)", norm(text))
+               for term in JUNIOR_TERMS)
+
+
+def entry_level_for_job(title: str, text: str) -> bool:
+    if entry_level_evidence(title):
+        return True
+    description = norm(BeautifulSoup(str(text), "html.parser").get_text(" ", strip=True))[:1200]
+    # Legacy records carry an explicit level at the beginning of this field.
+    if re.match(r"^(?:junior|estagio|entry[- ]level)\s*(?:/|\||:|—|–|-)", description):
+        return True
+    # An unrelated mention of interns, graduates or junior colleagues is not
+    # the advertised level. Require a label or an explicit recruitment phrase.
+    spans = re.findall(r"(?:senioridade|nivel de experiencia|experience level|nivel|vaga|posicao|cargo)\s*[:\-]?\s*([^.!?;]{1,100})", description)
+    spans += re.findall(r"(?:buscamos|procuramos|contratamos|we are (?:looking for|hiring))\s+([^.!?;]{1,150})", description)
+    return any(entry_level_evidence(span) for span in spans)
 
 
 def req_tokens(reqs: Iterable[str]) -> set[str]:
@@ -725,7 +760,7 @@ def discover_urls() -> list[str]:
 def discovery_rows(urls: list[str]) -> list[dict]:
     rows = []
     for url in urls:
-        provider = source_metadata(url, structured=url in OFFICIAL_POSTING_CACHE)["provider"]
+        provider = candidate_source_metadata(url)["provider"]
         bucket = ("aggregator" if provider == "aggregator" else
                   LINKEDIN_URL_BUCKET.get(url, "generic") if provider == "linkedin" else "official")
         host = urlparse(url).hostname or ""
@@ -776,7 +811,7 @@ def main() -> int:
 
     audit = CandidateAudit(ROOT / "candidate-history.json", discovery_rows(candidate_urls), collected_at)
     scan_urls = schedule(discovery_rows(candidate_urls), audit, known_sources,
-                         lambda url: source_metadata(url, structured=url in OFFICIAL_POSTING_CACHE)["provider"] != "unknown")
+                         lambda url: candidate_source_metadata(url)["provider"] != "unknown")
     print(f"[info] URLs a validar: {len(scan_urls)} em até {FETCH_WORKERS} workers")
     def timed_fetch(url):
         started = time.monotonic()
@@ -812,7 +847,8 @@ def main() -> int:
                 continue
             audit.transition(url, "parsed", "title_and_company_extracted")
             if not is_relevant(title, company, text):
-                reason = ("seniority_conflict" if any(term in norm(title) for term in SENIOR_TITLE_TERMS) else
+                reason = ("seniority_conflict" if senior_conflict(title, text) or re.search(r"\b(?:coordenador[a]?|gerente|director|diretor[a]?|head|manager)\b", norm(title)) else
+                          "entry_level_unconfirmed" if not entry_level_for_job(title, text) else
                           "company_not_target" if not approved_company(company) and not strong_finance_context(text) else
                           "role_irrelevant")
                 audit.mark(url, "rejected", reason, content=content)
@@ -822,14 +858,14 @@ def main() -> int:
                 continue
             requirements, differentials, method = requirements_for(soup, posting)
             if len(requirements) < 3:
-                possible_review = source_metadata(url, structured=bool(posting))
+                possible_review = candidate_source_metadata(url)
                 state = "retry" if possible_review["official"] and requirements and len(classify_tags(text)) >= 2 else "rejected"
                 audit.mark(url, state, "requirements_review" if state == "retry" else "requirements_insufficient", content=content, method=method)
                 continue
             if requirements_quality_conflict(title, requirements):
                 audit.mark(url, "rejected", "requirements_quality_conflict", content=content, method=method)
                 continue
-            candidate_source = source_metadata(url, structured=bool(posting))
+            candidate_source = candidate_source_metadata(url)
             candidate_identity = {
                 "company": company,
                 "role": title,
@@ -919,12 +955,16 @@ def main() -> int:
         "updatedAt": collected_at,
         "added": len(new_jobs),
         "candidateUrls": len(candidate_urls),
-        "officialCandidateUrls": sum(source_metadata(u, structured=u in OFFICIAL_POSTING_CACHE)["official"] for u in candidate_urls),
+        "officialCandidateUrls": sum(candidate_source_metadata(u)["official"] for u in candidate_urls),
         "linkedinCandidateUrls": sum("linkedin.com" in u for u in candidate_urls),
         "officialAdded": official_added,
         "fallbackAdded": len(new_jobs) - official_added,
         "sourceCounts": source_counts,
         "officialBoards": OFFICIAL_DISCOVERY_REPORT,
+        "companyCoverage": [{"company": source.company, "provider": source.provider,
+                             "careersUrl": source.careers_url,
+                             "discoveryStrategy": source.discovery_strategy}
+                            for source in official_source_catalog()],
         **funnel,
     }, ensure_ascii=False), encoding="utf-8")
     if not new_jobs:

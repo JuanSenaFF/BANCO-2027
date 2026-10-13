@@ -34,6 +34,10 @@ OFFICIAL_BOARDS = (
     Board("Getnet", "greenhouse", "getnet"),
     Board("Nubank", "ashby", "nubank"),
     Board("Pismo", "lever", "pismo"),
+    Board("BTG Pactual", "greenhouse", "btgpactual"),
+    Board("XP", "greenhouse", "xpinc"),
+    Board("C6 Bank", "greenhouse", "c6bank"),
+    Board("EBANX", "greenhouse", "ebanx"),
 )
 
 
@@ -68,6 +72,7 @@ for _company, _token in (
     ("ANBIMA", "anbima"), ("Grupo Bancorbrás", "bancorbras"),
     ("Via Certa Promotora", "acertapromotora"), ("Banco BMG", "bancobmg"),
     ("Núclea", "nuclea"), ("Sicoob", "sicoob"), ("Banco BV", "bancobv"),
+    ("Asaas", "asaas"), ("Creditas", "creditas"),
 ):
     _KNOWN_SOURCES[company_identity(_company)] = SourceConfig(
         _company, "gupy", f"https://{_token}.gupy.io/", _token, "public_board", "jobposting_page")

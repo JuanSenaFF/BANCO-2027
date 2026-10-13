@@ -13,6 +13,21 @@ from source_resolution import OfficialSourceResolver, promote_source
 
 
 class CollectionAuditTests(unittest.TestCase):
+    def test_entry_evidence_does_not_match_internal_or_international(self):
+        for text in ("sistemas internos Python SQL", "international Java APIs", "internal controls", "analyst iii"):
+            self.assertFalse(collector.entry_level_evidence(text), text)
+            self.assertFalse(collector.is_relevant("Software Engineer", "BTG Pactual", text), text)
+        for text in ("Software Engineer Junior", "IT Analyst I", "Estágio Python", "Software Engineer Intern"):
+            self.assertTrue(collector.entry_level_evidence(text), text)
+
+    def test_leadership_is_not_entry_level_even_with_junior_context(self):
+        self.assertFalse(collector.is_relevant("Coordenador backend Java", "BTG Pactual", "equipe junior Python SQL"))
+
+    def test_description_requires_an_explicit_advertised_entry_level(self):
+        self.assertFalse(collector.entry_level_for_job("Cientista de Dados", "Mentoria para colegas junior e interns. Python SQL"))
+        self.assertTrue(collector.entry_level_for_job("Software Engineer", "Senioridade: Junior. Python SQL"))
+        self.assertTrue(collector.entry_level_for_job("Software Engineer", "Júnior / entrada Python SQL"))
+
     def test_source_budgets_never_displace_core_or_official(self):
         rows = ([{"url": f"https://www.linkedin.com/jobs/view/{10000000+i}", "source": "linkedin", "bucket": "generic"} for i in range(500)] +
                 [{"url": "https://www.linkedin.com/jobs/view/99999999", "source": "linkedin", "bucket": "core"},
