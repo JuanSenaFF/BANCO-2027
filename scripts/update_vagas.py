@@ -671,11 +671,11 @@ def entry_level_for_job(title: str, text: str) -> bool:
         return True
     description = norm(BeautifulSoup(str(text), "html.parser").get_text(" ", strip=True))[:1200]
     # Legacy records carry an explicit level at the beginning of this field.
-    if re.match(r"^(?:junior|estagio|entry[- ]level)\s*(?:/|\||:|—|–|-)", description):
+    if re.match(r"^(?:j[uú]nior|est[aá]gio|entry[- ]level)\s*(?:/|\||:|—|–|-)", description):
         return True
     # An unrelated mention of interns, graduates or junior colleagues is not
     # the advertised level. Require a label or an explicit recruitment phrase.
-    spans = re.findall(r"(?:senioridade|nivel de experiencia|experience level|nivel|vaga|posicao|cargo)\s*[:\-]?\s*([^.!?;]{1,100})", description)
+    spans = re.findall(r"(?:senioridade|n[ií]vel de experi[eê]ncia|experience level|n[ií]vel|vaga|posi[cç][aã]o|cargo)\s*[:\-]?\s*([^.!?;]{1,100})", description)
     spans += re.findall(r"(?:buscamos|procuramos|contratamos|we are (?:looking for|hiring))\s+([^.!?;]{1,150})", description)
     return any(entry_level_evidence(span) for span in spans)
 
