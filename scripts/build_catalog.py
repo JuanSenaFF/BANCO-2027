@@ -8,6 +8,7 @@ from collections import Counter
 from validate_auto import parse_jobs, canonical_url, req_similarity, valid
 from quality import (
     deduplicate_requirement_containers,
+    clean_job_requirements,
     requirements_quality_conflict,
     senior_conflict,
     verify,
@@ -169,9 +170,10 @@ def run(online=False):
     path=ROOT/'jobs.json';old=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'jobs':[],'meta':{}}
     salary_path=ROOT/'salary-estimates.json'
     salary_estimates=json.loads(salary_path.read_text(encoding='utf-8')) if salary_path.exists() else {}
-    prior_all={j['key']:j for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    prior_all={j['key']:clean_job_requirements(j) for j in old['jobs']};now=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     records=[]
     for name in [*(f'data-{i}.js' for i in range(1,8)),'data-auto.js']:records+=parse_jobs(ROOT/name)
+    records=[clean_job_requirements(j) for j in records]
     prior,retired=reconcile_prior_records(prior_all,records)
     out={**prior}
     resolved_keys={canonical_url(j['source']):j['key'] for j in prior.values()
@@ -235,6 +237,7 @@ def run(online=False):
             for key,result in verification_results:out[key].update(apply_verification(out[key], result))
         current_verified_keys={key for key,result in verification_results if result.get('validationState')=='confirmed'}
     for j in out.values():
+        clean_job_requirements(j)
         annotate_source(j)
         j['requirements']=deduplicate_requirement_containers(j.get('requirements',[]))
         j['differentials']=deduplicate_requirement_containers(j.get('differentials',[]))

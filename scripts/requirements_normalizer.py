@@ -219,13 +219,14 @@ def normalize_requirement(text: str, mandatory: bool, position: int = 0, source:
 
 
 def normalize_job_requirements(job: dict) -> list[dict]:
+    from quality import clean_requirement_items
     records = [
         normalize_requirement(text, True, position)
-        for position, text in enumerate(job.get("requirements", []))
+        for position, text in enumerate(clean_requirement_items(job.get("requirements", [])))
     ]
     records.extend(
         normalize_requirement(text, False, position)
-        for position, text in enumerate(job.get("differentials", []))
+        for position, text in enumerate(clean_requirement_items(job.get("differentials", [])))
     )
     title = norm(job.get("role", ""))
     if ELIGIBILITY_RE.search(title) and not any(record["category"] == "eligibility" for record in records):
