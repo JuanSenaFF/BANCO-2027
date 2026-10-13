@@ -37,7 +37,8 @@ def normalized(value):
 
 
 def board_for(company):
-    return GUPY_BOARDS.get(normalized(company))
+    config = source_for_company(company)
+    return config.board_token if config and config.provider == 'gupy' else GUPY_BOARDS.get(normalized(company))
 
 
 def title_words(value):
@@ -230,7 +231,8 @@ def match_evidence(job, posting, board):
     similarity = title_score(job.get('role'), title)
     if similarity < .8:
         return None
-    req, _ = split_requirements(None, posting)
+    from update_vagas import requirements_for
+    req, _, _ = requirements_for(None, posting)
     original = job.get('requirements') or []
     # Short legacy lists (Python, SQL...) are compared against the official
     # requirement section, never against benefits or the employer presentation.
@@ -330,8 +332,10 @@ class ATSResolver:
         rows, error = self.cache[board]
         if error:
             return {**outcome, 'state': 'fetch_failed', 'reason': error}
+        from collection_audit import canonical_url
+        exact = [row for row in rows if canonical_url(row['url']) == canonical_url(job.get('source', ''))]
         ranked = []
-        for row in rows:
+        for row in exact or rows:
             evidence = match_evidence(job, row['posting'], board.company)
             if evidence:
                 ranked.append({'url': row['url'], **evidence, 'posting': row['posting']})
@@ -353,7 +357,8 @@ class ATSResolver:
                     return {**outcome, 'reason': 'Prazo expirado no feed oficial'}
             except ValueError:
                 pass
-        req, diff = split_requirements(None, posting)
+        from update_vagas import requirements_for
+        req, diff, _ = requirements_for(None, posting)
         return {**outcome, 'state': 'resolved', 'reason': 'Vaga presente no feed oficial; empresa, título e requisitos correspondentes',
                 'url': best['url'], 'verification': {
                     'status': 'Ativa', 'validationState': 'confirmed',
@@ -553,7 +558,9 @@ def resolve_catalog(jobs, session):
     counts = {}
     for job in jobs:
         host = urlparse(job.get('source', '')).hostname or ''
+        config = source_for_company(job.get('company'))
         ats_source = (job.get('sourceProvider') in {'greenhouse', 'ashby', 'lever'}
+                      or config and config.provider in {'greenhouse', 'ashby', 'lever'} and job.get('sourceOfficial')
                       or host == 'santander.wd3.myworkdayjobs.com'
                       or host == 'www.google.com' and urlparse(job.get('source','')).path.startswith('/about/careers/applications/jobs/results/'))
         if (not (host == 'linkedin.com' or host.endswith('.linkedin.com') or ats_source)

@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-POLICY_VERSION = "2026-10-13.1"
+POLICY_VERSION = "2026-10-13.2"
 TERMINAL_STATES = {"accepted", "duplicate", "rejected", "fetch_failed", "retry", "already_known", "not_scanned"}
 REJECTION_TTL = timedelta(days=1)
 HISTORY_TTL = timedelta(days=180)
@@ -64,15 +64,18 @@ class CandidateAudit:
             row["requirements_extraction_method"] = method
         key = row["canonical_url"]
         previous = self.history.get(key, {})
-        attempts = previous.get("attempt_count", 0) + int(status not in {"already_known", "not_scanned"} and reason != "recent_rejection")
+        attempts = previous.get("attempt_count", 0) + int(status not in {"already_known", "not_scanned"} and reason not in {"recent_rejection", "retry_deferred"})
         self.history[key] = {
+            "url": url,
             "canonical_url": key, "first_seen_at": previous.get("first_seen_at") or self.at,
             "last_seen_at": self.at, "last_processed_at": self.at if attempts > previous.get("attempt_count", 0) else previous.get("last_processed_at"),
             "status": status, "reason": previous.get("reason", reason) if reason == "recent_rejection" else reason,
             "content_hash": hashlib.sha256(content.encode()).hexdigest() if content else previous.get("content_hash"),
-            "retry_after": previous.get("retry_after") if reason == "recent_rejection" else (
+            "retry_after": previous.get("retry_after") if reason in {"recent_rejection", "retry_deferred"} else (
                 (datetime.fromisoformat(self.at.replace("Z", "+00:00")) + REJECTION_TTL).isoformat()
-                if status == "rejected" else None),
+                if status == "rejected" else
+                (datetime.fromisoformat(self.at.replace("Z", "+00:00")) + timedelta(minutes=30)).isoformat()
+                if status == "retry" else None),
             "attempt_count": attempts, "policy_version": POLICY_VERSION,
             "source": row["source"], "requirements_extraction_method": method or previous.get("requirements_extraction_method"),
             "company": row.get("company") or previous.get("company"),
@@ -87,6 +90,15 @@ class CandidateAudit:
             return False
         return (previous.get("status") == "rejected" and previous.get("policy_version") == POLICY_VERSION
                 and retry_after > datetime.fromisoformat(self.at.replace("Z", "+00:00")))
+
+    def retry_pending(self, url: str) -> bool:
+        previous = self.history.get(canonical_url(url), {})
+        try:
+            return (previous.get('status') == 'retry' and previous.get('policy_version') == POLICY_VERSION
+                    and datetime.fromisoformat(previous['retry_after'].replace('Z', '+00:00')) >
+                    datetime.fromisoformat(self.at.replace('Z', '+00:00')))
+        except (KeyError, ValueError, TypeError):
+            return False
 
     def finish(self, *, scheduled: int, scanned: int) -> dict:
         missing = [url for url, row in self.records.items() if row["status"] is None]
@@ -136,6 +148,8 @@ def schedule(rows: list[dict], audit: CandidateAudit, known: set[str], allowed) 
             audit.mark(url, "rejected", "unsupported_source")
         elif audit.recent_rejection(url):
             audit.mark(url, "rejected", "recent_rejection")
+        elif audit.retry_pending(url):
+            audit.mark(url, 'retry', 'retry_deferred')
         elif BUCKET_BUDGETS[bucket] is not None and budget_used[bucket] >= BUCKET_BUDGETS[bucket]:
             audit.mark(url, "not_scanned", "source_budget_exhausted")
         else:

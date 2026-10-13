@@ -306,6 +306,7 @@ class OfficialSourceTests(unittest.TestCase):
     @patch.object(update_vagas, "google_careers_urls", return_value=[])
     @patch.object(update_vagas, "linkedin_urls", return_value=["linkedin"])
     @patch.object(update_vagas, "other_source_urls", return_value=["aggregator"])
+    @patch.object(update_vagas, "extra_company_urls", return_value=[])
     def test_discovery_orders_official_sources_before_linkedin(self, *_):
         self.assertEqual(
             update_vagas.discover_urls(),

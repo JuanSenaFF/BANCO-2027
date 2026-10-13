@@ -38,6 +38,9 @@ OFFICIAL_BOARDS = (
     Board("XP", "greenhouse", "xpinc"),
     Board("C6 Bank", "greenhouse", "c6bank"),
     Board("EBANX", "greenhouse", "ebanx"),
+    Board("Neon", "lever", "neon"),
+    Board("CloudWalk", "lever", "cloudwalk"),
+    Board("Banco BV", "lever", "bv"),
 )
 
 
@@ -64,6 +67,8 @@ _KNOWN_SOURCES.update({
     company_identity("Itaú"): SourceConfig("Itaú", "company", "https://carreiras.itau.com.br/busca-de-vagas", None, "paginated_results", "jobposting_page"),
     company_identity("Santander"): SourceConfig("Santander", "company", "https://santander.wd3.myworkdayjobs.com/pt-BR/SantanderCareers", None, "workday_public_search", "workday_public_detail"),
     company_identity("Google"): SourceConfig("Google", "company", "https://www.google.com/about/careers/applications/jobs/results/", None, "public_search", "public_careers_page"),
+    company_identity("Microsoft"): SourceConfig("Microsoft", "company", "https://careers.microsoft.com/v2/global/en/locations/sao-paulo.html", None, "public_location_list", "public_location_list"),
+    company_identity("FitBank"): SourceConfig("FitBank", "company", "https://atracaodetalentos.totvs.app/fits/extended", None, "public_board", "jobposting_page"),
     company_identity("PagBank"): SourceConfig("PagBank", "gupy", "https://pagseguro.gupy.io/", "pagseguro", "public_board", "jobposting_page"),
     company_identity("Sicredi"): SourceConfig("Sicredi", "gupy", "https://sicredi.gupy.io/", "sicredi", "public_board", "jobposting_page"),
     company_identity("PicPay"): SourceConfig("PicPay", "gupy", "https://picpay.gupy.io/", "picpay", "public_board", "jobposting_page"),
@@ -71,8 +76,11 @@ _KNOWN_SOURCES.update({
 for _company, _token in (
     ("ANBIMA", "anbima"), ("Grupo Bancorbrás", "bancorbras"),
     ("Via Certa Promotora", "acertapromotora"), ("Banco BMG", "bancobmg"),
-    ("Núclea", "nuclea"), ("Sicoob", "sicoob"), ("Banco BV", "bancobv"),
+    ("Núclea", "nuclea"), ("Sicoob", "sicoob"),
     ("Asaas", "asaas"), ("Creditas", "creditas"),
+    ("Safra", "venhasersafra"), ("Banco ABC Brasil", "abcbrasil"),
+    ("Genial Investimentos", "genial"), ("Banco Mercantil", "mercantil"),
+    ("Daycoval", "daycoval-tech"), ("Digio", "digio"), ("Conta Simples", "contasimples"),
 ):
     _KNOWN_SOURCES[company_identity(_company)] = SourceConfig(
         _company, "gupy", f"https://{_token}.gupy.io/", _token, "public_board", "jobposting_page")
@@ -133,6 +141,10 @@ def provider_for_url(url: str, *, structured: bool = False) -> str:
         return host == domain or host.endswith("." + domain)
 
     if host in OFFICIAL_COMPANY_HOSTS:
+        return "company"
+    if host == "apply.careers.microsoft.com" and re.fullmatch(r"/careers/job/\d+/?", urlparse(url).path):
+        return "company"
+    if host == "atracaodetalentos.totvs.app" and re.fullmatch(r"/fits/\d+/[^/]+/?", urlparse(url).path):
         return "company"
     if host in {"google.com", "www.google.com"} and urlparse(str(url or "")).path.startswith("/about/careers/applications/jobs/results/"):
         return "company"
@@ -258,12 +270,14 @@ def _lever(board: Board, payload: Any) -> Iterable[dict]:
             continue
         categories = job.get("categories") or {}
         workplace = job.get("workplaceType")
+        sections = ''.join(f'<h2>{html.escape(str(section.get("text") or ""))}</h2>{section.get("content") or ""}'
+                           for section in job.get("lists", []) if isinstance(section, dict))
         yield {
             "url": url,
             "posting": {
                 "@type": "JobPosting",
                 "title": job.get("text"),
-                "description": job.get("description") or job.get("descriptionPlain") or "",
+                "description": (job.get("description") or job.get("descriptionPlain") or "") + sections + (job.get("additional") or ""),
                 "hiringOrganization": {"name": board.company},
                 "jobLocation": _location(categories.get("location")),
                 "jobLocationType": "TELECOMMUTE" if workplace == "remote" else None,
