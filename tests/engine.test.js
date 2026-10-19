@@ -73,3 +73,45 @@ test('technology demand counts companies separately from postings',()=>{const jo
 test('reference institution and career alignment weight study impact',()=>{const req=[{text:'AWS',requirementType:'mandatory',category:'technical',profileSkillIds:['aws'],relation:'single',level:1}],profile={...p,aws:{l:0,e:0}},target={...j,key:'target',company:'Bradesco',careerAlignment:'target',careerWeight:1,institutionWeight:1.25,requirementsStructured:req},adjacent={...j,key:'adjacent',company:'Empresa B',careerAlignment:'adjacent',careerWeight:.55,institutionWeight:1,requirementsStructured:req},aws=E.priorities([target,adjacent],profile,S,{},{}).find(x=>x.skill.id==='aws');assert.equal(aws.companyDemand,2);assert.equal(aws.weightedCompanyDemand,1.44);});
 test('structured evidence overrides the legacy self-assessment',()=>{const skill={l:4,e:4,evidences:[{type:'course',context:'study',title:'Curso de Python'}]};assert.equal(E.evidenceLevel(skill),1);const a=E.evaluate(j,{python:skill},S);assert.equal(a.rows[0].skills[0].evidence,1);assert.equal(a.score,70);});
 test('production evidence has maximum weight and legacy profiles remain compatible',()=>{assert.equal(E.evidenceLevel({e:3}),3);assert.equal(E.evidenceLevel({e:0,evidences:[{type:'work',context:'production',title:'API em produção'}]}),4);});
+
+test('completed degree is a gate even in legacy requirements with otherwise perfect fit',()=>{
+ const job={...j,requirements:[...j.requirements,'Graduação completa em Engenharia']};
+ const a=E.evaluate(job,p,S,{education:'studying'});
+ assert.equal(a.rows.at(-1).state,'gap');assert.equal(a.critical,1);
+ assert.equal(a.gates[0].state,'gap');assert.equal(a.canApply,false);
+ assert.equal(E.actionDecision(job,a).id,'monitor');
+ assert.match(E.actionDecision(job,a).reason,/Formação obrigatória/);
+});
+test('structured education remains binary and manually confirmable by requirement text',()=>{
+ const job={...j,requirementsStructured:[{text:'Python',requirementType:'mandatory'}, {text:'Graduação completa',requirementType:'eliminatory',category:'education'}]};
+ let a=E.evaluate(job,p,S,{education:'studying'});
+ assert.equal(a.score,100);assert.equal(a.canApply,false);assert.equal(a.gates[0].state,'gap');
+ const key=a.gates[0].answerKey;
+ a=E.evaluate(job,p,S,{}, {test:{[key]:'no'}});
+ assert.equal(a.gates[0].state,'gap');assert.equal(E.actionDecision(job,a).id,'monitor');
+ a=E.evaluate(job,p,S,{}, {test:{[key]:'yes'}});
+ assert.equal(a.gates[0].state,'ok');assert.equal(a.canApply,true);
+});
+test('studying satisfies explicitly accepted ongoing education wording',()=>{
+ for(const text of ['Superior completo ou cursando','Formação completa ou em andamento em Engenharia','Graduação em curso ou concluída']){
+  const job={...j,requirements:[...j.requirements,text]},a=E.evaluate(job,p,S,{education:'studying'});
+  assert.equal(a.gates[0].state,'ok',text);assert.equal(a.canApply,true,text);
+ }
+});
+test('missing or ambiguous education blocks recommendations without inventing a gap',()=>{
+ for(const prefs of [{},{education:'studying'}]){
+  const job={...j,requirements:[...j.requirements,'Formação em Engenharia']},a=E.evaluate(job,p,S,prefs);
+  assert.equal(a.gates[0].state,'unknown');assert.equal(a.critical,0);
+  assert.equal(E.actionDecision(job,a).id,'monitor');
+ }
+});
+test('optional education is not an eliminatory gate',()=>{
+ const a=E.evaluate({...j,differentials:['Graduação completa']},p,S,{education:'studying'});
+ assert.equal(a.gates.length,0);assert.equal(a.canApply,true);
+});
+test('Java version superior and information systems are not education gates',()=>{
+ for(const text of ['Java 8 ou superior','Segurança da informação']){
+  const a=E.evaluate({...j,requirements:[text]},p,S,{education:'completed'});
+  assert.equal(a.gates.length,0);assert.equal(a.rows[0].state,'unknown');
+ }
+});
