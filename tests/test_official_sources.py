@@ -87,6 +87,8 @@ class OfficialSourceTests(unittest.TestCase):
         self.assertEqual(source_for_company("Banco Itau").provider, "company")
         self.assertEqual(source_for_company("Inter").provider, "greenhouse")
         self.assertEqual(source_for_company("Pismo").provider, "lever")
+        self.assertEqual(source_for_company("Neon").provider, "lever")
+        self.assertEqual(source_for_company("Neon Pagamentos").careers_url, "https://jobs.lever.co/neon")
         self.assertEqual(source_for_company("Google").provider, "company")
 
     @patch("update_vagas.safe_get")

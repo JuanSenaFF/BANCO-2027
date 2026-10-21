@@ -118,12 +118,12 @@ class CompanyPolicyTests(unittest.TestCase):
         self.assertFalse(policy.TARGET_KEYS & policy.CONTEXT_KEYS)
 
     def test_search_lists_only_contain_canonical_registered_targets(self):
-        self.assertEqual(len(policy.CORE_PRIORITY_COMPANIES), 18)
+        self.assertEqual(len(policy.CORE_PRIORITY_COMPANIES), 19)
         self.assertEqual(len(policy.PRIORITY_COMPANIES), 62)
         self.assertEqual(len(set(policy.PRIORITY_COMPANIES)), len(policy.PRIORITY_COMPANIES))
         self.assertLessEqual(set(policy.CORE_PRIORITY_COMPANIES), set(policy.PRIORITY_COMPANIES))
         self.assertLessEqual(set(policy.PRIORITY_COMPANIES), set(policy.TARGET_COMPANIES))
-        for company in ("Microsoft", "Google"):
+        for company in ("Microsoft", "Google", "Neon"):
             self.assertIn(company, policy.CORE_PRIORITY_COMPANIES)
         self.assertNotIn("ANBIMA", policy.PRIORITY_COMPANIES)
         self.assertIn("ANBIMA", policy.TARGET_COMPANIES)
@@ -133,7 +133,7 @@ class CompanyPolicyTests(unittest.TestCase):
             collector, "linkedin_query_urls", side_effect=lambda query, starts: [query],
         ):
             queries = enhanced.enhanced_linkedin_urls()
-        for company in ("Microsoft", "Google"):
+        for company in ("Microsoft", "Google", "Neon"):
             self.assertEqual(sum(query.startswith(f'"{company}" AND') for query in queries), 1)
 
     def test_collection_validation_and_catalog_keep_non_financial_targets(self):
