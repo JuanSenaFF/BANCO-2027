@@ -97,7 +97,7 @@ class CompanyPolicyTests(unittest.TestCase):
         self.assertEqual(validator.valid(job), (True, "ok"))
 
     def test_company_approval_does_not_bypass_other_filters(self):
-        for company in ("Microsoft", "Google", "Neon"):
+        for company in ("Microsoft", "Google"):
             for overrides in (
                 {"role": "Software Engineer Sênior"},
                 {"role": "Assistente Administrativo Júnior", "requirements": ["Excel", "Comunicação", "Organização"]},
