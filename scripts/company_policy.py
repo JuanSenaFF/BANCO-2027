@@ -51,7 +51,7 @@ COMPANIES = (
     TargetCompany("Banco ABC Brasil"),
     TargetCompany("Banco PAN"),
     TargetCompany("Banco BMG"),
-    TargetCompany("Neon", ("Neon Pagamentos",), "core"),
+    TargetCompany("Neon", ("Neon Pagamentos", "Banco Neon"), "core"),
     TargetCompany("PicPay", search_tier="core"),
     TargetCompany("Creditas", ("Creditas Soluções Financeiras",)),
     TargetCompany("Will Bank"),
