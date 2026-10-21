@@ -67,6 +67,16 @@ class CompanyPolicyTests(unittest.TestCase):
                 self.assertFalse(evaluation["signals"]["finance"])
                 self.assertTrue(evaluation["signals"]["target_context"])
 
+    def test_banco_neon_alias_uses_existing_core_company_and_lever_source(self):
+        from official_sources import source_for_company
+
+        self.assertTrue(policy.is_target_company("Banco Neon"))
+        self.assertTrue(policy.same_company_name("Banco Neon", "Neon Pagamentos"))
+        self.assertIn("Neon", policy.CORE_PRIORITY_COMPANIES)
+        self.assertEqual(source_for_company("Banco Neon").careers_url, "https://jobs.lever.co/neon")
+        self.assertEqual(validator.valid(vacancy("Banco Neon")), (True, "ok"))
+        self.assertEqual(evaluate_candidate("Banco Neon")["status"], "qualified")
+
     def test_case_accents_html_and_punctuation_are_normalized(self):
         for company in ("  ITAU UNIBANCO  ", "Ita&uacute;", "<b>Microsoft</b>", "Google, LLC.", "XP INC", "Nuclea"):
             with self.subTest(company=company):
